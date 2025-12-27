@@ -71,6 +71,7 @@ body {
     .movie-grid {
         /* gap override removed to match mobile */
         grid-template-columns: repeat(4, minmax(0, 1fr));
+        row-gap: 2rem;
     }
 }
 

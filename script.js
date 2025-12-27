@@ -16,16 +16,6 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
-        title: "Raat Akeli Hai: The Bansal Murders (2025)",
-        embedUrl: "https://short.icu/YPAOD_hPy",
-        posterUrl: "https://resizing.flixster.com/xKaJZ1l4v_GTRfK4sVvk99tQD9I=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31948487_v_v10_aa.jpg",
-        genre: "Crime, Drama, Mystery & Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
-        downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4"
-    },
-    {
         title: "Together (2025)",
         embedUrl: "https://short.icu/M93KoAfFb",
         posterUrl: "https://resizing.flixster.com/ZIWbpfKroQ-1zY4QlY4s7ifc514=/fit-in/705x460/v2/https://resizing.flixster.com/GQy_kHowMZiyNLn87P-H-jgBCNo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2RlMmE2YWFlLTg2ZmMtNGRjYy04MjAwLTEwMGY0YzVjYjA3MS5qcGc=",
@@ -34,6 +24,16 @@ const moviesData = [
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
         downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=bUlpK1lLeDN3NkdWR0VKbVk1emd4VDM5NVcwVkxDVXlOakQreEVTU0QySmhaQnlFWDcvaC9nS1N3M1lIN2RwRDdsNWVwNmlRSkRkWlNxbENJOElKZ2YyMmxzZnRQWmtySDYrQzhrM1ZZL0k9"
+    },
+    {
+        title: "Raat Akeli Hai: The Bansal Murders (2025)",
+        embedUrl: "https://short.icu/YPAOD_hPy",
+        posterUrl: "https://resizing.flixster.com/xKaJZ1l4v_GTRfK4sVvk99tQD9I=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31948487_v_v10_aa.jpg",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
+        downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4"
     },
     {
         title: "Saali Mohabbat (2025)",
@@ -8083,7 +8083,7 @@ function handleDownloadClick(event) {
         window.open(downloadUrl2, '_blank');
         
         // Update text
-        if (textSpan) textSpan.textContent = 'Download Started'; 
+        if (textSpan) textSpan.textContent = 'Link Expired (SORRY)'; 
     }
 }
 
@@ -8629,49 +8629,49 @@ function generateSchema() {
 // Call generator on load
 generateSchema();
 
-// 1. Disable Right Click
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-});
+// // 1. Disable Right Click
+// document.addEventListener('contextmenu', (e) => {
+//     e.preventDefault();
+// });
 
-// 2. Block Keyboard Shortcuts
-document.onkeydown = function(e) {
-    // F12
-    if(e.keyCode == 123) {
-        return false;
-    }
+// // 2. Block Keyboard Shortcuts
+// document.onkeydown = function(e) {
+//     // F12
+//     if(e.keyCode == 123) {
+//         return false;
+//     }
     
-    // Checks for CTRL + SHIFT combos
-    if(e.ctrlKey && e.shiftKey) {
-        // I (Inspect)
-        if(e.keyCode == 'I'.charCodeAt(0)) return false;
-        // J (Console)
-        if(e.keyCode == 'J'.charCodeAt(0)) return false;
-        // C (Element Inspector) - ADDED THIS
-        if(e.keyCode == 'C'.charCodeAt(0)) return false;
-    }
+//     // Checks for CTRL + SHIFT combos
+//     if(e.ctrlKey && e.shiftKey) {
+//         // I (Inspect)
+//         if(e.keyCode == 'I'.charCodeAt(0)) return false;
+//         // J (Console)
+//         if(e.keyCode == 'J'.charCodeAt(0)) return false;
+//         // C (Element Inspector) - ADDED THIS
+//         if(e.keyCode == 'C'.charCodeAt(0)) return false;
+//     }
 
-    // Checks for CTRL combos
-    if(e.ctrlKey) {
-        // U (View Source)
-        if(e.keyCode == 'U'.charCodeAt(0)) return false;
-        // S (Save Page) - Often used to steal code
-        if(e.keyCode == 'S'.charCodeAt(0)) {
-            e.preventDefault();
-            return false;
-        }
-    }
-};
+//     // Checks for CTRL combos
+//     if(e.ctrlKey) {
+//         // U (View Source)
+//         if(e.keyCode == 'U'.charCodeAt(0)) return false;
+//         // S (Save Page) - Often used to steal code
+//         if(e.keyCode == 'S'.charCodeAt(0)) {
+//             e.preventDefault();
+//             return false;
+//         }
+//     }
+// };
 
-// 3. The "Debugger Trap"
-// If the developer tools are open, this will constantly pause execution
-// making the inspector annoying to use. It usually does nothing if tools are closed.
-setInterval(function() {
-    debugger;
-}, 100);
+// // 3. The "Debugger Trap"
+// // If the developer tools are open, this will constantly pause execution
+// // making the inspector annoying to use. It usually does nothing if tools are closed.
+// setInterval(function() {
+//     debugger;
+// }, 100);
 
-// 4. Console Clearing
-// Tries to clear the console if they open it
-// console.clear(); 
+// // 4. Console Clearing
+// // Tries to clear the console if they open it
+// // console.clear(); 
 
-document.addEventListener("contextmenu",e=>e.preventDefault());document.onkeydown=function(e){if(123==e.keyCode)return!1;if(e.ctrlKey&&e.shiftKey){var t=e.keyCode;if(t=="I".charCodeAt(0)||t=="J".charCodeAt(0)||t=="C".charCodeAt(0))return!1}if(e.ctrlKey){var n=e.keyCode;if(n=="U".charCodeAt(0)||n=="S".charCodeAt(0))return e.preventDefault(),!1}};setInterval(function(){debugger},100);
+// document.addEventListener("contextmenu",e=>e.preventDefault());document.onkeydown=function(e){if(123==e.keyCode)return!1;if(e.ctrlKey&&e.shiftKey){var t=e.keyCode;if(t=="I".charCodeAt(0)||t=="J".charCodeAt(0)||t=="C".charCodeAt(0))return!1}if(e.ctrlKey){var n=e.keyCode;if(n=="U".charCodeAt(0)||n=="S".charCodeAt(0))return e.preventDefault(),!1}};setInterval(function(){debugger},100);
