@@ -65,13 +65,22 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+@media (min-width: 200px) {
+
+    /* sm */
+    .movie-grid {
+        /* gap override removed to match mobile */
+        row-gap: 1.50rem;
+    }
+}
+
 @media (min-width: 640px) {
 
     /* sm */
     .movie-grid {
         /* gap override removed to match mobile */
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        row-gap: 3rem;
+        row-gap: 4rem;
     }
 }
 
