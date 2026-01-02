@@ -77,7 +77,7 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4"
     },
     {
-        title: "Troll 2. (2025)",
+        title: "Troll 2 (2024)",
         embedUrl: "https://short.icu/R5XnMgi4Uj",
         posterUrl: "https://resizing.flixster.com/nY7FpRZLdD7t2aFzRtmFnoZ1hBo=/fit-in/705x460/v2/https://resizing.flixster.com/ekLCmODDUjN90ta_n8qe-hz0pf4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZhZDcyMDc4LTAwZDMtNDAyMy04MTg3LWQ5Mzc5OTY5ODhjOC5qcGc=",
         genre: "Action, Adventure, Fantasy, Mystery, Thriller",
