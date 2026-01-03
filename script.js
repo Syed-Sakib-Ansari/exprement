@@ -1763,6 +1763,36 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4"
     },
     {
+        title: "Shadows of the Dead (2016)",
+        embedUrl: "https://short.icu/bDnobYqfm",
+        posterUrl: "https://resizing.flixster.com/3ZI-L0yyR4dWahByyCByzaHSYdg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13330051_p_v8_ab.jpg",
+        genre: "Horror",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
+        downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4"
+    },
+    {
+        title: "The Rake (2018)",
+        embedUrl: "https://short.icu/ncJoPilSe",
+        posterUrl: "https://resizing.flixster.com/MyKL-CXqnQhudhl6HlxcSA_-hlQ=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15512675_p_v8_aa.jpg",
+        genre: "Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
+        downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4"
+    },
+    {
+        title: "Occupation (2018)",
+        embedUrl: "https://short.icu/q4-B-L3H0",
+        posterUrl: "https://resizing.flixster.com/hMl4knsTx3mmu7l0P3kxjRX9Z8c=/fit-in/705x460/v2/https://resizing.flixster.com/Sur0DWCe_WCojv9-0-Iylm9QhHU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2VhYmYxZmEyLWU5NDEtNDUzMi05MjdiLTA3ZTllMGQ5MzM4OC53ZWJw",
+        genre: "Sci-Fi, Action, Drama",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
+        downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4"
+    },
+    {
         title: "Paycheck (2003)",
         embedUrl: "https://short.icu/JAxv0ezPL",
         posterUrl: "https://resizing.flixster.com/bExCD_tnlYcCw8l_omSCxPnUKqc=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p33626_v_v12_al.jpg",
@@ -7382,6 +7412,16 @@ const moviesData = [
         downloadUrl1: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
         downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4"
     },
+    {
+        title: "Gentleman (2016)",
+        embedUrl: "https://short.icu/wqDB7eNjfQ",
+        posterUrl: "https://resizing.flixster.com/CitP3ZudQu8YRdGbQRDNbmVmbG4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12971560_v_v8_af.jpg",
+        genre: "Romance, Mystery & Thriller",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
+        downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4"
+    },
     // =======================================================================
     // 1. BANGLA / BANGLA / BANGLA/ BANGLA / BANGLA / BANGLA
     // =======================================================================
@@ -8224,7 +8264,17 @@ const moviesData = [
         posterUrl: "https://images.justwatch.com/poster/305710785/s718/girls-guns-and-blood.jpg",
         genre: "Action, Comedy",
         category: "Others",
-        language: "Urdu",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
+        downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
+    },
+    {
+        title: "Darker Shades of Elise (2017)",
+        embedUrl: "https://short.icu/H5KyuzTmC",
+        posterUrl: "https://resizing.flixster.com/yG_6eF5FIGmXzFzabzZdAY3KaVc=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p14241745_v_v12_ac.jpg",
+        genre: "Drama, Mystery & Thriller",
+        category: "Others",
+        language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
         downloadUrl2: "https://www.effectivegatecpm.com/hgmyx7gfb7?key=9666ff87a79cf1b9367c6b738276f7e4",
     },
