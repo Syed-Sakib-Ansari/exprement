@@ -56,10 +56,10 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
-        title: "Kaantha (2025)",
-        embedUrl: "https://short.icu/9FzAkJ40v",
-        posterUrl: "https://resizing.flixster.com/Wj81PgFWf2AI3mXyGTt4PPfZAqE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31181428_k_v8_aa.jpg",
-        genre: "Horror, Mystery & Thriller, Biography, Drama, History",
+        title: "Drive (2025)",
+        embedUrl: "https://short.icu/ajfmyZeUW",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZTU3YjQ0NjAtNTY1MS00MGZkLThmMDctNDI2YTBlNGFmZjZhXkEyXkFqcGc@._V1_.jpg",
+        genre: "Romance, Mystery & Thriller",
         category: "Recent Adds",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
