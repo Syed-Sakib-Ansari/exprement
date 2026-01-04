@@ -16,6 +16,16 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
+        title: "Eko (2025)",
+        embedUrl: "https://short.icu/Km0BkZEqf",
+        posterUrl: "https://resizing.flixster.com/g9ADdd_1ULwBCuLibHjYUOxoXd8=/fit-in/705x460/v2/https://resizing.flixster.com/YDvSYoB5W6Rwh67ysE0pVsz3XnM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzY5ZWE3NTM0LTliMjEtNDZhMi04ZmQzLWQ0YjZiNTM3ODAxYi5qcGc=",
+        genre: "Adventure, Drama",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Visions (2025)",
         embedUrl: "https://short.icu/d10vSgK7BB",
         posterUrl: "https://resizing.flixster.com/Rmfxno3n_mAijuAWbuzVS_VFLbs=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25913046_p_v8_ab.jpg",
@@ -44,27 +54,6 @@ const moviesData = [
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Saali Mohabbat (2025)",
-        embedUrl: "https://short.icu/onXAQD32n",
-        posterUrl: "https://resizing.flixster.com/sIAQYLvw6n2TdQbrobh5VvecdcI=/fit-in/705x460/v2/https://resizing.flixster.com/ZwGPypCl4qxjIKb3QHzEKvmHXHQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NkMDYwYmY4LTBmMDYtNDU0Mi04NGU5LWFiOTEzY2ZlNDBjNy5qcGc=",
-        genre: "Crime, Drama, Mystery & Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Single Papa (2025)",
-        embedUrl: "https://short.icu/1xELTMbGg",
-        posterUrl: "https://resizing.flixster.com/NmjvPGQ7FgmaOsLEmrQ2JmiyMUc=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31923453_b_v8_ab.jpg",
-        genre: "Comedy, Drama",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode All" /* NEW SERIES INFO */
     },
     {
         title: "Kaantha (2025)",
@@ -111,16 +100,6 @@ const moviesData = [
         embedUrl: "https://short.icu/bC_whPx52",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BNmU4ZGIwZmMtN2JlMS00YzYxLWJlZjItNjkxNjYzYWZkYjI3XkEyXkFqcGc@._V1_FMjpg_UY720_.jpg",
         genre: "Suspense, Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Ujda Chaman (2019)",
-        embedUrl: "https://short.icu/78O7Bn4xA",
-        posterUrl: "https://resizing.flixster.com/r_UE_394f6NGwMkvlMoMM-dCFEI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17543151_p_v8_aa.jpg",
-        genre: "Comedy, Drama",
         category: "Recent Adds",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -1507,6 +1486,36 @@ const moviesData = [
         embedUrl: "https://short.icu/LaSvcenV8",
         posterUrl: "https://resizing.flixster.com/vGxJHvHAmfnJK2h_5mnFdSdeTH0=/fit-in/705x460/v2/https://resizing.flixster.com/q-KskuWU_4JWSmAwaAwE_es-Q5A=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzdmYjNjM2U5LWRlNzAtNDkwYi04ZGM1LWFkMGY3OGE2YzhhMy5wbmc=",
         genre: "Sci-Fi, Drama",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "7:11 PM (2023)",
+        embedUrl: "https://short.icu/kEWLKRKYQ",
+        posterUrl: "https://resizing.flixster.com/kdn65ulmgbaTieauErbSheGwWOU=/fit-in/705x460/v2/https://resizing.flixster.com/ay7Jt5s-pUCWNvb5lNL1t5O7vxw=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2M4N2NkMTM3LTBiM2YtNGViYy04NzI2LTYwMjMyMzcxOWEyNy5qcGc=",
+        genre: "Sci-Fi, Mystery & Thriller, Action",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Atlas (2024)",
+        embedUrl: "https://short.icu/7YDAAHvkK",
+        posterUrl: "https://resizing.flixster.com/BkHAc30gfGeBqs20Z7JY0oa44PA=/fit-in/705x460/v2/https://resizing.flixster.com/0iQm4yhjVd8HrXQ-PIWZo4RU4xE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YxZDA0NzI4LTMyN2YtNGU3My1iOTI0LTA1M2UyOWU2MTQyMC5qcGc=",
+        genre: "Sci-Fi, Action, Adventure",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Blink (2022)",
+        embedUrl: "https://short.icu/wyjYCt-Vl",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZTRlM2M2MzgtMWM2ZC00N2U3LTg5ZjUtMTg2ZTJjZjA4ZTU1XkEyXkFqcGc@._V1_.jpg",
+        genre: "Horror, Mystery, Thriller",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -6852,6 +6861,16 @@ const moviesData = [
     // 1. SOUTH / SOUTH / SOUTH/ SOUTH / SOUTH / SOUTH
     // =======================================================================
     {
+        title: "Eko (2025)",
+        embedUrl: "https://short.icu/Km0BkZEqf",
+        posterUrl: "https://resizing.flixster.com/g9ADdd_1ULwBCuLibHjYUOxoXd8=/fit-in/705x460/v2/https://resizing.flixster.com/YDvSYoB5W6Rwh67ysE0pVsz3XnM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzY5ZWE3NTM0LTliMjEtNDZhMi04ZmQzLWQ0YjZiNTM3ODAxYi5qcGc=",
+        genre: "Adventure, Drama",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Mass Jathara (2025)",
         embedUrl: "https://short.icu/KVXoohuWq",
         posterUrl: "https://resizing.flixster.com/6TpJc9cDVxI_tjFEAwaXjp99--Q=/fit-in/705x460/v2/https://resizing.flixster.com/sS5GWqLFrvujpiJC0VC0V956QEg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2I4YzY5NmQ2LWQ5NDctNGM2Yi04OTcxLTZmNWI1OThmM2I2MS5qcGc=",
@@ -7537,6 +7556,26 @@ const moviesData = [
         embedUrl: "https://short.icu/sui3m9WhO",
         posterUrl: "https://resizing.flixster.com/i97mrVXGekk6rq3sdvJ6jJAJtfk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23766874_p_v8_aa.jpg",
         genre: "Action, Mystery & Thriller",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Ace (2025)",
+        embedUrl: "https://short.icu/KbfyAKqzN",
+        posterUrl: "https://resizing.flixster.com/IGfYFFph4NsWaD4dy3-hreOADwU=/fit-in/705x460/v2/https://resizing.flixster.com/hNUJngJpjfywl0kGP9omd0wMJ3I=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzc1NTdkYTQ3LWI1MGUtNDU0MC04MjY3LTM5NGI1MWM1Mjc5YS5qcGc=",
+        genre: "Action, Adventure, Fantasy, Crime, Mystery & Thriller",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Court - State Vs. A Nobody (2025)",
+        embedUrl: "https://short.icu/A_hnK9eeN",
+        posterUrl: "https://resizing.flixster.com/5aFdiA3QqyekFZrWTwLN2IyFcyk=/fit-in/705x460/v2/https://resizing.flixster.com/L_mXzp-lqjJruypERYkLkfA09m8=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzVkNTQ1NjIwLWZjNzgtNDFlNi1iOTRjLWNmZTEyNzFiMTAzMC5qcGc=",
+        genre: "Drama",
         category: "South",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -8422,6 +8461,36 @@ const moviesData = [
         title: "Girls on Film (2023)",
         embedUrl: "https://short.icu/aDbrT80t2",
         posterUrl: "https://resizing.flixster.com/NstbWZARImXVIWvBRCq898y3pIs=/fit-in/705x460/v2/https://resizing.flixster.com/Ku3-mYhP1Ea_L2Iuvl_aCZ8Kr1g=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzg4MmYxN2RiLWUwYzMtNGI5YS1hM2ZmLTYzNjI4YzhkMjZlZS5qcGc=",
+        genre: "Adult, Drama, Romance, LGBTQ+",
+        category: "Others",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Sugar Baby (2024)",
+        embedUrl: "https://short.icu/SoRn1v4ht",
+        posterUrl: "https://resizing.flixster.com/rmDZ9mzuHg9cXPyPr8i07sHm_pI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28439839_v_v13_aa.jpg",
+        genre: "Adult, Drama, Romance, LGBTQ+",
+        category: "Others",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Sex and the Single Mom (2003)",
+        embedUrl: "https://short.icu/OvgeopGZN",
+        posterUrl: "https://resizing.flixster.com/hIlvkXHONpu6aCIgCxcvMWkbub0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32723_v_v8_ab.jpg",
+        genre: "Adult, Drama, Romance, LGBTQ+",
+        category: "Others",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Sold (2016)",
+        embedUrl: "https://short.icu/JHpSSsveR",
+        posterUrl: "https://resizing.flixster.com/YcAde4MP6TCxPD3vClb9bJJgs5s=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10808295_v_v11_ab.jpg",
         genre: "Adult, Drama, Romance, LGBTQ+",
         category: "Others",
         language: "Hindi",
@@ -9349,7 +9418,7 @@ let currentSlide = 0;
 
 function initSlider() {
     // Filter movies marked as "Recent Adds" and limit to 15 items
-    const recentMovies = moviesData.filter(m => m.category === 'Recent Adds').slice(0, 15);
+    const recentMovies = moviesData.filter(m => m.category === 'Recent Adds').slice(0, 6);
     
     // RESET CURRENT SLIDE TO 0 every time init is called
     currentSlide = 0;
