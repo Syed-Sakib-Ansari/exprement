@@ -90,7 +90,7 @@ body {
     .movie-grid {
         grid-template-columns: repeat(5, minmax(0, 1fr));
         row-gap: 4rem;
-        column-gap: 0.99rem;
+        column-gap: 1.30rem;
     }
 }
 
