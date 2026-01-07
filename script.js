@@ -179,6 +179,16 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
+        title: "Single Salma (2025)",
+        embedUrl: "https://short.icu/PJ2ECfPNWZ",
+        posterUrl: "https://resizing.flixster.com/dC289I6Y5rCSvJ0bnNacgVk3Qxc=/fit-in/705x460/v2/https://resizing.flixster.com/6ymuSsUdey2BIlIcfJ6hvE5SzrA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzg4NjQ3YTRlLTQ2MjAtNGFjOS04OTU3LWUxNGFhMzM2YmViMS5qcGc=",
+        genre: "Comedy, Drama, Romance",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Bhool Chuk Maaf (2025)",
         embedUrl: "https://short.icu/kF0JOTHK6",
         posterUrl: "https://resizing.flixster.com/EkWz0vFy1Kd4fM-POeuKCKbIWMU=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30065568_p_v8_aa.jpg",
@@ -1192,6 +1202,26 @@ const moviesData = [
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
     {
+        title: "Five Nights at Freddy's 2 (2025)",
+        embedUrl: "https://short.icu/FXIzk1o7f",
+        posterUrl: "https://resizing.flixster.com/wNJUhdpdruTyKy-p9EQ1DPnXn8s=/fit-in/705x460/v2/https://resizing.flixster.com/yFQ1_2PES9kQgGXipTnpyiLho-c=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FjOTc0MWU4LWM2NzItNGEzZC05M2Y1LTM2OTM1ZDAwYTczZC5qcGc=",
+        genre: "Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=bUlpK1lLeDN3NkdWR0VKbVk1emd4VDM5NVcwVkxDVXlOakQreEVTU0QySmhaQnlFWDcvaC9nS1N3M1lIN2RwRDdsNWVwNmlRSkRkWlNxbENJOElKZ2YyMmxzZnRQWmtySDYrQzhrM1ZZL0k9"
+    },
+    {
+        title: "Knowing (2009)",
+        embedUrl: "https://short.icu/f-7_bX9ya",
+        posterUrl: "https://resizing.flixster.com/VDk4jXJXqEV8Y7yMSvKHNbBIvDk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p182354_p_v10_ag.jpg",
+        genre: "Sci-Fi, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=bUlpK1lLeDN3NkdWR0VKbVk1emd4VDM5NVcwVkxDVXlOakQreEVTU0QySmhaQnlFWDcvaC9nS1N3M1lIN2RwRDdsNWVwNmlRSkRkWlNxbENJOElKZ2YyMmxzZnRQWmtySDYrQzhrM1ZZL0k9"
+    },
+    {
         title: "Wicked: For Good (2025)",
         embedUrl: "https://short.icu/ax9tkRA8e",
         posterUrl: "https://resizing.flixster.com/_oSRw-1UvL2FEnf6evaQFndUVEo=/fit-in/705x460/v2/https://resizing.flixster.com/1udyHgoIqT1-2LitoJfbaaumai0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzFhYjBiNWVmLTk0NWUtNDE5Mi04ZTZiLWJiOTcxNmIyZWQxNC5qcGc=",
@@ -1386,6 +1416,26 @@ const moviesData = [
         embedUrl: "https://short.icu/vLokMET9H",
         posterUrl: "https://resizing.flixster.com/0MwbTfA639drTtYzO-EaRY1KMcA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17573367_v_v8_aa.jpg",
         genre: "Action, Adventure, Sci-Fi, Mystery, Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Hellhounds (2009)",
+        embedUrl: "https://short.icu/U3p2sUfVt",
+        posterUrl: "https://resizing.flixster.com/JslGtY8Zsqdi3-Wu24bP-YXsfdE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p3490129_v_v8_aa.jpg",
+        genre: "Adventure, Fantasy, Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Secret Headquarters (2022)",
+        embedUrl: "https://short.icu/aPpdQ17_4j",
+        posterUrl: "https://resizing.flixster.com/BDvUitzEFiwdn_NHFLc0N8ci7K0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p20304897_v_v12_ab.jpg",
+        genre: "Kids & Family, Action, Adventure, Comedy, Sci-Fi",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -1736,6 +1786,26 @@ const moviesData = [
         embedUrl: "https://short.icu/LYafDy9gD",
         posterUrl: "https://resizing.flixster.com/FU9BtOThXyTIcnIFD96XDM7z_5I=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p16924527_v_v12_ab.jpg",
         genre: "Sci-Fi, Adventure, Action",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Day Shift (2022)",
+        embedUrl: "https://short.icu/9VxzwzwyX",
+        posterUrl: "https://resizing.flixster.com/pBZtDUQWGg44iAL7tXX_t0RymDc=/fit-in/705x460/v2/https://resizing.flixster.com/PZPOOQM8PwGL70qshjeR__3kzhA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzgwOTZlNmQxLWJlYzUtNGE2Yy1hZjQ3LTczMzE3NjQ0MzQ4MS5qcGc=",
+        genre: "Action, Horror, Comedy",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Family Switch (2023)",
+        embedUrl: "https://short.icu/DCeT7CI2s",
+        posterUrl: "https://resizing.flixster.com/zNJI2FBXYza-aOIakKowth3D604=/fit-in/705x460/v2/https://resizing.flixster.com/Z8gs9lng-shHkpvA2e7K7sTd6BY=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UxNDNlZDliLTdhNWEtNGRjYS05MGIyLTc1NjgwMTA1MzUwYi5qcGc=",
+        genre: "Kids & Family, Comedy",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -6861,6 +6931,16 @@ const moviesData = [
     // 1. SOUTH / SOUTH / SOUTH/ SOUTH / SOUTH / SOUTH
     // =======================================================================
     {
+        title: "House Mates (2025)",
+        embedUrl: "https://short.icu/uZceJvI06",
+        posterUrl: "https://resizing.flixster.com/4ioQ7VQR-EOlQpGwpycLQyy3Rms=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30836701_p_v10_aa.jpg",
+        genre: "Comedy, Horror, Fantasy",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Eko (2025)",
         embedUrl: "https://short.icu/Km0BkZEqf",
         posterUrl: "https://resizing.flixster.com/g9ADdd_1ULwBCuLibHjYUOxoXd8=/fit-in/705x460/v2/https://resizing.flixster.com/YDvSYoB5W6Rwh67ysE0pVsz3XnM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzY5ZWE3NTM0LTliMjEtNDZhMi04ZmQzLWQ0YjZiNTM3ODAxYi5qcGc=",
@@ -7106,6 +7186,26 @@ const moviesData = [
         embedUrl: "https://short.icu/r86GD65OR",
         posterUrl: "https://upload.wikimedia.org/wikipedia/en/6/6d/Avihitham_Film.jpg",
         genre: "Comedy, Drama",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Kuberaa (2025)",
+        embedUrl: "https://short.icu/LfbTWqDO-",
+        posterUrl: "https://resizing.flixster.com/Tm5sJ0eK9skzMa-cj8tbfBnyG7E=/fit-in/705x460/v2/https://resizing.flixster.com/Qj7_R_9gNGVWDBDC5qfPnRyHVQM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E0ZjZjNjBlLTk3OWMtNDhjNi05YmFlLTg4YTViYjYzOTNlYi5qcGc=",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Maareesan (2025)",
+        embedUrl: "https://short.icu/lFAq_g3ne",
+        posterUrl: "https://resizing.flixster.com/t32joDPe8GTGWaUr_G0e-sxNdm8=/fit-in/705x460/v2/https://resizing.flixster.com/TEJOuNmHBze6VVPpLykqwTqdQIE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzdiYWIyNTg1LTE3YjItNDU4Mi1hZjdiLTA5N2NmMDI5OTgyNS5qcGc=",
+        genre: "Kids & Family, Comedy, Drama, Mystery & Thriller",
         category: "South",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -7522,6 +7622,16 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
+        title: "Dude (2025)",
+        embedUrl: "https://short.icu/DKZF-s9jq",
+        posterUrl: "https://resizing.flixster.com/yXvNkNLg03cg_XtLY5IWp97JuEQ=/fit-in/705x460/v2/https://resizing.flixster.com/oV_dnb8gZSdGaMuld7ikTlof7vg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NmYjMyYTlkLWQ0NzMtNDJlMy1hOTYzLWY1ZmE2MzAwNTI3NS5qcGc=",
+        genre: "Comedy, Drama, Romance",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Thudarum (2025)",
         embedUrl: "https://short.icu/EZx19lSB5",
         posterUrl: "https://resizing.flixster.com/xpWjqQWrkyb9Qs0ce5M5gOopjOw=/fit-in/705x460/v2/https://resizing.flixster.com/ovf08wh2398_DXc4-f5y7VwidEI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzhiMjg3MTljLTAzMTEtNDA2ZC05YmQxLTY1Y2IwMjdjYzY3Ni5qcGc=",
@@ -7576,6 +7686,16 @@ const moviesData = [
         embedUrl: "https://short.icu/A_hnK9eeN",
         posterUrl: "https://resizing.flixster.com/5aFdiA3QqyekFZrWTwLN2IyFcyk=/fit-in/705x460/v2/https://resizing.flixster.com/L_mXzp-lqjJruypERYkLkfA09m8=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzVkNTQ1NjIwLWZjNzgtNDFlNi1iOTRjLWNmZTEyNzFiMTAzMC5qcGc=",
         genre: "Drama",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Detective Karthik (2023)",
+        embedUrl: "https://short.icu/NrkgFsbz8",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BOGI1NjZlZGMtMzA1Mi00ZDhjLWE0MDQtMDZjZDM4NDQyYTRjXkEyXkFqcGc@._V1_.jpg",
+        genre: "Mystery, Thriller, Action",
         category: "South",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -7667,6 +7787,16 @@ const moviesData = [
     // =======================================================================
     // 1. KOREAN / KOREAN / KOREAN/ KOREAN / KOREAN / KOREAN
     // =======================================================================
+    {
+        title: "Crypto-Man (2025)",
+        embedUrl: "https://short.icu/xT1ZM_TiH",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMGY1ZTMyZGUtNmRlMC00NDFhLWI5NTUtOWI0YzU1YjkyNmM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Action, Mystery & Thriller",
+        category: "Korean Country",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Mantis (2025)",
         embedUrl: "https://short.icu/TXGxKOYn5",
@@ -7840,6 +7970,16 @@ const moviesData = [
     // =======================================================================
     // 1. CHINESE / CHINESE / CHINESE/ CHINESE / CHINESE /
     // =======================================================================
+    {
+        title: "Snake Skin Beauty (2024)",
+        embedUrl: "https://short.icu/_sEt-CRVd",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZTM3M2VkNzItZTM1ZC00Zjk0LWE2MzQtYWQ4NGVhZTBjMTQzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Fantasy, Adventure, Action",
+        category: "Chinese",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "The Demon Hunter (2025)",
         embedUrl: "https://short.icu/3eCiCYR_S",
@@ -8287,6 +8427,16 @@ const moviesData = [
     // 1. OTHER'S / OTHER'S / OTHER'S /
     // =======================================================================
     {
+        title: "Target (2023)",
+        embedUrl: "https://short.icu/FGyREb1BF",
+        posterUrl: "https://resizing.flixster.com/09oP_2_r8Nnr8A3rqyLdbpTh9XA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzM0ODAzMWYzLWM0ZmUtNDQwZC1hYmM2LTE2NTdmNmZiOWU1ZS5qcGc=",
+        genre: "Adult, Romance, Comedy",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Sleeping Beauty (2011)",
         embedUrl: "https://short.icu/pRhKdAcWx",
         posterUrl: "https://resizing.flixster.com/gf63hzOCLcvQ-3gMYbpLm68i0fQ=/fit-in/705x460/v2/https://resizing.flixster.com/m3cTS7teL7iO6U2uTme7w_E1QKE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2IyNTkyMjYyLWE3OWEtNGU3OC1hMmJjLWEyNTI0ZjNmZThkNS53ZWJw",
@@ -8497,6 +8647,16 @@ const moviesData = [
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     },
+    {
+        title: "Darker Shades of Summer (2023)",
+        embedUrl: "https://short.icu/A-RM7C3br",
+        posterUrl: "https://resizing.flixster.com/0AfHeOC8IMYiF_9Ww9zZiG-JqMI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23620953_v_v8_aa.jpg",
+        genre: "Mystery & Thriller, Drama",
+        category: "Others",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
     // =======================================================================
     // 1. BOLLYWOOD WEB-SERIES / BOLLYWOOD WEB-SERIES / BOLLYWOOD WEB-SERIES /
     // =======================================================================
@@ -8536,6 +8696,17 @@ const moviesData = [
     // =======================================================================
     // 1. HOLLYWOOD WEB-SERIES / HOLLYWOOD WEB-SERIES / HOLLYWOOD WEB-SERIES /
     // =======================================================================
+    {
+        title: "Fallout (2024)",
+        embedUrl: "https://short.icu/51p8LDKUc",
+        posterUrl: "https://resizing.flixster.com/tRB7ZT9-oir6sJE44Hw6uywA5JE=/fit-in/705x460/v2/https://resizing.flixster.com/_suBUkrhJoxiUqiRIuQncCEhJ-o=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vYWI1NDExNWMtZGJiYS00Mjg2LTk2NTYtOTJkODA0N2M2YzMxLmpwZw==",
+        genre: "Drama, Sci-Fi, Action, Adventure",
+        category: "Hollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode ALL" /* NEW SERIES INFO */
+    },
     {
         title: "Dune: Prophecy (2024)",
         embedUrl: "https://short.icu/ozq_ogXL9",
@@ -8689,6 +8860,39 @@ const moviesData = [
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         seriesInfo: "Season 1, Episode ALL" /* NEW SERIES INFO */
+    },
+    {
+        title: "Breaking Bad (2008)",
+        embedUrl: "https://short.icu/TzjdDtXED",
+        posterUrl: "https://resizing.flixster.com/EEM4xDSyN8QtmrWwYJsFE84GwOg=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjYyNjE3LndlYnA=",
+        genre: "Crime, Drama",
+        category: "Hollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode ALL" /* NEW SERIES INFO */
+    },
+    {
+        title: "Breaking Bad (2009)",
+        embedUrl: "https://short.icu/vFsvUJE0DE",
+        posterUrl: "https://resizing.flixster.com/BrQgVSdrjZgqlU7jFbLVdBWQ0Wk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjYyNjE4LndlYnA=",
+        genre: "Crime, Drama",
+        category: "Hollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 2, Episode ALL" /* NEW SERIES INFO */
+    },
+    {
+        title: "Breaking Bad (2010)",
+        embedUrl: "https://short.icu/mSTk_PeS2",
+        posterUrl: "https://resizing.flixster.com/eR1RPtpPWXfyCfheYC8u-wrbhFw=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjYyNjQ4LndlYnA=",
+        genre: "Crime, Drama",
+        category: "Hollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 3, Episode ALL" /* NEW SERIES INFO */
     },
     {
         title: "Breaking Bad (2011)",
@@ -9845,7 +10049,7 @@ function filterByCategory(category, updateUrl = true) {
 
         // 2. Iterate through other categories (Only for Home Page 'Recent Adds' view)
         categoriesList.forEach(catName => {
-            const catMovies = moviesData.filter(m => m.category === catName).slice(0, 6); // Top 6
+            const catMovies = moviesData.filter(m => m.category === catName).slice(0, 12); // Top 6
             if (catMovies.length > 0) {
                 const sectionHTML = `
                     <div class="mb-8">
