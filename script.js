@@ -1733,26 +1733,6 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
-        title: "Seven (1995)",
-        embedUrl: "https://short.icu/B5OQFgoVq",
-        posterUrl: "https://resizing.flixster.com/2QSTmHipqhQivxGDZZMpEKJMubg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17198_p_v12_an.jpg",
-        genre: "Mystery & Thriller, Crime, Drama",
-        category: "Hollywood",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "A Perfect Murder (1998)",
-        embedUrl: "https://short.icu/oG_PzhR14",
-        posterUrl: "https://resizing.flixster.com/4Bvs50gTivRffx9nl2UddL52zBA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p21049_v_v8_ac.jpg",
-        genre: "Mystery & Thriller",
-        category: "Hollywood",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
         title: "Nope (2022)",
         embedUrl: "https://short.icu/MC5lv8PHV",
         posterUrl: "https://resizing.flixster.com/M9GATFCUgW2TDjzeCxRqBpomQxE=/fit-in/705x460/v2/https://resizing.flixster.com/6EeYrywKueOFue9uRSQqLxfGKI0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA0NzZhZTk0LTI3NjctNGZiNi04Yjg4LWRiN2RkNTJiYWZlNy5qcGc=",
@@ -1847,6 +1827,16 @@ const moviesData = [
         embedUrl: "https://short.icu/aXWd2S-Cc",
         posterUrl: "https://resizing.flixster.com/6rc6ldopD0OZ_HI2d51NL1Y0dWs=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p20492620_v_v12_ae.jpg",
         genre: "Mystery & Thriller, Comedy",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Seven (1995)",
+        embedUrl: "https://short.icu/B5OQFgoVq",
+        posterUrl: "https://resizing.flixster.com/2QSTmHipqhQivxGDZZMpEKJMubg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17198_p_v12_an.jpg",
+        genre: "Mystery & Thriller, Crime, Drama",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -2107,6 +2097,16 @@ const moviesData = [
         embedUrl: "https://short.icu/ncJoPilSe",
         posterUrl: "https://resizing.flixster.com/MyKL-CXqnQhudhl6HlxcSA_-hlQ=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15512675_p_v8_aa.jpg",
         genre: "Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "A Perfect Murder (1998)",
+        embedUrl: "https://short.icu/oG_PzhR14",
+        posterUrl: "https://resizing.flixster.com/4Bvs50gTivRffx9nl2UddL52zBA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p21049_v_v8_ac.jpg",
+        genre: "Mystery & Thriller",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
