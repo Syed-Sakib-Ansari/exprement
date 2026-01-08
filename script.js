@@ -10258,7 +10258,7 @@ function filterByCategory(category, updateUrl = true) {
                                 <h2 class="text-xl font-bold text-white md:text-4xl">Recent Adds</h2>
                             </div>
                             <!-- Updated Button: bg-[#23ff00], text-black, hover:bg-[#1ec900] -->
-                            <button onclick="filterByCategory('All')" class="bg-[#23ff00] text-black text-xs font-bold py-1.5 px-4 rounded-full shadow-md hover:bg-[#1ec900] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center">
+                            <button onclick="filterByCategory('All')" class="bg-[#23ff00] text-black text-sm font-bold py-1.5 px-4 rounded-full shadow-md hover:bg-[#1ec900] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center md:px-20 md:text-base">
                                 See all
                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                             </button>
@@ -10298,13 +10298,13 @@ function filterByCategory(category, updateUrl = true) {
             if (catMovies.length > 0) {
                 const sectionHTML = `
                     <div class="mb-8">
-                        <div class="flex justify-between items-center mt-20 md:mt-11 md:pt-11 mb-4 px-2">
+                        <div class="flex justify-between items-center mt-20 md:mt-13 md:pt-11 mb-4 px-2">
                             <div class="flex items-center">
                                 <div class="w-1 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
                                 <h2 class="text-xl md:text-5xl font-bold text-white">${catName}</h2>
                             </div>
                             <!-- Updated Button: bg-[#23ff00], text-black, hover:bg-[#1ec900] -->
-                            <button onclick="filterByCategory('${catName}')" class="bg-[#23ff00] text-black text-xs font-bold py-1.5 px-4 rounded-full shadow-md hover:bg-[#1ec900] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center">
+                            <button onclick="filterByCategory('${catName}')" class="bg-[#23ff00] text-black text-sm font-bold py-1.5 px-4 rounded-full shadow-md hover:bg-[#1ec900] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center md:px-20 md:text-base">
                                 See all
                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                             </button>
