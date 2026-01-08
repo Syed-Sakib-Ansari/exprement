@@ -10304,7 +10304,7 @@ function filterByCategory(category, updateUrl = true) {
                                 <h2 class="text-xl md:text-5xl font-bold text-white">${catName}</h2>
                             </div>
                             <!-- Updated Button: bg-[#23ff00], text-black, hover:bg-[#1ec900] -->
-                            <button onclick="filterByCategory('${catName}')" class="bg-[#23ff00] text-black text-sm font-bold py-1.5 px-4 rounded-full shadow-md hover:bg-[#1ec900] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center md:px-20 md:text-base">
+                            <button onclick="filterByCategory('${catName}')" class="bg-[#23ff00] text-black text-sm font-bold py-1.5 px-10 rounded-full shadow-md hover:bg-[#1ec900] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center md:px-20 md:text-base">
                                 See all
                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                             </button>
