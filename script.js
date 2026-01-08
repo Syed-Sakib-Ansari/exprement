@@ -10446,7 +10446,7 @@ function filterByCategory(category, updateUrl = true) {
 
         // 2. Iterate through other categories (Only for Home Page 'Recent Adds' view)
         categoriesList.forEach(catName => {
-            const catMovies = moviesData.filter(m => m.category === catName).slice(0, 10); // Top 6
+            const catMovies = moviesData.filter(m => m.category === catName).slice(0, 12); // Top 6
             if (catMovies.length > 0) {
                 const sectionHTML = `
                     <div class="mb-8">
