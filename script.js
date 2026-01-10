@@ -36,14 +36,15 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
-        title: "Mantis (2025)",
-        embedUrl: "https://short.icu/TXGxKOYn5",
-        posterUrl: "https://resizing.flixster.com/J768IRGL9p7ql3HKLpMF7UNb5Qo=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31068361_v_v8_aa.jpg",
-        genre: "Action, Mystery & Thriller",
+        title: "Spring Fever (2026)",
+        embedUrl: "https://short.icu/9aZ2Ants3",
+        posterUrl: "https://resizing.flixster.com/ED1EWUhcbLEs7N_DMQNise5WmuA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31962433_b_v8_ab.jpg",
+        genre: "Romance, Comedy",
         category: "Recent Adds",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1" /* NEW SERIES INFO */
     },
     {
         title: "Ikkis (2025)",
@@ -109,6 +110,26 @@ const moviesData = [
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
+    {
+        title: "Jassi Weds Jassi (2025)",
+        embedUrl: "https://short.icu/SxgNgGEX-",
+        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Jassi_Weds_Jassi.jpeg/250px-Jassi_Weds_Jassi.jpeg",
+        genre: "Comedy, Drama",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Homebound (2025)",
+        embedUrl: "https://short.icu/xvAdHhax9",
+        posterUrl: "https://resizing.flixster.com/uym-0g8pY-iRyRgx2ailRuRgCwI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30136875_p_v8_ab.jpg",
+        genre: "Drama",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Heer Express (2025)",
         embedUrl: "https://short.icu/9oQWL38MI",
@@ -2027,6 +2048,26 @@ const moviesData = [
         embedUrl: "https://short.icu/DCeT7CI2s",
         posterUrl: "https://resizing.flixster.com/zNJI2FBXYza-aOIakKowth3D604=/fit-in/705x460/v2/https://resizing.flixster.com/Z8gs9lng-shHkpvA2e7K7sTd6BY=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UxNDNlZDliLTdhNWEtNGRjYS05MGIyLTc1NjgwMTA1MzUwYi5qcGc=",
         genre: "Kids & Family, Comedy",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Glass Onion: A Knives Out Mystery (2022)",
+        embedUrl: "https://short.icu/6D30hS2rN",
+        posterUrl: "https://resizing.flixster.com/BRbTJ51LqM__2dTepPLu_uz6-tg=/fit-in/705x460/v2/https://resizing.flixster.com/Mtg-vEUajN8oamKcLLI7hZT-Rhs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FhYTcxNzNkLTExYzItNDk1NC1iNDNmLWViMDRlYjg5NzliNC5qcGc=",
+        genre: "Mystery & Thriller, Comedy, Drama",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Palm Springs (2020)",
+        embedUrl: "https://short.icu/uuX09scXKI",
+        posterUrl: "https://resizing.flixster.com/a_6Eq57ZjvsoP5G5eXTHApbMryM=/fit-in/705x460/v2/https://resizing.flixster.com/us8tHh-h0GN8qIXNH1rybCT5kj4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E1ZjE2ZTM5LWM3MzEtNDlmNS1iNjg2LTllZGRiOWFhMjg5ZS5wbmc=",
+        genre: "Romance, Comedy",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -8764,6 +8805,96 @@ const moviesData = [
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
+    {
+        title: "American Pie Presents: Beta House (2007)",
+        embedUrl: "https://short.icu/Zp0FJqT2f",
+        posterUrl: "https://resizing.flixster.com/KtvEudZVS0_rSEXUwko5nlQB4_o=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p176525_p_v8_au.jpg",
+        genre: "Adult, Comedy, Romance",
+        category: "Adult Comedy",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "American Pie 2 (2001)",
+        embedUrl: "https://short.icu/y9yWWrUen",
+        posterUrl: "https://resizing.flixster.com/HHe4eyvRk45J2IjK1qALAY97Qfg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28143_v_v8_aa.jpg",
+        genre: "Adult, Comedy, Romance",
+        category: "Adult Comedy",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "American Pie (1999)",
+        embedUrl: "https://short.icu/uq-h1ME6i",
+        posterUrl: "https://resizing.flixster.com/ww3QIQ3ONwhUMEpF2QjnbZvX9y4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23343_v_v8_ah.jpg",
+        genre: "Adult, Comedy, Romance",
+        category: "Adult Comedy",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "American Pie 2 (2001)",
+        embedUrl: "https://short.icu/y9yWWrUen",
+        posterUrl: "https://resizing.flixster.com/HHe4eyvRk45J2IjK1qALAY97Qfg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28143_v_v8_aa.jpg",
+        genre: "Adult, Comedy, Romance",
+        category: "Adult Comedy",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "American Pie Presents: Girls' Rules (2020)",
+        embedUrl: "https://short.icu/l_ACVxaHr",
+        posterUrl: "https://resizing.flixster.com/tD4tJ2rKtUcoqvHB4HvceeRT1CM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18805837_p_v8_aa.jpg",
+        genre: "Adult, Comedy, Romance",
+        category: "Adult Comedy",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "American Pie Presents: Band Camp (2005)",
+        embedUrl: "https://short.icu/Yubm8FHkA",
+        posterUrl: "https://resizing.flixster.com/Gs4eG8tVAsyDr-x31p5tHiFZCcY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p160422_p_v8_aq.jpg",
+        genre: "Adult, Comedy, Romance",
+        category: "Adult Comedy",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "American Pie Presents: The Naked Mile (2006)",
+        embedUrl: "https://short.icu/wBv2xlNM0",
+        posterUrl: "https://resizing.flixster.com/P8sf7NvaUAUNLrXuu_5KUHBGOXs=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p165702_v_v8_ap.jpg",
+        genre: "Adult, Comedy, Romance",
+        category: "Adult Comedy",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "American Pie Presents: The Book of Love (2009)",
+        embedUrl: "https://short.icu/thndYa5bu",
+        posterUrl: "https://resizing.flixster.com/u3mU-1n3ezSVMTE7ca_bIY8bRY0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7932738_v_v8_ak.jpg",
+        genre: "Adult, Comedy, Romance",
+        category: "Adult Comedy",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "American Reunion (2012)",
+        embedUrl: "https://short.icu/o4DPtTu2q",
+        posterUrl: "https://resizing.flixster.com/cnoijfJAA31iU_mUNpAcf0VJ3es=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8856830_v_v13_aa.jpg",
+        genre: "Adult, Comedy, Romance",
+        category: "Adult Comedy",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     // =======================================================================
     // 1. OTHER'S / OTHER'S / OTHER'S /
     // =======================================================================
@@ -9039,10 +9170,80 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     },
     {
-        title: "Playing with Dolls_ Havoc (2017)",
+        title: "Playing with Dolls Havoc (2017)",
         embedUrl: "https://short.icu/pH7Lurwed",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BNjg1NzlhZDMtMDEyZS00NTdhLTk1NDgtZmRhM2Y1OGE1NTdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         genre: "Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Spring Breakers (2013)",
+        embedUrl: "https://short.icu/k7gUKpPBX",
+        posterUrl: "https://resizing.flixster.com/VuVIhndtbnMHth_KnojQ30u2J5E=/fit-in/705x460/v2/https://resizing.flixster.com/--eW2DKzLV2jtRsKywv1TKz3QrA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2VlYTI5MTkxLWI0ZmEtNGFkZC1hOWI5LTlhYmNjMWIzY2QwNy5qcGc=",
+        genre: "Comedy, Crime, Drama, Adult",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Bikini Spring Break (2012)",
+        embedUrl: "https://short.icu/dB-HvStIp",
+        posterUrl: "https://resizing.flixster.com/aTd50ZRjCiJ7QX6RyZO1JQRW9fM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9251145_p_v8_ab.jpg",
+        genre: "Comedy, Adult",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Day of the Warrior (1997)",
+        embedUrl: "https://short.icu/0ZWCao8pO",
+        posterUrl: "https://resizing.flixster.com/2n806OTHTHCP3VzByYpDmCExeIk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18782_p_v8_aa.jpg",
+        genre: "Comedy, Adult",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Boat Trip (2003)",
+        embedUrl: "https://short.icu/KrbV9EzGV",
+        posterUrl: "https://resizing.flixster.com/I0RUk72b36FXY7dX6L5ZevSuaVY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30996_v_v8_af.jpg",
+        genre: "Comedy, Adult",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "American Beach House (2015)",
+        embedUrl: "https://short.icu/NIcsCEYm0",
+        posterUrl: "https://resizing.flixster.com/I8V1ZGHGgIwKH3ug4Uk6BYs59Wo=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12044038_p_v13_ac.jpg",
+        genre: "Comedy, Adult",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Bikini Model Academy (2015)",
+        embedUrl: "https://short.icu/5UsQWam1x",
+        posterUrl: "https://resizing.flixster.com/eL2ODy4q1rDittH0stOJi-9smy0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12132029_p_v8_aa.jpg",
+        genre: "Comedy, Adult",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Bikini Bowl-O-Rama (2023)",
+        embedUrl: "https://short.icu/4tUlWsPNQ",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZTcyZDgwMmQtMDc1MC00MWE4LTlkZTMtZWM5OGE0ZjBiZDkwXkEyXkFqcGc@._V1_.jpg",
+        genre: "Comedy, Adult",
         category: "Others",
         language: "English",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -9849,6 +10050,17 @@ const moviesData = [
     // =======================================================================
     // 1. KOREAN WEB-SERIES / KOREAN WEB-SERIES / KOREAN WEB-SERIES /
     // =======================================================================
+    {
+        title: "Spring Fever (2026)",
+        embedUrl: "https://short.icu/9aZ2Ants3",
+        posterUrl: "https://resizing.flixster.com/ED1EWUhcbLEs7N_DMQNise5WmuA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31962433_b_v8_ab.jpg",
+        genre: "Romance, Comedy",
+        category: "Korean Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1" /* NEW SERIES INFO */
+    },
     {
         title: "The 8 Show (2025)",
         embedUrl: "https://short.icu/KNIdH8p38",
