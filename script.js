@@ -10861,7 +10861,7 @@ function filterByCategory(category, updateUrl = true) {
 
                 const sectionHTML = `
                             <div class="mb-8">
-                                <div class="flex justify-between items-center mb-4 px-2 mt-20 pt-5 md:pt-10 md:mb-7">
+                                <div class="flex justify-between items-center mb-4 px-2 mt-20 pt-7 md:pt-10 md:mb-7">
                                     <div class="flex items-center">
                                         <div class="w-2 h-7 bg-[var(--color-accent)] rounded-full mr-3 md:h-10"></div>
                                         <h2 class="text-3xl font-bold text-white md:text-5xl">${catName}</h2>
