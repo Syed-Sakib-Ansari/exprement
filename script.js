@@ -37,14 +37,21 @@ const moviesData = [
     },
     {
         title: "Spring Fever (2026)",
-        embedUrl: "https://short.icu/9aZ2Ants3",
         posterUrl: "https://resizing.flixster.com/ED1EWUhcbLEs7N_DMQNise5WmuA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31962433_b_v8_ab.jpg",
         genre: "Romance, Comedy",
         category: "Recent Adds",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 1" /* NEW SERIES INFO */
+        seriesInfo: "Season 1, Episode 1-6",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/9aZ2Ants3" },
+        { number: 2, title: "Episode 2 Coming soon...", embedUrl: "" },
+        { number: 3, title: "Episode 3 Coming soon...", embedUrl: "" },
+        { number: 4, title: "Episode 4 Coming soon...", embedUrl: "" },
+        { number: 5, title: "Episode 5 Coming soon...", embedUrl: "" },
+        { number: 6, title: "Episode 6 Coming soon...", embedUrl: "" },
+        ]
     },
     {
         title: "Ikkis (2025)",
@@ -9741,325 +9748,94 @@ const moviesData = [
     },
     {
         title: "Black Mirror (2011)",
-        embedUrl: "https://short.icu/FeNjX2_04",
         posterUrl: "https://image.tmdb.org/t/p/original/dw7jYk7EdrkrHozG7F1Yg2eFJTm.jpg",
         genre: "Sci-Fi, Mystery, Thriller",
         category: "Hollywood Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 1" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2011)",
-        embedUrl: "https://short.icu/TbHU9psJ7",
-        posterUrl: "https://image.tmdb.org/t/p/original/dw7jYk7EdrkrHozG7F1Yg2eFJTm.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 2" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2011)",
-        embedUrl: "https://short.icu/Y4hNhtLhq",
-        posterUrl: "https://image.tmdb.org/t/p/original/dw7jYk7EdrkrHozG7F1Yg2eFJTm.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 3" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2011)",
-        embedUrl: "https://short.icu/Y4hNhtLhq",
-        posterUrl: "https://image.tmdb.org/t/p/original/dw7jYk7EdrkrHozG7F1Yg2eFJTm.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 3" /* NEW SERIES INFO */
+        seriesInfo: "Season 1, Episode 1-4",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/FeNjX2_04" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/TbHU9psJ7" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/Y4hNhtLhq" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/Y4hNhtLhq" },
+        { number: 5, title: "Episode 5", embedUrl: "" },
+        { number: 6, title: "Episode 6", embedUrl: "" },
+        ]
     },
     {
         title: "Black Mirror (2013)",
-        embedUrl: "https://short.icu/WJR65iRHp",
         posterUrl: "https://resizing.flixster.com/2oUEBOek5zulz80tMKNXl7QVbsw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9741860_b_v8_aa.jpg",
         genre: "Sci-Fi, Mystery, Thriller",
         category: "Hollywood Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 1" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2013)",
-        embedUrl: "https://short.icu/79iIKVGwS",
-        posterUrl: "https://resizing.flixster.com/2oUEBOek5zulz80tMKNXl7QVbsw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9741860_b_v8_aa.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 2" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2013)",
-        embedUrl: "https://short.icu/Pb08Q2wS1",
-        posterUrl: "https://resizing.flixster.com/2oUEBOek5zulz80tMKNXl7QVbsw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9741860_b_v8_aa.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 3" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2013)",
-        embedUrl: "https://short.icu/NjH3pyepu",
-        posterUrl: "https://resizing.flixster.com/2oUEBOek5zulz80tMKNXl7QVbsw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9741860_b_v8_aa.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 4" /* NEW SERIES INFO */
+        seriesInfo: "Season 2, Episode 1-4",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/WJR65iRHp" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/79iIKVGwS" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/Pb08Q2wS1" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/NjH3pyepu" },
+        ]
     },
     {
         title: "Black Mirror (2016)",
-        embedUrl: "https://short.icu/aci2no056",
         posterUrl: "https://image.tmdb.org/t/p/original/3mKYrlZpFbpFu7CaVxoleO68MFG.jpg",
         genre: "Sci-Fi, Mystery, Thriller",
         category: "Hollywood Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 3, Episode 1" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2016)",
-        embedUrl: "https://short.icu/BTWeM4RXsx",
-        posterUrl: "https://image.tmdb.org/t/p/original/3mKYrlZpFbpFu7CaVxoleO68MFG.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 3, Episode 2" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2016)",
-        embedUrl: "https://short.icu/kxu1Kil-Q",
-        posterUrl: "https://image.tmdb.org/t/p/original/3mKYrlZpFbpFu7CaVxoleO68MFG.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 3, Episode 3" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2016)",
-        embedUrl: "https://short.icu/M5r_T1o4O",
-        posterUrl: "https://image.tmdb.org/t/p/original/3mKYrlZpFbpFu7CaVxoleO68MFG.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 3, Episode 4" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2016)",
-        embedUrl: "https://short.icu/zGWI8fx0u",
-        posterUrl: "https://image.tmdb.org/t/p/original/3mKYrlZpFbpFu7CaVxoleO68MFG.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 3, Episode 5" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2016)",
-        embedUrl: "https://short.icu/76x8Qh_NL",
-        posterUrl: "https://image.tmdb.org/t/p/original/3mKYrlZpFbpFu7CaVxoleO68MFG.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 3, Episode 6" /* NEW SERIES INFO */
+        seriesInfo: "Season 3, Episode 1-6",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/aci2no056" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/BTWeM4RXsx" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/kxu1Kil-Q" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/M5r_T1o4O" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/zGWI8fx0u" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/76x8Qh_NL" },
+        ]
     },
     {
         title: "Black Mirror (2017)",
-        embedUrl: "https://short.icu/AAnrno2TI",
         posterUrl: "https://sm.ign.com/t/ign_ap/screenshot/default/bm-blackmuseum-vertical-main-pre-us-1512486763965_kjks.1400.jpg",
         genre: "Sci-Fi, Mystery, Thriller",
         category: "Hollywood Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 4, Episode 1" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2017)",
-        embedUrl: "https://short.icu/RZiAF49zm",
-        posterUrl: "https://sm.ign.com/t/ign_ap/screenshot/default/bm-blackmuseum-vertical-main-pre-us-1512486763965_kjks.1400.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 4, Episode 2" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2017)",
-        embedUrl: "https://short.icu/mIll3puds",
-        posterUrl: "https://sm.ign.com/t/ign_ap/screenshot/default/bm-blackmuseum-vertical-main-pre-us-1512486763965_kjks.1400.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 4, Episode 3" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2017)",
-        embedUrl: "https://short.icu/BytVDdTBK",
-        posterUrl: "https://sm.ign.com/t/ign_ap/screenshot/default/bm-blackmuseum-vertical-main-pre-us-1512486763965_kjks.1400.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 4, Episode 4" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2017)",
-        embedUrl: "https://short.icu/WKMbcdNwS",
-        posterUrl: "https://sm.ign.com/t/ign_ap/screenshot/default/bm-blackmuseum-vertical-main-pre-us-1512486763965_kjks.1400.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 4, Episode 5" /* NEW SERIES INFO */
-    },
-    {
-        title: "Black Mirror (2017)",
-        embedUrl: "https://short.icu/dGWZB2pwN",
-        posterUrl: "https://sm.ign.com/t/ign_ap/screenshot/default/bm-blackmuseum-vertical-main-pre-us-1512486763965_kjks.1400.jpg",
-        genre: "Sci-Fi, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 4, Episode 6" /* NEW SERIES INFO */
-    },
-    {
-        title: "Cabinet of Curiosities (2022)",
-        embedUrl: "https://short.icu/vZK7OY4Wx",
-        posterUrl: "https://resizing.flixster.com/uZI_vsXqc_24X_dbZDT7bu4FtZQ=/fit-in/705x460/v2/https://resizing.flixster.com/roluxihKzjj6vRYBIlY_SehifZQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWJmNmI4OWQtYjJiNC00OGY1LTgyNWQtMTI5MmZhNTNhMDc5LmpwZw==",
-        genre: "Horror, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 1" /* NEW SERIES INFO */
-    },
-    {
-        title: "Cabinet of Curiosities (2022)",
-        embedUrl: "https://short.icu/Vol-ECi_S",
-        posterUrl: "https://resizing.flixster.com/uZI_vsXqc_24X_dbZDT7bu4FtZQ=/fit-in/705x460/v2/https://resizing.flixster.com/roluxihKzjj6vRYBIlY_SehifZQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWJmNmI4OWQtYjJiNC00OGY1LTgyNWQtMTI5MmZhNTNhMDc5LmpwZw==",
-        genre: "Horror, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 2" /* NEW SERIES INFO */
-    },
-    {
-        title: "Cabinet of Curiosities (2022)",
-        embedUrl: "https://short.icu/3KBgxqBnS",
-        posterUrl: "https://resizing.flixster.com/uZI_vsXqc_24X_dbZDT7bu4FtZQ=/fit-in/705x460/v2/https://resizing.flixster.com/roluxihKzjj6vRYBIlY_SehifZQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWJmNmI4OWQtYjJiNC00OGY1LTgyNWQtMTI5MmZhNTNhMDc5LmpwZw==",
-        genre: "Horror, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 3" /* NEW SERIES INFO */
-    },
-    {
-        title: "Cabinet of Curiosities (2022)",
-        embedUrl: "https://short.icu/8dQACiRQ5",
-        posterUrl: "https://resizing.flixster.com/uZI_vsXqc_24X_dbZDT7bu4FtZQ=/fit-in/705x460/v2/https://resizing.flixster.com/roluxihKzjj6vRYBIlY_SehifZQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWJmNmI4OWQtYjJiNC00OGY1LTgyNWQtMTI5MmZhNTNhMDc5LmpwZw==",
-        genre: "Horror, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 4" /* NEW SERIES INFO */
-    },
-    {
-        title: "Cabinet of Curiosities (2022)",
-        embedUrl: "https://short.icu/3ramkLC30",
-        posterUrl: "https://resizing.flixster.com/uZI_vsXqc_24X_dbZDT7bu4FtZQ=/fit-in/705x460/v2/https://resizing.flixster.com/roluxihKzjj6vRYBIlY_SehifZQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWJmNmI4OWQtYjJiNC00OGY1LTgyNWQtMTI5MmZhNTNhMDc5LmpwZw==",
-        genre: "Horror, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 5" /* NEW SERIES INFO */
-    },
-    {
-        title: "Cabinet of Curiosities (2022)",
-        embedUrl: "https://short.icu/pAiqx2dE1",
-        posterUrl: "https://resizing.flixster.com/uZI_vsXqc_24X_dbZDT7bu4FtZQ=/fit-in/705x460/v2/https://resizing.flixster.com/roluxihKzjj6vRYBIlY_SehifZQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWJmNmI4OWQtYjJiNC00OGY1LTgyNWQtMTI5MmZhNTNhMDc5LmpwZw==",
-        genre: "Horror, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 6" /* NEW SERIES INFO */
-    },
-    {
-        title: "Cabinet of Curiosities (2022)",
-        embedUrl: "https://short.icu/RcMoseO0h",
-        posterUrl: "https://resizing.flixster.com/uZI_vsXqc_24X_dbZDT7bu4FtZQ=/fit-in/705x460/v2/https://resizing.flixster.com/roluxihKzjj6vRYBIlY_SehifZQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWJmNmI4OWQtYjJiNC00OGY1LTgyNWQtMTI5MmZhNTNhMDc5LmpwZw==",
-        genre: "Horror, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 7" /* NEW SERIES INFO */
-    },
-    {
-        title: "Cabinet of Curiosities (2022)",
-        embedUrl: "https://short.icu/Oxuv00T7g",
-        posterUrl: "https://resizing.flixster.com/uZI_vsXqc_24X_dbZDT7bu4FtZQ=/fit-in/705x460/v2/https://resizing.flixster.com/roluxihKzjj6vRYBIlY_SehifZQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWJmNmI4OWQtYjJiNC00OGY1LTgyNWQtMTI5MmZhNTNhMDc5LmpwZw==",
-        genre: "Horror, Mystery, Thriller",
-        category: "Hollywood Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 8" /* NEW SERIES INFO */
+        seriesInfo: "Season 4, Episode 1-6",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/AAnrno2TI" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/RZiAF49zm" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/mIll3puds" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/BytVDdTBK" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/WKMbcdNwS" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/dGWZB2pwN" },
+        ]
     },
     // =======================================================================
     // 1. KOREAN WEB-SERIES / KOREAN WEB-SERIES / KOREAN WEB-SERIES /
     // =======================================================================
     {
         title: "Spring Fever (2026)",
-        embedUrl: "https://short.icu/9aZ2Ants3",
         posterUrl: "https://resizing.flixster.com/ED1EWUhcbLEs7N_DMQNise5WmuA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31962433_b_v8_ab.jpg",
         genre: "Romance, Comedy",
         category: "Korean Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 1" /* NEW SERIES INFO */
+        seriesInfo: "Season 1, Episode 1-6",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/9aZ2Ants3" },
+        { number: 2, title: "Episode 2 Coming soon", embedUrl: "" },
+        { number: 3, title: "Episode 3 Coming soon", embedUrl: "" },
+        { number: 4, title: "Episode 4 Coming soon", embedUrl: "" },
+        { number: 5, title: "Episode 5 Coming soon", embedUrl: "" },
+        { number: 6, title: "Episode 6 Coming soon", embedUrl: "" },
+        ]
     },
     {
         title: "The 8 Show (2025)",
@@ -10084,7 +9860,7 @@ const moviesData = [
         seriesInfo: "Season 1, Episode ALL" /* NEW SERIES INFO */
     },
     {
-        title: "Squid Game: Season 3 (2025)",
+        title: "Squid Game (2025)",
         embedUrl: "https://short.icu/JRBRXToUr",
         posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Squid_Game_season_3_poster.png/250px-Squid_Game_season_3_poster.png",
         genre: "Thriller, Survival",
@@ -10095,7 +9871,7 @@ const moviesData = [
         seriesInfo: "Season 3, Episode 1-6" /* NEW SERIES INFO */
     },
     {
-        title: "Squid Game: Season 2 (2024)",
+        title: "Squid Game (2024)",
         embedUrl: "https://short.icu/bwn5dabqp",
         posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/3/38/Squid_Game_season_2_poster.png/250px-Squid_Game_season_2_poster.png",
         genre: "Thriller, Survival",
@@ -10106,279 +9882,65 @@ const moviesData = [
         seriesInfo: "Season 2, Episode 1-7" /* NEW SERIES INFO */
     },
     {
-        title: "Squid Game: Season 1 (2021)",
-        embedUrl: "https://short.icu/GIZ1RQTZ2",
+        title: "Squid Game (2021)",
         posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Squid_Game_season_1_poster.png/250px-Squid_Game_season_1_poster.png",
         genre: "Thriller, Survival",
         category: "Korean Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 1" /* NEW SERIES INFO */
+        seriesInfo: "Season 1, Episode 1-9",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/GIZ1RQTZ2" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/0F-_q8pDjR" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/KAO3PHL2N" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/7XTSviHk9" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/KO9vEAiEj" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/MHPTBbBKo" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/Qh_ZMTQ5q" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/Z5cP2D8Va" },
+        { number: 9, title: "Episode 9", embedUrl: "https://short.icu/9m77njF-z" },
+        ]
     },
     {
-        title: "Squid Game: Season 1 (2021)",
-        embedUrl: "https://short.icu/0F-_q8pDjR",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Squid_Game_season_1_poster.png/250px-Squid_Game_season_1_poster.png",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 2" /* NEW SERIES INFO */
-    },
-    {
-        title: "Squid Game: Season 1 (2021)",
-        embedUrl: "https://short.icu/KAO3PHL2N",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Squid_Game_season_1_poster.png/250px-Squid_Game_season_1_poster.png",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 3" /* NEW SERIES INFO */
-    },
-    {
-        title: "Squid Game: Season 1 (2021)",
-        embedUrl: "https://short.icu/7XTSviHk9",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Squid_Game_season_1_poster.png/250px-Squid_Game_season_1_poster.png",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 4" /* NEW SERIES INFO */
-    },
-    {
-        title: "Squid Game: Season 1 (2021)",
-        embedUrl: "https://short.icu/KO9vEAiEj",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Squid_Game_season_1_poster.png/250px-Squid_Game_season_1_poster.png",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 5" /* NEW SERIES INFO */
-    },
-    {
-        title: "Squid Game: Season 1 (2021)",
-        embedUrl: "https://short.icu/MHPTBbBKo",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Squid_Game_season_1_poster.png/250px-Squid_Game_season_1_poster.png",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 6" /* NEW SERIES INFO */
-    },
-    {
-        title: "Squid Game: Season 1 (2021)",
-        embedUrl: "https://short.icu/Qh_ZMTQ5q",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Squid_Game_season_1_poster.png/250px-Squid_Game_season_1_poster.png",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 7" /* NEW SERIES INFO */
-    },
-    {
-        title: "Squid Game: Season 1 (2021)",
-        embedUrl: "https://short.icu/Z5cP2D8Va",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Squid_Game_season_1_poster.png/250px-Squid_Game_season_1_poster.png",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 8" /* NEW SERIES INFO */
-    },
-    {
-        title: "Squid Game: Season 1 (2021)",
-        embedUrl: "https://short.icu/9m77njF-z",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Squid_Game_season_1_poster.png/250px-Squid_Game_season_1_poster.png",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 9" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 1 (2020)",
-        embedUrl: "https://short.icu/QgsbbPIUD",
+        title: "Alice in Borderlan (2020)",
         posterUrl: "https://image.tmdb.org/t/p/original/Ac8ruycRXzgcsndTZFK6ouGA0FA.jpg",
         genre: "Thriller, Survival",
         category: "Korean Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 1" /* NEW SERIES INFO */
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/QgsbbPIUD" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/SfBzAptc3" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/8KIjf4DzP" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/u1oZYEa0h" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/8zx_H0cBq" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/a4beTZ_v6" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/8vMs58ima" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/y1KMD1QAp" },
+        ]
     },
     {
-        title: "Alice in Borderlan: Season 1 (2020)",
-        embedUrl: "https://short.icu/SfBzAptc3",
-        posterUrl: "https://image.tmdb.org/t/p/original/Ac8ruycRXzgcsndTZFK6ouGA0FA.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 2" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 1 (2020)",
-        embedUrl: "https://short.icu/8KIjf4DzP",
-        posterUrl: "https://image.tmdb.org/t/p/original/Ac8ruycRXzgcsndTZFK6ouGA0FA.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 3" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 1 (2020)",
-        embedUrl: "https://short.icu/u1oZYEa0h",
-        posterUrl: "https://image.tmdb.org/t/p/original/Ac8ruycRXzgcsndTZFK6ouGA0FA.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 4" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 1 (2020)",
-        embedUrl: "https://short.icu/8zx_H0cBq",
-        posterUrl: "https://image.tmdb.org/t/p/original/Ac8ruycRXzgcsndTZFK6ouGA0FA.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 5" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 1 (2020)",
-        embedUrl: "https://short.icu/a4beTZ_v6",
-        posterUrl: "https://image.tmdb.org/t/p/original/Ac8ruycRXzgcsndTZFK6ouGA0FA.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 6" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 1 (2020)",
-        embedUrl: "https://short.icu/8vMs58ima",
-        posterUrl: "https://image.tmdb.org/t/p/original/Ac8ruycRXzgcsndTZFK6ouGA0FA.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 7" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 1 (2020)",
-        embedUrl: "https://short.icu/y1KMD1QAp",
-        posterUrl: "https://image.tmdb.org/t/p/original/Ac8ruycRXzgcsndTZFK6ouGA0FA.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 8" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 2 (2022)",
-        embedUrl: "https://short.icu/XE3LtOCTf",
+        title: "Alice in Borderlan (2022)",
         posterUrl: "https://m.media-amazon.com/images/I/61idXIynNqL._AC_UF894,1000_QL80_.jpg",
         genre: "Thriller, Survival",
         category: "Korean Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 1" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 2 (2022)",
-        embedUrl: "https://short.icu/UI16ZJ_H-",
-        posterUrl: "https://m.media-amazon.com/images/I/61idXIynNqL._AC_UF894,1000_QL80_.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 2" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 2 (2022)",
-        embedUrl: "https://short.icu/VWHxJkbycJ",
-        posterUrl: "https://m.media-amazon.com/images/I/61idXIynNqL._AC_UF894,1000_QL80_.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 3" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 2 (2022)",
-        embedUrl: "https://short.icu/r_Y214inY",
-        posterUrl: "https://m.media-amazon.com/images/I/61idXIynNqL._AC_UF894,1000_QL80_.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 4" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 2 (2022)",
-        embedUrl: "https://short.icu/F7s29r6M1",
-        posterUrl: "https://m.media-amazon.com/images/I/61idXIynNqL._AC_UF894,1000_QL80_.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 5" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 2 (2022)",
-        embedUrl: "https://short.icu/FJo7hD6-3",
-        posterUrl: "https://m.media-amazon.com/images/I/61idXIynNqL._AC_UF894,1000_QL80_.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 6" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 2 (2022)",
-        embedUrl: "https://short.icu/WXSfC3maj",
-        posterUrl: "https://m.media-amazon.com/images/I/61idXIynNqL._AC_UF894,1000_QL80_.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 7" /* NEW SERIES INFO */
-    },
-    {
-        title: "Alice in Borderlan: Season 2 (2022)",
-        embedUrl: "https://short.icu/xm3QB3xVD",
-        posterUrl: "https://m.media-amazon.com/images/I/61idXIynNqL._AC_UF894,1000_QL80_.jpg",
-        genre: "Thriller, Survival",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode 8" /* NEW SERIES INFO */
+        seriesInfo: "Season 2, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/XE3LtOCTf" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/UI16ZJ_H-" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/VWHxJkbycJ" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/r_Y214inY" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/F7s29r6M1" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/FJo7hD6-3" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/WXSfC3maj" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/xm3QB3xVD" },
+        ]
     },
 ];
 
@@ -10412,6 +9974,7 @@ const mainContent = document.getElementById('main-content');
 
 // Modal Elements
 const videoModal = document.getElementById('videoModal');
+const modalContent = document.querySelector('.modal-content'); // Need this for resizing
 const modalTitle = document.getElementById('modalTitle');
 const videoPlayerFrame = document.getElementById('videoPlayerFrame');
 const modalDownloadBtn = document.getElementById('modalDownloadBtn');
@@ -10440,21 +10003,21 @@ function initSlider() {
     recentMovies.forEach((movie, index) => {
         const isActive = index === 0 ? 'active' : '';
         const slideHtml = `
-            <div class="slide ${isActive}" style="background-image: url('${movie.posterUrl}');">
-                <div class="slide-bg" style="background-image: url('${movie.posterUrl}');"></div>
-                <div class="slide-overlay">
-                    <div class="slide-content">
-                        <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase mb-2 block"></span>
-                        <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">${movie.title}</h2>
-                        <p class="text-gray-300 text-sm md:text-base mb-6 line-clamp-2 max-w-xl">${movie.genre} • ${movie.language} ${movie.seriesInfo ? '• ' + movie.seriesInfo : ''}</p>
-                        <button onclick="openPlayer(${moviesData.indexOf(movie)})" class="bg-[var(--color-accent)] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 flex items-center gap-2">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
-                            Watch Now
-                        </button>
+                    <div class="slide ${isActive}" style="background-image: url('${movie.posterUrl}');">
+                        <div class="slide-bg" style="background-image: url('${movie.posterUrl}');"></div>
+                        <div class="slide-overlay">
+                            <div class="slide-content">
+                                <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase mb-2 block"></span>
+                                <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">${movie.title}</h2>
+                                <p class="text-gray-300 text-sm md:text-base mb-6 line-clamp-2 max-w-xl">${movie.genre} • ${movie.language} ${movie.seriesInfo ? '• ' + movie.seriesInfo : ''}</p>
+                                <button onclick="openPlayer(${moviesData.indexOf(movie)})" class="bg-[var(--color-accent)] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
+                                    Watch Now
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        `;
+                `;
         heroSlider.insertAdjacentHTML('beforeend', slideHtml);
     });
 
@@ -10567,35 +10130,36 @@ function handleDownloadClick(event) {
     }
 }
 
+// =========================================================
+// UPDATED OPEN PLAYER FUNCTION (Delegates to new logic)
+// =========================================================
 function openPlayer(index) {
     const movie = moviesData[index];
     if (!movie) return;
 
-    modalTitle.textContent = movie.title;
+    // Check if Series (based on 'episodes' array presence OR 'seriesInfo' text)
+    let episodes = movie.episodes || [];
 
-    if (movie.embedUrl && movie.embedUrl !== "#") {
-        videoPlayerFrame.src = movie.embedUrl;
+    // NOTE: Only treat as series if actual episodes are defined in the array
+    // This prevents empty sidebars
+    const hasEpisodes = episodes.length > 0;
+
+    if (hasEpisodes) {
+        // CALL NEW SERIES FUNCTION (Defined at bottom)
+        initSeriesPlayer(movie, episodes);
     } else {
-        alert("Video source not available for this demo.");
-        return;
+        // CALL NEW MOVIE FUNCTION (Defined at bottom)
+        initMoviePlayer(movie);
     }
 
     // Setup Download Button Data
     if (movie.downloadUrl1) {
         modalDownloadBtn.style.display = 'flex';
-
-        // Store URLs in data attributes for the handleDownloadClick function
         modalDownloadBtn.dataset.downloadUrl1 = movie.downloadUrl1;
-        // Fallback to URL1 if URL2 is missing, to prevent broken links
         modalDownloadBtn.dataset.downloadUrl2 = movie.downloadUrl2 || movie.downloadUrl1;
-
-        // Reset Click State
         modalDownloadBtn.dataset.clickCount = 0;
-
-        // Reset Text
         const textSpan = modalDownloadBtn.querySelector('span');
         if (textSpan) textSpan.textContent = 'Download';
-
     } else {
         modalDownloadBtn.style.display = 'none';
     }
@@ -10621,72 +10185,68 @@ function createMovieCard(movie, index) {
     // Check for seriesInfo to create a specific layout for web series
     if (movie.seriesInfo) {
         return `
-            <div class="movie-card relative block rounded-lg overflow-hidden transition hover:shadow-2xl cursor-pointer group" onclick="openPlayer(${index})">
-                <div class="block">
-                    <img 
-                        data-src="${movie.posterUrl}" 
-                        alt="Poster for ${movie.title} - "
-                        class="w-full h-auto object-cover aspect-[2/3] placeholder-image transition duration-300 transform group-hover:scale-110"
-                        loading="lazy"
-                        decoding="async" 
-                        onerror="this.onerror=null; this.src='https://placehold.co/300x450/1F2833/E5E7EB?text=Image+Load+Error'"
-                    >
-                    
-                    <!-- Quality/Lang Tag -->
-                    <div class="absolute top-2 right-2 bg-yellow-500 text-black text-xs font-semibold px-2 py-0.5 rounded-full uppercase shadow-md z-10">
-                        ${movie.language}
-                    </div>
+                    <div class="movie-card relative block rounded-lg overflow-hidden transition hover:shadow-2xl cursor-pointer group" onclick="openPlayer(${index})">
+                        <div class="block">
+                            <img 
+                                data-src="${movie.posterUrl}" 
+                                alt="Poster for ${movie.title} - "
+                                class="w-full h-auto object-cover aspect-[2/3] placeholder-image transition duration-300 transform group-hover:scale-110"
+                                loading="lazy"
+                                decoding="async" 
+                                onerror="this.onerror=null; this.src='https://placehold.co/300x450/1F2833/E5E7EB?text=Image+Load+Error'"
+                            >
+                            
+                            <div class="absolute top-2 right-2 bg-yellow-500 text-black text-xs font-semibold px-2 py-0.5 rounded-full uppercase shadow-md z-10">
+                                ${movie.language}
+                            </div>
 
-                    <!-- Play Icon Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 bg-black/40 z-20">
-                        <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg transform scale-0 group-hover:scale-100 transition duration-300">
-                            <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 bg-black/40 z-20">
+                                <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg transform scale-0 group-hover:scale-100 transition duration-300">
+                                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
+                                </div>
+                            </div>
+
+                            <div class="absolute bottom-0 left-0 right-0 pb-2 px-4 bg-gradient-to-t from-black via-black/90 to-transparent flex flex-col justify-end min-h-[18%]">
+                                <h1 class="title text-md font-semibold truncate transition mb-1 shadow-sm text-white">${movie.title}</h1>
+                                <div class="text-yellow-400 text-sm font-bold uppercase tracking-wide">
+                                    ${movie.seriesInfo}
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- Special Web Series Bottom Overlay -->
-                    <div class="absolute bottom-0 left-0 right-0 pb-2 px-4 bg-gradient-to-t from-black via-black/90 to-transparent flex flex-col justify-end min-h-[18%]">
-                        <h1 class="title text-md font-semibold truncate transition mb-1 shadow-sm text-white">${movie.title}</h1>
-                        <div class="text-yellow-400 text-sm font-bold uppercase tracking-wide">
-                            ${movie.seriesInfo}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
+                `;
     }
 
     // Standard Movie Card
     return `
-        <div class="movie-card relative block rounded-lg overflow-hidden transition hover:shadow-2xl cursor-pointer group" onclick="openPlayer(${index})">
-            <div class="block">
-                <img 
-                    data-src="${movie.posterUrl}" 
-                    alt="Poster for ${movie.title} - "
-                    class="w-full h-auto object-cover aspect-[2/3] placeholder-image transition duration-300 transform group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async" 
-                    onerror="this.onerror=null; this.src='https://placehold.co/300x450/1F2833/E5E7EB?text=Image+Load+Error'"
-                >
-                
-                <div class="absolute top-2 right-2 bg-yellow-500 text-black text-xs font-semibold px-2 py-0.5 rounded-full uppercase shadow-md z-10">
-                    ${movie.language}
-                </div>
-
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 bg-black/40 z-20">
-                        <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg transform scale-0 group-hover:scale-100 transition duration-300">
-                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
+                <div class="movie-card relative block rounded-lg overflow-hidden transition hover:shadow-2xl cursor-pointer group" onclick="openPlayer(${index})">
+                    <div class="block">
+                        <img 
+                            data-src="${movie.posterUrl}" 
+                            alt="Poster for ${movie.title} - "
+                            class="w-full h-auto object-cover aspect-[2/3] placeholder-image transition duration-300 transform group-hover:scale-110"
+                            loading="lazy"
+                            decoding="async" 
+                            onerror="this.onerror=null; this.src='https://placehold.co/300x450/1F2833/E5E7EB?text=Image+Load+Error'"
+                        >
+                        
+                        <div class="absolute top-2 right-2 bg-yellow-500 text-black text-xs font-semibold px-2 py-0.5 rounded-full uppercase shadow-md z-10">
+                            ${movie.language}
                         </div>
-                </div>
 
-                <!-- Standard Card Bottom Overlay -->
-                <div class="absolute bottom-0 left-0 right-0 pb-2 px-4 bg-gradient-to-t from-black via-black/90 to-transparent pt-6">
-                    <h1 class="title text-md font-semibold truncate transition shadow-sm text-white">${movie.title}</h1>
-                    <p class="text-xs text-gray-400"></p>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 bg-black/40 z-20">
+                                <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg transform scale-0 group-hover:scale-100 transition duration-300">
+                                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
+                                </div>
+                        </div>
+
+                        <div class="absolute bottom-0 left-0 right-0 pb-2 px-4 bg-gradient-to-t from-black via-black/90 to-transparent pt-6">
+                            <h1 class="title text-md font-semibold truncate transition shadow-sm text-white">${movie.title}</h1>
+                            <p class="text-xs text-gray-400"></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    `;
+            `;
 }
 
 // --- 6. RENDERING ---
@@ -10712,42 +10272,28 @@ function renderMovies(movies) {
 
 // --- 6. LOGIC (Filter, Search, Nav) ---
 menuToggle.addEventListener('click', (e) => {
-    // Prevent the click from propagating to the document listener immediately
     e.stopPropagation();
-
     if (navContentMobile.classList.contains('hidden')) {
-        // OPENING MENU
         navContentMobile.classList.remove('hidden');
         menuToggle.classList.add('open');
-
-        // Push a new state so the back button can catch it
-        // We keep the current URL, just add state
         const currentUrl = window.location.href;
         window.history.pushState({ menu: 'open' }, '', currentUrl);
-
     } else {
-        // CLOSING MENU MANUALLY
         navContentMobile.classList.add('hidden');
         menuToggle.classList.remove('open');
-
-        // Optional: If we wanted to keep history strict, we could history.back() here,
-        // but just hiding it is safer to prevent accidental double-backs.
     }
 });
 
-// Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
     const isMenuOpen = !navContentMobile.classList.contains('hidden');
     const isClickInsideMenu = navContentMobile.contains(e.target);
     const isClickOnToggle = menuToggle.contains(e.target);
-
     if (isMenuOpen && !isClickInsideMenu && !isClickOnToggle) {
         navContentMobile.classList.add('hidden');
         menuToggle.classList.remove('open');
     }
 });
 
-// Initialize Observer for Lazy Loading
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -10759,58 +10305,40 @@ const observer = new IntersectionObserver((entries, observer) => {
     });
 }, { rootMargin: '0px 0px 200px 0px' });
 
-// Helper: Generate HTML for a list of movies
 function generateMoviesHTML(moviesList) {
     if (!moviesList || moviesList.length === 0) return '<p class="text-gray-500 text-sm p-4">No movies found in this category.</p>';
-
     return moviesList.map(movie => {
         const originalIndex = moviesData.indexOf(movie);
         return createMovieCard(movie, originalIndex);
     }).join('');
 }
 
-// Filter Function (Updated for Home View Logic)
 function filterByCategory(category, updateUrl = true) {
     window.scrollTo(0, 0);
-    mainContent.innerHTML = ''; // Clear previous content
+    mainContent.innerHTML = '';
 
-    // HOME VIEW: Iterate all categories
     if (category === 'Recent Adds' || category === 'All') {
-
-        // Show Slider ONLY on Home (Recent Adds)
         if (category === 'Recent Adds') {
             initSlider();
         } else {
-            // STOP the slider if we are navigating away to "All" or "SearchResults"
-            // but still technically inside this block.
-            // Actually, if category is 'All', we hide it below.
-            // But if category is 'Recent Adds', we show it.
-            // Crucial: Clear existing interval first!
             if (sliderInterval) clearInterval(sliderInterval);
         }
 
         if (category === 'All') {
-            heroSlider.style.display = 'none'; // Hide slider on 'All' view
+            heroSlider.style.display = 'none';
         }
 
-        // 1. ADD "Recent Adds" Section explicitly
         let recentMovies;
         if (category === 'All') {
-            // If viewing "All", show everything
             recentMovies = moviesData;
         } else {
-            // If Home view, show items with category 'Recent Adds'
             recentMovies = moviesData.filter(m => m.category === 'Recent Adds');
         }
 
         if (recentMovies.length > 0) {
-
             if (category === 'Recent Adds') {
-                // Limit to 11 items + 1 See All Card = 12 items (2 rows on desktop)
                 const limitedRecent = recentMovies.slice(0, 9);
                 let moviesHTML = generateMoviesHTML(limitedRecent);
-
-                // Append See All Card
                 moviesHTML += createSeeAllCard('All', 'View All');
 
                 const sectionHTML = `
@@ -10828,7 +10356,6 @@ function filterByCategory(category, updateUrl = true) {
                         `;
                 mainContent.insertAdjacentHTML('beforeend', sectionHTML);
             } else {
-                // Full View (No Limit)
                 const sectionHTML = `
                             <div class="flex items-center mb-6">
                                 <div class="w-2 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
@@ -10849,16 +10376,11 @@ function filterByCategory(category, updateUrl = true) {
             }
         }
 
-        // 2. Iterate through other categories
         categoriesList.forEach(catName => {
-            // Limit to 5 items + 1 See All Card = 6 items (1 row on desktop)
             const catMovies = moviesData.filter(m => m.category === catName).slice(0, 9);
-
             if (catMovies.length > 0) {
                 let moviesHTML = generateMoviesHTML(catMovies);
-                // Append See All Card specific to this category
                 moviesHTML += createSeeAllCard(catName, 'See All');
-
                 const sectionHTML = `
                             <div class="mb-8">
                                 <div class="flex justify-between items-center mb-4 px-2 mt-20 pt-7 md:pt-10 md:mb-7">
@@ -10876,30 +10398,25 @@ function filterByCategory(category, updateUrl = true) {
             }
         });
 
-    }
-    // SINGLE CATEGORY VIEW
-    else {
-        heroSlider.style.display = 'none'; // Hide slider on category pages
-        if (sliderInterval) clearInterval(sliderInterval); // Stop slider timer
+    } else {
+        heroSlider.style.display = 'none';
+        if (sliderInterval) clearInterval(sliderInterval);
 
-        // ... existing single category logic ...
         const catMovies = moviesData.filter(movie => movie.category === category);
         const sectionHTML = `
-            <div class="flex items-center mb-6">
-                <div class="w-2 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
-                <h2 class="text-2xl font-semibold" id="section-title">${category}</h2>
-            </div>
-            <section class="movie-grid" id="movieGrid">
-                ${generateMoviesHTML(catMovies)}
-            </section>
-        `;
+                    <div class="flex items-center mb-6">
+                        <div class="w-2 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
+                        <h2 class="text-2xl font-semibold" id="section-title">${category}</h2>
+                    </div>
+                    <section class="movie-grid" id="movieGrid">
+                        ${generateMoviesHTML(catMovies)}
+                    </section>
+                `;
         mainContent.innerHTML = sectionHTML;
     }
 
-    // Re-attach observers to new images
     document.querySelectorAll('.movie-card img').forEach(img => observer.observe(img));
 
-    // Update URL without reloading (only if requested)
     if (updateUrl) {
         const newUrl = new URL(window.location);
         newUrl.searchParams.set('category', category);
@@ -10907,22 +10424,20 @@ function filterByCategory(category, updateUrl = true) {
     }
 }
 
-// Search Functionality (Updated to use mainContent directly)
 function filterBySearch() {
     const activeInput = searchInputDesktop && searchInputDesktop.value ? searchInputDesktop : searchInputMobile;
     const query = activeInput.value.toLowerCase();
     window.scrollTo(0, 0);
 
     if (query === '') {
-        // Return to current category view from URL or Default
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get('category') || 'Recent Adds';
         filterByCategory(category, false);
         return;
     }
 
-    heroSlider.style.display = 'none'; // Hide slider on search
-    if (sliderInterval) clearInterval(sliderInterval); // Stop timer
+    heroSlider.style.display = 'none';
+    if (sliderInterval) clearInterval(sliderInterval);
 
     const filtered = moviesData.filter(movie =>
         movie.title.toLowerCase().includes(query) ||
@@ -10930,17 +10445,16 @@ function filterBySearch() {
     );
 
     const sectionHTML = `
-        <div class="flex items-center mb-6">
-            <div class="w-2 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
-            <h2 class="text-2xl font-semibold">Search Results (${filtered.length})</h2>
-        </div>
-        <section class="movie-grid">
-            ${generateMoviesHTML(filtered)}
-        </section>
-    `;
+                <div class="flex items-center mb-6">
+                    <div class="w-2 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
+                    <h2 class="text-2xl font-semibold">Search Results (${filtered.length})</h2>
+                </div>
+                <section class="movie-grid">
+                    ${generateMoviesHTML(filtered)}
+                </section>
+            `;
     mainContent.innerHTML = sectionHTML;
 
-    // Re-attach observers
     document.querySelectorAll('.movie-card img').forEach(img => observer.observe(img));
 }
 
@@ -10951,14 +10465,10 @@ const inputs = [
 ];
 
 inputs.forEach(({ input, clearBtn }) => {
-    // Update other input to match (sync Desktop <-> Mobile search)
     input.addEventListener('input', () => {
         const otherInput = input === searchInputDesktop ? searchInputMobile : searchInputDesktop;
         const otherClearBtn = input === searchInputDesktop ? clearSearchBtnMobile : clearSearchBtnDesktop;
-
         otherInput.value = input.value;
-
-        // Show/Hide Clear Button logic
         if (input.value.trim().length > 0) {
             clearBtn.classList.remove('hidden');
             otherClearBtn.classList.remove('hidden');
@@ -10966,12 +10476,10 @@ inputs.forEach(({ input, clearBtn }) => {
             clearBtn.classList.add('hidden');
             otherClearBtn.classList.add('hidden');
         }
-
         clearTimeout(searchTimeout);
         searchTimeout = setTimeout(filterBySearch, 300);
     });
 
-    // Enter key logic
     input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -10985,43 +10493,31 @@ inputs.forEach(({ input, clearBtn }) => {
         }
     });
 
-    // Clear Button Click Logic
     clearBtn.addEventListener('click', () => {
         input.value = '';
         const otherInput = input === searchInputDesktop ? searchInputMobile : searchInputDesktop;
         const otherClearBtn = input === searchInputDesktop ? clearSearchBtnMobile : clearSearchBtnDesktop;
         otherInput.value = '';
-
         clearBtn.classList.add('hidden');
         otherClearBtn.classList.add('hidden');
-
-        // Reset search results (go back to category)
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get('category') || 'Recent Adds';
         filterByCategory(category, false);
-
-        input.focus(); // Keep focus on input
+        input.focus();
     });
 });
 
-// Use a selector that targets all elements with a data-category attribute (Event Delegation)
-// Replaces the individual listeners for lighter weight
 document.body.addEventListener('click', (e) => {
     let target = e.target;
-    // Check if clicked element or its parent is a nav link with data-category
     while (target && target !== document.body) {
         if (target.hasAttribute('data-category')) {
             e.preventDefault();
             const category = target.getAttribute('data-category');
             filterByCategory(category);
-
-            // Clear search
             searchInputDesktop.value = '';
             searchInputMobile.value = '';
             clearSearchBtnDesktop.classList.add('hidden');
             clearSearchBtnMobile.classList.add('hidden');
-
-            // Close mobile menu if open
             if (navContentMobile && !navContentMobile.classList.contains('hidden')) {
                 navContentMobile.classList.add('hidden');
                 menuToggle.classList.remove('open');
@@ -11032,7 +10528,6 @@ document.body.addEventListener('click', (e) => {
     }
 });
 
-// Logo Click Handler (Home / Reset)
 if (siteLogo) {
     siteLogo.addEventListener('click', (e) => {
         e.preventDefault();
@@ -11041,7 +10536,6 @@ if (siteLogo) {
         searchInputMobile.value = '';
         clearSearchBtnDesktop.classList.add('hidden');
         clearSearchBtnMobile.classList.add('hidden');
-
         if (navContentMobile) {
             navContentMobile.classList.add('hidden');
             menuToggle.classList.remove('open');
@@ -11049,43 +10543,30 @@ if (siteLogo) {
     });
 }
 
-// Handle Browser Back/Forward Buttons
 window.addEventListener('popstate', (event) => {
-
-    // 1. HANDLE MOBILE MENU CLOSE ON BACK BUTTON
     if (!navContentMobile.classList.contains('hidden')) {
         navContentMobile.classList.add('hidden');
         menuToggle.classList.remove('open');
-        // We return here to let the back button JUST close the menu
-        // If you want it to ALSO navigate back (e.g. from Bollywood -> Home), remove the return.
-        // But usually, back button closing a modal/menu should stop there.
-        // However, since we pushed state on open, the URL hasn't changed relative to the page content.
         return;
     }
-
-    // 2. EXISTING NAVIGATION LOGIC
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category') || 'Recent Adds';
-    filterByCategory(category, false); // Don't push state again
-
-    // Handle deep link popstate
+    filterByCategory(category, false);
     const movieSlug = urlParams.get('movie');
     if (movieSlug) {
         const movieIndex = moviesData.findIndex(m => slugify(m.title) === movieSlug);
         if (movieIndex !== -1) openPlayer(movieIndex);
     } else {
-        closePlayer(); // ensure modal closes if back button removes movie param
+        closePlayer();
     }
 });
 
-// Initial Load - Check URL Param
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category') || 'Recent Adds';
-    filterByCategory(category, false); // Don't push state on initial load
+    filterByCategory(category, false);
 });
 
-// --- DYNAMIC SCHEMA GENERATOR ---
 function generateSchema() {
     const schema = {
         "@context": "https://schema.org",
@@ -11102,14 +10583,12 @@ function generateSchema() {
             }
         }))
     };
-
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
 }
 
-// NEW FUNCTION: Generate See All Card
 function createSeeAllCard(category, label = "See All") {
     return `
                 <div class="movie-card relative block rounded-lg overflow-hidden h-full flex flex-col group" onclick="filterByCategory('${category}')">
@@ -11124,7 +10603,119 @@ function createSeeAllCard(category, label = "See All") {
             `;
 }
 
-// Call generator on load
 generateSchema();
 
-document.addEventListener("contextmenu",e=>e.preventDefault());document.onkeydown=function(e){if(123==e.keyCode)return!1;if(e.ctrlKey&&e.shiftKey){var t=e.keyCode;if(t=="I".charCodeAt(0)||t=="J".charCodeAt(0)||t=="C".charCodeAt(0))return!1}if(e.ctrlKey){var n=e.keyCode;if(n=="U".charCodeAt(0)||n=="S".charCodeAt(0))return e.preventDefault(),!1}};setInterval(function(){debugger},100);
+/* ==========================================================================
+   --- This is Start of episode section ---
+   ========================================================================== */
+
+// Sidebar Elements
+const episodeSidebar = document.getElementById('episodeSidebar');
+const episodeList = document.getElementById('episodeList');
+
+/**
+ * INITIALIZES THE PLAYER IN SERIES MODE
+ * - Shows sidebar, widens modal, and renders the list
+ * - Fixed: Sets maxWidth to 1280px to accommodate sidebar without shrinking video
+ */
+function initSeriesPlayer(movie, episodes) {
+    // Show Sidebar
+    episodeSidebar.classList.remove('hidden');
+    modalContent.style.maxWidth = '1280px'; // Wider to fit sidebar + video
+
+    // Render the interactive list
+    renderEpisodeList(movie, episodes);
+
+    // Set initial state to First Episode
+    modalTitle.textContent = `${movie.title}: ${episodes[0].title}`;
+    if (episodes[0].embedUrl) {
+        videoPlayerFrame.src = episodes[0].embedUrl;
+    }
+}
+
+/**
+ * INITIALIZES THE PLAYER IN MOVIE MODE (STANDARD)
+ * - Hides sidebar, standard width
+ */
+function initMoviePlayer(movie) {
+    // Hide Sidebar
+    episodeSidebar.classList.add('hidden');
+    modalContent.style.maxWidth = '900px'; // Standard width
+
+    modalTitle.textContent = movie.title;
+    if (movie.embedUrl && movie.embedUrl !== "#") {
+        videoPlayerFrame.src = movie.embedUrl;
+    } else {
+        alert("Video source not available for this demo.");
+        return;
+    }
+}
+
+/**
+ * RENDERS THE LIST OF EPISODES IN THE SIDEBAR
+ */
+function renderEpisodeList(movie, episodes) {
+    episodeList.innerHTML = ''; // Clear old list
+
+    episodes.forEach((ep, index) => {
+        const isCurrent = index === 0; // Default to first episode
+
+        // Create container
+        const epDiv = document.createElement('div');
+        epDiv.className = `episode-item flex items-center justify-between p-3 rounded-md cursor-pointer ${isCurrent ? 'active' : 'text-gray-400'}`;
+
+        // Click Event: Change Video and Active Highlight
+        epDiv.onclick = () => {
+            // 1. Reset all visual states
+            document.querySelectorAll('.episode-item').forEach(el => {
+                el.classList.remove('active');
+                el.classList.add('text-gray-400');
+                // Hide play icons
+                const icon = el.querySelector('.play-icon');
+                if (icon) icon.classList.add('opacity-0');
+            });
+
+            // 2. Set clicked item as active
+            epDiv.classList.add('active');
+            epDiv.classList.remove('text-gray-400');
+            epDiv.querySelector('.play-icon').classList.remove('opacity-0');
+
+            // 3. Update Player Title and Source
+            modalTitle.textContent = `${movie.title}: ${ep.title || 'Episode ' + ep.number}`;
+            videoPlayerFrame.src = ep.embedUrl;
+        };
+
+        const infoDiv = document.createElement('div');
+        infoDiv.className = 'flex items-center space-x-3 w-full';
+
+        // Badge (e.g. "1")
+        const badgeHtml = `<div class="episode-number-badge">${ep.number}</div>`;
+
+        // Title & Duration
+        const contentHtml = `
+                    <div class="flex flex-col flex-1 min-w-0">
+                        <span class="text-sm font-semibold truncate text-gray-200 group-hover:text-white">${ep.title || 'Episode ' + ep.number}</span>
+                        
+                    </div>
+                `;
+
+        // Play Icon (visible only on hover or active)
+        const playIcon = `<svg class="w-4 h-4 text-[var(--color-accent)] opacity-0 play-icon transition-opacity duration-200" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>`;
+
+        infoDiv.innerHTML = badgeHtml + contentHtml + playIcon;
+        epDiv.appendChild(infoDiv);
+
+        // Handle icon visibility on initial load
+        if (isCurrent) {
+            epDiv.querySelector('.play-icon').classList.remove('opacity-0');
+        } else {
+            // Hover effects for non-active items
+            epDiv.addEventListener('mouseenter', () => epDiv.querySelector('.play-icon').classList.remove('opacity-0'));
+            epDiv.addEventListener('mouseleave', () => {
+                if (!epDiv.classList.contains('active')) epDiv.querySelector('.play-icon').classList.add('opacity-0');
+            });
+        }
+
+        episodeList.appendChild(epDiv);
+    });
+}
