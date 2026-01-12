@@ -8954,7 +8954,7 @@ const moviesData = [
         posterUrl: "https://www.themoviedb.org/t/p/w600_and_h900_face/dBd9Xd317n5JNI97T5T2Z2g3xo.jpg",
         genre: "Adult, Horror, Sci-Fi, Thriller",
         category: "Others",
-        language: "English",        
+        language: "English",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
@@ -10424,7 +10424,7 @@ let currentSlide = 0;
 function initSlider() {
     // Filter movies marked as "Recent Adds" and limit to 15 items
     const recentMovies = moviesData.filter(m => m.category === 'Recent Adds').slice(0, 6);
-    
+
     // RESET CURRENT SLIDE TO 0 every time init is called
     currentSlide = 0;
 
@@ -10468,20 +10468,20 @@ function initSlider() {
         dotsContainer.appendChild(dot);
     });
     heroSlider.appendChild(dotsContainer);
-    
+
     // Add Touch Swipe Support
     let touchStartX = 0;
     let touchEndX = 0;
-    
+
     heroSlider.addEventListener('touchstart', e => {
         touchStartX = e.changedTouches[0].screenX;
     });
-    
+
     heroSlider.addEventListener('touchend', e => {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
     });
-    
+
     function handleSwipe() {
         if (touchEndX < touchStartX - 50) {
             goToSlide(currentSlide + 1); // Swipe Left -> Next
@@ -10499,7 +10499,7 @@ function goToSlide(index) {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.slider-dot');
     const totalSlides = slides.length;
-    
+
     // Safety check
     if (slides.length === 0) return;
 
@@ -10531,7 +10531,7 @@ function startSliderTimer(length) {
 // Custom Download Logic
 function handleDownloadClick(event) {
     // Prevent the default link navigation immediately
-    event.preventDefault(); 
+    event.preventDefault();
 
     const btn = event.currentTarget;
     const textSpan = btn.querySelector('span'); // Target span to keep icon
@@ -10544,24 +10544,24 @@ function handleDownloadClick(event) {
     if (clickCount < 2 && downloadUrl1) {
         // 1st and 2nd click: Use URL 1
         window.open(downloadUrl1, '_blank');
-        
+
         // Increase count
         clickCount++;
-        btn.dataset.clickCount = clickCount; 
+        btn.dataset.clickCount = clickCount;
 
         // Update text to show progress
         if (textSpan) {
             if (clickCount === 1) {
-                textSpan.textContent = '(Click 1 more time)'; 
+                textSpan.textContent = '(Click 1 more time)';
             } else {
                 textSpan.textContent = 'Ready For Download (Final Click)';
             }
         }
-        
+
     } else if (clickCount >= 2 && downloadUrl2) {
         // 3rd click (count is 2): Use URL 2
         window.open(downloadUrl2, '_blank');
-        
+
         // Update text
         if (textSpan) textSpan.textContent = 'Link Expired (SORRY)';
     }
@@ -10577,25 +10577,25 @@ function openPlayer(index) {
         videoPlayerFrame.src = movie.embedUrl;
     } else {
         alert("Video source not available for this demo.");
-        return; 
+        return;
     }
 
     // Setup Download Button Data
     if (movie.downloadUrl1) {
         modalDownloadBtn.style.display = 'flex';
-        
+
         // Store URLs in data attributes for the handleDownloadClick function
         modalDownloadBtn.dataset.downloadUrl1 = movie.downloadUrl1;
         // Fallback to URL1 if URL2 is missing, to prevent broken links
-        modalDownloadBtn.dataset.downloadUrl2 = movie.downloadUrl2 || movie.downloadUrl1; 
-        
+        modalDownloadBtn.dataset.downloadUrl2 = movie.downloadUrl2 || movie.downloadUrl1;
+
         // Reset Click State
         modalDownloadBtn.dataset.clickCount = 0;
-        
+
         // Reset Text
         const textSpan = modalDownloadBtn.querySelector('span');
         if (textSpan) textSpan.textContent = 'Download';
-        
+
     } else {
         modalDownloadBtn.style.display = 'none';
     }
@@ -10617,7 +10617,7 @@ videoModal.addEventListener('click', (e) => {
 // --- 5. MOVIE CARD GENERATION ---
 function createMovieCard(movie, index) {
     const displayGenre = movie.genre.replace(/\+/g, ' ');
-    
+
     // Check for seriesInfo to create a specific layout for web series
     if (movie.seriesInfo) {
         return `
@@ -10695,7 +10695,7 @@ function renderMovies(movies) {
         const originalIndex = moviesData.indexOf(movie);
         return createMovieCard(movie, originalIndex);
     }).join('');
-    
+
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -10714,22 +10714,22 @@ function renderMovies(movies) {
 menuToggle.addEventListener('click', (e) => {
     // Prevent the click from propagating to the document listener immediately
     e.stopPropagation();
-    
+
     if (navContentMobile.classList.contains('hidden')) {
         // OPENING MENU
         navContentMobile.classList.remove('hidden');
         menuToggle.classList.add('open');
-        
+
         // Push a new state so the back button can catch it
         // We keep the current URL, just add state
         const currentUrl = window.location.href;
         window.history.pushState({ menu: 'open' }, '', currentUrl);
-        
+
     } else {
         // CLOSING MENU MANUALLY
         navContentMobile.classList.add('hidden');
         menuToggle.classList.remove('open');
-        
+
         // Optional: If we wanted to keep history strict, we could history.back() here,
         // but just hiding it is safer to prevent accidental double-backs.
     }
@@ -10762,7 +10762,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 // Helper: Generate HTML for a list of movies
 function generateMoviesHTML(moviesList) {
     if (!moviesList || moviesList.length === 0) return '<p class="text-gray-500 text-sm p-4">No movies found in this category.</p>';
-    
+
     return moviesList.map(movie => {
         const originalIndex = moviesData.indexOf(movie);
         return createMovieCard(movie, originalIndex);
@@ -10776,7 +10776,7 @@ function filterByCategory(category, updateUrl = true) {
 
     // HOME VIEW: Iterate all categories
     if (category === 'Recent Adds' || category === 'All') {
-        
+
         // Show Slider ONLY on Home (Recent Adds)
         if (category === 'Recent Adds') {
             initSlider();
@@ -10786,7 +10786,7 @@ function filterByCategory(category, updateUrl = true) {
             // Actually, if category is 'All', we hide it below.
             // But if category is 'Recent Adds', we show it.
             // Crucial: Clear existing interval first!
-            if (sliderInterval) clearInterval(sliderInterval); 
+            if (sliderInterval) clearInterval(sliderInterval);
         }
 
         if (category === 'All') {
@@ -10796,48 +10796,49 @@ function filterByCategory(category, updateUrl = true) {
         // 1. ADD "Recent Adds" Section explicitly
         let recentMovies;
         if (category === 'All') {
-                // If viewing "All", show everything
-                recentMovies = moviesData;
+            // If viewing "All", show everything
+            recentMovies = moviesData;
         } else {
-                // If Home view, show items with category 'Recent Adds'
-                recentMovies = moviesData.filter(m => m.category === 'Recent Adds');
+            // If Home view, show items with category 'Recent Adds'
+            recentMovies = moviesData.filter(m => m.category === 'Recent Adds');
         }
 
         if (recentMovies.length > 0) {
-            
+
             if (category === 'Recent Adds') {
-                    const sectionHTML = `
-                    <div class="mb-8">
-                        <div class="flex justify-between items-center mb-4 px-2">
-                            <div class="flex items-center">
-                                <div class="w-1 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
-                                <h2 class="text-xl font-bold text-white md:text-4xl">Recent Adds</h2>
+                // Limit to 11 items + 1 See All Card = 12 items (2 rows on desktop)
+                const limitedRecent = recentMovies.slice(0, 9);
+                let moviesHTML = generateMoviesHTML(limitedRecent);
+
+                // Append See All Card
+                moviesHTML += createSeeAllCard('All', 'View All');
+
+                const sectionHTML = `
+                            <div class="mb-8">
+                                <div class="flex justify-between items-center mb-4 px-2">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-7 bg-[var(--color-accent)] rounded-full mr-3 md:h-10"></div>
+                                        <h2 class="text-3xl font-bold text-white md:text-5xl">Recent Adds</h2>
+                                    </div>
+                                </div>
+                                <div class="movie-grid">
+                                    ${moviesHTML}
+                                </div>
                             </div>
-                            <!-- Updated Button: bg-[#23ff00], text-black, hover:bg-[#1ec900] -->
-                            <button onclick="filterByCategory('All')" class="bg-[#23ff00] text-black text-sm font-bold py-1.5 px-10 rounded-full shadow-md hover:bg-[#1ec900] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center md:px-20 md:text-base">
-                                See all
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </button>
-                        </div>
-                        <div class="movie-grid">
-                            ${generateMoviesHTML(recentMovies)}
-                        </div>
-                    </div>
-                `;
+                        `;
                 mainContent.insertAdjacentHTML('beforeend', sectionHTML);
             } else {
-                // "All" View
-                    const sectionHTML = `
-                    <div class="flex items-center mb-6">
-                        <div class="w-2 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
-                        <h2 class="text-2xl font-semibold" id="section-title">All Movies</h2>
-                    </div>
-                    <section class="movie-grid" id="movieGrid">
-                        ${generateMoviesHTML(recentMovies)}
-                    </section>
-                `;
+                // Full View (No Limit)
+                const sectionHTML = `
+                            <div class="flex items-center mb-6">
+                                <div class="w-2 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
+                                <h2 class="text-2xl font-semibold" id="section-title">All Movies</h2>
+                            </div>
+                            <section class="movie-grid" id="movieGrid">
+                                ${generateMoviesHTML(recentMovies)}
+                            </section>
+                        `;
                 mainContent.innerHTML = sectionHTML;
-                // Return early so we don't render categories below "All" list
                 document.querySelectorAll('.movie-card img').forEach(img => observer.observe(img));
                 if (updateUrl) {
                     const newUrl = new URL(window.location);
@@ -10848,32 +10849,34 @@ function filterByCategory(category, updateUrl = true) {
             }
         }
 
-        // 2. Iterate through other categories (Only for Home Page 'Recent Adds' view)
+        // 2. Iterate through other categories
         categoriesList.forEach(catName => {
-            const catMovies = moviesData.filter(m => m.category === catName).slice(0, 12); // Top 6
+            // Limit to 5 items + 1 See All Card = 6 items (1 row on desktop)
+            const catMovies = moviesData.filter(m => m.category === catName).slice(0, 9);
+
             if (catMovies.length > 0) {
+                let moviesHTML = generateMoviesHTML(catMovies);
+                // Append See All Card specific to this category
+                moviesHTML += createSeeAllCard(catName, 'See All');
+
                 const sectionHTML = `
-                    <div class="mb-8">
-                        <div class="flex justify-between items-center mt-20 md:mt-13 md:pt-11 mb-4 px-2">
-                            <div class="flex items-center">
-                                <div class="w-1 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
-                                <h2 class="text-xl md:text-5xl font-bold text-white">${catName}</h2>
+                            <div class="mb-8">
+                                <div class="flex justify-between items-center mb-4 px-2 mt-20 md:pt-10 md:mb-7">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-7 bg-[var(--color-accent)] rounded-full mr-3 md:h-10"></div>
+                                        <h2 class="text-3xl font-bold text-white md:text-5xl">${catName}</h2>
+                                    </div>
+                                </div>
+                                <div class="movie-grid">
+                                    ${moviesHTML}
+                                </div>
                             </div>
-                            <!-- Updated Button: bg-[#23ff00], text-black, hover:bg-[#1ec900] -->
-                            <button onclick="filterByCategory('${catName}')" class="bg-[#23ff00] text-black text-sm font-bold py-1.5 px-10 rounded-full shadow-md hover:bg-[#1ec900] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center md:px-20 md:text-base">
-                                See all
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </button>
-                        </div>
-                        <div class="movie-grid">
-                            ${generateMoviesHTML(catMovies)}
-                        </div>
-                    </div>
-                `;
+                        `;
                 mainContent.insertAdjacentHTML('beforeend', sectionHTML);
             }
         });
-    } 
+
+    }
     // SINGLE CATEGORY VIEW
     else {
         heroSlider.style.display = 'none'; // Hide slider on category pages
@@ -10909,7 +10912,7 @@ function filterBySearch() {
     const activeInput = searchInputDesktop && searchInputDesktop.value ? searchInputDesktop : searchInputMobile;
     const query = activeInput.value.toLowerCase();
     window.scrollTo(0, 0);
-    
+
     if (query === '') {
         // Return to current category view from URL or Default
         const urlParams = new URLSearchParams(window.location.search);
@@ -10917,12 +10920,12 @@ function filterBySearch() {
         filterByCategory(category, false);
         return;
     }
-    
+
     heroSlider.style.display = 'none'; // Hide slider on search
     if (sliderInterval) clearInterval(sliderInterval); // Stop timer
 
-    const filtered = moviesData.filter(movie => 
-        movie.title.toLowerCase().includes(query) || 
+    const filtered = moviesData.filter(movie =>
+        movie.title.toLowerCase().includes(query) ||
         movie.genre.toLowerCase().includes(query)
     );
 
@@ -10936,7 +10939,7 @@ function filterBySearch() {
         </section>
     `;
     mainContent.innerHTML = sectionHTML;
-    
+
     // Re-attach observers
     document.querySelectorAll('.movie-card img').forEach(img => observer.observe(img));
 }
@@ -10952,9 +10955,9 @@ inputs.forEach(({ input, clearBtn }) => {
     input.addEventListener('input', () => {
         const otherInput = input === searchInputDesktop ? searchInputMobile : searchInputDesktop;
         const otherClearBtn = input === searchInputDesktop ? clearSearchBtnMobile : clearSearchBtnDesktop;
-        
+
         otherInput.value = input.value;
-        
+
         // Show/Hide Clear Button logic
         if (input.value.trim().length > 0) {
             clearBtn.classList.remove('hidden');
@@ -10971,7 +10974,7 @@ inputs.forEach(({ input, clearBtn }) => {
     // Enter key logic
     input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
-            e.preventDefault(); 
+            e.preventDefault();
             clearTimeout(searchTimeout);
             filterBySearch();
             if (navContentMobile && !navContentMobile.classList.contains('hidden')) {
@@ -10988,15 +10991,15 @@ inputs.forEach(({ input, clearBtn }) => {
         const otherInput = input === searchInputDesktop ? searchInputMobile : searchInputDesktop;
         const otherClearBtn = input === searchInputDesktop ? clearSearchBtnMobile : clearSearchBtnDesktop;
         otherInput.value = '';
-        
+
         clearBtn.classList.add('hidden');
         otherClearBtn.classList.add('hidden');
-        
+
         // Reset search results (go back to category)
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get('category') || 'Recent Adds';
         filterByCategory(category, false);
-        
+
         input.focus(); // Keep focus on input
     });
 });
@@ -11010,14 +11013,14 @@ document.body.addEventListener('click', (e) => {
         if (target.hasAttribute('data-category')) {
             e.preventDefault();
             const category = target.getAttribute('data-category');
-            filterByCategory(category); 
-            
+            filterByCategory(category);
+
             // Clear search
-            searchInputDesktop.value = ''; 
+            searchInputDesktop.value = '';
             searchInputMobile.value = '';
             clearSearchBtnDesktop.classList.add('hidden');
             clearSearchBtnMobile.classList.add('hidden');
-            
+
             // Close mobile menu if open
             if (navContentMobile && !navContentMobile.classList.contains('hidden')) {
                 navContentMobile.classList.add('hidden');
@@ -11033,12 +11036,12 @@ document.body.addEventListener('click', (e) => {
 if (siteLogo) {
     siteLogo.addEventListener('click', (e) => {
         e.preventDefault();
-        filterByCategory('Recent Adds'); 
-        searchInputDesktop.value = ''; 
-        searchInputMobile.value = ''; 
+        filterByCategory('Recent Adds');
+        searchInputDesktop.value = '';
+        searchInputMobile.value = '';
         clearSearchBtnDesktop.classList.add('hidden');
         clearSearchBtnMobile.classList.add('hidden');
-        
+
         if (navContentMobile) {
             navContentMobile.classList.add('hidden');
             menuToggle.classList.remove('open');
@@ -11048,7 +11051,7 @@ if (siteLogo) {
 
 // Handle Browser Back/Forward Buttons
 window.addEventListener('popstate', (event) => {
-    
+
     // 1. HANDLE MOBILE MENU CLOSE ON BACK BUTTON
     if (!navContentMobile.classList.contains('hidden')) {
         navContentMobile.classList.add('hidden');
@@ -11064,14 +11067,14 @@ window.addEventListener('popstate', (event) => {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category') || 'Recent Adds';
     filterByCategory(category, false); // Don't push state again
-    
+
     // Handle deep link popstate
     const movieSlug = urlParams.get('movie');
     if (movieSlug) {
-            const movieIndex = moviesData.findIndex(m => slugify(m.title) === movieSlug);
-            if(movieIndex !== -1) openPlayer(movieIndex);
+        const movieIndex = moviesData.findIndex(m => slugify(m.title) === movieSlug);
+        if (movieIndex !== -1) openPlayer(movieIndex);
     } else {
-            closePlayer(); // ensure modal closes if back button removes movie param
+        closePlayer(); // ensure modal closes if back button removes movie param
     }
 });
 
@@ -11099,14 +11102,29 @@ function generateSchema() {
             }
         }))
     };
-    
+
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
 }
 
+// NEW FUNCTION: Generate See All Card
+function createSeeAllCard(category, label = "See All") {
+    return `
+                <div class="movie-card relative block rounded-lg overflow-hidden h-full flex flex-col group" onclick="filterByCategory('${category}')">
+                    <div class="see-all-card-inner block h-full relative bg-[#1F2833] border-2 border-dashed border-gray-600 flex flex-col items-center justify-center aspect-[2/3] hover:bg-gray-800 hover:border-[var(--color-accent)] transition duration-300 cursor-pointer">
+                        <div class="see-all-icon w-14 h-14 rounded-full bg-[var(--color-accent)]/20 text-[var(--color-accent)] flex items-center justify-center mb-3 shadow-lg transition transform duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                        <span class="text-white font-bold text-2xl uppercase tracking-wider">${label}</span>
+                        <span class="text-gray-500 text-base mt-1 font-semibold">${category === 'Recent Adds' ? 'View All' : category}</span>
+                    </div>
+                </div>
+            `;
+}
+
 // Call generator on load
 generateSchema();
 
-document.addEventListener("contextmenu",e=>e.preventDefault());document.onkeydown=function(e){if(123==e.keyCode)return!1;if(e.ctrlKey&&e.shiftKey){var t=e.keyCode;if(t=="I".charCodeAt(0)||t=="J".charCodeAt(0)||t=="C".charCodeAt(0))return!1}if(e.ctrlKey){var n=e.keyCode;if(n=="U".charCodeAt(0)||n=="S".charCodeAt(0))return e.preventDefault(),!1}};setInterval(function(){debugger},100);
+// document.addEventListener("contextmenu",e=>e.preventDefault());document.onkeydown=function(e){if(123==e.keyCode)return!1;if(e.ctrlKey&&e.shiftKey){var t=e.keyCode;if(t=="I".charCodeAt(0)||t=="J".charCodeAt(0)||t=="C".charCodeAt(0))return!1}if(e.ctrlKey){var n=e.keyCode;if(n=="U".charCodeAt(0)||n=="S".charCodeAt(0))return e.preventDefault(),!1}};setInterval(function(){debugger},100);

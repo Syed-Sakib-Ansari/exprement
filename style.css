@@ -88,8 +88,8 @@ body {
 
     /* lg */
     .movie-grid {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        row-gap: 4rem;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        row-gap: 3.40rem;
         column-gap: 1.30rem;
     }
 }
@@ -352,6 +352,17 @@ body {
     position: absolute;
     color: var(--color-accent);
     animation: pulse 2s infinite;
+}
+
+/* SEE ALL CARD ANIMATION */
+.see-all-card-inner:hover {
+    border-color: var(--color-accent);
+}
+
+.see-all-card-inner:hover .see-all-icon {
+    transform: scale(1.1);
+    background-color: var(--color-accent);
+    color: white;
 }
 
 @keyframes spin {
