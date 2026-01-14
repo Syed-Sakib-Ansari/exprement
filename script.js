@@ -11029,7 +11029,7 @@ function filterByCategory(category, updateUrl = true) {
 
         if (recentMovies.length > 0) {
             if (category === 'Recent Adds') {
-                const limitedRecent = recentMovies.slice(0, 9);
+                const limitedRecent = recentMovies.slice(0, 13);
                 let moviesHTML = generateMoviesHTML(limitedRecent);
                 moviesHTML += createSeeAllCard('All', 'View All');
 
