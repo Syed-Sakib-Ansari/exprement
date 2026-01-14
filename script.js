@@ -16,6 +16,26 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
+        title: "Anantha (2026)",
+        embedUrl: "https://short.icu/1EbwQuxWb",
+        posterUrl: "https://scontent.fdac189-1.fna.fbcdn.net/v/t39.30808-6/615469044_1429716052498141_4787021575409013824_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeECigd93hwenYQd7dcbqq5rki15iHNnSYaSLXmIc2dJhufqXALJ1IZxzw7BGZMgyJkBZtjrZJLvkPEnJysk5gmY&_nc_ohc=fI3WsinxMp0Q7kNvwE2-31B&_nc_oc=AdlMNJYXIWZ_ya5bEqpznwXvUPjheiAcJGqGPpY8b2-kD35dPjcfb9HH-i_qJVji93w&_nc_zt=23&_nc_ht=scontent.fdac189-1.fna&_nc_gid=LTRRbroPYKA6n9MtWOs0vg&oh=00_AfqVUMFcefHJGmAZK4S5mF4ahb_AHAjYk-0w8uCqt5SQ2A&oe=696CDB01",
+        genre: "Mystery & Thriller",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "One Last Adventure: The Making of Stranger Things 5 (2026)",
+        embedUrl: "https://short.icu/pwMvswIvRX",
+        posterUrl: "https://resizing.flixster.com/RySUwR7xtWFEWIVTTWle9T0yUKE=/fit-in/705x460/v2/https://resizing.flixster.com/Y9LuKKzz7gyGwXOiuHQ45yVzyHc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q0MTc5M2JlLTU3NDYtNDNhNS04NzI0LTI4YzAyZWRmNDVjOC5qcGc=",
+        genre: "Documentary",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=bUlpK1lLeDN3NkdWR0VKbVk1emd4VDM5NVcwVkxDVXlOakQreEVTU0QySmhaQnlFWDcvaC9nS1N3M1lIN2RwRDdsNWVwNmlRSkRkWlNxbENJOElKZ2YyMmxzZnRQWmtySDYrQzhrM1ZZL0k9"
+    },
+    {
         title: "It Feeds (2025)",
         embedUrl: "https://short.icu/6aIQ2Dvf0",
         posterUrl: "https://resizing.flixster.com/PSjIrHJ3qcO75wCCK67gLCGtow8=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28237146_v_v9_ah.jpg",
@@ -37,24 +57,34 @@ const moviesData = [
         seriesInfo: "Season 1, Episode 1-3" /* NEW SERIES INFO */
     },
     {
-        title: "Eko (2025)",
-        embedUrl: "https://short.icu/Km0BkZEqf",
-        posterUrl: "https://resizing.flixster.com/g9ADdd_1ULwBCuLibHjYUOxoXd8=/fit-in/705x460/v2/https://resizing.flixster.com/YDvSYoB5W6Rwh67ysE0pVsz3XnM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzY5ZWE3NTM0LTliMjEtNDZhMi04ZmQzLWQ0YjZiNTM3ODAxYi5qcGc=",
-        genre: "Adventure, Drama",
+        title: "Nikita Roy (2025)",
+        embedUrl: "https://short.icu/keucnyZfW",
+        posterUrl: "https://resizing.flixster.com/9YDzKnU2ccQE512Fa6thL1EaCU8=/fit-in/705x460/v2/https://resizing.flixster.com/Ca1qJZiX05tlsOj-3KfMYbZm6yI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzVjZjQzNjQ2LTVhNjMtNDExMi1hMDQ5LThlNGViY2JjYzhjOS5qcGc=",
+        genre: "Horror, Mystery & Thriller",
         category: "Recent Adds",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
-        title: "45 (2026)",
-        embedUrl: "https://short.icu/NbWhACHo6",
-        posterUrl: "https://resizing.flixster.com/BqHqvQPvS3GZmbQmGbZtECwjrag=/fit-in/705x460/v2/https://resizing.flixster.com/eSPywC9v_ANVF68NgiJMIuRohZc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkwZDliNDg4LWYxM2QtNDc5ZC1hN2EwLTk1NjkxZDcyOThiZC5qcGc=",
-        genre: "Action, Drama, Comedy",
+        title: "Not All Movies Are the Same: Dual (2025)",
+        embedUrl: "https://short.icu/VETxVIqyr",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BNjFjYjg3NTEtYmNiYS00M2RjLWIzZWUtYzQ4ZTAyMzQwZTVkXkEyXkFqcGc@._V1_.jpg",
+        genre: "Horror, Mystery & Thriller",
         category: "Recent Adds",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Greenland 2: Migration (2026)",
+        embedUrl: "https://short.icu/dd0LN4Kqb",
+        posterUrl: "https://resizing.flixster.com/Jcagxp8DzEFJ6TE1LiWFs0IvnJ8=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31225913_v_v13_ae.jpg",
+        genre: "Action, Adventure, Mystery & Thriller",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=bUlpK1lLeDN3NkdWR0VKbVk1emd4VDM5NVcwVkxDVXlOakQreEVTU0QySmhaQnlFWDcvaC9nS1N3M1lIN2RwRDdsNWVwNmlRSkRkWlNxbENJOElKZ2YyMmxzZnRQWmtySDYrQzhrM1ZZL0k9"
     },
     {
         title: "Spring Fever (2026)",
@@ -107,6 +137,16 @@ const moviesData = [
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
+    {
+        title: "Nikita Roy (2025)",
+        embedUrl: "https://short.icu/keucnyZfW",
+        posterUrl: "https://resizing.flixster.com/9YDzKnU2ccQE512Fa6thL1EaCU8=/fit-in/705x460/v2/https://resizing.flixster.com/Ca1qJZiX05tlsOj-3KfMYbZm6yI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzVjZjQzNjQ2LTVhNjMtNDExMi1hMDQ5LThlNGViY2JjYzhjOS5qcGc=",
+        genre: "Horror, Mystery & Thriller",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Inspector Zende (2025)",
         embedUrl: "https://short.icu/0nkIHM-DD",
@@ -1440,6 +1480,26 @@ const moviesData = [
     // =======================================================================
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
+    {
+        title: "One Last Adventure: The Making of Stranger Things 5 (2026)",
+        embedUrl: "https://short.icu/pwMvswIvRX",
+        posterUrl: "https://resizing.flixster.com/RySUwR7xtWFEWIVTTWle9T0yUKE=/fit-in/705x460/v2/https://resizing.flixster.com/Y9LuKKzz7gyGwXOiuHQ45yVzyHc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q0MTc5M2JlLTU3NDYtNDNhNS04NzI0LTI4YzAyZWRmNDVjOC5qcGc=",
+        genre: "Documentary",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=bUlpK1lLeDN3NkdWR0VKbVk1emd4VDM5NVcwVkxDVXlOakQreEVTU0QySmhaQnlFWDcvaC9nS1N3M1lIN2RwRDdsNWVwNmlRSkRkWlNxbENJOElKZ2YyMmxzZnRQWmtySDYrQzhrM1ZZL0k9"
+    },
+    {
+        title: "Greenland 2: Migration (2026)",
+        embedUrl: "https://short.icu/dd0LN4Kqb",
+        posterUrl: "https://resizing.flixster.com/Jcagxp8DzEFJ6TE1LiWFs0IvnJ8=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31225913_v_v13_ae.jpg",
+        genre: "Action, Adventure, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=bUlpK1lLeDN3NkdWR0VKbVk1emd4VDM5NVcwVkxDVXlOakQreEVTU0QySmhaQnlFWDcvaC9nS1N3M1lIN2RwRDdsNWVwNmlRSkRkWlNxbENJOElKZ2YyMmxzZnRQWmtySDYrQzhrM1ZZL0k9"
+    },
     {
         title: "It Feeds (2025)",
         embedUrl: "https://short.icu/6aIQ2Dvf0",
@@ -7509,6 +7569,26 @@ const moviesData = [
     // =======================================================================
     // 1. SOUTH / SOUTH / SOUTH/ SOUTH / SOUTH / SOUTH
     // =======================================================================
+    {
+        title: "Anantha (2026)",
+        embedUrl: "https://short.icu/1EbwQuxWb",
+        posterUrl: "https://scontent.fdac189-1.fna.fbcdn.net/v/t39.30808-6/615469044_1429716052498141_4787021575409013824_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeECigd93hwenYQd7dcbqq5rki15iHNnSYaSLXmIc2dJhufqXALJ1IZxzw7BGZMgyJkBZtjrZJLvkPEnJysk5gmY&_nc_ohc=fI3WsinxMp0Q7kNvwE2-31B&_nc_oc=AdlMNJYXIWZ_ya5bEqpznwXvUPjheiAcJGqGPpY8b2-kD35dPjcfb9HH-i_qJVji93w&_nc_zt=23&_nc_ht=scontent.fdac189-1.fna&_nc_gid=LTRRbroPYKA6n9MtWOs0vg&oh=00_AfqVUMFcefHJGmAZK4S5mF4ahb_AHAjYk-0w8uCqt5SQ2A&oe=696CDB01",
+        genre: "Mystery & Thriller",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Not All Movies Are the Same: Dual (2025)",
+        embedUrl: "https://short.icu/VETxVIqyr",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BNjFjYjg3NTEtYmNiYS00M2RjLWIzZWUtYzQ4ZTAyMzQwZTVkXkEyXkFqcGc@._V1_.jpg",
+        genre: "Horror, Mystery & Thriller",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "The Raja Saab (2026)",
         embedUrl: "https://short.icu/-fW_xW261",
