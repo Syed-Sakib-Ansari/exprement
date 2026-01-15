@@ -16,6 +16,57 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
+        title: "Taskaree: The Smuggler's Web (2026)",
+        embedUrl: "https://short.icu/dfWzLix8c",
+        posterUrl: "https://resizing.flixster.com/Q2gvXUlUqd-jljT_JFDF3cdvVBs=/fit-in/705x460/v2/https://resizing.flixster.com/_g1s57Z8DKPoPWmvNEeXOtLFLTM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZjhhYzJhZDctOWY3Ni00MTkxLTgzODctYjBlNjFhZDYzMWE3LmpwZw==",
+        genre: "Crime, Mystery & Thriller",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
+        seriesInfo: "Season 1, Episode All"
+    },
+    {
+        title: "Dear Radhi (2026)",
+        embedUrl: "https://short.icu/Ex7VnepBr",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZDBiOTBmYjctNzY5Mi00ZjAxLWJmZGUtZDk1ZDljZmNjNzhhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Comedy, Fantasy, Drama",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Sarvam Maya (2025)",
+        embedUrl: "https://short.icu/d8ezDPPJG",
+        posterUrl: "https://resizing.flixster.com/_Q7bixzrtb7hyEAM-lT5gSYSwGk=/fit-in/705x460/v2/https://resizing.flixster.com/W1JbpmDQ-ieMm_b_ZJ2Fpvc7WKA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkzNzAzNDQ0LTYxMGQtNGZlOS1iM2ZhLWM5NjFiZjE1ZGU3MC5qcGc=",
+        genre: "Comedy, Fantasy, Drama",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Asvins (2023)",
+        embedUrl: "https://short.icu/AEyIZUffw",
+        posterUrl: "https://resizing.flixster.com/TucQHc8sjZNRhKImwAS9Q0qzAZA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25255566_v_v13_aa.jpg",
+        genre: "Horror, Mystery & Thriller",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Dhandoraa (2026)",
+        embedUrl: "https://short.icu/Zdqpn4t7r",
+        posterUrl: "https://preview.redd.it/dhandoraa-2026-review-discussion-thread-spoilers-must-be-v0-qc8oxfccpi9g1.jpg?width=1800&format=pjpg&auto=webp&s=59870562fb2ae1db6bb1a417f5ccfbb98224ba75",
+        genre: "Mystery & Thriller, Drama",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Anantha (2026)",
         embedUrl: "https://short.icu/1EbwQuxWb",
         posterUrl: "https://scontent.fdac189-1.fna.fbcdn.net/v/t39.30808-6/615469044_1429716052498141_4787021575409013824_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeECigd93hwenYQd7dcbqq5rki15iHNnSYaSLXmIc2dJhufqXALJ1IZxzw7BGZMgyJkBZtjrZJLvkPEnJysk5gmY&_nc_ohc=fI3WsinxMp0Q7kNvwE2-31B&_nc_oc=AdlMNJYXIWZ_ya5bEqpznwXvUPjheiAcJGqGPpY8b2-kD35dPjcfb9HH-i_qJVji93w&_nc_zt=23&_nc_ht=scontent.fdac189-1.fna&_nc_gid=LTRRbroPYKA6n9MtWOs0vg&oh=00_AfqVUMFcefHJGmAZK4S5mF4ahb_AHAjYk-0w8uCqt5SQ2A&oe=696CDB01",
@@ -87,48 +138,10 @@ const moviesData = [
         downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=bUlpK1lLeDN3NkdWR0VKbVk1emd4VDM5NVcwVkxDVXlOakQreEVTU0QySmhaQnlFWDcvaC9nS1N3M1lIN2RwRDdsNWVwNmlRSkRkWlNxbENJOElKZ2YyMmxzZnRQWmtySDYrQzhrM1ZZL0k9"
     },
     {
-        title: "Spring Fever (2026)",
-        posterUrl: "https://resizing.flixster.com/ED1EWUhcbLEs7N_DMQNise5WmuA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31962433_b_v8_ab.jpg",
-        genre: "Romance, Comedy",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 1-6",
-        episodes: [
-        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/9aZ2Ants3" },
-        { number: 2, title: "Episode 2 Coming soon...", embedUrl: "" },
-        { number: 3, title: "Episode 3 Coming soon...", embedUrl: "" },
-        { number: 4, title: "Episode 4 Coming soon...", embedUrl: "" },
-        { number: 5, title: "Episode 5 Coming soon...", embedUrl: "" },
-        { number: 6, title: "Episode 6 Coming soon...", embedUrl: "" },
-        ]
-    },
-    {
         title: "Ikkis (2025)",
         embedUrl: "https://short.icu/TJV9X-QZ3",
         posterUrl: "https://resizing.flixster.com/L3C0ivLugq77ZlDuBLp7oUi0ftY=/fit-in/705x460/v2/https://resizing.flixster.com/4hZ1tcHd-dJlyXySrwhXS69bNFE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzJlYWQxYjk2LWZjNTUtNDNhZC1iMDYyLTJkZDU1Yjk3Yzk0MS5qcGc=",
         genre: "Biography, War, History, Drama",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "The Raja Saab (2026)",
-        embedUrl: "https://short.icu/-fW_xW261",
-        posterUrl: "https://resizing.flixster.com/TCnm-VWLJOfxNw4akLEDjOLGLBU=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30946581_p_v8_aa.jpg",
-        genre: "Comedy, Horror, Romance, Mystery & Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Others (2025)",
-        embedUrl: "https://short.icu/AB_NcFXbp",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BNWIzOGQyZDItZGZhYy00YjI3LWFkY2YtNTgwNzkwMDAwYzRkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        genre: "Action, Drama, Suspense, Thriller, Mystery",
         category: "Recent Adds",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -149,7 +162,7 @@ const moviesData = [
     },
     {
         title: "Inspector Zende (2025)",
-        embedUrl: "https://short.icu/0nkIHM-DD",
+        embedUrl: "https://short.icu/5sLX6LKQX",
         posterUrl: "https://resizing.flixster.com/9Pqs7Rl5qzcZgWdmSHmhPPO4cRU=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30953561_p_v10_aa.jpg",
         genre: "Comedy, Drama",
         category: "Bollywood",
@@ -7570,6 +7583,46 @@ const moviesData = [
     // 1. SOUTH / SOUTH / SOUTH/ SOUTH / SOUTH / SOUTH
     // =======================================================================
     {
+        title: "Dear Radhi (2026)",
+        embedUrl: "https://short.icu/Ex7VnepBr",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZDBiOTBmYjctNzY5Mi00ZjAxLWJmZGUtZDk1ZDljZmNjNzhhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Comedy, Fantasy, Drama",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Sarvam Maya (2025)",
+        embedUrl: "https://short.icu/d8ezDPPJG",
+        posterUrl: "https://resizing.flixster.com/_Q7bixzrtb7hyEAM-lT5gSYSwGk=/fit-in/705x460/v2/https://resizing.flixster.com/W1JbpmDQ-ieMm_b_ZJ2Fpvc7WKA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkzNzAzNDQ0LTYxMGQtNGZlOS1iM2ZhLWM5NjFiZjE1ZGU3MC5qcGc=",
+        genre: "Comedy, Fantasy, Drama",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Asvins (2023)",
+        embedUrl: "https://short.icu/AEyIZUffw",
+        posterUrl: "https://resizing.flixster.com/TucQHc8sjZNRhKImwAS9Q0qzAZA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25255566_v_v13_aa.jpg",
+        genre: "Horror, Mystery & Thriller",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Dhandoraa (2026)",
+        embedUrl: "https://short.icu/Zdqpn4t7r",
+        posterUrl: "https://preview.redd.it/dhandoraa-2026-review-discussion-thread-spoilers-must-be-v0-qc8oxfccpi9g1.jpg?width=1800&format=pjpg&auto=webp&s=59870562fb2ae1db6bb1a417f5ccfbb98224ba75",
+        genre: "Mystery & Thriller, Drama",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Anantha (2026)",
         embedUrl: "https://short.icu/1EbwQuxWb",
         posterUrl: "https://scontent.fdac189-1.fna.fbcdn.net/v/t39.30808-6/615469044_1429716052498141_4787021575409013824_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeECigd93hwenYQd7dcbqq5rki15iHNnSYaSLXmIc2dJhufqXALJ1IZxzw7BGZMgyJkBZtjrZJLvkPEnJysk5gmY&_nc_ohc=fI3WsinxMp0Q7kNvwE2-31B&_nc_oc=AdlMNJYXIWZ_ya5bEqpznwXvUPjheiAcJGqGPpY8b2-kD35dPjcfb9HH-i_qJVji93w&_nc_zt=23&_nc_ht=scontent.fdac189-1.fna&_nc_gid=LTRRbroPYKA6n9MtWOs0vg&oh=00_AfqVUMFcefHJGmAZK4S5mF4ahb_AHAjYk-0w8uCqt5SQ2A&oe=696CDB01",
@@ -9770,6 +9823,17 @@ const moviesData = [
     // 1. BOLLYWOOD WEB-SERIES / BOLLYWOOD WEB-SERIES / BOLLYWOOD WEB-SERIES /
     // =======================================================================
     {
+        title: "Taskaree: The Smuggler's Web (2026)",
+        embedUrl: "https://short.icu/dfWzLix8c",
+        posterUrl: "https://resizing.flixster.com/Q2gvXUlUqd-jljT_JFDF3cdvVBs=/fit-in/705x460/v2/https://resizing.flixster.com/_g1s57Z8DKPoPWmvNEeXOtLFLTM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZjhhYzJhZDctOWY3Ni00MTkxLTgzODctYjBlNjFhZDYzMWE3LmpwZw==",
+        genre: "Crime, Mystery & Thriller",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
+        seriesInfo: "Season 1, Episode All"
+    },
+    {
         title: "Gyaarah Gyaarah (2024)",
         embedUrl: "https://short.icu/DGxg1APTw",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BY2JiOTlhYTUtZTk5Zi00MjA1LTkxYmQtOTgyODJmNmJmYmZlXkEyXkFqcGc@._V1_.jpg",
@@ -10511,24 +10575,6 @@ const moviesData = [
     // =======================================================================
     // 1. KOREAN WEB-SERIES / KOREAN WEB-SERIES / KOREAN WEB-SERIES /
     // =======================================================================
-    {
-        title: "Spring Fever (2026)",
-        posterUrl: "https://resizing.flixster.com/ED1EWUhcbLEs7N_DMQNise5WmuA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31962433_b_v8_ab.jpg",
-        genre: "Romance, Comedy",
-        category: "Korean Series",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode 1-6",
-        episodes: [
-        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/9aZ2Ants3" },
-        { number: 2, title: "Episode 2 Coming soon", embedUrl: "" },
-        { number: 3, title: "Episode 3 Coming soon", embedUrl: "" },
-        { number: 4, title: "Episode 4 Coming soon", embedUrl: "" },
-        { number: 5, title: "Episode 5 Coming soon", embedUrl: "" },
-        { number: 6, title: "Episode 6 Coming soon", embedUrl: "" },
-        ]
-    },
     {
         title: "The 8 Show (2025)",
         embedUrl: "https://short.icu/KNIdH8p38",
