@@ -291,6 +291,16 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
+        title: "Phobia (2016)",
+        embedUrl: "https://short.icu/u1oDnGsNI",
+        posterUrl: "https://resizing.flixster.com/yWqX2LbGEfsW06j-dmjZ0YDQ1ME=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p14040115_v_v8_ab.jpg",
+        genre: "Mystery & Thriller",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Vicky Vidya Ka Woh Wala Video (2024)",
         embedUrl: "https://short.icu/4Dr8ty-88",
         posterUrl: "https://resizing.flixster.com/TGibnRe1TWGgwwMN5TQ41oml8Nk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28276749_v_v13_aa.jpg",
@@ -1494,6 +1504,26 @@ const moviesData = [
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
     {
+        title: "Us (2019)",
+        embedUrl: "https://short.icu/qb-e2EKzF",
+        posterUrl: "https://resizing.flixster.com/yTdkQ85hzgjlXWwWn-ygE3950H4=/fit-in/705x460/v2/https://resizing.flixster.com/s-5EbDRMyhekAVkvO4FgOnE2Ybc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2MyZWMxMmM0LTdmOTMtNDU3OC05MThiLTk2OTU5YjFkZDhjZi53ZWJw",
+        genre: "Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=dVpnU0FYSERIdVJ4SU45dlRROW1vb2ZocVBjZ0xmTGY4WnpPbkQyTy9PbVBrc0F0VzJyRWFMeHoyLzNPNkc2SUNTSXN5cVloK25sSm54ZlRPRWR5WDA1OFBiZVFXOUJJODMvRkhtY2VmUUk9"
+    },
+    {
+        title: "Weapons (2025)",
+        embedUrl: "https://short.icu/Be_a6nwyj",
+        posterUrl: "https://resizing.flixster.com/urnEX1TNbxIyYQPcRuEISEPcCqM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30053254_v_v13_ah.jpg",
+        genre: "Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=dVpnU0FYSERIdVJ4SU45dlRROW1vb2ZocVBjZ0xmTGY4WnpPbkQyTy9PbVBrc0F0VzJyRWFMeHoyLzNPNkc2SUNTSXN5cVloK25sSm54ZlRPRWR5WDA1OFBiZVFXOUJJODMvRkhtY2VmUUk9"
+    },
+    {
         title: "One Last Adventure: The Making of Stranger Things 5 (2026)",
         embedUrl: "https://short.icu/pwMvswIvRX",
         posterUrl: "https://resizing.flixster.com/RySUwR7xtWFEWIVTTWle9T0yUKE=/fit-in/705x460/v2/https://resizing.flixster.com/Y9LuKKzz7gyGwXOiuHQ45yVzyHc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q0MTc5M2JlLTU3NDYtNDNhNS04NzI0LTI4YzAyZWRmNDVjOC5qcGc=",
@@ -1748,6 +1778,16 @@ const moviesData = [
         embedUrl: "https://short.icu/rrLQjNwli",
         posterUrl: "https://resizing.flixster.com/KwqLpPJ4RpeDzOT68fFvjaTYIhE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27741505_v_v13_ai.jpg",
         genre: "Mystery & Thriller, Action, Drama",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=dVpnU0FYSERIdVJ4SU45dlRROW1vb2ZocVBjZ0xmTGY4WnpPbkQyTy9PbVBrc0F0VzJyRWFMeHoyLzNPNkc2SUNTSXN5cVloK25sSm54ZlRPRWR5WDA1OFBiZVFXOUJJODMvRkhtY2VmUUk9"
+    },
+    {
+        title: "Evil Dead Rise (2023)",
+        embedUrl: "https://short.icu/6olf4gSm9",
+        posterUrl: "https://resizing.flixster.com/GnrlIssbI6U4kyWg7PiOwxPAM74=/fit-in/705x460/v2/https://resizing.flixster.com/rWoHzijYNZv7RJb5P7BQQoGOo80=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U2YzliZDFjLWI2NTUtNDFmMi04OTUzLTUwNGFlOTRkOWIyNy5qcGc=",
+        genre: "Horror, Mystery & Thriller, Fantasy",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -7221,6 +7261,46 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
+        title: "Sausage Party: Foodtopia (2024)",
+        posterUrl: "https://resizing.flixster.com/6gwAlF1ittxchYbe5dAK5oWt_n8=/fit-in/705x460/v2/https://resizing.flixster.com/qIfNQBlQslBNjaOQczZMaQfQ5iQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMmE5NzVhMWItMGM2MS00NzgwLThiZDYtOGQ2ZmVjNTNiZjI5LmpwZw==",
+        genre: "Entertainment, Comedy, Animation",
+        category: "Animation",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/sRl8305D2" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/xdFvP-vrs" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/Kg0qyDyHh" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/L6oCBnm87" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/WrU64QDlQ" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/YzbSa8f0s" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/jUWs60xk-" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/ZN62hyn5L" },
+        ]
+    },
+    {
+        title: "Sausage Party: Foodtopia (2025)",
+        posterUrl: "https://resizing.flixster.com/2iV8zc7vcnxwvHv_bMk-MHEHIP0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30544367_b_v13_aa.jpg",
+        genre: "Entertainment, Comedy, Animation",
+        category: "Animation",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 2, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/iDCGG16_8" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/3Q-LvKJff" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/nasE-A9dH" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/O1KO62oF-" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/iuggJheWa" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/Jsj6GHYzt7" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/dnfDIAm_39" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/_XYXkckHX" },
+        ]
+    },
+    {
         title: "Spies in Disguise (2019)",
         embedUrl: "https://short.icu/oIfcj747K",
         posterUrl: "https://resizing.flixster.com/lkvRCIg3R_LL1ylqSTLcOcm4mpE=/fit-in/705x460/v2/https://resizing.flixster.com/1VW0qOF1n44Vz3YlYKcTSD2wnAg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2VmNjhhNzU3LTNiNzAtNDQ2MS04Zjc2LWYyNTI0NDhlODUxOC53ZWJw",
@@ -9892,6 +9972,17 @@ const moviesData = [
         title: "Mandala Murders (2025)",
         embedUrl: "https://short.icu/oFbzfDOLD",
         posterUrl: "https://resizing.flixster.com/6h1lQ1awjKTgYPmG-eqXalKw3RU=/fit-in/705x460/v2/https://resizing.flixster.com/8wuorPdRZWQ-iBDWlE9jdBpVHPA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNWFjNDQ0ODEtMmMxMS00MGRkLWJiOTAtMWRhYTkyNzljMDIwLmpwZw==",
+        genre: "Crime, Mystery & Thriller, Drama",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode All" /* NEW SERIES INFO */
+    },
+    {
+        title: "Lafangey (2025)",
+        embedUrl: "https://short.icu/-M4jHJNli",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMTRiNjE0MDItYzVkMC00ZmMzLTg0Y2MtYjYwZjgzZThlZjE5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         genre: "Crime, Mystery & Thriller, Drama",
         category: "Bollywood Series",
         language: "Hindi",
