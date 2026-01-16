@@ -463,6 +463,26 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
+        title: "Chhichhore (2019)",
+        embedUrl: "https://short.icu/yXuY2OfHg",
+        posterUrl: "https://resizing.flixster.com/chsOamdtlGeuJ8LtRO0-jLPUHs4=/fit-in/705x460/v2/https://resizing.flixster.com/NwZOfQNz2l58k-pOh8--OMDTOQ0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2IzN2U1MmY5LTg1MDgtNDIzMi1hMDQyLTRiODYzYTcyNWVkNi53ZWJw",
+        genre: "Comedy, Romance, Drama",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Crew (2024)",
+        embedUrl: "https://short.icu/1mQLPSCGt",
+        posterUrl: "https://resizing.flixster.com/Znodt0sFIozpZNt5NjZyj4XTRGk=/fit-in/705x460/v2/https://resizing.flixster.com/zea_xEMlxpIna4ZyNf3xLBvrEQE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzNmZDEzMjlhLTE0ZTctNDlmMS1iYTM5LTFhNjNkZDI4Y2Q5Yi5qcGc=",
+        genre: "Comedy, Drama",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Ek Deewane Ki Deewaniyat (2025)",
         embedUrl: "https://short.icu/Vx34t3nyn",
         posterUrl: "https://resizing.flixster.com/nukg3i_6Iv6rJVXwhrW7ahWAX1E=/fit-in/705x460/v2/https://resizing.flixster.com/ebQcXdW550txfTHyd5JZ9RRGgps=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2JiZjI2NDU0LTk5YWItNDM5Yy1hNGNiLWY1NDU4ZjM4ZWFiOS5qcGc=",
@@ -2110,6 +2130,26 @@ const moviesData = [
         embedUrl: "https://short.icu/WEZGTbA7in",
         posterUrl: "https://resizing.flixster.com/jVCq8Q6mPrONXIehX-5r_ElbsYQ=/fit-in/705x460/v2/https://resizing.flixster.com/2WN2BY4kcKyJEYOUTA9DUGrLIS4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U1YmE3ODM2LTBiNDctNGJhOC04NzZlLTRmOWUyZDdkNTRiMy53ZWJw",
         genre: "Action, Adventure, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=dVpnU0FYSERIdVJ4SU45dlRROW1vb2ZocVBjZ0xmTGY4WnpPbkQyTy9PbVBrc0F0VzJyRWFMeHoyLzNPNkc2SUNTSXN5cVloK25sSm54ZlRPRWR5WDA1OFBiZVFXOUJJODMvRkhtY2VmUUk9"
+    },
+    {
+        title: "Midsommar (2019)",
+        embedUrl: "https://short.icu/S1bBF-yg_",
+        posterUrl: "https://resizing.flixster.com/x5ZD7VkGdQZ5Rh0fmzliuAUaL1s=/fit-in/705x460/v2/https://resizing.flixster.com/5_6JUaZOyYgTKo_AR_nmHwogdYw=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzMyZDg4YzQ5LTNjOTQtNGRmNS04ZGYwLWMwNzM3ZDUyODBiNC53ZWJw",
+        genre: "Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=dVpnU0FYSERIdVJ4SU45dlRROW1vb2ZocVBjZ0xmTGY4WnpPbkQyTy9PbVBrc0F0VzJyRWFMeHoyLzNPNkc2SUNTSXN5cVloK25sSm54ZlRPRWR5WDA1OFBiZVFXOUJJODMvRkhtY2VmUUk9"
+    },
+    {
+        title: "The Green Inferno (2015)",
+        embedUrl: "https://short.icu/2_DFRK-Rg",
+        posterUrl: "https://resizing.flixster.com/f14rLHwRvMdwBUgtUEdnZnwzAdY=/fit-in/705x460/v2/https://resizing.flixster.com/-5y2iuefVzz3OQfwWksv_G30WXs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzAyZmVlNDYzLTk5ZmYtNGRjNC1hMzY3LWFjZGViNzY4NGYwNC53ZWJw",
+        genre: "Horror, Adventure",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -8105,6 +8145,16 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
+        title: "Eleven (2025)",
+        embedUrl: "https://short.icu/EExl_cqs_",
+        posterUrl: "https://resizing.flixster.com/0tznSIXWb-VPSgBLYFxYiaOMrsg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30594304_p_v8_aa.jpg",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "KA (2024)",
         embedUrl: "https://short.icu/nnA9f7pAp",
         posterUrl: "https://resizing.flixster.com/kewVjjfBama92HEfvUNQNzXItvU=/fit-in/705x460/v2/https://resizing.flixster.com/kytjFYURLSLQqTPYJkhI59zwbww=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UzOTYyMDRlLTY0YzUtNGViMS1hZTUwLTQ5YjUzNmEzYjBiNS5qcGc=",
@@ -10774,6 +10824,66 @@ const moviesData = [
         { number: 6, title: "Episode 6", embedUrl: "https://short.icu/2jNccSj5r" },
         { number: 7, title: "Episode 7", embedUrl: "https://short.icu/j79Ea4H-4" },
         { number: 8, title: "Episode 8", embedUrl: "https://short.icu/SrkpNFZar" },
+        ]
+    },
+    {
+        title: "Abhay (2019)",
+        posterUrl: "https://cdn.moviefone.com/image-assets/87324/yLo5YHt5DmgC2LALtR0xuKaEz7W.jpg?d=360x540&q=80",
+        genre: "Crime, Thriller, Action & Adventure",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/W2XCMXRyp" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/74A3cduDa" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/VYcKPpAbY" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/HScammoRT" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/39ji0_RUh" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/amAWWNHjl" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/o-ovZDOtP" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/CujEgzou4" },
+        ]
+    },
+    {
+        title: "Abhay (2020)",
+        posterUrl: "https://assets.gadgets360cdn.com/pricee/assets/product/202203/Abhay-S2-poster_1648042264.jpg",
+        genre: "Crime, Thriller, Action & Adventure",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 2, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/Su28-d6FhF" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/46dpFlh5x" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/_1OE9dvWi" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/C5DL41aEf" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/53jd1KPdW" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/InQqwkh23" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/Cs_dvZ6gt" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/uc7Xx-VWN" },
+        ]
+    },
+    {
+        title: "Abhay (2022)",
+        posterUrl: "https://upload.wikimedia.org/wikipedia/en/a/a6/Abhay_Season_3_Poster.jpeg",
+        genre: "Crime, Thriller, Action & Adventure",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 3, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/1kS7VeGGa" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/YFiw0cIHN" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/DzF4Mm47q" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/Pp8nfMUMz" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/Vs1Yijuak" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/QHSXNQxtj" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/XFUU371iX" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/J4FUFakOH" },
         ]
     },
     // =======================================================================
