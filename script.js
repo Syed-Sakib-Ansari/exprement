@@ -27,6 +27,16 @@ const moviesData = [
         seriesInfo: "Season 1, Episode All"
     },
     {
+        title: "One Two Cha Cha Chaa (2026)",
+        embedUrl: "https://short.icu/4sj9SP9g0",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZDkwYTI5ZjEtZjU3Mi00OGQ2LWE3NGUtYzRhMjVmZjNiMzYxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Drama, Comedy",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Laalo: Krishna Sada Sahaayate (2025)",
         embedUrl: "https://short.icu/ceOQlWI4l",
         posterUrl: "https://resizing.flixster.com/GiGgELx2QMeYag3klrzZ4tsWif8=/fit-in/705x460/v2/https://resizing.flixster.com/9iK1j4NiYGRYHBlUROPMNVgHrZU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YzN2UyMDkxLTI1MDItNDYxMC1hMTJiLTg2NTYxNzk0Zjc4YS5qcGc=",
@@ -211,6 +221,16 @@ const moviesData = [
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
+    {
+        title: "One Two Cha Cha Chaa (2026)",
+        embedUrl: "https://short.icu/4sj9SP9g0",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZDkwYTI5ZjEtZjU3Mi00OGQ2LWE3NGUtYzRhMjVmZjNiMzYxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Drama, Comedy",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Jugnuma The Fable (2025)",
         embedUrl: "https://short.icu/dCD__X2n3",
