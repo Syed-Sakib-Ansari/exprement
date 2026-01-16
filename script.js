@@ -27,6 +27,16 @@ const moviesData = [
         seriesInfo: "Season 1, Episode All"
     },
     {
+        title: "Laalo: Krishna Sada Sahaayate (2025)",
+        embedUrl: "https://short.icu/ceOQlWI4l",
+        posterUrl: "https://resizing.flixster.com/GiGgELx2QMeYag3klrzZ4tsWif8=/fit-in/705x460/v2/https://resizing.flixster.com/9iK1j4NiYGRYHBlUROPMNVgHrZU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YzN2UyMDkxLTI1MDItNDYxMC1hMTJiLTg2NTYxNzk0Zjc4YS5qcGc=",
+        genre: "Drama, Thriller, Survival",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Honeymoon Se Hatya (2026)",
         embedUrl: "https://short.icu/jc3fHi7ZF",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BNzFmOGIxZGUtMTg4NS00YTAwLWI1MDQtN2YwMTkyZDA2ZWIxXkEyXkFqcGc@._V1_QL75_UX190_CR0,28,190,281_.jpg",
@@ -7823,6 +7833,16 @@ const moviesData = [
     // 1. SOUTH / SOUTH / SOUTH/ SOUTH / SOUTH / SOUTH
     // =======================================================================
     {
+        title: "Laalo: Krishna Sada Sahaayate (2025)",
+        embedUrl: "https://short.icu/ceOQlWI4l",
+        posterUrl: "https://resizing.flixster.com/GiGgELx2QMeYag3klrzZ4tsWif8=/fit-in/705x460/v2/https://resizing.flixster.com/9iK1j4NiYGRYHBlUROPMNVgHrZU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YzN2UyMDkxLTI1MDItNDYxMC1hMTJiLTg2NTYxNzk0Zjc4YS5qcGc=",
+        genre: "Drama, Thriller, Survival",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Kumki 2 (2025)",
         embedUrl: "https://short.icu/qnrGH_2NV",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BYTI4YWEyYjQtZDg0Ni00NWE0LWFkMzUtZWY2N2MzN2UxOGVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
@@ -8837,20 +8857,10 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
-        title: "Raavan (2022)",
-        embedUrl: "https://short.icu/BXBSCc8h5",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Raavan_2022_film_poster.jpeg/250px-Raavan_2022_film_poster.jpeg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Bagha Jatin (2023)",
-        embedUrl: "https://short.icu/IV5XcKF2x",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Bagha_Jatin_%282023_film%29_movie_poster.jpeg/250px-Bagha_Jatin_%282023_film%29_movie_poster.jpeg",
-        genre: "Thriller, Action",
+        title: "Priyotoma (2023)",
+        embedUrl: "https://short.icu/Gmz2E07Y5",
+        posterUrl: "https://asset.bioscopelive.com/uploads/images/2025/03/10/images_70003a375f5ca7ad7e9eb6de07c4ad7d_goplay_priyotoma_port.jpg",
+        genre: "Action, Thriller",
         category: "Bangla",
         language: "Bangla",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -8860,6 +8870,57 @@ const moviesData = [
         title: "Rajkumar (2024)",
         embedUrl: "https://short.icu/SX4znNLWf",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BZDg4ZTUxNDMtNTdmYS00YjQ4LWI5ZGQtMTY0ZmM2NTZmNGU4XkEyXkFqcGc@._V1_.jpg",
+        genre: "Thriller, Action",
+        category: "Bangla",
+        language: "Bangla",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Nabab (2017)",
+        embedUrl: "https://short.icu/tlnh40L86",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BNDQwNjBhZmQtZWI4Yy00NmI4LTkzYTgtNmI5MWU1NTgwNGU4XkEyXkFqcGc@._V1_.jpg",
+        genre: "Thriller, Action",
+        category: "Bangla",
+        language: "Bangla",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Leader: Amie Bangladesh (2023)",
+        embedUrl: "https://short.icu/Y7hy9FTOu",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BODY4NTVmNTgtNDEyOC00NzY3LWE5MDctMjZjNzJkZTgyYWIxXkEyXkFqcGc@._V1_.jpg",
+        genre: "Thriller, Action",
+        category: "Bangla",
+        language: "Bangla",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Poran (2022)",
+        embedUrl: "https://short.icu/ksbDn6ilf",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZjdkMTkyOGMtN2VkOC00MzllLWExYjgtZGM1Mzc0YTVkNTE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Thriller, Action",
+        category: "Bangla",
+        language: "Bangla",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Pett Kata Shaw (2022)",
+        embedUrl: "https://short.icu/fVnTNGxvV",
+        posterUrl: "https://resizing.flixster.com/pqD8fMUa-1UuKTgrGhZf625mNx8=/fit-in/705x460/v2/https://resizing.flixster.com/eQvWTUfi27Ub2G1P-fjkMaQe2bs=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMTU0OTY4ZWItZDA2Ni00YzFkLTkwNTAtZDEyOGNkNjAwMjNiLmpwZw==",
+        genre: "Horror, Mystery & Thriller",
+        category: "Bangla",
+        language: "Bangla",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode All"
+    },
+    {
+        title: " Dorod (2024)",
+        embedUrl: "https://short.icu/gs2CORd_D",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BM2NlMjQzYTktMzQ2OC00MDAwLTkxMWMtY2I2MjEyNWIzNTRhXkEyXkFqcGc@._V1_.jpg",
         genre: "Thriller, Action",
         category: "Bangla",
         language: "Bangla",
@@ -8934,7 +8995,7 @@ const moviesData = [
         category: "Bangla",
         language: "Bangla",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         seriesInfo: "Season 1, Episode All"
     },
     {
@@ -8945,7 +9006,7 @@ const moviesData = [
         category: "Bangla",
         language: "Bangla",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         seriesInfo: "Season 2, Episode All"
     },
     {
@@ -8973,6 +9034,36 @@ const moviesData = [
         embedUrl: "https://short.icu/gLbXFhmD1",
         posterUrl: "https://www.themoviedb.org/t/p/w600_and_h900_face/oE15FoMUhJF7mbMeDQykFcFN6Kr.jpg",
         genre: "Romance, Drama",
+        category: "Bangla",
+        language: "Bangla",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Raavan (2022)",
+        embedUrl: "https://short.icu/BXBSCc8h5",
+        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Raavan_2022_film_poster.jpeg/250px-Raavan_2022_film_poster.jpeg",
+        genre: "Thriller, Action",
+        category: "Bangla",
+        language: "Bangla",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Bagha Jatin (2023)",
+        embedUrl: "https://short.icu/IV5XcKF2x",
+        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Bagha_Jatin_%282023_film%29_movie_poster.jpeg/250px-Bagha_Jatin_%282023_film%29_movie_poster.jpeg",
+        genre: "Thriller, Action",
+        category: "Bangla",
+        language: "Bangla",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Jinn (2023)",
+        embedUrl: "https://short.icu/StOSx_I-7",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BOWMyNGM1ZDUtZjk3My00MjM3LWFjOGItOGYwNjUyMzliNDQxXkEyXkFqcGc@._V1_.jpg",
+        genre: "Horror",
         category: "Bangla",
         language: "Bangla",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -10447,6 +10538,26 @@ const moviesData = [
     // 1. HOLLYWOOD WEB-SERIES / HOLLYWOOD WEB-SERIES / HOLLYWOOD WEB-SERIES /
     // =======================================================================
     {
+        title: "IT: Welcome to Derry (2025)",
+        posterUrl: "https://resizing.flixster.com/keD72b6iJJOE8Y1FVV6xUwC3tLk=/fit-in/705x460/v2/https://resizing.flixster.com/8GGzzrT3CqBy0r1vb0dd2bKqSoY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOGEyMzAyY2QtNzUwZC00Y2JlLWIyNTEtZTYyNjAzNjcwNjM5LmpwZw==",
+        genre: "Fantasy, Horror",
+        category: "Hollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/BEjO731Ep" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/XaGoMTqpU" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/hiCYk92k3" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/Pqzp14EH3" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/pOlXdLBlM" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/N5I1aRXn8" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/vaYDbn7sF" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/UMmSj6gEQ" },
+        ]
+    },
+    {
         title: "The Night Manager (2016)",
         embedUrl: "https://short.icu/_jWqs1tyP",
         posterUrl: "https://resizing.flixster.com/sS6EtDVumEjce_QcrFrc1SwNCIE=/fit-in/705x460/v2/https://resizing.flixster.com/A4BbZL2FUeuh_8o_uLWOgF7zy5s=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZDA4ZDZiN2YtOGIxNi00Yjg1LWFlOTQtMjRkMTE4MmZhNWU5LmpwZw==",
@@ -10456,6 +10567,24 @@ const moviesData = [
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         seriesInfo: "Season 1, Episode 1-3" /* NEW SERIES INFO */
+    },
+    {
+        title: "His & Hers (2026)",
+        posterUrl: "https://resizing.flixster.com/pPmG2hfgnBOyvscx8mvkU5ng0Ck=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31565940_b_v13_aa.jpg",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "Hollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-6",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/NOgaibEBb" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/RBQNniH9d" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/71ICA3WUl" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/VlDtOfPFz" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/6ev8e63jbM" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/3btaE00kf" },
+        ]
     },
     {
         title: "Baby Reindeer (2024)",
@@ -11468,7 +11597,7 @@ function filterByCategory(category, updateUrl = true) {
 
         if (recentMovies.length > 0) {
             if (category === 'Recent Adds') {
-                const limitedRecent = recentMovies.slice(0, 13);
+                const limitedRecent = recentMovies.slice(0, 15);
                 let moviesHTML = generateMoviesHTML(limitedRecent);
                 moviesHTML += createSeeAllCard('All', 'View All');
 
