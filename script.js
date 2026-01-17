@@ -27,6 +27,16 @@ const moviesData = [
         seriesInfo: "Season 1, Episode All"
     },
     {
+        title: "Happy Patel: Khatarnak Jasoos (2026)",
+        embedUrl: "https://short.icu/WNW3JQBg9",
+        posterUrl: "https://resizing.flixster.com/bLX9zRd-1t464hNTmvED03u2ekM=/fit-in/705x460/v2/https://resizing.flixster.com/DVR0zq7Rk43S3k9Ug4sOFFjt1uQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzZmMTE4MzNlLTcyYjctNDU4Ni05NmEwLWZhMTk3ODczNTFjZi5qcGc=",
+        genre: "Action, Comedy, Crime",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "One Two Cha Cha Chaa (2026)",
         embedUrl: "https://short.icu/4sj9SP9g0",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BZDkwYTI5ZjEtZjU3Mi00OGQ2LWE3NGUtYzRhMjVmZjNiMzYxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
@@ -221,6 +231,16 @@ const moviesData = [
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
+    {
+        title: "Happy Patel: Khatarnak Jasoos (2026)",
+        embedUrl: "https://short.icu/WNW3JQBg9",
+        posterUrl: "https://resizing.flixster.com/bLX9zRd-1t464hNTmvED03u2ekM=/fit-in/705x460/v2/https://resizing.flixster.com/DVR0zq7Rk43S3k9Ug4sOFFjt1uQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzZmMTE4MzNlLTcyYjctNDU4Ni05NmEwLWZhMTk3ODczNTFjZi5qcGc=",
+        genre: "Action, Comedy, Crime",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "One Two Cha Cha Chaa (2026)",
         embedUrl: "https://short.icu/4sj9SP9g0",
