@@ -2396,6 +2396,66 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
+        title: "Jack the Ripper (1959)",
+        embedUrl: "https://short.icu/s6nsOoZjN",
+        posterUrl: "https://resizing.flixster.com/_XEzbhu0qg_sJIxtmrFf_uFyP8o=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p52191_v_v8_aa.jpg",
+        genre: "Horror",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Super (2018)",
+        embedUrl: "https://short.icu/E7zELyShj",
+        posterUrl: "https://resizing.flixster.com/eruArhrVqY3rlTFtzm_VwlQr4z4=/fit-in/705x460/v2/https://resizing.flixster.com/oDp1tiAVyPQdiAAlvzMt2Cn2J_Q=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzIzNjBlMmNiLWM1ZWQtNGI1Ny1iZGYwLTczMTA5OTliNDQ5ZC53ZWJw",
+        genre: "Mystery & Thriller, Horror",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Anchorman: The Legend of Ron Burgundy (2004)",
+        embedUrl: "https://short.icu/iaLMSAFxA",
+        posterUrl: "https://resizing.flixster.com/nYPSUSUSG3lqS8GlITLV8q1Dw7w=/fit-in/705x460/v2/https://resizing.flixster.com/xXO-ngbivn_d24sUHhcKndYknVk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzRjNzlmNmE1LTJlYjEtNGZjZC04YWYwLWJhMjI5ZWZjMDE5OC53ZWJw",
+        genre: "Comedy",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Tiger House (2015)",
+        embedUrl: "https://short.icu/si1F6CDht",
+        posterUrl: "https://resizing.flixster.com/4e9dJLseawz_HgyMUQDexBgvYuM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12046688_v_v12_ai.jpg",
+        genre: "Mystery & Thriller, Action",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Holy Ghost (2025)",
+        embedUrl: "https://short.icu/lBEkmxGzE",
+        posterUrl: "https://resizing.flixster.com/92yAalbltXaQrcXq07QCqpyB5dY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30883647_p_v13_aa.jpg",
+        genre: "Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Leave the World Behind (2023)",
+        embedUrl: "https://short.icu/gTj6bbB_QB",
+        posterUrl: "https://resizing.flixster.com/Q0uoEcZ39hmnF28PPDL3xNn-qos=/fit-in/705x460/v2/https://resizing.flixster.com/gjBl91cQPoUL3N1PFDNkmJgbMbY=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzNjNDA5NzM2LTAyNTItNDUyMC04MjFkLWFhMmMyYjk4OGQ1Ni5qcGc=",
+        genre: "Mystery & Thriller, Drama",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Bambi: The Reckoning (2025)",
         embedUrl: "https://short.icu/KF7OfTbLh",
         posterUrl: "https://resizing.flixster.com/0sPcu4UJfe1YrkCDsoh6nefLSDU=/fit-in/705x460/v2/https://resizing.flixster.com/UlRtp1oNgzfhU4SEdyY97w8bb7I=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2JmNzU0NTI1LTUwYzUtNDE3ZS1hMWRhLTcwMjZiMGVjOWQzMi5qcGc=",
