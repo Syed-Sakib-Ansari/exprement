@@ -8,13 +8,77 @@ window.addEventListener('load', () => {
             preloader.style.display = 'none';
         }, 500);
     }, 500); // 500ms delay to let user see animation
+
+    // --- POPUP LOGIC: Trigger after 4 seconds ---
+    setTimeout(() => {
+        // Check session storage to show only once per session
+        // To force show every time for testing, remove the if check
+        if (!sessionStorage.getItem('welcomePopupShown')) {
+            const welcomeModal = document.getElementById('welcomeModal');
+            if(welcomeModal) {
+                welcomeModal.classList.remove('hidden');
+                // Force a reflow before adding the active class for transition
+                void welcomeModal.offsetWidth;
+                welcomeModal.classList.add('active');
+                
+                // LOCK SCROLL
+                document.body.classList.add('overflow-hidden');
+                
+                sessionStorage.setItem('welcomePopupShown', 'true');
+            }
+        }
+    }, 4000);
 });
+
+function closeWelcomeModal() {
+    const welcomeModal = document.getElementById('welcomeModal');
+    if(welcomeModal) {
+        welcomeModal.classList.remove('active');
+        
+        // UNLOCK SCROLL
+        document.body.classList.remove('overflow-hidden');
+
+        setTimeout(() => {
+            welcomeModal.classList.add('hidden');
+        }, 300); // Wait for transition
+    }
+}
+
+// Welcome Modal Outside Click Logic
+const welcomeModalElement = document.getElementById('welcomeModal');
+if (welcomeModalElement) {
+    welcomeModalElement.addEventListener('click', (e) => {
+        if (e.target === welcomeModalElement) {
+            closeWelcomeModal();
+        }
+    });
+}
 
 // --- 2. DATA (Updated: Using category="Recent Adds" directly) ---
 const moviesData = [
     // =======================================================================
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
+    {
+        title: "Bihu attack (2026)",
+        embedUrl: "https://short.icu/k2sKGNeLj",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzMjMwMWYtMzUzMC00ZWQ1LWE1YmYtYjRjYTMzMTY0YTk5XkEyXkFqcGc@._V1_.jpg",
+        genre: "Action, War",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Rip (2026)",
+        embedUrl: "https://short.icu/YZzYkXfWG",
+        posterUrl: "https://resizing.flixster.com/ucV5aDwnfhDPtMmXlov8cFOzP9w=/fit-in/705x460/v2/https://resizing.flixster.com/RMXC9aHsZxWf--hK5hh-Xbc9YkI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzlmY2IxNDc3LTNiNTMtNDZjOS1iZjExLTU5Mjk1MmE4ZjQxMC53ZWJw",
+        genre: "Crime, Drama, Action",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=dVpnU0FYSERIdVJ4SU45dlRROW1vb2ZocVBjZ0xmTGY4WnpPbkQyTy9PbVBrc0F0VzJyRWFMeHoyLzNPNkc2SUNTSXN5cVloK25sSm54ZlRPRWR5WDA1OFBiZVFXOUJJODMvRkhtY2VmUUk9"
+    },
     {
         title: "28 Years Later: The Bone Temple (2026)",
         embedUrl: "https://short.icu/Lbwva2Yn2",
@@ -77,16 +141,6 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
-        title: "Jugnuma The Fable (2025)",
-        embedUrl: "https://short.icu/dCD__X2n3",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BYzdkY2NiZGItYzBiZS00NGZmLWEzY2QtYmFmZTdlMmUwY2QwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        genre: "Drama, Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-    },
-    {
         title: "The Internship (2026)",
         embedUrl: "https://short.icu/1zZp64R3y",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BNDMyNzM2ZTUtOTBlZS00ZTExLTliZjYtZDkzYzQxOTQ3ZDUzXkEyXkFqcGc@._V1_.jpg",
@@ -112,16 +166,6 @@ const moviesData = [
         embedUrl: "https://short.icu/qnrGH_2NV",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BYTI4YWEyYjQtZDg0Ni00NWE0LWFkMzUtZWY2N2MzN2UxOGVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         genre: "Drama, Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "The Bed (2026)",
-        embedUrl: "https://short.icu/FHcXGiqG5",
-        posterUrl: "https://images.filmibeat.com/img/popcorn/movie_posters/thebed-20251231121329-24060.jpg",
-        genre: "Drama, Thriller, Crime",
         category: "Recent Adds",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -251,6 +295,16 @@ const moviesData = [
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
+    {
+        title: "Bihu attack (2026)",
+        embedUrl: "https://short.icu/k2sKGNeLj",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzMjMwMWYtMzUzMC00ZWQ1LWE1YmYtYjRjYTMzMTY0YTk5XkEyXkFqcGc@._V1_.jpg",
+        genre: "Action, War",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Rahu Ketu (2026)",
         embedUrl: "https://short.icu/OAklOO3E9",
@@ -1776,6 +1830,16 @@ const moviesData = [
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
     {
+        title: "The Rip (2026)",
+        embedUrl: "https://short.icu/YZzYkXfWG",
+        posterUrl: "https://resizing.flixster.com/ucV5aDwnfhDPtMmXlov8cFOzP9w=/fit-in/705x460/v2/https://resizing.flixster.com/RMXC9aHsZxWf--hK5hh-Xbc9YkI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzlmY2IxNDc3LTNiNTMtNDZjOS1iZjExLTU5Mjk1MmE4ZjQxMC53ZWJw",
+        genre: "Crime, Drama, Action",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=dVpnU0FYSERIdVJ4SU45dlRROW1vb2ZocVBjZ0xmTGY4WnpPbkQyTy9PbVBrc0F0VzJyRWFMeHoyLzNPNkc2SUNTSXN5cVloK25sSm54ZlRPRWR5WDA1OFBiZVFXOUJJODMvRkhtY2VmUUk9"
+    },
+    {
         title: "28 Years Later: The Bone Temple (2026)",
         embedUrl: "https://short.icu/Lbwva2Yn2",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BNGJhYmRjYmUtOGY5My00ODIyLTlhNjctMzk0NjYyOGE1MGIwXkEyXkFqcGc@._V1_.jpg",
@@ -2230,6 +2294,16 @@ const moviesData = [
         embedUrl: "https://short.icu/ip5Vc-vmr",
         posterUrl: "https://resizing.flixster.com/m7uUojxa3ACDKYXxFGomNozW9NU=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30346357_v_v8_ad.jpg",
         genre: "Sci-Fi, Horror, Action",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=dVpnU0FYSERIdVJ4SU45dlRROW1vb2ZocVBjZ0xmTGY4WnpPbkQyTy9PbVBrc0F0VzJyRWFMeHoyLzNPNkc2SUNTSXN5cVloK25sSm54ZlRPRWR5WDA1OFBiZVFXOUJJODMvRkhtY2VmUUk9"
+    },
+    {
+        title: "The Interview (2014)",
+        embedUrl: "https://short.icu/TpEiQyIJm",
+        posterUrl: "https://resizing.flixster.com/Z6CMMDjTi7OQxZdjaCGVP61FLr4=/fit-in/705x460/v2/https://resizing.flixster.com/0PLDXQhksxs7UgSjqa27mVi7xAQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2M1ZDYxMWNlLTZlNGEtNGVhMy1hNzQ5LWI2ZDA5ZDA4NzliMy53ZWJw",
+        genre: "Comedy, Action, Adventure",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -11847,9 +11921,49 @@ const moviesData = [
         { number: 6, title: "Episode 6", embedUrl: "https://short.icu/koCX_-2_Z" },
         ]
     },
+    {
+        title: "Kaleidoscope (2023)",
+        posterUrl: "https://resizing.flixster.com/t1UIRiSxcSf1SECu9bLGFGqesmM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23582077_b_v13_ab.jpg",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "Hollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/FEEiGWPsHQ" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/L4u9EOpQY" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/qP14aavJT" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/IrcIMwEag" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/FuGqCczjd" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/RktSaIyGPo" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/JsrvH3uUz" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/sWrQuQ9tE" },
+        ]
+    },
     // =======================================================================
     // 1. KOREAN WEB-SERIES / KOREAN WEB-SERIES / KOREAN WEB-SERIES /
     // =======================================================================
+    {
+        title: "Cashero (2025)",
+        posterUrl: "https://resizing.flixster.com/wJqvjWXoE53PX_F4c4zNcOzMprM=/fit-in/705x460/v2/https://resizing.flixster.com/eNmQP6ZIqpbyIQBA_vGdx2SmoWM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMGVhYjMyOGUtOTRlMC00YWYxLTkxYzEtYzYzZWQ1MDY5ZjNiLmpwZw==",
+        genre: "Fantasy, Action, Comedy",
+        category: "Korean Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 2, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/E_GsXHRHr" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/OSW_R59ej" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/Lu3Mr0nLy" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/vxu6NxuVx" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/FlQuSKr59" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/LCIb06Aui" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/V76-r1B__" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/LL2lc1sEj" },
+        ]
+    },
     {
         title: "The 8 Show (2025)",
         embedUrl: "https://short.icu/KNIdH8p38",

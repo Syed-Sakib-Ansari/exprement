@@ -404,6 +404,21 @@ body {
 }
 /* --- END OF EPISODE SECTION CSS --- */
 
+/* --- WELCOME POPUP CSS --- */
+#welcomeModal {
+    z-index: 200; /* Higher than everything */
+}
+#welcomeContent {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.9);
+    opacity: 0;
+}
+/* Uses same 'active' logic as video modal for simplicity */
+#welcomeModal.active #welcomeContent {
+    opacity: 1;
+    transform: scale(1);
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
