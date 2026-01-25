@@ -60,6 +60,46 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
+        title: "Kidnapped: Elizabeth Smart (2026)",
+        embedUrl: "https://short.icu/Hnln0ef5g",
+        posterUrl: "https://resizing.flixster.com/1z2LbUKBKXMBUCvfT3BJybyGGFI=/fit-in/705x460/v2/https://resizing.flixster.com/vHGrr3IiSF5LEIA2NQMAQZeIeaA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2I1MmFjZmM3LWY2MDMtNDY2ZS05N2U3LTA0ODBkMjQyNGEyNy5qcGc=",
+        genre: "Documentary, Crime",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Big Fake (2026)",
+        embedUrl: "https://short.icu/HL8ZfgO_P",
+        posterUrl: "https://resizing.flixster.com/M5DwJi-3GJnNpEl8GXtZ5SHhqzY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31965488_v_v10_aa.jpg",
+        genre: "Drama, Mystery & Thriller",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Cheekatilo (2026)",
+        embedUrl: "https://short.icu/ZHboSJf2I",
+        posterUrl: "https://resizing.flixster.com/tDhcjnbtUNm8Z2lXxkdbik1EXTk=/fit-in/705x460/v2/https://resizing.flixster.com/bFeY3wFMjCGCZEVbIrU4ahnCSJI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzU1YTEzOWRkLTRkZDYtNDYxNi05YzE2LTg0Mzk5ZTRkNGNkMC5qcGc=",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Mowgli (2025)",
+        embedUrl: "https://short.icu/Y_bNvZZW5",
+        posterUrl: "https://resizing.flixster.com/yC2Egz64J0aJvJIajke4rINVqhU=/fit-in/705x460/v2/https://resizing.flixster.com/JAZpQ8EJTQ561i3G-wec6h54Rk4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzlhYTQ1OTg1LTA3NDYtNGRmNS05MmMzLWU0NjljMWY3ZWQ3YS5qcGc=",
+        genre: "Action, Adventure, Drama, Romance",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Safia Safdar (2026)",
         embedUrl: "https://short.icu/YlW5PP3Jt",
         posterUrl: "https://movieassetsdigital.sgp1.cdn.digitaloceanspaces.com/original/32b909131b16ad5572f94b5b411d99552f240422",
@@ -90,10 +130,10 @@ const moviesData = [
         downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=VXZtOXRidXZOZDBTNExRNU0vRW9kaitTV294eHVtclpoQ2Nhbk5nZE93ME1PSzdFU043NytxamRqcHZRYktlVmNTRzNlTDRGdVBhY0pNWnF1VkE5YlJFV3NsbUZuYkM5aEZQd3hBNGlRdEE9"
     },
     {
-        title: "Bihu attack (2026)",
-        embedUrl: "https://short.icu/k2sKGNeLj",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzMjMwMWYtMzUzMC00ZWQ1LWE1YmYtYjRjYTMzMTY0YTk5XkEyXkFqcGc@._V1_.jpg",
-        genre: "Action, War",
+        title: "45 (2026)",
+        embedUrl: "https://short.icu/SiN3C3cBt",
+        posterUrl: "https://resizing.flixster.com/BqHqvQPvS3GZmbQmGbZtECwjrag=/fit-in/705x460/v2/https://resizing.flixster.com/eSPywC9v_ANVF68NgiJMIuRohZc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkwZDliNDg4LWYxM2QtNDc5ZC1hN2EwLTk1NjkxZDcyOThiZC5qcGc=",
+        genre: "Action, Drama, Comedy",
         category: "Recent Adds",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -170,60 +210,19 @@ const moviesData = [
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
-    {
-        title: "The Internship (2026)",
-        embedUrl: "https://short.icu/1zZp64R3y",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BNDMyNzM2ZTUtOTBlZS00ZTExLTliZjYtZDkzYzQxOTQ3ZDUzXkEyXkFqcGc@._V1_.jpg",
-        genre: "Action, Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Honeymoon Se Hatya (2026)",
-        embedUrl: "https://short.icu/jc3fHi7ZF",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BNzFmOGIxZGUtMTg4NS00YTAwLWI1MDQtN2YwMTkyZDA2ZWIxXkEyXkFqcGc@._V1_QL75_UX190_CR0,28,190,281_.jpg",
-        genre: "Crime, Mystery & Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode ALL" /* NEW SERIES INFO */
-    },
-    {
-        title: "Kumki 2 (2025)",
-        embedUrl: "https://short.icu/qnrGH_2NV",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BYTI4YWEyYjQtZDg0Ni00NWE0LWFkMzUtZWY2N2MzN2UxOGVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        genre: "Drama, Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Dear Radhi (2026)",
-        embedUrl: "https://short.icu/Ex7VnepBr",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BZDBiOTBmYjctNzY5Mi00ZjAxLWJmZGUtZDk1ZDljZmNjNzhhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        genre: "Comedy, Fantasy, Drama",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Sarvam Maya (2025)",
-        embedUrl: "https://short.icu/d8ezDPPJG",
-        posterUrl: "https://resizing.flixster.com/_Q7bixzrtb7hyEAM-lT5gSYSwGk=/fit-in/705x460/v2/https://resizing.flixster.com/W1JbpmDQ-ieMm_b_ZJ2Fpvc7WKA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkzNzAzNDQ0LTYxMGQtNGZlOS1iM2ZhLWM5NjFiZjE1ZGU3MC5qcGc=",
-        genre: "Comedy, Fantasy, Drama",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
+    {
+        title: "Border 2 (2026)",
+        embedUrl: "https://short.icu/So7nLeWjB",
+        posterUrl: "https://resizing.flixster.com/oWf0ZvZGFcCbkPZPdZqAALR1JoQ=/fit-in/705x460/v2/https://resizing.flixster.com/K_C20zw6Ydg0jbTf_9HdQoiDi6M=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZhYTJkZDg4LTYzMjgtNDg5MC1iN2YwLTNhZWQ0YTU3OGJlMS5qcGc=",
+        genre: "War, History, Drama, Action",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Safia Safdar (2026)",
         embedUrl: "https://short.icu/YlW5PP3Jt",
@@ -1769,6 +1768,26 @@ const moviesData = [
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
     {
+        title: "Kidnapped: Elizabeth Smart (2026)",
+        embedUrl: "https://short.icu/Hnln0ef5g",
+        posterUrl: "https://resizing.flixster.com/1z2LbUKBKXMBUCvfT3BJybyGGFI=/fit-in/705x460/v2/https://resizing.flixster.com/vHGrr3IiSF5LEIA2NQMAQZeIeaA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2I1MmFjZmM3LWY2MDMtNDY2ZS05N2U3LTA0ODBkMjQyNGEyNy5qcGc=",
+        genre: "Documentary, Crime",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Big Fake (2026)",
+        embedUrl: "https://short.icu/HL8ZfgO_P",
+        posterUrl: "https://resizing.flixster.com/M5DwJi-3GJnNpEl8GXtZ5SHhqzY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31965488_v_v10_aa.jpg",
+        genre: "Drama, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Beyond Skyline (2017)",
         embedUrl: "https://short.icu/7ldsLyGDI",
         posterUrl: "https://resizing.flixster.com/I4upzRIxP72RCm_fj96uzoPkT5Q=/fit-in/705x460/v2/https://resizing.flixster.com/1BVBq9DdaJq45zfdNJBqSkzhPqo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzJjYTg0NmEwLWUxNDEtNGFmZi1iMDZmLWM0Mzk5MzdiMzYyNy53ZWJw",
@@ -2113,6 +2132,126 @@ const moviesData = [
         embedUrl: "https://short.icu/f-7_bX9ya",
         posterUrl: "https://resizing.flixster.com/VDk4jXJXqEV8Y7yMSvKHNbBIvDk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p182354_p_v10_ag.jpg",
         genre: "Sci-Fi, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Bourne Supremacy (2004)",
+        embedUrl: "https://short.icu/sQW89FDub9",
+        posterUrl: "https://resizing.flixster.com/33vUzEylM5z-jDHN9co-E_svkA0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p34579_v_v8_at.jpg",
+        genre: "Action, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Bourne Ultimatum (2007)",
+        embedUrl: "https://short.icu/fXR9Xzq-g",
+        posterUrl: "https://resizing.flixster.com/itEpKPXuTM4IkgAyNQYGFKy_cqg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p166270_p_v8_ai.jpg",
+        genre: "Action, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Jason Bourne (2016)",
+        embedUrl: "https://short.icu/VJmm1m565",
+        posterUrl: "https://resizing.flixster.com/VzGvR1r9a5DdHzKwXvFmi4N0-VM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12547089_p_v8_ap.jpg",
+        genre: "Action, Mystery & Thriller, Adventure",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Bourne Legacy (2012)",
+        embedUrl: "https://short.icu/BheRQ9hbd",
+        posterUrl: "https://resizing.flixster.com/Tr_Yy9MSZZkgSOEWPpO-CxEbF78=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9047834_v_v8_aw.jpg",
+        genre: "Action, Mystery & Thriller, Adventure",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Bourne Identity (2002)",
+        embedUrl: "https://short.icu/L3c08FtIf",
+        posterUrl: "https://resizing.flixster.com/F_K8qSf78IyGiHc7wwvH7qN964A=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28900_p_v8_ar.jpg",
+        genre: "Action, Mystery & Thriller, Adventure",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Prince of Persia: The Sands of Time (2010)",
+        embedUrl: "https://short.icu/Q0QmAx4td",
+        posterUrl: "https://resizing.flixster.com/JrjHrP9KMvcVu5_Rd8k_iLfj0q8=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p3546197_p_v8_av.jpg",
+        genre: "Adventure, Action, Fantasy",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Hercules (2014)",
+        embedUrl: "https://short.icu/zrEMrm_K5",
+        posterUrl: "https://resizing.flixster.com/srmjGx1PoHc5_hbmI9yG-KCit4U=/fit-in/705x460/v2/https://resizing.flixster.com/g9_221zPK8olgDM1BuXsOgVf2_4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzI4MWJhNWUwLWU4MDUtNGEyNC1hNGMxLTIwYTJmYWQ5YjJiYS53ZWJw",
+        genre: "Adventure, Action, Fantasy",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Snake Eyes: G.I. Joe Origins (2012)",
+        embedUrl: "https://short.icu/gTUh0RJ_H",
+        posterUrl: "https://resizing.flixster.com/K0qbaXtqgni_I_WWDtWe_u4ad_c=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18128210_p_v13_ai.jpg",
+        genre: "Adventure, Action",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "G.I. Joe: Retaliation (2013)",
+        embedUrl: "https://short.icu/0l8VH6U14",
+        posterUrl: "https://resizing.flixster.com/Mf3U0-F756x03J6dJDj8eM6cjdQ=/fit-in/705x460/v2/https://resizing.flixster.com/eR0w1084iisZonVTAflxuAehL7E=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzk3MzhkMzZjLWM1NjktNDc1YS1hMjlkLWUzYWEwNjAxZjg0ZC53ZWJw",
+        genre: "Adventure, Action",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Ouija: Origin of Evil (2016)",
+        embedUrl: "https://short.icu/KPW0A-iIL",
+        posterUrl: "https://resizing.flixster.com/6j4UJrpEex-Wdb5ZxRbghKMCETM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12770833_v_v8_ab.jpg",
+        genre: "Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Ouija (2014)",
+        embedUrl: "https://short.icu/yKYp6Im_M",
+        posterUrl: "https://resizing.flixster.com/6W6owEWR-HjvL2ZoXvqKIXbBC6U=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10542827_p_v10_ah.jpg",
+        genre: "Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Room (2019)",
+        embedUrl: "https://short.icu/qyuG3EKqj",
+        posterUrl: "https://resizing.flixster.com/yVh60VSJx4iF90AAtR6fOpR3MrE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17843676_p_v8_aa.jpg",
+        genre: "Drama, Mystery & Thriller",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -8418,6 +8557,26 @@ const moviesData = [
     // 1. SOUTH / SOUTH / SOUTH/ SOUTH / SOUTH / SOUTH
     // =======================================================================
     {
+        title: "Cheekatilo (2026)",
+        embedUrl: "https://short.icu/ZHboSJf2I",
+        posterUrl: "https://resizing.flixster.com/tDhcjnbtUNm8Z2lXxkdbik1EXTk=/fit-in/705x460/v2/https://resizing.flixster.com/bFeY3wFMjCGCZEVbIrU4ahnCSJI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzU1YTEzOWRkLTRkZDYtNDYxNi05YzE2LTg0Mzk5ZTRkNGNkMC5qcGc=",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Mowgli (2025)",
+        embedUrl: "https://short.icu/Y_bNvZZW5",
+        posterUrl: "https://resizing.flixster.com/yC2Egz64J0aJvJIajke4rINVqhU=/fit-in/705x460/v2/https://resizing.flixster.com/JAZpQ8EJTQ561i3G-wec6h54Rk4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzlhYTQ1OTg1LTA3NDYtNGRmNS05MmMzLWU0NjljMWY3ZWQ3YS5qcGc=",
+        genre: "Action, Adventure, Drama, Romance",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Laalo: Krishna Sada Sahaayate (2025)",
         embedUrl: "https://short.icu/ceOQlWI4l",
         posterUrl: "https://resizing.flixster.com/GiGgELx2QMeYag3klrzZ4tsWif8=/fit-in/705x460/v2/https://resizing.flixster.com/9iK1j4NiYGRYHBlUROPMNVgHrZU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YzN2UyMDkxLTI1MDItNDYxMC1hMTJiLTg2NTYxNzk0Zjc4YS5qcGc=",
@@ -8569,7 +8728,7 @@ const moviesData = [
     },
     {
         title: "45 (2026)",
-        embedUrl: "https://short.icu/NbWhACHo6",
+        embedUrl: "https://short.icu/SiN3C3cBt",
         posterUrl: "https://resizing.flixster.com/BqHqvQPvS3GZmbQmGbZtECwjrag=/fit-in/705x460/v2/https://resizing.flixster.com/eSPywC9v_ANVF68NgiJMIuRohZc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkwZDliNDg4LWYxM2QtNDc5ZC1hN2EwLTk1NjkxZDcyOThiZC5qcGc=",
         genre: "Action, Drama, Comedy",
         category: "South",
@@ -9724,6 +9883,16 @@ const moviesData = [
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
+    {
+        title: "Dispassionate Love (2018)",
+        embedUrl: "https://short.icu/sNknqHd1i",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMmU4ZTBlNWQtYTg3MC00MDk1LTliZTQtODY4NGVkNTZhNmE2XkEyXkFqcGc@._V1_.jpg",
+        genre: "Drama, Adult",
+        category: "Bangla",
+        language: "Bangla",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     // =======================================================================
     // 1. KOREAN / KOREAN / KOREAN/ KOREAN / KOREAN / KOREAN
     // =======================================================================
@@ -10154,6 +10323,16 @@ const moviesData = [
     // 1. ADULT COMEDY / ADULT COMEDY / ADULT COMEDY / ADULT COMEDY /
     // =======================================================================
     {
+        title: "Snack Shack (2014)",
+        embedUrl: "https://short.icu/WE3u-Jqbd",
+        posterUrl: "https://resizing.flixster.com/mAhwZxBF8CdUrOlnLci-VSNkyxI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25990560_p_v13_ac.jpg",
+        genre: "Adult, Comedy",
+        category: "Adult Comedy",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "No Hard Feelings (2023)",
         embedUrl: "https://short.icu/KudrJsmlT",
         posterUrl: "https://resizing.flixster.com/7ok8FTdI8QSuRRTMHVp2ERkS5XQ=/fit-in/705x460/v2/https://resizing.flixster.com/DDToSwhHClBZGg_iBmbyfuEybas=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzc0MTM0MGM4LTg0ODItNGQyOC1hYzBkLTUzZjVhOTBlNDVmMy5qcGc=",
@@ -10566,6 +10745,16 @@ const moviesData = [
     // =======================================================================
     // 1. OTHER'S / OTHER'S / OTHER'S /
     // =======================================================================
+    {
+        title: "Risque (2025)",
+        embedUrl: "https://short.icu/ntvupzjT9",
+        posterUrl: "https://resizing.flixster.com/cWSPbb2N8jeY5ZiI71r4Gt6S4VE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30555139_v_v12_aa.jpg",
+        genre: "Adult, Romance, Drama, Mystery & Thriller",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Boobs: An American Obsession (2010)",
         embedUrl: "https://short.icu/75kRtEIvt",
@@ -11081,6 +11270,39 @@ const moviesData = [
     // 1. BOLLYWOOD WEB-SERIES / BOLLYWOOD WEB-SERIES / BOLLYWOOD WEB-SERIES /
     // =======================================================================
     {
+        title: "Bindiya Ke Bahubali (2025)",
+        embedUrl: "https://short.icu/kOck5UZFiW",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BNTdmZTI2MmItMDE4OC00MGVmLWFmZDUtZTQ1ZjhkYTU1NDQ5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Comedy, Action, Thriller",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-6"
+    },
+    {
+        title: "Bindiya Ke Bahubali (2025)",
+        embedUrl: "https://short.icu/fFRpjm-Wg",
+        posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/ac801a3e4c050696119351bc0225ea132815a8d4878655eb9719d9199fc60451.__SX340__SY454__QL60__._TTW_.jpg",
+        genre: "Comedy, Action, Thriller",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 2, Episode 1-3"
+    },
+    {
+        title: "Bindiya Ke Bahubali (2025)",
+        embedUrl: "https://short.icu/nr8uxw8Gg",
+        posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/ac801a3e4c050696119351bc0225ea132815a8d4878655eb9719d9199fc60451.__SX340__SY454__QL60__._TTW_.jpg",
+        genre: "Comedy, Action, Thriller",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 2, Episode 4-6"
+    },
+    {
         title: "The Pradeeps of Pittsburgh (2024)",
         embedUrl: "https://short.icu/oDtPhaA-b",
         posterUrl: "https://resizing.flixster.com/ViJ1h8H2HJ8VCH7IgzZjmPasdB8=/fit-in/705x460/v2/https://resizing.flixster.com/uY8_K5IzZrqTENhs3d82MB4j5u4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vYjk4YWRmOTQtZTA1NS00ZTE5LTgzN2ItOTUwNzg0MDg2MjFjLmpwZw==",
@@ -11088,7 +11310,7 @@ const moviesData = [
         category: "Bollywood Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         seriesInfo: "Season 1, Episode All"
     },
     {
@@ -11099,7 +11321,7 @@ const moviesData = [
         category: "Bollywood Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         seriesInfo: "Season 1, Episode All"
     },
     {
@@ -11110,7 +11332,7 @@ const moviesData = [
         category: "Bollywood Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         seriesInfo: "Season 1, Episode All"
     },
     {
@@ -11121,7 +11343,7 @@ const moviesData = [
         category: "Bollywood Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         seriesInfo: "Season 1, Episode All"
     },
     {
@@ -11132,7 +11354,7 @@ const moviesData = [
         category: "Bollywood Series",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         seriesInfo: "Season 1, Episode All"
     },
     {
@@ -11400,6 +11622,26 @@ const moviesData = [
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
         seriesInfo: "Season 1, Episode All"
+    },
+    {
+        title: "Afsos (2014)",
+        posterUrl: "https://resizing.flixster.com/dbXJVU3pUELw1uAiQQu39Qh1uXc=/fit-in/705x460/v2/https://resizing.flixster.com/-tW741gekQkxnERuBrhPZio65yc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjcyNzExNC53ZWJw",
+        genre: "Crime, Thriller, Action & Suspense",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/mj-66jkeX" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/NuZMPjPCi" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/kgm2Jd1a2" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/t56QZScrZ" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/6mORBdmkc" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/WUtH8AMn3" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/9xsswHIH7" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/xwO0xv5Yc" },
+        ]
     },
     // =======================================================================
     // 1. HOLLYWOOD WEB-SERIES / HOLLYWOOD WEB-SERIES / HOLLYWOOD WEB-SERIES /
