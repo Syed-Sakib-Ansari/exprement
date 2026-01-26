@@ -9640,259 +9640,259 @@ const moviesData = [
     // =======================================================================
     // 1. BANGLA / BANGLA / BANGLA/ BANGLA / BANGLA / BANGLA
     // =======================================================================
-    {
-        title: "Toofan (2024)",
-        embedUrl: "https://short.icu/dcPf0VGHy",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/Toofan_%282024_film%29.jpeg/250px-Toofan_%282024_film%29.jpeg",
-        genre: "Action, Thriller",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Taandob (2025)",
-        embedUrl: "https://short.icu/-kzRj69dW",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Taandob_movie.jpg/250px-Taandob_movie.jpg",
-        genre: "Action, Thriller",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Borbaad (2025)",
-        embedUrl: "https://short.icu/gHJC0kqWtT",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Borbaad_2025_film.jpg/250px-Borbaad_2025_film.jpg",
-        genre: "Action, Thriller",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Priyotoma (2023)",
-        embedUrl: "https://short.icu/Gmz2E07Y5",
-        posterUrl: "https://asset.bioscopelive.com/uploads/images/2025/03/10/images_70003a375f5ca7ad7e9eb6de07c4ad7d_goplay_priyotoma_port.jpg",
-        genre: "Action, Thriller",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Rajkumar (2024)",
-        embedUrl: "https://short.icu/SX4znNLWf",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BZDg4ZTUxNDMtNTdmYS00YjQ4LWI5ZGQtMTY0ZmM2NTZmNGU4XkEyXkFqcGc@._V1_.jpg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Nabab (2017)",
-        embedUrl: "https://short.icu/tlnh40L86",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BNDQwNjBhZmQtZWI4Yy00NmI4LTkzYTgtNmI5MWU1NTgwNGU4XkEyXkFqcGc@._V1_.jpg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Leader: Amie Bangladesh (2023)",
-        embedUrl: "https://short.icu/Y7hy9FTOu",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BODY4NTVmNTgtNDEyOC00NzY3LWE5MDctMjZjNzJkZTgyYWIxXkEyXkFqcGc@._V1_.jpg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Poran (2022)",
-        embedUrl: "https://short.icu/ksbDn6ilf",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BZjdkMTkyOGMtN2VkOC00MzllLWExYjgtZGM1Mzc0YTVkNTE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Pett Kata Shaw (2022)",
-        embedUrl: "https://short.icu/fVnTNGxvV",
-        posterUrl: "https://resizing.flixster.com/pqD8fMUa-1UuKTgrGhZf625mNx8=/fit-in/705x460/v2/https://resizing.flixster.com/eQvWTUfi27Ub2G1P-fjkMaQe2bs=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMTU0OTY4ZWItZDA2Ni00YzFkLTkwNTAtZDEyOGNkNjAwMjNiLmpwZw==",
-        genre: "Horror, Mystery & Thriller",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode All"
-    },
-    {
-        title: " Dorod (2024)",
-        embedUrl: "https://short.icu/gs2CORd_D",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BM2NlMjQzYTktMzQ2OC00MDAwLTkxMWMtY2I2MjEyNWIzNTRhXkEyXkFqcGc@._V1_.jpg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Janowar (2021)",
-        embedUrl: "https://short.icu/LE0LAJukVT",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BZjI1ZDI4OWEtMDViZS00M2M3LWJmNDEtZDgyYTU1NGViMDNlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Bir (2020)",
-        embedUrl: "https://short.icu/IZE9lANg9",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BYjQyOWU2ZTktZjc2Mi00YTg2LWJlZGYtNjVjYzUyMDc4OWNmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Daagi (2025)",
-        embedUrl: "https://short.icu/cYF45pTPT",
-        posterUrl: "https://resizing.flixster.com/TgmcBnTeKWewmvOf2zbgqbxPSes=/fit-in/705x460/v2/https://resizing.flixster.com/XJv9lAGyRTEsfRuF1RZHXq4cH90=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzEyNjE2OTZhLTFkZjAtNDgyMi05OGRjLWE2MjAwMjdjMzMxZC5qcGc=",
-        genre: "Thriller, Action, Romance",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Khalid (2025)",
-        embedUrl: "https://short.icu/LPo9DJgDb",
-        posterUrl: "https://www.themoviedb.org/t/p/w600_and_h900_face/i7qImccjCXMr1FLL0UdTo97y01Y.jpg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Din The Day (2021)",
-        embedUrl: "https://short.icu/w3vQB3act",
-        posterUrl: "https://cdn.bongo-solutions.com/abfea462-f64d-491e-9cd9-75ee001f45b0/content/195425c0-587a-41d7-9481-82638c928c81/f7193c1d-6035-41ec-b243-5f09461d68a9.jpg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Nabab LLB (2020)",
-        embedUrl: "https://short.icu/ZyUy6xra7",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BMDg4ZTAxNWEtOGNjNC00NGM1LWJhYzUtZmFlYTI4MDliYmYyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Karagar (2022)",
-        embedUrl: "https://short.icu/0dTjxoFlk",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BNWVhNzNjMWUtNTRmZi00ODMyLTljOWUtY2UwNmRlOGFlMmQ5XkEyXkFqcGc@._V1_.jpg",
-        genre: "Action & Thriller",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 1, Episode All"
-    },
-    {
-        title: "Karagar (2022)",
-        embedUrl: "https://short.icu/SXZm9S_FX",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BYjFhNTQ3YjktMzExYy00YjIzLWFhOTctZTBhYWNhOTZmMTYzXkEyXkFqcGc@._V1_.jpg",
-        genre: "Action & Thriller",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        seriesInfo: "Season 2, Episode All"
-    },
-    {
-        title: "Chokkor 302 (2025)",
-        embedUrl: "https://short.icu/i1RJ3D0C_",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Chokkor_302_official_logo.jpg/250px-Chokkor_302_official_logo.jpg",
-        genre: "Thriller, Suspense",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Saheb Bibi Golaam (2016)",
-        embedUrl: "https://short.icu/4iCvJzaoU",
-        posterUrl: "https://resizing.flixster.com/Rsa_LglMkAHMY6TYP44ozLjqzZE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13678059_v_v8_aa.jpg",
-        genre: "Action, Drama",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Noor (2025)",
-        embedUrl: "https://short.icu/gLbXFhmD1",
-        posterUrl: "https://www.themoviedb.org/t/p/w600_and_h900_face/oE15FoMUhJF7mbMeDQykFcFN6Kr.jpg",
-        genre: "Romance, Drama",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Raavan (2022)",
-        embedUrl: "https://short.icu/BXBSCc8h5",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Raavan_2022_film_poster.jpeg/250px-Raavan_2022_film_poster.jpeg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Bagha Jatin (2023)",
-        embedUrl: "https://short.icu/IV5XcKF2x",
-        posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Bagha_Jatin_%282023_film%29_movie_poster.jpeg/250px-Bagha_Jatin_%282023_film%29_movie_poster.jpeg",
-        genre: "Thriller, Action",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Jinn (2023)",
-        embedUrl: "https://short.icu/StOSx_I-7",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BOWMyNGM1ZDUtZjk3My00MjM3LWFjOGItOGYwNjUyMzliNDQxXkEyXkFqcGc@._V1_.jpg",
-        genre: "Horror",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Dispassionate Love (2018)",
-        embedUrl: "https://short.icu/sNknqHd1i",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BMmU4ZTBlNWQtYTg3MC00MDk1LTliZTQtODY4NGVkNTZhNmE2XkEyXkFqcGc@._V1_.jpg",
-        genre: "Drama, Adult",
-        category: "Bangla",
-        language: "Bangla",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
+    // {
+    //     title: "Toofan (2024)",
+    //     embedUrl: "https://short.icu/dcPf0VGHy",
+    //     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/Toofan_%282024_film%29.jpeg/250px-Toofan_%282024_film%29.jpeg",
+    //     genre: "Action, Thriller",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Taandob (2025)",
+    //     embedUrl: "https://short.icu/-kzRj69dW",
+    //     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Taandob_movie.jpg/250px-Taandob_movie.jpg",
+    //     genre: "Action, Thriller",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Borbaad (2025)",
+    //     embedUrl: "https://short.icu/gHJC0kqWtT",
+    //     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Borbaad_2025_film.jpg/250px-Borbaad_2025_film.jpg",
+    //     genre: "Action, Thriller",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Priyotoma (2023)",
+    //     embedUrl: "https://short.icu/Gmz2E07Y5",
+    //     posterUrl: "https://asset.bioscopelive.com/uploads/images/2025/03/10/images_70003a375f5ca7ad7e9eb6de07c4ad7d_goplay_priyotoma_port.jpg",
+    //     genre: "Action, Thriller",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Rajkumar (2024)",
+    //     embedUrl: "https://short.icu/SX4znNLWf",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BZDg4ZTUxNDMtNTdmYS00YjQ4LWI5ZGQtMTY0ZmM2NTZmNGU4XkEyXkFqcGc@._V1_.jpg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Nabab (2017)",
+    //     embedUrl: "https://short.icu/tlnh40L86",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BNDQwNjBhZmQtZWI4Yy00NmI4LTkzYTgtNmI5MWU1NTgwNGU4XkEyXkFqcGc@._V1_.jpg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Leader: Amie Bangladesh (2023)",
+    //     embedUrl: "https://short.icu/Y7hy9FTOu",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BODY4NTVmNTgtNDEyOC00NzY3LWE5MDctMjZjNzJkZTgyYWIxXkEyXkFqcGc@._V1_.jpg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Poran (2022)",
+    //     embedUrl: "https://short.icu/ksbDn6ilf",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BZjdkMTkyOGMtN2VkOC00MzllLWExYjgtZGM1Mzc0YTVkNTE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Pett Kata Shaw (2022)",
+    //     embedUrl: "https://short.icu/fVnTNGxvV",
+    //     posterUrl: "https://resizing.flixster.com/pqD8fMUa-1UuKTgrGhZf625mNx8=/fit-in/705x460/v2/https://resizing.flixster.com/eQvWTUfi27Ub2G1P-fjkMaQe2bs=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMTU0OTY4ZWItZDA2Ni00YzFkLTkwNTAtZDEyOGNkNjAwMjNiLmpwZw==",
+    //     genre: "Horror, Mystery & Thriller",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     seriesInfo: "Season 1, Episode All"
+    // },
+    // {
+    //     title: " Dorod (2024)",
+    //     embedUrl: "https://short.icu/gs2CORd_D",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BM2NlMjQzYTktMzQ2OC00MDAwLTkxMWMtY2I2MjEyNWIzNTRhXkEyXkFqcGc@._V1_.jpg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Janowar (2021)",
+    //     embedUrl: "https://short.icu/LE0LAJukVT",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BZjI1ZDI4OWEtMDViZS00M2M3LWJmNDEtZDgyYTU1NGViMDNlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Bir (2020)",
+    //     embedUrl: "https://short.icu/IZE9lANg9",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BYjQyOWU2ZTktZjc2Mi00YTg2LWJlZGYtNjVjYzUyMDc4OWNmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Daagi (2025)",
+    //     embedUrl: "https://short.icu/cYF45pTPT",
+    //     posterUrl: "https://resizing.flixster.com/TgmcBnTeKWewmvOf2zbgqbxPSes=/fit-in/705x460/v2/https://resizing.flixster.com/XJv9lAGyRTEsfRuF1RZHXq4cH90=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzEyNjE2OTZhLTFkZjAtNDgyMi05OGRjLWE2MjAwMjdjMzMxZC5qcGc=",
+    //     genre: "Thriller, Action, Romance",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Khalid (2025)",
+    //     embedUrl: "https://short.icu/LPo9DJgDb",
+    //     posterUrl: "https://www.themoviedb.org/t/p/w600_and_h900_face/i7qImccjCXMr1FLL0UdTo97y01Y.jpg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Din The Day (2021)",
+    //     embedUrl: "https://short.icu/w3vQB3act",
+    //     posterUrl: "https://cdn.bongo-solutions.com/abfea462-f64d-491e-9cd9-75ee001f45b0/content/195425c0-587a-41d7-9481-82638c928c81/f7193c1d-6035-41ec-b243-5f09461d68a9.jpg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Nabab LLB (2020)",
+    //     embedUrl: "https://short.icu/ZyUy6xra7",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BMDg4ZTAxNWEtOGNjNC00NGM1LWJhYzUtZmFlYTI4MDliYmYyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Karagar (2022)",
+    //     embedUrl: "https://short.icu/0dTjxoFlk",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BNWVhNzNjMWUtNTRmZi00ODMyLTljOWUtY2UwNmRlOGFlMmQ5XkEyXkFqcGc@._V1_.jpg",
+    //     genre: "Action & Thriller",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     seriesInfo: "Season 1, Episode All"
+    // },
+    // {
+    //     title: "Karagar (2022)",
+    //     embedUrl: "https://short.icu/SXZm9S_FX",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BYjFhNTQ3YjktMzExYy00YjIzLWFhOTctZTBhYWNhOTZmMTYzXkEyXkFqcGc@._V1_.jpg",
+    //     genre: "Action & Thriller",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     seriesInfo: "Season 2, Episode All"
+    // },
+    // {
+    //     title: "Chokkor 302 (2025)",
+    //     embedUrl: "https://short.icu/i1RJ3D0C_",
+    //     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Chokkor_302_official_logo.jpg/250px-Chokkor_302_official_logo.jpg",
+    //     genre: "Thriller, Suspense",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Saheb Bibi Golaam (2016)",
+    //     embedUrl: "https://short.icu/4iCvJzaoU",
+    //     posterUrl: "https://resizing.flixster.com/Rsa_LglMkAHMY6TYP44ozLjqzZE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13678059_v_v8_aa.jpg",
+    //     genre: "Action, Drama",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Noor (2025)",
+    //     embedUrl: "https://short.icu/gLbXFhmD1",
+    //     posterUrl: "https://www.themoviedb.org/t/p/w600_and_h900_face/oE15FoMUhJF7mbMeDQykFcFN6Kr.jpg",
+    //     genre: "Romance, Drama",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Raavan (2022)",
+    //     embedUrl: "https://short.icu/BXBSCc8h5",
+    //     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Raavan_2022_film_poster.jpeg/250px-Raavan_2022_film_poster.jpeg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Bagha Jatin (2023)",
+    //     embedUrl: "https://short.icu/IV5XcKF2x",
+    //     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Bagha_Jatin_%282023_film%29_movie_poster.jpeg/250px-Bagha_Jatin_%282023_film%29_movie_poster.jpeg",
+    //     genre: "Thriller, Action",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Jinn (2023)",
+    //     embedUrl: "https://short.icu/StOSx_I-7",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BOWMyNGM1ZDUtZjk3My00MjM3LWFjOGItOGYwNjUyMzliNDQxXkEyXkFqcGc@._V1_.jpg",
+    //     genre: "Horror",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
+    // {
+    //     title: "Dispassionate Love (2018)",
+    //     embedUrl: "https://short.icu/sNknqHd1i",
+    //     posterUrl: "https://m.media-amazon.com/images/M/MV5BMmU4ZTBlNWQtYTg3MC00MDk1LTliZTQtODY4NGVkNTZhNmE2XkEyXkFqcGc@._V1_.jpg",
+    //     genre: "Drama, Adult",
+    //     category: "Bangla",
+    //     language: "Bangla",
+    //     downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    //     downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    // },
     // =======================================================================
     // 1. KOREAN / KOREAN / KOREAN/ KOREAN / KOREAN / KOREAN
     // =======================================================================
@@ -12387,7 +12387,7 @@ const categoriesList = [
     "Hollywood",
     "Animation",
     "South",
-    "Bangla",
+    "", //Write Bangla Here -----------------------------------------------This is Bangla Category 
     "Korean Country",
     "Chinese",
     "Others",
