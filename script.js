@@ -60,6 +60,16 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
+        title: "Tere Ishk Mein (2025)",
+        embedUrl: "https://short.icu/yd6gKaOkv",
+        posterUrl: "https://resizing.flixster.com/vrwacTEP-wO8O15a5RQAWzIerm0=/fit-in/705x460/v2/https://resizing.flixster.com/GzikacWEGk9HUQ2VMzByP6Q9GW0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2MzY2EyMjQyLTI5OGMtNDdmOS1iODhlLTYxNDhiYjg3NTY4ZC5qcGc=",
+        genre: "Drama, Musical",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Kidnapped: Elizabeth Smart (2026)",
         embedUrl: "https://short.icu/Hnln0ef5g",
         posterUrl: "https://resizing.flixster.com/1z2LbUKBKXMBUCvfT3BJybyGGFI=/fit-in/705x460/v2/https://resizing.flixster.com/vHGrr3IiSF5LEIA2NQMAQZeIeaA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2I1MmFjZmM3LWY2MDMtNDY2ZS05N2U3LTA0ODBkMjQyNGEyNy5qcGc=",
@@ -213,6 +223,16 @@ const moviesData = [
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
+    {
+        title: "Tere Ishk Mein (2025)",
+        embedUrl: "https://short.icu/yd6gKaOkv",
+        posterUrl: "https://resizing.flixster.com/vrwacTEP-wO8O15a5RQAWzIerm0=/fit-in/705x460/v2/https://resizing.flixster.com/GzikacWEGk9HUQ2VMzByP6Q9GW0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2MzY2EyMjQyLTI5OGMtNDdmOS1iODhlLTYxNDhiYjg3NTY4ZC5qcGc=",
+        genre: "Drama, Musical",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Border 2 (2026)",
         embedUrl: "https://short.icu/So7nLeWjB",
@@ -1768,6 +1788,16 @@ const moviesData = [
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
     {
+        title: "From The Ashes: The Pit (2025)",
+        embedUrl: "https://short.icu/rLQ6cYqpQ",
+        posterUrl: "https://resizing.flixster.com/RAbneu236l7YZ7y3BsMvVfjLsao=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32068304_v_v8_aa.jpg",
+        genre: "Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Kidnapped: Elizabeth Smart (2026)",
         embedUrl: "https://short.icu/Hnln0ef5g",
         posterUrl: "https://resizing.flixster.com/1z2LbUKBKXMBUCvfT3BJybyGGFI=/fit-in/705x460/v2/https://resizing.flixster.com/vHGrr3IiSF5LEIA2NQMAQZeIeaA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2I1MmFjZmM3LWY2MDMtNDY2ZS05N2U3LTA0ODBkMjQyNGEyNy5qcGc=",
@@ -1792,6 +1822,16 @@ const moviesData = [
         embedUrl: "https://short.icu/7ldsLyGDI",
         posterUrl: "https://resizing.flixster.com/I4upzRIxP72RCm_fj96uzoPkT5Q=/fit-in/705x460/v2/https://resizing.flixster.com/1BVBq9DdaJq45zfdNJBqSkzhPqo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzJjYTg0NmEwLWUxNDEtNGFmZi1iMDZmLWM0Mzk5MzdiMzYyNy53ZWJw",
         genre: "Sci-Fi, Action",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Elixir (2025)",
+        embedUrl: "https://short.icu/oeHqcdMBU",
+        posterUrl: "https://resizing.flixster.com/BObHtvIg2Fg01MTTG069zvzuhEU=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31290236_p_v8_aa.jpg",
+        genre: "Horror, Mystery & Thriller",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -2788,6 +2828,26 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
+        title: "Upgrade (2018)",
+        embedUrl: "https://short.icu/G5nlB0W7g",
+        posterUrl: "https://resizing.flixster.com/XqLthl9wHJGUZM871NBJFP0d98s=/fit-in/705x460/v2/https://resizing.flixster.com/yQ8J6FzOceh6wTIzooGkeHuJin0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2JhMDYzYThiLTA5ZmUtNDgwYi1hNTQ5LTYwZGZmYzcyMDlkMi53ZWJw",
+        genre: "Sci-Fi, Action, Horror",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Laundromat (2019)",
+        embedUrl: "https://short.icu/p7p3esT0X0",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMDRmNzMzZGYtZDdiMy00ZjNiLThjYzUtODMzY2QxY2VkZmIxXkEyXkFqcGc@._V1_.jpg",
+        genre: "Comedy",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Jack the Ripper (1959)",
         embedUrl: "https://short.icu/s6nsOoZjN",
         posterUrl: "https://resizing.flixster.com/_XEzbhu0qg_sJIxtmrFf_uFyP8o=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p52191_v_v8_aa.jpg",
@@ -2802,6 +2862,16 @@ const moviesData = [
         embedUrl: "https://short.icu/E7zELyShj",
         posterUrl: "https://resizing.flixster.com/eruArhrVqY3rlTFtzm_VwlQr4z4=/fit-in/705x460/v2/https://resizing.flixster.com/oDp1tiAVyPQdiAAlvzMt2Cn2J_Q=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzIzNjBlMmNiLWM1ZWQtNGI1Ny1iZGYwLTczMTA5OTliNDQ5ZC53ZWJw",
         genre: "Mystery & Thriller, Horror",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Race to Witch Mountain (2009)",
+        embedUrl: "https://short.icu/NEk5XARRJ",
+        posterUrl: "https://resizing.flixster.com/wJO3Z8S6EO6NTADtZBdIRecItjw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p178740_p_v12_ak.jpg",
+        genre: "Kids & Family, Adventure, Action, Sci-Fi",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -11641,6 +11711,24 @@ const moviesData = [
         { number: 6, title: "Episode 6", embedUrl: "https://short.icu/WUtH8AMn3" },
         { number: 7, title: "Episode 7", embedUrl: "https://short.icu/9xsswHIH7" },
         { number: 8, title: "Episode 8", embedUrl: "https://short.icu/xwO0xv5Yc" },
+        ]
+    },
+    {
+        title: "Kafas (2023)",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BNDg3NGE1ZjQtN2FhNC00MDYxLThjZWEtNmU2NTUzZTZmMDA5XkEyXkFqcGc@._V1_.jpg",
+        genre: "Crime, Thriller, Action & Suspense",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/cCTjqI28_" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/8MyFhWBqw" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/h4jQI9Se3" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/IGKe0KuCG" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/Kijf0Kw9K" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/CGgG3qkNh" },
         ]
     },
     // =======================================================================
