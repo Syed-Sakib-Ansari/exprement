@@ -60,6 +60,26 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
+        title: "Wonder Man (2026)",
+        posterUrl: "https://resizing.flixster.com/vcdMAp8ICqtB6Fj3u3ZlaWqDHOQ=/fit-in/705x460/v2/https://resizing.flixster.com/4LnJ7Kp7Ub02Xc4Y_g34JaV3q-Q=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYjU0YWIwMDItYWViMS00ZTI2LWFmMjktM2IwMDY3NDJmNDliLmpwZw==",
+        genre: "Action, Adventure, Comedy, Fantasy, Sci-Fi",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/JxMXAQ4BI" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/OCqmGq1k3" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/tx38iwVNw" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/bnML55Tnq" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/UiPZ8g6QW" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/rVvdpLU67a" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/2gFZ-ongG" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/1ikuA7t-l" },
+        ]
+    },
+    {
         title: "Afterburn (2025)",
         embedUrl: "https://short.icu/j7N9ICEQX",
         posterUrl: "https://resizing.flixster.com/EcrPSsAH4pMbvKAoMyJFIUgK0hM=/fit-in/705x460/v2/https://resizing.flixster.com/Ku1nhKxk8ZVT7UBDKN4zhIXTayY=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q0NTk2MWY0LWRlMDYtNGFhOS1hMzNlLTJhYmM0ZGZmZjFhMC5qcGc=",
