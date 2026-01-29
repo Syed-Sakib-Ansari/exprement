@@ -60,6 +60,26 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
+        title: "Afterburn (2025)",
+        embedUrl: "https://short.icu/j7N9ICEQX",
+        posterUrl: "https://resizing.flixster.com/EcrPSsAH4pMbvKAoMyJFIUgK0hM=/fit-in/705x460/v2/https://resizing.flixster.com/Ku1nhKxk8ZVT7UBDKN4zhIXTayY=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q0NTk2MWY0LWRlMDYtNGFhOS1hMzNlLTJhYmM0ZGZmZjFhMC5qcGc=",
+        genre: "Action, Adventure, Comedy, Sci-Fi",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Anaconda (2025)",
+        embedUrl: "https://short.icu/lvOvn7XeW",
+        posterUrl: "https://resizing.flixster.com/ePE9MbQte0rYk00RomoZl8pfwbM=/fit-in/705x460/v2/https://resizing.flixster.com/FwcHAsah7Ovfdd9YxMyLpd9GUjA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA1ZmZlZTVhLTM0YWUtNDI0MS04ZWM1LTM1MjRhNmZkNTAyMC5qcGc=",
+        genre: "Comedy, Adventure, Horror",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Tere Ishk Mein (2025)",
         embedUrl: "https://short.icu/yd6gKaOkv",
         posterUrl: "https://resizing.flixster.com/vrwacTEP-wO8O15a5RQAWzIerm0=/fit-in/705x460/v2/https://resizing.flixster.com/GzikacWEGk9HUQ2VMzByP6Q9GW0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2MzY2EyMjQyLTI5OGMtNDdmOS1iODhlLTYxNDhiYjg3NTY4ZC5qcGc=",
@@ -1787,6 +1807,76 @@ const moviesData = [
     // =======================================================================
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
+    {
+        title: "Afterburn (2025)",
+        embedUrl: "https://short.icu/j7N9ICEQX",
+        posterUrl: "https://resizing.flixster.com/EcrPSsAH4pMbvKAoMyJFIUgK0hM=/fit-in/705x460/v2/https://resizing.flixster.com/Ku1nhKxk8ZVT7UBDKN4zhIXTayY=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q0NTk2MWY0LWRlMDYtNGFhOS1hMzNlLTJhYmM0ZGZmZjFhMC5qcGc=",
+        genre: "Action, Adventure, Comedy, Sci-Fi",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Anaconda (2025)",
+        embedUrl: "https://short.icu/lvOvn7XeW",
+        posterUrl: "https://resizing.flixster.com/ePE9MbQte0rYk00RomoZl8pfwbM=/fit-in/705x460/v2/https://resizing.flixster.com/FwcHAsah7Ovfdd9YxMyLpd9GUjA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA1ZmZlZTVhLTM0YWUtNDI0MS04ZWM1LTM1MjRhNmZkNTAyMC5qcGc=",
+        genre: "Comedy, Adventure, Horror",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Fortress 2: Re-Entry (2000)",
+        embedUrl: "https://short.icu/OVOpsisy5",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMGU5YjZmNGItNjAyMy00ODU1LThhNGYtYjcxZDAxZmMxY2JmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Sci-Fi, Action",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Valhalla Rising (2010)",
+        embedUrl: "https://short.icu/fX9Q35O1I",
+        posterUrl: "https://resizing.flixster.com/K7ji809zxLLdORXuUCVs6LNTn5Y=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8041484_v_v7_aa.jpg",
+        genre: "Action, Adventure",
+        category: "Hollywood",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "A Serbian Film (2010)",
+        embedUrl: "https://short.icu/EBqhDo4tB",
+        posterUrl: "https://resizing.flixster.com/UryMSwMrZWvnwcBHSv4YA395wF0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8308959_p_v8_ah.jpg",
+        genre: "Horror",
+        category: "Hollywood",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Jupiter Ascending (2015)",
+        embedUrl: "https://short.icu/MTHrCohn8",
+        posterUrl: "https://resizing.flixster.com/1h-gODYZWpMLFeDQObhQw_Xm2yk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10407904_p_v8_ak.jpg",
+        genre: "Sci-Fi, Action, Adventure",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "In the Lost Lands (2025)",
+        embedUrl: "https://short.icu/yhsRcKnxg",
+        posterUrl: "https://resizing.flixster.com/8dv4DiQ4F7O39x1qJQCjrWP5ijw=/fit-in/705x460/v2/https://resizing.flixster.com/EmRtLlgMu_k4MbdFU3AH4_CBLko=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzY4ZDNjMTVmLTg3NDAtNDVmMS04NDI5LTQwNGM0YjIwYTQ5ZS5qcGc=",
+        genre: "Sci-Fi, Action, Adventure",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "From The Ashes: The Pit (2025)",
         embedUrl: "https://short.icu/rLQ6cYqpQ",
@@ -11735,6 +11825,26 @@ const moviesData = [
     // 1. HOLLYWOOD WEB-SERIES / HOLLYWOOD WEB-SERIES / HOLLYWOOD WEB-SERIES /
     // =======================================================================
     {
+        title: "Wonder Man (2026)",
+        posterUrl: "https://resizing.flixster.com/vcdMAp8ICqtB6Fj3u3ZlaWqDHOQ=/fit-in/705x460/v2/https://resizing.flixster.com/4LnJ7Kp7Ub02Xc4Y_g34JaV3q-Q=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYjU0YWIwMDItYWViMS00ZTI2LWFmMjktM2IwMDY3NDJmNDliLmpwZw==",
+        genre: "Action, Adventure, Comedy, Fantasy, Sci-Fi",
+        category: "Hollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/JxMXAQ4BI" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/OCqmGq1k3" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/tx38iwVNw" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/bnML55Tnq" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/UiPZ8g6QW" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/rVvdpLU67a" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/2gFZ-ongG" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/1ikuA7t-l" },
+        ]
+    },
+    {
         title: "IT: Welcome to Derry (2025)",
         posterUrl: "https://resizing.flixster.com/keD72b6iJJOE8Y1FVV6xUwC3tLk=/fit-in/705x460/v2/https://resizing.flixster.com/8GGzzrT3CqBy0r1vb0dd2bKqSoY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOGEyMzAyY2QtNzUwZC00Y2JlLWIyNTEtZTYyNjAzNjcwNjM5LmpwZw==",
         genre: "Fantasy, Horror",
@@ -12309,6 +12419,48 @@ const moviesData = [
         { number: 6, title: "Episode 6", embedUrl: "https://short.icu/RktSaIyGPo" },
         { number: 7, title: "Episode 7", embedUrl: "https://short.icu/JsrvH3uUz" },
         { number: 8, title: "Episode 8", embedUrl: "https://short.icu/sWrQuQ9tE" },
+        ]
+    },
+    {
+        title: "Carnival Row (2019)",
+        posterUrl: "https://resizing.flixster.com/7WFb-L7KJXtL7OYWSsTc-H8nOZw=/fit-in/705x460/v2/https://resizing.flixster.com/6kXPh1jsZVd6yD91TEjFHp-2aJY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMzQ0ODU2MDEtOTRiZi00YTgxLWI1YzQtM2U5MGFlODFjOTRkLmpwZw==",
+        genre: "Drama, Fantasy",
+        category: "Hollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/sglLl-_Yo" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/BX_D9NWYZ" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/fOLxJHQz4" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/4BqL4YQyR" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/BXSBqULgX" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/W8EghQDO9" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/8LIEbLlF2" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/xOx24JSdd" },
+        ]
+    },
+    {
+        title: "Carnival Row (2023)",
+        posterUrl: "https://resizing.flixster.com/-GOQYZcxwcvK91dhBCPn7EeelYI=/fit-in/705x460/v2/https://resizing.flixster.com/weIoLKJokwSnRRWw4bRdeD3AkSg=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vODFlYzJkYjEtZTJiYy00NjYyLTk3NDMtNzc0NGIzMjJjN2Y4LmpwZw==",
+        genre: "Drama, Fantasy",
+        category: "Hollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 2, Episode 1-10",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/8i6eBUY8b" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/DYJ5ER8SI" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/TjgOze_7_" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/LrToVS9cPF" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/jtJgf_b02" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/KiMn9A-Gy" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/95sj9fp6S" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/snEe7cuLo" },
+        { number: 9, title: "Episode 9", embedUrl: "https://short.icu/0fgyiOZyI" },
+        { number: 10, title: "Episode 10", embedUrl: "https://short.icu/0_lZs4f0b" },
         ]
     },
     // =======================================================================
