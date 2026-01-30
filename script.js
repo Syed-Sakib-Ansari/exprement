@@ -60,6 +60,45 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
+        title: "Daldal (2026)",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BODVmNjRlZDItNThkNy00NzJjLWEzNDEtYzFkNzU2OGYxZmM3XkEyXkFqcGc@._V1_.jpg",
+        genre: "Action, Adventure, Fantasy, Drama",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-7",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/r2t2wAfDW" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/hN5Y7o4CX" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/goc6E7PZR" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/fD9uGZpSZ" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/GqoOkDl2-" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/PaXPolbw-" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/uhZMOZ16B" },
+        ]
+    },
+    {
+        title: "Vaa Vaathiyaar (2026)",
+        embedUrl: "https://short.icu/cAqMknFKf",
+        posterUrl: "https://resizing.flixster.com/jxrVZFSRFEb1u7PgN5Wa9wlSxgQ=/fit-in/705x460/v2/https://resizing.flixster.com/3phX0ufZcePw9GS-2A0qm6BacPk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzAwM2JkOTZkLTU5MmUtNGE1Mi04NWFhLTk1NmJhYjk5Y2ZkZC5qcGc=",
+        genre: "Action, Comedy",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "The Wrecking Crew (2026)",
+        embedUrl: "https://short.icu/6pxZYgjSV5",
+        posterUrl: "https://resizing.flixster.com/-E28yzYOBidb2pN8fjDA9BIFblA=/fit-in/705x460/v2/https://resizing.flixster.com/ASco3Grx3Tvui3S08H3n29wDIP4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2M3MTY2NGRlLTM2NmEtNGFlMC1hMWQ2LTFlNjQxNGRiNTk5Ny5qcGc=",
+        genre: "Action, Comedy",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Wonder Man (2026)",
         posterUrl: "https://resizing.flixster.com/vcdMAp8ICqtB6Fj3u3ZlaWqDHOQ=/fit-in/705x460/v2/https://resizing.flixster.com/4LnJ7Kp7Ub02Xc4Y_g34JaV3q-Q=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYjU0YWIwMDItYWViMS00ZTI2LWFmMjktM2IwMDY3NDJmNDliLmpwZw==",
         genre: "Action, Adventure, Comedy, Fantasy, Sci-Fi",
@@ -264,6 +303,16 @@ const moviesData = [
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
     {
+        title: "Dhurandhar (2025)",
+        embedUrl: "https://short.icu/Hnkt83Mcj",
+        posterUrl: "https://resizing.flixster.com/e9BwbefXTLrSGZl_SyKa5WEYtq4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30946914_p_v8_aa.jpg",
+        genre: "Action, Adventure, Drama",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Tere Ishk Mein (2025)",
         embedUrl: "https://short.icu/yd6gKaOkv",
         posterUrl: "https://resizing.flixster.com/vrwacTEP-wO8O15a5RQAWzIerm0=/fit-in/705x460/v2/https://resizing.flixster.com/GzikacWEGk9HUQ2VMzByP6Q9GW0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2MzY2EyMjQyLTI5OGMtNDdmOS1iODhlLTYxNDhiYjg3NTY4ZC5qcGc=",
@@ -369,16 +418,6 @@ const moviesData = [
         embedUrl: "https://short.icu/5sLX6LKQX",
         posterUrl: "https://resizing.flixster.com/9Pqs7Rl5qzcZgWdmSHmhPPO4cRU=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30953561_p_v10_aa.jpg",
         genre: "Comedy, Drama",
-        category: "Bollywood",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Dhurandhar (2025)",
-        embedUrl: "https://short.icu/SnhUlQbxx9",
-        posterUrl: "https://resizing.flixster.com/e9BwbefXTLrSGZl_SyKa5WEYtq4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30946914_p_v8_aa.jpg",
-        genre: "Action, Adventure, Drama",
         category: "Bollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -1827,6 +1866,16 @@ const moviesData = [
     // =======================================================================
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
+    {
+        title: "The Wrecking Crew (2026)",
+        embedUrl: "https://short.icu/6pxZYgjSV5",
+        posterUrl: "https://resizing.flixster.com/-E28yzYOBidb2pN8fjDA9BIFblA=/fit-in/705x460/v2/https://resizing.flixster.com/ASco3Grx3Tvui3S08H3n29wDIP4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2M3MTY2NGRlLTM2NmEtNGFlMC1hMWQ2LTFlNjQxNGRiNTk5Ny5qcGc=",
+        genre: "Action, Comedy",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Afterburn (2025)",
         embedUrl: "https://short.icu/j7N9ICEQX",
@@ -8225,6 +8274,16 @@ const moviesData = [
     // 1. ANIMATION / ANIMATION / ANIMATION/ ANIMATION /
     // =======================================================================
     {
+        title: "Zootopia 2 (2025)",
+        embedUrl: "https://short.icu/1liczS83F",
+        posterUrl: "https://resizing.flixster.com/iO_DDCF__d6GMVfGN49G5fm4uQ4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30322396_v_v13_ai.jpg",
+        genre: "Kids & Family, Comedy, Adventure, Music, Animation",
+        category: "Animation",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "The SpongeBob Movie: Search for SquarePants (2025)",
         embedUrl: "https://short.icu/O5tBCprfz",
         posterUrl: "https://resizing.flixster.com/3_UpKMrkKBgZihTnu1SXbnXbXCY=/fit-in/705x460/v2/https://resizing.flixster.com/D4XOTaLafpvnMFIDBQuZsWa9dZ0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzljZWFmMTRlLWM5MDUtNDJjMC1hYWM5LTQzMDhiNjE2NzAyNC5qcGc=",
@@ -8737,6 +8796,16 @@ const moviesData = [
     // 1. SOUTH / SOUTH / SOUTH/ SOUTH / SOUTH / SOUTH
     // =======================================================================
     {
+        title: "Vaa Vaathiyaar (2026)",
+        embedUrl: "https://short.icu/cAqMknFKf",
+        posterUrl: "https://resizing.flixster.com/jxrVZFSRFEb1u7PgN5Wa9wlSxgQ=/fit-in/705x460/v2/https://resizing.flixster.com/3phX0ufZcePw9GS-2A0qm6BacPk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzAwM2JkOTZkLTU5MmUtNGE1Mi04NWFhLTk1NmJhYjk5Y2ZkZC5qcGc=",
+        genre: "Action, Comedy",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Cheekatilo (2026)",
         embedUrl: "https://short.icu/ZHboSJf2I",
         posterUrl: "https://resizing.flixster.com/tDhcjnbtUNm8Z2lXxkdbik1EXTk=/fit-in/705x460/v2/https://resizing.flixster.com/bFeY3wFMjCGCZEVbIrU4ahnCSJI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzU1YTEzOWRkLTRkZDYtNDYxNi05YzE2LTg0Mzk5ZTRkNGNkMC5qcGc=",
@@ -8881,6 +8950,16 @@ const moviesData = [
         embedUrl: "https://short.icu/AB_NcFXbp",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BNWIzOGQyZDItZGZhYy00YjI3LWFkY2YtNTgwNzkwMDAwYzRkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         genre: "Action, Drama, Suspense, Thriller, Mystery",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Adbhutham (2021)",
+        embedUrl: "https://short.icu/O7Uxukw_B",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BNjAxMWRiNzMtY2FkYy00MjJmLTgzMDMtZjZjNmJkMzU3YjkyXkEyXkFqcGc@._V1_.jpg",
+        genre: "Romance, Sci-Fi",
         category: "South",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -11449,6 +11528,25 @@ const moviesData = [
     // =======================================================================
     // 1. BOLLYWOOD WEB-SERIES / BOLLYWOOD WEB-SERIES / BOLLYWOOD WEB-SERIES /
     // =======================================================================
+    {
+        title: "Daldal (2026)",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BODVmNjRlZDItNThkNy00NzJjLWEzNDEtYzFkNzU2OGYxZmM3XkEyXkFqcGc@._V1_.jpg",
+        genre: "Action, Adventure, Fantasy, Drama",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-7",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/r2t2wAfDW" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/hN5Y7o4CX" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/goc6E7PZR" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/fD9uGZpSZ" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/GqoOkDl2-" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/PaXPolbw-" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/uhZMOZ16B" },
+        ]
+    },
     {
         title: "Bindiya Ke Bahubali (2025)",
         embedUrl: "https://short.icu/kOck5UZFiW",
