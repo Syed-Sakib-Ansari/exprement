@@ -60,6 +60,26 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
+        title: "Mardaani 3 (2026)",
+        embedUrl: "https://short.icu/vjsEU5VkD",
+        posterUrl: "https://resizing.flixster.com/qUb0VXN2zyd885MnWZRqmloMxfQ=/fit-in/705x460/v2/https://resizing.flixster.com/LpUnLQy3qzVOAqkF-d_Rh7Xiuh4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzFlNzRlMDI3LTY3ZGItNDljNi1iYzQ4LWRlZGY5Y2UxYWNkNi5qcGc=",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Mayasabha - The Hall of Illusion (2026)",
+        embedUrl: "https://short.icu/jjI1E8EcU",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BYmU0NTRjNTItNThhOS00OWFjLWFjNjQtN2ZkNDVhYWFmOWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Psychological Fantasy, Thriller",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Daldal (2026)",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BODVmNjRlZDItNThkNy00NzJjLWEzNDEtYzFkNzU2OGYxZmM3XkEyXkFqcGc@._V1_.jpg",
         genre: "Action, Adventure, Fantasy, Drama",
@@ -208,100 +228,29 @@ const moviesData = [
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=VXZtOXRidXZOZDBTNExRNU0vRW9kaitTV294eHVtclpoQ2Nhbk5nZE93ME1PSzdFU043NytxamRqcHZRYktlVmNTRzNlTDRGdVBhY0pNWnF1VkE5YlJFV3NsbUZuYkM5aEZQd3hBNGlRdEE9"
     },
-    {
-        title: "Retta Thala (2025)",
-        embedUrl: "https://short.icu/jGJfl3o_9",
-        posterUrl: "https://resizing.flixster.com/z6A7KdmbhwGIASHSYn6SADh1Seo=/fit-in/705x460/v2/https://resizing.flixster.com/rg3RXUaL_8DA75fJvTkX_vbQZxM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZjMTg4OTY4LThmYjctNDE3OS1iY2JiLWQ0MGY1NjIyMDY4YS5qcGc=",
-        genre: "Action, Mystery & Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=VXZtOXRidXZOZDBTNExRNU0vRW9kaitTV294eHVtclpoQ2Nhbk5nZE93ME1PSzdFU043NytxamRqcHZRYktlVmNTRzNlTDRGdVBhY0pNWnF1VkE5YlJFV3NsbUZuYkM5aEZQd3hBNGlRdEE9"
-    },
-    {
-        title: "45 (2026)",
-        embedUrl: "https://short.icu/SiN3C3cBt",
-        posterUrl: "https://resizing.flixster.com/BqHqvQPvS3GZmbQmGbZtECwjrag=/fit-in/705x460/v2/https://resizing.flixster.com/eSPywC9v_ANVF68NgiJMIuRohZc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkwZDliNDg4LWYxM2QtNDc5ZC1hN2EwLTk1NjkxZDcyOThiZC5qcGc=",
-        genre: "Action, Drama, Comedy",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "The Rip (2026)",
-        embedUrl: "https://short.icu/YZzYkXfWG",
-        posterUrl: "https://resizing.flixster.com/ucV5aDwnfhDPtMmXlov8cFOzP9w=/fit-in/705x460/v2/https://resizing.flixster.com/RMXC9aHsZxWf--hK5hh-Xbc9YkI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzlmY2IxNDc3LTNiNTMtNDZjOS1iZjExLTU5Mjk1MmE4ZjQxMC53ZWJw",
-        genre: "Crime, Drama, Action",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "28 Years Later: The Bone Temple (2026)",
-        embedUrl: "https://short.icu/Lbwva2Yn2",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BNGJhYmRjYmUtOGY5My00ODIyLTlhNjctMzk0NjYyOGE1MGIwXkEyXkFqcGc@._V1_.jpg",
-        genre: "Horror",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Rahu Ketu (2026)",
-        embedUrl: "https://short.icu/OAklOO3E9",
-        posterUrl: "https://resizing.flixster.com/Arp_OTPmU_ZrUzgAQH5Fcxe3oSY=/fit-in/705x460/v2/https://resizing.flixster.com/hvPcmkCCQkxlH9i3kkINs3E_nrw=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA4YzRhYjUwLWNkNGQtNGZjZi1hNDBlLTMzYzc2MGY0MmExMC5qcGc=",
-        genre: "Comedy, Drama",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Taskaree: The Smuggler's Web (2026)",
-        embedUrl: "https://short.icu/dfWzLix8c",
-        posterUrl: "https://resizing.flixster.com/Q2gvXUlUqd-jljT_JFDF3cdvVBs=/fit-in/705x460/v2/https://resizing.flixster.com/_g1s57Z8DKPoPWmvNEeXOtLFLTM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZjhhYzJhZDctOWY3Ni00MTkxLTgzODctYjBlNjFhZDYzMWE3LmpwZw==",
-        genre: "Crime, Mystery & Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=OUN4bWkvRFFXeDIwQjFSb3RLK1dBRDBFRXZ0WnBHZW9lSmZZbzBsRk44bFJ3em5ReGlTYzF1NmhNdENXTUcrQ2NjS1hFUmNLN3kzUEdqdXppcGxzLzNCNyt0Q2RRSzUwUi9WdjlIUmJsMzA9",
-        seriesInfo: "Season 1, Episode All"
-    },
-    {
-        title: "Happy Patel: Khatarnak Jasoos (2026)",
-        embedUrl: "https://short.icu/WNW3JQBg9",
-        posterUrl: "https://resizing.flixster.com/bLX9zRd-1t464hNTmvED03u2ekM=/fit-in/705x460/v2/https://resizing.flixster.com/DVR0zq7Rk43S3k9Ug4sOFFjt1uQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzZmMTE4MzNlLTcyYjctNDU4Ni05NmEwLWZhMTk3ODczNTFjZi5qcGc=",
-        genre: "Action, Comedy, Crime",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "One Two Cha Cha Chaa (2026)",
-        embedUrl: "https://short.icu/4sj9SP9g0",
-        posterUrl: "https://m.media-amazon.com/images/M/MV5BZDkwYTI5ZjEtZjU3Mi00OGQ2LWE3NGUtYzRhMjVmZjNiMzYxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        genre: "Drama, Comedy",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Laalo: Krishna Sada Sahaayate (2025)",
-        embedUrl: "https://short.icu/ceOQlWI4l",
-        posterUrl: "https://resizing.flixster.com/GiGgELx2QMeYag3klrzZ4tsWif8=/fit-in/705x460/v2/https://resizing.flixster.com/9iK1j4NiYGRYHBlUROPMNVgHrZU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YzN2UyMDkxLTI1MDItNDYxMC1hMTJiLTg2NTYxNzk0Zjc4YS5qcGc=",
-        genre: "Drama, Thriller, Survival",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
+    {
+        title: "Mardaani 3 (2026)",
+        embedUrl: "https://short.icu/vjsEU5VkD",
+        posterUrl: "https://resizing.flixster.com/qUb0VXN2zyd885MnWZRqmloMxfQ=/fit-in/705x460/v2/https://resizing.flixster.com/LpUnLQy3qzVOAqkF-d_Rh7Xiuh4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzFlNzRlMDI3LTY3ZGItNDljNi1iYzQ4LWRlZGY5Y2UxYWNkNi5qcGc=",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Mayasabha - The Hall of Illusion (2026)",
+        embedUrl: "https://short.icu/jjI1E8EcU",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BYmU0NTRjNTItNThhOS00OWFjLWFjNjQtN2ZkNDVhYWFmOWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Psychological Fantasy, Thriller",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Dhurandhar (2025)",
         embedUrl: "https://short.icu/Hnkt83Mcj",
@@ -1866,6 +1815,16 @@ const moviesData = [
     // =======================================================================
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
+    {
+        title: "Rabbit Trap (2025)",
+        embedUrl: "https://short.icu/a-UE_5LQ1",
+        posterUrl: "https://resizing.flixster.com/O8iNsy0nVmMZLxMlxHDZ7MApAVg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30537999_v_v13_ac.jpg",
+        genre: "Horror, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "The Wrecking Crew (2026)",
         embedUrl: "https://short.icu/6pxZYgjSV5",
@@ -8273,6 +8232,16 @@ const moviesData = [
     // =======================================================================
     // 1. ANIMATION / ANIMATION / ANIMATION/ ANIMATION /
     // =======================================================================
+    {
+        title: "Pets on a Train (2026)",
+        embedUrl: "https://short.icu/idmoWO7Mq",
+        posterUrl: "https://resizing.flixster.com/bCbuDvQgUQFEY7QuL9LyGw3ZkKs=/fit-in/705x460/v2/https://resizing.flixster.com/n1bqr-t2AB4YGWbR8L2Hp2whqJE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUzOTdkN2ZkLWM4OWUtNGQyMi1hYmU4LWYyZjNhMmFiYjBlMi5qcGc=",
+        genre: "Kids & Family, Comedy, Adventure, Music, Animation",
+        category: "Animation",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
     {
         title: "Zootopia 2 (2025)",
         embedUrl: "https://short.icu/1liczS83F",
