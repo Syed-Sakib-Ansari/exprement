@@ -60,6 +60,56 @@ const moviesData = [
     // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
     // =======================================================================
     {
+        title: "Gandhi Talks (2026)",
+        embedUrl: "https://short.icu/Os5qpJ3lR",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQxZDgwNzMtY2M4NS00OWY0LWI4ZGMtYjBjY2RhMGFhMzk1XkEyXkFqcGc@._V1_.jpg",
+        genre: "Drama",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Landlord (2026)",
+        embedUrl: "https://short.icu/MvmEQu0kq",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BNTVkNzMzNjctNjVkMy00OTM1LWFhMjctZWRkM2E4YmViZGQxXkEyXkFqcGc@._V1_.jpg",
+        genre: "Action, Drama",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Baby Girl (2026)",
+        embedUrl: "https://short.icu/rfTgRp_c8",
+        posterUrl: "https://resizing.flixster.com/6JBml26YW7_czRY22ZlPlTtFqgo=/fit-in/705x460/v2/https://resizing.flixster.com/UJFvg9BSbkctuc3mp1C2-ELttJQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NkMDg5ZTU0LWFjYmQtNGIyNy04NTFlLWNjMTM1NjQwYjIxZi5qcGc=",
+        genre: "Drama, Mystery & Thriller",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Jockey (2026)",
+        embedUrl: "https://short.icu/6Nz8gcNO2",
+        posterUrl: "https://assets.gadgets360cdn.com/pricee/assets/product/202511/Jockey_Poster_1762248577.jpg",
+        genre: "Drama, Mystery & Thriller, Action",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Chaari 111 (2024)",
+        embedUrl: "https://short.icu/3BaafDEEK",
+        posterUrl: "https://resizing.flixster.com/Agrzldur6yKHXrFlpFqiGKuP1AM=/fit-in/705x460/v2/https://resizing.flixster.com/2W-MKtLBHHpMvurzR1L6glvqCWc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUxM2JiYThjLTAxYTktNDQ1MS04YmZhLTRmOGFiOGQ2ODE3ZC5qcGc=",
+        genre: "Drama, Mystery & Thriller, Action",
+        category: "Recent Adds",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Mardaani 3 (2026)",
         embedUrl: "https://short.icu/vjsEU5VkD",
         posterUrl: "https://resizing.flixster.com/qUb0VXN2zyd885MnWZRqmloMxfQ=/fit-in/705x460/v2/https://resizing.flixster.com/LpUnLQy3qzVOAqkF-d_Rh7Xiuh4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzFlNzRlMDI3LTY3ZGItNDljNi1iYzQ4LWRlZGY5Y2UxYWNkNi5qcGc=",
@@ -177,56 +227,6 @@ const moviesData = [
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "The Big Fake (2026)",
-        embedUrl: "https://short.icu/HL8ZfgO_P",
-        posterUrl: "https://resizing.flixster.com/M5DwJi-3GJnNpEl8GXtZ5SHhqzY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31965488_v_v10_aa.jpg",
-        genre: "Drama, Mystery & Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Cheekatilo (2026)",
-        embedUrl: "https://short.icu/ZHboSJf2I",
-        posterUrl: "https://resizing.flixster.com/tDhcjnbtUNm8Z2lXxkdbik1EXTk=/fit-in/705x460/v2/https://resizing.flixster.com/bFeY3wFMjCGCZEVbIrU4ahnCSJI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzU1YTEzOWRkLTRkZDYtNDYxNi05YzE2LTg0Mzk5ZTRkNGNkMC5qcGc=",
-        genre: "Crime, Drama, Mystery & Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Mowgli (2025)",
-        embedUrl: "https://short.icu/Y_bNvZZW5",
-        posterUrl: "https://resizing.flixster.com/yC2Egz64J0aJvJIajke4rINVqhU=/fit-in/705x460/v2/https://resizing.flixster.com/JAZpQ8EJTQ561i3G-wec6h54Rk4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzlhYTQ1OTg1LTA3NDYtNGRmNS05MmMzLWU0NjljMWY3ZWQ3YS5qcGc=",
-        genre: "Action, Adventure, Drama, Romance",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Safia Safdar (2026)",
-        embedUrl: "https://short.icu/YlW5PP3Jt",
-        posterUrl: "https://movieassetsdigital.sgp1.cdn.digitaloceanspaces.com/original/32b909131b16ad5572f94b5b411d99552f240422",
-        genre: "drama. Mystery, Thriller",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
-    {
-        title: "Parasakthi (2026)",
-        embedUrl: "https://short.icu/S1YAfzbIl",
-        posterUrl: "https://resizing.flixster.com/hB-AdQlS2_19kISOZa6QGu15t0o=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32066236_p_v13_aa.jpg",
-        genre: "Drama",
-        category: "Recent Adds",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://cdn.gdrivehub.cfd/url?photo=VXZtOXRidXZOZDBTNExRNU0vRW9kaitTV294eHVtclpoQ2Nhbk5nZE93ME1PSzdFU043NytxamRqcHZRYktlVmNTRzNlTDRGdVBhY0pNWnF1VkE5YlJFV3NsbUZuYkM5aEZQd3hBNGlRdEE9"
     },
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
@@ -8259,16 +8259,6 @@ const moviesData = [
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
-    {
-        title: "Girls to Buy (2022)",
-        embedUrl: "https://short.icu/kOe-UEtCW",
-        posterUrl: "https://resizing.flixster.com/tk50i6i2keTgUrQ3AWUIqv0diQs=/fit-in/705x460/v2/https://resizing.flixster.com/YcCr9niAIsr-_hYZ_taOdfgXwb0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQ2NWNhMDJlLTAyMTAtNGU1My05ZTgyLTQxMGY2ODE2NDYzNy5qcGc=",
-        genre: "Drama",
-        category: "Hollywood",
-        language: "Hindi",
-        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    },
     // =======================================================================
     // 1. ANIMATION / ANIMATION / ANIMATION/ ANIMATION /
     // =======================================================================
@@ -11583,6 +11573,16 @@ const moviesData = [
         language: "English",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Girls to Buy (2022)",
+        embedUrl: "https://short.icu/kOe-UEtCW",
+        posterUrl: "https://resizing.flixster.com/tk50i6i2keTgUrQ3AWUIqv0diQs=/fit-in/705x460/v2/https://resizing.flixster.com/YcCr9niAIsr-_hYZ_taOdfgXwb0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQ2NWNhMDJlLTAyMTAtNGU1My05ZTgyLTQxMGY2ODE2NDYzNy5qcGc=",
+        genre: "Drama",
+        category: "Others",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     // =======================================================================
     // 1. BOLLYWOOD WEB-SERIES / BOLLYWOOD WEB-SERIES / BOLLYWOOD WEB-SERIES /
