@@ -383,6 +383,16 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
+        title: "Khufiya (2023)",
+        embedUrl: "https://short.icu/Njn0rgenb",
+        posterUrl: "https://resizing.flixster.com/Bij0lYDz1gfl_DVMkzKVlffgv3s=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24521929_p_v8_aa.jpg",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Ek Chatur Naar (2025)",
         embedUrl: "https://short.icu/MqPbuFrRY",
         posterUrl: "https://resizing.flixster.com/xxtbR0Fahjj01k_BKm0R7mhUcUA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31141714_p_v8_aa.jpg",
@@ -2276,6 +2286,16 @@ const moviesData = [
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
+        title: "The Unhealer (2020)",
+        embedUrl: "https://short.icu/7GMhTgRp1",
+        posterUrl: "https://resizing.flixster.com/UDpxEtgKhV48hQH_Tc8fV8W-nxo=/fit-in/705x460/v2/https://resizing.flixster.com/FfuvwMiMtwtSHH61s4gEk5fglcg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzg3OTA0YjAxLTA4ZDQtNDlkOS1hZDA5LWM2OTk3MGVlMjk3MS5qcGc=",
+        genre: "Mystery & Thriller, Horror, Sci-Fi",
+        category: "Hollywood",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Five Nights at Freddy's 2 (2025)",
         embedUrl: "https://short.icu/FXIzk1o7f",
         posterUrl: "https://resizing.flixster.com/wNJUhdpdruTyKy-p9EQ1DPnXn8s=/fit-in/705x460/v2/https://resizing.flixster.com/yFQ1_2PES9kQgGXipTnpyiLho-c=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FjOTc0MWU4LWM2NzItNGEzZC05M2Y1LTM2OTM1ZDAwYTczZC5qcGc=",
@@ -2880,6 +2900,16 @@ const moviesData = [
         embedUrl: "https://short.icu/vLokMET9H",
         posterUrl: "https://resizing.flixster.com/0MwbTfA639drTtYzO-EaRY1KMcA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17573367_v_v8_aa.jpg",
         genre: "Action, Adventure, Sci-Fi, Mystery, Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Good Boys (2019)",
+        embedUrl: "https://short.icu/o-3PTO1lb",
+        posterUrl: "https://resizing.flixster.com/Y9QtVB0Iu6HApwE2qniLaxuSqDs=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p16597574_p_v8_aa.jpg",
+        genre: "Comedy",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -4450,6 +4480,16 @@ const moviesData = [
         embedUrl: "https://short.icu/35JpfYN1c",
         posterUrl: "https://resizing.flixster.com/699arJNoptItrkqLrDxZFWHpHBs=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p22777328_v_v13_ab.jpg",
         genre: "Sci-Fi, Adventure",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Lost & Found (2022)",
+        embedUrl: "https://short.icu/XBtx7EsVo",
+        posterUrl: "https://resizing.flixster.com/AzEKRlEoh18vGnc2hC89GXMGTNI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p21800733_p_v8_ae.jpg",
+        genre: "Mystery & Thriller",
         category: "Hollywood",
         language: "Hindi",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -8765,6 +8805,56 @@ const moviesData = [
     // 1. SOUTH / SOUTH / SOUTH/ SOUTH / SOUTH / SOUTH
     // =======================================================================
     {
+        title: "Gandhi Talks (2026)",
+        embedUrl: "https://short.icu/Os5qpJ3lR",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQxZDgwNzMtY2M4NS00OWY0LWI4ZGMtYjBjY2RhMGFhMzk1XkEyXkFqcGc@._V1_.jpg",
+        genre: "Drama",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Landlord (2026)",
+        embedUrl: "https://short.icu/MvmEQu0kq",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BNTVkNzMzNjctNjVkMy00OTM1LWFhMjctZWRkM2E4YmViZGQxXkEyXkFqcGc@._V1_.jpg",
+        genre: "Action, Drama",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Baby Girl (2026)",
+        embedUrl: "https://short.icu/rfTgRp_c8",
+        posterUrl: "https://resizing.flixster.com/6JBml26YW7_czRY22ZlPlTtFqgo=/fit-in/705x460/v2/https://resizing.flixster.com/UJFvg9BSbkctuc3mp1C2-ELttJQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NkMDg5ZTU0LWFjYmQtNGIyNy04NTFlLWNjMTM1NjQwYjIxZi5qcGc=",
+        genre: "Drama, Mystery & Thriller",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Jockey (2026)",
+        embedUrl: "https://short.icu/6Nz8gcNO2",
+        posterUrl: "https://assets.gadgets360cdn.com/pricee/assets/product/202511/Jockey_Poster_1762248577.jpg",
+        genre: "Drama, Mystery & Thriller, Action",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Chaari 111 (2024)",
+        embedUrl: "https://short.icu/3BaafDEEK",
+        posterUrl: "https://resizing.flixster.com/Agrzldur6yKHXrFlpFqiGKuP1AM=/fit-in/705x460/v2/https://resizing.flixster.com/2W-MKtLBHHpMvurzR1L6glvqCWc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUxM2JiYThjLTAxYTktNDQ1MS04YmZhLTRmOGFiOGQ2ODE3ZC5qcGc=",
+        genre: "Drama, Mystery & Thriller, Action",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Vaa Vaathiyaar (2026)",
         embedUrl: "https://short.icu/cAqMknFKf",
         posterUrl: "https://resizing.flixster.com/jxrVZFSRFEb1u7PgN5Wa9wlSxgQ=/fit-in/705x460/v2/https://resizing.flixster.com/3phX0ufZcePw9GS-2A0qm6BacPk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzAwM2JkOTZkLTU5MmUtNGE1Mi04NWFhLTk1NmJhYjk5Y2ZkZC5qcGc=",
@@ -11906,6 +11996,46 @@ const moviesData = [
         { number: 4, title: "Episode 4", embedUrl: "https://short.icu/IGKe0KuCG" },
         { number: 5, title: "Episode 5", embedUrl: "https://short.icu/Kijf0Kw9K" },
         { number: 6, title: "Episode 6", embedUrl: "https://short.icu/CGgG3qkNh" },
+        ]
+    },
+    {
+        title: "Suzhal The Vortex (2022)",
+        posterUrl: "https://resizing.flixster.com/8CbWdUpNu_TfkGowB8RH-8v1a6I=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p22366916_b_v8_aa.jpg",
+        genre: "Mystery & Thriller, Drama, Crime",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 1, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/SKCc_ID9S" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/cSVXAUaYk" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/3yNDZRFj1" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/Bjb_-Hic-" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/VVEWtPbBR" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/aS4aTgwPS" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/j0jPCDz0q" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/Lz2ZsUyQp" },
+        ]
+    },
+    {
+        title: "Suzhal The Vortex (2022)",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BYzJlN2JkZjktOWE2OS00Mjk3LWE4MTAtMTcyMjMxNTdmMWFiXkEyXkFqcGc@._V1_.jpg",
+        genre: "Mystery & Thriller, Drama, Crime",
+        category: "Bollywood Series",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        seriesInfo: "Season 2, Episode 1-8",
+        episodes: [
+        { number: 1, title: "Episode 1", embedUrl: "https://short.icu/4icklrs5C" },
+        { number: 2, title: "Episode 2", embedUrl: "https://short.icu/5GxnplaUH" },
+        { number: 3, title: "Episode 3", embedUrl: "https://short.icu/MNmc6AMpg" },
+        { number: 4, title: "Episode 4", embedUrl: "https://short.icu/iwXwip5K_" },
+        { number: 5, title: "Episode 5", embedUrl: "https://short.icu/OPCRquLpO" },
+        { number: 6, title: "Episode 6", embedUrl: "https://short.icu/w5GoyKghf" },
+        { number: 7, title: "Episode 7", embedUrl: "https://short.icu/qZQtWN5mA" },
+        { number: 8, title: "Episode 8", embedUrl: "https://short.icu/TEzPpQw0Qc" },
         ]
     },
     // =======================================================================
