@@ -232,6 +232,16 @@ const moviesData = [
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
     {
+        title: "Hashtag Star (2026)",
+        embedUrl: "https://short.icu/24jaSl7Hw",
+        posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/80c1675e2add13eafb36a2227cb8575c0635c302503fa6b078137644ce2ef6d7.jpg",
+        genre: "Crime, Drama, Mystery & Thriller",
+        category: "Bollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Mardaani 3 (2026)",
         embedUrl: "https://short.icu/vjsEU5VkD",
         posterUrl: "https://resizing.flixster.com/qUb0VXN2zyd885MnWZRqmloMxfQ=/fit-in/705x460/v2/https://resizing.flixster.com/LpUnLQy3qzVOAqkF-d_Rh7Xiuh4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzFlNzRlMDI3LTY3ZGItNDljNi1iYzQ4LWRlZGY5Y2UxYWNkNi5qcGc=",
@@ -2169,6 +2179,16 @@ const moviesData = [
         title: "Ballerina (2025)",
         embedUrl: "https://short.icu/2Ht520XbJ",
         posterUrl: "https://resizing.flixster.com/Obx0xSa2MwznuG9CxsHEwegHq9Y=/fit-in/705x460/v2/https://resizing.flixster.com/LzOx5oXHCkEBotyKyTLCFq5mGnQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzhiNWQ2MGU5LTUxMTEtNDc0Zi04ODg1LTkxZmMwZTYyNmNkMy5wbmc=",
+        genre: "Action, Mystery & Thriller",
+        category: "Hollywood",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Red Sparrow (2018)",
+        embedUrl: "https://short.icu/wf1NACRLV",
+        posterUrl: "https://resizing.flixster.com/mUhainaLC8UhT7sW0dnlO9KZYsA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzJiM2M1NzUzLWZiMTQtNGVkNi04ZjJhLWM1ZTM1NmRkZTNkYS53ZWJw",
         genre: "Action, Mystery & Thriller",
         category: "Hollywood",
         language: "Hindi",
@@ -8795,6 +8815,16 @@ const moviesData = [
     // 1. SOUTH / SOUTH / SOUTH/ SOUTH / SOUTH / SOUTH
     // =======================================================================
     {
+        title: "Solo Boy (2025)",
+        embedUrl: "https://short.icu/0gL2MPMad",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BNDliMzgyZTMtYWQ2Ni00Yjg5LWI1NDItMzM1YjFlZDRhNGJiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        genre: "Drama",
+        category: "South",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
         title: "Gandhi Talks (2026)",
         embedUrl: "https://short.icu/Os5qpJ3lR",
         posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQxZDgwNzMtY2M4NS00OWY0LWI4ZGMtYjBjY2RhMGFhMzk1XkEyXkFqcGc@._V1_.jpg",
@@ -11054,10 +11084,20 @@ const moviesData = [
     // 1. OTHER'S / OTHER'S / OTHER'S /
     // =======================================================================
     {
-        title: "Risque (2025)",
-        embedUrl: "https://short.icu/ntvupzjT9",
-        posterUrl: "https://resizing.flixster.com/cWSPbb2N8jeY5ZiI71r4Gt6S4VE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30555139_v_v12_aa.jpg",
-        genre: "Adult, Romance, Drama, Mystery & Thriller",
+        title: "Stripperland (2011)",
+        embedUrl: "https://short.icu/WMgJztTOU",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMTM2MDgzMTI5NF5BMl5BanBnXkFtZTcwMjcwMjYxMw@@._V1_.jpg",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Pussy Kills (2017)",
+        embedUrl: "https://short.icu/VwRgz_0om",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZDYxZmE1NzYtMGEzMS00ZmYzLWJjMWYtMDVmYzdkOTAyY2JlXkEyXkFqcGc@._V1_.jpg",
+        genre: "Drama, Adult, Comedy Horror",
         category: "Others",
         language: "English",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -11172,6 +11212,16 @@ const moviesData = [
         language: "English",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    },
+    {
+        title: "Risque (2025)",
+        embedUrl: "https://short.icu/ntvupzjT9",
+        posterUrl: "https://resizing.flixster.com/cWSPbb2N8jeY5ZiI71r4Gt6S4VE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30555139_v_v12_aa.jpg",
+        genre: "Adult, Romance, Drama, Mystery & Thriller",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
     {
         title: "Salo, or the 120 Days of Sodom (1977)",
@@ -11581,6 +11631,116 @@ const moviesData = [
         genre: "Drama",
         category: "Others",
         language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Paranormal Whacktivity (2013)",
+        embedUrl: "https://short.icu/scclNdwJz",
+        posterUrl: "https://images.sr.roku.com/idType/roku/context/global/id/e3a886c2eb0750d8a06867d5305c655b/images/gracenote/assets/p10116773_d_v8_aa.jpg/magic/396x0/filters:quality(70)",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Rape Zombie: Lust of the Dead 3 (2013)",
+        embedUrl: "https://short.icu/nDsDEMtDV",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMTg5ODQwODI4OF5BMl5BanBnXkFtZTgwODA1NjA5NTE@._V1_.jpg",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Treasure Chest of Horrors II (2013)",
+        embedUrl: "https://short.icu/SgpGdLtlg",
+        posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p21441967_p_v8_aa.jpg",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Lizzie Borden's Revenge (2013)",
+        embedUrl: "https://short.icu/XB8vT9yCb",
+        posterUrl: "https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2012/05/Lizzie-Bordens-Revenge-front.jpg",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Ang kapitbahay (2024)",
+        embedUrl: "https://short.icu/Lv0oeMKQXQ",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BODRiNzllMTItZjZjMy00NDk5LTljN2YtMzY2YTQzZjgzZGQ3XkEyXkFqcGc@._V1_.jpg",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Doll Syndrome (2014)",
+        embedUrl: "https://short.icu/BA_mMUkuV",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMDNlNmIwODctODgxMC00ZDBmLWJmNDktZGFmNWQyN2MyODcxXkEyXkFqcGc@._V1_QL75_UY281_CR3,0,190,281_.jpg",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Sex Doll (2016)",
+        embedUrl: "https://short.icu/PwMs_ZtS5",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBmZjI4ZTYtZDY3OS00NGI1LWFiMWQtM2EzOTk5MjM5NWQzXkEyXkFqcGc@._V1_.jpg",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Bedspacer (2024)",
+        embedUrl: "https://short.icu/ZGAwNH2nZ",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BZDY5NzBlMmYtNDllYi00YjMyLWEwMTAtMWViNmZmNTY4MzlhXkEyXkFqcGc@._V1_.jpg",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Murder in Miami (2014)",
+        embedUrl: "https://short.icu/VnAr_e8na",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMTU5MzQzMjI4NV5BMl5BanBnXkFtZTcwODk0MDQwOQ@@._V1_QL75_UX147_.jpg",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Sorority Babes in the Slimeball Bowl-O-Rama 2 (2022)",
+        embedUrl: "https://short.icu/kIk7LsIB3",
+        posterUrl: "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/4/46/Sorority_Babes_in_the_Slimeball_Bowl-O-Rama_2.jpg/revision/latest?cb=20221023164533",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "Hindi",
+        downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },
+    {
+        title: "Zombies Vs. Strippers (2012)",
+        embedUrl: "https://short.icu/dRjdm8Sk6",
+        posterUrl: "https://m.media-amazon.com/images/M/MV5BMTM1NDA5OTAxMF5BMl5BanBnXkFtZTcwNDIzNzQ0MQ@@._V1_FMjpg_UX1000_.jpg",
+        genre: "Drama, Adult, Comedy Horror",
+        category: "Others",
+        language: "English",
         downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
         downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
