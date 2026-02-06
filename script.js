@@ -1,34 +1,34 @@
 // --- 1. PRELOADER LOGIC ---
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    // Hide the loader after content is loaded (simulated delay for demo effect if fast)
-    setTimeout(() => {
-        preloader.classList.add('hidden-loader');
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
-    }, 500); // 500ms delay to let user see animation
+// window.addEventListener('load', () => {
+//     const preloader = document.getElementById('preloader');
+//     // Hide the loader after content is loaded (simulated delay for demo effect if fast)
+//     setTimeout(() => {
+//         preloader.classList.add('hidden-loader');
+//         setTimeout(() => {
+//             preloader.style.display = 'none';
+//         }, 500);
+//     }, 500); // 500ms delay to let user see animation
 
-    // --- POPUP LOGIC: Trigger after 4 seconds ---
-    setTimeout(() => {
-        // Check session storage to show only once per session
-        // To force show every time for testing, remove the if check
-        if (!sessionStorage.getItem('welcomePopupShown')) {
-            const welcomeModal = document.getElementById('welcomeModal');
-            if(welcomeModal) {
-                welcomeModal.classList.remove('hidden');
-                // Force a reflow before adding the active class for transition
-                void welcomeModal.offsetWidth;
-                welcomeModal.classList.add('active');
+//     // --- POPUP LOGIC: Trigger after 4 seconds ---
+//     setTimeout(() => {
+//         // Check session storage to show only once per session
+//         // To force show every time for testing, remove the if check
+//         if (!sessionStorage.getItem('welcomePopupShown')) {
+//             const welcomeModal = document.getElementById('welcomeModal');
+//             if(welcomeModal) {
+//                 welcomeModal.classList.remove('hidden');
+//                 // Force a reflow before adding the active class for transition
+//                 void welcomeModal.offsetWidth;
+//                 welcomeModal.classList.add('active');
                 
-                // LOCK SCROLL
-                document.body.classList.add('overflow-hidden');
+//                 // LOCK SCROLL
+//                 document.body.classList.add('overflow-hidden');
                 
-                sessionStorage.setItem('welcomePopupShown', 'true');
-            }
-        }
-    }, 4000);
-});
+//                 sessionStorage.setItem('welcomePopupShown', 'true');
+//             }
+//         }
+//     }, 4000);
+// });
 
 function closeWelcomeModal() {
     const welcomeModal = document.getElementById('welcomeModal');
