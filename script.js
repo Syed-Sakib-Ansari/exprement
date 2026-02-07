@@ -1,34 +1,34 @@
 // --- 1. PRELOADER LOGIC ---
-// window.addEventListener('load', () => {
-//     const preloader = document.getElementById('preloader');
-//     // Hide the loader after content is loaded (simulated delay for demo effect if fast)
-//     setTimeout(() => {
-//         preloader.classList.add('hidden-loader');
-//         setTimeout(() => {
-//             preloader.style.display = 'none';
-//         }, 500);
-//     }, 500); // 500ms delay to let user see animation
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    // Hide the loader after content is loaded (simulated delay for demo effect if fast)
+    setTimeout(() => {
+        preloader.classList.add('hidden-loader');
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }, 500); // 500ms delay to let user see animation
 
-//     // --- POPUP LOGIC: Trigger after 4 seconds ---
-//     setTimeout(() => {
-//         // Check session storage to show only once per session
-//         // To force show every time for testing, remove the if check
-//         if (!sessionStorage.getItem('welcomePopupShown')) {
-//             const welcomeModal = document.getElementById('welcomeModal');
-//             if(welcomeModal) {
-//                 welcomeModal.classList.remove('hidden');
-//                 // Force a reflow before adding the active class for transition
-//                 void welcomeModal.offsetWidth;
-//                 welcomeModal.classList.add('active');
+    // --- POPUP LOGIC: Trigger after 4 seconds ---
+    setTimeout(() => {
+        // Check session storage to show only once per session
+        // To force show every time for testing, remove the if check
+        if (!sessionStorage.getItem('welcomePopupShown')) {
+            const welcomeModal = document.getElementById('welcomeModal');
+            if(welcomeModal) {
+                welcomeModal.classList.remove('hidden');
+                // Force a reflow before adding the active class for transition
+                void welcomeModal.offsetWidth;
+                welcomeModal.classList.add('active');
                 
-//                 // LOCK SCROLL
-//                 document.body.classList.add('overflow-hidden');
+                // LOCK SCROLL
+                document.body.classList.add('overflow-hidden');
                 
-//                 sessionStorage.setItem('welcomePopupShown', 'true');
-//             }
-//         }
-//     }, 4000);
-// });
+                sessionStorage.setItem('welcomePopupShown', 'true');
+            }
+        }
+    }, 4000);
+});
 
 function closeWelcomeModal() {
     const welcomeModal = document.getElementById('welcomeModal');
@@ -64,6 +64,8 @@ const moviesData = [
 
 
     {
+        title: "Bhabiji Ghar Par Hain – Fun on the Run (2026)",embedUrl: "https://short.icu/NF6DQfO76",posterUrl: "https://m.media-amazon.com/images/M/MV5BYTU5NzQwMTktZTVhOC00MjllLThjZDEtMGNkYjgwNWFhMmVmXkEyXkFqcGc@._V1_FMjpg_UY600_.jpg",genre: "Comedy, Drama",category: "Recent Adds",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
         title: "Kis Kisko Pyaar Karoon 2 (2025)",embedUrl: "https://short.icu/JXSGm4taV",posterUrl: "https://resizing.flixster.com/J-4Tfwj5od72tElye3REFDZX5Qk=/fit-in/705x460/v2/https://resizing.flixster.com/pUm6j1k-GGSTanXTtemtZmbOB20=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FlNzRlNGE2LWQzYjgtNDUwZC05YzkwLTUwZGJhMzk1M2M1MC5qcGc=",genre: "Comedy, Drama",category: "Recent Adds",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
         title: "Tu Meri Main Tera Main Tera Tu Meri (2025)",embedUrl: "https://short.icu/8cvhBVUE1",posterUrl: "https://resizing.flixster.com/Uzw_jQWpbIJni71sw8qsFKJow28=/fit-in/705x460/v2/https://resizing.flixster.com/p9yAEUla5T0xIR-02w2EeAjeAIA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzE3OTk0MGQxLWVkYzYtNDcwMy04M2M4LTZjZGI1YWVkMzYwMi5qcGc=",genre: "Adventure, Comedy, Romance",category: "Recent Adds",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -122,6 +124,8 @@ const moviesData = [
 
 
     {
+        title: "Bhabiji Ghar Par Hain – Fun on the Run (2026)",embedUrl: "https://short.icu/NF6DQfO76",posterUrl: "https://m.media-amazon.com/images/M/MV5BYTU5NzQwMTktZTVhOC00MjllLThjZDEtMGNkYjgwNWFhMmVmXkEyXkFqcGc@._V1_FMjpg_UY600_.jpg",genre: "Comedy, Drama",category: "Bollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
         title: "The Rabbit House (2025)",embedUrl: "https://short.icu/cIEDqQE4Sn",posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhlZGY0YTAtZDlkZi00ZTk0LTliMjQtMGFlNTQwN2Q3ZWVlXkEyXkFqcGc@._V1_.jpg",genre: "Comedy, Drama",category: "Bollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
         title: "Kis Kisko Pyaar Karoon 2 (2025)",embedUrl: "https://short.icu/JXSGm4taV",posterUrl: "https://resizing.flixster.com/J-4Tfwj5od72tElye3REFDZX5Qk=/fit-in/705x460/v2/https://resizing.flixster.com/pUm6j1k-GGSTanXTtemtZmbOB20=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FlNzRlNGE2LWQzYjgtNDUwZC05YzkwLTUwZGJhMzk1M2M1MC5qcGc=",genre: "Comedy, Drama",category: "Bollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -173,6 +177,8 @@ const moviesData = [
         title: "Raat Akeli Hai: The Bansal Murders (2025)",embedUrl: "https://short.icu/YPAOD_hPy",posterUrl: "https://resizing.flixster.com/xKaJZ1l4v_GTRfK4sVvk99tQD9I=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31948487_v_v10_aa.jpg",genre: "Crime, Drama, Mystery & Thriller",category: "Bollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
         title: "Saali Mohabbat (2025)",embedUrl: "https://short.icu/onXAQD32n",posterUrl: "https://resizing.flixster.com/sIAQYLvw6n2TdQbrobh5VvecdcI=/fit-in/705x460/v2/https://resizing.flixster.com/ZwGPypCl4qxjIKb3QHzEKvmHXHQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NkMDYwYmY4LTBmMDYtNDU0Mi04NGU5LWFiOTEzY2ZlNDBjNy5qcGc=",genre: "Crime, Drama, Mystery & Thriller",category: "Bollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Tikli and Laxmi Bomb (2018)",embedUrl: "https://short.icu/dCc7dEjD9",posterUrl: "https://resizing.flixster.com/6mIHtlRmTnZCVqiZMPXCAIwsOII=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15803100_v_v8_aa.jpg",genre: "Drama",category: "Bollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
         title: "Pihu (2018)",embedUrl: "https://short.icu/i9v9g7kzS",posterUrl: "https://resizing.flixster.com/zIZSqCrudcf1RqXdUxUVK7y2Rtc=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17055853_v_v8_aa.jpg",genre: "Drama, Mystery & Thriller",category: "Bollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
@@ -553,6 +559,28 @@ const moviesData = [
         title: "This Is 40 (2012)",embedUrl: "https://short.icu/kZb0CTVtn",posterUrl: "https://resizing.flixster.com/ISZoVOkwmN6-P1KdXRmfDo2fTV4=/fit-in/705x460/v2/https://resizing.flixster.com/0QSGvG-9AZaX1XYIPobkAdO0lXs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzc4ZWJlNDE2LTExNDktNGNiMi05NGEzLWI3OTUwYWU3MzY4MS53ZWJw",genre: "Romance, Comedy",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
         title: "The Human Centipede (2009)",embedUrl: "https://short.icu/feJMRG5cK",posterUrl: "https://resizing.flixster.com/znCXKZxU-Iabw0XxZVRhi3UsBCc=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7915218_p_v8_aa.jpg",genre: "Horror, Mystery & Thriller",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Crank: High Voltage (2009)",embedUrl: "https://short.icu/9tAkDqxkw",posterUrl: "https://resizing.flixster.com/gBuyipZt1DSOt7hOp6b4ZN5gt0g=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/NowShowing/73441/73441_aa.jpg",genre: "Action, Mystery & Thriller",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Crank (2009)",embedUrl: "https://short.icu/4BxCFwgDm",posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p161374_p_v10_ac.jpg",genre: "Action, Mystery & Thriller",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Don Jon (2013)",embedUrl: "https://short.icu/WVNNdBYdf2",posterUrl:"https://resizing.flixster.com/UeW-xb0QO10QSFuYTf7LGpsKyi4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9720749_p_v8_ac.jpg",genre: "Comedy, Drama, Romance",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "A Bad Moms Christmas (2017)",embedUrl:"https://short.icu/r4Gs4N1xx",posterUrl:"https://resizing.flixster.com/dVaoo-qS3NzdgJ7PPo_WjFwO6PE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13661830_v_v8_aa.jpg",genre: "Holiday, Comedy",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "The Golden Compass (2007)",embedUrl:"https://short.icu/1ZR1NJcLn",posterUrl:"https://resizing.flixster.com/7Mvd3yHi-W7SW-7O4l-Y_ZF0SE8=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p170996_v_v8_ab.jpg",genre: "Kids & Family, Adventure, Fantasy",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Inkheart (2009)",embedUrl:"https://short.icu/u9-_xYqjk",posterUrl:"https://resizing.flixster.com/WG1X82Sk4QWFt8J69wh0lFO54t0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p172694_p_v8_am.jpg",genre: "Kids & Family, Adventure, Fantasy",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Creators: The Past (2020)",embedUrl:"https://short.icu/eumFTZSmD",posterUrl:"https://resizing.flixster.com/fYOiHmR_6SGm6XGaaepcfCiShs4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17845216_p_v13_ab.jpg",genre: "Sci-Fi, Fantasy",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "T.I.M. (2014)",embedUrl:"https://short.icu/pWDsE3wON",posterUrl:"https://resizing.flixster.com/XmtcRmY6LQo1_oPbiV1tbcGIOZI=/fit-in/705x460/v2/https://resizing.flixster.com/L082Nl-vYslfsCr9yTH0HuE2_5k=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzZlMmI3YTJlLWE4NTQtNGJiMS1hZDg5LTVhMTNiMDUyNzQwMC5qcGc=",genre: "Sci-Fi, Mystery & Thriller",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "London Fields (2018)",embedUrl:"https://short.icu/ZBvpQWe5z",posterUrl:"https://resizing.flixster.com/YiIHa_5zt6773--RbYrQCTT03do=/fit-in/705x460/v2/https://resizing.flixster.com/hHnQAU8v6Ev86Dmz-_Xa_aWeaPs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q5YjhkODhlLTQwZmYtNDliZC1hZTEyLWM2YmVlZTgwNzlkZS53ZWJw",genre: "Mystery & Thriller",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "That's My Boy (2012)",embedUrl:"https://short.icu/lgvaMu-2a",posterUrl:"https://resizing.flixster.com/jHb_R7Mr9eYy1GR6VBYcPBjytkI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8991538_p_v8_ai.jpg",genre: "Comedy",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Knock Knock (2015)",embedUrl:"https://short.icu/jkyMhWH4E",posterUrl:"https://resizing.flixster.com/_ShssAlx0rtpUM7akNoacFwWqqE=/fit-in/705x460/v2/https://resizing.flixster.com/OHG792uooOvNXe_MoxB1RxORFYU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzYxMzM3ZjcxLTJiNzQtNDg1Mi04ZDAzLTc5ZWVjMjY0ZDg5Zi53ZWJw",genre: "Mystery & Thriller",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
         title: "The Unhealer (2020)",embedUrl: "https://short.icu/7GMhTgRp1",posterUrl: "https://resizing.flixster.com/UDpxEtgKhV48hQH_Tc8fV8W-nxo=/fit-in/705x460/v2/https://resizing.flixster.com/FfuvwMiMtwtSHH61s4gEk5fglcg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzg3OTA0YjAxLTA4ZDQtNDlkOS1hZDA5LWM2OTk3MGVlMjk3MS5qcGc=",genre: "Mystery & Thriller, Horror, Sci-Fi",category: "Hollywood",language: "English",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
