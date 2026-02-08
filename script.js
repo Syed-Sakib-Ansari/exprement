@@ -64,6 +64,12 @@ const moviesData = [
 
 
     {
+        title: "Vadh 2 (2026)",embedUrl: "https://short.icu/-aCCq7ZAO",posterUrl: "https://resizing.flixster.com/jgC3iEPqNAxo1n-aifVLCx7AKTk=/fit-in/705x460/v2/https://resizing.flixster.com/KYE6nIQEb_rXr5HLOrJ7Rv7fYmc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzliMWY2OWY0LTcwMzAtNDdhYi05MTM0LTU0ZmI1OTI4ODQwNC5qcGc=",genre: "Mystery & Thriller, Drama",category: "Recent Adds",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Gam Gam Ganesha (2026)",embedUrl: "https://short.icu/WWV1dGl-X",posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/77827360ecbd60beb46416748630cca23db9f7528472eaed864e890f7c5f3d11.jpg",genre: "Drama, Action",category: "Recent Adds",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Nari Nari Naduma Murari (2026)",embedUrl: "https://short.icu/UguLhpFHD",posterUrl: "https://m.media-amazon.com/images/M/MV5BNGQ2ZWUwMWMtZDI2ZS00NTA0LWI1MTMtNDJjZjczN2U5MTU1XkEyXkFqcGc@._V1_.jpg",genre: "Drama",category: "Recent Adds",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
         title: "Bhabiji Ghar Par Hain – Fun on the Run (2026)",embedUrl: "https://short.icu/NF6DQfO76",posterUrl: "https://m.media-amazon.com/images/M/MV5BYTU5NzQwMTktZTVhOC00MjllLThjZDEtMGNkYjgwNWFhMmVmXkEyXkFqcGc@._V1_FMjpg_UY600_.jpg",genre: "Comedy, Drama",category: "Recent Adds",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
         title: "Kis Kisko Pyaar Karoon 2 (2025)",embedUrl: "https://short.icu/JXSGm4taV",posterUrl: "https://resizing.flixster.com/J-4Tfwj5od72tElye3REFDZX5Qk=/fit-in/705x460/v2/https://resizing.flixster.com/pUm6j1k-GGSTanXTtemtZmbOB20=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FlNzRlNGE2LWQzYjgtNDUwZC05YzkwLTUwZGJhMzk1M2M1MC5qcGc=",genre: "Comedy, Drama",category: "Recent Adds",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -124,6 +130,8 @@ const moviesData = [
 
 
     {
+        title: "Vadh 2 (2026)",embedUrl: "https://short.icu/-aCCq7ZAO",posterUrl: "https://resizing.flixster.com/jgC3iEPqNAxo1n-aifVLCx7AKTk=/fit-in/705x460/v2/https://resizing.flixster.com/KYE6nIQEb_rXr5HLOrJ7Rv7fYmc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzliMWY2OWY0LTcwMzAtNDdhYi05MTM0LTU0ZmI1OTI4ODQwNC5qcGc=",genre: "Mystery & Thriller, Drama",category: "Bollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
         title: "Bhabiji Ghar Par Hain – Fun on the Run (2026)",embedUrl: "https://short.icu/NF6DQfO76",posterUrl: "https://m.media-amazon.com/images/M/MV5BYTU5NzQwMTktZTVhOC00MjllLThjZDEtMGNkYjgwNWFhMmVmXkEyXkFqcGc@._V1_FMjpg_UY600_.jpg",genre: "Comedy, Drama",category: "Bollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
         title: "The Rabbit House (2025)",embedUrl: "https://short.icu/cIEDqQE4Sn",posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhlZGY0YTAtZDlkZi00ZTk0LTliMjQtMGFlNTQwN2Q3ZWVlXkEyXkFqcGc@._V1_.jpg",genre: "Comedy, Drama",category: "Bollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -458,6 +466,8 @@ const moviesData = [
 
 
     {
+        title: "Guns Up (2025)",embedUrl: "https://short.icu/U1A79Lr-X",posterUrl: "https://resizing.flixster.com/2HjyvQLIfwFD8pS7HicjchPeKXA=/fit-in/705x460/v2/https://resizing.flixster.com/AzUmz8TO_osG9rxpQ12Id4u6ldc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZkZjgyMDI0LWYzZDMtNDg5MC1hNjcxLWM2NTY2ZDAzNTQ1Yi5qcGc=",genre: "Action, Comedy",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
         title: "Relationship Goals (2026)",embedUrl: "https://short.icu/1Y8_xn4SR",posterUrl: "https://m.media-amazon.com/images/M/MV5BYmY3YzM2ZTEtNDM5Ny00MjY1LTljYTktZWQyNGEzMDA5MGRmXkEyXkFqcGc@._V1_.jpg",genre: "Comedy, Romance",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
         title: "The Investigation of Lucy Letby (2026)",embedUrl: "https://short.icu/R8w02itTfS",posterUrl: "https://m.media-amazon.com/images/M/MV5BZTIxMjNkMWMtN2Q2My00YzFmLWJiNDMtMDJlZjQ1MmY2Mzc3XkEyXkFqcGc@._V1_.jpg",genre: "Crime, Documentary, Mystery & Thriller",category: "Hollywood",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -1892,6 +1902,12 @@ const moviesData = [
 
 
     {
+        title: "Gam Gam Ganesha (2026)",embedUrl: "https://short.icu/WWV1dGl-X",posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/77827360ecbd60beb46416748630cca23db9f7528472eaed864e890f7c5f3d11.jpg",genre: "Drama, Action",category: "South",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Nari Nari Naduma Murari (2026)",embedUrl: "https://short.icu/UguLhpFHD",posterUrl: "https://m.media-amazon.com/images/M/MV5BNGQ2ZWUwMWMtZDI2ZS00NTA0LWI1MTMtNDJjZjczN2U5MTU1XkEyXkFqcGc@._V1_.jpg",genre: "Drama",category: "South",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
+        title: "Draupathi 2 (2026)",embedUrl: "https://short.icu/YAd8kCl8n",posterUrl: "https://m.media-amazon.com/images/M/MV5BM2Y4ZTIwYTQtZTkxMS00YzBjLWFjYWEtOGI4Mjc2NDVhMWIxXkEyXkFqcGc@._V1_.jpg",genre: "Drama, Action, War",category: "South",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    },{
         title: "Solo Boy (2025)",embedUrl: "https://short.icu/0gL2MPMad",posterUrl: "https://m.media-amazon.com/images/M/MV5BNDliMzgyZTMtYWQ2Ni00Yjg5LWI1NDItMzM1YjFlZDRhNGJiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",genre: "Drama",category: "South",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },{
         title: "Gandhi Talks (2026)",embedUrl: "https://short.icu/Os5qpJ3lR",posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQxZDgwNzMtY2M4NS00OWY0LWI4ZGMtYjBjY2RhMGFhMzk1XkEyXkFqcGc@._V1_.jpg",genre: "Drama",category: "South",language: "Hindi",downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
