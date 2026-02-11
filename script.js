@@ -1,13 +1,5 @@
 // --- 1. PRELOADER LOGIC ---
 window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    // Hide the loader after content is loaded (simulated delay for demo effect if fast)
-    setTimeout(() => {
-        preloader.classList.add('hidden-loader');
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
-    }, 500); // 500ms delay to let user see animation
 
     // --- POPUP LOGIC: Trigger after 4 seconds ---
     setTimeout(() => {
