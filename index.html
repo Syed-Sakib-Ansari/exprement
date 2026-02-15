@@ -86,6 +86,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+<script>
+    function updateDynamicSEO() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+
+        let seoTitle = "Watch Free Dual-Audio Movies (HD) - MovieDakhi";
+        let seoDesc = "Watch Hollywood, Bollywood, South Indian and Others movies in Hindi dubbed for free on Moviedakhi.";
+        let canonicalURL = "https://moviedakhi.com/";
+
+        const seoData = {
+            "Bollywood": { title: "Bollywood Hindi Movies - Moviedakhi", desc: "New and classic Bollywood movies available for streaming." },
+            "Hollywood": { title: "Hollywood Blockbusters - Moviedakhi", desc: "Watch the latest Hollywood hits in high quality." },
+            "South": { title: "South Indian Hindi Dubbed Movies - Moviedakhi", desc: "Latest South Indian action and thriller movies dubbed in Hindi." },
+            "Hollywood+Series": { title: "Hollywood Movies & Web Series - Moviedakhi", desc: "Stream top Hollywood movies and popular web series online." },
+            "Bollywood+Series": { title: "Bollywood Movies & Web Series - Moviedakhi", desc: "Latest Bollywood blockbusters and trending Indian web series." },
+            "Korean+Country": { title: "Korean Dramas & Movies - Moviedakhi", desc: "Watch popular Korean movies and country-specific content online." },
+            "Adult+Comedy": { title: "Adult Comedy Movies - Moviedakhi", desc: "Watch top-rated adult comedy movies from Hollywood and beyond." },
+            "Animation": { title: "Animation Movies in Hindi - Moviedakhi", desc: "Best animated movies and series for kids and family in Hindi." },
+            "Chinese": { title: "Chinese Movies & Martial Arts - Moviedakhi", desc: "Explore the world of Chinese cinema and martial arts movies." },
+            "Others": { title: "Explore More Categories - Moviedakhi", desc: "Find diverse movie genres and unique collections on Moviedakhi." }
+        };
+
+        if (category && seoData[category]) {
+            seoTitle = seoData[category].title;
+            seoDesc = seoData[category].desc;
+            canonicalURL = "https://moviedakhi.com/?category=" + encodeURIComponent(category);
+        }
+
+        // টাইটেল আপডেট নিশ্চিত করা
+        document.title = seoTitle;
+
+        // মেটা ডেসক্রিপশন আপডেট
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            metaDesc.setAttribute("content", seoDesc);
+        }
+
+        // ক্যানোনিকাল ট্যাগ আপডেট
+        let canonicalTag = document.querySelector('link[rel="canonical"]');
+        if (canonicalTag) {
+            canonicalTag.setAttribute("href", canonicalURL);
+        }
+    }
+
+    // পেজ লোড হওয়ার সাথে সাথে রান হবে
+    window.onload = updateDynamicSEO;
+    // যদি আপনার সাইট Single Page Application (SPA) স্টাইলে চলে, তবে এটিও যোগ করুন
+    window.onpopstate = updateDynamicSEO;
+</script>
+
 </head>
 
 <body>
