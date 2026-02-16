@@ -1,36 +1,4 @@
-function closeWelcomeModal() {
-    const welcomeModal = document.getElementById('welcomeModal');
-    if(welcomeModal) {
-        welcomeModal.classList.remove('active');
-        
-        // UNLOCK SCROLL
-        document.body.classList.remove('overflow-hidden');
-
-        setTimeout(() => {
-            welcomeModal.classList.add('hidden');
-        }, 300); // Wait for transition
-    }
-}
-
-// Welcome Modal Outside Click Logic
-const welcomeModalElement = document.getElementById('welcomeModal');
-if (welcomeModalElement) {
-    welcomeModalElement.addEventListener('click', (e) => {
-        if (e.target === welcomeModalElement) {
-            closeWelcomeModal();
-        }
-    });
-}
-
-// --- 2. DATA (Updated: Using category="Recent Adds" directly) ---
-const moviesData = [
-
-
-    // =======================================================================
-    // 1. RECENT ADDS / RECENT ADDS / RECENT ADDS / RECENT 
-    // =======================================================================
-
-
+const contentData = [
     {
         title: "O' Romeo (2026)", embedUrl: "https://short.icu/tuaah0d_G", posterUrl: "https://resizing.flixster.com/sbiwNmlSx6welFpp36aIJoKZj28=/fit-in/705x460/v2/https://resizing.flixster.com/3RPG01zNRu9KnzRzJvjtRto17Nc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUzNzBlZjQwLTZjYmEtNGViNy1iZjExLTk3NTYwMGQ0MTgwOS5wbmc=", genre: "Action, Mystery & Thriller, Romance", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -2764,777 +2732,493 @@ const moviesData = [
     },
 ];
 
-// --- DEFINED CATEGORIES (Order matters for Home View) ---
-const categoriesList = [
-    "Bollywood",
-    "Hollywood",
-    "Animation",
-    "South",
-    "", //Write Bangla Here -----------------------------------------------This is Bangla Category 
-    "Korean Country",
-    "Chinese",
-    "Others",
-    "Adult Comedy",
-    "Bollywood Series",
-    "Hollywood Series",
-    "Korean Series"
+// Assign Dynamic IDs
+contentData.forEach((item, index) => {
+    item.id = index;
+});
+
+// Categories List (Cleaned)
+const categories = [
+    "Bollywood", "Hollywood", "Animation", "South",
+    "Korean Country", "Chinese", "Bollywood Series", "Hollywood Series",
+    "Korean Series", "Adult Comedy", "Others"
 ];
 
-// Element References
-const gridElement = document.getElementById('movieGrid');
-const searchInputDesktop = document.getElementById('searchInputDesktop');
-const searchInputMobile = document.getElementById('searchInputMobile');
-const clearSearchBtnDesktop = document.getElementById('clearSearchBtnDesktop');
-const clearSearchBtnMobile = document.getElementById('clearSearchBtnMobile');
-const menuToggle = document.getElementById('menu-toggle');
-const navContentMobile = document.getElementById('nav-content-mobile');
-const sectionTitle = document.getElementById('section-title');
-const siteLogo = document.getElementById('site-logo');
-const mainContent = document.getElementById('main-content');
-
-// Modal Elements
-const videoModal = document.getElementById('videoModal');
-const modalContent = document.querySelector('.modal-content'); // Need this for resizing
-const modalTitle = document.getElementById('modalTitle');
-const videoPlayerFrame = document.getElementById('videoPlayerFrame');
-const modalDownloadBtn = document.getElementById('modalDownloadBtn');
-const heroSlider = document.getElementById('hero-slider');
-
-// --- 3. SLIDER LOGIC ---
+let currentItem = null;
+let currentView = 'home';
 let sliderInterval;
-let currentSlide = 0;
+const homeView = document.getElementById('homeView');
+const libraryView = document.getElementById('libraryView');
+const recentAddsGrid = document.getElementById('recentAddsGrid');
+const libraryGrid = document.getElementById('libraryGrid');
+const categorySections = document.getElementById('categorySections');
+const sliderWrapper = document.getElementById('sliderWrapper');
+const sliderDots = document.getElementById('sliderDots');
+const searchInput = document.getElementById('searchInput');
+const searchIcon = document.getElementById('searchIcon');
 
-function initSlider() {
-    // Filter movies marked as "Recent Adds" and limit to 15 items
-    const recentMovies = moviesData.filter(m => m.category === 'Recent Adds').slice(0, 6);
+let libraryData = [];
+let libraryDisplayedCount = 0;
+const ITEMS_PER_PAGE = 30; // Kept at 30 for speed
 
-    // RESET CURRENT SLIDE TO 0 every time init is called
-    currentSlide = 0;
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
-    if (recentMovies.length === 0) {
-        heroSlider.style.display = 'none';
-        return;
-    }
-
-    heroSlider.style.display = 'block';
-    heroSlider.innerHTML = ''; // Clear existing
-
-    // Generate Slides
-    recentMovies.forEach((movie, index) => {
-        const isActive = index === 0 ? 'active' : '';
-        const slideHtml = `
-                    <div class="slide ${isActive}" style="background-image: url('${movie.posterUrl}');">
-                        <div class="slide-bg" style="background-image: url('${movie.posterUrl}');"></div>
-                        <div class="slide-overlay">
-                            <div class="slide-content">
-                                <span class="text-[var(--color-accent)] font-bold tracking-wider text-sm uppercase mb-2 block"></span>
-                                <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">${movie.title}</h2>
-                                <p class="text-gray-300 text-sm md:text-base mb-6 line-clamp-2 max-w-xl">${movie.genre} • ${movie.language} ${movie.seriesInfo ? '• ' + movie.seriesInfo : ''}</p>
-                                <button onclick="openPlayer(${moviesData.indexOf(movie)})" class="bg-[var(--color-accent)] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 flex items-center gap-2">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
-                                    Watch Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-        heroSlider.insertAdjacentHTML('beforeend', slideHtml);
-    });
-
-    // Generate Dots
-    const dotsContainer = document.createElement('div');
-    dotsContainer.className = 'slider-dots';
-    recentMovies.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
-    heroSlider.appendChild(dotsContainer);
-
-    // Add Touch Swipe Support
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    heroSlider.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-
-    heroSlider.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        if (touchEndX < touchStartX - 50) {
-            goToSlide(currentSlide + 1); // Swipe Left -> Next
-        }
-        if (touchEndX > touchStartX + 50) {
-            goToSlide(currentSlide - 1); // Swipe Right -> Prev
-        }
-    }
-
-    // Start Timer
-    startSliderTimer(recentMovies.length);
+// Add DEBOUNCE Function
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
 }
 
-function goToSlide(index) {
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.slider-dot');
-    const totalSlides = slides.length;
+// --- SLIDER LOGIC ---
+function initHeroSlider() {
+    if (!sliderWrapper || !sliderDots) return;
 
-    // Safety check
+    const slides = contentData.filter(item => item.category === "Recent Adds").slice(0, 6);
     if (slides.length === 0) return;
 
-    // Handle wrap-around
-    if (index >= totalSlides) index = 0;
-    if (index < 0) index = totalSlides - 1;
+    let currentSlide = 0;
+    sliderWrapper.innerHTML = '';
+    sliderDots.innerHTML = '';
 
-    currentSlide = index;
+    slides.forEach((movie, index) => {
+        const slide = document.createElement('div');
+        slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
+        slide.innerHTML = `
+            <img src="${movie.posterUrl}" class="w-full h-full object-cover object-center" alt="${movie.title}">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+                    <div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
+                    <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
+                    <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
+                    <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
+                    <button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
+                        <i class="fas fa-play"></i> Watch Now
+                    </button>
+                    </div>
+            </div>
+        `;
+        sliderWrapper.appendChild(slide);
 
-    slides.forEach(s => s.classList.remove('active'));
-    dots.forEach(d => d.classList.remove('active'));
+        const dot = document.createElement('button');
+        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
+        dot.onclick = () => goToSlide(index);
+        sliderDots.appendChild(dot);
+    });
 
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-}
-
-function startSliderTimer(length) {
-    if (sliderInterval) clearInterval(sliderInterval);
-    if (length > 1) {
+    function startSlideTimer() {
+        clearInterval(sliderInterval);
         sliderInterval = setInterval(() => {
-            goToSlide(currentSlide + 1);
-        }, 3000); // 3 Seconds
+            goToSlide((currentSlide + 1) % slides.length);
+        }, 3000);
+    }
+
+    window.goToSlide = (index) => {
+        const allSlides = document.querySelectorAll('.slide');
+        const allDots = sliderDots.children;
+
+        if (allSlides.length > 0) {
+            allSlides[currentSlide].classList.remove('active');
+            allDots[currentSlide].className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300';
+
+            currentSlide = index;
+            allSlides[currentSlide].classList.add('active');
+            allDots[currentSlide].className = 'w-6 h-2 rounded-full bg-white transition-all duration-300';
+
+            startSlideTimer();
+        }
+    };
+
+    setTimeout(() => {
+        const activeSlide = document.querySelector('.slide.active .slide-content');
+        if (activeSlide) {
+            activeSlide.style.opacity = '1';
+            activeSlide.style.transform = 'translateY(0)';
+        }
+    }, 100);
+
+    startSlideTimer();
+}
+
+function updateSearchUI() {
+    if (searchInput.value.trim().length > 0) {
+        searchIcon.classList.remove('fa-search');
+        searchIcon.classList.add('fa-times', 'cursor-pointer');
+    } else {
+        searchIcon.classList.remove('fa-times', 'cursor-pointer');
+        searchIcon.classList.add('fa-search');
     }
 }
 
+function handleSearchIconClick() {
+    if (searchInput.value.trim().length > 0) {
+        clearSearch();
+    }
+}
 
-// --- 4. PLAYER MODAL LOGIC ---
+function clearSearch() {
+    searchInput.value = '';
+    updateSearchUI();
+    // Don't trigger render here to avoid conflict with switchView
+}
 
-// Custom Download Logic
-function handleDownloadClick(event) {
-    // Prevent the default link navigation immediately
-    event.preventDefault();
+function updateCanonical(url) {
+    const canonicalLink = document.getElementById('canonicalLink');
+    if (canonicalLink) {
+        const finalUrl = (url === window.location.origin + '/' || url === window.location.origin + '/index.html')
+            ? window.location.origin + '/'
+            : url;
+        canonicalLink.setAttribute('href', finalUrl);
+    }
+}
 
-    const btn = event.currentTarget;
-    const textSpan = btn.querySelector('span'); // Target span to keep icon
-    let clickCount = parseInt(btn.dataset.clickCount || 0);
+function switchView(viewName, filterCategory = null, pushState = true, restoredCount = 0) {
+    if (pushState) {
+        const currentScroll = window.scrollY;
+        const currentState = window.history.state || {
+            view: currentView,
+            category: new URLSearchParams(window.location.search).get('category'),
+            displayedCount: libraryDisplayedCount
+        };
+        try {
+            window.history.replaceState({ ...currentState, scrollY: currentScroll }, '');
+        } catch (e) { }
+    }
 
-    const downloadUrl1 = btn.dataset.downloadUrl1;
-    const downloadUrl2 = btn.dataset.downloadUrl2;
+    currentView = viewName;
+    homeView.classList.remove('active');
+    libraryView.classList.remove('active');
 
-    // Logic: If clicked 0 or 1 times (Total 2 times), use URL 1
-    if (clickCount < 2 && downloadUrl1) {
-        // 1st and 2nd click: Use URL 1
-        window.open(downloadUrl1, '_blank');
+    if (viewName === 'home') {
+        homeView.classList.add('active');
+        document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
+    } else {
+        libraryView.classList.add('active');
 
-        // Increase count
-        clickCount++;
-        btn.dataset.clickCount = clickCount;
+        if (filterCategory) {
+            searchInput.value = '';
+            updateSearchUI();
+        }
 
-        // Update text to show progress
-        if (textSpan) {
-            if (clickCount === 1) {
-                textSpan.textContent = '(Click 1 more time)';
+        if (filterCategory) {
+            document.title = `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi`;
+            const pill = document.querySelector(`#libraryFilters .category-pill[data-category="${filterCategory}"]`);
+            if (pill) {
+                document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                initLibraryRender(filterCategory, restoredCount);
             } else {
-                textSpan.textContent = 'Ready For Download (Final Click)';
+                initLibraryRender('all', restoredCount);
             }
-        }
-
-    } else if (clickCount >= 2 && downloadUrl2) {
-        // 3rd click (count is 2): Use URL 2
-        window.open(downloadUrl2, '_blank');
-
-        // Update text
-        if (textSpan) textSpan.textContent = 'Link Expired (SORRY)';
-    }
-}
-
-// =========================================================
-// UPDATED OPEN PLAYER FUNCTION (Delegates to new logic)
-// =========================================================
-function openPlayer(index) {
-    const movie = moviesData[index];
-    if (!movie) return;
-
-    // Check if Series (based on 'episodes' array presence OR 'seriesInfo' text)
-    let episodes = movie.episodes || [];
-
-    // NOTE: Only treat as series if actual episodes are defined in the array
-    // This prevents empty sidebars
-    const hasEpisodes = episodes.length > 0;
-
-    if (hasEpisodes) {
-        // CALL NEW SERIES FUNCTION (Defined at bottom)
-        initSeriesPlayer(movie, episodes);
-    } else {
-        // CALL NEW MOVIE FUNCTION (Defined at bottom)
-        initMoviePlayer(movie);
-    }
-
-    // Setup Download Button Data
-    if (movie.downloadUrl1) {
-        modalDownloadBtn.style.display = 'flex';
-        modalDownloadBtn.dataset.downloadUrl1 = movie.downloadUrl1;
-        modalDownloadBtn.dataset.downloadUrl2 = movie.downloadUrl2 || movie.downloadUrl1;
-        modalDownloadBtn.dataset.clickCount = 0;
-        const textSpan = modalDownloadBtn.querySelector('span');
-        if (textSpan) textSpan.textContent = 'Download';
-    } else {
-        modalDownloadBtn.style.display = 'none';
-    }
-
-    videoModal.classList.add('active');
-}
-
-function closePlayer() {
-    videoModal.classList.remove('active');
-    videoPlayerFrame.src = "";
-}
-
-videoModal.addEventListener('click', (e) => {
-    if (e.target === videoModal) {
-        closePlayer();
-    }
-});
-
-// --- 5. MOVIE CARD GENERATION ---
-function createMovieCard(movie, index) {
-    const displayGenre = movie.genre.replace(/\+/g, ' ');
-
-    // Check for seriesInfo to create a specific layout for web series
-    if (movie.seriesInfo) {
-        return `
-                    <div class="movie-card relative block rounded-lg overflow-hidden transition hover:shadow-2xl cursor-pointer group" onclick="openPlayer(${index})">
-                        <div class="block">
-                            <img 
-                                data-src="${movie.posterUrl}" 
-                                alt="Poster for ${movie.title} - "
-                                class="w-full h-auto object-cover aspect-[2/3] placeholder-image transition duration-300 transform group-hover:scale-110"
-                                loading="lazy"
-                                decoding="async" 
-                                onerror="this.onerror=null; this.src='https://placehold.co/300x450/1F2833/E5E7EB?text=Image+Load+Error'"
-                            >
-                            
-                            <div class="absolute top-2 right-2 bg-yellow-500 text-black text-xs font-semibold px-2 py-0.5 rounded-full uppercase shadow-md z-10">
-                                ${movie.language}
-                            </div>
-
-                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 bg-black/40 z-20">
-                                <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg transform scale-0 group-hover:scale-100 transition duration-300">
-                                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
-                                </div>
-                            </div>
-
-                            <div class="absolute bottom-0 left-0 right-0 pb-2 px-4 bg-gradient-to-t from-black via-black/90 to-transparent flex flex-col justify-end min-h-[18%]">
-                                <h1 class="title text-md font-semibold truncate transition mb-1 shadow-sm text-white">${movie.title}</h1>
-                                <div class="text-yellow-400 text-sm font-bold uppercase tracking-wide">
-                                    ${movie.seriesInfo}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-    }
-
-    // Standard Movie Card
-    return `
-                <div class="movie-card relative block rounded-lg overflow-hidden transition hover:shadow-2xl cursor-pointer group" onclick="openPlayer(${index})">
-                    <div class="block">
-                        <img 
-                            data-src="${movie.posterUrl}" 
-                            alt="Poster for ${movie.title} - "
-                            class="w-full h-auto object-cover aspect-[2/3] placeholder-image transition duration-300 transform group-hover:scale-110"
-                            loading="lazy"
-                            decoding="async" 
-                            onerror="this.onerror=null; this.src='https://placehold.co/300x450/1F2833/E5E7EB?text=Image+Load+Error'"
-                        >
-                        
-                        <div class="absolute top-2 right-2 bg-yellow-500 text-black text-xs font-semibold px-2 py-0.5 rounded-full uppercase shadow-md z-10">
-                            ${movie.language}
-                        </div>
-
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 bg-black/40 z-20">
-                                <div class="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg transform scale-0 group-hover:scale-100 transition duration-300">
-                                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
-                                </div>
-                        </div>
-
-                        <div class="absolute bottom-0 left-0 right-0 pb-2 px-4 bg-gradient-to-t from-black via-black/90 to-transparent pt-6">
-                            <h1 class="title text-md font-semibold truncate transition shadow-sm text-white">${movie.title}</h1>
-                            <p class="text-xs text-gray-400"></p>
-                        </div>
-                    </div>
-                </div>
-            `;
-}
-
-// --- 6. RENDERING ---
-function renderMovies(movies) {
-    gridElement.innerHTML = movies.map(movie => {
-        const originalIndex = moviesData.indexOf(movie);
-        return createMovieCard(movie, originalIndex);
-    }).join('');
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.getAttribute('data-src');
-                img.onload = () => img.classList.remove('placeholder-image');
-                observer.unobserve(img);
-            }
-        });
-    }, { rootMargin: '0px 0px 200px 0px' });
-
-    document.querySelectorAll('.movie-card img').forEach(img => observer.observe(img));
-}
-
-// --- 6. LOGIC (Filter, Search, Nav) ---
-menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (navContentMobile.classList.contains('hidden')) {
-        navContentMobile.classList.remove('hidden');
-        menuToggle.classList.add('open');
-        const currentUrl = window.location.href;
-        window.history.pushState({ menu: 'open' }, '', currentUrl);
-    } else {
-        navContentMobile.classList.add('hidden');
-        menuToggle.classList.remove('open');
-    }
-});
-
-document.addEventListener('click', (e) => {
-    const isMenuOpen = !navContentMobile.classList.contains('hidden');
-    const isClickInsideMenu = navContentMobile.contains(e.target);
-    const isClickOnToggle = menuToggle.contains(e.target);
-    if (isMenuOpen && !isClickInsideMenu && !isClickOnToggle) {
-        navContentMobile.classList.add('hidden');
-        menuToggle.classList.remove('open');
-    }
-});
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.getAttribute('data-src');
-            img.onload = () => img.classList.remove('placeholder-image');
-            observer.unobserve(img);
-        }
-    });
-}, { rootMargin: '0px 0px 200px 0px' });
-
-function generateMoviesHTML(moviesList) {
-    if (!moviesList || moviesList.length === 0) return '<p class="text-gray-500 text-sm p-4">No movies found in this category.</p>';
-    return moviesList.map(movie => {
-        const originalIndex = moviesData.indexOf(movie);
-        return createMovieCard(movie, originalIndex);
-    }).join('');
-}
-
-function filterByCategory(category, updateUrl = true) {
-    window.scrollTo(0, 0);
-    mainContent.innerHTML = '';
-
-    if (category === 'Recent Adds' || category === 'All') {
-        if (category === 'Recent Adds') {
-            initSlider();
         } else {
-            if (sliderInterval) clearInterval(sliderInterval);
+            document.title = "All Movies & Web Series - MovieDakhi";
+            document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
+            document.querySelector('#libraryFilters .category-pill[data-category="all"]')?.classList.add('active');
+            initLibraryRender('all', restoredCount);
         }
+    }
 
-        if (category === 'All') {
-            heroSlider.style.display = 'none';
-        }
-
-        let recentMovies;
-        if (category === 'All') {
-            recentMovies = moviesData;
-        } else {
-            recentMovies = moviesData.filter(m => m.category === 'Recent Adds');
-        }
-
-        if (recentMovies.length > 0) {
-            if (category === 'Recent Adds') {
-                const limitedRecent = recentMovies.slice(0, 15);
-                let moviesHTML = generateMoviesHTML(limitedRecent);
-                moviesHTML += createSeeAllCard('All', 'View All');
-
-                const sectionHTML = `
-                            <div class="mb-8">
-                                <div class="flex justify-between items-center mb-4 px-2">
-                                    <div class="flex items-center">
-                                        <div class="w-2 h-7 bg-[var(--color-accent)] rounded-full mr-3 md:h-10"></div>
-                                        <h2 class="text-3xl font-bold text-white md:text-5xl">Recent Adds</h2>
-                                    </div>
-                                </div>
-                                <div class="movie-grid">
-                                    ${moviesHTML}
-                                </div>
-                            </div>
-                        `;
-                mainContent.insertAdjacentHTML('beforeend', sectionHTML);
+    if (pushState) {
+        try {
+            const url = new URL(window.location);
+            url.searchParams.set('view', viewName);
+            if (filterCategory && viewName === 'library') {
+                url.searchParams.set('category', filterCategory);
             } else {
-                const sectionHTML = `
-                            <div class="flex items-center mb-6">
-                                <div class="w-2 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
-                                <h2 class="text-2xl font-semibold" id="section-title">All Movies</h2>
-                            </div>
-                            <section class="movie-grid" id="movieGrid">
-                                ${generateMoviesHTML(recentMovies)}
-                            </section>
-                        `;
-                mainContent.innerHTML = sectionHTML;
-                document.querySelectorAll('.movie-card img').forEach(img => observer.observe(img));
-                if (updateUrl) {
-                    const newUrl = new URL(window.location);
-                    newUrl.searchParams.set('category', category);
-                    window.history.pushState({ category: category }, '', newUrl);
-                }
-                return;
+                url.searchParams.delete('category');
             }
-        }
-
-        categoriesList.forEach(catName => {
-            const catMovies = moviesData.filter(m => m.category === catName).slice(0, 9);
-            if (catMovies.length > 0) {
-                let moviesHTML = generateMoviesHTML(catMovies);
-                moviesHTML += createSeeAllCard(catName, 'See All');
-                const sectionHTML = `
-                            <div class="mb-8">
-                                <div class="flex justify-between items-center mb-4 px-2 mt-20 pt-7 md:pt-10 md:mb-7">
-                                    <div class="flex items-center">
-                                        <div class="w-2 h-7 bg-[var(--color-accent)] rounded-full mr-3 md:h-10"></div>
-                                        <h2 class="text-3xl font-bold text-white md:text-5xl">${catName}</h2>
-                                    </div>
-                                </div>
-                                <div class="movie-grid">
-                                    ${moviesHTML}
-                                </div>
-                            </div>
-                        `;
-                mainContent.insertAdjacentHTML('beforeend', sectionHTML);
-            }
-        });
-
-    } else {
-        heroSlider.style.display = 'none';
-        if (sliderInterval) clearInterval(sliderInterval);
-
-        const catMovies = moviesData.filter(movie => movie.category === category);
-        const sectionHTML = `
-                    <div class="flex items-center mb-6">
-                        <div class="w-2 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
-                        <h2 class="text-2xl font-semibold" id="section-title">${category}</h2>
-                    </div>
-                    <section class="movie-grid" id="movieGrid">
-                        ${generateMoviesHTML(catMovies)}
-                    </section>
-                `;
-        mainContent.innerHTML = sectionHTML;
-    }
-
-    document.querySelectorAll('.movie-card img').forEach(img => observer.observe(img));
-
-    if (updateUrl) {
-        const newUrl = new URL(window.location);
-        newUrl.searchParams.set('category', category);
-        window.history.pushState({ category: category }, '', newUrl);
+            updateCanonical(url.href);
+            window.history.pushState({ view: viewName, category: filterCategory, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, '', url);
+            window.scrollTo(0, 0);
+        } catch (e) { }
     }
 }
 
-function filterBySearch() {
-    const activeInput = searchInputDesktop && searchInputDesktop.value ? searchInputDesktop : searchInputMobile;
-    const query = activeInput.value.toLowerCase();
-    window.scrollTo(0, 0);
+function createMovieCard(item) {
+    const card = document.createElement('div');
+    card.className = 'movie-card relative flex flex-col group';
+    const infoText = item.seriesInfo
+        ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>`
+        : '';
 
-    if (query === '') {
-        const urlParams = new URLSearchParams(window.location.search);
-        const category = urlParams.get('category') || 'Recent Adds';
-        filterByCategory(category, false);
-        return;
-    }
-
-    heroSlider.style.display = 'none';
-    if (sliderInterval) clearInterval(sliderInterval);
-
-    const filtered = moviesData.filter(movie =>
-        movie.title.toLowerCase().includes(query) ||
-        movie.genre.toLowerCase().includes(query)
-    );
-
-    const sectionHTML = `
-                <div class="flex items-center mb-6">
-                    <div class="w-2 h-6 bg-[var(--color-accent)] rounded-full mr-3"></div>
-                    <h2 class="text-2xl font-semibold">Search Results (${filtered.length})</h2>
+    card.innerHTML = `
+        <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3]">
+            <div class="absolute top-2 right-2 z-20">
+                <span class="lang-badge border-none shadow-lg">${item.language}</span>
+            </div>
+            <img src="${item.posterUrl}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+            <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-center items-center p-5 transition-all duration-300">
+                <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center">
+                    <i class="fas fa-play text-white text-lg"></i>
                 </div>
-                <section class="movie-grid">
-                    ${generateMoviesHTML(filtered)}
-                </section>
-            `;
-    mainContent.innerHTML = sectionHTML;
-
-    document.querySelectorAll('.movie-card img').forEach(img => observer.observe(img));
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <h4 class="font-black text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
+            ${infoText}
+        </div>
+    `;
+    card.onclick = () => openModal(item.id);
+    return card;
 }
 
-let searchTimeout = null;
-const inputs = [
-    { input: searchInputDesktop, clearBtn: clearSearchBtnDesktop },
-    { input: searchInputMobile, clearBtn: clearSearchBtnMobile }
-];
+function renderRecentAdds() {
+    recentAddsGrid.innerHTML = '';
+    const recentItems = contentData.filter(item => item.category === "Recent Adds");
 
-inputs.forEach(({ input, clearBtn }) => {
-    input.addEventListener('input', () => {
-        const otherInput = input === searchInputDesktop ? searchInputMobile : searchInputDesktop;
-        const otherClearBtn = input === searchInputDesktop ? clearSearchBtnMobile : clearSearchBtnDesktop;
-        otherInput.value = input.value;
-        if (input.value.trim().length > 0) {
-            clearBtn.classList.remove('hidden');
-            otherClearBtn.classList.remove('hidden');
-        } else {
-            clearBtn.classList.add('hidden');
-            otherClearBtn.classList.add('hidden');
-        }
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(filterBySearch, 300);
+    const fragment = document.createDocumentFragment();
+    recentItems.forEach(item => fragment.appendChild(createMovieCard(item)));
+    recentAddsGrid.appendChild(fragment);
+
+    const viewAllCard = document.createElement('div');
+    viewAllCard.className = 'view-all-card relative rounded-lg overflow-hidden group flex flex-col items-center justify-center p-6 cursor-pointer aspect-[2/3]';
+    viewAllCard.innerHTML = `
+        <div class="flex flex-col items-center justify-center transition-transform duration-300 group-hover:scale-110">
+            <div class="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center mb-4 group-hover:bg-red-600 transition-colors shadow-lg transition-transform duration-300 group-hover:scale-110">
+                <i class="fas fa-arrow-right text-white text-xl"></i>
+            </div>
+            <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
+            <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">Browse Full Library</p>
+        </div>
+    `;
+    viewAllCard.onclick = () => { clearSearch(); switchView('library'); };
+    recentAddsGrid.appendChild(viewAllCard);
+}
+
+function renderCategorySections() {
+    categorySections.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+
+    categories.forEach(cat => {
+        const filtered = contentData.filter(m => m.category === cat);
+        if (filtered.length === 0) return;
+        let displayName = cat;
+        if (cat === 'Korean Country') displayName = 'Korean';
+
+        const section = document.createElement('section');
+        section.className = 'mb-16';
+        section.innerHTML = `
+            <div class="flex items-center space-x-3 md:mt-10 md:pt-10 mb-8 justify-center">
+                <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
+                <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
+            </div>
+            <div class="category-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto"></div>
+        `;
+
+        const grid = section.querySelector('.category-grid');
+        const slice = filtered.slice(0, 11);
+        slice.forEach(item => grid.appendChild(createMovieCard(item)));
+
+        const viewAllCard = document.createElement('div');
+        viewAllCard.className = 'view-all-card relative rounded-lg overflow-hidden group flex flex-col items-center justify-center p-6 cursor-pointer aspect-[2/3]';
+        viewAllCard.innerHTML = `
+            <div class="flex flex-col items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110">
+                    <i class="fas fa-arrow-right text-white text-xl"></i>
+                </div>
+                <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
+                <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
+            </div>
+        `;
+        viewAllCard.onclick = () => { clearSearch(); switchView('library', cat); };
+        grid.appendChild(viewAllCard);
+
+        fragment.appendChild(section);
     });
+    categorySections.appendChild(fragment);
+}
 
-    input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            clearTimeout(searchTimeout);
-            filterBySearch();
-            if (navContentMobile && !navContentMobile.classList.contains('hidden')) {
-                navContentMobile.classList.add('hidden');
-                menuToggle.classList.remove('open');
+let isLoading = false;
+
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+
+    if (currentView === 'library' && !isLoading) {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+        // Use a generous buffer (e.g., 500px from bottom)
+        if (scrollTop + clientHeight >= scrollHeight - 500) {
+            if (libraryDisplayedCount < libraryData.length) {
+                renderLibraryChunk();
             }
-            input.blur();
         }
-    });
-
-    clearBtn.addEventListener('click', () => {
-        input.value = '';
-        const otherInput = input === searchInputDesktop ? searchInputMobile : searchInputDesktop;
-        const otherClearBtn = input === searchInputDesktop ? clearSearchBtnMobile : clearSearchBtnDesktop;
-        otherInput.value = '';
-        clearBtn.classList.add('hidden');
-        otherClearBtn.classList.add('hidden');
-        const urlParams = new URLSearchParams(window.location.search);
-        const category = urlParams.get('category') || 'Recent Adds';
-        filterByCategory(category, false);
-        input.focus();
-    });
-});
-
-document.body.addEventListener('click', (e) => {
-    let target = e.target;
-    while (target && target !== document.body) {
-        if (target.hasAttribute('data-category')) {
-            e.preventDefault();
-            const category = target.getAttribute('data-category');
-            filterByCategory(category);
-            searchInputDesktop.value = '';
-            searchInputMobile.value = '';
-            clearSearchBtnDesktop.classList.add('hidden');
-            clearSearchBtnMobile.classList.add('hidden');
-            if (navContentMobile && !navContentMobile.classList.contains('hidden')) {
-                navContentMobile.classList.add('hidden');
-                menuToggle.classList.remove('open');
-            }
-            return;
-        }
-        target = target.parentElement;
     }
 });
 
-if (siteLogo) {
-    siteLogo.addEventListener('click', (e) => {
-        e.preventDefault();
-        filterByCategory('Recent Adds');
-        searchInputDesktop.value = '';
-        searchInputMobile.value = '';
-        clearSearchBtnDesktop.classList.add('hidden');
-        clearSearchBtnMobile.classList.add('hidden');
-        if (navContentMobile) {
-            navContentMobile.classList.add('hidden');
-            menuToggle.classList.remove('open');
-        }
+function initLibraryRender(filter = "all", initialCount = 0) {
+    const query = searchInput.value.toLowerCase();
+    libraryData = contentData.filter(item => {
+        const matchesCat = filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
+        const matchesSearch = item.title.toLowerCase().includes(query) ||
+            item.category.toLowerCase().includes(query) ||
+            (item.genre && item.genre.toLowerCase().includes(query));
+        return matchesCat && matchesSearch;
     });
+    libraryGrid.innerHTML = '';
+    libraryDisplayedCount = initialCount > 0 ? initialCount : ITEMS_PER_PAGE;
+    if (libraryData.length === 0) {
+        libraryGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
+    } else {
+        const chunk = libraryData.slice(0, libraryDisplayedCount);
+        const fragment = document.createDocumentFragment();
+        chunk.forEach(item => fragment.appendChild(createMovieCard(item)));
+        libraryGrid.appendChild(fragment);
+    }
+    updateLoadMoreVisibility();
 }
+
+function renderLibraryChunk() {
+    isLoading = true;
+    const nextCount = libraryDisplayedCount + ITEMS_PER_PAGE;
+    const chunk = libraryData.slice(libraryDisplayedCount, nextCount);
+    if (chunk.length > 0) {
+        const fragment = document.createDocumentFragment();
+        chunk.forEach(item => fragment.appendChild(createMovieCard(item)));
+        libraryGrid.appendChild(fragment);
+        libraryDisplayedCount = nextCount;
+        updateLoadMoreVisibility();
+    }
+    isLoading = false;
+}
+
+function updateLoadMoreVisibility() {
+    const loading = document.getElementById('loadingIndicator');
+    if (libraryDisplayedCount < libraryData.length) {
+        loading.classList.remove('hidden');
+    } else {
+        loading.classList.add('hidden');
+    }
+}
+
+function openModal(id) {
+    const item = contentData.find(m => m.id === id);
+    currentItem = item;
+    document.getElementById('modalTitle').innerText = item.title;
+    document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
+    document.getElementById('modalLanguage').innerText = item.language;
+    document.getElementById('modalCategory').innerText = item.category;
+    document.getElementById('downBtn1').href = item.downloadUrl1 || "#";
+    document.getElementById('downBtn2').href = item.downloadUrl2 || "#";
+
+    const seriesSec = document.getElementById('seriesSection');
+    const epList = document.getElementById('episodeList');
+
+    if (item.episodes) {
+        seriesSec.classList.remove('hidden');
+        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
+        epList.innerHTML = '';
+        item.episodes.forEach((ep, idx) => {
+            const btn = document.createElement('button');
+            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
+            btn.innerText = ep.title;
+            btn.onclick = () => playEpisode(idx, btn);
+            epList.appendChild(btn);
+        });
+    } else {
+        seriesSec.classList.add('hidden');
+    }
+
+    document.getElementById('actualVideo').classList.add('hidden');
+    document.getElementById('videoPlaceholder').classList.remove('hidden');
+    videoIframe.src = "";
+    const modal = document.getElementById('movieModal');
+    modal.classList.remove('hidden');
+    void modal.offsetWidth;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function playDefault() {
+    if (!currentItem) return;
+    const url = currentItem.episodes ? currentItem.episodes[0].embedUrl : currentItem.embedUrl;
+    videoIframe.src = url + "?autoplay=1";
+    document.getElementById('videoPlaceholder').classList.add('hidden');
+    document.getElementById('actualVideo').classList.remove('hidden');
+}
+
+function playEpisode(index, btnElement) {
+    const episode = currentItem.episodes[index];
+    document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
+    btnElement.classList.add('active');
+    videoIframe.src = episode.embedUrl + "?autoplay=1";
+    document.getElementById('videoPlaceholder').classList.add('hidden');
+    document.getElementById('actualVideo').classList.remove('hidden');
+}
+
+function closeModal() {
+    const modal = document.getElementById('movieModal');
+    modal.classList.remove('active');
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        videoIframe.src = "";
+    }, 300);
+    document.body.style.overflow = 'auto';
+}
+
+searchInput.addEventListener('input', debounce(() => {
+    updateSearchUI();
+    if (currentView !== 'library') switchView('library');
+    initLibraryRender();
+}, 300));
+
+window.addEventListener('beforeunload', () => {
+    const currentScroll = window.scrollY;
+    const currentState = window.history.state || {
+        view: currentView,
+        category: new URLSearchParams(window.location.search).get('category'),
+        displayedCount: libraryDisplayedCount
+    };
+    try {
+        window.history.replaceState({ ...currentState, scrollY: currentScroll }, '');
+    } catch (e) { }
+});
+
+window.onload = () => {
+    initHeroSlider(); // Initialize Slider
+    renderRecentAdds();
+    renderCategorySections();
+    initLibraryRender();
+
+    updateCanonical(window.location.href);
+
+    if (history.state) {
+        const state = history.state;
+        switchView(state.view, state.category, false, state.displayedCount);
+        setTimeout(() => window.scrollTo(0, state.scrollY || 0), 20);
+    } else {
+        const params = new URLSearchParams(window.location.search);
+        const view = params.get('view') || 'home';
+        const category = params.get('category');
+        try {
+            window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, '');
+        } catch (e) { }
+        switchView(view, category, false);
+    }
+};
 
 window.addEventListener('popstate', (event) => {
-    if (!navContentMobile.classList.contains('hidden')) {
-        navContentMobile.classList.add('hidden');
-        menuToggle.classList.remove('open');
-        return;
-    }
-    const urlParams = new URLSearchParams(window.location.search);
-    const category = urlParams.get('category') || 'Recent Adds';
-    filterByCategory(category, false);
-    const movieSlug = urlParams.get('movie');
-    if (movieSlug) {
-        const movieIndex = moviesData.findIndex(m => slugify(m.title) === movieSlug);
-        if (movieIndex !== -1) openPlayer(movieIndex);
+    const state = event.state;
+    if (state) {
+        const url = new URL(window.location);
+        updateCanonical(url.href);
+        switchView(state.view, state.category, false, state.displayedCount);
+        setTimeout(() => {
+            window.scrollTo(0, state.scrollY || 0);
+        }, 20);
     } else {
-        closePlayer();
+        switchView('home', null, false);
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const category = urlParams.get('category') || 'Recent Adds';
-    filterByCategory(category, false);
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById('movieModal');
+    const scrollContainer = document.getElementById('modalScrollContainer');
+    const flexContainer = document.getElementById('modalFlexContainer');
+    if (e.target === modal || e.target === scrollContainer || e.target === flexContainer) {
+        closeModal();
+    }
 });
-
-function generateSchema() {
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "itemListElement": moviesData.map((movie, index) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "item": {
-                "@type": "Movie",
-                "name": movie.title,
-                "image": movie.posterUrl,
-                "genre": movie.genre,
-                "inLanguage": movie.language
-            }
-        }))
-    };
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(schema);
-    document.head.appendChild(script);
-}
-
-function createSeeAllCard(category, label = "See All") {
-    return `
-                <div class="movie-card relative block rounded-lg overflow-hidden h-full flex flex-col group" onclick="filterByCategory('${category}')">
-                    <div class="see-all-card-inner block h-full relative bg-[#1F2833] border-2 border-dashed border-gray-600 flex flex-col items-center justify-center aspect-[2/3] hover:bg-gray-800 hover:border-[var(--color-accent)] transition duration-300 cursor-pointer">
-                        <div class="see-all-icon w-14 h-14 rounded-full bg-[var(--color-accent)]/20 text-[var(--color-accent)] flex items-center justify-center mb-3 shadow-lg transition transform duration-300">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </div>
-                        <span class="text-white font-bold text-2xl uppercase tracking-wider">${label}</span>
-                        <span class="text-gray-500 text-base mt-1 font-semibold">${category === 'Recent Adds' ? 'View All' : category}</span>
-                    </div>
-                </div>
-            `;
-}
-
-generateSchema();
-
-const episodeSidebar = document.getElementById('episodeSidebar');
-const episodeList = document.getElementById('episodeList');
-
-/**
- * INITIALIZES THE PLAYER IN SERIES MODE
- * - Shows sidebar, widens modal, and renders the list
- * - Fixed: Sets maxWidth to 1280px to accommodate sidebar without shrinking video
- */
-function initSeriesPlayer(movie, episodes) {
-    // Show Sidebar
-    episodeSidebar.classList.remove('hidden');
-    modalContent.style.maxWidth = '1280px'; // Wider to fit sidebar + video
-
-    // Render the interactive list
-    renderEpisodeList(movie, episodes);
-
-    // Set initial state to First Episode
-    modalTitle.textContent = `${movie.title}: ${episodes[0].title}`;
-    if (episodes[0].embedUrl) {
-        videoPlayerFrame.src = episodes[0].embedUrl;
-    }
-}
-
-/**
- * INITIALIZES THE PLAYER IN MOVIE MODE (STANDARD)
- * - Hides sidebar, standard width
- */
-function initMoviePlayer(movie) {
-    // Hide Sidebar
-    episodeSidebar.classList.add('hidden');
-    modalContent.style.maxWidth = '900px'; // Standard width
-
-    modalTitle.textContent = movie.title;
-    if (movie.embedUrl && movie.embedUrl !== "#") {
-        videoPlayerFrame.src = movie.embedUrl;
-    } else {
-        alert("Video source not available for this demo.");
-        return;
-    }
-}
-
-/**
- * RENDERS THE LIST OF EPISODES IN THE SIDEBAR
- */
-function renderEpisodeList(movie, episodes) {
-    episodeList.innerHTML = ''; // Clear old list
-
-    episodes.forEach((ep, index) => {
-        const isCurrent = index === 0; // Default to first episode
-
-        // Create container
-        const epDiv = document.createElement('div');
-        epDiv.className = `episode-item flex items-center justify-between p-3 rounded-md cursor-pointer ${isCurrent ? 'active' : 'text-gray-400'}`;
-
-        // Click Event: Change Video and Active Highlight
-        epDiv.onclick = () => {
-            // 1. Reset all visual states
-            document.querySelectorAll('.episode-item').forEach(el => {
-                el.classList.remove('active');
-                el.classList.add('text-gray-400');
-                // Hide play icons
-                const icon = el.querySelector('.play-icon');
-                if (icon) icon.classList.add('opacity-0');
-            });
-
-            // 2. Set clicked item as active
-            epDiv.classList.add('active');
-            epDiv.classList.remove('text-gray-400');
-            epDiv.querySelector('.play-icon').classList.remove('opacity-0');
-
-            // 3. Update Player Title and Source
-            modalTitle.textContent = `${movie.title}: ${ep.title || 'Episode ' + ep.number}`;
-            videoPlayerFrame.src = ep.embedUrl;
-        };
-
-        const infoDiv = document.createElement('div');
-        infoDiv.className = 'flex items-center space-x-3 w-full';
-
-        // Badge (e.g. "1")
-        const badgeHtml = `<div class="episode-number-badge">${ep.number}</div>`;
-
-        // Title & Duration
-        const contentHtml = `
-                    <div class="flex flex-col flex-1 min-w-0">
-                        <span class="text-sm font-semibold truncate text-gray-200 group-hover:text-white">${ep.title || 'Episode ' + ep.number}</span>
-                        
-                    </div>
-                `;
-
-        // Play Icon (visible only on hover or active)
-        const playIcon = `<svg class="w-4 h-4 text-[var(--color-accent)] opacity-0 play-icon transition-opacity duration-200" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>`;
-
-        infoDiv.innerHTML = badgeHtml + contentHtml + playIcon;
-        epDiv.appendChild(infoDiv);
-
-        // Handle icon visibility on initial load
-        if (isCurrent) {
-            epDiv.querySelector('.play-icon').classList.remove('opacity-0');
-        } else {
-            // Hover effects for non-active items
-            epDiv.addEventListener('mouseenter', () => epDiv.querySelector('.play-icon').classList.remove('opacity-0'));
-            epDiv.addEventListener('mouseleave', () => {
-                if (!epDiv.classList.contains('active')) epDiv.querySelector('.play-icon').classList.add('opacity-0');
-            });
-        }
-
-        episodeList.appendChild(epDiv);
-    });
-}
-
-document.addEventListener("contextmenu",e=>e.preventDefault());
-document.onkeydown=function(e){if(123==e.keyCode)return!1;if(e.ctrlKey&&e.shiftKey){var t=e.keyCode;if(t=="I".charCodeAt(0)||t=="J".charCodeAt(0)||t=="C".charCodeAt(0))return!1}if(e.ctrlKey){var n=e.keyCode;if(n=="U".charCodeAt(0)||n=="S".charCodeAt(0))return e.preventDefault(),!1}};
-setInterval(function(){debugger},100);
