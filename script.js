@@ -2732,14 +2732,10 @@ const contentData = [
     },
 ];
 
-// Assign Dynamic IDs
-contentData.forEach((item, index) => {
-    item.id = index;
-});
+contentData.forEach((item, index) => { item.id = index; });
 
-// Categories List (Cleaned)
 const categories = [
-    "Bollywood", "Hollywood", "Animation", "South",
+    "all", "Bollywood", "Hollywood", "Animation", "South",
     "Korean Country", "Chinese", "Bollywood Series", "Hollywood Series",
     "Korean Series", "Adult Comedy", "Others"
 ];
@@ -2756,14 +2752,13 @@ const sliderWrapper = document.getElementById('sliderWrapper');
 const sliderDots = document.getElementById('sliderDots');
 const searchInput = document.getElementById('searchInput');
 const searchIcon = document.getElementById('searchIcon');
+const videoIframe = document.getElementById('videoIframe');
+const categoryMenu = document.getElementById('categoryMenu');
 
 let libraryData = [];
 let libraryDisplayedCount = 0;
-const ITEMS_PER_PAGE = 30; // Kept at 30 for speed
+const ITEMS_PER_PAGE = 30;
 
-if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-
-// Add DEBOUNCE Function
 function debounce(func, wait) {
     let timeout;
     return function (...args) {
@@ -2772,10 +2767,70 @@ function debounce(func, wait) {
     };
 }
 
+// --- CATEGORY NAV LOGIC ---
+function renderCategories() {
+    const mobileGrid = document.getElementById('mobileCategoryGrid');
+    const desktopNav = document.getElementById('desktopCategoryPills');
+    const libraryFilters = document.getElementById('libraryFilters');
+
+    mobileGrid.innerHTML = '';
+    desktopNav.innerHTML = '';
+    libraryFilters.innerHTML = '';
+
+    categories.forEach(cat => {
+        const label = cat === 'Korean Country' ? 'Korean' : cat;
+        
+        // Mobile Grid Items: Use UI-only close + state replace to avoid race conditions
+        const mobileItem = document.createElement('button');
+        mobileItem.className = 'cat-menu-item';
+        mobileItem.innerText = label;
+        mobileItem.onclick = () => { 
+            toggleCategoryMenu(false, false); 
+            switchView('library', cat, 'replace'); 
+        };
+        mobileGrid.appendChild(mobileItem);
+
+        // Desktop Navigation Pills
+        const desktopItem = document.createElement('a');
+        desktopItem.href = `?view=library&category=${cat}`;
+        desktopItem.className = 'category-pill border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 hover:bg-white/5 transition';
+        desktopItem.innerText = label;
+        desktopItem.onclick = (e) => { e.preventDefault(); switchView('library', cat); };
+        desktopNav.appendChild(desktopItem);
+
+        // Library Filter Pills
+        const filterItem = document.createElement('a');
+        filterItem.href = `?view=library&category=${cat}`;
+        filterItem.className = 'category-pill whitespace-nowrap border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 transition';
+        filterItem.setAttribute('data-category', cat);
+        filterItem.innerText = label;
+        filterItem.onclick = (e) => { e.preventDefault(); switchView('library', cat); };
+        libraryFilters.appendChild(filterItem);
+    });
+}
+
+function toggleCategoryMenu(show, triggerBack = true) {
+    if (show) {
+        const currentState = history.state || {};
+        window.history.pushState({ ...currentState, isMenuOpen: true }, '');
+        categoryMenu.classList.remove('hidden');
+        void categoryMenu.offsetWidth;
+        categoryMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    } else {
+        categoryMenu.classList.remove('active');
+        setTimeout(() => categoryMenu.classList.add('hidden'), 300);
+        document.body.style.overflow = 'auto';
+
+        if (triggerBack && window.history.state?.isMenuOpen) {
+            window.history.back();
+        }
+    }
+}
+
 // --- SLIDER LOGIC ---
 function initHeroSlider() {
     if (!sliderWrapper || !sliderDots) return;
-
     const slides = contentData.filter(item => item.category === "Recent Adds").slice(0, 6);
     if (slides.length === 0) return;
 
@@ -2790,16 +2845,15 @@ function initHeroSlider() {
             <img src="${movie.posterUrl}" class="w-full h-full object-cover object-center" alt="${movie.title}">
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
-                    <div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
+                <div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
                     <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
                     <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
                     <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
                     <button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
                         <i class="fas fa-play"></i> Watch Now
                     </button>
-                    </div>
-            </div>
-        `;
+                </div>
+            </div>`;
         sliderWrapper.appendChild(slide);
 
         const dot = document.createElement('button');
@@ -2810,35 +2864,25 @@ function initHeroSlider() {
 
     function startSlideTimer() {
         clearInterval(sliderInterval);
-        sliderInterval = setInterval(() => {
-            goToSlide((currentSlide + 1) % slides.length);
-        }, 3000);
+        sliderInterval = setInterval(() => { goToSlide((currentSlide + 1) % slides.length); }, 3000);
     }
 
     window.goToSlide = (index) => {
         const allSlides = document.querySelectorAll('.slide');
         const allDots = sliderDots.children;
-
         if (allSlides.length > 0) {
             allSlides[currentSlide].classList.remove('active');
             allDots[currentSlide].className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300';
-
             currentSlide = index;
             allSlides[currentSlide].classList.add('active');
             allDots[currentSlide].className = 'w-6 h-2 rounded-full bg-white transition-all duration-300';
-
             startSlideTimer();
         }
     };
-
     setTimeout(() => {
         const activeSlide = document.querySelector('.slide.active .slide-content');
-        if (activeSlide) {
-            activeSlide.style.opacity = '1';
-            activeSlide.style.transform = 'translateY(0)';
-        }
+        if (activeSlide) { activeSlide.style.opacity = '1'; activeSlide.style.transform = 'translateY(0)'; }
     }, 100);
-
     startSlideTimer();
 }
 
@@ -2852,39 +2896,27 @@ function updateSearchUI() {
     }
 }
 
-function handleSearchIconClick() {
-    if (searchInput.value.trim().length > 0) {
-        clearSearch();
-    }
-}
-
-function clearSearch() {
-    searchInput.value = '';
-    updateSearchUI();
-    // Don't trigger render here to avoid conflict with switchView
-}
+function handleSearchIconClick() { if (searchInput.value.trim().length > 0) clearSearch(); }
+function clearSearch() { searchInput.value = ''; updateSearchUI(); }
 
 function updateCanonical(url) {
     const canonicalLink = document.getElementById('canonicalLink');
     if (canonicalLink) {
-        const finalUrl = (url === window.location.origin + '/' || url === window.location.origin + '/index.html')
-            ? window.location.origin + '/'
-            : url;
+        const finalUrl = (url === window.location.origin + '/' || url === window.location.origin + '/index.html') ? window.location.origin + '/' : url;
         canonicalLink.setAttribute('href', finalUrl);
     }
 }
 
-function switchView(viewName, filterCategory = null, pushState = true, restoredCount = 0) {
-    if (pushState) {
+// --- UPDATED NAVIGATION LOGIC ---
+function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0) {
+    if (mode) {
         const currentScroll = window.scrollY;
         const currentState = window.history.state || {
             view: currentView,
             category: new URLSearchParams(window.location.search).get('category'),
             displayedCount: libraryDisplayedCount
         };
-        try {
-            window.history.replaceState({ ...currentState, scrollY: currentScroll }, '');
-        } catch (e) { }
+        try { window.history.replaceState({ ...currentState, scrollY: currentScroll }, ''); } catch (e) {}
     }
 
     currentView = viewName;
@@ -2896,70 +2928,53 @@ function switchView(viewName, filterCategory = null, pushState = true, restoredC
         document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
     } else {
         libraryView.classList.add('active');
-
-        if (filterCategory) {
-            searchInput.value = '';
-            updateSearchUI();
-        }
-
-        if (filterCategory) {
-            document.title = `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi`;
-            const pill = document.querySelector(`#libraryFilters .category-pill[data-category="${filterCategory}"]`);
-            if (pill) {
-                document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
-                pill.classList.add('active');
-                initLibraryRender(filterCategory, restoredCount);
-            } else {
-                initLibraryRender('all', restoredCount);
-            }
-        } else {
-            document.title = "All Movies & Web Series - MovieDakhi";
-            document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
-            document.querySelector('#libraryFilters .category-pill[data-category="all"]')?.classList.add('active');
-            initLibraryRender('all', restoredCount);
-        }
+        if (filterCategory) { searchInput.value = ''; updateSearchUI(); }
+        document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
+        
+        const catValue = filterCategory || 'all';
+        document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
+        document.querySelector(`#libraryFilters .category-pill[data-category="${catValue}"]`)?.classList.add('active');
+        initLibraryRender(catValue, restoredCount);
     }
 
-    if (pushState) {
+    if (mode) {
         try {
             const url = new URL(window.location);
             url.searchParams.set('view', viewName);
-            if (filterCategory && viewName === 'library') {
+            if (filterCategory && filterCategory !== 'all' && viewName === 'library') {
                 url.searchParams.set('category', filterCategory);
             } else {
                 url.searchParams.delete('category');
             }
             updateCanonical(url.href);
-            window.history.pushState({ view: viewName, category: filterCategory, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, '', url);
+            
+            const stateObj = { view: viewName, category: filterCategory, scrollY: 0, displayedCount: ITEMS_PER_PAGE };
+            if (mode === 'replace') {
+                window.history.replaceState(stateObj, '', url);
+            } else {
+                window.history.pushState(stateObj, '', url);
+            }
             window.scrollTo(0, 0);
-        } catch (e) { }
+        } catch (e) {}
     }
 }
 
 function createMovieCard(item) {
     const card = document.createElement('div');
     card.className = 'movie-card relative flex flex-col group';
-    const infoText = item.seriesInfo
-        ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>`
-        : '';
-
+    const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
     card.innerHTML = `
         <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3]">
-            <div class="absolute top-2 right-2 z-20">
-                <span class="lang-badge border-none shadow-lg">${item.language}</span>
-            </div>
+            <div class="absolute top-2 right-2 z-20"><span class="lang-badge border-none shadow-lg">${item.language}</span></div>
             <img src="${item.posterUrl}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">
             <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-center items-center p-5 transition-all duration-300">
-                <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center">
-                    <i class="fas fa-play text-white text-lg"></i>
-                </div>
+                <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
             </div>
         </div>
         <div class="mt-4 text-center">
             <h4 class="font-black text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
             ${infoText}
-        </div>
-    `;
+        </div>`;
     card.onclick = () => openModal(item.id);
     return card;
 }
@@ -2967,7 +2982,6 @@ function createMovieCard(item) {
 function renderRecentAdds() {
     recentAddsGrid.innerHTML = '';
     const recentItems = contentData.filter(item => item.category === "Recent Adds");
-
     const fragment = document.createDocumentFragment();
     recentItems.forEach(item => fragment.appendChild(createMovieCard(item)));
     recentAddsGrid.appendChild(fragment);
@@ -2976,13 +2990,10 @@ function renderRecentAdds() {
     viewAllCard.className = 'view-all-card relative rounded-lg overflow-hidden group flex flex-col items-center justify-center p-6 cursor-pointer aspect-[2/3]';
     viewAllCard.innerHTML = `
         <div class="flex flex-col items-center justify-center transition-transform duration-300 group-hover:scale-110">
-            <div class="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center mb-4 group-hover:bg-red-600 transition-colors shadow-lg transition-transform duration-300 group-hover:scale-110">
-                <i class="fas fa-arrow-right text-white text-xl"></i>
-            </div>
+            <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110"><i class="fas fa-arrow-right text-white text-xl"></i></div>
             <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
             <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">Browse Full Library</p>
-        </div>
-    `;
+        </div>`;
     viewAllCard.onclick = () => { clearSearch(); switchView('library'); };
     recentAddsGrid.appendChild(viewAllCard);
 }
@@ -2990,13 +3001,10 @@ function renderRecentAdds() {
 function renderCategorySections() {
     categorySections.innerHTML = '';
     const fragment = document.createDocumentFragment();
-
-    categories.forEach(cat => {
+    categories.filter(c => c !== 'all').forEach(cat => {
         const filtered = contentData.filter(m => m.category === cat);
         if (filtered.length === 0) return;
-        let displayName = cat;
-        if (cat === 'Korean Country') displayName = 'Korean';
-
+        let displayName = cat === 'Korean Country' ? 'Korean' : cat;
         const section = document.createElement('section');
         section.className = 'mb-16';
         section.innerHTML = `
@@ -3004,48 +3012,31 @@ function renderCategorySections() {
                 <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
                 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
             </div>
-            <div class="category-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto"></div>
-        `;
-
+            <div class="category-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto"></div>`;
         const grid = section.querySelector('.category-grid');
-        const slice = filtered.slice(0, 11);
-        slice.forEach(item => grid.appendChild(createMovieCard(item)));
-
+        filtered.slice(0, 11).forEach(item => grid.appendChild(createMovieCard(item)));
         const viewAllCard = document.createElement('div');
         viewAllCard.className = 'view-all-card relative rounded-lg overflow-hidden group flex flex-col items-center justify-center p-6 cursor-pointer aspect-[2/3]';
         viewAllCard.innerHTML = `
             <div class="flex flex-col items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110">
-                    <i class="fas fa-arrow-right text-white text-xl"></i>
-                </div>
+                <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110"><i class="fas fa-arrow-right text-white text-xl"></i></div>
                 <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
                 <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
-            </div>
-        `;
+            </div>`;
         viewAllCard.onclick = () => { clearSearch(); switchView('library', cat); };
         grid.appendChild(viewAllCard);
-
         fragment.appendChild(section);
     });
     categorySections.appendChild(fragment);
 }
 
 let isLoading = false;
-
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-
+    if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
     if (currentView === 'library' && !isLoading) {
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-
-        // Use a generous buffer (e.g., 500px from bottom)
-        if (scrollTop + clientHeight >= scrollHeight - 500) {
-            if (libraryDisplayedCount < libraryData.length) {
-                renderLibraryChunk();
-            }
-        }
+        if (scrollTop + clientHeight >= scrollHeight - 500) { if (libraryDisplayedCount < libraryData.length) renderLibraryChunk(); }
     }
 });
 
@@ -3053,9 +3044,7 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     const query = searchInput.value.toLowerCase();
     libraryData = contentData.filter(item => {
         const matchesCat = filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
-        const matchesSearch = item.title.toLowerCase().includes(query) ||
-            item.category.toLowerCase().includes(query) ||
-            (item.genre && item.genre.toLowerCase().includes(query));
+        const matchesSearch = item.title.toLowerCase().includes(query) || item.category.toLowerCase().includes(query) || (item.genre && item.genre.toLowerCase().includes(query));
         return matchesCat && matchesSearch;
     });
     libraryGrid.innerHTML = '';
@@ -3063,9 +3052,8 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     if (libraryData.length === 0) {
         libraryGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
     } else {
-        const chunk = libraryData.slice(0, libraryDisplayedCount);
         const fragment = document.createDocumentFragment();
-        chunk.forEach(item => fragment.appendChild(createMovieCard(item)));
+        libraryData.slice(0, libraryDisplayedCount).forEach(item => fragment.appendChild(createMovieCard(item)));
         libraryGrid.appendChild(fragment);
     }
     updateLoadMoreVisibility();
@@ -3087,11 +3075,7 @@ function renderLibraryChunk() {
 
 function updateLoadMoreVisibility() {
     const loading = document.getElementById('loadingIndicator');
-    if (libraryDisplayedCount < libraryData.length) {
-        loading.classList.remove('hidden');
-    } else {
-        loading.classList.add('hidden');
-    }
+    if (libraryDisplayedCount < libraryData.length) loading.classList.remove('hidden'); else loading.classList.add('hidden');
 }
 
 function openModal(id) {
@@ -3103,10 +3087,8 @@ function openModal(id) {
     document.getElementById('modalCategory').innerText = item.category;
     document.getElementById('downBtn1').href = item.downloadUrl1 || "#";
     document.getElementById('downBtn2').href = item.downloadUrl2 || "#";
-
     const seriesSec = document.getElementById('seriesSection');
     const epList = document.getElementById('episodeList');
-
     if (item.episodes) {
         seriesSec.classList.remove('hidden');
         document.getElementById('seriesInfoText').innerText = item.seriesInfo;
@@ -3118,13 +3100,14 @@ function openModal(id) {
             btn.onclick = () => playEpisode(idx, btn);
             epList.appendChild(btn);
         });
-    } else {
-        seriesSec.classList.add('hidden');
-    }
-
+    } else { seriesSec.classList.add('hidden'); }
     document.getElementById('actualVideo').classList.add('hidden');
     document.getElementById('videoPlaceholder').classList.remove('hidden');
     videoIframe.src = "";
+
+    const currentState = history.state || {};
+    window.history.pushState({ ...currentState, isModalOpen: true }, '');
+
     const modal = document.getElementById('movieModal');
     modal.classList.remove('hidden');
     void modal.offsetWidth;
@@ -3149,14 +3132,17 @@ function playEpisode(index, btnElement) {
     document.getElementById('actualVideo').classList.remove('hidden');
 }
 
-function closeModal() {
+function closeModal(triggerBack = true) {
     const modal = document.getElementById('movieModal');
+    if (modal.classList.contains('hidden')) return;
+
     modal.classList.remove('active');
-    setTimeout(() => {
-        modal.classList.add('hidden');
-        videoIframe.src = "";
-    }, 300);
+    setTimeout(() => { modal.classList.add('hidden'); videoIframe.src = ""; }, 300);
     document.body.style.overflow = 'auto';
+
+    if (triggerBack && window.history.state?.isModalOpen) {
+        window.history.back();
+    }
 }
 
 searchInput.addEventListener('input', debounce(() => {
@@ -3165,24 +3151,12 @@ searchInput.addEventListener('input', debounce(() => {
     initLibraryRender();
 }, 300));
 
-window.addEventListener('beforeunload', () => {
-    const currentScroll = window.scrollY;
-    const currentState = window.history.state || {
-        view: currentView,
-        category: new URLSearchParams(window.location.search).get('category'),
-        displayedCount: libraryDisplayedCount
-    };
-    try {
-        window.history.replaceState({ ...currentState, scrollY: currentScroll }, '');
-    } catch (e) { }
-});
-
 window.onload = () => {
-    initHeroSlider(); // Initialize Slider
+    renderCategories();
+    initHeroSlider();
     renderRecentAdds();
     renderCategorySections();
     initLibraryRender();
-
     updateCanonical(window.location.href);
 
     if (history.state) {
@@ -3193,32 +3167,31 @@ window.onload = () => {
         const params = new URLSearchParams(window.location.search);
         const view = params.get('view') || 'home';
         const category = params.get('category');
-        try {
-            window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, '');
-        } catch (e) { }
+        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, ''); } catch (e) {}
         switchView(view, category, false);
     }
 };
 
 window.addEventListener('popstate', (event) => {
     const state = event.state;
-    if (state) {
-        const url = new URL(window.location);
-        updateCanonical(url.href);
-        switchView(state.view, state.category, false, state.displayedCount);
-        setTimeout(() => {
-            window.scrollTo(0, state.scrollY || 0);
-        }, 20);
-    } else {
-        switchView('home', null, false);
+    
+    const modal = document.getElementById('movieModal');
+    if (modal && !modal.classList.contains('hidden') && (!state || !state.isModalOpen)) {
+        closeModal(false);
     }
+
+    if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
+        toggleCategoryMenu(false, false);
+    }
+
+    if (state) {
+        updateCanonical(new URL(window.location).href);
+        switchView(state.view, state.category, false, state.displayedCount);
+        setTimeout(() => { window.scrollTo(0, state.scrollY || 0); }, 20);
+    } else { switchView('home', null, false); }
 });
 
 window.addEventListener('click', (e) => {
-    const modal = document.getElementById('movieModal');
-    const scrollContainer = document.getElementById('modalScrollContainer');
-    const flexContainer = document.getElementById('modalFlexContainer');
-    if (e.target === modal || e.target === scrollContainer || e.target === flexContainer) {
-        closeModal();
-    }
+    if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal();
+    if (e.target === categoryMenu) toggleCategoryMenu(false);
 });
