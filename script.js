@@ -2767,44 +2767,49 @@ function debounce(func, wait) {
     };
 }
 
-// --- CATEGORY NAV LOGIC ---
+// --- CATEGORY NAV LOGIC (SEO FIXED) ---
 function renderCategories() {
     const mobileGrid = document.getElementById('mobileCategoryGrid');
     const desktopNav = document.getElementById('desktopCategoryPills');
     const libraryFilters = document.getElementById('libraryFilters');
 
-    mobileGrid.innerHTML = '';
-    desktopNav.innerHTML = '';
-    libraryFilters.innerHTML = '';
+    mobileGrid.innerHTML = ''; desktopNav.innerHTML = ''; libraryFilters.innerHTML = '';
 
     categories.forEach(cat => {
         const label = cat === 'Korean Country' ? 'Korean' : cat;
-        
-        // Mobile Grid Items: Use UI-only close + state replace to avoid race conditions
-        const mobileItem = document.createElement('button');
-        mobileItem.className = 'cat-menu-item';
+        // রিয়েল লিংক তৈরি করা হচ্ছে যাতে বট বুঝতে পারে
+        const realLink = `?view=library&category=${encodeURIComponent(cat)}`;
+
+        // --- MOBILE MENU (Button এর বদলে A ট্যাগ) ---
+        const mobileItem = document.createElement('a');
+        mobileItem.className = 'cat-menu-item block w-full h-full flex items-center justify-center text-white no-underline'; 
         mobileItem.innerText = label;
-        mobileItem.onclick = () => { 
+        mobileItem.href = realLink; // এসইও এর জন্য আসল লিংক
+        mobileItem.onclick = (e) => { 
+            e.preventDefault(); // পেজ রিলোড বন্ধ করবে
             toggleCategoryMenu(false, false); 
             switchView('library', cat, 'replace'); 
         };
         mobileGrid.appendChild(mobileItem);
 
-        // Desktop Navigation Pills
+        // --- DESKTOP MENU ---
         const desktopItem = document.createElement('a');
-        desktopItem.href = `?view=library&category=${cat}`;
-        desktopItem.className = 'category-pill border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 hover:bg-white/5 transition';
+        desktopItem.href = realLink; // এসইও এর জন্য আসল লিংক
+        desktopItem.className = 'category-pill border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 transition';
         desktopItem.innerText = label;
-        desktopItem.onclick = (e) => { e.preventDefault(); switchView('library', cat); };
+        desktopItem.onclick = (e) => { 
+            e.preventDefault(); // পেজ রিলোড বন্ধ করবে
+            switchView('library', cat); 
+        };
         desktopNav.appendChild(desktopItem);
 
-        // Library Filter Pills
-        const filterItem = document.createElement('a');
-        filterItem.href = `?view=library&category=${cat}`;
-        filterItem.className = 'category-pill whitespace-nowrap border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 transition';
+        // --- FILTERS ---
+        const filterItem = desktopItem.cloneNode(true);
         filterItem.setAttribute('data-category', cat);
-        filterItem.innerText = label;
-        filterItem.onclick = (e) => { e.preventDefault(); switchView('library', cat); };
+        filterItem.onclick = (e) => { 
+            e.preventDefault(); 
+            switchView('library', cat); 
+        };
         libraryFilters.appendChild(filterItem);
     });
 }
@@ -2909,6 +2914,7 @@ function updateCanonical(url) {
 
 // --- UPDATED NAVIGATION LOGIC ---
 function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0) {
+    // ১. হিস্ট্রি সেভ করার লজিক (Scroll Position সহ)
     if (mode) {
         const currentScroll = window.scrollY;
         const currentState = window.history.state || {
@@ -2919,7 +2925,11 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
         try { window.history.replaceState({ ...currentState, scrollY: currentScroll }, ''); } catch (e) {}
     }
 
+    // ২. ভিউ পরিবর্তন (UI Change)
     currentView = viewName;
+    const homeView = document.getElementById('homeView');       // নিশ্চিত হওয়ার জন্য ID দিয়ে ধরা হলো
+    const libraryView = document.getElementById('libraryView'); // নিশ্চিত হওয়ার জন্য ID দিয়ে ধরা হলো
+    
     homeView.classList.remove('active');
     libraryView.classList.remove('active');
 
@@ -2928,34 +2938,57 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
         document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
     } else {
         libraryView.classList.add('active');
-        if (filterCategory) { searchInput.value = ''; updateSearchUI(); }
+        const searchInput = document.getElementById('searchInput'); // সেফটি সিলেক্টর
+        if (filterCategory && searchInput) { searchInput.value = ''; updateSearchUI(); }
+        
         document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
         
         const catValue = filterCategory || 'all';
         document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
         document.querySelector(`#libraryFilters .category-pill[data-category="${catValue}"]`)?.classList.add('active');
-        initLibraryRender(catValue, restoredCount);
+        
+        // এখানে initLibraryRender ফাংশন কল হচ্ছে (এটি আপনার কোডেই আছে)
+        if (typeof initLibraryRender === "function") {
+            initLibraryRender(catValue, restoredCount);
+        }
     }
 
+    // ৩. URL এবং Canonical Tag আপডেট (সবচেয়ে গুরুত্বপূর্ণ অংশ)
     if (mode) {
         try {
-            const url = new URL(window.location);
+            const url = new URL(window.location); // বর্তমান URL নেওয়া হলো
+            
+            // প্যারামিটার সেট করা
             url.searchParams.set('view', viewName);
             if (filterCategory && filterCategory !== 'all' && viewName === 'library') {
                 url.searchParams.set('category', filterCategory);
             } else {
                 url.searchParams.delete('category');
             }
-            updateCanonical(url.href);
-            
-            const stateObj = { view: viewName, category: filterCategory, scrollY: 0, displayedCount: ITEMS_PER_PAGE };
+
+            // ➤➤➤ [SEO FIX] Canonical Tag আপডেট করা হচ্ছে (নতুন অংশ)
+            const canonicalLink = document.getElementById('canonicalLink');
+            if (canonicalLink) {
+                // যদি হোম পেজ হয়, তবে ক্লিন লিংক, নাহলে প্যারামিটার সহ লিংক
+                if (viewName === 'home') {
+                    canonicalLink.href = 'https://moviedakhi.com/';
+                } else {
+                    canonicalLink.href = url.href; 
+                }
+            }
+            // ➤➤➤ [END SEO FIX]
+
+            // ব্রাউজারের হিস্ট্রি আপডেট
+            const stateObj = { view: viewName, category: filterCategory, scrollY: 0, displayedCount: 30 }; // ITEMS_PER_PAGE এর বদলে সরাসরি ৩০ দেওয়া হলো সেফটির জন্য
             if (mode === 'replace') {
                 window.history.replaceState(stateObj, '', url);
             } else {
                 window.history.pushState(stateObj, '', url);
             }
             window.scrollTo(0, 0);
-        } catch (e) {}
+        } catch (e) {
+            console.error("Navigation Error:", e);
+        }
     }
 }
 
