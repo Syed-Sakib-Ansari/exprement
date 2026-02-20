@@ -1,5 +1,5 @@
 const contentData = [
-        {
+       {
         title: "Mercy (2026)", embedUrl: "https://short.icu/ps3OunVy9", posterUrl: "https://resizing.flixster.com/aNapEdhhuk2svwsVPCM92QbciAU=/fit-in/705x460/v2/https://resizing.flixster.com/ERwlntkU1tcJYlzuD4VqJyGFxZ8=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZjMDM5Njk2LWY0NTEtNGI0Ny04OGVjLWRhMTZmZjJhYzVkZS5qcGc=", genre: "Sci-Fi, Action, Mystery & Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Crime 101 (2026)", embedUrl: "https://short.icu/xsx_4Akbn", posterUrl: "https://resizing.flixster.com/Mv63F7tYNvWkA57kSncR8nwYGbQ=/fit-in/705x460/v2/https://resizing.flixster.com/6HH4xeWyY3W8I3mkI7kVKnLuUeo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA3NTc3ZGNkLWE4ZDQtNDU1NC04MmQ3LTViYTUxY2Y3NDMzNy5qcGc=", genre: "Crime, Drama, Mystery & Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://www.effectivegatecpm.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
