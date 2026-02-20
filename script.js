@@ -2772,7 +2772,28 @@ const categoryMenu = document.getElementById('categoryMenu');
 
 let libraryData = [];
 let libraryDisplayedCount = 0;
-const ITEMS_PER_PAGE = 60;
+
+// ১. লোড হওয়া মুভির সংখ্যা ৬০ থেকে ৩০ করা হলো
+const ITEMS_PER_PAGE = 30;
+
+// ==========================================
+// ২. আপডেটেড Smart Image Optimizer (Width অপশনসহ)
+// ==========================================
+function getOptimizedImageUrl(url, width = 300) {
+  if (!url) return "";
+  
+  // চেক করবে লিংকটি আগে থেকেই অপ্টিমাইজড বা ছোট (Thumbnail) কিনা
+  const fastKeywords = ['.webp', 'flixster.com', 'wikimedia.org', 'wikipedia.org', 'wsrv.nl', 'thumb', '250px'];
+  const isAlreadyFast = fastKeywords.some(keyword => url.toLowerCase().includes(keyword));
+
+  if (isAlreadyFast) {
+    return url; // ছোট ছবি হলে সরাসরি লোড হবে (কোনো সময় নষ্ট হবে না)
+  } 
+  
+  // শুধুমাত্র ভারী ও সাধারণ ছবির জন্য wsrv.nl কাজ করবে
+  return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=80`;
+}
+// ==========================================
 
 function debounce(func, wait) {
     let timeout;
@@ -2859,8 +2880,9 @@ function initHeroSlider() {
         slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
         const loadingAttr = index === 0 ? 'eager' : 'lazy';
 
+        // ৩. স্লাইডারের ইমেজে getOptimizedImageUrl (width: 1000) যুক্ত করা হলো
         slide.innerHTML = `
-<img src="${movie.posterUrl}" class="w-full h-full object-cover object-center" alt="${movie.title}" loading="${loadingAttr}">
+<img src="${getOptimizedImageUrl(movie.posterUrl, 1000)}" class="w-full h-full object-cover object-center" alt="${movie.title}" loading="${loadingAttr}">
 <div class="absolute inset-0 bg-black/40"></div>
 <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
     <div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
@@ -2999,11 +3021,13 @@ function createMovieCard(item) {
     const card = document.createElement('div');
     card.className = 'movie-card relative flex flex-col group';
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
+    
+    // কার্ডের ইমেজে স্বয়ংক্রিয়ভাবে ডিফল্ট w=300 নিয়ে নেবে
     card.innerHTML = `
 <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3]">
 <div class="absolute top-2 right-2 z-20"><span class="lang-badge border-none shadow-lg">${item.language}</span></div>
 <img 
-  src="https://wsrv.nl/?url=${encodeURIComponent(item.posterUrl)}&w=300&output=webp&q=80" 
+  src="${getOptimizedImageUrl(item.posterUrl)}" 
   alt="${item.title}" 
   class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
   loading="lazy" 
@@ -3086,12 +3110,6 @@ window.addEventListener('scroll', () => {
 function initLibraryRender(filter = "all", initialCount = 0) {
     const rawQuery = searchInput.value;
 
-    /**
-     * Clean String Function:
-     * Removes ALL special characters, spaces, and punctuation.
-     * Only keeps letters (a-z) and numbers (0-9).
-     * This makes "O' Romeo" become "oromeo", matching exactly what user types.
-     */
     const cleanStr = (str) => {
         if (!str) return "";
         return str.toLowerCase().replace(/[^a-z0-9]/g, '');
