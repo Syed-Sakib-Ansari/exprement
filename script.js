@@ -3002,7 +3002,13 @@ function createMovieCard(item) {
     card.innerHTML = `
 <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3]">
 <div class="absolute top-2 right-2 z-20"><span class="lang-badge border-none shadow-lg">${item.language}</span></div>
-<img src="${item.posterUrl}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+<img 
+  src="https://wsrv.nl/?url=${encodeURIComponent(item.posterUrl)}&w=300&output=webp&q=80" 
+  alt="${item.title}" 
+  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+  loading="lazy" 
+  decoding="async"
+>
 <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-center items-center p-5 transition-all duration-300">
     <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
 </div>
