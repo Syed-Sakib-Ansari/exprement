@@ -2782,15 +2782,12 @@ const ITEMS_PER_PAGE = 30;
 function getOptimizedImageUrl(url, width = 300) {
   if (!url) return "";
   
-  // চেক করবে লিংকটি আগে থেকেই অপ্টিমাইজড বা ছোট (Thumbnail) কিনা
-  const fastKeywords = ['.webp', 'flixster.com', 'wikimedia.org', 'wikipedia.org', 'wsrv.nl', 'thumb', '250px'];
-  const isAlreadyFast = fastKeywords.some(keyword => url.toLowerCase().includes(keyword));
-
-  if (isAlreadyFast) {
-    return url; // ছোট ছবি হলে সরাসরি লোড হবে (কোনো সময় নষ্ট হবে না)
+  // শুধুমাত্র উইকিপিডিয়া বা উইকিমিডিয়া সরাসরি লোড হবে (কারণ তারা ব্লক করে না)
+  if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
+    return url; 
   } 
   
-  // শুধুমাত্র ভারী ও সাধারণ ছবির জন্য wsrv.nl কাজ করবে
+  // Flixster সহ বাকি সব ছবি wsrv.nl প্রক্সি সার্ভারের ক্যাশ থেকে আসবে
   return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=80`;
 }
 // ==========================================
