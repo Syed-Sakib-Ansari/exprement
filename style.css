@@ -127,11 +127,11 @@ body {
 /* ==================================================== */
 #mobileFab {
     position: fixed;
-    top: 5px; /* Hug exact top corner and bleed */
-    right: 5px; /* Hug exact right corner and bleed */
-    bottom: auto; /* Explicitly reset bottom for mobile */
-    width: 73px; /* Increased size specifically for mobile */
-    height: 73px;
+    top: auto; 
+    bottom: 0; /* Removed space for mobile */
+    right: 0; /* Removed space for mobile */
+    width: 68px; /* Proper circle size for mobile */
+    height: 68px;
     background-color: var(--primary-red);
     border-radius: 50%;
     box-shadow: 0 4px 20px rgba(229, 9, 20, 0.5), inset 0 -3px 5px rgba(0,0,0,0.2);

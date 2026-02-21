@@ -2924,15 +2924,13 @@ function drag(e) {
         let nextX = initialX + dx;
         let nextY = initialY + dy;
 
-        const isDesktop = window.innerWidth >= 768;
-        const bleed = isDesktop ? 0 : 12; // Allow bleeding exactly like its default corner state
-
-        // Enforce strictly inside the viewport boundaries DURING the drag (incorporating bleed padding)
-        const maxX = window.innerWidth - fab.offsetWidth + bleed;
-        const maxY = window.innerHeight - fab.offsetHeight + bleed;
+        // Use clientWidth/clientHeight instead of innerWidth/innerHeight to exclude scrollbars and prevent clipping!
+        const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+        const maxY = document.documentElement.clientHeight - fab.offsetHeight;
         
-        nextX = Math.max(-bleed, Math.min(nextX, maxX));
-        nextY = Math.max(-bleed, Math.min(nextY, maxY));
+        // No bleeding allowed, constrained strictly between 0 and Max
+        nextX = Math.max(0, Math.min(nextX, maxX));
+        nextY = Math.max(0, Math.min(nextY, maxY));
 
         // Calculate the actual translation to the bounded coordinate
         translateX = nextX - initialX;
@@ -2990,17 +2988,15 @@ fab.addEventListener('click', (e) => {
 
 // Ensure FAB stays inside if window resizes/rotates
 window.addEventListener('resize', () => {
-    const isDesktop = window.innerWidth >= 768;
-    const bleed = isDesktop ? 0 : 12;
-    const maxX = window.innerWidth - fab.offsetWidth + bleed;
-    const maxY = window.innerHeight - fab.offsetHeight + bleed;
+    const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+    const maxY = document.documentElement.clientHeight - fab.offsetHeight;
     const currentX = fab.offsetLeft;
     const currentY = fab.offsetTop;
     
     if(currentX > maxX) fab.style.left = `${maxX}px`;
     if(currentY > maxY) fab.style.top = `${maxY}px`;
-    if(currentX < -bleed) fab.style.left = `${-bleed}px`;
-    if(currentY < -bleed) fab.style.top = `${-bleed}px`;
+    if(currentX < 0) fab.style.left = `0px`;
+    if(currentY < 0) fab.style.top = `0px`;
 });
 // ==========================================
 
