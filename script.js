@@ -3064,12 +3064,17 @@ function initHeroSlider() {
 }
 
 function updateSearchUI() {
+    const libraryFilters = document.getElementById('libraryFilters');
     if (searchInput.value.trim().length > 0) {
         searchIcon.classList.remove('fa-search');
         searchIcon.classList.add('fa-times', 'cursor-pointer');
+        // Hide category filters when searching
+        if (libraryFilters) libraryFilters.style.display = 'none';
     } else {
         searchIcon.classList.remove('fa-times', 'cursor-pointer');
         searchIcon.classList.add('fa-search');
+        // Show category filters when search is empty
+        if (libraryFilters) libraryFilters.style.display = '';
     }
 }
 
@@ -3395,6 +3400,14 @@ searchInput.addEventListener('input', debounce(() => {
     if (currentView !== 'library') switchView('library');
     initLibraryRender();
 }, 300));
+
+// Close mobile keyboard when Enter is pressed
+searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.blur();
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
