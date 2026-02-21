@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# ১. Redirect www to non-www (https)
+RewriteCond %{HTTP_HOST} ^www\.moviedakhi\.com [NC]
+RewriteRule ^(.*)$ https://moviedakhi.com/$1 [L,R=301]
+
+# ২. Redirect index.html to root domain
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://moviedakhi.com/ [L,R=301]
+
+# ৩. 404 Error Page Setup
+ErrorDocument 404 /404.html
