@@ -130,10 +130,10 @@
 
     <!-- FREELY DRAGGABLE FAB BUTTON (Shows on all screens now) -->
     <button id="mobileFab" class="flex items-center justify-center relative" aria-label="Open Categories">
-        <i class="fas fa-bars text-white text-2xl md:text-3xl absolute transition-all duration-300 ease-in-out"
-            id="fabIconBars"></i>
-        <i class="fas fa-times text-white text-2xl md:text-3xl absolute transition-all duration-300 ease-in-out scale-0 opacity-0 rotate-90"
-            id="fabIconTimes"></i>
+        <div id="fabIconContainer" class="relative flex items-center justify-center w-full h-full">
+            <i class="fas fa-bars text-white text-3xl md:text-4xl absolute transition-all duration-300 ease-in-out" id="fabIconBars"></i>
+            <i class="fas fa-times text-white text-3xl md:text-4xl absolute transition-all duration-300 ease-in-out scale-0 opacity-0 rotate-90" id="fabIconTimes"></i>
+        </div>
     </button>
 
     <!-- CATEGORY FULLSCREEN MENU -->

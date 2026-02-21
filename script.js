@@ -2833,25 +2833,41 @@ function renderCategories() {
 }
 
 // ==========================================
-// FAB OPEN / CLOSE ANIMATIONS (UPDATED)
+// FAB OPEN / CLOSE ANIMATIONS & SCROLL FIX
 // ==========================================
+let savedScrollY = 0;
+
 function toggleCategoryMenu(show, triggerBack = true) {
     const fab = document.getElementById('mobileFab');
-
+    
     if (show) {
+        // Save precise scroll position before opening
+        savedScrollY = window.scrollY;
+
         const currentState = history.state || {};
+        try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
         try { window.history.pushState({ ...currentState, isMenuOpen: true }, ''); } catch (e) { }
+        
         categoryMenu.classList.remove('hidden');
         void categoryMenu.offsetWidth; // Trigger reflow
         categoryMenu.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        
+        // Bulletproof body lock - stops background scrolling and jumping
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${savedScrollY}px`;
+        document.body.style.width = '100%';
 
         fab.classList.add('menu-open'); // Triggers CSS transitions on icons
 
     } else {
         categoryMenu.classList.remove('active');
         setTimeout(() => categoryMenu.classList.add('hidden'), 400); // Matches the 0.4s CSS transition
-        document.body.style.overflow = 'auto';
+        
+        // Remove body lock and instantly restore the exact scroll position
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, savedScrollY);
 
         if (triggerBack && window.history.state?.isMenuOpen) {
             window.history.back();
@@ -2862,11 +2878,12 @@ function toggleCategoryMenu(show, triggerBack = true) {
 }
 
 // ==========================================
-// FREELY DRAGGABLE FAB LOGIC (POINTER EVENTS FOR MOBILE SUPPORT)
+// 60FPS SMOOTH FREELY DRAGGABLE FAB LOGIC
 // ==========================================
 const fab = document.getElementById('mobileFab');
 let isDragging = false;
 let startX, startY, initialX, initialY;
+let translateX = 0, translateY = 0;
 let moved = false;
 
 function dragStart(e) {
@@ -2874,8 +2891,18 @@ function dragStart(e) {
     isDragging = true;
     startX = e.clientX;
     startY = e.clientY;
-    initialX = fab.offsetLeft;
-    initialY = fab.offsetTop;
+    
+    // Get exact current position relative to viewport
+    const rect = fab.getBoundingClientRect();
+    initialX = rect.left;
+    initialY = rect.top;
+    
+    // Lock it to left/top instantly before dragging to prevent jumps
+    fab.style.left = `${initialX}px`;
+    fab.style.top = `${initialY}px`;
+    fab.style.bottom = 'auto';
+    fab.style.right = 'auto';
+
     fab.style.transition = 'none';
     // Capture pointer to track dragging seamlessly even if mouse/finger leaves the element
     fab.setPointerCapture(e.pointerId);
@@ -2883,31 +2910,36 @@ function dragStart(e) {
 
 function drag(e) {
     if (!isDragging) return;
-
+    
     const dx = e.clientX - startX;
     const dy = e.clientY - startY;
 
     // Increased threshold to 8px to prevent "accidental drags" when attempting to just tap
     if (Math.abs(dx) > 8 || Math.abs(dy) > 8) {
-        moved = true;
+        moved = true; 
     }
 
     if (moved) {
-        let newX = initialX + dx;
-        let newY = initialY + dy;
+        // Calculate prospective coordinates
+        let nextX = initialX + dx;
+        let nextY = initialY + dy;
 
-        // Viewport constraints to prevent losing the button
-        const maxX = window.innerWidth - fab.offsetWidth;
-        const maxY = window.innerHeight - fab.offsetHeight;
-        newX = Math.max(0, Math.min(newX, maxX));
-        newY = Math.max(0, Math.min(newY, maxY));
+        const isDesktop = window.innerWidth >= 768;
+        const bleed = isDesktop ? 0 : 12; // Allow bleeding exactly like its default corner state
 
-        fab.style.left = `${newX}px`;
-        fab.style.top = `${newY}px`;
+        // Enforce strictly inside the viewport boundaries DURING the drag (incorporating bleed padding)
+        const maxX = window.innerWidth - fab.offsetWidth + bleed;
+        const maxY = window.innerHeight - fab.offsetHeight + bleed;
+        
+        nextX = Math.max(-bleed, Math.min(nextX, maxX));
+        nextY = Math.max(-bleed, Math.min(nextY, maxY));
 
-        // Unset bottom and right auto-aligning defaults
-        fab.style.bottom = 'auto';
-        fab.style.right = 'auto';
+        // Calculate the actual translation to the bounded coordinate
+        translateX = nextX - initialX;
+        translateY = nextY - initialY;
+
+        // Use Hardware-Accelerated transform for buttery smooth 60fps drag
+        fab.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
     }
 }
 
@@ -2915,7 +2947,25 @@ function dragEnd(e) {
     if (!isDragging) return;
     isDragging = false;
     fab.releasePointerCapture(e.pointerId);
+    
+    if (moved) {
+        // Calculate final coordinates based on the bounded translation
+        let newX = initialX + translateX;
+        let newY = initialY + translateY;
 
+        // Remove the transform and bake the new coordinates directly into the left/top styles
+        fab.style.transform = 'none';
+        fab.style.left = `${newX}px`;
+        fab.style.top = `${newY}px`;
+        
+        // Reset translation values for the next drag
+        translateX = 0;
+        translateY = 0;
+    }
+
+    // Flush the DOM changes so transitions don't fight the layout coordinates
+    void fab.offsetWidth;
+    
     // Restore visual transitions
     fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
 }
@@ -2940,13 +2990,17 @@ fab.addEventListener('click', (e) => {
 
 // Ensure FAB stays inside if window resizes/rotates
 window.addEventListener('resize', () => {
-    const maxX = window.innerWidth - fab.offsetWidth;
-    const maxY = window.innerHeight - fab.offsetHeight;
+    const isDesktop = window.innerWidth >= 768;
+    const bleed = isDesktop ? 0 : 12;
+    const maxX = window.innerWidth - fab.offsetWidth + bleed;
+    const maxY = window.innerHeight - fab.offsetHeight + bleed;
     const currentX = fab.offsetLeft;
     const currentY = fab.offsetTop;
-
-    if (currentX > maxX) fab.style.left = `${maxX}px`;
-    if (currentY > maxY) fab.style.top = `${maxY}px`;
+    
+    if(currentX > maxX) fab.style.left = `${maxX}px`;
+    if(currentY > maxY) fab.style.top = `${maxY}px`;
+    if(currentX < -bleed) fab.style.left = `${-bleed}px`;
+    if(currentY < -bleed) fab.style.top = `${-bleed}px`;
 });
 // ==========================================
 
@@ -3253,6 +3307,14 @@ function openModal(id) {
     // Smoothly hide the FAB button while modal is open
     document.getElementById('mobileFab').classList.add('fab-hidden');
 
+    // Save precise scroll position before opening
+    savedScrollY = window.scrollY;
+
+    const currentState = history.state || {};
+    // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
+    try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+    try { window.history.pushState({ ...currentState, isModalOpen: true }, ''); } catch (e) { }
+
     const item = contentData.find(m => m.id === id);
     currentItem = item;
     document.getElementById('modalTitle').innerText = item.title;
@@ -3279,14 +3341,15 @@ function openModal(id) {
     document.getElementById('videoPlaceholder').classList.remove('hidden');
     videoIframe.src = "";
 
-    const currentState = history.state || {};
-    try { window.history.pushState({ ...currentState, isModalOpen: true }, ''); } catch (e) { }
-
     const modal = document.getElementById('movieModal');
     modal.classList.remove('hidden');
     void modal.offsetWidth;
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    
+    // Bulletproof body lock - stops background scrolling and jumping
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.width = '100%';
 }
 
 function playDefault() {
@@ -3315,7 +3378,12 @@ function closeModal(triggerBack = true) {
 
     modal.classList.remove('active');
     setTimeout(() => { modal.classList.add('hidden'); videoIframe.src = ""; }, 300);
-    document.body.style.overflow = 'auto';
+    
+    // Remove body lock and instantly restore the exact scroll position
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, savedScrollY);
 
     if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
@@ -3371,7 +3439,7 @@ window.addEventListener('popstate', (event) => {
 
 window.addEventListener('click', (e) => {
     if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal();
-
+    
     // Re-added click-outside logic for the menu, excluding the FAB
-    if (e.target === categoryMenu && e.target !== fab && !fab.contains(e.target)) toggleCategoryMenu(false);
+    if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
