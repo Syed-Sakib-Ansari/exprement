@@ -54,32 +54,39 @@
 
     <!-- Schema.org -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "MovieDakhi",
-      "url": "https://moviedakhi.com/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://moviedakhi.com/?search={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
+        {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "MovieDakhi",
+        "url": "https://moviedakhi.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://moviedakhi.com/?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+        }
     </script>
+
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "MovieDakhi",
-      "url": "https://moviedakhi.com",
-      "logo": "https://i.postimg.cc/qMDFF1tP/schema.png",
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61586165302830",
-        "https://www.youtube.com/channel/UCCqqgRAlSnZ_oBuLsFqTLog",
-        "https://t.me/+G2Dx_dMBlTkzMTM1",
-        "https://www.instagram.com/moviedakhi/"
-      ]
-    }
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MovieDakhi",
+        "url": "https://moviedakhi.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://i.postimg.cc/qMDFF1tP/schema.png"
+        },
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61586165302830",
+            "https://www.youtube.com/channel/UCCqqgRAlSnZ_oBuLsFqTLog",
+            "https://t.me/+G2Dx_dMBlTkzMTM1",
+            "https://www.instagram.com/moviedakhi/"
+        ]
+        }
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -131,8 +138,10 @@
     <!-- FREELY DRAGGABLE FAB BUTTON (Shows on all screens now) -->
     <button id="mobileFab" class="flex items-center justify-center relative" aria-label="Open Categories">
         <div id="fabIconContainer" class="relative flex items-center justify-center w-full h-full">
-            <i class="fas fa-bars text-white text-3xl md:text-4xl absolute transition-all duration-300 ease-in-out" id="fabIconBars"></i>
-            <i class="fas fa-times text-white text-3xl md:text-4xl absolute transition-all duration-300 ease-in-out scale-0 opacity-0 rotate-90" id="fabIconTimes"></i>
+            <i class="fas fa-bars text-white text-3xl md:text-4xl absolute transition-all duration-300 ease-in-out"
+                id="fabIconBars"></i>
+            <i class="fas fa-times text-white text-3xl md:text-4xl absolute transition-all duration-300 ease-in-out scale-0 opacity-0 rotate-90"
+                id="fabIconTimes"></i>
         </div>
     </button>
 
@@ -155,9 +164,14 @@
         <!-- Dynamic Hero Slider -->
         <header id="heroSlider" class="relative h-[80vh] md:h-[90vh] w-full overflow-hidden bg-black">
             <div id="sliderWrapper" class="absolute inset-0 w-full h-full"></div>
-            <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/80 to-transparent z-20 pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0f0f0f] to-transparent z-20 pointer-events-none"></div>
-            <div id="sliderDots" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30"></div>
+            <div
+                class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/80 to-transparent z-20 pointer-events-none">
+            </div>
+            <div
+                class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0f0f0f] to-transparent z-20 pointer-events-none">
+            </div>
+            <div id="sliderDots" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
+            </div>
         </header>
 
         <!-- Main Content -->
@@ -200,7 +214,9 @@
 
             <!-- Infinite Scroll Loading Indicator -->
             <div id="loadingIndicator" class="text-center py-8 hidden">
-                <div class="inline-block w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin"></div>
+                <div
+                    class="inline-block w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin">
+                </div>
             </div>
         </div>
     </div>
@@ -213,7 +229,8 @@
                 <div class="relative w-full max-w-5xl rounded-2xl bg-[#111] shadow-2xl my-8 overflow-hidden">
                     <div class="aspect-video w-full bg-black relative flex items-center justify-center">
                         <div class="text-center group cursor-pointer" id="videoPlaceholder" onclick="playDefault()">
-                            <div class="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition shadow-lg shadow-red-600/30">
+                            <div
+                                class="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition shadow-lg shadow-red-600/30">
                                 <i class="fas fa-play text-xl md:text-2xl"></i>
                             </div>
                         </div>
@@ -226,25 +243,33 @@
                     <div class="p-6 md:p-10 text-center">
                         <div class="flex flex-wrap items-center justify-center gap-3 mb-4">
                             <span id="modalLanguage" class="lang-badge">Hindi</span>
-                            <span id="modalCategory" class="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest">Hollywood</span>
+                            <span id="modalCategory"
+                                class="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest">Hollywood</span>
                             <span id="modalYear" class="text-gray-600 text-xs md:text-sm font-bold">2024</span>
                         </div>
-                        <h2 id="modalTitle" class="text-3xl md:text-5xl font-black mb-6 leading-tight">Content Title</h2>
+                        <h2 id="modalTitle" class="text-3xl md:text-5xl font-black mb-6 leading-tight">Content Title
+                        </h2>
                         <div id="seriesSection" class="hidden mb-10">
-                            <h4 class="text-xs font-black text-gray-500 uppercase mb-4 tracking-[0.2em]" id="seriesInfoText">Season 1 • Episodes</h4>
+                            <h4 class="text-xs font-black text-gray-500 uppercase mb-4 tracking-[0.2em]"
+                                id="seriesInfoText">Season 1 • Episodes</h4>
                             <div id="episodeList" class="flex flex-wrap justify-center gap-2 md:gap-3"></div>
                         </div>
-                        <p id="modalDesc" class="text-sm md:text-lg text-gray-400 leading-relaxed mb-10 max-w-3xl mx-auto font-medium italic">Description here...</p>
-                        
+                        <p id="modalDesc"
+                            class="text-sm md:text-lg text-gray-400 leading-relaxed mb-10 max-w-3xl mx-auto font-medium italic">
+                            Description here...</p>
+
                         <!-- Actions Container: Download & Close -->
                         <div class="flex flex-wrap justify-center gap-4">
-                            <a id="downBtn1" href="#" target="_blank" rel="noopener noreferrer nofollow" class="bg-white/5 border border-white/10 text-white px-6 py-3.5 rounded-lg font-bold hover:bg-white/10 transition text-sm flex items-center gap-3">
+                            <a id="downBtn1" href="#" target="_blank" rel="noopener noreferrer nofollow"
+                                class="bg-white/5 border border-white/10 text-white px-6 py-3.5 rounded-lg font-bold hover:bg-white/10 transition text-sm flex items-center gap-3">
                                 <i class="fas fa-cloud-download-alt"></i> Download 1
                             </a>
-                            <a id="downBtn2" href="#" target="_blank" rel="noopener noreferrer nofollow" class="bg-white/5 border border-white/10 text-white px-6 py-3.5 rounded-lg font-bold hover:bg-white/10 transition text-sm flex items-center gap-3">
+                            <a id="downBtn2" href="#" target="_blank" rel="noopener noreferrer nofollow"
+                                class="bg-white/5 border border-white/10 text-white px-6 py-3.5 rounded-lg font-bold hover:bg-white/10 transition text-sm flex items-center gap-3">
                                 <i class="fas fa-cloud-download-alt"></i> Download 2
                             </a>
-                            <button onclick="closeModal()" class="bg-red-600/10 border border-red-600/20 text-red-600 px-8 py-3.5 rounded-lg font-black hover:bg-red-600 hover:text-white transition text-sm uppercase tracking-widest flex items-center gap-3">
+                            <button onclick="closeModal()"
+                                class="bg-red-600/10 border border-red-600/20 text-red-600 px-8 py-3.5 rounded-lg font-black hover:bg-red-600 hover:text-white transition text-sm uppercase tracking-widest flex items-center gap-3">
                                 <i class="fas fa-times"></i> Close
                             </button>
                         </div>
@@ -256,12 +281,14 @@
 
     <!-- Footer -->
     <footer class="mt-24 py-12 border-t border-white/5 px-6 md:px-12 text-center">
-        <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-6 text-gray-500 text-xs font-bold tracking-widest uppercase">
+        <div
+            class="flex flex-wrap justify-center gap-6 md:gap-10 mb-6 text-gray-500 text-xs font-bold tracking-widest uppercase">
             <a href="#" class="hover:text-red-500 transition-colors">DMCA</a>
             <a href="#" class="hover:text-red-500 transition-colors">Disclaimer</a>
             <a href="#" class="hover:text-red-500 transition-colors">Privacy Policy</a>
         </div>
-        <p class="text-gray-700 text-[10px] font-bold tracking-widest uppercase">&copy; 2024 MovieDakhi. Digital Entertainment Excellence.</p>
+        <p class="text-gray-700 text-[10px] font-bold tracking-widest uppercase">&copy; 2024 MovieDakhi. Digital
+            Entertainment Excellence.</p>
     </footer>
     <script src="script.js" defer></script>
 </body>
