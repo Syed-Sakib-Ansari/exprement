@@ -81,7 +81,6 @@
       ]
     }
     </script>
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -111,13 +110,6 @@
                     <a href="https://www.instagram.com/moviedakhi/" target="_blank"
                         class="text-gray-400 hover:text-pink-500 transition transform hover:scale-110"
                         aria-label="Instagram"><i class="fab fa-instagram text-lg"></i></a>
-                    <!-- <div class="w-px h-5 bg-white/20 mx-1"></div> -->
-                    <!-- <a href="https://github.com/moviedakhidmca-droid/MovieDakhi---App/releases/download/v1.0/MovieDakhi.apk" target="_blank"
-                        class="flex items-center space-x-1 text-gray-300 hover:text-green-400 transition group"
-                        title="Download App">
-                        <i class="fab fa-android text-lg group-hover:scale-110 transition-transform"></i>
-                        <span class="text-[10px] font-bold uppercase">APK</span>
-                    </a> -->
                 </div>
             </div>
 
@@ -136,21 +128,23 @@
         </div>
     </nav>
 
-    <!-- MOBILE FLOATING ACTION BUTTON -->
-    <button id="mobileFab" class="flex md:hidden items-center justify-center" onclick="toggleCategoryMenu(true)" aria-label="Open Categories">
-        <i class="fas fa-bars text-white text-2xl mb-0.5" id="fabIcon"></i>
+    <!-- FREELY DRAGGABLE FAB BUTTON (Shows on all screens now) -->
+    <button id="mobileFab" class="flex items-center justify-center relative" aria-label="Open Categories">
+        <i class="fas fa-bars text-white text-2xl md:text-3xl absolute transition-all duration-300 ease-in-out"
+            id="fabIconBars"></i>
+        <i class="fas fa-times text-white text-2xl md:text-3xl absolute transition-all duration-300 ease-in-out scale-0 opacity-0 rotate-90"
+            id="fabIconTimes"></i>
     </button>
 
-    <!-- CATEGORY FULLSCREEN MENU (MOBILE) -->
-    <div id="categoryMenu" class="fixed inset-0 z-[120] hidden bg-black/95 backdrop-blur-xl transition-opacity overflow-y-auto">
-        <div class="p-8 max-w-lg mx-auto">
-            <div class="flex justify-between items-center mb-10">
-                <h2 class="text-2xl font-black uppercase tracking-tighter">Categories</h2>
-                <button onclick="toggleCategoryMenu(false)" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <i class="fas fa-times text-lg"></i>
-                </button>
+    <!-- CATEGORY FULLSCREEN MENU -->
+    <div id="categoryMenu"
+        class="fixed inset-0 z-[120] hidden bg-black/95 backdrop-blur-xl transition-opacity overflow-y-auto">
+        <!-- Close button removed from here, since the FAB changes into the close button dynamically -->
+        <div class="p-8 max-w-lg mx-auto pt-24 md:max-w-3xl">
+            <div class="flex justify-center items-center mb-10">
+                <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter">Categories</h2>
             </div>
-            <div class="grid grid-cols-2 gap-3" id="mobileCategoryGrid">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5" id="mobileCategoryGrid">
                 <!-- Categories will be injected here -->
             </div>
         </div>

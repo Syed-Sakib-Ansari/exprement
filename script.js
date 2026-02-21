@@ -2772,25 +2772,15 @@ const categoryMenu = document.getElementById('categoryMenu');
 
 let libraryData = [];
 let libraryDisplayedCount = 0;
-
-// ১. লোড হওয়া মুভির সংখ্যা ৬০ থেকে ৩০ করা হলো
 const ITEMS_PER_PAGE = 30;
 
-// ==========================================
-// ২. আপডেটেড Smart Image Optimizer (Width অপশনসহ)
-// ==========================================
 function getOptimizedImageUrl(url, width = 300) {
-  if (!url) return "";
-  
-  // শুধুমাত্র উইকিপিডিয়া বা উইকিমিডিয়া সরাসরি লোড হবে (কারণ তারা ব্লক করে না)
-  if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
-    return url; 
-  } 
-  
-  // Flixster সহ বাকি সব ছবি wsrv.nl প্রক্সি সার্ভারের ক্যাশ থেকে আসবে
-  return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=80`;
+    if (!url) return "";
+    if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
+        return url;
+    }
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=80`;
 }
-// ==========================================
 
 function debounce(func, wait) {
     let timeout;
@@ -2800,7 +2790,6 @@ function debounce(func, wait) {
     };
 }
 
-// --- CATEGORY NAV LOGIC (SEO FIXED) ---
 function renderCategories() {
     const mobileGrid = document.getElementById('mobileCategoryGrid');
     const desktopNav = document.getElementById('desktopCategoryPills');
@@ -2813,7 +2802,7 @@ function renderCategories() {
         const realLink = `?view=library&category=${encodeURIComponent(cat)}`;
 
         const mobileItem = document.createElement('a');
-        mobileItem.className = 'cat-menu-item block w-full h-full flex items-center justify-center text-white no-underline';
+        mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
         mobileItem.innerText = label;
         mobileItem.href = realLink;
         mobileItem.onclick = (e) => {
@@ -2843,26 +2832,124 @@ function renderCategories() {
     });
 }
 
+// ==========================================
+// FAB OPEN / CLOSE ANIMATIONS (UPDATED)
+// ==========================================
 function toggleCategoryMenu(show, triggerBack = true) {
+    const fab = document.getElementById('mobileFab');
+
     if (show) {
         const currentState = history.state || {};
         try { window.history.pushState({ ...currentState, isMenuOpen: true }, ''); } catch (e) { }
         categoryMenu.classList.remove('hidden');
-        void categoryMenu.offsetWidth;
+        void categoryMenu.offsetWidth; // Trigger reflow
         categoryMenu.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        fab.classList.add('menu-open'); // Triggers CSS transitions on icons
+
     } else {
         categoryMenu.classList.remove('active');
-        setTimeout(() => categoryMenu.classList.add('hidden'), 300);
+        setTimeout(() => categoryMenu.classList.add('hidden'), 400); // Matches the 0.4s CSS transition
         document.body.style.overflow = 'auto';
 
         if (triggerBack && window.history.state?.isMenuOpen) {
             window.history.back();
         }
+
+        fab.classList.remove('menu-open'); // Reverts CSS transitions on icons
     }
 }
 
-// --- SLIDER LOGIC ---
+// ==========================================
+// FREELY DRAGGABLE FAB LOGIC (POINTER EVENTS FOR MOBILE SUPPORT)
+// ==========================================
+const fab = document.getElementById('mobileFab');
+let isDragging = false;
+let startX, startY, initialX, initialY;
+let moved = false;
+
+function dragStart(e) {
+    moved = false;
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    initialX = fab.offsetLeft;
+    initialY = fab.offsetTop;
+    fab.style.transition = 'none';
+    // Capture pointer to track dragging seamlessly even if mouse/finger leaves the element
+    fab.setPointerCapture(e.pointerId);
+}
+
+function drag(e) {
+    if (!isDragging) return;
+
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+
+    // Increased threshold to 8px to prevent "accidental drags" when attempting to just tap
+    if (Math.abs(dx) > 8 || Math.abs(dy) > 8) {
+        moved = true;
+    }
+
+    if (moved) {
+        let newX = initialX + dx;
+        let newY = initialY + dy;
+
+        // Viewport constraints to prevent losing the button
+        const maxX = window.innerWidth - fab.offsetWidth;
+        const maxY = window.innerHeight - fab.offsetHeight;
+        newX = Math.max(0, Math.min(newX, maxX));
+        newY = Math.max(0, Math.min(newY, maxY));
+
+        fab.style.left = `${newX}px`;
+        fab.style.top = `${newY}px`;
+
+        // Unset bottom and right auto-aligning defaults
+        fab.style.bottom = 'auto';
+        fab.style.right = 'auto';
+    }
+}
+
+function dragEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    fab.releasePointerCapture(e.pointerId);
+
+    // Restore visual transitions
+    fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+}
+
+// Using Pointer Events covers both mouse and touch flawlessly
+fab.addEventListener('pointerdown', dragStart);
+fab.addEventListener('pointermove', drag);
+fab.addEventListener('pointerup', dragEnd);
+fab.addEventListener('pointercancel', dragEnd);
+
+// A Dedicated click event guarantees taps trigger reliably after tracking ends
+fab.addEventListener('click', (e) => {
+    if (moved) {
+        // If it was dragged, don't execute a tap action
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    }
+    const isMenuOpen = categoryMenu.classList.contains('active');
+    toggleCategoryMenu(!isMenuOpen);
+});
+
+// Ensure FAB stays inside if window resizes/rotates
+window.addEventListener('resize', () => {
+    const maxX = window.innerWidth - fab.offsetWidth;
+    const maxY = window.innerHeight - fab.offsetHeight;
+    const currentX = fab.offsetLeft;
+    const currentY = fab.offsetTop;
+
+    if (currentX > maxX) fab.style.left = `${maxX}px`;
+    if (currentY > maxY) fab.style.top = `${maxY}px`;
+});
+// ==========================================
+
 function initHeroSlider() {
     if (!sliderWrapper || !sliderDots) return;
     const slides = contentData.filter(item => item.category === "Recent Adds").slice(0, 6);
@@ -2877,19 +2964,18 @@ function initHeroSlider() {
         slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
         const loadingAttr = index === 0 ? 'eager' : 'lazy';
 
-        // ৩. স্লাইডারের ইমেজে getOptimizedImageUrl (width: 1000) যুক্ত করা হলো
         slide.innerHTML = `
 <img src="${getOptimizedImageUrl(movie.posterUrl, 1000)}" class="w-full h-full object-cover object-center" alt="${movie.title}" loading="${loadingAttr}">
 <div class="absolute inset-0 bg-black/40"></div>
 <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
-    <div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
-        <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
-        <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
-        <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
-        <button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
-            <i class="fas fa-play"></i> Watch Now
-        </button>
-    </div>
+<div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
+<span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
+<h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
+<p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
+<button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
+    <i class="fas fa-play"></i> Watch Now
+</button>
+</div>
 </div>`;
         sliderWrapper.appendChild(slide);
 
@@ -2948,7 +3034,6 @@ function updateCanonical(url) {
     }
 }
 
-// --- NAVIGATION LOGIC ---
 function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0) {
     if (mode) {
         const currentScroll = window.scrollY;
@@ -3018,20 +3103,19 @@ function createMovieCard(item) {
     const card = document.createElement('div');
     card.className = 'movie-card relative flex flex-col group';
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
-    
-    // কার্ডের ইমেজে স্বয়ংক্রিয়ভাবে ডিফল্ট w=300 নিয়ে নেবে
+
     card.innerHTML = `
 <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3]">
 <div class="absolute top-2 right-2 z-20"><span class="lang-badge border-none shadow-lg">${item.language}</span></div>
 <img 
-  src="${getOptimizedImageUrl(item.posterUrl)}" 
-  alt="${item.title}" 
-  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
-  loading="lazy" 
-  decoding="async"
+src="${getOptimizedImageUrl(item.posterUrl)}" 
+alt="${item.title}" 
+class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+loading="lazy" 
+decoding="async"
 >
 <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-center items-center p-5 transition-all duration-300">
-    <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
+<div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
 </div>
 </div>
 <div class="mt-4 text-center">
@@ -3072,8 +3156,8 @@ function renderCategorySections() {
         section.className = 'mb-16';
         section.innerHTML = `
 <div class="flex items-center space-x-3 md:mt-10 md:pt-10 mb-8 justify-center">
-    <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
-    <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
+<div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
+<h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
 </div>
 <div class="category-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto"></div>`;
         const grid = section.querySelector('.category-grid');
@@ -3082,9 +3166,9 @@ function renderCategorySections() {
         viewAllCard.className = 'view-all-card relative rounded-lg overflow-hidden group flex flex-col items-center justify-center p-6 cursor-pointer aspect-[2/3]';
         viewAllCard.innerHTML = `
 <div class="flex flex-col items-center justify-center transition-transform duration-300 group-hover:scale-110">
-    <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110"><i class="fas fa-arrow-right text-white text-xl"></i></div>
-    <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
-    <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
+<div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110"><i class="fas fa-arrow-right text-white text-xl"></i></div>
+<h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
+<p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
 </div>`;
         viewAllCard.onclick = () => { clearSearch(); switchView('library', cat); };
         grid.appendChild(viewAllCard);
@@ -3103,7 +3187,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// --- SEARCH & RENDER FUNCTION (IMPROVED CLEANING) ---
 function initLibraryRender(filter = "all", initialCount = 0) {
     const rawQuery = searchInput.value;
 
@@ -3167,6 +3250,9 @@ function updateLoadMoreVisibility() {
 }
 
 function openModal(id) {
+    // Smoothly hide the FAB button while modal is open
+    document.getElementById('mobileFab').classList.add('fab-hidden');
+
     const item = contentData.find(m => m.id === id);
     currentItem = item;
     document.getElementById('modalTitle').innerText = item.title;
@@ -3223,6 +3309,9 @@ function playEpisode(index, btnElement) {
 function closeModal(triggerBack = true) {
     const modal = document.getElementById('movieModal');
     if (modal.classList.contains('hidden')) return;
+
+    // Show FAB button gracefully again
+    document.getElementById('mobileFab').classList.remove('fab-hidden');
 
     modal.classList.remove('active');
     setTimeout(() => { modal.classList.add('hidden'); videoIframe.src = ""; }, 300);
@@ -3282,5 +3371,7 @@ window.addEventListener('popstate', (event) => {
 
 window.addEventListener('click', (e) => {
     if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal();
-    if (e.target === categoryMenu) toggleCategoryMenu(false);
+
+    // Re-added click-outside logic for the menu, excluding the FAB
+    if (e.target === categoryMenu && e.target !== fab && !fab.contains(e.target)) toggleCategoryMenu(false);
 });
