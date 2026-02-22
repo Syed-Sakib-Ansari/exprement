@@ -3500,3 +3500,65 @@ window.addEventListener('click', (e) => {
     // Re-added click-outside logic for the menu, excluding the FAB
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
+
+// ==========================================
+// SECURITY & ANTI-INSPECT MEASURES
+// ==========================================
+
+// 1. Disable Right Click entirely to hide 'Inspect' everywhere
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+
+// 2. Disable Keyboard Shortcuts for DevTools, View Source, Save, and Copy
+document.addEventListener('keydown', (e) => {
+    // Allow normal keyboard behavior inside the search box
+    if (e.target.id === 'searchInput') return;
+
+    // Block F12 (DevTools)
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
+    
+    // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
+        e.preventDefault();
+    }
+
+    // Block Ctrl+U / Cmd+Opt+U (View Source)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+        e.preventDefault();
+    }
+    
+    // Block Ctrl+S / Cmd+S (Save Page)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+        e.preventDefault();
+    }
+    
+    // Block Ctrl+P / Cmd+P (Print Page)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+        e.preventDefault();
+    }
+
+    // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
+        e.preventDefault();
+    }
+});
+
+// 3. Prevent Native Copy, Cut, Paste events (except search box)
+['copy', 'cut', 'paste'].forEach(evt => {
+    document.addEventListener(evt, (e) => {
+        if (e.target.id !== 'searchInput') {
+            e.preventDefault();
+        }
+    });
+});
+
+// 4. Prevent Dragging elements (like ghost-dragging images to save them)
+document.addEventListener('dragstart', (e) => {
+    // Allow FAB pointer dragging, but prevent native HTML element dragging
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+        e.preventDefault();
+    }
+});
