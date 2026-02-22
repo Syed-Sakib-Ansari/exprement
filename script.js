@@ -2804,6 +2804,7 @@ const categories = [
 ];
 
 let currentItem = null;
+let preSearchState = null; // Stores user location before search starts
 let currentView = 'home';
 let sliderInterval;
 const homeView = document.getElementById('homeView');
@@ -2995,11 +2996,19 @@ function dragEnd(e) {
     fab.releasePointerCapture(e.pointerId);
     
     if (moved) {
-        // Calculate final coordinates based on the bounded translation
+        // Calculate final dropped coordinates
         let newX = initialX + translateX;
         let newY = initialY + translateY;
 
-        // Remove the transform and bake the new coordinates directly into the left/top styles
+        // Viewport boundaries
+        const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+        const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+        
+        // Clamp coordinates to ensure it stays strictly within the screen bounds
+        newX = Math.max(0, Math.min(newX, maxX));
+        newY = Math.max(0, Math.min(newY, maxY));
+
+        // Remove the GPU transform and bake the final dropped coordinates into left/top
         fab.style.transform = 'none';
         fab.style.left = `${newX}px`;
         fab.style.top = `${newY}px`;
@@ -3012,7 +3021,7 @@ function dragEnd(e) {
     // Flush the DOM changes so transitions don't fight the layout coordinates
     void fab.offsetWidth;
     
-    // Restore visual transitions
+    // Restore standard visual transitions for both drag drops and taps
     fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
 }
 
@@ -3034,13 +3043,14 @@ fab.addEventListener('click', (e) => {
     toggleCategoryMenu(!isMenuOpen);
 });
 
-// Ensure FAB stays inside if window resizes/rotates
+// Ensure FAB stays inside bounds if window resizes/rotates
 window.addEventListener('resize', () => {
     const maxX = document.documentElement.clientWidth - fab.offsetWidth;
     const maxY = document.documentElement.clientHeight - fab.offsetHeight;
     const currentX = fab.offsetLeft;
     const currentY = fab.offsetTop;
     
+    // Just clamp it to keep it inside the screen if resizing makes it go out of bounds
     if(currentX > maxX) fab.style.left = `${maxX}px`;
     if(currentY > maxY) fab.style.top = `${maxY}px`;
     if(currentX < 0) fab.style.left = `0px`;
@@ -3123,7 +3133,21 @@ function updateSearchUI() {
 }
 
 function handleSearchIconClick() { if (searchInput.value.trim().length > 0) clearSearch(); }
-function clearSearch() { searchInput.value = ''; updateSearchUI(); initLibraryRender(); }
+
+function clearSearch(preventRestore = false) { 
+    searchInput.value = ''; 
+    updateSearchUI(); 
+    searchInput.blur(); // Dismiss mobile keyboard on clear
+    
+    // If we have a saved state and aren't overriding it, seamlessly restore the user's location
+    if (!preventRestore && preSearchState) {
+        switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
+        preSearchState = null;
+    } else {
+        preSearchState = null;
+        initLibraryRender(); 
+    }
+}
 
 function updateCanonical(url) {
     const canonicalLink = document.getElementById('canonicalLink');
@@ -3137,7 +3161,7 @@ function updateCanonical(url) {
     }
 }
 
-function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0) {
+function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
     if (mode) {
         const currentScroll = window.scrollY;
         const currentState = window.history.state || {
@@ -3157,7 +3181,11 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
         document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
     } else {
         libraryView.classList.add('active');
-        if (filterCategory) { searchInput.value = ''; updateSearchUI(); }
+        if (filterCategory) { 
+            searchInput.value = ''; 
+            updateSearchUI(); 
+            preSearchState = null; // Reset search tracker when clicking standard categories
+        }
 
         document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
 
@@ -3171,7 +3199,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     if (mode) {
         try {
             const isBlob = window.location.protocol === 'blob:';
-            const stateObj = { view: viewName, category: filterCategory, scrollY: 0, displayedCount: 30 };
+            const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: 30 };
 
             if (!isBlob) {
                 const url = new URL(window.location);
@@ -3195,9 +3223,11 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
                     window.history.pushState(stateObj, '', window.location.href);
                 }
             }
-            window.scrollTo(0, 0);
+            // Wait 50ms for DOM to render the movies before instantly scrolling to the exact spot
+            setTimeout(() => window.scrollTo(0, targetScroll), 50);
         } catch (e) {
             console.warn("Navigation History Error (Silently Ignored):", e.message);
+            setTimeout(() => window.scrollTo(0, targetScroll), 50);
         }
     }
 }
@@ -3244,7 +3274,7 @@ function renderRecentAdds() {
 <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
 <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">Browse Full Library</p>
 </div>`;
-    viewAllCard.onclick = () => { clearSearch(); switchView('library'); };
+    viewAllCard.onclick = () => { clearSearch(true); switchView('library'); };
     recentAddsGrid.appendChild(viewAllCard);
 }
 
@@ -3273,7 +3303,7 @@ function renderCategorySections() {
 <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
 <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
 </div>`;
-        viewAllCard.onclick = () => { clearSearch(); switchView('library', cat); };
+        viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
         grid.appendChild(viewAllCard);
         fragment.appendChild(section);
     });
@@ -3281,6 +3311,7 @@ function renderCategorySections() {
 }
 
 let isLoading = false;
+let scrollTimeoutId; // Tracking variable for debounced scroll saves
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
@@ -3288,6 +3319,24 @@ window.addEventListener('scroll', () => {
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
         if (scrollTop + clientHeight >= scrollHeight - 500) { if (libraryDisplayedCount < libraryData.length) renderLibraryChunk(); }
     }
+
+    // ADDED: Track scroll position and loaded count dynamically for reloads
+    clearTimeout(scrollTimeoutId);
+    scrollTimeoutId = setTimeout(() => {
+        const modal = document.getElementById('movieModal');
+        const catMenu = document.getElementById('categoryMenu');
+        // Only save scroll coordinates if menus/modals are not currently hijacking the view
+        if (modal && !modal.classList.contains('active') && catMenu && !catMenu.classList.contains('active')) {
+            const currentState = history.state || { view: currentView, category: null };
+            try {
+                window.history.replaceState({ 
+                    ...currentState, 
+                    scrollY: window.scrollY,
+                    displayedCount: libraryDisplayedCount 
+                }, '');
+            } catch (e) {}
+        }
+    }, 150);
 });
 
 function initLibraryRender(filter = "all", initialCount = 0) {
@@ -3439,10 +3488,41 @@ function closeModal(triggerBack = true) {
     }
 }
 
+// Capture scroll state the exact moment user taps/focuses the search bar
+searchInput.addEventListener('focus', () => {
+    if (!preSearchState && searchInput.value.trim().length === 0) {
+        const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
+        preSearchState = { 
+            view: currentView, 
+            scrollY: window.scrollY, 
+            category: activeCat,
+            displayedCount: libraryDisplayedCount 
+        };
+    }
+});
+
 searchInput.addEventListener('input', debounce(() => {
+    const rawQuery = searchInput.value;
     updateSearchUI();
-    if (currentView !== 'library') switchView('library');
-    initLibraryRender();
+    
+    if (rawQuery.trim().length > 0) {
+        // Save state right before search layout overrides view (fallback)
+        if (!preSearchState) {
+            const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
+            preSearchState = { 
+                view: currentView, 
+                scrollY: window.scrollY, 
+                category: activeCat,
+                displayedCount: libraryDisplayedCount 
+            };
+        }
+        
+        if (currentView !== 'library') switchView('library');
+        initLibraryRender();
+    } else {
+        // If input becomes empty via backspace, restore location perfectly
+        clearSearch();
+    }
 }, 300));
 
 // Close mobile keyboard when Enter is pressed
@@ -3466,7 +3546,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (history.state) {
         const state = history.state;
         switchView(state.view, state.category, false, state.displayedCount);
-        setTimeout(() => window.scrollTo(0, state.scrollY || 0), 20);
+        setTimeout(() => window.scrollTo(0, state.scrollY || 0), 100); // 100ms safety delay allowing DOM to paint before restoring scroll
     } else if (!isBlob) {
         const params = new URLSearchParams(window.location.search);
         const view = params.get('view') || 'home';
@@ -3490,7 +3570,7 @@ window.addEventListener('popstate', (event) => {
     if (state) {
         updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
         switchView(state.view, state.category, false, state.displayedCount);
-        setTimeout(() => { window.scrollTo(0, state.scrollY || 0); }, 20);
+        setTimeout(() => { window.scrollTo(0, state.scrollY || 0); }, 100); // 100ms safety delay allowing DOM to paint before restoring scroll
     } else { switchView('home', null, false); }
 });
 
@@ -3510,7 +3590,6 @@ document.addEventListener('contextmenu', (e) => {
     e.preventDefault();
 });
 
-// 2. Disable Keyboard Shortcuts for DevTools, View Source, Save, and Copy
 document.addEventListener('keydown', (e) => {
     // Allow normal keyboard behavior inside the search box
     if (e.target.id === 'searchInput') return;
