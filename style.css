@@ -142,7 +142,7 @@ body {
     touch-action: none; /* Crucial for preventing scrolling while dragging on touch screens */
 }
 
-/* Icon wrapper shifts icon to visual center due to the bleed off-screen */
+/* Icon wrapper */
 #fabIconContainer {
     transition: transform 0.3s ease;
 }
@@ -151,12 +151,8 @@ body {
     #mobileFab {
         width: 76px;
         height: 76px;
-        top: auto; /* Reset top for desktop */
-        bottom: 24px; /* Position bottom right on desktop */
-        right: 24px;
-    }
-    #fabIconContainer {
-        transform: none; /* Reset icon position on desktop */
+        bottom: 24px; /* Bring back spacing for desktop */
+        right: 24px; /* Bring back spacing for desktop */
     }
 }
 
@@ -201,11 +197,11 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     /* Responsive text and padding using clamp */
-    padding: clamp(14px, 2vw, 24px); 
+    padding: clamp(18px, 4vw, 24px); 
     text-align: center;
     font-weight: 900;
     text-transform: uppercase;
-    font-size: clamp(11px, 1.5vw, 16px); 
+    font-size: clamp(13px, 3.5vw, 16px); 
     letter-spacing: 1px;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
