@@ -2089,7 +2089,7 @@ const contentData = [
             { number: 22, title: "Episode 22", embedUrl: "https://short.icu/Tgj7xaUvHy" },
             { number: 23, title: "Episode 23", embedUrl: "https://short.icu/E9akrnpOO" },]
     }, {
-        title: "Jujutsu Kaisen (2026)", posterUrl: "https://images.justwatch.com/poster/306336521/s718/season-2.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3, Episode 1-5", episodes: [
+        title: "Jujutsu Kaisen (2026)", posterUrl: "https://i.pinimg.com/736x/52/1b/ee/521beebde26a538eac66856897d88a9b.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3, Episode 1-5", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/t3OHsXWqg" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/9d51Djur_" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/V6rwbecMt" },
