@@ -2064,6 +2064,38 @@ const contentData = [
     {
         title: "Jujutsu Kaisen 0 (2021)", embedUrl: "https://short.icu/J_xHAzqiH", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmRlYzE5YTAtOTMyOS00MTY3LTg2MmYtMTU5Y2E2ODg5ZjNiXkEyXkFqcGc@._V1_.jpg", genre: "Anime, Action, Animation", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
+        title: "Jujutsu Kaisen (2023)", posterUrl: "https://images.justwatch.com/poster/306336521/s718/season-2.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-23", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/rA6nSs-D5" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/CCxf_1IEO" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/sPnBZhVK3" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/mpy686kBA" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/KQ4_f0Ts1" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/ojEMbcw68" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/tU-S_JRwW" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/1kiFbMCIa" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/bOJQr7zVu" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/N_827Gb3n" },
+            { number: 11, title: "Episode 11", embedUrl: "https://short.icu/IUVF6Pzf_" },
+            { number: 12, title: "Episode 12", embedUrl: "https://short.icu/ppi8YPVFT" },
+            { number: 13, title: "Episode 13", embedUrl: "https://short.icu/_nG2zPDW2" },
+            { number: 14, title: "Episode 14", embedUrl: "https://short.icu/rh5KXWovp" },
+            { number: 15, title: "Episode 15", embedUrl: "https://short.icu/B6T-gwUoy" },
+            { number: 16, title: "Episode 16", embedUrl: "https://short.icu/tnruvv85B" },
+            { number: 17, title: "Episode 17", embedUrl: "https://short.icu/69F25lbCz" },
+            { number: 18, title: "Episode 18", embedUrl: "https://short.icu/SiTCkdASU" },
+            { number: 19, title: "Episode 19", embedUrl: "https://short.icu/IQ_z-Hiub" },
+            { number: 20, title: "Episode 20", embedUrl: "https://short.icu/agApSaRHg" },
+            { number: 21, title: "Episode 21", embedUrl: "https://short.icu/u_uzO0eRh" },
+            { number: 22, title: "Episode 22", embedUrl: "https://short.icu/Tgj7xaUvHy" },
+            { number: 23, title: "Episode 23", embedUrl: "https://short.icu/E9akrnpOO" },]
+    }, {
+        title: "Jujutsu Kaisen (2026)", posterUrl: "https://images.justwatch.com/poster/306336521/s718/season-2.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3, Episode 1-5", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/t3OHsXWqg" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/9d51Djur_" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/V6rwbecMt" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/HLP4jPjPt" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/lJHqt7YKi" },]
+    }, {
         title: "Attack on Titan (2013)", posterUrl: "https://resizing.flixster.com/mFcpzy4Wi9wzoGiIzC7BqegRYxQ=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10873160_b_v8_aa.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-25", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/3QnJBP91l" }, 
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/g1hdGc5Je" },
@@ -2178,6 +2210,8 @@ const contentData = [
         title: "Zootopia 2 (2025)", embedUrl: "https://short.icu/1liczS83F", posterUrl: "https://resizing.flixster.com/iO_DDCF__d6GMVfGN49G5fm4uQ4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30322396_v_v13_ai.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "The SpongeBob Movie: Search for SquarePants (2025)", embedUrl: "https://short.icu/O5tBCprfz", posterUrl: "https://resizing.flixster.com/3_UpKMrkKBgZihTnu1SXbnXbXCY=/fit-in/705x460/v2/https://resizing.flixster.com/D4XOTaLafpvnMFIDBQuZsWa9dZ0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzljZWFmMTRlLWM5MDUtNDJjMC1hYWM5LTQzMDhiNjE2NzAyNC5qcGc=", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "The Larva Island Movie (2020)", embedUrl: "https://short.icu/F3IiiZPli", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWQxOGE1NDctMTMyNC00YzZiLThmMjYtMTYxNGU4ZTlhNWRmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Coco (2017)", embedUrl: "https://short.icu/pDlg1VaUFC", posterUrl: "https://resizing.flixster.com/5JEUeTwtiw_PyDkcw_Z7J0xjcB8=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/NowShowing/172117/172117_ac.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
