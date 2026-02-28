@@ -1,5 +1,30 @@
 const contentData = [
     {
+        title: "Secret Stories: Roslin (2024)", posterUrl: "https://images.filmibeat.com/webp/img/popcorn/ws_images/secret%20storiesroslin-3750/secret%20storiesroslin-3750-s01.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-11", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/K9rRI0Uw8" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/-yoDKNhbd" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/DFEZ4BbjO" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/GdKy-6-rU" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/uxjZdzIGd" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/pUlMJG9d2" },]
+    }, {
+        title: "Bloody Babu (2025)", embedUrl: "https://short.icu/pPmQoue9q", posterUrl: "https://www.ultraindia.com/wp-content/uploads/2025/08/bloody-babu-hindi-dubbed-2025.jpg", genre: "Action, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Monarch: Legacy of Monsters (2023)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25598876_b_v12_ac.jpg", genre: "Action, Adventure, Sci-Fi", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/W2MsRHsD6" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/uMCUROOSr" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/8AR8gPbI7" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/xiE6ZJdXv" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/iYjdiyMGd" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/AF72b53rk" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/CdEp-phFB" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/T5tGmjQnl" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/3_xH5QCwi" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/LrtN9f4q0" },
+        ]
+    }, {
+        title: "The Bluff (2026)", embedUrl: "https://short.icu/hNLDtEVSo", posterUrl: "https://upload.wikimedia.org/wikipedia/en/1/17/The_Bluff_2026_poster.jpeg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
         title: "The Devil's Bride (2025)", embedUrl: "https://short.icu/ayGVC87Ir", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhkZWRmYzQtMmJiNC00MDE3LTk0ZTMtNWZkNDY1NTdiODI0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller, Suspense", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "The Housemaid (2025)", embedUrl: "https://short.icu/4A8X87E4z", posterUrl: "https://bookouture.com/wp-content/uploads/Works/9781803144375-1500-667x1024.jpg", genre: "Horror, Thriller, Suspense", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -29,16 +54,6 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/ROaLNb0gh" },
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/MPOoXxO_9" },
         ]
-    }, {
-        title: "Blade of Fury (2024)", embedUrl: "https://short.icu/PFEwVTBuy", posterUrl: "https://resizing.flixster.com/HUff077rnpnqujd8M0wdPUkH5Uo=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30678214_p_v8_aa.jpg", genre: "Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "The Strangers: Chapter 2 (2025)", embedUrl: "https://short.icu/bf8FLlXo0", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDY4ZTJmZmQtNWNmMS00MjEwLWI1ZTYtNzEzNGFjZTBhMzE4XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller, Suspense", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "The Long Walk (2025)", embedUrl: "https://short.icu/CW5EsIzgS", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmE4YmIxNWQtMzJhMy00NDI5LWFmYjEtMGYyMmFhNzdjODVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Dystopian Horror, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "Do Deewane Seher Mein (2026)", embedUrl: "https://short.icu/sDWrcCpYn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk4ZTc1ZjAtOThkNS00NmZkLTkwNTQtZTI2ZDhiOWY4ZjAzXkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "Assi (2026)", embedUrl: "https://short.icu/hTsDsIuc9", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Assi_film_poster.jpg/250px-Assi_film_poster.jpg", genre: "Courtroom, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
 
 
@@ -396,6 +411,8 @@ const contentData = [
 
 
     {
+        title: "The Bluff (2026)", embedUrl: "https://short.icu/hNLDtEVSo", posterUrl: "https://upload.wikimedia.org/wikipedia/en/1/17/The_Bluff_2026_poster.jpeg", genre: "Action, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
         title: "The Devil's Bride (2025)", embedUrl: "https://short.icu/ayGVC87Ir", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhkZWRmYzQtMmJiNC00MDE3LTk0ZTMtNWZkNDY1NTdiODI0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller, Suspense", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "The Housemaid (2025)", embedUrl: "https://short.icu/4A8X87E4z", posterUrl: "https://bookouture.com/wp-content/uploads/Works/9781803144375-1500-667x1024.jpg", genre: "Horror, Thriller, Suspense", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -1820,6 +1837,16 @@ const contentData = [
 
 
     {
+        title: "Secret Stories: Roslin (2024)", posterUrl: "https://images.filmibeat.com/webp/img/popcorn/ws_images/secret%20storiesroslin-3750/secret%20storiesroslin-3750-s01.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-11", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/K9rRI0Uw8" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/-yoDKNhbd" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/DFEZ4BbjO" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/GdKy-6-rU" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/uxjZdzIGd" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/pUlMJG9d2" },]
+    }, {
+        title: "Bloody Babu (2025)", embedUrl: "https://short.icu/pPmQoue9q", posterUrl: "https://www.ultraindia.com/wp-content/uploads/2025/08/bloody-babu-hindi-dubbed-2025.jpg", genre: "Action, Drama", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
         title: "Kadhal Kadhai Sollava (2026)", embedUrl: "https://short.icu/dSIvckxZh", posterUrl: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kadhal-kadhai-sollava-et00484851-1770209180.jpg", genre: "Action, Drama", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Yogi Da (2026)", embedUrl: "https://short.icu/NgosR4VAF", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWU3NjhkODItODQ5YS00M2ZmLTllMWQtZTI3OGEwYTAzODFjXkEyXkFqcGc@._V1_.jpg", genre: "Action", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -2108,6 +2135,19 @@ const contentData = [
 
 
     {
+        title: "Demon Slayer: Kimetsu no Yaiba (2019)", posterUrl: "https://images-cdn.ubuy.ae/6551dd5f07db2e7fe73fcc8a-demon-slayer-kimetsu-no-yaiba-season.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3, Episode 1-11", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/_IeLc6R2d" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/-7xStP0QM" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/Cj3X5dGK3" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/ISrNSwWWW" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/5fsPAsbE_" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/9C_YMTm--" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/Qe3fWRBkY" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/-IytuQ6Dx" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/Wr3j_n9Ne" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/XZAzSS2KJB" },
+            { number: 11, title: "Episode 11", embedUrl: "https://short.icu/U3RGV0MBA" },]
+    }, {
         title: "Demon Slayer: Kimetsu no Yaiba Infinity Castle (2025)", embedUrl: "https://short.icu/q1D68UbTC", posterUrl: "https://resizing.flixster.com/OipR_dQpU7cBRkCHNyhtIstPfyU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzczMTVmMzRlLTBmZjktNDQ2Mi1hMWExLTAxMDI0NmFiODg1My5wbmc=", genre: "Anime, Dark Fantasy, Action, Adventure", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Jujutsu Kaisen 0 (2021)", embedUrl: "https://short.icu/J_xHAzqiH", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmRlYzE5YTAtOTMyOS00MTY3LTg2MmYtMTU5Y2E2ODg5ZjNiXkEyXkFqcGc@._V1_.jpg", genre: "Anime, Action, Animation", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -2506,6 +2546,10 @@ const contentData = [
 
 
     {
+        title: "Wanted (2025)", embedUrl: "https://short.icu/-oFEdK74a", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTJiNjU3NmUtODc0Ny00OGFlLTk2YmMtNDk0NGJkNDkwMDEyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Fantasy", category: "Chinese", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "House of Flying Daggers (2004)", embedUrl: "https://short.icu/yOXFJrEB4", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWZlZjQwMjUtNGI5Ny00ODg4LTg0Y2UtODkxYmYxM2IxNjgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Fantasy", category: "Chinese", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
         title: "Wu Kong (2017)", embedUrl: "https://short.icu/LJUMKO-Nx", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGIyNWZhYjAtOThmOC00OTQxLWI3ZTAtM2UzMTY4MDExNTMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Comedy", category: "Chinese", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Monster Hunt 2 (2018)", embedUrl: "https://short.icu/MSbZE5MBGS", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fmetadata-static.plex.tv%2Fa%2Fgracenote%2Fa83ade0fe182d647d223990a0e942e11.jpg", genre: "Action, Adventure, Fantasy, Comedy", category: "Chinese", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -2914,6 +2958,19 @@ const contentData = [
 
 
     {
+        title: "Monarch: Legacy of Monsters (2023)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25598876_b_v12_ac.jpg", genre: "Action, Adventure, Sci-Fi", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/W2MsRHsD6" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/uMCUROOSr" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/8AR8gPbI7" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/xiE6ZJdXv" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/iYjdiyMGd" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/AF72b53rk" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/CdEp-phFB" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/T5tGmjQnl" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/3_xH5QCwi" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/LrtN9f4q0" },
+        ]
+    }, {
         title: "Cross (2024)", posterUrl: "https://resizing.flixster.com/Nd5gp3jE8WaNMIISk6GfT2_fxig=/fit-in/705x460/v2/https://resizing.flixster.com/c3nLYT1yh4hyQSCkL4qAJhUsRjk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vOTllMDkxZTYtYzc1Zi00OTUwLWE1N2YtYTEzYjlkYTI0ODVjLmpwZw==", genre: "Crime, Mystery & Thriller, Drama", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/LtKxeHfJp" }, { number: 2, title: "Episode 2", embedUrl: "https://short.icu/5RUJRdTYt" }, { number: 3, title: "Episode 3", embedUrl: "https://short.icu/SjKjJb87s" }, { number: 4, title: "Episode 4", embedUrl: "https://short.icu/LDRrwYpnd" }, { number: 5, title: "Episode 5", embedUrl: "https://short.icu/RJ2nXYeO6" },
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/mquG4Tmdv" },
@@ -3511,17 +3568,17 @@ function clearSearch(preventRestore = false) {
     }
 }
 
-// function updateCanonical(url) {
-//     const canonicalLink = document.getElementById('canonicalLink');
-//     if (canonicalLink) {
-//         if (url.startsWith('blob:')) {
-//             canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
-//             return;
-//         }
-//         const finalUrl = (url === window.location.origin + '/' || url === window.location.origin + '/index.html') ? window.location.origin + '/' : url;
-//         canonicalLink.setAttribute('href', finalUrl);
-//     }
-// }
+function updateCanonical(url) {
+    const canonicalLink = document.getElementById('canonicalLink');
+    if (canonicalLink) {
+        if (url.startsWith('blob:')) {
+            canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
+            return;
+        }
+        const finalUrl = (url === window.location.origin + '/' || url === window.location.origin + '/index.html') ? window.location.origin + '/' : url;
+        canonicalLink.setAttribute('href', finalUrl);
+    }
+}
 
 function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
     if (mode) {
