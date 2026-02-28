@@ -3511,17 +3511,17 @@ function clearSearch(preventRestore = false) {
     }
 }
 
-function updateCanonical(url) {
-    const canonicalLink = document.getElementById('canonicalLink');
-    if (canonicalLink) {
-        if (url.startsWith('blob:')) {
-            canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
-            return;
-        }
-        const finalUrl = (url === window.location.origin + '/' || url === window.location.origin + '/index.html') ? window.location.origin + '/' : url;
-        canonicalLink.setAttribute('href', finalUrl);
-    }
-}
+// function updateCanonical(url) {
+//     const canonicalLink = document.getElementById('canonicalLink');
+//     if (canonicalLink) {
+//         if (url.startsWith('blob:')) {
+//             canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
+//             return;
+//         }
+//         const finalUrl = (url === window.location.origin + '/' || url === window.location.origin + '/index.html') ? window.location.origin + '/' : url;
+//         canonicalLink.setAttribute('href', finalUrl);
+//     }
+// }
 
 function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
     if (mode) {
