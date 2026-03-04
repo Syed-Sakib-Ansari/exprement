@@ -1,5 +1,21 @@
 const contentData = [
     {
+        title: "The Kerala Story 2: Goes Beyond (2026)", embedUrl: "https://short.icu/xDPCMLjck", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDliMDU3MmQtZmNjOC00ZDM3LThkZWQtOWU2NmQzOTE5NzE1XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+    title: "Anniversary (2025)", embedUrl: "https://short.icu/yjO0SCOqF", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTg1MjE0OTctYTk3Yy00NGRiLWJlYzctYmY3OTUzNmU4ZjhhXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
+    title: "District 9 (2009)", embedUrl: "https://short.icu/ZH8_ub3yS", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjc5NTE1ODEwN15BMl5BanBnXkFtZTcwMjM3NDEwMw@@._V1_.jpg", genre: "Action, Sci-Fi, Thriller, Mystery, Suspense", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
+        title: "Veerappan The Bandit King (2026)", embedUrl: "https://short.icu/piM4gapZf", posterUrl: "https://bingeddata.s3.amazonaws.com/uploads/2026/02/hclsrysawaalbjd-768x960.jpg", genre: "Drama, Biography", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",seriesInfo: "Season 1, Episode ALL",
+    }, {
+        title: "Funky (2026)",embedUrl: "https://short.icu/NU5xLLIou", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/fd/Funky_%28film%29.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
+        title: "With Love (2026)",embedUrl: "https://short.icu/kNMyYQWqe", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmI0ZmJhZDAtYjNjZC00OGFjLWJjMTktMWEzMzRkODY2ZTg5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
+        title: "Hey Bhagawan (2026)",embedUrl: "https://short.icu/6of9qtCfr", posterUrl: "https://resizing.flixster.com/EktKaxRrsqrJ7_i7DZwKhiqgc8M=/fit-in/705x460/v2/https://resizing.flixster.com/s3xamXEzCp8NhZVdQv51JIxuT0Q=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZiODdmNzNhLTQxYTQtNDdkMy1iNjhmLTlkN2YwYTU2NTFmMy5qcGc=", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",seriesInfo: "Season 1 Episode ALL"
+    }, {
+        title: "Thaanara (2024)",embedUrl: "https://short.icu/10goB0tFE", posterUrl: "https://a.ltrbxd.com/resized/film-poster/1/0/1/1/5/6/0/1011560-thaanara-0-230-0-345-crop.jpg?v=e25486affe", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",seriesInfo: "Season 1 Episode ALL"
+    }, {
     title: "Hamnet (2025)", embedUrl: "https://short.icu/zhramqazz", posterUrl: "https://upload.wikimedia.org/wikipedia/en/1/1f/Hamnet_film_poster.jpeg", genre: "Drama, History, Romance, Biography", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
     title: "Dead Sea (2024)", embedUrl: "https://short.icu/xTPF7vdrj", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGZiOGFhZDUtNDUyMi00ODhjLWIwZGQtNzQyMmQwNGMzMWZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "crime, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -17,28 +33,6 @@ const contentData = [
         title: "The Bluff (2026)", embedUrl: "https://short.icu/hNLDtEVSo", posterUrl: "https://upload.wikimedia.org/wikipedia/en/1/17/The_Bluff_2026_poster.jpeg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Revenge (2017)", embedUrl: "https://short.icu/Hg9h3xY6E", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzQzMzk5YjctNjdiMC00ZTIxLTg2MTUtNTNhNjg1YWJmNTViXkEyXkFqcGc@._V1_.jpg", genre: " Action, Crime, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-    }, {
-        title: "Sangamarmar (2026)", embedUrl: "https://short.icu/kAJL6dcErW", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzVmYzk5MDItNjI3Ni00MjIzLWFhN2UtOGMzZjQ1ZjJjODdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Romance, Family, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode ALL",
-    }, {
-        title: "Bhootiyapa (2025)",embedUrl: "https://short.icu/bcePaYp8o", posterUrl: "https://images.justwatch.com/poster/341413089/s718/season-1.jpg", genre: "Drama, Horror, Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",seriesInfo: "Season 1 Episode ALL"
-    }, {
-        title: "Honey (2026)",embedUrl: "https://short.icu/gpwKAti2u", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDJlZDlmNTgtMDA0MS00ZWZlLWJkN2EtOWQzZWEyYTA0ZTVkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-    }, {
-        title: "Patang (2025)",embedUrl: "https://short.icu/S6E9ANHyJ", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjI5OWIyNGQtMjhhYS00YzkzLTk5N2UtN2MyN2M2YzMwM2QwXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-    }, {
-        title: "Karuppu Pulsar (2026)",embedUrl: "https://short.icu/pplqaV1DT", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjJhYzBlNzgtMjg4OC00YTE5LWIyNzktZDMzMjFlMjAzMjQ5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-    }, {
-        title: "Lockdown (2026)", embedUrl: "https://short.icu/17vIxeUBJ", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjI2MTg2OGUtNmIxZi00OWQzLWFhY2YtMDIzZGI5MGY5N2FlXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "The Kerala Story 2: Goes Beyond (2026)", embedUrl: "https://short.icu/xDPCMLjck", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDliMDU3MmQtZmNjOC00ZDM3LThkZWQtOWU2NmQzOTE5NzE1XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "Secret Stories: Roslin (2024)", posterUrl: "https://images.filmibeat.com/webp/img/popcorn/ws_images/secret%20storiesroslin-3750/secret%20storiesroslin-3750-s01.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-11", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/K9rRI0Uw8" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/-yoDKNhbd" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/DFEZ4BbjO" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/GdKy-6-rU" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/uxjZdzIGd" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/pUlMJG9d2" },]
     },
 
 
@@ -48,6 +42,8 @@ const contentData = [
 
 
     {
+        title: "Veerappan The Bandit King (2026)", embedUrl: "https://short.icu/piM4gapZf", posterUrl: "https://bingeddata.s3.amazonaws.com/uploads/2026/02/hclsrysawaalbjd-768x960.jpg", genre: "Drama, Biography", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",seriesInfo: "Season 1, Episode ALL",
+    }, {
         title: "Lockdown (2026)", embedUrl: "https://short.icu/17vIxeUBJ", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjI2MTg2OGUtNmIxZi00OWQzLWFhY2YtMDIzZGI5MGY5N2FlXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "The Kerala Story 2: Goes Beyond (2026)", embedUrl: "https://short.icu/xDPCMLjck", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDliMDU3MmQtZmNjOC00ZDM3LThkZWQtOWU2NmQzOTE5NzE1XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -402,6 +398,10 @@ const contentData = [
 
 
     {
+    title: "Anniversary (2025)", embedUrl: "https://short.icu/yjO0SCOqF", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTg1MjE0OTctYTk3Yy00NGRiLWJlYzctYmY3OTUzNmU4ZjhhXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
+    title: "District 9 (2009)", embedUrl: "https://short.icu/ZH8_ub3yS", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjc5NTE1ODEwN15BMl5BanBnXkFtZTcwMjM3NDEwMw@@._V1_.jpg", genre: "Action, Sci-Fi, Thriller, Mystery, Suspense", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
     title: "Hamnet (2025)", embedUrl: "https://short.icu/zhramqazz", posterUrl: "https://upload.wikimedia.org/wikipedia/en/1/1f/Hamnet_film_poster.jpeg", genre: "Drama, History, Romance, Biography", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
     title: "Dead Sea (2024)", embedUrl: "https://short.icu/xTPF7vdrj", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGZiOGFhZDUtNDUyMi00ODhjLWIwZGQtNzQyMmQwNGMzMWZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "crime, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -1846,6 +1846,14 @@ const contentData = [
 
 
     {
+        title: "Funky (2026)",embedUrl: "https://short.icu/NU5xLLIou", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/fd/Funky_%28film%29.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
+        title: "With Love (2026)",embedUrl: "https://short.icu/kNMyYQWqe", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmI0ZmJhZDAtYjNjZC00OGFjLWJjMTktMWEzMzRkODY2ZTg5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
+        title: "Hey Bhagawan (2026)",embedUrl: "https://short.icu/6of9qtCfr", posterUrl: "https://resizing.flixster.com/EktKaxRrsqrJ7_i7DZwKhiqgc8M=/fit-in/705x460/v2/https://resizing.flixster.com/s3xamXEzCp8NhZVdQv51JIxuT0Q=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZiODdmNzNhLTQxYTQtNDdkMy1iNjhmLTlkN2YwYTU2NTFmMy5qcGc=", genre: "Drama, Comedy", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",seriesInfo: "Season 1 Episode ALL"
+    }, {
+        title: "Thaanara (2024)",embedUrl: "https://short.icu/10goB0tFE", posterUrl: "https://a.ltrbxd.com/resized/film-poster/1/0/1/1/5/6/0/1011560-thaanara-0-230-0-345-crop.jpg?v=e25486affe", genre: "Drama, Comedy", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",seriesInfo: "Season 1 Episode ALL"
+    }, {
         title: "Bhootiyapa (2025)",embedUrl: "https://short.icu/bcePaYp8o", posterUrl: "https://images.justwatch.com/poster/341413089/s718/season-1.jpg", genre: "Drama, Horror, Comedy", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",seriesInfo: "Season 1 Episode ALL"
     }, {
         title: "Honey (2026)",embedUrl: "https://short.icu/gpwKAti2u", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDJlZDlmNTgtMDA0MS00ZWZlLWJkN2EtOWQzZWEyYTA0ZTVkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Thriller", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
