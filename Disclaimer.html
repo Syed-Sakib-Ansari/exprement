@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | MOVIE DAKHI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .accent-text { color: #E50914; }
+        .accent-bg { background-color: #E50914; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Top Navigation -->
+    <nav class="sticky top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-lg border-b border-white/5 px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-black tracking-tighter accent-text uppercase hover:scale-105 transition-transform">
+            MOVIE DAKHI
+        </a>
+        <a href="index.html" class="accent-bg text-white px-5 py-2 rounded-full font-bold text-sm hover:opacity-80 transition flex items-center gap-2">
+            <i class="fas fa-home"></i> Back to Home
+        </a>
+    </nav>
+
+    <!-- Content Area -->
+    <main class="flex-grow container mx-auto max-w-4xl px-6 py-12">
+        <div class="glass-card p-8 md:p-12 rounded-3xl">
+            <h1 class="text-4xl font-black mb-8 uppercase tracking-tighter">Legal <span class="accent-text">Disclaimer</span></h1>
+            
+            <div class="space-y-6 text-gray-300 leading-relaxed">
+                <p>Welcome to <span class="font-bold text-white">MOVIE DAKHI</span>. Please read this disclaimer carefully before using our website.</p>
+                
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-3">1. No Content Hosting</h2>
+                    <p>MOVIE DAKHI does not store any files on its server. All contents are provided by non-affiliated third parties. We only provide a platform to discover and access content that is already publicly available on the internet.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-3">2. Accuracy of Information</h2>
+                    <p>The information provided on this website is for general informational purposes only. While we strive to keep the content up to date and correct, we make no representations or warranties of any kind about the completeness, accuracy, or reliability of the information.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-3">3. External Links</h2>
+                    <p>Our website contains links to external websites (embed players, download servers) that are not provided or maintained by or in any way affiliated with MOVIE DAKHI. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-3">4. Responsibility</h2>
+                    <p>Any action you take upon the information you find on this website is strictly at your own risk. MOVIE DAKHI will not be liable for any losses and/or damages in connection with the use of our website.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <footer class="w-full bg-[#0a0a0a] border-t border-white/5 px-6 py-12 flex flex-col items-center gap-6">
+        <a href="index.html" class="text-3xl font-black tracking-tighter accent-text uppercase hover:scale-105 transition-transform">
+            MOVIE DAKHI
+        </a>
+        <p class="text-gray-500 text-sm">Return to the world of entertainment with one click.</p>
+        <a href="index.html" class="accent-bg text-white px-8 py-3 rounded-full font-bold hover:opacity-80 transition flex items-center gap-3">
+            <i class="fas fa-play-circle"></i> Start Streaming Now
+        </a>
+        <div class="mt-8 text-gray-600 text-[10px] uppercase tracking-widest">
+            &copy; 2026 MOVIE DAKHI. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
