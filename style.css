@@ -151,8 +151,8 @@ body {
     #mobileFab {
         width: 76px;
         height: 76px;
-        bottom: 24px; /* Bring back spacing for desktop */
-        right: 24px; /* Bring back spacing for desktop */
+        bottom: 0px; /* Bring back spacing for desktop 24 */
+        left: 0px;   /* Place on the left side for desktop/tablets 24 */   
     }
 }
 
