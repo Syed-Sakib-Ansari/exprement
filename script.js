@@ -1,5 +1,9 @@
 const contentData = [
     {
+        title: "Charak Fair of Faith (2026)", embedUrl: "https://short.icu/4lb0Aty3c", posterUrl: "https://image.tmdb.org/t/p/w500/zavEC8ywCrM3mgvYzttHdkOzOgs.jpg", genre: "Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
+        title: "War Machine (2026)", embedUrl: "https://short.icu/kmVUMtfnF", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/2/22/War_Machine_poster.jpeg/250px-War_Machine_poster.jpeg", genre: "Action, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
         title: "Devkhel (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDA0NTljZjYtN2M2Yi00MTFkLTk2MWItZGIwODZmMTNiYmEwXkEyXkFqcGc@._V1_.jpg", genre: "Suspense, Thriller, Crime", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/HksnThpDW" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/moGOF-Jl_" },
@@ -36,10 +40,6 @@ const contentData = [
     title: "Drag Me to Hell (2009)", embedUrl: "https://short.icu/Y5nzHyvcv", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTQwNTMyNjc5Ml5BMl5BanBnXkFtZTcwOTI2MTQ0Mg@@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Mystery & Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
     title: "Psycho Killer (2026)", embedUrl: "https://short.icu/l4LQ8UfVk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTBlYjBjZTItOGNkZC00OTc2LWE1YTAtMDJiOWQzNTIyMjY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Horror, Mystery", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-    }, {
-    title: "Scream 7 (2026)", embedUrl: "https://short.icu/ABc-vU6iG", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Scream_7_%28poster%29.jpg/250px-Scream_7_%28poster%29.jpg", genre: "Crime, Drama, Horror, Mystery", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-    }, {
-    title: "How to Make a Killing (2026)", embedUrl: "https://short.icu/Q7rHtXTT1", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmQyM2M4NDUtOGNjNS00OWRiLWE3OGMtZWMyN2JlNmMwNmVjXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Thriller, Drama, Mystery", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     },
 
 
@@ -49,6 +49,8 @@ const contentData = [
 
 
     {
+        title: "Charak Fair of Faith (2026)", embedUrl: "https://short.icu/4lb0Aty3c", posterUrl: "https://image.tmdb.org/t/p/w500/zavEC8ywCrM3mgvYzttHdkOzOgs.jpg", genre: "Thriller, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
         title: "Subedaar (2026)", embedUrl: "https://short.icu/Zg7-NNs0h", posterUrl: "https://upload.wikimedia.org/wikipedia/en/6/68/Subedaar.jpg", genre: "Action, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
         title: "Veerappan The Bandit King (2026)", embedUrl: "https://short.icu/piM4gapZf", posterUrl: "https://bingeddata.s3.amazonaws.com/uploads/2026/02/hclsrysawaalbjd-768x960.jpg", genre: "Drama, Biography", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",seriesInfo: "Season 1, Episode ALL",
@@ -411,6 +413,8 @@ const contentData = [
 
 
     {
+        title: "War Machine (2026)", embedUrl: "https://short.icu/kmVUMtfnF", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/2/22/War_Machine_poster.jpeg/250px-War_Machine_poster.jpeg", genre: "Action, Sci-Fi, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
     title: "Anniversary (2025)", embedUrl: "https://short.icu/yjO0SCOqF", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTg1MjE0OTctYTk3Yy00NGRiLWJlYzctYmY3OTUzNmU4ZjhhXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
     title: "District 9 (2009)", embedUrl: "https://short.icu/ZH8_ub3yS", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjc5NTE1ODEwN15BMl5BanBnXkFtZTcwMjM3NDEwMw@@._V1_.jpg", genre: "Action, Sci-Fi, Thriller, Mystery, Suspense", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -431,7 +435,7 @@ const contentData = [
     }, {
         title: "The Bluff (2026)", embedUrl: "https://short.icu/hNLDtEVSo", posterUrl: "https://upload.wikimedia.org/wikipedia/en/1/17/The_Bluff_2026_poster.jpeg", genre: "Action, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-    title: "Revenge (2017)", embedUrl: "https://short.icu/Hg9h3xY6E", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzQzMzk5YjctNjdiMC00ZTIxLTg2MTUtNTNhNjg1YWJmNTViXkEyXkFqcGc@._V1_.jpg", genre: " Action, Crime, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        title: "Revenge (2017)", embedUrl: "https://short.icu/Hg9h3xY6E", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzQzMzk5YjctNjdiMC00ZTIxLTg2MTUtNTNhNjg1YWJmNTViXkEyXkFqcGc@._V1_.jpg", genre: " Action, Crime, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
         title: "The Devil's Bride (2025)", embedUrl: "https://short.icu/ayGVC87Ir", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhkZWRmYzQtMmJiNC00MDE3LTk0ZTMtNWZkNDY1NTdiODI0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller, Suspense", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -480,6 +484,8 @@ const contentData = [
         title: "The Terminal (2004)", embedUrl: "https://short.icu/2CyH8AYkq", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTM1MTIwNTMxOF5BMl5BanBnXkFtZTcwNjIxMjQyMw@@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "A Serbian Film (2010)", embedUrl: "https://short.icu/EBqhDo4tB", posterUrl: "https://resizing.flixster.com/UryMSwMrZWvnwcBHSv4YA395wF0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8308959_p_v8_ah.jpg", genre: "Horror", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Synchronic (2019)", embedUrl: "https://short.icu/oqbT8InX-E", posterUrl: "https://wellgousa.com/sites/default/files/2023-06/Synchronic-AmericanSciFiHorrorDrama-WellGoUSA-KeyArtPoster-812x1200%28b%29.jpg", genre: "Mystery, Thriller, Sci-Fi", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Jupiter Ascending (2015)", embedUrl: "https://short.icu/MTHrCohn8", posterUrl: "https://resizing.flixster.com/1h-gODYZWpMLFeDQObhQw_Xm2yk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10407904_p_v8_ak.jpg", genre: "Sci-Fi, Action, Adventure", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -2789,6 +2795,18 @@ const contentData = [
         title: "Mean Girls (2004)", embedUrl: "https://short.icu/bdM0tcIeT", posterUrl: "https://public-website-assets.paramountpictures.com/paramount2025/s3fs-public/styles/poster_medium/public/meangirls_2019update_en__800x1200.jpg?itok=-NeIZLrJ", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Mean Girls 2 (2011)", embedUrl: "https://short.icu/JUhcT2nec", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTYzMjUxNjQ3OF5BMl5BanBnXkFtZTcwMzgyMTkyNA@@._V1_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "The Kissing Booth (2018)", embedUrl: "https://short.icu/svht6QaC3", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3b/The_Kissing_Booth.png", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "The Kissing Booth 2 (2020)", embedUrl: "https://short.icu/I7AJ0MZ2P", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzg0ZmFkN2EtYTViMy00ODU5LWE3MGMtMzE3ZWNiOWNkNTRhXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "The Kissing Booth 3 (2020)", embedUrl: "https://short.icu/Qu-Lrm6e4", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c3/The_Kissing_Booth_3.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Easy A (2010)", embedUrl: "https://short.icu/65homHi-72", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjE1MzU1Mjg1OF5BMl5BanBnXkFtZTcwNDc3NDQ2Mw@@._V1_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "She's Out of My League (2010)", embedUrl: "https://short.icu/6JZ-eIeSi", posterUrl: "https://m.media-amazon.com/images/I/81UIZeFHWFL._AC_UF894,1000_QL80_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "She's the Man (2006)", embedUrl: "https://short.icu/IiXie3coy", posterUrl: "https://m.media-amazon.com/images/I/91x9ZS4woKL._AC_UF894,1000_QL80_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
 
 
