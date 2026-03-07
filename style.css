@@ -127,9 +127,10 @@ body {
 /* ==================================================== */
 #mobileFab {
     position: fixed;
-    top: auto; 
-    bottom: 0; /* Removed space for mobile */
-    right: 0; /* Removed space for mobile */
+    top: 10px; /* Placed exactly at the top for mobile */
+    bottom: auto; 
+    right: 10px; /* Placed exactly at the right for mobile */
+    left: auto;
     width: 68px; /* Proper circle size for mobile */
     height: 68px;
     background-color: var(--primary-red);
@@ -151,16 +152,60 @@ body {
     #mobileFab {
         width: 76px;
         height: 76px;
-        bottom: 0px; /* Bring back spacing for desktop 24 */
-        left: 0px;   /* Place on the left side for desktop/tablets 24 */   
+        top: auto; /* Reset top position for desktop */
+        bottom: 10px; /* Bring back spacing for desktop */
+        left: 10px;   /* Place on the left side for desktop/tablets */
+        right: auto;  /* Override the mobile right-side positioning */
+        
+        /* INTENSE EYE-CATCHING EFFECT */
+        animation: fab-intense-pulse 2s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    #fabIconContainer {
+        animation: fab-intense-shake 2s infinite ease-in-out;
+    }
+    
+    /* Stop animations when menu is open or when user has clicked it once */
+    #mobileFab.menu-open,
+    #mobileFab.menu-open #fabIconContainer,
+    #mobileFab.animation-stopped,
+    #mobileFab.animation-stopped #fabIconContainer {
+        animation: none !important;
     }
 }
 
+/* --- INTENSE EYE-CATCHING ANIMATION KEYFRAMES --- */
+@keyframes fab-intense-pulse {
+    0% {
+        box-shadow: 0 4px 20px rgba(229, 9, 20, 0.5), 0 0 0 0 rgba(229, 9, 20, 0.7);
+    }
+    100% {
+        /* Creates a massive, smooth expanding glowing wave */
+        box-shadow: 0 4px 20px rgba(229, 9, 20, 0.5), 0 0 0 45px rgba(229, 9, 20, 0);
+    }
+}
+
+@keyframes fab-intense-shake {
+    0%, 20%, 100% { transform: scale(1) rotate(0deg); }
+    4% { transform: scale(1.15) rotate(-10deg); }
+    8% { transform: scale(1.15) rotate(10deg); }
+    12% { transform: scale(1.15) rotate(-10deg); }
+    16% { transform: scale(1.15) rotate(10deg); }
+}
+
+/* ================== FAB DRAG & ANIMATION CSS FIX START ================== */
 #mobileFab:active {
     cursor: grabbing;
-    transform: scale(0.9);
-    box-shadow: 0 2px 10px rgba(229, 9, 20, 0.4);
+    /* Removed !important from transform so JavaScript can move it while dragging */
+    transform: scale(0.9); 
+    box-shadow: 0 2px 10px rgba(229, 9, 20, 0.4) !important;
+    animation: none !important; /* Stop animation while holding */
 }
+
+#mobileFab:active #fabIconContainer {
+    animation: none !important;
+}
+/* ================== FAB DRAG & ANIMATION CSS FIX END ================== */
 
 /* Hide FAB completely with this class */
 #mobileFab.fab-hidden {

@@ -3668,6 +3668,10 @@ fab.addEventListener('click', (e) => {
         e.stopPropagation();
         return;
     }
+
+    // Stop the animation permanently once the user has noticed and clicked it
+    fab.classList.add('animation-stopped');
+
     const isMenuOpen = categoryMenu.classList.contains('active');
     toggleCategoryMenu(!isMenuOpen);
 });
