@@ -4292,6 +4292,17 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         switchView('home', null, false);
     }
+
+            // TRIGGER POPUP ON LOAD (COMMENTED OUT)
+            
+            setTimeout(() => {
+                // NOTE: If you only want to show this ONCE per session, uncomment the 3 lines below:
+                // if (!sessionStorage.getItem('popupSeen')) {
+                    showAnnouncement();
+                //     sessionStorage.setItem('popupSeen', 'true');
+                // }
+            }, 2500);
+            
 });
 
 window.addEventListener('popstate', (event) => {
@@ -4316,6 +4327,45 @@ window.addEventListener('click', (e) => {
     // Re-added click-outside logic for the menu, excluding the FAB
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
+
+        // ==========================================
+        // ANNOUNCEMENT POPUP LOGIC (COMMENTED OUT)
+        // ==========================================
+        
+        function showAnnouncement() {
+            const popup = document.getElementById('announcementPopup');
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            
+            // Stop background scroll when popup is active
+            savedScrollY = window.scrollY;
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${savedScrollY}px`;
+            document.body.style.width = '100%';
+            
+            // Small timeout to allow display:flex to apply before animating opacity/transform
+            setTimeout(() => {
+                popup.classList.add('active');
+            }, 50);
+        }
+
+        function closeAnnouncement() {
+            const popup = document.getElementById('announcementPopup');
+            popup.classList.remove('active');
+            
+            // Wait for transition to finish before hiding display
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+                
+                // Restore background scroll
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                window.scrollTo(0, savedScrollY);
+            }, 500); 
+        }
+        
 
 // ==========================================
 // SECURITY & ANTI-INSPECT MEASURES
