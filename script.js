@@ -1,20 +1,20 @@
 const contentData = [
     {
-        title: "One Piece (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#5oswq", posterUrl: "https://preview.redd.it/official-poster-for-one-piece-season-2-v0-uj07sl87x6if1.jpeg?auto=webp&s=0d419e32abd6956483961231dc5fb37bc5b01f53", genre: "Fantasy, Action, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode ALL",
+        title: "One Piece (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5oswq", posterUrl: "https://preview.redd.it/official-poster-for-one-piece-season-2-v0-uj07sl87x6if1.jpeg?auto=webp&s=0d419e32abd6956483961231dc5fb37bc5b01f53", genre: "Fantasy, Action, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5oswq&dl=1", seriesInfo: "Season 2, Episode ALL",
     }, {
-        title: "One Piece (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#ie53e", posterUrl: "https://resizing.flixster.com/X3z9DRV4M08dn_ylWJh75Ybn3vM=/fit-in/705x460/v2/https://resizing.flixster.com/FV4cfba1AvYqaUo5CGlG45ci8ms=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vOTM2OTBiYjgtZDJiNy00OTc1LTkyZGItMGZkNWY3MDE1MmUzLmpwZw==", genre: "Fantasy, Action, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode ALL",
+        title: "One Piece (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#ie53e", posterUrl: "https://resizing.flixster.com/X3z9DRV4M08dn_ylWJh75Ybn3vM=/fit-in/705x460/v2/https://resizing.flixster.com/FV4cfba1AvYqaUo5CGlG45ci8ms=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vOTM2OTBiYjgtZDJiNy00OTc1LTkyZGItMGZkNWY3MDE1MmUzLmpwZw==", genre: "Fantasy, Action, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ie53e&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
-        title: "Louis Theroux: Inside The Manosphere (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8guh8", posterUrl: "https://resizing.flixster.com/2KCIKHQouvMWCmJS2mycLi-ALAA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UwY2RmNGUxLTEzNDAtNGFhZS04ZDIwLTcxMTc4N2NkMTI3NS5qcGc=", genre: "Documentary", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode ALL",
+        title: "Louis Theroux: Inside The Manosphere (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8guh8", posterUrl: "https://resizing.flixster.com/2KCIKHQouvMWCmJS2mycLi-ALAA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UwY2RmNGUxLTEzNDAtNGFhZS04ZDIwLTcxMTc4N2NkMTI3NS5qcGc=", genre: "Documentary", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8guh8&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
-        title: "Scarpetta (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#h6cw5", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGJiZTM2ZmItMGRiZC00NzgwLTk3M2QtNDI1ZmYxOTJkOGI3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Drama, Mystery, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode ALL",
+        title: "Scarpetta (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#h6cw5", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGJiZTM2ZmItMGRiZC00NzgwLTk3M2QtNDI1ZmYxOTJkOGI3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Drama, Mystery, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#h6cw5&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
-        title: "Sankalp (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fxhof", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTcwMWIwMGMtOTNhZS00Yzk5LWI0ZDYtZTM2NmE5MjdhZWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode All"
+        title: "Sankalp (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fxhof", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTcwMWIwMGMtOTNhZS00Yzk5LWI0ZDYtZTM2NmE5MjdhZWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fxhof&dl=1", seriesInfo: "Season 1, Episode All"
     }, {
-        title: "Masthishka Maranam (2026)",embedUrl: "hhttps://moviedakhi.4meplayer.com/#3zwhg", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDM3NTQwN2MtOGFiZC00Njc4LWFlN2UtMDU1ZTFjNDExMjVhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Sci-Fi", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        title: "Masthishka Maranam (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#3zwhg", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDM3NTQwN2MtOGFiZC00Njc4LWFlN2UtMDU1ZTFjNDExMjVhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Sci-Fi", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3zwhg&dl=1",
     }, {
-        title: "Aazhi (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#vugj3", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2FjOTc5NjUtZTY0OS00OTFjLTg1MjUtMzQwN2JiOGJkZjc5XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        title: "Aazhi (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#vugj3", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2FjOTc5NjUtZTY0OS00OTFjLTg1MjUtMzQwN2JiOGJkZjc5XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vugj3&dl=1",
     }, {
-        title: "Aladdin's Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oat1g", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZjMWIwZWMtYzA0MC00MTQxLWEzYjItNmQ4MmI4MzA3MmQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        title: "Aladdin's Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oat1g", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZjMWIwZWMtYzA0MC00MTQxLWEzYjItNmQ4MmI4MzA3MmQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oat1g&dl=1",
     }, {
         title: "The Dinosaurs (2026)", embedUrl: "https://short.icu/xdvkxNtl3", posterUrl: "https://resizing.flixster.com/SRdE6ASrSvgOubbKjheHrCn0dpk=/fit-in/352x330/v2/https://resizing.flixster.com/9BjLIH1cJ2Qst8LPBiSTlmfIRPw=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vN2FjOGYwZDgtZjA2MS00M2QwLTg1MzYtYjQ2ZDk4NGEzNjE2LmpwZw==", genre: "Sci-Fi, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode ALL",
     }, {
@@ -3474,6 +3474,7 @@ const categories = [
 ];
 
 let currentItem = null;
+let downloadClickCount = 0; // Track the clicks for custom download button logic
 let preSearchState = null; // Stores user location before search starts
 let currentView = 'home';
 let sliderInterval;
@@ -4103,54 +4104,81 @@ function updateLoadMoreVisibility() {
     if (libraryDisplayedCount < libraryData.length) loading.classList.remove('hidden'); else loading.classList.add('hidden');
 }
 
-function openModal(id) {
-    // Smoothly hide the FAB button while modal is open
-    document.getElementById('mobileFab').classList.add('fab-hidden');
+        function openModal(id) {
+            // Smoothly hide the FAB button while modal is open
+            document.getElementById('mobileFab').classList.add('fab-hidden');
 
-    // Save precise scroll position before opening
-    savedScrollY = window.scrollY;
+            // Save precise scroll position before opening
+            savedScrollY = window.scrollY;
 
-    const currentState = history.state || {};
-    // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
-    try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-    try { window.history.pushState({ ...currentState, isModalOpen: true }, ''); } catch (e) { }
+            const currentState = history.state || {};
+            // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
+            try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+            try { window.history.pushState({ ...currentState, isModalOpen: true }, ''); } catch (e) { }
 
-    const item = contentData.find(m => m.id === id);
-    currentItem = item;
-    document.getElementById('modalTitle').innerText = item.title;
-    document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
-    document.getElementById('modalLanguage').innerText = item.language;
-    document.getElementById('modalCategory').innerText = item.category;
-    document.getElementById('downBtn1').href = item.downloadUrl1 || "#";
-    document.getElementById('downBtn2').href = item.downloadUrl2 || "#";
-    const seriesSec = document.getElementById('seriesSection');
-    const epList = document.getElementById('episodeList');
-    if (item.episodes) {
-        seriesSec.classList.remove('hidden');
-        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
-        epList.innerHTML = '';
-        item.episodes.forEach((ep, idx) => {
-            const btn = document.createElement('button');
-            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
-            btn.innerText = ep.title;
-            btn.onclick = () => playEpisode(idx, btn);
-            epList.appendChild(btn);
-        });
-    } else { seriesSec.classList.add('hidden'); }
-    document.getElementById('actualVideo').classList.add('hidden');
-    document.getElementById('videoPlaceholder').classList.remove('hidden');
-    videoIframe.src = "";
+            const item = contentData.find(m => m.id === id);
+            currentItem = item;
+            document.getElementById('modalTitle').innerText = item.title;
+            document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
+            document.getElementById('modalLanguage').innerText = item.language;
+            document.getElementById('modalCategory').innerText = item.category;
 
-    const modal = document.getElementById('movieModal');
-    modal.classList.remove('hidden');
-    void modal.offsetWidth;
-    modal.classList.add('active');
-    
-    // Bulletproof body lock - stops background scrolling and jumping
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${savedScrollY}px`;
-    document.body.style.width = '100%';
-}
+            // Reset download button state
+            downloadClickCount = 0;
+            document.getElementById('downloadBtnText').innerText = "Download";
+
+            const seriesSec = document.getElementById('seriesSection');
+            const epList = document.getElementById('episodeList');
+            if (item.episodes) {
+                seriesSec.classList.remove('hidden');
+                document.getElementById('seriesInfoText').innerText = item.seriesInfo;
+                epList.innerHTML = '';
+                item.episodes.forEach((ep, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
+                    btn.innerText = ep.title;
+                    btn.onclick = () => playEpisode(idx, btn);
+                    epList.appendChild(btn);
+                });
+            } else { seriesSec.classList.add('hidden'); }
+            document.getElementById('actualVideo').classList.add('hidden');
+            document.getElementById('videoPlaceholder').classList.remove('hidden');
+            videoIframe.src = "";
+
+            const modal = document.getElementById('movieModal');
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.add('active');
+            
+            // Bulletproof body lock - stops background scrolling and jumping
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${savedScrollY}px`;
+            document.body.style.width = '100%';
+        }
+
+        // Custom download button logic handling multiple clicks
+        function handleDownloadClick() {
+            if (!currentItem) return;
+            
+            downloadClickCount++;
+
+            if (downloadClickCount === 1) {
+                document.getElementById('downloadBtnText').innerText = "Ready For Download";
+                if (currentItem.downloadUrl1) {
+                    window.open(currentItem.downloadUrl1, '_blank');
+                }
+            } else if (downloadClickCount === 2) {
+                document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
+                if (currentItem.downloadUrl1) {
+                    window.open(currentItem.downloadUrl1, '_blank');
+                }
+            } else {
+                // 3rd click and beyond
+                if (currentItem.downloadUrl2) {
+                    window.open(currentItem.downloadUrl2, '_blank');
+                }
+            }
+        }
 
 function playDefault() {
     if (!currentItem) return;
