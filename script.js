@@ -2843,6 +2843,26 @@ const contentData = [
 
 
     {
+        title: "Censor (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#xcfw9", posterUrl: "https://m.media-amazon.com/images/M/MV5BODA2ZDhmY2YtZGVlYi00MGFlLTk0OTgtMWZhOWUwOGEwNjU4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult", category: "Others", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xcfw9&dl=1"
+    }, {
+        title: "Vladimir (2026)", posterUrl: "https://resizing.flixster.com/nNncZq7HrRZZ-LCyg9bYHez1AsA=/fit-in/705x460/v2/https://resizing.flixster.com/sIpEYv9fwRQsyt0ahSjbU_XmdvY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNjg3MjVmZWYtMTQ5YS00NzVkLWE0ZjMtZTI4NTU2NTJhYmI2LmpwZw==", genre: "Comedy, Drama, Adult", category: "Others", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/YgrRHTfWXK" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/EANy6Ujh2" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/4jyT12-wD" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/Kq-7vDeFS" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/XnXybQlG2" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/Z8n40SEK5" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/VXKBIFFI-" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/clOEbez-Ju" },]
+    }, {
+        title: "The Girlfriend (2025)", posterUrl: "https://resizing.flixster.com/BCfjItW0kR7wZu48hjDD0oSzTQo=/fit-in/705x460/v2/https://resizing.flixster.com/8ZfR5uvXxIKZ2XcLFWbzo8FkzMc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNTRlNjcyMzItZTc2Ny00ZDhhLWJjYjMtODM4Y2Y2ZDEzNDI0LmpwZw==", genre: "Mystery & Thriller, Comedy, Drama, Adult", category: "Others", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/Hs35nnJt6" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/jrSJJsp_R" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/rcKaPti04" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/PQWn5S8l3" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/-f-2TpAYn" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/Zfjnsqf4i" },]
+    }, {
         title: "Midnight Peepshow (2022)", embedUrl: "https://short.icu/1i3Q5JHgt", posterUrl: "https://resizing.flixster.com/vE7xwDLu9Ia4qbeWSUKgWJB0IUw=/fit-in/705x460/v2/https://resizing.flixster.com/kT_c3kC3piCHduezRgeu6fZxDzk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUwOTJiOTVkLTM2N2EtNDVjNy05MDkwLWVjMGRhZmVkOWMwNi5qcGc=", genre: "Drama, Adult, Horror", category: "Others", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Nymphomaniac: Vol. II (2013)", embedUrl: "https://short.icu/TdqO0qkRY", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTYxMTMwMjAxNl5BMl5BanBnXkFtZTgwNTk3Mjg3MDE@._V1_.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
