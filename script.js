@@ -4,7 +4,7 @@ const contentData = [
     }, {
         title: "Funky (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#es6gg", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/fd/Funky_%28film%29.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#es6gg&dl=1",
     }, {
-        title: "Turbulence (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#9fl5j", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGRhNmU2OTUtNzk2YS00NDRjLTlhN2YtODUzM2JiNjMyMzUxXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Action, Adventure, Drama, Fantasy, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9fl5j&dl=1",
+        title: "Turbulence (2025)", embedUrl: "https://short.icu/0fRWo1FzG", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGRhNmU2OTUtNzk2YS00NDRjLTlhN2YtODUzM2JiNjMyMzUxXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Action, Adventure, Drama, Fantasy, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9fl5j&dl=1",
     }, {
         title: "One Piece (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5oswq", posterUrl: "https://preview.redd.it/official-poster-for-one-piece-season-2-v0-uj07sl87x6if1.jpeg?auto=webp&s=0d419e32abd6956483961231dc5fb37bc5b01f53", genre: "Fantasy, Action, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5oswq&dl=1", seriesInfo: "Season 2, Episode ALL",
     }, {
@@ -406,7 +406,7 @@ const contentData = [
 
 
     {
-        title: "Turbulence (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#9fl5j", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGRhNmU2OTUtNzk2YS00NDRjLTlhN2YtODUzM2JiNjMyMzUxXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Action, Adventure, Drama, Fantasy, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9fl5j&dl=1",
+        title: "Turbulence (2025)", embedUrl: "https://short.icu/0fRWo1FzG", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGRhNmU2OTUtNzk2YS00NDRjLTlhN2YtODUzM2JiNjMyMzUxXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Action, Adventure, Drama, Fantasy, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9fl5j&dl=1",
     }, {
         title: "Aladdin's Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oat1g", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZjMWIwZWMtYzA0MC00MTQxLWEzYjItNmQ4MmI4MzA3MmQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
