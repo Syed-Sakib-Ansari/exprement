@@ -1,5 +1,11 @@
 const contentData = [
     {
+        title: "Made in Korea (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#klzxf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWFhNjliYTctNTgyOS00YWM5LTg5OTctNTgwNDM3YTJkMjFkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#klzxf&dl=1",
+    }, {
+        title: "Funky (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#es6gg", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/fd/Funky_%28film%29.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#es6gg&dl=1",
+    }, {
+        title: "Turbulence (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#9fl5j", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGRhNmU2OTUtNzk2YS00NDRjLTlhN2YtODUzM2JiNjMyMzUxXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Action, Adventure, Drama, Fantasy, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9fl5j&dl=1",
+    }, {
         title: "One Piece (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5oswq", posterUrl: "https://preview.redd.it/official-poster-for-one-piece-season-2-v0-uj07sl87x6if1.jpeg?auto=webp&s=0d419e32abd6956483961231dc5fb37bc5b01f53", genre: "Fantasy, Action, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5oswq&dl=1", seriesInfo: "Season 2, Episode ALL",
     }, {
         title: "One Piece (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#ie53e", posterUrl: "https://resizing.flixster.com/X3z9DRV4M08dn_ylWJh75Ybn3vM=/fit-in/705x460/v2/https://resizing.flixster.com/FV4cfba1AvYqaUo5CGlG45ci8ms=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vOTM2OTBiYjgtZDJiNy00OTc1LTkyZGItMGZkNWY3MDE1MmUzLmpwZw==", genre: "Fantasy, Action, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ie53e&dl=1", seriesInfo: "Season 1, Episode ALL",
@@ -27,12 +33,6 @@ const contentData = [
         title: "Peaky Blinders: The Immortal Man (2026)", embedUrl: "https://short.icu/y5O58D-77", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTdlNTNjNjctYTg2MC00NTFlLTliNTctODFiZjZmNWRkYTVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Crime, Drama, History", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
         title: "Rahu Ketu (2026)", embedUrl: "https://short.icu/4Hst9Kk-f", posterUrl: "https://resizing.flixster.com/Arp_OTPmU_ZrUzgAQH5Fcxe3oSY=/fit-in/705x460/v2/https://resizing.flixster.com/hvPcmkCCQkxlH9i3kkINs3E_nrw=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA4YzRhYjUwLWNkNGQtNGZjZi1hNDBlLTMzYzc2MGY0MmExMC5qcGc=", genre: "Comedy, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "Hello Bachhon (2026)", embedUrl: "https://short.icu/XDilRQ_R-", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDMxMGRhN2EtNmE0Zi00M2M0LWI2MzEtNGI2ZTkzMTIxYjBjXkEyXkFqcGc@._V1_.jpg", genre: "Biography, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode All"
-    }, {
-        title: "Murderer Report (2025)", embedUrl: "https://short.icu/4gskYYIVi", posterUrl: "https://m.media-amazon.com/images/M/MV5BODYwNDMyYWQtMTU5Yy00Y2JjLTg5OWQtMGJiMzIxMjAyZmQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller, Suspense", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "With Love (2026)",embedUrl: "https://short.icu/kNMyYQWqe", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmI0ZmJhZDAtYjNjZC00OGFjLWJjMTktMWEzMzRkODY2ZTg5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     },
 
 
@@ -406,6 +406,8 @@ const contentData = [
 
 
     {
+        title: "Turbulence (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#9fl5j", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGRhNmU2OTUtNzk2YS00NDRjLTlhN2YtODUzM2JiNjMyMzUxXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Action, Adventure, Drama, Fantasy, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9fl5j&dl=1",
+    }, {
         title: "Aladdin's Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oat1g", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZjMWIwZWMtYzA0MC00MTQxLWEzYjItNmQ4MmI4MzA3MmQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
         title: "The Dreadful (2026)", embedUrl: "https://short.icu/4DIZDWKb8", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDQ1Y2U2ODEtNGYzNS00YjUzLWJjNjgtNmI5NzVjNzQ3ZDU4XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -529,6 +531,8 @@ const contentData = [
         title: "The Heist of the Century (2020)", embedUrl: "https://short.icu/iO1_lEMMO", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGY3ODI1NWUtNjhiYi00NmQzLThiOGUtYTc0Yzc2ZjNmYjEzXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Mystery, Crime", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "The Menu (2022)", embedUrl: "https://short.icu/kQCwBWLrv", posterUrl: "https://resizing.flixster.com/zOKmnshG2KV3dfWZ1rOY5K5LXp0=/fit-in/705x460/v2/https://resizing.flixster.com/ThP55y9O__xdEFFCmmJ0pDy9FeI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FlZTkwYTAyLWNkNWYtNDA0ZS04N2FhLTE0NDUwZmM0ODdiOC5qcGc=", genre: "Horror, Mystery & Thriller, Comedy", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Ghost in the Shell (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#zjyim", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzBkNjdjZTctNjdhOS00NmIyLTlkNjQtY2EwNGMwYmZjNTIxXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery & Thriller, Comedy", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zjyim&dl=1"
     }, {
         title: "Focus (2025)", embedUrl: "https://short.icu/LCuEJHrGwQ", posterUrl: "https://resizing.flixster.com/t8dRL3wVeyCiKmv0miSNoaXZ-pQ=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10939169_v_v8_ay.jpg", genre: "Comedy, Drama, Mystery & Thriller, Romance", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -1009,6 +1013,8 @@ const contentData = [
         title: "Parallel (2024)", embedUrl: "https://short.icu/Ist3bPP8O", posterUrl: "https://resizing.flixster.com/ONaqb95nNrDcd48QUzvJKyzXt3E=/fit-in/705x460/v2/https://resizing.flixster.com/GyVub9rGU6uhdW6x-BeT35DqyDQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzM1YmEwZGJhLTkyMzYtNGNmMy1hN2VhLTk2Y2RhNDBjOTA3Yi5qcGc=", genre: "Sci-Fi, Mystery & Thriller, Drama", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Downsizing (2017)", embedUrl: "https://short.icu/g3DQuG8dU", posterUrl: "https://resizing.flixster.com/9D1JVyBwieYPPd3AcKAVrwPiH8s=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13462266_v_v8_ap.jpg", genre: "Comedy, Drama, Sci-Fi, Fantasy", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Suicide Squad (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#ieqz1", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Suicide_Squad_%282016_film%29_poster.png/250px-Suicide_Squad_%282016_film%29_poster.png", genre: "Comedy, Action, Sci-Fi, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ieqz1&dl=1"
     }, {
         title: "Hellraiser (2022)", embedUrl: "https://short.icu/xH4q6KR7c", posterUrl: "https://resizing.flixster.com/cxfvbobKlCiPpkhNmvz5_CHTgi8=/fit-in/705x460/v2/https://resizing.flixster.com/KLd94e7Tu2zBav24CAwEaxJG-GM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2VjNTFlZDhhLTA4M2QtNGZkZi1hNDljLTc5OTg4MGY2MThhZC5qcGc=", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -1854,21 +1860,21 @@ const contentData = [
     }, {
         title: "Batman v Superman: Dawn of Justice (2016)", embedUrl: "https://short.icu/K1BkX71j2", posterUrl: "https://m.media-amazon.com/images/M/MV5BYThjYzcyYzItNTVjNy00NDk0LTgwMWQtYjMwNmNlNWJhMzMyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UY864_.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Birds of Prey (2020)", embedUrl: "https://strmup.cc/9bCsl1HX72iF3", posterUrl: "https://upload.wikimedia.org/wikipedia/en/1/1c/Birds_of_Prey_%282020_film%29_poster.jpg", genre: "Action, Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Birds of Prey (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#klzrn", posterUrl: "https://upload.wikimedia.org/wikipedia/en/1/1c/Birds_of_Prey_%282020_film%29_poster.jpg", genre: "Action, Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#klzrn&dl=1"
     }, {
         title: "The 6th Day (2000)", embedUrl: "https://short.icu/ZYcv0toVz", posterUrl: "https://resizing.flixster.com/t0BeJ33oDTfZLY6VIlR2tdhLhAY=/fit-in/705x460/v2/https://resizing.flixster.com/-UBPFgl4xzgS07-a-7ZrUS-y0Rk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA5M2NlNDM1LTEwNzktNDljMC1iNTIyLWVkNGE2Y2E5MWZhMy53ZWJw", genre: "Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Black Adam (2022)", embedUrl: "https://strmup.cc/GjHbzJX1eTknN", posterUrl: "https://upload.wikimedia.org/wikipedia/en/a/a9/Black_Adam_%28film%29_poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Black Adam (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#ynw9z", posterUrl: "https://upload.wikimedia.org/wikipedia/en/a/a9/Black_Adam_%28film%29_poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ynw9z&dl=1"
     }, {
-        title: "Blue Beetle (2023)", embedUrl: "https://strmup.cc/W10mxK9cT6eHs", posterUrl: "https://upload.wikimedia.org/wikipedia/en/6/68/Blue_Beetle_%28film%29_poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Blue Beetle (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#vua18", posterUrl: "https://upload.wikimedia.org/wikipedia/en/6/68/Blue_Beetle_%28film%29_poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vua18&dl=1"
     }, {
-        title: "Green Lantern (2011)", embedUrl: "https://strmup.cc/8MbxDUu3NOIAs", posterUrl: "https://upload.wikimedia.org/wikipedia/en/6/6b/Green_Lantern_poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Green Lantern (2011)", embedUrl: "https://moviedakhi.4meplayer.com/#8gt3s", posterUrl: "https://upload.wikimedia.org/wikipedia/en/6/6b/Green_Lantern_poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8gt3s&dl=1"
     }, {
-        title: "Zack Snyder’s Justice League (2021)", embedUrl: "https://strmup.cc/4IabHClwqx7Vr", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Zack_Snyder%27s_Justice_League.png/250px-Zack_Snyder%27s_Justice_League.png", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Zack Snyder’s Justice League (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#fxqfz", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Zack_Snyder%27s_Justice_League.png/250px-Zack_Snyder%27s_Justice_League.png", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fxqfz&dl=1"
     }, {
-        title: "Shazam! Fury of the Gods (2023)", embedUrl: "https://strmup.cc/yGwaTD53sUmVf", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/fb/Shazam%21_Fury_of_the_Gods_%282023%29_Main_Poster.png", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Shazam! Fury of the Gods (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#zjyfb", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/fb/Shazam%21_Fury_of_the_Gods_%282023%29_Main_Poster.png", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zjyfb&dl=1"
     }, {
-        title: "Shazam! (2019)", embedUrl: "https://strmup.cc/tCoSjGksA2nE7", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Shazam%21_%28film%29_poster.jpg/250px-Shazam%21_%28film%29_poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Shazam! (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#6d58b", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Shazam%21_%28film%29_poster.jpg/250px-Shazam%21_%28film%29_poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6d58b&dl=1"
     }, {
         title: "The Suicide Squad (2021)", embedUrl: "https://short.icu/cQobY97NDz", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzUzMjkxMzItMTc0MS00MjAxLWFiZGMtY2YwOGM2Yjk1ZjBmXkEyXkFqcGdeQXVyODIyOTEyMzY@._V1_FMjpg_UY576_.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -1908,7 +1914,9 @@ const contentData = [
 
 
     {
-        title: "Masthishka Maranam (2026)",embedUrl: "hhttps://moviedakhi.4meplayer.com/#3zwhg", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDM3NTQwN2MtOGFiZC00Njc4LWFlN2UtMDU1ZTFjNDExMjVhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Sci-Fi", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        title: "Made in Korea (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#klzxf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWFhNjliYTctNTgyOS00YWM5LTg5OTctNTgwNDM3YTJkMjFkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#klzxf&dl=1",
+    }, {
+        title: "Masthishka Maranam (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#3zwhg", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDM3NTQwN2MtOGFiZC00Njc4LWFlN2UtMDU1ZTFjNDExMjVhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Sci-Fi", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
         title: "Aazhi (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#vugj3", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2FjOTc5NjUtZTY0OS00OTFjLTg1MjUtMzQwN2JiOGJkZjc5XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
@@ -1918,7 +1926,7 @@ const contentData = [
     }, {
         title: "Jora Kaiya Thattunga (2025)",embedUrl: "https://short.icu/Q67C3N3wP", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/f5/Jora_Kaiya_Thattunga.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
-        title: "Funky (2026)",embedUrl: "https://short.icu/NU5xLLIou", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/fd/Funky_%28film%29.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+        title: "Funky (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#es6gg", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/fd/Funky_%28film%29.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#es6gg&dl=1",
     }, {
         title: "With Love (2026)",embedUrl: "https://short.icu/kNMyYQWqe", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmI0ZmJhZDAtYjNjZC00OGFjLWJjMTktMWEzMzRkODY2ZTg5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
@@ -4104,81 +4112,81 @@ function updateLoadMoreVisibility() {
     if (libraryDisplayedCount < libraryData.length) loading.classList.remove('hidden'); else loading.classList.add('hidden');
 }
 
-        function openModal(id) {
-            // Smoothly hide the FAB button while modal is open
-            document.getElementById('mobileFab').classList.add('fab-hidden');
+function openModal(id) {
+    // Smoothly hide the FAB button while modal is open
+    document.getElementById('mobileFab').classList.add('fab-hidden');
 
-            // Save precise scroll position before opening
-            savedScrollY = window.scrollY;
+    // Save precise scroll position before opening
+    savedScrollY = window.scrollY;
 
-            const currentState = history.state || {};
-            // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
-            try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-            try { window.history.pushState({ ...currentState, isModalOpen: true }, ''); } catch (e) { }
+    const currentState = history.state || {};
+    // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
+    try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+    try { window.history.pushState({ ...currentState, isModalOpen: true }, ''); } catch (e) { }
 
-            const item = contentData.find(m => m.id === id);
-            currentItem = item;
-            document.getElementById('modalTitle').innerText = item.title;
-            document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
-            document.getElementById('modalLanguage').innerText = item.language;
-            document.getElementById('modalCategory').innerText = item.category;
+    const item = contentData.find(m => m.id === id);
+    currentItem = item;
+    document.getElementById('modalTitle').innerText = item.title;
+    document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
+    document.getElementById('modalLanguage').innerText = item.language;
+    document.getElementById('modalCategory').innerText = item.category;
 
-            // Reset download button state
-            downloadClickCount = 0;
-            document.getElementById('downloadBtnText').innerText = "Download";
+    // Reset download button state
+    downloadClickCount = 0;
+    document.getElementById('downloadBtnText').innerText = "Download";
 
-            const seriesSec = document.getElementById('seriesSection');
-            const epList = document.getElementById('episodeList');
-            if (item.episodes) {
-                seriesSec.classList.remove('hidden');
-                document.getElementById('seriesInfoText').innerText = item.seriesInfo;
-                epList.innerHTML = '';
-                item.episodes.forEach((ep, idx) => {
-                    const btn = document.createElement('button');
-                    btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
-                    btn.innerText = ep.title;
-                    btn.onclick = () => playEpisode(idx, btn);
-                    epList.appendChild(btn);
-                });
-            } else { seriesSec.classList.add('hidden'); }
-            document.getElementById('actualVideo').classList.add('hidden');
-            document.getElementById('videoPlaceholder').classList.remove('hidden');
-            videoIframe.src = "";
+    const seriesSec = document.getElementById('seriesSection');
+    const epList = document.getElementById('episodeList');
+    if (item.episodes) {
+        seriesSec.classList.remove('hidden');
+        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
+        epList.innerHTML = '';
+        item.episodes.forEach((ep, idx) => {
+            const btn = document.createElement('button');
+            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
+            btn.innerText = ep.title;
+            btn.onclick = () => playEpisode(idx, btn);
+            epList.appendChild(btn);
+        });
+    } else { seriesSec.classList.add('hidden'); }
+    document.getElementById('actualVideo').classList.add('hidden');
+    document.getElementById('videoPlaceholder').classList.remove('hidden');
+    videoIframe.src = "";
 
-            const modal = document.getElementById('movieModal');
-            modal.classList.remove('hidden');
-            void modal.offsetWidth;
-            modal.classList.add('active');
-            
-            // Bulletproof body lock - stops background scrolling and jumping
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${savedScrollY}px`;
-            document.body.style.width = '100%';
+    const modal = document.getElementById('movieModal');
+    modal.classList.remove('hidden');
+    void modal.offsetWidth;
+    modal.classList.add('active');
+    
+    // Bulletproof body lock - stops background scrolling and jumping
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.width = '100%';
+}
+
+// Custom download button logic handling multiple clicks
+function handleDownloadClick() {
+    if (!currentItem) return;
+    
+    downloadClickCount++;
+
+    if (downloadClickCount === 1) {
+        document.getElementById('downloadBtnText').innerText = "Ready For Download";
+        if (currentItem.downloadUrl1) {
+            window.open(currentItem.downloadUrl1, '_blank');
         }
-
-        // Custom download button logic handling multiple clicks
-        function handleDownloadClick() {
-            if (!currentItem) return;
-            
-            downloadClickCount++;
-
-            if (downloadClickCount === 1) {
-                document.getElementById('downloadBtnText').innerText = "Ready For Download";
-                if (currentItem.downloadUrl1) {
-                    window.open(currentItem.downloadUrl1, '_blank');
-                }
-            } else if (downloadClickCount === 2) {
-                document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
-                if (currentItem.downloadUrl1) {
-                    window.open(currentItem.downloadUrl1, '_blank');
-                }
-            } else {
-                // 3rd click and beyond
-                if (currentItem.downloadUrl2) {
-                    window.open(currentItem.downloadUrl2, '_blank');
-                }
-            }
+    } else if (downloadClickCount === 2) {
+        document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
+        if (currentItem.downloadUrl1) {
+            window.open(currentItem.downloadUrl1, '_blank');
         }
+    } else {
+        // 3rd click and beyond
+        if (currentItem.downloadUrl2) {
+            window.open(currentItem.downloadUrl2, '_blank');
+        }
+    }
+}
 
 function playDefault() {
     if (!currentItem) return;
@@ -4301,7 +4309,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     showAnnouncement();
                 //     sessionStorage.setItem('popupSeen', 'true');
                 // }
-            }, 2500);
+            }, 5500);
             
 });
 
@@ -4328,43 +4336,43 @@ window.addEventListener('click', (e) => {
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
 
-        // ==========================================
-        // ANNOUNCEMENT POPUP LOGIC (COMMENTED OUT)
-        // ==========================================
-        
-        function showAnnouncement() {
-            const popup = document.getElementById('announcementPopup');
-            popup.classList.remove('hidden');
-            popup.classList.add('flex');
-            
-            // Stop background scroll when popup is active
-            savedScrollY = window.scrollY;
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${savedScrollY}px`;
-            document.body.style.width = '100%';
-            
-            // Small timeout to allow display:flex to apply before animating opacity/transform
-            setTimeout(() => {
-                popup.classList.add('active');
-            }, 50);
-        }
+// ==========================================
+// ANNOUNCEMENT POPUP LOGIC (COMMENTED OUT)
+// ==========================================
 
-        function closeAnnouncement() {
-            const popup = document.getElementById('announcementPopup');
-            popup.classList.remove('active');
-            
-            // Wait for transition to finish before hiding display
-            setTimeout(() => {
-                popup.classList.add('hidden');
-                popup.classList.remove('flex');
-                
-                // Restore background scroll
-                document.body.style.position = '';
-                document.body.style.top = '';
-                document.body.style.width = '';
-                window.scrollTo(0, savedScrollY);
-            }, 500); 
-        }
+function showAnnouncement() {
+    const popup = document.getElementById('announcementPopup');
+    popup.classList.remove('hidden');
+    popup.classList.add('flex');
+    
+    // Stop background scroll when popup is active
+    savedScrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.width = '100%';
+    
+    // Small timeout to allow display:flex to apply before animating opacity/transform
+    setTimeout(() => {
+        popup.classList.add('active');
+    }, 50);
+}
+
+function closeAnnouncement() {
+    const popup = document.getElementById('announcementPopup');
+    popup.classList.remove('active');
+    
+    // Wait for transition to finish before hiding display
+    setTimeout(() => {
+        popup.classList.add('hidden');
+        popup.classList.remove('flex');
+        
+        // Restore background scroll
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, savedScrollY);
+    }, 500); 
+}
         
 
 // ==========================================
