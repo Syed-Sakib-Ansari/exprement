@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Kissa Court Kachehari Ka (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xcnvw", posterUrl: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kissa-court-kachehari-ka-et00490304-1772712914.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xcnvw&dl=1",
+    }, {
         title: "Made in Korea (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#klzxf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWFhNjliYTctNTgyOS00YWM5LTg5OTctNTgwNDM3YTJkMjFkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#klzxf&dl=1",
     }, {
         title: "Funky (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#es6gg", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/fd/Funky_%28film%29.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#es6gg&dl=1",
@@ -31,8 +33,6 @@ const contentData = [
         title: "The Dreadful (2026)", embedUrl: "https://short.icu/4DIZDWKb8", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDQ1Y2U2ODEtNGYzNS00YjUzLWJjNjgtNmI5NzVjNzQ3ZDU4XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
         title: "Peaky Blinders: The Immortal Man (2026)", embedUrl: "https://short.icu/y5O58D-77", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTdlNTNjNjctYTg2MC00NTFlLTliNTctODFiZjZmNWRkYTVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Crime, Drama, History", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
-    }, {
-        title: "Rahu Ketu (2026)", embedUrl: "https://short.icu/4Hst9Kk-f", posterUrl: "https://resizing.flixster.com/Arp_OTPmU_ZrUzgAQH5Fcxe3oSY=/fit-in/705x460/v2/https://resizing.flixster.com/hvPcmkCCQkxlH9i3kkINs3E_nrw=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA4YzRhYjUwLWNkNGQtNGZjZi1hNDBlLTMzYzc2MGY0MmExMC5qcGc=", genre: "Comedy, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
 
 
@@ -42,6 +42,8 @@ const contentData = [
 
 
     {
+        title: "Kissa Court Kachehari Ka (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xcnvw", posterUrl: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kissa-court-kachehari-ka-et00490304-1772712914.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xcnvw&dl=1",
+    }, {
         title: "Charak Fair of Faith (2026)", embedUrl: "https://short.icu/4lb0Aty3c", posterUrl: "https://image.tmdb.org/t/p/w500/zavEC8ywCrM3mgvYzttHdkOzOgs.jpg", genre: "Thriller, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
         title: "Subedaar (2026)", embedUrl: "https://short.icu/Zg7-NNs0h", posterUrl: "https://upload.wikimedia.org/wikipedia/en/6/68/Subedaar.jpg", genre: "Action, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
@@ -113,6 +115,8 @@ const contentData = [
         title: "Ek Chatur Naar (2025)", embedUrl: "https://short.icu/MqPbuFrRY", posterUrl: "https://resizing.flixster.com/xxtbR0Fahjj01k_BKm0R7mhUcUA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31141714_p_v8_aa.jpg", genre: "Comedy, Mystery & Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "De De Pyaar De 2 (2025)", embedUrl: "https://short.icu/RliG6PS_p-", posterUrl: "https://resizing.flixster.com/qVwSNXQgLKAA3Bj76Pufdm7Sb38=/fit-in/705x460/v2/https://resizing.flixster.com/wad59luQ0LjESTXwxw51gJ7_EKo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzNjYTZkMTk2LTA0MGUtNDIyYy1iZjg3LWQ5MjgyYjg5MDYyYi5qcGc=", genre: "Romance, Comedy", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "War (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#oahn5", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDZmYzZiYjAtMTllZC00NDQwLWFkZGQtYzg0NjVkZTExYWJmXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller, Adventure", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oahn5&dl=1"
     }, {
         title: "Jassi Weds Jassi (2025)", embedUrl: "https://short.icu/SxgNgGEX-", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Jassi_Weds_Jassi.jpeg/250px-Jassi_Weds_Jassi.jpeg", genre: "Comedy, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -372,11 +376,11 @@ const contentData = [
     }, {
         title: "Vash Level 2", embedUrl: "https://short.icu/VX4ttBk-w", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Official_Poster_of_Vash_Level_2.jpg/250px-Official_Poster_of_Vash_Level_2.jpg", genre: "Horror", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Pyaar Ka Punchnama 2 (2015)", embedUrl: "https://strmup.cc/N2kZrAmfgeQ1p", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Pyaar-Ka-Punch.jpg/250px-Pyaar-Ka-Punch.jpg", genre: "Drama+Comedy", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Pyaar Ka Punchnama 2 (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#gkort", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Pyaar-Ka-Punch.jpg/250px-Pyaar-Ka-Punch.jpg", genre: "Drama+Comedy", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gkort&dl=1"
     }, {
-        title: "Pyaar Ka Punchnama (2011)", embedUrl: "https://strmup.cc/HI5XqpQiBufzZ", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c4/Pyar_Ka_Punchnama.jpg", genre: "Drama+Comedy", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Pyaar Ka Punchnama (2011)", embedUrl: "https://moviedakhi.4meplayer.com/#nr3xg", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c4/Pyar_Ka_Punchnama.jpg", genre: "Drama+Comedy", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nr3xg&dl=1"
     }, {
-        title: "Dunki (2023)", embedUrl: "https://strmup.cc/abZgN0uKBVS3o", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Dunki_poster.jpg/250px-Dunki_poster.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Dunki (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#yntfx", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Dunki_poster.jpg/250px-Dunki_poster.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yntfx&dl=1"
     }, {
         title: "Baaghi (2016)", embedUrl: "https://short.icu/r84F-AUcw", posterUrl: "https://upload.wikimedia.org/wikipedia/en/0/07/Baaghi_Hindi_film_poster.jpg", genre: "Action, Suspense, Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -487,6 +491,8 @@ const contentData = [
         title: "A Serbian Film (2010)", embedUrl: "https://short.icu/EBqhDo4tB", posterUrl: "https://resizing.flixster.com/UryMSwMrZWvnwcBHSv4YA395wF0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8308959_p_v8_ah.jpg", genre: "Horror", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Synchronic (2019)", embedUrl: "https://short.icu/oqbT8InX-E", posterUrl: "https://wellgousa.com/sites/default/files/2023-06/Synchronic-AmericanSciFiHorrorDrama-WellGoUSA-KeyArtPoster-812x1200%28b%29.jpg", genre: "Mystery, Thriller, Sci-Fi", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Bone Tomahawk (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#1wa1a", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDE5ZWQyYmUtZmY1Yi00Yjg5LTljMjUtYjI3YWY1NjJkYmQyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Western", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1wa1a&dl=1"
     }, {
         title: "Jupiter Ascending (2015)", embedUrl: "https://short.icu/MTHrCohn8", posterUrl: "https://resizing.flixster.com/1h-gODYZWpMLFeDQObhQw_Xm2yk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10407904_p_v8_ak.jpg", genre: "Sci-Fi, Action, Adventure", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -2538,7 +2544,9 @@ const contentData = [
     }, {
         title: "The Garfield Movie (2024)", embedUrl: "https://short.icu/qjONbdLdV", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/9/91/The_Garfield_Movie_2024_poster.jpg/250px-The_Garfield_Movie_2024_poster.jpg", genre: "Comedy, Family", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Ne Zha 2 (2025)", embedUrl: "https://strmup.cc/yO9t7HqbLTse3", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Ne_Zha_2_poster.jpg/250px-Ne_Zha_2_poster.jpg", genre: "Action, Family", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Ne Zha 2 (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#5ob8i", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Ne_Zha_2_poster.jpg/250px-Ne_Zha_2_poster.jpg", genre: "Action, Family", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ob8i&dl=1"
+    }, {
+        title: "Ne Zha (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#3zpfj", posterUrl: "https://wellgousa.com/sites/default/files/2023-02/NeZha-EpicKidsChineseAnimationActionFantasyAdventure-WellGoUSA-KeyArtPoster-812x1200_0.jpg", genre: "Action, Family, Adventure, Fantasy", category: "Animation", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3zpfj&dl=1"
     },
 
 
@@ -3020,6 +3028,8 @@ const contentData = [
         title: "The Machine Girl (2008)", embedUrl: "https://short.icu/qGy6UA6_S", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTYzNTQ4NTQwMl5BMl5BanBnXkFtZTgwODc2NjcwMzE@._V1_.jpg", genre: "Adult, Action, Comedy", category: "Others", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Rise of the Machine Girls (2019)", embedUrl: "https://short.icu/FlR4shiC9", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTEzYTYzNzUtNjUyYS00MzRhLTk4NjUtZTQ1MmNjZTU0YWQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Action, Comedy", category: "Others", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Personal Shopper (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#gkodl", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmQ4NDA1YzktZTg4OS00YjA0LThlZDYtMzZjMzVkMjIzM2IxXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Action, Comedy", category: "Others", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gkodl&dl=1"
     },
 
 
@@ -3453,7 +3463,9 @@ const contentData = [
             { number: 4, title: "Episode 4", embedUrl: "https://short.icu/PCmcSWgXt" },
             { number: 5, title: "Episode 5", embedUrl: "https://short.icu/Di41KjCxg" },
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/fLjRDjG3SQ" },]
-    },
+    }, {
+        title: "Lady Voyeur (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#ie9nj", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjVkMzVlMTctN2E5Zi00YzQ2LTgxYTItN2E4Yzk4MDdiM2QzXkEyXkFqcGc@._V1_.jpg", genre: "Fantasy, Action, Adventure", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ie9nj&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, 
 
 
     // =======================================================================
