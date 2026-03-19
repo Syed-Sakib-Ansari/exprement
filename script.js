@@ -1,5 +1,11 @@
 const contentData = [
     {
+        title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rmrx3", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c8/Dhurandhar-_The_Revenge_poster.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rmrx3&dl=1",
+    }, {
+        title: "Bebe Main Badmash Banuga (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#ie6hy", posterUrl: "https://images.fandango.com/ImageRenderer/500/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243726/BMBB.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ie6hy&dl=1",
+    }, {
+        title: "Couple Friendly (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#1wkg5", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWNmNDMyYzYtZWIzYS00NTU1LWI4OTYtN2U0YTUxNzI4NWI5XkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1wkg5&dl=1",
+    }, {
         title: "Fourth Floor (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#jbxrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmVlMzcwMzUtNDg3Mi00Mzg0LThjZmQtMzYzNWUzMGQ4NTZmXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jbxrn&dl=1",
     }, {
         title: "Connect (2022)",embedUrl: "https://moviedakhi.4meplayer.com/#rmexo", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTg2MzAzZDEtYzlmOS00Mjc5LWE4ZGQtMzJiMzljNmZhZjBlXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rmexo&dl=1",
@@ -27,12 +33,6 @@ const contentData = [
         title: "Made in Korea (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#klzxf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWFhNjliYTctNTgyOS00YWM5LTg5OTctNTgwNDM3YTJkMjFkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#klzxf&dl=1",
     }, {
         title: "Funky (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#es6gg", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/fd/Funky_%28film%29.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#es6gg&dl=1",
-    }, {
-        title: "Turbulence (2025)", embedUrl: "https://short.icu/0fRWo1FzG", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGRhNmU2OTUtNzk2YS00NDRjLTlhN2YtODUzM2JiNjMyMzUxXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Action, Adventure, Drama, Fantasy, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9fl5j&dl=1",
-    }, {
-        title: "One Piece (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5oswq", posterUrl: "https://preview.redd.it/official-poster-for-one-piece-season-2-v0-uj07sl87x6if1.jpeg?auto=webp&s=0d419e32abd6956483961231dc5fb37bc5b01f53", genre: "Fantasy, Action, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5oswq&dl=1", seriesInfo: "Season 2, Episode ALL",
-    }, {
-        title: "One Piece (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#ie53e", posterUrl: "https://resizing.flixster.com/X3z9DRV4M08dn_ylWJh75Ybn3vM=/fit-in/705x460/v2/https://resizing.flixster.com/FV4cfba1AvYqaUo5CGlG45ci8ms=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vOTM2OTBiYjgtZDJiNy00OTc1LTkyZGItMGZkNWY3MDE1MmUzLmpwZw==", genre: "Fantasy, Action, Adventure", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ie53e&dl=1", seriesInfo: "Season 1, Episode ALL",
     },
 
 
@@ -42,6 +42,8 @@ const contentData = [
 
 
     {
+        title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rmrx3", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c8/Dhurandhar-_The_Revenge_poster.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rmrx3&dl=1",
+    }, {
         title: "The Taj Story (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#5obar", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzYwODI0ODgtMjBiZi00OGM4LWJlODgtYWQzYTQ5OTBhZWNkXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5obar&dl=1",
     }, {
         title: "Kissa Court Kachehari Ka (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xcnvw", posterUrl: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kissa-court-kachehari-ka-et00490304-1772712914.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xcnvw&dl=1",
@@ -522,7 +524,19 @@ const contentData = [
     }, {
         title: "Lisa Frankenstein (2024)", embedUrl: "https://short.icu/5XCehNpYn", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGFhNGNiNTEtMjNiNC00MjE5LTk3OTYtYmNiY2IxMTNjNjczXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Sci-Fi, Drama, Thriller, Comedy", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
+        title: "Trouble Every Day (2002)", embedUrl: "https://moviedakhi.4meplayer.com/#3zybt", posterUrl: "https://resizing.flixster.com/Cq4A6qUo56gy8dqFJikU68o3VDM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p74785_v_v7_ad.jpg", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3zybt&dl=1"
+    }, {
+        title: "Antichrist (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#kljfw", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjE3MjQ2ODc1N15BMl5BanBnXkFtZTcwNjYyMzI5Mg@@._V1_.jpg", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#kljfw&dl=1"
+    }, {
+        title: "Surrogates (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#5opcv", posterUrl: "https://resizing.flixster.com/axjSnzX5O5q7ZcpIQFQXyVdHG2s=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p194791_p_v8_af.jpg", genre: "Sci-Fi, Mystery & Thriller, Action", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5opcv&dl=1"
+    }, {
         title: "Frankenstein (2015)", embedUrl: "https://short.icu/_Q3y-gPLG", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTY3MTc1MjY3Ml5BMl5BanBnXkFtZTgwNDU2ODcxNzE@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Sci-Fi, Drama, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Mysterious Skin (2004)", embedUrl: "https://moviedakhi.4meplayer.com/#jbrih", posterUrl: "https://resizing.flixster.com/x73NJHnPg0htTatRX1c2MON0Kfo=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p88247_v_v8_aa.jpg", genre: "Drama", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jbrih&dl=1"
+    }, {
+        title: "Gerald's Game (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#8g3wm", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWRkYTYzMzUtMmI0MS00MWM5LThkOTItZWE1NmFhNTY4OTUyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8g3wm&dl=1"
+    }, {
+        title: "Apostle (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#9fqb8", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTY1NDk0NjI4MV5BMl5BanBnXkFtZTgwNjUyNzMwNjM@._V1_.jpg", genre: "Drama, Horror, Thriller, Mystery, Fantasy", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9fqb8&dl=1"
     }, {
         title: "Testament: The Story of Moses (2024)", embedUrl: "https://short.icu/VaCf5O5xD", posterUrl: "https://m.media-amazon.com/images/M/MV5BODIwMzY4NTAtMGQwMC00YjU3LWI3MmYtMjE0YThkYWUzZmMxXkEyXkFqcGc@._V1_.jpg", genre: "Biography, Documentary, Drama, History", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -1962,6 +1976,10 @@ const contentData = [
 
 
     {
+        title: "Bebe Main Badmash Banuga (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#ie6hy", posterUrl: "https://images.fandango.com/ImageRenderer/500/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243726/BMBB.jpg", genre: "Drama", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ie6hy&dl=1",
+    }, {
+        title: "Couple Friendly (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#1wkg5", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWNmNDMyYzYtZWIzYS00NTU1LWI4OTYtN2U0YTUxNzI4NWI5XkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1wkg5&dl=1",
+    }, {
         title: "Fourth Floor (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#jbxrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmVlMzcwMzUtNDg3Mi00Mzg0LThjZmQtMzYzNWUzMGQ4NTZmXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Drama", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jbxrn&dl=1",
     }, {
         title: "Connect (2022)",embedUrl: "https://moviedakhi.4meplayer.com/#rmexo", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTg2MzAzZDEtYzlmOS00Mjc5LWE4ZGQtMzJiMzljNmZhZjBlXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Drama", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rmexo&dl=1",
@@ -2005,6 +2023,8 @@ const contentData = [
         title: "Patang (2025)",embedUrl: "https://short.icu/S6E9ANHyJ", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjI5OWIyNGQtMjhhYS00YzkzLTk5N2UtN2MyN2M2YzMwM2QwXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
         title: "Karuppu Pulsar (2026)",embedUrl: "https://short.icu/pplqaV1DT", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjJhYzBlNzgtMjg4OC00YTE5LWIyNzktZDMzMjFlMjAzMjQ5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
+    }, {
+        title: "The Goat Life (2024)",embedUrl: "https://moviedakhi.4meplayer.com/#nrfhc", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjJiNjk2MzgtYWIzNy00Yzc0LTg4YzUtYjQ5OGZjZTc1YjU0XkEyXkFqcGc@._V1_.jpg", genre: "Survival, Adventure, Drama", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nrfhc&dl=1",
     }, {
         title: "Secret Stories: Roslin (2024)", posterUrl: "https://images.filmibeat.com/webp/img/popcorn/ws_images/secret%20storiesroslin-3750/secret%20storiesroslin-3750-s01.jpg", genre: "Adventure, Action, Fantasy, Anime", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-11", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/K9rRI0Uw8" },
@@ -2733,6 +2753,8 @@ const contentData = [
 
 
     {
+        title: "Legends of the Condor Heroes: The Gallants (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#a1g8k", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmRmNjdkOGUtMGIyMC00NGEyLTk3M2EtNjg2NTM3MTNkZWYxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Drama, History", category: "Chinese", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#a1g8k&dl=1"
+    }, {
         title: "Wanted (2025)", embedUrl: "https://short.icu/-oFEdK74a", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTJiNjU3NmUtODc0Ny00OGFlLTk2YmMtNDk0NGJkNDkwMDEyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Fantasy", category: "Chinese", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "House of Flying Daggers (2004)", embedUrl: "https://short.icu/yOXFJrEB4", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWZlZjQwMjUtNGI5Ny00ODg4LTg0Y2UtODkxYmYxM2IxNjgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Fantasy", category: "Chinese", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -2986,6 +3008,8 @@ const contentData = [
         title: "Risque (2025)", embedUrl: "https://short.icu/ntvupzjT9", posterUrl: "https://resizing.flixster.com/cWSPbb2N8jeY5ZiI71r4Gt6S4VE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30555139_v_v12_aa.jpg", genre: "Adult, Romance, Drama, Mystery & Thriller", category: "Others", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Salo, or the 120 Days of Sodom (1977)", embedUrl: "https://short.icu/S5rENV4tOl", posterUrl: "https://assets.lastdodo.com/image/ld_large/plain/assets/catalog/assets/2012/1/18/3/b/c/pdf_3bc0f5f0-23eb-012f-b16e-0050569439b1.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Irreversible (2002)", embedUrl: "https://moviedakhi.4meplayer.com/#9fqmj", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWNlNjIwMDgtMTZlOC00ZDRjLTg5YjktY2VkYzc1YjgwZjVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Mystery, Thriller", category: "Others", language: "France", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9fqmj&dl=1"
     }, {
         title: "Doin' It (2025)", embedUrl: "https://short.icu/Q9e2O5DaE", posterUrl: "https://resizing.flixster.com/BPJdpmxtOdxgVdXTO4mbKp2-icc=/fit-in/705x460/v2/https://resizing.flixster.com/wUUbw_acnkvYeJUEv0XX-sTAzGA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQxN2U2NzU2LTg3MzYtNDlkOC1hY2JhLWIyNTA1YTkyMjE4ZS5wbmc=", genre: "Adult, Romance, Drama, Comedy", category: "Others", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -3268,6 +3292,20 @@ const contentData = [
             { number: 11, title: "Episode 11", embedUrl: "https://short.icu/TtQyvsSld" },
             { number: 12, title: "Episode 12", embedUrl: "https://short.icu/8byvDpmy7" },
             { number: 13, title: "Episode 13", embedUrl: "https://short.icu/8vqQPwNZ4" },]
+    }, {
+        title: "The Last Man on Earth (2015)", posterUrl: "https://images.justwatch.com/poster/238054689/s718/season-1.jpg", genre: "Action, Comedy, Drama, Romance, Sci-Fi", category: "Hollywood Series", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-12", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/KHtlHQVDu" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/d5quNUEGa" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/gJb0fsYPS" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/i6v_zCwQM" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/RUKhvjAlp" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/UcUWTTThv" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/ZOk5fDdUg" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/QxfEhEk9V" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/JcLYJ0V4e" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/_ltgt9EQs" },
+            { number: 11, title: "Episode 11", embedUrl: "https://short.icu/P8DTFsQGW" },
+            { number: 12, title: "Episode 12", embedUrl: "https://short.icu/76Oe8SMCA" },]
     }, {
         title: "Spartacus: House of Ashur (2025)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWQ1NDUwYjEtYTYzYS00YTc3LTgzOTEtZTM0ZDhhMGM3ODAwXkEyXkFqcGc@._V1_.jpg", genre: "Action, History, Drama", category: "Hollywood Series", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-10", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/YDm4tejqq" },
