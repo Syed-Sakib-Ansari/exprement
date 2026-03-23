@@ -1,5 +1,21 @@
 const contentData = [
     {
+        title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fld", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fld&dl=1",
+    }, {
+        title: "The Son of Revenge – The Story of Kalevala (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fba", posterUrl: "https://cdn.moviefone.com/image-assets/1016024/yMztFelubPpfCqDIWFn7jCl0ZMK.jpg?d=360x540&q=80", genre: "Drama, Fantasy, History, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fba&dl=1",
+    }, {
+        title: "Chiraiya (2026)", posterUrl: "https://images.filmibeat.com/img/popcorn/ws_images/chiraiya/chiraiya.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfytq&dl=1", seriesInfo: "Season 1, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/q17skII0Q" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/72BZFxcyo" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/i2z6GtdBF" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/tFExoVT3b" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/MLrz4yP0V" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/bq_EYMkLO" },]
+    }, {
+        title: "Furies (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#6er98", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDkyNmU4MzAtOTkxOC00YzQ2LTlmY2QtOWQ0YmVjOGQxMWFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Mystery & Thriller, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6er98&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, {
+        title: "Furies (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8ae5h", posterUrl: "https://resizing.flixster.com/eegE-tpJz6F8i1S_6zuRd2742OY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26679316_b_v10_aa.jpg", genre: "Crime, Drama, Mystery & Thriller, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8ae5h&dl=1", seriesInfo: "Season 2, Episode ALL",
+    }, {
         title: "Talaash (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qfytq", posterUrl: "https://xstreamcp-assets-msp.streamready.in/assets/HOICHOI/SERIES/694b3d79f918603faf7b2d4c/images/PORTRAIT/1311184e6212-4a8e-b44c-df9ef96d3a9e-Talaash_3x4.jpg", genre: "Thriller, Crime", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfytq&dl=1", seriesInfo: "Season 1, Episode All"
     }, {
         title: "Death Game (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#9n35f", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDFhYzI4YjMtMGE2My00MzI1LWE4NWItZDJiMzRlZTY4NzFiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, History", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9n35f&dl=1"
@@ -23,16 +39,6 @@ const contentData = [
         title: "Fourth Floor (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#jbxrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmVlMzcwMzUtNDg3Mi00Mzg0LThjZmQtMzYzNWUzMGQ4NTZmXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jbxrn&dl=1",
     }, {
         title: "Connect (2022)",embedUrl: "https://moviedakhi.4meplayer.com/#rmexo", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTg2MzAzZDEtYzlmOS00Mjc5LWE4ZGQtMzJiMzljNmZhZjBlXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rmexo&dl=1",
-    }, {
-        title: "Now You See Me: Now You Don't (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#5otee", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTZlYzdjMzgtYjU2ZC00MGQ5LWFiMDYtOTIwNzQ0M2MyNmU2XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Heist", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5otee&dl=1",
-    }, {
-        title: "Sardar (2022)",embedUrl: "https://moviedakhi.4meplayer.com/#jbeoh", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTYzMTEzYmEtZDdjZS00YzdiLWE5MzgtOTRmZmIwYjQ4YzFiXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Drama, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jbeoh&dl=1",
-    }, {
-        title: "Devagudi (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#klx6w", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzcxNzA5ZTAtZWEwOS00YmZlLWI3MTItMWE3MTUyZjE0ZTg4XkEyXkFqcGc@._V1_.jpg", genre: "Adventure, Drama, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#klx6w&dl=1",
-    }, {
-        title: "Wuthering Heights (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ftre", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGFlMTVkMDktZGMzMC00Yjk4LWFmNzEtNTFmMzM2YzM3MWFkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller, Action, Adventure, Drama, Fantasy, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ftre&dl=1",
-    }, {
-        title: "The Taj Story (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#5obar", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzYwODI0ODgtMjBiZi00OGM4LWJlODgtYWQzYTQ5OTBhZWNkXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5obar&dl=1",
     },
 
 
@@ -416,7 +422,53 @@ const contentData = [
 
 
     {
+        title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fld", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fld&dl=1",
+    }, {
+        title: "The Son of Revenge – The Story of Kalevala (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fba", posterUrl: "https://cdn.moviefone.com/image-assets/1016024/yMztFelubPpfCqDIWFn7jCl0ZMK.jpg?d=360x540&q=80", genre: "Drama, Fantasy, History, Action", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fba&dl=1",
+    }, {
+        title: "Watchmen (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#frky1", posterUrl: "https://resizing.flixster.com/6jQB2P85nd5NAMRafH4sljOamas=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/NowShowing/66176/66176_aa.jpg", genre: "Action, Adventure, Fantasy, Mystery & Thriller, Comedy", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#frky1&dl=1",
+    }, {
+        title: "Goosebumps (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#dssgk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzgxMDQ2MDUyMF5BMl5BanBnXkFtZTgwNzgyMjQyNjM@._V1_FMjpg_UX1000_.jpg", genre: "Fantasy, Adventure, Comedy", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dssgk&dl=1",
+    }, {
+        title: "Goosebumps (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#xmmao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjA1OTUzNTQ5Ml5BMl5BanBnXkFtZTgwODQ4NDkxNjE@._V1_FMjpg_UX1000_.jpg", genre: "Fantasy, Adventure, Comedy", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xmmao&dl=1",
+    }, {
+        title: "Halloween Ends (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#oddyz", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWE4MTg5MzMtYjUxNy00OWMzLTkwMWEtZmEyNGQ4NjhiNDBkXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Horror, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oddyz&dl=1",
+    }, {
+        title: "Halloween Kills (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#6ee9l", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGU0NDlhMTEtNzI4My00OTY4LWE1M2UtY2YyNTgwMTQxMDJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Drama, Horror, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ee9l&dl=1",
+    }, {
+        title: "Space Jam: A New Legacy (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#9nnuh", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDkyOGM4MDMtZWU4ZS00YWMxLTgzNjAtYzI4M2Y1ODA4YWJlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Sci-Fi, Adventure, Animation, Comedy, Family", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9nnuh&dl=1",
+    }, {
+        title: "Shaft (2000)", embedUrl: "https://moviedakhi.4meplayer.com/#yzztc", posterUrl: "https://m.media-amazon.com/images/I/81VEIGdfqrL._AC_UF894,1000_QL80_.jpg", genre: "Action, Comedy, Crime, Mystery & Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzztc&dl=1",
+    }, {
+        title: "Shaft (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#hiild", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTE4ZGYyMWItNjlmNC00NTNlLWE0YzMtZTJiZTAzYjQxMzVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Crime, Mystery & Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hiild&dl=1",
+    }, {
+        title: "Friday the 13th (1980)", embedUrl: "https://moviedakhi.4meplayer.com/#6eeh8", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjEwOTY5MjMtMTkzMi00Zjk1LThkM2QtZGZhMzQ3MzI3NDNhXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6eeh8&dl=1",
+    }, {
+        title: "Friday the 13th (1980)", embedUrl: "https://moviedakhi.4meplayer.com/#6eeh8", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjEwOTY5MjMtMTkzMi00Zjk1LThkM2QtZGZhMzQ3MzI3NDNhXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6eeh8&dl=1",
+    }, {
+        title: "Friday the 13th Part 2 (1981)", embedUrl: "https://moviedakhi.4meplayer.com/#ixxqu", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjE1N2NlMjctMmM5OS00NGUyLWFiNjYtNzM2MDJlOTUxODVkXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ixxqu&dl=1",
+    }, {
+        title: "Halloween Party (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#9nnwa", posterUrl: "https://resizing.flixster.com/uKNRG4xAH7PxFOW7phskI_cFSx4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18673651_v_v8_aa.jpg", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9nnwa&dl=1",
+    }, {
+        title: "Thirteen Ghosts (2001)", embedUrl: "https://moviedakhi.4meplayer.com/#sppaa", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmFjMzZkODQtYmEwNS00MzIwLThhNmMtNjRiMmRjNjQ3MzQwXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Fantasy", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#sppaa&dl=1",
+    }, {
+        title: "The Machinist (2004)", embedUrl: "https://moviedakhi.4meplayer.com/#kwwfk", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2I1MmUxYmMtZjk3OC00N2MwLWI2YjAtNGQxODA1Y2I3YTI4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#kwwfk&dl=1",
+    }, {
+        title: "Season of the Witch (2011)", embedUrl: "https://moviedakhi.4meplayer.com/#qffcv", posterUrl: "https://static.wikia.nocookie.net/absolutehorror/images/a/ad/Season_of_the_Witch_poster.jpg/revision/latest?cb=20121003140012", genre: "Adventure, Fantasy, Action", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qffcv&dl=1",
+    }, {
+        title: "The Wolfman (2010)", embedUrl: "https://moviedakhi.4meplayer.com/#1uuf1", posterUrl: "https://m.media-amazon.com/images/I/81wyNGLOUpL.jpg", genre: "Mystery, Thriller, Action", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1uuf1&dl=1",
+    }, {
+        title: "Beautiful Creatures (2013)", embedUrl: "https://moviedakhi.4meplayer.com/#oddwy", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTQyMjYwODMwMl5BMl5BanBnXkFtZTcwODUwNzY5OA@@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Fantasy, Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oddwy&dl=1",
+    }, {
+        title: "After Life (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#9nnvb", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk0NDUzNTU5NV5BMl5BanBnXkFtZTcwNDE4ODIzMw@@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Thriller, Mystery", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9nnvb&dl=1",
+    }, {
+        title: "A Different Man (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#sppff", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTQ0NDI2NzItZjNiOC00ZDc0LWJiNGMtMzZmMGM2NmVjMmJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#sppff&dl=1",
+    }, {
         title: "Dead of Winter (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#vtwkc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjJiNTkxMDMtYWZjZC00NDJkLTliNDQtZjIzMTAxZGI2N2NmXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vtwkc&dl=1",
+    }, {
+        title: "The Crow (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#566vg", posterUrl: "https://resizing.flixster.com/KcB7ig2v-hMGJG8-RsWWBz8AicM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26792001_v_v13_am.jpg", genre: "Action, Fantasy, Crime", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#566vg&dl=1",
+    }, {
+        title: "Adore (2013)", embedUrl: "https://moviedakhi.4meplayer.com/#1uuam", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmZkYjI1YzctMjYzMS00Y2VjLTg3N2UtZTEzYmRlZDQ2YTMzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1uuam&dl=1",
     }, {
         title: "One Mile (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#odi9x", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWU3MjE5MDItNjFlYi00NGY4LWFkM2UtMTcxNWE3M2U3MGM1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Drama, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#odi9x&dl=1",
     }, {
@@ -2004,6 +2056,10 @@ const contentData = [
 
 
     {
+        title: "I Am God (2025)",embedUrl: "https://moviedakhi.4meplayer.com/#g113y", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjI1NGZmMzAtOTliYy00OTQ1LWEyNjItNWQ1YmFjZmM5YjRlXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#g113y&dl=1",
+    }, {
+        title: "Rasbhari (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#6eeps", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjVlN2UyMDctNTc5Yy00YTVhLWJmMmYtZmFhYTMwZDIxODJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Romance", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6eeps&dl=1", seriesInfo: "Season 1, Episode All"
+    }, {
         title: "Vishnu Vinyasam (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#odiyr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmZiMDkyOTYtZDE1ZC00MzMxLTlmMjAtMjkyNGQ4ZTA0YzA4XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#odiyr&dl=1",
     }, {
         title: "The Rise of Ashoka (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#vtcjl", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzYyMTQ3ZjMtMTM5ZS00NjIxLThiNTEtMzVhNzM2Mzc2NDhhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Action", category: "South", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vtcjl&dl=1",
@@ -3183,6 +3239,14 @@ const contentData = [
 
 
     {
+        title: "Chiraiya (2026)", posterUrl: "https://images.filmibeat.com/img/popcorn/ws_images/chiraiya/chiraiya.jpg", genre: "Drama", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfytq&dl=1", seriesInfo: "Season 1, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/q17skII0Q" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/72BZFxcyo" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/i2z6GtdBF" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/tFExoVT3b" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/MLrz4yP0V" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/bq_EYMkLO" },]
+    }, {
         title: "Talaash (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qfytq", posterUrl: "https://xstreamcp-assets-msp.streamready.in/assets/HOICHOI/SERIES/694b3d79f918603faf7b2d4c/images/PORTRAIT/1311184e6212-4a8e-b44c-df9ef96d3a9e-Talaash_3x4.jpg", genre: "Thriller, Crime", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfytq&dl=1", seriesInfo: "Season 1, Episode All"
     }, {
         title: "Sankalp (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fxhof", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTcwMWIwMGMtOTNhZS00Yzk5LWI0ZDYtZTM2NmE5MjdhZWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller, Drama", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode All"
@@ -3304,6 +3368,10 @@ const contentData = [
 
 
     {
+        title: "Furies (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#6er98", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDkyNmU4MzAtOTkxOC00YzQ2LTlmY2QtOWQ0YmVjOGQxMWFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Mystery & Thriller, Action", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6er98&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, {
+        title: "Furies (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8ae5h", posterUrl: "https://resizing.flixster.com/eegE-tpJz6F8i1S_6zuRd2742OY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26679316_b_v10_aa.jpg", genre: "Crime, Drama, Mystery & Thriller, Action", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8ae5h&dl=1", seriesInfo: "Season 2, Episode ALL",
+    }, {
         title: "One Piece (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#5oswq", posterUrl: "https://preview.redd.it/official-poster-for-one-piece-season-2-v0-uj07sl87x6if1.jpeg?auto=webp&s=0d419e32abd6956483961231dc5fb37bc5b01f53", genre: "Fantasy, Action, Adventure", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode ALL",
     }, {
         title: "One Piece (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#ie53e", posterUrl: "https://resizing.flixster.com/X3z9DRV4M08dn_ylWJh75Ybn3vM=/fit-in/705x460/v2/https://resizing.flixster.com/FV4cfba1AvYqaUo5CGlG45ci8ms=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vOTM2OTBiYjgtZDJiNy00OTc1LTkyZGItMGZkNWY3MDE1MmUzLmpwZw==", genre: "Fantasy, Action, Adventure", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode ALL",
