@@ -1,5 +1,9 @@
 const contentData = [
-    {
+        {
+        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndff", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndff&dl=1",
+    }, {
+        title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rmrx3", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rmrx3&dl=1",
+    }, {
         title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fld", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fld&dl=1",
     }, {
         title: "The Son of Revenge – The Story of Kalevala (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fba", posterUrl: "https://cdn.moviefone.com/image-assets/1016024/yMztFelubPpfCqDIWFn7jCl0ZMK.jpg?d=360x540&q=80", genre: "Drama, Fantasy, History, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fba&dl=1",
@@ -30,15 +34,11 @@ const contentData = [
     }, {
         title: "Border 2 (2026)", embedUrl: "https://short.icu/o3FU7N_AQ", posterUrl: "https://resizing.flixster.com/oWf0ZvZGFcCbkPZPdZqAALR1JoQ=/fit-in/705x460/v2/https://resizing.flixster.com/K_C20zw6Ydg0jbTf_9HdQoiDi6M=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZhYTJkZDg4LTYzMjgtNDg5MC1iN2YwLTNhZWQ0YTU3OGJlMS5qcGc=", genre: "War, History, Drama, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rmrx3", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rmrx3&dl=1",
-    }, {
         title: "Bebe Main Badmash Banuga (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#ie6hy", posterUrl: "https://images.fandango.com/ImageRenderer/500/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243726/BMBB.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ie6hy&dl=1",
     }, {
         title: "Couple Friendly (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#1wkg5", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWNmNDMyYzYtZWIzYS00NTU1LWI4OTYtN2U0YTUxNzI4NWI5XkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1wkg5&dl=1",
     }, {
         title: "Fourth Floor (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#jbxrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmVlMzcwMzUtNDg3Mi00Mzg0LThjZmQtMzYzNWUzMGQ4NTZmXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jbxrn&dl=1",
-    }, {
-        title: "Connect (2022)",embedUrl: "https://moviedakhi.4meplayer.com/#rmexo", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTg2MzAzZDEtYzlmOS00Mjc5LWE4ZGQtMzJiMzljNmZhZjBlXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rmexo&dl=1",
     },
 
 
@@ -422,6 +422,8 @@ const contentData = [
 
 
     {
+        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndff", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndff&dl=1",
+    }, {
         title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fld", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fld&dl=1",
     }, {
         title: "The Son of Revenge – The Story of Kalevala (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fba", posterUrl: "https://cdn.moviefone.com/image-assets/1016024/yMztFelubPpfCqDIWFn7jCl0ZMK.jpg?d=360x540&q=80", genre: "Drama, Fantasy, History, Action", category: "Hollywood", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fba&dl=1",
