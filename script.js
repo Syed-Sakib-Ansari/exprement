@@ -39,12 +39,6 @@ const contentData = [
         title: "One Mile (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#odi9x", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWU3MjE5MDItNjFlYi00NGY4LWFkM2UtMTcxNWE3M2U3MGM1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Drama, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#odi9x&dl=1",
     }, {
         title: "Border 2 (2026)", embedUrl: "https://short.icu/o3FU7N_AQ", posterUrl: "https://resizing.flixster.com/oWf0ZvZGFcCbkPZPdZqAALR1JoQ=/fit-in/705x460/v2/https://resizing.flixster.com/K_C20zw6Ydg0jbTf_9HdQoiDi6M=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2ZhYTJkZDg4LTYzMjgtNDg5MC1iN2YwLTNhZWQ0YTU3OGJlMS5qcGc=", genre: "War, History, Drama, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "Bebe Main Badmash Banuga (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#ie6hy", posterUrl: "https://images.fandango.com/ImageRenderer/500/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243726/BMBB.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ie6hy&dl=1",
-    }, {
-        title: "Couple Friendly (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#1wkg5", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWNmNDMyYzYtZWIzYS00NTU1LWI4OTYtN2U0YTUxNzI4NWI5XkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1wkg5&dl=1",
-    }, {
-        title: "Fourth Floor (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#jbxrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmVlMzcwMzUtNDg3Mi00Mzg0LThjZmQtMzYzNWUzMGQ4NTZmXkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jbxrn&dl=1",
     },
 
 
