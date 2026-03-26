@@ -6,7 +6,7 @@ const contentData = [
     }, {
         title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fld", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fld&dl=1",
     }, {
-        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
         ]
     }, {
@@ -3409,7 +3409,7 @@ const contentData = [
 
 
     {
-        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "English", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual", downloadUrl1: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://logshandgripquarterback.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
         ]
     }, {
