@@ -8,7 +8,7 @@ const contentData = [
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
     }, {
-        title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fld", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fld&dl=1",
+        title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1uoif", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1uoif&dl=1",
     }, {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
@@ -69,7 +69,7 @@ const contentData = [
 
 
     {
-        title: "Dukaan (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vt3ja", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDUzMDdlZTAtNDgyZi00OGU5LTg3NjgtNjlhNzhiMzljNDAzXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt3ja&dl=1",
+        title: "Dukaan (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vt3ja", posterUrl: "https://img.rgstatic.com/content/show/fc63facc-8ffe-45b9-9aba-11edaae1f9ee/poster-342.webp", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt3ja&dl=1",
     }, {
         title: "Durlabh Prasad Ki Dusri Shadi (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#c5yav", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzZiYjU1YWItMDkxMi00ZjQzLTkwMjItMDg2OGRmNGUyODMyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Family", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5yav&dl=1",
     }, {
@@ -453,7 +453,7 @@ const contentData = [
     }, {
         title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndff", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndff&dl=1",
     }, {
-        title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fld", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fld&dl=1",
+        title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1uoif", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1uoif&dl=1",
     }, {
         title: "The Son of Revenge – The Story of Kalevala (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fba", posterUrl: "https://cdn.moviefone.com/image-assets/1016024/yMztFelubPpfCqDIWFn7jCl0ZMK.jpg?d=360x540&q=80", genre: "Drama, Fantasy, History, Action", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fba&dl=1",
     }, {
@@ -2838,6 +2838,8 @@ const contentData = [
 
 
     {
+        title: "The Red Line (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qfkvf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWY5ZTIzNDktMjEyNS00MTg0LTljYWItOTU4NDU5OTU4ZGM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Thriller", category: "Korean Country", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfkvf&dl=1"
+    }, {
         title: "Murderer Report (2025)", embedUrl: "https://short.icu/4gskYYIVi", posterUrl: "https://m.media-amazon.com/images/M/MV5BODYwNDMyYWQtMTU5Yy00Y2JjLTg5OWQtMGJiMzIxMjAyZmQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller, Suspense", category: "Korean Country", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Pavane (2026)", embedUrl: "https://short.icu/gDYrgP0Zs", posterUrl: "https://m.media-amazon.com/images/M/MV5BODQ3MDY2NjItZTg4NC00MjUxLWE4ZWYtNDMwNDI0Y2NhYTIxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "Korean Country", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
