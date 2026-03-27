@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "The Red Line (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qfkvf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWY5ZTIzNDktMjEyNS00MTg0LTljYWItOTU4NDU5OTU4ZGM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfkvf&dl=1"
+    }, {
         title: "Zung: The Rust (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#spo65", posterUrl: "https://img.rgstatic.com/content/show/fc63facc-8ffe-45b9-9aba-11edaae1f9ee/poster-342.webp", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#spo65&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
         title: "Pretty Lethal (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jly3z", posterUrl: "http://www.impawards.com/2026/posters/pretty_lethal.jpg", genre: "Action, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jly3z&dl=1",
@@ -2838,8 +2840,6 @@ const contentData = [
 
 
     {
-        title: "The Red Line (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qfkvf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWY5ZTIzNDktMjEyNS00MTg0LTljYWItOTU4NDU5OTU4ZGM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Thriller", category: "Korean Country", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfkvf&dl=1"
-    }, {
         title: "Murderer Report (2025)", embedUrl: "https://short.icu/4gskYYIVi", posterUrl: "https://m.media-amazon.com/images/M/MV5BODYwNDMyYWQtMTU5Yy00Y2JjLTg5OWQtMGJiMzIxMjAyZmQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller, Suspense", category: "Korean Country", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Pavane (2026)", embedUrl: "https://short.icu/gDYrgP0Zs", posterUrl: "https://m.media-amazon.com/images/M/MV5BODQ3MDY2NjItZTg4NC00MjUxLWE4ZWYtNDMwNDI0Y2NhYTIxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "Korean Country", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
