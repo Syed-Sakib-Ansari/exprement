@@ -1,16 +1,60 @@
 const contentData = [
     {
+        title: "Detective Hole (2026)", posterUrl: "https://resizing.flixster.com/4o9r4CEVnohwOhp8EpPlkTmkbeQ=/fit-in/705x460/v2/https://resizing.flixster.com/3Yhmdkjd3Z2IRmDLrlbSSeJbPgc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vOTJjNTgzNjAtYjEzNS00ZGMxLTg5ZTAtYzIzMDNkYzc4ZTA0LmpwZw==", genre: "Crime, Mystery & Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/xeaeiu4zQ" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/etK8hgHpq" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/r3P8v_Qcb" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/QqhAiTEXp" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/LlqB7r6kb" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/MfyQMq_QH" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/pWmZqr1uA" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/7EN88bMaI" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/utZj6_cfn" },
+        ]
+    }, {
+        title: "Something Very Bad Is Going to Happen (2026)", posterUrl: "https://resizing.flixster.com/20ruHpRxWUUdJJac-2U7D_o7DX0=/fit-in/705x460/v2/https://resizing.flixster.com/08jjnSUcsRJLH56lq9IdflrhbEk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMDBlNGZkYTItNTg0Yy00MmI5LTg3MjYtMzQzY2VhNDQzMDcwLmpwZw==", genre: "Drama, Horror, Mystery & Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/VDj5efa79" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/_meyRIWgO" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/k_yyJ9FgnC" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/tQb8sUHPl" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/eXV0J8lPq" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/AxTC0Jq9o" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/8ys3gKClW" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/GSLSw1-gL" },
+        ]
+    }, {
+        title: "Mardaani 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6elve", posterUrl: "https://resizing.flixster.com/qUb0VXN2zyd885MnWZRqmloMxfQ=/fit-in/705x460/v2/https://resizing.flixster.com/LpUnLQy3qzVOAqkF-d_Rh7Xiuh4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzFlNzRlMDI3LTY3ZGItNDljNi1iYzQ4LWRlZGY5Y2UxYWNkNi5qcGc=", genre: "Crime, Drama, Mystery & Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6elve&dl=1"
+    }, {
+        title: "O' Romeo (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yzs8c", posterUrl: "https://resizing.flixster.com/sbiwNmlSx6welFpp36aIJoKZj28=/fit-in/705x460/v2/https://resizing.flixster.com/3RPG01zNRu9KnzRzJvjtRto17Nc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUzNzBlZjQwLTZjYmEtNGViNy1iZjExLTk3NTYwMGQ0MTgwOS5wbmc=", genre: "Action, Mystery & Thriller, Romance", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzs8c&dl=1"
+    }, {
         title: "The Red Line (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qfkvf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWY5ZTIzNDktMjEyNS00MTg0LTljYWItOTU4NDU5OTU4ZGM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfkvf&dl=1"
     }, {
         title: "Zung: The Rust (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#spo65", posterUrl: "https://img.rgstatic.com/content/show/fc63facc-8ffe-45b9-9aba-11edaae1f9ee/poster-342.webp", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#spo65&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
         title: "Pretty Lethal (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jly3z", posterUrl: "http://www.impawards.com/2026/posters/pretty_lethal.jpg", genre: "Action, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jly3z&dl=1",
     }, {
-        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndff", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndff&dl=1",
+        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3gck3", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3gck3&dl=1",
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
     }, {
         title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1uoif", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1uoif&dl=1",
+    }, {
+        title: "Muthu Alias Kaattaan (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGNjMjU3NGMtMjZjYi00YTJlLWIxMWUtYTY2MjZkMjBmNWU4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/XJ86w2BUpl" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/RgJXsWELw" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/GZ_DLZ0Do" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/VNzJRlvvq" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/hbHXw-P69" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/WOorxbu2_o" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/_7OP0A_3G" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/wX4Xo0zz8" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/h4O6vxz0C" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/ukTJxqz6_e" },
+        ]
+    }, {
+        title: "Kadhal Reset Repeat (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#ec9p3", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTk3ZjZkNTctNmJhYy00MjhjLTljMzEtZDQ2NWRmNjhhNGIyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Musical", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ec9p3&dl=1",
+    }, {
+        title: "Whistle (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#vti3w", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWIwYzUwNmMtYTY2My00ODg2LWI3MmEtNmY0Njg3MzYwYmQyXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Recent Adds", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vti3w&dl=1",
     }, {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
@@ -19,8 +63,6 @@ const contentData = [
         title: "Dukaan (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vt3ja", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDUzMDdlZTAtNDgyZi00OGU5LTg3NjgtNjlhNzhiMzljNDAzXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt3ja&dl=1",
     }, {
         title: "Kaliyugam 2064 (2025)",embedUrl: "https://moviedakhi.4meplayer.com/#qfxpv", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzUyMDQ1MDItMDYzNS00NWZkLThiMWEtNmIzNTE5MmVkYzVmXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfxpv&dl=1",
-    }, {
-        title: "GOAT (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#kwhrs", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzE5OTJkOGMtYWFiNi00NTlkLWE3ZWItY2ZlNjkyOWVhMjMyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#kwhrs&dl=1"
     }, {
         title: "The Beauty (2026)", posterUrl: "https://images.justwatch.com/poster/340658801/s718/the-beauty.jpg", genre: "Horror, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-11", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/sve1FrXP6" },
@@ -35,33 +77,6 @@ const contentData = [
             { number: 10, title: "Episode 10", embedUrl: "https://short.icu/4O1L2Atjb" },
             { number: 11, title: "Episode 11", embedUrl: "https://short.icu/m6XXG_0hb" },
         ]
-    }, {
-        title: "Bait (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BODgzMTk3YzUtMjRmYy00MGI1LWIwODctMGE2Njc0N2ZjNDM5XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Sci-Fi", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-6", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/t76UuT-vv" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/Uyvp3Utvl" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/NSLqW_gJk" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/RoLUxuJa4" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/S7h-0gzI8" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/ha8IE2lMk" },
-        ]
-    }, {
-        title: "Radioactive Emergency (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c5o1b", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWU3NzJlMjEtYTkwYy00ZGFhLWE5MGUtZWM2YTRmNTNjMDhmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, History, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5o1b&dl=1", seriesInfo: "Season 1, Episode ALL",
-    }, {
-        title: "Agent Zeta (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yzelk", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3d/Zeta_poster.jpeg", genre: "Crime, Drama, Mystery & Thriller, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzelk&dl=1", seriesInfo: "Season 1, Episode ALL",
-    }, {
-        title: "Durlabh Prasad Ki Dusri Shadi (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#c5yav", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzZiYjU1YWItMDkxMi00ZjQzLTkwMjItMDg2OGRmNGUyODMyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Family", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5yav&dl=1",
-    }, {
-        title: "Mustafa Mustafa (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#higc6", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2Q4MzI2NTAtZWQ2Mi00MjMzLWEzZDQtYWEwM2YzNzRiYmJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#higc6&dl=1",
-    }, {
-        title: "The Son of Revenge – The Story of Kalevala (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56fba", posterUrl: "https://cdn.moviefone.com/image-assets/1016024/yMztFelubPpfCqDIWFn7jCl0ZMK.jpg?d=360x540&q=80", genre: "Drama, Fantasy, History, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56fba&dl=1",
-    }, {
-        title: "Chiraiya (2026)", posterUrl: "https://images.filmibeat.com/img/popcorn/ws_images/chiraiya/chiraiya.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfytq&dl=1", seriesInfo: "Season 1, Episode 1-6", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/q17skII0Q" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/72BZFxcyo" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/i2z6GtdBF" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/tFExoVT3b" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/MLrz4yP0V" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/bq_EYMkLO" },]
     },
 
 
@@ -99,7 +114,7 @@ const contentData = [
     }, {
         title: "Assi (2026)", embedUrl: "https://short.icu/hTsDsIuc9", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Assi_film_poster.jpg/250px-Assi_film_poster.jpg", genre: "Courtroom, Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "O' Romeo (2026)", embedUrl: "https://short.icu/tuaah0d_G", posterUrl: "https://resizing.flixster.com/sbiwNmlSx6welFpp36aIJoKZj28=/fit-in/705x460/v2/https://resizing.flixster.com/3RPG01zNRu9KnzRzJvjtRto17Nc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUzNzBlZjQwLTZjYmEtNGViNy1iZjExLTk3NTYwMGQ0MTgwOS5wbmc=", genre: "Action, Mystery & Thriller, Romance", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "O' Romeo (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yzs8c", posterUrl: "https://resizing.flixster.com/sbiwNmlSx6welFpp36aIJoKZj28=/fit-in/705x460/v2/https://resizing.flixster.com/3RPG01zNRu9KnzRzJvjtRto17Nc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUzNzBlZjQwLTZjYmEtNGViNy1iZjExLTk3NTYwMGQ0MTgwOS5wbmc=", genre: "Action, Mystery & Thriller, Romance", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzs8c&dl=1"
     }, {
         title: "Tu Yaa Main (2026)", embedUrl: "https://short.icu/3_ecKgh0d", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWFiODg3ZmQtYTUxZS00ZDkzLWJiNTEtYTExMzNlMDlhZjNjXkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -115,7 +130,7 @@ const contentData = [
     }, {
         title: "Hashtag Star (2026)", embedUrl: "https://short.icu/24jaSl7Hw", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/80c1675e2add13eafb36a2227cb8575c0635c302503fa6b078137644ce2ef6d7.jpg", genre: "Crime, Drama, Mystery & Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Mardaani 3 (2026)", embedUrl: "https://short.icu/vjsEU5VkD", posterUrl: "https://resizing.flixster.com/qUb0VXN2zyd885MnWZRqmloMxfQ=/fit-in/705x460/v2/https://resizing.flixster.com/LpUnLQy3qzVOAqkF-d_Rh7Xiuh4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzFlNzRlMDI3LTY3ZGItNDljNi1iYzQ4LWRlZGY5Y2UxYWNkNi5qcGc=", genre: "Crime, Drama, Mystery & Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Mardaani 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6elve", posterUrl: "https://resizing.flixster.com/qUb0VXN2zyd885MnWZRqmloMxfQ=/fit-in/705x460/v2/https://resizing.flixster.com/LpUnLQy3qzVOAqkF-d_Rh7Xiuh4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzFlNzRlMDI3LTY3ZGItNDljNi1iYzQ4LWRlZGY5Y2UxYWNkNi5qcGc=", genre: "Crime, Drama, Mystery & Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6elve&dl=1"
     }, {
         title: "Mayasabha - The Hall of Illusion (2026)", embedUrl: "https://short.icu/jjI1E8EcU", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmU0NTRjNTItNThhOS00OWFjLWFjNjQtN2ZkNDVhYWFmOWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Psychological Fantasy, Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -449,11 +464,13 @@ const contentData = [
 
 
     {
+        title: "Whistle (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#vti3w", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWIwYzUwNmMtYTY2My00ODg2LWI3MmEtNmY0Njg3MzYwYmQyXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vti3w&dl=1",
+    }, {
         title: "Pretty Lethal (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jly3z", posterUrl: "http://www.impawards.com/2026/posters/pretty_lethal.jpg", genre: "Action, Horror, Thriller", category: "Hollywood", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jly3z&dl=1",
     }, {
         title: "Patriots Day: The City of Boston (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#hiatg", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM0MjRlZTEtYzQxZS00ODIwLThkYTYtNjA4NjNjZTM3NTRmXkEyXkFqcGc@._V1_.jpg", genre: "Documentary", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hiatg&dl=1",
     }, {
-        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndff", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndff&dl=1",
+        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3gck3", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3gck3&dl=1",
     }, {
         title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1uoif", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1uoif&dl=1",
     }, {
@@ -2021,7 +2038,7 @@ const contentData = [
     }, {
         title: "Spider-Man 3 (2007)", embedUrl: "https://short.icu/RNiAkssQm", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Spider-Man_3%2C_International_Poster.jpg/250px-Spider-Man_3%2C_International_Poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Spider-Man 2 (2004)", embedUrl: "https://short.icu/uvweeihLD", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Spider-Man_2_poster.jpg/250px-Spider-Man_2_poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Spider-Man 2 (2004)", embedUrl: "https://short.icu/uvweeihLD", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGQ0YTQyYTgtNWI2YS00NTE2LWJmNDItNTFlMTUwNmFlZTM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Spider-Man (2002)", embedUrl: "https://short.icu/9owv7S-tF", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Spider-Man_%282002_film%29_poster.jpg/250px-Spider-Man_%282002_film%29_poster.jpg", genre: "Action+Sci-Fi", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -2101,6 +2118,21 @@ const contentData = [
 
 
     {
+        title: "Muthu Alias Kaattaan (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGNjMjU3NGMtMjZjYi00YTJlLWIxMWUtYTY2MjZkMjBmNWU4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Drama", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/XJ86w2BUpl" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/RgJXsWELw" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/GZ_DLZ0Do" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/VNzJRlvvq" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/hbHXw-P69" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/WOorxbu2_o" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/_7OP0A_3G" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/wX4Xo0zz8" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/h4O6vxz0C" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/ukTJxqz6_e" },
+        ]
+    }, {
+        title: "Kadhal Reset Repeat (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#ec9p3", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTk3ZjZkNTctNmJhYy00MjhjLTljMzEtZDQ2NWRmNjhhNGIyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Musical", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ec9p3&dl=1",
+    }, {
         title: "Kaliyugam 2064 (2025)",embedUrl: "https://moviedakhi.4meplayer.com/#qfxpv", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzUyMDQ1MDItMDYzNS00NWZkLThiMWEtNmIzNTE5MmVkYzVmXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfxpv&dl=1",
     }, {
         title: "Sabdham (2025)",embedUrl: "https://moviedakhi.4meplayer.com/#3gr9b", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhYjc3NmMtMWNjZi00MWQ0LWExN2ItYjI1MzE2ZjFkZDIwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3gr9b&dl=1",
@@ -3427,6 +3459,29 @@ const contentData = [
 
 
     {
+        title: "Detective Hole (2026)", posterUrl: "https://resizing.flixster.com/4o9r4CEVnohwOhp8EpPlkTmkbeQ=/fit-in/705x460/v2/https://resizing.flixster.com/3Yhmdkjd3Z2IRmDLrlbSSeJbPgc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vOTJjNTgzNjAtYjEzNS00ZGMxLTg5ZTAtYzIzMDNkYzc4ZTA0LmpwZw==", genre: "Crime, Mystery & Thriller, Drama", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/xeaeiu4zQ" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/etK8hgHpq" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/r3P8v_Qcb" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/QqhAiTEXp" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/LlqB7r6kb" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/MfyQMq_QH" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/pWmZqr1uA" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/7EN88bMaI" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/utZj6_cfn" },
+        ]
+    }, {
+        title: "Something Very Bad Is Going to Happen (2026)", posterUrl: "https://resizing.flixster.com/20ruHpRxWUUdJJac-2U7D_o7DX0=/fit-in/705x460/v2/https://resizing.flixster.com/08jjnSUcsRJLH56lq9IdflrhbEk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMDBlNGZkYTItNTg0Yy00MmI5LTg3MjYtMzQzY2VhNDQzMDcwLmpwZw==", genre: "Drama, Horror, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/VDj5efa79" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/_meyRIWgO" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/k_yyJ9FgnC" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/tQb8sUHPl" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/eXV0J8lPq" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/AxTC0Jq9o" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/8ys3gKClW" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/GSLSw1-gL" },
+        ]
+    }, {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
         ]
