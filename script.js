@@ -1,6 +1,6 @@
 const contentData = [
     {
-        title: "Zung: The Rust (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#spo65", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmEyZWYyNWYtODA3ZC00NmVjLWE5NDItNjk5ZDdkZTdkMWY0XkEyXkFqcGc@._V1_QL75_UY281_CR18,0,190,281_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#spo65&dl=1", seriesInfo: "Season 1, Episode ALL",
+        title: "Zung: The Rust (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#spo65", posterUrl: "https://img.rgstatic.com/content/show/fc63facc-8ffe-45b9-9aba-11edaae1f9ee/poster-342.webp", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#spo65&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
         title: "Pretty Lethal (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jly3z", posterUrl: "http://www.impawards.com/2026/posters/pretty_lethal.jpg", genre: "Action, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jly3z&dl=1",
     }, {
