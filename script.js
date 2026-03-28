@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Inuyashiki (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#rb8ad", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/400d5283f8c0d391286d839c78002ef1e7ecd30d3200352441fa3abbd32255a2.jpg", genre: "Drama, Action, Sci-Fi, Thriller, Suspense", category: "Recent Adds", language: "Dual Audio", quality:"bluray", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rb8ad&dl=1"
+    }, {
         title: "Detective Hole (2026)", posterUrl: "https://resizing.flixster.com/4o9r4CEVnohwOhp8EpPlkTmkbeQ=/fit-in/705x460/v2/https://resizing.flixster.com/3Yhmdkjd3Z2IRmDLrlbSSeJbPgc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vOTJjNTgzNjAtYjEzNS00ZGMxLTg5ZTAtYzIzMDNkYzc4ZTA0LmpwZw==", genre: "Crime, Mystery & Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-9", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/xeaeiu4zQ" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/etK8hgHpq" },
@@ -33,7 +35,7 @@ const contentData = [
     }, {
         title: "Pretty Lethal (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jly3z", posterUrl: "http://www.impawards.com/2026/posters/pretty_lethal.jpg", genre: "Action, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jly3z&dl=1",
     }, {
-        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3gck3", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3gck3&dl=1",
+        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6ewyu", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ewyu&dl=1",
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
     }, {
@@ -56,27 +58,13 @@ const contentData = [
     }, {
         title: "Whistle (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#vti3w", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWIwYzUwNmMtYTY2My00ODg2LWI3MmEtNmY0Njg3MzYwYmQyXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Recent Adds", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vti3w&dl=1",
     }, {
-        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
         ]
     }, {
         title: "Dukaan (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vt3ja", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDUzMDdlZTAtNDgyZi00OGU5LTg3NjgtNjlhNzhiMzljNDAzXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt3ja&dl=1",
     }, {
         title: "Kaliyugam 2064 (2025)",embedUrl: "https://moviedakhi.4meplayer.com/#qfxpv", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzUyMDQ1MDItMDYzNS00NWZkLThiMWEtNmIzNTE5MmVkYzVmXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfxpv&dl=1",
-    }, {
-        title: "The Beauty (2026)", posterUrl: "https://images.justwatch.com/poster/340658801/s718/the-beauty.jpg", genre: "Horror, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-11", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/sve1FrXP6" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/390_9tJFw" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/bvqamxPht" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/jHUzwc-oW" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/1aoGflaTL" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/qkOREPhNC" },
-            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/6HTD602yU" },
-            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/nubPzMzzS" },
-            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/uZGF1BKFg" },
-            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/4O1L2Atjb" },
-            { number: 11, title: "Episode 11", embedUrl: "https://short.icu/m6XXG_0hb" },
-        ]
     },
 
 
@@ -470,7 +458,7 @@ const contentData = [
     }, {
         title: "Patriots Day: The City of Boston (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#hiatg", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM0MjRlZTEtYzQxZS00ODIwLThkYTYtNjA4NjNjZTM3NTRmXkEyXkFqcGc@._V1_.jpg", genre: "Documentary", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hiatg&dl=1",
     }, {
-        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3gck3", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3gck3&dl=1",
+        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6ewyu", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Hollywood", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ewyu&dl=1",
     }, {
         title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1uoif", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1uoif&dl=1",
     }, {
@@ -2872,6 +2860,8 @@ const contentData = [
 
 
     {
+        title: "Inuyashiki (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#rb8ad", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/400d5283f8c0d391286d839c78002ef1e7ecd30d3200352441fa3abbd32255a2.jpg", genre: "Drama, Action, Sci-Fi, Thriller, Suspense", category: "Korean Country", language: "Dual Audio", quality:"bluray", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rb8ad&dl=1"
+    }, {
         title: "Murderer Report (2025)", embedUrl: "https://short.icu/4gskYYIVi", posterUrl: "https://m.media-amazon.com/images/M/MV5BODYwNDMyYWQtMTU5Yy00Y2JjLTg5OWQtMGJiMzIxMjAyZmQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller, Suspense", category: "Korean Country", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Pavane (2026)", embedUrl: "https://short.icu/gDYrgP0Zs", posterUrl: "https://m.media-amazon.com/images/M/MV5BODQ3MDY2NjItZTg4NC00MjUxLWE4ZWYtNDMwNDI0Y2NhYTIxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "Korean Country", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -3482,7 +3472,7 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/GSLSw1-gL" },
         ]
     }, {
-        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
         ]
     }, {
@@ -4392,9 +4382,15 @@ function createMovieCard(item) {
     const card = document.createElement('div');
     card.className = 'movie-card relative flex flex-col group';
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
-
+    const qualityBadgeHtml = item.quality ?
+        `<div class="absolute top-2 left-2 z-20">
+            <span class="bg-[#E50914] text-white px-[6px] py-[2px] rounded-[2px] font-black text-[10px] uppercase tracking-[0.5px] shadow-[0_2px_8px_rgba(0,0,0,0.8)] border-none">
+                ${item.quality}
+            </span>
+        </div>` : '';
     card.innerHTML = `
 <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3]">
+${qualityBadgeHtml}
 <div class="absolute top-2 right-2 z-20"><span class="lang-badge border-none shadow-lg">${item.language}</span></div>
 <img 
 src="${getOptimizedImageUrl(item.posterUrl)}" 
@@ -4825,58 +4821,58 @@ function closeAnnouncement() {
 // ==========================================
 
 // 1. Disable Right Click entirely to hide 'Inspect' everywhere
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-});
+// document.addEventListener('contextmenu', (e) => {
+//     e.preventDefault();
+// });
 
-document.addEventListener('keydown', (e) => {
-    // Allow normal keyboard behavior inside the search box
-    if (e.target.id === 'searchInput') return;
+// document.addEventListener('keydown', (e) => {
+//     // Allow normal keyboard behavior inside the search box
+//     if (e.target.id === 'searchInput') return;
 
-    // Block F12 (DevTools)
-    if (e.key === 'F12') {
-        e.preventDefault();
-    }
+//     // Block F12 (DevTools)
+//     if (e.key === 'F12') {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
+//     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+U / Cmd+Opt+U (View Source)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+U / Cmd+Opt+U (View Source)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+S / Cmd+S (Save Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+S / Cmd+S (Save Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+P / Cmd+P (Print Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+P / Cmd+P (Print Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+//         e.preventDefault();
+//     }
 
-    // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
-        e.preventDefault();
-    }
-});
+//     // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
+//         e.preventDefault();
+//     }
+// });
 
-// 3. Prevent Native Copy, Cut, Paste events (except search box)
-['copy', 'cut', 'paste'].forEach(evt => {
-    document.addEventListener(evt, (e) => {
-        if (e.target.id !== 'searchInput') {
-            e.preventDefault();
-        }
-    });
-});
+// // 3. Prevent Native Copy, Cut, Paste events (except search box)
+// ['copy', 'cut', 'paste'].forEach(evt => {
+//     document.addEventListener(evt, (e) => {
+//         if (e.target.id !== 'searchInput') {
+//             e.preventDefault();
+//         }
+//     });
+// });
 
-// 4. Prevent Dragging elements (like ghost-dragging images to save them)
-document.addEventListener('dragstart', (e) => {
-    // Allow FAB pointer dragging, but prevent native HTML element dragging
-    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-        e.preventDefault();
-    }
-});
+// // 4. Prevent Dragging elements (like ghost-dragging images to save them)
+// document.addEventListener('dragstart', (e) => {
+//     // Allow FAB pointer dragging, but prevent native HTML element dragging
+//     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+//         e.preventDefault();
+//     }
+// });
