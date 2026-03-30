@@ -16,7 +16,7 @@ const contentData = [
     }, {
         title: "Mike & Nick & Nick & Alice (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8ausn", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDBiNjIyNjUtNWZlYy00MGU4LWFjNDUtMGExYTZlNmNhZTY4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Crime", category: "Recent Adds", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8ausn&dl=1",
     }, {
-        title: "Rockabye (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#frhbt", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTk4ODA1YTYtNTY3OC00ZWFlLTk3MmItNjBjZGJhNjQxYzhkXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "English", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#frhbt&dl=1",
+        title: "Mrithyunjay (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56blp", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTU1ODY3N2UtZjZkYy00MGUxLWEzN2MtODU3NDMwZWIzZGJhXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56blp&dl=1",
     }, {
         title: "The Accursed (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#povda", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzNmMWQzZGItOTJlMS00MGZlLTlkNWUtZmY4ZWZkNTBjMTYwXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Recent Adds", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#povda&dl=1",
     }, {
@@ -1016,6 +1016,8 @@ const contentData = [
         title: "Avatar (2009)", embedUrl: "https://short.icu/7Nm2vQpuD", posterUrl: "https://resizing.flixster.com/79_bzkpQbMtfbaDtHSRQXoLuIT4=/fit-in/705x460/v2/https://resizing.flixster.com/US4oIx6TDB28ihQIlkRR0olD1f0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzNmNjE4NjkxLTdjZGUtNDEyMS1iZTQ1LTIyZDk4MGRiOTY0Zi53ZWJw", genre: "Sci-Fi/Adventure/Action/Fantasy", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Avatar: The Way of Water (2022)", embedUrl: "https://short.icu/rbXW8Apjd", posterUrl: "https://resizing.flixster.com/Npr_4YSkqvxwgzlp0jgohy_EAic=/fit-in/705x460/v2/https://resizing.flixster.com/JRJ7Yg9m_hVgLpbbV_xnXt_g3hg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzgwODA1MDViLWYyNGUtNDQyMC1hMmU4LThjMzNjN2M1MmZjOS5qcGc=", genre: "Sci-Fi/Adventure/Action/Fantasy", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Avatar: Fire and Ash (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#dsifp", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Sci-Fi/Adventure/Action/Fantasy", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dsifp&dl=1"
     }, {
         title: "The Ritual (2017)", embedUrl: "https://short.icu/Lrex9p7_Y", posterUrl: "https://resizing.flixster.com/rfryIU95meTvgkHEGtUE89kT8oA=/fit-in/705x460/v2/https://resizing.flixster.com/Y9KtRAJKxPgnl8rlY44soohN15A=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzgwZTdhMjFhLTkzZjYtNDI0ZC1hMGQxLTE0YzljMmIwYTI4YS53ZWJw", genre: "Horror", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -2111,6 +2113,8 @@ const contentData = [
 
 
     {
+        title: "Mrithyunjay (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56blp", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTU1ODY3N2UtZjZkYy00MGUxLWEzN2MtODU3NDMwZWIzZGJhXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56blp&dl=1",
+    }, {
         title: "Alpha: Men Love Vengeance (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8atwh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmU4MDlkOGMtMGNjNi00YWE4LWExZDctNDdhZDQzZTVjZTQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action", category: "South", language: "hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8atwh&dl=1",
     }, {
         title: "The Murder Files (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#himmr", posterUrl: "https://instagram.fdac189-1.fna.fbcdn.net/v/t39.30808-6/656821714_122260542236167873_7692242048585016408_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzg2MDM5MzY0NTYxNDkxOTA2Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=tJ2Inaway4cQ7kNvwHLRQ3o&_nc_oc=Adr9BfCdnxBsDM9ZtMgBZgDuH5RYgGOVqHIR_hOaFUiqrvstQGeNBHFzuHcJetgHJew&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fdac189-1.fna&_nc_gid=UUNNFrIz-aBCqZ0tBAwzaw&_nc_ss=7a32e&oh=00_AfwtNtq74kFeE6oqCoIv6P7j1bPrR82P7QOJ3c80WQw7nA&oe=69CF9F3D", genre: "Crime, Drama, Thriller, Mystery", category: "South", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#himmr&dl=1",
@@ -2504,7 +2508,7 @@ const contentData = [
 
 
     {
-        title: "Hoppers (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qfmrh", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzRiMzZlMTMtNmU3OC00MDUwLThmNDUtMTBjZmQ3MWQ4NTljXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Animation", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfmrh&dl=1"
+        title: "Hoppers (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fry38", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzRiMzZlMTMtNmU3OC00MDUwLThmNDUtMTBjZmQ3MWQ4NTljXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Animation", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fry38&dl=1"
     }, {
         title: "GOAT (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#kwhrs", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzE5OTJkOGMtYWFiNi00NTlkLWE3ZWItY2ZlNjkyOWVhMjMyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Animation", language: "dual audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#kwhrs&dl=1"
     }, {
@@ -3179,7 +3183,7 @@ const contentData = [
     }, {
         title: "Dirty Entertainers: The Business of Indian Erotica (2025)", embedUrl: "https://short.icu/1glXpiQQd", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmQyYWY2Y2QtZTliMy00ZTc0LTk2OGItODE2MTQzYjVhYjUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Kapag Tumayo Ang Testigo (2025)", embedUrl: "https://short.icu/f8nkzBZXk", posterUrl: "https://i.wll.pw/storage.waploaded.com/images/ecf5755ac3fc0b6b40b0ccf9e887b23d.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Tagalog", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Kapag Tumayo Ang Testigo (2025)", embedUrl: "https://short.icu/f8nkzBZXk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTM3YjdjNGEtYWVkMi00YTQ3LWI0ZDctOWZkMDk3ZjgwZmExXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Tagalog", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "The Balconettes (2024)", embedUrl: "https://short.icu/NTJoiFcam", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2QxYTljNTYtNDJjYy00ODZhLWJlMWItYjI2ZDI5MDhjY2RkXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Frence", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -3888,7 +3892,7 @@ const contentData = [
             { number: 5, title: "Episode 5", embedUrl: "https://short.icu/RZuT_M3sue" },
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/hnZRKGEXl" },]
     }, {
-        title: "Luke Cage (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#g1jfn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcyMzc1MjI5MF5BMl5BanBnXkFtZTgwMzE4ODY2OTE@._V1_.jpg", genre: "Fantasy, Action, Adventure, Sci-Fi", category: "Hollywood Series", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#g1jfn&dl=1", seriesInfo: "Season 1, Episode ALL",
+        title: "Luke Cage (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#g1jfn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcyMzc1MjI5MF5BMl5BanBnXkFtZTgwMzE4ODY2OTE@._V1_.jpg", genre: "Fantasy, Action, Adventure, Sci-Fi", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#g1jfn&dl=1", seriesInfo: "Season 1, Episode ALL",
     },    
 
 
