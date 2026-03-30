@@ -1,8 +1,18 @@
 const contentData = [
     {
-        title: "Return to Silent Hill (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hicrs", posterUrl: "https://www.cinemadiroma.it/wp-content/uploads/2026/01/Return-To-Silent-Hill-PosterItalianoUfficiale-scaled-1.jpg", genre: "Horror, Mystery, Drama", category: "Recent Adds", language: "English", quality:"web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hicrs&dl=1",
+        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6ewyu", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ewyu&dl=1",
     }, {
-        title: "53 Sundays (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#odtcx", posterUrl: "https://resizing.flixster.com/zxlOznaZpK0yu2-a9yKWYIwQfXI=/fit-in/705x460/v2/https://resizing.flixster.com/Myz01GPLqK7oKt5Gx2icxNdjpU8=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzE5MjZiZGY4LTE1ZmMtNDllOS05ZjBjLWJiMmU1YTk0M2NiZS5qcGc=", genre: "Comedy, Drama", category: "Recent Adds", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#odtcx&dl=1",
+        title: "Monella (Frivolous Lola) (1998)", embedUrl: "https://moviedakhi.4meplayer.com/#c5edn", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/0ac67915da04969d4c41e0640c1660321561ccca5eb502837f067bc8a3acd0e6.jpg", genre: "Adult, Comedy, Romance", category: "Recent Adds", language: "English", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5edn&dl=1"
+    }, {
+        title: "The Madison (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6e5tj", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGFiODdjY2UtNzAxZC00Mjc3LWJiZTQtYzQ2ZTM3ZWMzNjk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Action", category: "Recent Adds", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6e5tj&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, {
+        title: "Alpha: Men Love Vengeance (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8atwh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmU4MDlkOGMtMGNjNi00YWE4LWExZDctNDdhZDQzZTVjZTQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action", category: "Recent Adds", language: "hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8atwh&dl=1",
+    }, {
+        title: "The Murder Files (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#himmr", posterUrl: "https://instagram.fdac189-1.fna.fbcdn.net/v/t39.30808-6/656821714_122260542236167873_7692242048585016408_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzg2MDM5MzY0NTYxNDkxOTA2Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=tJ2Inaway4cQ7kNvwHLRQ3o&_nc_oc=Adr9BfCdnxBsDM9ZtMgBZgDuH5RYgGOVqHIR_hOaFUiqrvstQGeNBHFzuHcJetgHJew&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fdac189-1.fna&_nc_gid=UUNNFrIz-aBCqZ0tBAwzaw&_nc_ss=7a32e&oh=00_AfwtNtq74kFeE6oqCoIv6P7j1bPrR82P7QOJ3c80WQw7nA&oe=69CF9F3D", genre: "Crime, Drama, Thriller, Mystery", category: "Recent Adds", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#himmr&dl=1",
+    }, {
+        title: "Sanduk (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6e5pk", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzliZTUzMGUtYjQ1NC00YmY0LWIwZGEtYzI5MDdmNWZmZTM2XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy", category: "Recent Adds", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6e5pk&dl=1",
+    }, {
+        title: "Return to Silent Hill (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hicrs", posterUrl: "https://www.cinemadiroma.it/wp-content/uploads/2026/01/Return-To-Silent-Hill-PosterItalianoUfficiale-scaled-1.jpg", genre: "Horror, Mystery, Drama", category: "Recent Adds", language: "English", quality:"web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hicrs&dl=1",
     }, {
         title: "Mike & Nick & Nick & Alice (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8ausn", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDBiNjIyNjUtNWZlYy00MGU4LWFjNDUtMGExYTZlNmNhZTY4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Crime", category: "Recent Adds", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8ausn&dl=1",
     }, {
@@ -11,8 +21,6 @@ const contentData = [
         title: "The Accursed (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#povda", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzNmMWQzZGItOTJlMS00MGZlLTlkNWUtZmY4ZWZkNTBjMTYwXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Recent Adds", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#povda&dl=1",
     }, {
         title: "Truth or Dare (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#ds8ps", posterUrl: "https://upload.wikimedia.org/wikipedia/en/7/7e/Truth_or_Dare_2017_Poster.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ds8ps&dl=1",
-    }, {
-        title: "Hoppers (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qfmrh", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzRiMzZlMTMtNmU3OC00MDUwLThmNDUtMTBjZmQ3MWQ4NTljXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Recent Adds", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfmrh&dl=1"
     }, {
         title: "Oh Butterfly (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#xm6hn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWE1ZmY5NTMtNWVhMi00MTI5LWFkNmUtM2ZlNWZlOWJjMTllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xm6hn&dl=1",
     }, {
@@ -41,17 +49,9 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/GSLSw1-gL" },
         ]
     }, {
-        title: "Mardaani 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6elve", posterUrl: "https://resizing.flixster.com/qUb0VXN2zyd885MnWZRqmloMxfQ=/fit-in/705x460/v2/https://resizing.flixster.com/LpUnLQy3qzVOAqkF-d_Rh7Xiuh4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzFlNzRlMDI3LTY3ZGItNDljNi1iYzQ4LWRlZGY5Y2UxYWNkNi5qcGc=", genre: "Crime, Drama, Mystery & Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6elve&dl=1"
-    }, {
-        title: "O' Romeo (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yzs8c", posterUrl: "https://resizing.flixster.com/sbiwNmlSx6welFpp36aIJoKZj28=/fit-in/705x460/v2/https://resizing.flixster.com/3RPG01zNRu9KnzRzJvjtRto17Nc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUzNzBlZjQwLTZjYmEtNGViNy1iZjExLTk3NTYwMGQ0MTgwOS5wbmc=", genre: "Action, Mystery & Thriller, Romance", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzs8c&dl=1"
-    }, {
         title: "The Red Line (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qfkvf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWY5ZTIzNDktMjEyNS00MTg0LTljYWItOTU4NDU5OTU4ZGM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfkvf&dl=1"
     }, {
-        title: "Zung: The Rust (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#spo65", posterUrl: "https://img.rgstatic.com/content/show/fc63facc-8ffe-45b9-9aba-11edaae1f9ee/poster-342.webp", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#spo65&dl=1", seriesInfo: "Season 1, Episode ALL",
-    }, {
         title: "Pretty Lethal (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jly3z", posterUrl: "http://www.impawards.com/2026/posters/pretty_lethal.jpg", genre: "Action, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jly3z&dl=1",
-    }, {
-        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6ewyu", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ewyu&dl=1",
     }, 
 
 
@@ -61,13 +61,15 @@ const contentData = [
 
 
     {
+        title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
+    }, {
+        title: "Sanduk (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6e5pk", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzliZTUzMGUtYjQ1NC00YmY0LWIwZGEtYzI5MDdmNWZmZTM2XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy", category: "Bollywood", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6e5pk&dl=1",
+    }, {
         title: "Aayushmati Geeta Matric Pass (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#8ab3a", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmRlNTgxZWUtYzc5NC00MjdkLWFkYTItNDM4ZTFjMzIyZGVkXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8ab3a&dl=1",
     }, {
         title: "Dukaan (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vt3ja", posterUrl: "https://img.rgstatic.com/content/show/fc63facc-8ffe-45b9-9aba-11edaae1f9ee/poster-342.webp", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt3ja&dl=1",
     }, {
         title: "Durlabh Prasad Ki Dusri Shadi (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#c5yav", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzZiYjU1YWItMDkxMi00ZjQzLTkwMjItMDg2OGRmNGUyODMyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Family", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5yav&dl=1",
-    }, {
-        title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
     }, {
         title: "The Taj Story (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#5obar", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzYwODI0ODgtMjBiZi00OGM4LWJlODgtYWQzYTQ5OTBhZWNkXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5obar&dl=1",
     }, {
@@ -441,6 +443,8 @@ const contentData = [
 
 
     {
+        title: "The Haunting (1999)", embedUrl: "https://moviedakhi.4meplayer.com/#posjx", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2E0OWZlNDAtODQxOS00ZjIwLTlhOTMtM2ZhNzZmYWVmOWQxXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery, Thriller", category: "Hollywood", language: "hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#posjx&dl=1",
+    }, {
         title: "Return to Silent Hill (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hicrs", posterUrl: "https://www.cinemadiroma.it/wp-content/uploads/2026/01/Return-To-Silent-Hill-PosterItalianoUfficiale-scaled-1.jpg", genre: "Horror, Mystery, Drama", category: "Hollywood", language: "English", quality:"web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hicrs&dl=1",
     }, {
         title: "53 Sundays (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#odtcx", posterUrl: "https://resizing.flixster.com/zxlOznaZpK0yu2-a9yKWYIwQfXI=/fit-in/705x460/v2/https://resizing.flixster.com/Myz01GPLqK7oKt5Gx2icxNdjpU8=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzE5MjZiZGY4LTE1ZmMtNDllOS05ZjBjLWJiMmU1YTk0M2NiZS5qcGc=", genre: "Comedy, Drama", category: "Hollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#odtcx&dl=1",
@@ -2107,6 +2111,10 @@ const contentData = [
 
 
     {
+        title: "Alpha: Men Love Vengeance (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8atwh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmU4MDlkOGMtMGNjNi00YWE4LWExZDctNDdhZDQzZTVjZTQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action", category: "South", language: "hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8atwh&dl=1",
+    }, {
+        title: "The Murder Files (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#himmr", posterUrl: "https://instagram.fdac189-1.fna.fbcdn.net/v/t39.30808-6/656821714_122260542236167873_7692242048585016408_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzg2MDM5MzY0NTYxNDkxOTA2Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=tJ2Inaway4cQ7kNvwHLRQ3o&_nc_oc=Adr9BfCdnxBsDM9ZtMgBZgDuH5RYgGOVqHIR_hOaFUiqrvstQGeNBHFzuHcJetgHJew&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fdac189-1.fna&_nc_gid=UUNNFrIz-aBCqZ0tBAwzaw&_nc_ss=7a32e&oh=00_AfwtNtq74kFeE6oqCoIv6P7j1bPrR82P7QOJ3c80WQw7nA&oe=69CF9F3D", genre: "Crime, Drama, Thriller, Mystery", category: "South", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#himmr&dl=1",
+    }, {
         title: "Oh Butterfly (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#xm6hn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWE1ZmY5NTMtNWVhMi00MTI5LWFkNmUtM2ZlNWZlOWJjMTllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Mystery, Thriller", category: "South", language: "Hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xm6hn&dl=1",
     }, {
         title: "Muthu Alias Kaattaan (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGNjMjU3NGMtMjZjYi00YTJlLWIxMWUtYTY2MjZkMjBmNWU4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Drama", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-10", episodes: [
@@ -3109,6 +3117,8 @@ const contentData = [
 
 
     {
+        title: "Monella (Frivolous Lola) (1998)", embedUrl: "https://moviedakhi.4meplayer.com/#c5edn", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/0ac67915da04969d4c41e0640c1660321561ccca5eb502837f067bc8a3acd0e6.jpg", genre: "Adult, Comedy, Romance", category: "Others", language: "English", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5edn&dl=1"
+    }, {
         title: "After Porn Ends (2012)", embedUrl: "https://moviedakhi.4meplayer.com/#yzeny", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjE0NTg2NTM1NF5BMl5BanBnXkFtZTcwNTExNjg3Nw@@._V1_.jpg", genre: "Documentary, Adult", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzeny&dl=1"
     }, {
         title: "After Porn Ends 2 (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#56zob", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjgxNzUxMWMtMjM4MC00NjBiLTkxM2EtMWY5YzBhNDI2ZmY3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Documentary, Adult", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56zob&dl=1"
@@ -3456,6 +3466,10 @@ const contentData = [
 
 
     {
+        title: "The Madison (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6e5tj", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGFiODdjY2UtNzAxZC00Mjc3LWJiZTQtYzQ2ZTM3ZWMzNjk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Action", category: "Hollywood Series", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6e5tj&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, {
+        title: "House of David (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#vtafw", posterUrl: "https://resizing.flixster.com/_CKd1-De9Hc1NHkWh5dOsWrKF2M=/fit-in/705x460/v2/https://resizing.flixster.com/dWYkGPk61O7WcFMQPOk1yYOwu-c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vYzUxYWYyMzctMDFmYS00ZDA2LWFiMGMtODQwNzBmMTQ3NjEwLmpwZw==", genre: "Drama, Action, Adventure", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vtafw&dl=1", seriesInfo: "Season 2, Episode ALL",
+    }, {
         title: "Detective Hole (2026)", posterUrl: "https://resizing.flixster.com/4o9r4CEVnohwOhp8EpPlkTmkbeQ=/fit-in/705x460/v2/https://resizing.flixster.com/3Yhmdkjd3Z2IRmDLrlbSSeJbPgc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vOTJjNTgzNjAtYjEzNS00ZGMxLTg5ZTAtYzIzMDNkYzc4ZTA0LmpwZw==", genre: "Crime, Mystery & Thriller, Drama", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-9", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/xeaeiu4zQ" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/etK8hgHpq" },
