@@ -43,21 +43,6 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/7EN88bMaI" },
             { number: 9, title: "Episode 9", embedUrl: "https://short.icu/utZj6_cfn" },
         ]
-    }, {
-        title: "Something Very Bad Is Going to Happen (2026)", posterUrl: "https://resizing.flixster.com/20ruHpRxWUUdJJac-2U7D_o7DX0=/fit-in/705x460/v2/https://resizing.flixster.com/08jjnSUcsRJLH56lq9IdflrhbEk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMDBlNGZkYTItNTg0Yy00MmI5LTg3MjYtMzQzY2VhNDQzMDcwLmpwZw==", genre: "Drama, Horror, Mystery & Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/VDj5efa79" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/_meyRIWgO" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/k_yyJ9FgnC" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/tQb8sUHPl" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/eXV0J8lPq" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/AxTC0Jq9o" },
-            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/8ys3gKClW" },
-            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/GSLSw1-gL" },
-        ]
-    }, {
-        title: "The Red Line (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qfkvf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWY5ZTIzNDktMjEyNS00MTg0LTljYWItOTU4NDU5OTU4ZGM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfkvf&dl=1"
-    }, {
-        title: "Pretty Lethal (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jly3z", posterUrl: "http://www.impawards.com/2026/posters/pretty_lethal.jpg", genre: "Action, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jly3z&dl=1",
     }, 
 
 
