@@ -1,5 +1,11 @@
 const contentData = [
     {
+        title: "Sampradayaini Suppini Suddapusaani (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rbdmx", posterUrl: "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/LPVsnSMfxxASGC676h3G3kXg2obfZLj5_300x442.jpg?t=1771924324", genre: "Drama, Thriller", category: "Recent Adds", language: "hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rbdmx&dl=1",
+    }, {
+        title: "Aa Okkati Adakku (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#odyzp", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjQyYTRjYTAtNjEzYy00NDlkLTk5MGEtMjhlNmQ1ZTg2MmYwXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#odyzp&dl=1",
+    }, {
+        title: "Kasargod Embassy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#nj6xn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDZmNGRkMzYtYmE0Yi00YjJhLWEyMDMtMzNkMjU1NmQzZmIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nj6xn&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, {
         title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6ewyu", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ewyu&dl=1",
     }, {
         title: "Monella (Frivolous Lola) (1998)", embedUrl: "https://moviedakhi.4meplayer.com/#c5edn", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/0ac67915da04969d4c41e0640c1660321561ccca5eb502837f067bc8a3acd0e6.jpg", genre: "Adult, Comedy, Romance", category: "Recent Adds", language: "English", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5edn&dl=1"
@@ -2113,6 +2119,10 @@ const contentData = [
 
 
     {
+        title: "Sampradayaini Suppini Suddapusaani (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rbdmx", posterUrl: "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/LPVsnSMfxxASGC676h3G3kXg2obfZLj5_300x442.jpg?t=1771924324", genre: "Drama, Thriller", category: "South", language: "hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rbdmx&dl=1",
+    }, {
+        title: "Aa Okkati Adakku (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#odyzp", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjQyYTRjYTAtNjEzYy00NDlkLTk5MGEtMjhlNmQ1ZTg2MmYwXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#odyzp&dl=1",
+    }, {
         title: "Mrithyunjay (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56blp", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTU1ODY3N2UtZjZkYy00MGUxLWEzN2MtODU3NDMwZWIzZGJhXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56blp&dl=1",
     }, {
         title: "Alpha: Men Love Vengeance (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8atwh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmU4MDlkOGMtMGNjNi00YWE4LWExZDctNDdhZDQzZTVjZTQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action", category: "South", language: "hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8atwh&dl=1",
@@ -3339,6 +3349,8 @@ const contentData = [
 
 
     {
+        title: "Kasargod Embassy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#nj6xn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDZmNGRkMzYtYmE0Yi00YjJhLWEyMDMtMzNkMjU1NmQzZmIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller", category: "Bollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nj6xn&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, {
         title: "Zung: The Rust (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#spo65", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmEyZWYyNWYtODA3ZC00NmVjLWE5NDItNjk5ZDdkZTdkMWY0XkEyXkFqcGc@._V1_QL75_UY281_CR18,0,190,281_.jpg", genre: "Drama, Thriller", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#spo65&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
         title: "Chiraiya (2026)", posterUrl: "https://images.filmibeat.com/img/popcorn/ws_images/chiraiya/chiraiya.jpg", genre: "Drama", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfytq&dl=1", seriesInfo: "Season 1, Episode 1-6", episodes: [
@@ -3470,6 +3482,17 @@ const contentData = [
 
 
     {
+        title: "House of David (2025)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWExMTJiMGQtYTA3OC00ZGM0LTg5MGQtZjMwM2VlNTU3YjRhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "History, Drama, Action, Adventure", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/f6M3SH4R3" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/lDc3SS13l" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/Etjtlpf-m" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/XC9HgWcJy" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/dM1Ioyu_V" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/nJVGrvtcB" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/UzxNQ4WGn" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/52yDUblf6" },
+        ]
+    }, {
         title: "The Madison (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6e5tj", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGFiODdjY2UtNzAxZC00Mjc3LWJiZTQtYzQ2ZTM3ZWMzNjk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Action", category: "Hollywood Series", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6e5tj&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
         title: "House of David (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#vtafw", posterUrl: "https://resizing.flixster.com/_CKd1-De9Hc1NHkWh5dOsWrKF2M=/fit-in/705x460/v2/https://resizing.flixster.com/dWYkGPk61O7WcFMQPOk1yYOwu-c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vYzUxYWYyMzctMDFmYS00ZDA2LWFiMGMtODQwNzBmMTQ3NjEwLmpwZw==", genre: "Drama, Action, Adventure", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vtafw&dl=1", seriesInfo: "Season 2, Episode ALL",
@@ -3893,7 +3916,51 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/hnZRKGEXl" },]
     }, {
         title: "Luke Cage (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#g1jfn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcyMzc1MjI5MF5BMl5BanBnXkFtZTgwMzE4ODY2OTE@._V1_.jpg", genre: "Fantasy, Action, Adventure, Sci-Fi", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#g1jfn&dl=1", seriesInfo: "Season 1, Episode ALL",
-    },    
+    }, {
+        title: "The Boys (2019)", posterUrl: "https://resizing.flixster.com/is9VtxIi8cCHoTDBIagKp1vu4qs=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p16826251_b_v13_aa.jpg", genre: "Comedy, Drama, Action, Adventure, Fantasy", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/EoHETD8aa" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/IkFJcUGBB" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/HZ5kYGo4n" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/IlVacKFpt" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/ivLb5YzgC" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/du7Iksqzm" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/1b5pAc170" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/U8lK4foTs" },
+        ]
+    }, {
+        title: "The Boys (2020)", posterUrl: "https://resizing.flixster.com/TwgTF3lXxqmuM2HW1oR4X_1DtJg=/fit-in/705x460/v2/https://resizing.flixster.com/oynbxA9hJYlfdYfqcy_BrVNu_cQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjczNzIyNC53ZWJw", genre: "Comedy, Drama, Action, Adventure, Fantasy", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/cspdu--Eo" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/Yiz2x7mGM" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/QdK4Uo-AZ" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/pILV1iZO_" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/y_0-YUtmD" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/d17Jn4CYz" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/pZkgdun5l" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/y9KdFfRR8" },
+        ]
+    }, {
+        title: "The Boys (2022)", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/33/The_Boys_Season_3.jpg", genre: "Comedy, Drama, Action, Adventure, Fantasy", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/ZCHUNh6-r" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/-IEOndiy1" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/SBCR0mprP" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/brFY4RlOw" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/MiyreN_3C" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/zY1KrX2Ez" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/7EnkRJHPH" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/PjueLmF5y" },
+        ]
+    }, {
+        title: "The Boys (2024)", posterUrl: "https://i.redd.it/knyercm88yag1.jpeg", genre: "Comedy, Drama, Action, Adventure, Fantasy", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/oWdeVnRPA" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/EikeDx4I1" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/0cr3UROfyj" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/JHEfxnS8J" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/8Zao4zn0i" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/udnrtliiQ" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/ETvjfUrKS" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/398SCRR-Q" },
+        ]
+    },     
 
 
     // =======================================================================
