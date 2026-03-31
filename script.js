@@ -3330,7 +3330,7 @@ const contentData = [
     }, {
         title: "Fair Play (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#powjz", posterUrl: "https://dnm.nflximg.net/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcfkK_WOHixD9Vfy5s_a8IUiCq1ltzBHFQ4QIxYk7ceh-imdN_WlEvGyeXAFyxwv5D4W8wlytAqhLYhuwMQS5iJgGF3fJlYCUnT2.jpg?r=c6c", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#powjz&dl=1"
     }, {
-        title: "Lady Chatterley's Lover (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#qfpvp", posterUrl: "https://i0.wp.com/joethemnmovieman.com/wp-content/uploads/2022/11/EN-US_MPA_LCL_Main_Laurel_Vertical_RGB_PRE_thumbnail.jpeg?quality=89&ssl=1", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfpvp&dl=1"
+        title: "Lady Chatterley's Lover (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#qfpvp", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTgwMjQ1NWUtYTIxNi00NjRjLWIwMTctZDAwZDlhMmIzYjA0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfpvp&dl=1"
     },
 
 
