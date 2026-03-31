@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Meme Slicer | Synthwave Arcade Game Free Online</title>
+    <meta name="title" content="Meme Slicer | Synthwave Arcade Game Free Online">
+    <meta name="description" content="Swipe to slice neon shapes and listen to hilarious meme sounds! Avoid hazard bombs in this high-energy, free-to-play HTML5 synthwave arcade game.">
+    <meta name="keywords" content="meme slicer, synthwave game, arcade game, slice game, html5 game, browser game, free online game, funny sound effects">
+    <meta name="author" content="PlayZone Games">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/meme-slicer">
+    
+    <!-- Best Practices & PWA Support -->
+    <meta name="theme-color" content="#05010f">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Meme Slicer">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/meme-slicer">
+    <meta property="og:title" content="Meme Slicer | Synthwave Arcade">
+    <meta property="og:description" content="Swipe to slice neon shapes and avoid hazard bombs in this high-energy HTML5 game!">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Meme Slicer | Synthwave Arcade">
+    <meta property="twitter:description" content="Swipe to slice neon shapes and avoid hazard bombs in this high-energy HTML5 game!">
+
+    <!-- Performance: Preconnect to Font APIs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Arcade Synthwave Fonts with font-display: swap for performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #090212;
+            --bg-grid: #200b3d;
+            --neon-cyan: #00e5ff;
+            --neon-magenta: #ff0055;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffea00;
+            --neon-purple: #b026ff;
+            --ui-bg: rgba(15, 5, 30, 0.75);
+            --ui-border: rgba(0, 229, 255, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh;
+            padding: 10px;
+            touch-action: none; 
+            overflow: hidden;
+            
+            /* Synthwave Perspective Grid Background */
+            background-image: 
+                linear-gradient(transparent 95%, rgba(0, 229, 255, 0.15) 95%),
+                linear-gradient(90deg, transparent 95%, rgba(0, 229, 255, 0.15) 95%),
+                radial-gradient(circle at 50% 120%, #200b3d 0%, #090212 70%);
+            background-size: 40px 40px, 40px 40px, 100% 100%;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { background-position: 0 0, 0 0, center; }
+            100% { background-position: 0 40px, 40px 0, center; }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            max-width: 800px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 12px 25px;
+            background: var(--ui-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--ui-border);
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+            flex: 0 0 auto;
+            z-index: 2;
+        }
+
+        .stats-container {
+            font-family: 'Bungee', cursive;
+            font-size: 1.4rem;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            letter-spacing: 2px;
+        }
+        
+        .stat-lives {
+            color: var(--neon-magenta);
+            text-shadow: 0 0 10px var(--neon-magenta);
+        }
+
+        .controls-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .game-wrapper {
+            width: 100%;
+            flex-grow: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(176, 38, 255, 0.2), inset 0 0 30px rgba(0, 229, 255, 0.1);
+            border: 2px solid var(--neon-purple);
+            background: radial-gradient(circle at 50% 50%, rgba(32, 11, 61, 0.4) 0%, rgba(9, 2, 18, 0.8) 100%);
+            cursor: crosshair; 
+            touch-action: none;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(9, 2, 18, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity 0.4s ease;
+        }
+
+        #message {
+            font-family: 'Bungee', cursive;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            color: #fff;
+            margin-bottom: 5px;
+            text-align: center;
+            text-shadow: 0 0 20px var(--neon-cyan), 4px 4px 0px var(--neon-purple);
+            line-height: 1.2;
+        }
+
+        #message.fail {
+            text-shadow: 0 0 20px var(--neon-magenta), 4px 4px 0px #ff8800;
+        }
+        
+        #subMessage {
+            font-size: 1.1rem;
+            color: var(--neon-green);
+            margin-bottom: 35px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-shadow: 0 0 8px var(--neon-green);
+            text-transform: uppercase;
+        }
+
+        /* ------------------------------------------- */
+        /* PROMOTIONAL BOX STYLES */
+        /* ------------------------------------------- */
+        .promo-box {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 12px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+            animation: pulsePromo 2s infinite alternate;
+            display: none; /* Shown only on Game Over */
+            pointer-events: auto;
+            z-index: 100;
+        }
+
+        @keyframes pulsePromo {
+            from { box-shadow: 0 0 10px rgba(0, 229, 255, 0.1); border-color: rgba(0, 229, 255, 0.3); }
+            to { box-shadow: 0 0 25px rgba(0, 229, 255, 0.4); border-color: rgba(0, 229, 255, 0.8); }
+        }
+
+        .promo-box h3 {
+            font-family: 'Bungee', cursive;
+            color: var(--neon-yellow);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 234, 0, 0.5);
+        }
+
+        .promo-box p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+        }
+
+        .promo-link-btn {
+            font-family: 'Bungee', cursive;
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, var(--neon-magenta), var(--neon-purple));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
+        }
+
+        .promo-link-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.8);
+            color: #fff;
+        }
+
+        button.primary-btn {
+            font-family: 'Bungee', cursive;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            background: linear-gradient(90deg, var(--neon-purple), var(--neon-magenta));
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            letter-spacing: 3px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.5);
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button.primary-btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-20deg);
+            transition: 0.5s;
+        }
+
+        button.primary-btn:hover::after {
+            left: 150%;
+        }
+
+        button.primary-btn:hover, button.primary-btn:focus-visible {
+            box-shadow: 0 0 40px var(--neon-magenta);
+            transform: translateY(-3px) scale(1.05);
+            outline: none;
+        }
+
+        button.primary-btn:active { 
+            transform: translateY(2px) scale(0.98); 
+        }
+
+        .icon-btn {
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid var(--ui-border);
+            color: var(--neon-cyan);
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            padding: 8px 12px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+        }
+
+        .icon-btn:hover, .icon-btn:focus-visible {
+            background: rgba(0, 229, 255, 0.2);
+            box-shadow: 0 0 15px var(--neon-cyan);
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        .action-btn {
+            background: rgba(255, 0, 85, 0.1);
+            border: 1px solid rgba(255, 0, 85, 0.4);
+            color: var(--neon-magenta);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(255, 0, 85, 0.2);
+            text-transform: uppercase;
+        }
+
+        .action-btn:hover, .action-btn:focus-visible {
+            background: var(--neon-magenta);
+            color: #fff;
+            box-shadow: 0 0 20px var(--neon-magenta);
+            transform: translateY(-2px);
+        }
+
+        /* Improved Accessibility for Range Slider */
+        .volume-control-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #volumeSlider {
+            width: 80px;
+            height: 6px;
+            -webkit-appearance: none;
+            background: rgba(0, 229, 255, 0.3);
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        #volumeSlider:focus-visible {
+            outline: 2px solid var(--neon-cyan);
+            outline-offset: 2px;
+        }
+        
+        #volumeSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 10px var(--neon-cyan);
+            cursor: pointer;
+        }
+
+        .instructions {
+            margin-top: 15px;
+            color: #a0aabf;
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.6;
+            font-weight: 600;
+            flex: 0 0 auto;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .accent-text { color: var(--neon-cyan); text-shadow: 0 0 5px var(--neon-cyan); }
+        .red-text { color: var(--neon-magenta); text-shadow: 0 0 5px var(--neon-magenta); font-weight: 900;}
+
+        @media (max-width: 480px) {
+            .header { padding: 12px; }
+            .stats-container { font-size: 1.1rem; gap: 12px; }
+            .controls-container { gap: 8px; }
+            #volumeSlider { width: 55px; }
+            .instructions { font-size: 0.75rem; }
+            .promo-box { padding: 15px; margin-top: 5px; margin-bottom: 15px; }
+            .promo-box h3 { font-size: 1.2rem; }
+            .promo-box p { font-size: 0.85rem; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Audio Elements for Preloading (metadata only to prevent heavy page load) -->
+    <div id="audio-assets" style="display: none;">
+        <!-- ONE Single Unified Playlist (0 to 87) -->
+        <audio id="sound-meme-0" src="Voicy_Jetha Nonsense.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-1" src="Voicy_Hey Ma Mataji.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-2" src="Happy Diwali Happy Diwali - Jethalal Song.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-3" src="Voicy_Tu kiyun ro raha ha tere Maa mr gaee ha paper ma.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-4" src="Voicy_Daish ma kuch krna krwana ha to rishwat to deni pare gee.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-5" src="Voicy_Tere ankhoon ma dal doon ga ya chata.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-6" src="Voicy_Auratoon ko kyun chait ma sa jhank k dekhta ha.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-7" src="Voicy_Jija g ma andr aoon.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-8" src="Voicy_A dhelay zara diesel dal.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-9" src="Voicy_Tu cheez baree ha mast mast .mp3" preload="metadata"></audio>
+        
+        <audio id="sound-meme-10" src="Voicy_Kya gunda banega re tu.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-11" src="Voicy_Tera bap ki shadi hai kiya ra.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-12" src="Voicy_ Kesi han.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-13" src="Voicy_ Cha maila.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-14" src="Voicy_Ha ha ha ha.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-15" src="Voicy_Ye baburao ka style hai.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-16" src="Voicy_Pakad mera ko mero ko janta ni hai ya.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-17" src="babu_rao.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-18" src="Voicy_To is ko mar ka dikha mujha dakhna hai.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-19" src="Voicy_ Mar ka dikha.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-20" src="Voicy_Main pagl hun.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-21" src="Voicy_Is ko bilkul ni ata.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-22" src="Voicy_Totally kangal.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-23" src="Voicy_Is tida ko bi yahi chor do.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-24" src="Voicy_Paisa dana para ga.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-25" src="Voicy_Hum koi mandir ka ghanta ha ka koi bi a ka baja jata hai.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-26" src="Voicy_ Humko maaro humko jinda mat choro salo.mp3" preload="metadata"></audio>
+        
+        <audio id="sound-meme-27" src="aahhkk-ahhk-with-echo.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-28" src="aah-meme-jacqueline-fernandez.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-29" src="ae-ghargharghar-dhadam-a.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-30" src="africa-crying-laugh-commercial.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-31" src="anime-ahh.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-32" src="baigan.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-33" src="bhosdike-madarchod-been-k-loray-roadies.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-34" src="cat-laugh-meme-1.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-35" src="cid-acp-behn-choo.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-36" src="confused-cross-eyed-kitten-meme.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-37" src="dry-fart.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-38" src="gaaayyyyy_vUi3hqB.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-39" src="ghok-ghok.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-40" src="indian-sorry.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-41" src="le-mdrchd.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-42" src="oh-ma-gaud-vine.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-43" src="perfect-fart.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-44" src="raven-caw-caw.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-45" src="spongebob-fail.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-46" src="studio-audience-awwww-sound-fx.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-47" src="ye-meri-galti-h.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-48" src="tmpgj3wv0ae.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-49" src="vine-boom-sound-effect_KT89XIq.mp3" preload="metadata"></audio>
+        
+        <audio id="sound-meme-50" src="tarkov-scav-laughing-3.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-51" src="mylan_olE7cPM.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-52" src="tudum-tedev (1).mp3" preload="metadata"></audio>
+        <audio id="sound-meme-53" src="tudum-tedev.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-54" src="rom-rom-bhaiyo.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-55" src="yeah-boymp4.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-56" src="happy-happy-happy-song.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-57" src="omgwow.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-58" src="kids-saying-yay-sound-effect_3.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-59" src="007-james-bond-theme_WrKEvuW.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-60" src="spiderman-meme-song-2-0.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-61" src="helicopter-helicopter-parakofer-parakofer.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-62" src="yooooooooooooooooooooooooo_4_objp8XX.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-63" src="shah-rukh-khan.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-64" src="Voicy_Abi thk kr ka data hun.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-65" src="Voicy_Kahan sa utha ka laya ic mechanic ko.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-66" src="Voicy_Madam madam.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-67" src="Voicy_Ma to pura kala ho gya yar.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-68" src="meme-de-creditos-finales.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-69" src="896756048.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-70" src="weeeee_original_1193597514938524841.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-71" src="careless_whispers.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-72" src="fahhh-pump-sound.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-73" src="matlab-wo-alag-hi-level-ka-banda-tha.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-74" src="gimme-some-ganja.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-75" src="kung-fu_Xu8sssy.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-76" src="chud-gayi.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-77" src="chalti-firti-cocaine.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-78" src="koun-hai-re_8ep4nAR.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-79" src="ladle-meoww-ghop-ghop-ghop.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-80" src="meow-ghop-ghop-ghop.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-81" src="tf_nemesis.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-82" src="tmp0gt0yo3e.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-83" src="ma-ka-bhosda-aag.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-84" src="oh-shit_4.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-85" src="modi-ji-bkl.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-86" src="Voicy_Is ka liya bari unchi pehchan chahiye unchi ponch chaiya.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-87" src="Voicy_ Jor jor se bol ka logo ko scheme bata de.mp3" preload="metadata"></audio>
+    </div>
+
+    <main role="main">
+        <header class="header" role="banner">
+            <div class="stats-container" aria-live="polite">
+                <div>SCORE: <span id="score-val" style="color: #fff;">0</span></div>
+                <div class="stat-lives">LIVES: <span id="lives-val" style="color: #fff;">3</span></div>
+            </div>
+            <div class="controls-container">
+                <div class="volume-control-wrapper">
+                    <button id="soundIcon" class="icon-btn" aria-label="Mute or Unmute Game Sound">🔊</button>
+                    <label for="volumeSlider" style="display:none;">Volume</label>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="1" aria-label="Game Volume Control">
+                </div>
+                <button id="pauseBtn" class="action-btn" aria-label="Pause Game" style="display:none;">⏸ PAUSE</button>
+            </div>
+        </header>
+
+        <div class="game-wrapper" id="gameWrapper">
+            <canvas id="gameCanvas" role="application" aria-label="Neon Slicer Game Board: Interactive area to swipe and slice shapes">
+                Your browser does not support the HTML5 canvas element.
+            </canvas>
+            
+            <div class="overlay" id="startScreen" role="dialog" aria-labelledby="message" aria-describedby="subMessage">
+                <h1 id="message">MEME SLICER</h1>
+                <div id="subMessage">Swipe to Cut!</div>
+                
+                <!-- PROMOTIONAL MOVIE BOX -->
+                <div class="promo-box" id="promoBox" style="display: none;">
+                    <h3>🍿 MOVIE TIME! 🎬</h3>
+                    <p>Need a break from gaming? Watch the latest blockbuster movies and shows on our premium platform!</p>
+                    <a href="https://moviedakhi.com/" class="promo-link-btn">VISIT MOVIE SITE</a>
+                </div>
+
+                <button id="startBtn" class="primary-btn" tabindex="0">START GAME</button>
+            </div>
+        </div>
+
+        <footer class="instructions" role="contentinfo">
+            <span class="accent-text">SWIPE / DRAG</span> to slice the glowing neon shapes.<br>
+            Avoid the <span class="red-text">RADIOACTIVE BOMBS</span>!<br>
+            Don't let good shapes fall or you lose a life.
+        </footer>
+    </main>
+
+    <script>
+        'use strict';
+
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d", { alpha: false }); 
+        const startScreen = document.getElementById("startScreen");
+        const startBtn = document.getElementById("startBtn");
+        const pauseBtn = document.getElementById("pauseBtn");
+        const scoreDisplay = document.getElementById("score-val");
+        const livesDisplay = document.getElementById("lives-val");
+        const messageDisplay = document.getElementById("message");
+        const subMessageDisplay = document.getElementById("subMessage");
+        const soundIcon = document.getElementById("soundIcon");
+        const volumeSlider = document.getElementById("volumeSlider");
+        const promoBox = document.getElementById("promoBox");
+
+        // --- Audio System: ONE Giant Master Playlist (88 sounds) ---
+        let audioCtx;
+        let globalVolume = 1.0;
+
+        const allMemeSounds = [];
+        for(let i = 0; i <= 87; i++) {
+            const el = document.getElementById(`sound-meme-${i}`);
+            if(el) allMemeSounds.push(el);
+        }
+
+        const memeIndices = [];
+        let currentlyPlayingMeme = null; 
+        let lastPlayedIndex = -1;
+
+        function getNextSound() {
+            if (allMemeSounds.length === 0) return null;
+            if (memeIndices.length === 0) {
+                for (let i = 0; i < allMemeSounds.length; i++) memeIndices.push(i);
+                for (let i = memeIndices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [memeIndices[i], memeIndices[j]] = [memeIndices[j], memeIndices[i]];
+                }
+                if (memeIndices.length > 1 && memeIndices[memeIndices.length - 1] === lastPlayedIndex) {
+                    const temp = memeIndices[memeIndices.length - 1];
+                    memeIndices[memeIndices.length - 1] = memeIndices[0];
+                    memeIndices[0] = temp;
+                }
+            }
+            const nextIndex = memeIndices.pop();
+            lastPlayedIndex = nextIndex;
+            return allMemeSounds[nextIndex];
+        }
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }
+
+        function unlockAudioFiles() {
+            allMemeSounds.forEach(audio => {
+                if(audio && audio.readyState === 0) {
+                    audio.volume = 0; 
+                    const p = audio.play();
+                    if (p !== undefined) {
+                        p.then(() => { 
+                            audio.pause(); 
+                            audio.currentTime = 0; 
+                            audio.volume = globalVolume; 
+                        }).catch(() => {});
+                    }
+                }
+            });
+        }
+
+        function playMeme(forceSkip = false) {
+            if (globalVolume === 0) return;
+            if (currentlyPlayingMeme) {
+                if (!forceSkip) return; 
+                currentlyPlayingMeme.pause();
+                currentlyPlayingMeme.currentTime = 0;
+                currentlyPlayingMeme = null;
+            }
+            const s = getNextSound();
+            if (s) {
+                currentlyPlayingMeme = s;
+                s.volume = globalVolume;
+                s.currentTime = 0;
+                s.onended = () => { if (currentlyPlayingMeme === s) currentlyPlayingMeme = null; };
+                s.play().catch(()=>{ if (currentlyPlayingMeme === s) currentlyPlayingMeme = null; });
+            }
+        }
+
+        function playSwordSound() {
+            if (globalVolume === 0 || !audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+            
+            // Sharp electronic slice sound
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(1000, now);
+            osc.frequency.exponentialRampToValueAtTime(100, now + 0.1);
+            
+            gainNode.gain.setValueAtTime(0.05 * globalVolume, now);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+            
+            osc.start(now); osc.stop(now + 0.1);
+        }
+
+        volumeSlider.addEventListener("input", (e) => {
+            globalVolume = parseFloat(e.target.value);
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : (globalVolume < 0.5 ? "🔉" : "🔊");
+            if (currentlyPlayingMeme) currentlyPlayingMeme.volume = globalVolume;
+            initAudio(); 
+        });
+
+        soundIcon.addEventListener("click", () => {
+            globalVolume = globalVolume > 0 ? 0 : 1;
+            volumeSlider.value = globalVolume;
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : "🔊";
+            if (globalVolume === 0 && currentlyPlayingMeme) {
+                currentlyPlayingMeme.pause();
+                currentlyPlayingMeme.currentTime = 0;
+                currentlyPlayingMeme = null;
+            }
+            initAudio();
+        });
+
+        // --- Game Logic ---
+        let score = 0;
+        let lives = 3;
+        let bestScore = 0;
+        let gameRunning = false;
+        let isPaused = false;
+        let isWaitingToStart = true;
+        let animationId;
+        let lastTime = 0;
+
+        let targets = [];
+        let particles = [];
+        let slicePoints = []; 
+        
+        let spawnTimer = 0;
+        let currentDifficulty = 1; 
+        let gravity = 650; // slightly faster gravity for arcade feel
+
+        // High contrast synthwave neon colors
+        const neonColors = ['#ff0055', '#00e5ff', '#00ff88', '#ffea00', '#b026ff'];
+
+        function resizeCanvas() {
+            const wrapper = document.getElementById("gameWrapper");
+            canvas.width = wrapper.clientWidth;
+            canvas.height = wrapper.clientHeight;
+            if(!gameRunning && !isWaitingToStart) draw();
+        }
+        
+        // Debounce resize event
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(resizeCanvas, 150);
+        });
+
+        function resetGame() {
+            score = 0;
+            lives = 3;
+            scoreDisplay.innerText = score;
+            livesDisplay.innerText = lives;
+            targets = [];
+            particles = [];
+            slicePoints = [];
+            spawnTimer = 1;
+            currentDifficulty = 1;
+            lastTime = 0;
+        }
+
+        function spawnTarget() {
+            const isBomb = Math.random() > 0.85; 
+            
+            const radius = isBomb ? 30 : Math.random() * 15 + 30; 
+            const x = Math.random() * (canvas.width - radius * 4) + radius * 2;
+            const y = canvas.height + radius + 10;
+            
+            const targetX = canvas.width / 2 + (Math.random() - 0.5) * (canvas.width * 0.5);
+            const timeToPeak = 0.8 + Math.random() * 0.4;
+            
+            const vy = -(gravity * timeToPeak);
+            const vx = (targetX - x) / (timeToPeak * 2); 
+
+            targets.push({
+                x: x, y: y,
+                vx: vx, vy: vy,
+                radius: radius,
+                isBomb: isBomb,
+                color: isBomb ? '#ff0033' : neonColors[Math.floor(Math.random() * neonColors.length)],
+                rotation: 0,
+                spin: (Math.random() - 0.5) * 4,
+                shapeType: isBomb ? 'bomb' : Math.floor(Math.random() * 3), 
+                sliced: false
+            });
+            
+            spawnTimer = (1.5 - (currentDifficulty * 0.1)) + Math.random() * 0.5;
+            if(spawnTimer < 0.35) spawnTimer = 0.35 + Math.random() * 0.3; 
+        }
+
+        function createParticles(x, y, color, isBomb) {
+            const count = isBomb ? 50 : 20;
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: x, y: y,
+                    vx: (Math.random() - 0.5) * (isBomb ? 20 : 10) * 60, 
+                    vy: (Math.random() - 0.5) * (isBomb ? 20 : 10) * 60,
+                    life: 1,
+                    size: Math.random() * 5 + 2,
+                    color: isBomb && Math.random() > 0.5 ? '#ffea00' : color, 
+                    isBombTrail: false // disabled bomb trail changing for better performance
+                });
+            }
+        }
+
+        function distToSegment(p, v, w) {
+            let l2 = (w.x - v.x)*(w.x - v.x) + (w.y - v.y)*(w.y - v.y);
+            if (l2 === 0) return Math.sqrt((p.x - v.x)*(p.x - v.x) + (p.y - v.y)*(p.y - v.y));
+            let t = ((p.x - v.x) * (w.x - v.x) + (p.y - v.y) * (w.y - v.y)) / l2;
+            t = Math.max(0, Math.min(1, t));
+            let projX = v.x + t * (w.x - v.x);
+            let projY = v.y + t * (w.y - v.y);
+            return Math.sqrt((p.x - projX)*(p.x - projX) + (p.y - projY)*(p.y - projY));
+        }
+
+        function checkSlices() {
+            if (slicePoints.length < 2) return;
+            
+            const p1 = slicePoints[slicePoints.length - 2];
+            const p2 = slicePoints[slicePoints.length - 1];
+
+            let distMove = Math.sqrt((p2.x - p1.x)**2 + (p2.y - p1.y)**2);
+            if (distMove < 5) return;
+
+            playSwordSound();
+
+            for (let i = targets.length - 1; i >= 0; i--) {
+                let t = targets[i];
+                if (t.sliced) continue;
+
+                let dist = distToSegment({x: t.x, y: t.y}, p1, p2);
+                
+                if (dist < t.radius + 10) { // Slightly forgiving hitbox
+                    t.sliced = true;
+                    createParticles(t.x, t.y, t.color, t.isBomb);
+                    
+                    if (t.isBomb) {
+                        handleGameOver("HAZARD HIT!");
+                        return;
+                    } else {
+                        score += 10;
+                        scoreDisplay.innerText = score;
+                        playMeme(true); 
+                        
+                        if (score % 100 === 0 && currentDifficulty < 12) {
+                            currentDifficulty += 0.6;
+                        }
+                    }
+                    
+                    targets.splice(i, 1);
+                }
+            }
+        }
+
+        function update(dt) {
+            spawnTimer -= dt;
+            if (spawnTimer <= 0) {
+                spawnTarget();
+            }
+
+            for (let i = slicePoints.length - 1; i >= 0; i--) {
+                slicePoints[i].age -= dt * 6; // Fade out laser fast
+                if (slicePoints[i].age <= 0) {
+                    slicePoints.splice(i, 1);
+                }
+            }
+
+            for (let i = targets.length - 1; i >= 0; i--) {
+                let t = targets[i];
+                t.vy += gravity * dt;
+                t.x += t.vx * dt;
+                t.y += t.vy * dt;
+                t.rotation += t.spin * dt;
+
+                if (t.y - t.radius > canvas.height && t.vy > 0) {
+                    if (!t.isBomb) {
+                        lives--;
+                        livesDisplay.innerText = lives;
+                        if (lives <= 0) {
+                            handleGameOver("OUT OF LIVES!");
+                            return;
+                        }
+                    }
+                    targets.splice(i, 1);
+                }
+            }
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                let p = particles[i];
+                p.x += p.vx * dt; 
+                p.y += p.vy * dt;
+                p.vy += gravity * dt;
+                p.life -= dt * 1.5;
+                if(p.life <= 0) particles.splice(i, 1);
+            }
+        }
+
+        function draw() {
+            // Draw background semi-transparently to create motion blur trails
+            ctx.fillStyle = "rgba(9, 2, 18, 0.35)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Targets
+            for (let t of targets) {
+                ctx.save();
+                ctx.translate(t.x, t.y);
+                ctx.rotate(t.rotation);
+                
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = t.color;
+                
+                if (t.isBomb) {
+                    // Radioactive Mine Design
+                    ctx.fillStyle = "#111";
+                    ctx.beginPath();
+                    ctx.arc(0, 0, t.radius, 0, Math.PI*2);
+                    ctx.fill();
+                    
+                    ctx.strokeStyle = t.color;
+                    ctx.lineWidth = 4;
+                    ctx.stroke();
+                    
+                    // Inner warning core
+                    ctx.fillStyle = t.color;
+                    ctx.beginPath();
+                    ctx.arc(0, 0, t.radius/2.5, 0, Math.PI*2);
+                    ctx.fill();
+                    
+                    // Spikes
+                    for(let s=0; s<8; s++) {
+                        ctx.rotate(Math.PI / 4);
+                        ctx.beginPath();
+                        ctx.moveTo(0, t.radius);
+                        ctx.lineTo(4, t.radius + 8);
+                        ctx.lineTo(-4, t.radius + 8);
+                        ctx.fillStyle = t.color;
+                        ctx.fill();
+                    }
+                } else {
+                    // High-tech Neon Shapes
+                    ctx.strokeStyle = t.color;
+                    ctx.lineWidth = 4;
+                    ctx.beginPath();
+                    
+                    if (t.shapeType === 0) { // Square
+                        ctx.rect(-t.radius/1.2, -t.radius/1.2, (t.radius/1.2)*2, (t.radius/1.2)*2);
+                    } else if (t.shapeType === 1) { // Triangle
+                        ctx.moveTo(0, -t.radius);
+                        ctx.lineTo(t.radius, t.radius);
+                        ctx.lineTo(-t.radius, t.radius);
+                        ctx.closePath();
+                    } else { // Circle
+                        ctx.arc(0, 0, t.radius/1.1, 0, Math.PI*2);
+                    }
+                    
+                    ctx.fillStyle = t.color + "33"; // Semi transparent inner
+                    ctx.fill();
+                    ctx.stroke();
+
+                    // Inner geometric detail
+                    ctx.lineWidth = 1;
+                    ctx.shadowBlur = 0;
+                    ctx.beginPath();
+                    if (t.shapeType === 0) { 
+                        ctx.rect(-t.radius/2, -t.radius/2, t.radius, t.radius);
+                    } else if (t.shapeType === 1) {
+                        ctx.moveTo(0, -t.radius/2);
+                        ctx.lineTo(t.radius/2, t.radius/2);
+                        ctx.lineTo(-t.radius/2, t.radius/2);
+                        ctx.closePath();
+                    } else { 
+                        ctx.arc(0, 0, t.radius/2, 0, Math.PI*2);
+                    }
+                    ctx.stroke();
+                }
+                ctx.restore();
+            }
+            ctx.shadowBlur = 0;
+
+            // Draw Particles (Sparks)
+            for (let p of particles) {
+                ctx.globalAlpha = Math.max(0, p.life);
+                ctx.fillStyle = '#fff';
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = p.color;
+                // draw tiny bright lines based on velocity to look like sparks
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p.x - p.vx*0.05, p.y - p.vy*0.05);
+                ctx.lineWidth = p.size;
+                ctx.strokeStyle = p.color;
+                ctx.lineCap = "round";
+                ctx.stroke();
+            }
+            ctx.globalAlpha = 1;
+            ctx.shadowBlur = 0;
+
+            // Draw Laser Slice Trail
+            if (slicePoints.length > 1) {
+                ctx.save();
+                ctx.shadowBlur = 25;
+                ctx.shadowColor = "var(--neon-cyan)";
+                
+                for (let i = 1; i < slicePoints.length; i++) {
+                    const p1 = slicePoints[i-1];
+                    const p2 = slicePoints[i];
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(p1.x, p1.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    
+                    // Outer Cyan Glow
+                    ctx.lineWidth = 15 * p2.age;
+                    ctx.strokeStyle = `rgba(0, 229, 255, ${p2.age})`;
+                    ctx.lineCap = 'round';
+                    ctx.lineJoin = 'round';
+                    ctx.stroke();
+                    
+                    // Bright White Hot Core
+                    ctx.lineWidth = 4 * p2.age;
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${p2.age})`;
+                    ctx.stroke();
+                }
+                ctx.restore();
+            }
+        }
+
+        function loop(timestamp) {
+            animationId = requestAnimationFrame(loop);
+            
+            if (!lastTime) lastTime = timestamp;
+            let dt = (timestamp - lastTime) / 1000;
+            lastTime = timestamp;
+
+            if (dt > 0.1) dt = 0.1; 
+
+            if (gameRunning && !isPaused) {
+                update(dt);
+            }
+            draw();
+        }
+
+        function handleGameOver(reason) {
+            gameRunning = false;
+            pauseBtn.style.display = "none";
+            slicePoints = []; 
+            
+            playMeme(true); 
+
+            isWaitingToStart = true;
+            if(score > bestScore) bestScore = score;
+            
+            messageDisplay.classList.add("fail");
+            startScreen.style.display = "flex";
+            startBtn.style.display = "inline-block";
+            
+            // Show Promotional Box on Game Over
+            if(promoBox) promoBox.style.display = 'block';
+            
+            setTimeout(() => {
+                startScreen.style.opacity = "1";
+                messageDisplay.innerText = reason;
+                subMessageDisplay.innerText = `SCORE: ${score} // BEST: ${bestScore}`;
+                startBtn.innerText = "REBOOT SYSTEM";
+                startBtn.focus(); 
+            }, 100); 
+        }
+
+        startBtn.addEventListener("click", () => {
+            if (!isWaitingToStart) return; 
+
+            initAudio();
+            unlockAudioFiles();
+            
+            if (currentlyPlayingMeme) {
+                currentlyPlayingMeme.pause();
+                currentlyPlayingMeme.currentTime = 0;
+                currentlyPlayingMeme = null;
+            }
+            
+            isWaitingToStart = false;
+            startBtn.blur();
+            startScreen.style.opacity = "0";
+            messageDisplay.classList.remove("fail");
+            if(promoBox) promoBox.style.display = 'none'; // Hide promo box
+            
+            setTimeout(() => {
+                startScreen.style.display = "none";
+                pauseBtn.style.display = "flex";
+                pauseBtn.innerText = "⏸ PAUSE";
+                isPaused = false;
+                
+                resetGame();
+                lastTime = 0;
+                gameRunning = true;
+            }, 300); 
+        });
+
+        pauseBtn.addEventListener("click", () => {
+            if (!gameRunning && isWaitingToStart) return; 
+            
+            isPaused = !isPaused;
+            if (isPaused) {
+                pauseBtn.innerText = "▶ PLAY";
+                ctx.save();
+                ctx.fillStyle = "rgba(9, 2, 18, 0.7)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.font = "bold 40px 'Bungee', cursive";
+                ctx.fillStyle = "var(--neon-cyan)";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = "var(--neon-cyan)";
+                ctx.fillText("SYSTEM PAUSED", canvas.width / 2, canvas.height / 2);
+                ctx.restore();
+            } else {
+                pauseBtn.innerText = "⏸ PAUSE";
+                lastTime = performance.now(); 
+            }
+        });
+
+        // --- Input Handling for Slicing ---
+        let isDragging = false;
+
+        function addSlicePoint(x, y) {
+            slicePoints.push({ x: x, y: y, age: 1.0 });
+            if (slicePoints.length > 10) slicePoints.shift(); 
+            
+            if (gameRunning && !isPaused) checkSlices();
+        }
+
+        function getActualPos(clientX, clientY) {
+            let rect = canvas.getBoundingClientRect();
+            let scaleX = canvas.width / rect.width;
+            let scaleY = canvas.height / rect.height;
+            return {
+                x: (clientX - rect.left) * scaleX,
+                y: (clientY - rect.top) * scaleY
+            };
+        }
+
+        // Mouse Controls
+        canvas.addEventListener("mousedown", (e) => {
+            if (!gameRunning || isPaused) return;
+            isDragging = true;
+            slicePoints = [];
+            let pos = getActualPos(e.clientX, e.clientY);
+            addSlicePoint(pos.x, pos.y);
+        });
+
+        canvas.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+            let pos = getActualPos(e.clientX, e.clientY);
+            addSlicePoint(pos.x, pos.y);
+        });
+
+        window.addEventListener("mouseup", () => {
+            isDragging = false;
+        });
+
+        // Touch Controls (Mobile Swipe)
+        canvas.addEventListener("touchstart", (e) => {
+            if (!gameRunning || isPaused) return;
+            e.preventDefault();
+            isDragging = true;
+            slicePoints = [];
+            let pos = getActualPos(e.touches[0].clientX, e.touches[0].clientY);
+            addSlicePoint(pos.x, pos.y);
+        }, {passive: false});
+
+        canvas.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            e.preventDefault(); 
+            let pos = getActualPos(e.touches[0].clientX, e.touches[0].clientY);
+            addSlicePoint(pos.x, pos.y);
+        }, {passive: false});
+
+        canvas.addEventListener("touchend", () => {
+            isDragging = false;
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.code === "Space" || e.key === " " || e.key === "Enter") {
+                if (isWaitingToStart) {
+                    e.preventDefault();
+                    startBtn.click();
+                }
+            } else if ((e.key === "p" || e.key === "P" || e.key === "Escape") && !isWaitingToStart) {
+                pauseBtn.click();
+            }
+        });
+
+        window.onload = () => {
+            resizeCanvas();
+            draw(); 
+            animationId = requestAnimationFrame(loop);
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Comprehensive SEO Meta Tags -->
+    <title>Neon Overdrive 3D | Modern Racing</title>
+    <meta name="title" content="Neon Overdrive 3D | Modern Racing">
+    <meta name="description" content="Race through a sleek, modern 3D highway. Dodge traffic, collect meme coins, and trigger hyper-boost in this eye-friendly WebGL racing game!">
+    <meta name="keywords" content="3d racing game, neon overdrive, cyberpunk game, webgl game, three.js game, meme game, html5 game, browser game, free online game">
+    <meta name="author" content="PlayZone Games">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/neon-overdrive-3d">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/neon-overdrive-3d">
+    <meta property="og:title" content="Neon Overdrive 3D | Modern Racing">
+    <meta property="og:description" content="Race through a sleek, modern 3D highway. Dodge traffic, collect meme coins, and trigger hyper-boost!">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Neon Overdrive 3D | Modern Racing">
+    <meta property="twitter:description" content="Race through a sleek, modern 3D highway. Dodge traffic, collect meme coins, and trigger hyper-boost!">
+
+    <!-- Best Practices & PWA Support -->
+    <meta name="theme-color" content="#0b0f19">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Neon Overdrive">
+
+    <!-- Performance: Preconnect to Font APIs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js for 3D Graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <style>
+        :root {
+            /* Eye-Friendly, Minimalist Palette */
+            --bg-dark: #0b0f19;
+            --accent-cyan: #38bdf8;
+            --accent-blue: #3b82f6;
+            --accent-amber: #fbbf24;
+            --accent-red: #ef4444;
+            --ui-bg: rgba(15, 23, 42, 0.6);
+            --ui-border: rgba(56, 189, 248, 0.2);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh;
+            touch-action: none; 
+            overflow: hidden;
+        }
+
+        #game-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            cursor: crosshair;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+            outline: none;
+        }
+
+        /* Modern Sleek HUD - Glassmorphism */
+        .hud {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .stats-panel, .controls-panel {
+            background: var(--ui-bg);
+            padding: 12px 24px;
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--ui-border);
+            pointer-events: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .stats-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 180px;
+        }
+
+        .score-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .score-val {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
+        .boost-container {
+            margin-top: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .boost-label {
+            font-size: 0.75rem;
+            color: var(--accent-amber);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .boost-bar-outer {
+            width: 100%;
+            height: 6px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .boost-bar-inner {
+            height: 100%;
+            width: 0%;
+            background: var(--accent-amber);
+            transition: width 0.3s ease, background 0.3s;
+        }
+
+        .boost-bar-inner.ready {
+            background: #fff;
+            box-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+
+        .controls-panel {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: 0.2s;
+            opacity: 0.7;
+            padding: 4px;
+        }
+        .icon-btn:hover { opacity: 1; transform: scale(1.1); }
+
+        #volumeSlider { 
+            width: 80px; height: 4px; -webkit-appearance: none; 
+            background: rgba(255,255,255,0.1); border-radius: 2px; outline: none; cursor: pointer; 
+        }
+        #volumeSlider::-webkit-slider-thumb { 
+            -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; 
+            background: var(--accent-cyan); cursor: pointer;
+        }
+
+        /* Full Screen Menus */
+        .screen-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            transition: opacity 0.4s ease;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        h1.fail { color: var(--accent-red); }
+
+        .sub-text {
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* ------------------------------------------- */
+        /* PROMOTIONAL BOX STYLES */
+        /* ------------------------------------------- */
+        .promo-box {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(56, 189, 248, 0.05);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 12px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+            animation: pulsePromo 2s infinite alternate;
+            display: none; /* Shown only on Game Over */
+            pointer-events: auto;
+            z-index: 100;
+        }
+
+        @keyframes pulsePromo {
+            from { box-shadow: 0 0 10px rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.3); }
+            to { box-shadow: 0 0 25px rgba(56, 189, 248, 0.4); border-color: rgba(56, 189, 248, 0.8); }
+        }
+
+        .promo-box h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            color: var(--accent-amber);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .promo-box p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+        }
+
+        .promo-link-btn {
+            font-family: 'Rajdhani', sans-serif;
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, var(--accent-red), #9d00ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+        }
+
+        .promo-link-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.8);
+            color: #fff;
+        }
+
+        button.btn {
+            font-family: 'Rajdhani', sans-serif;
+            padding: 16px 45px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: var(--accent-blue);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        button.btn:hover {
+            background: #2563eb;
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        button.btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .instructions {
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            pointer-events: none;
+            z-index: 5;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .accent { color: var(--accent-cyan); font-weight: 600; }
+        .yellow { color: var(--accent-amber); font-weight: 600; }
+
+        .shake { animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-2px, 1px, 0); }
+            20%, 80% { transform: translate3d(3px, -1px, 0); }
+            30%, 50%, 70% { transform: translate3d(-4px, 2px, 0); }
+            40%, 60% { transform: translate3d(4px, -2px, 0); }
+        }
+
+        @media (max-width: 600px) {
+            .hud { flex-direction: column; gap: 15px; align-items: center; }
+            .stats-panel, .controls-panel { width: 100%; justify-content: center; }
+            .stats-panel { align-items: center; }
+            .boost-bar-outer { width: 200px; }
+            h1 { font-size: 2.2rem; }
+            .instructions { font-size: 0.8rem; bottom: 20px; }
+            .promo-box { padding: 15px; margin-top: 5px; margin-bottom: 15px; }
+            .promo-box h3 { font-size: 1.2rem; }
+            .promo-box p { font-size: 0.85rem; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Master Audio Playlist (Preload None for better initial load performance) -->
+    <div id="audio-assets" style="display: none;" aria-hidden="true">
+        <audio id="sound-meme-0" src="Voicy_Jetha Nonsense.mp3" preload="none"></audio>
+        <audio id="sound-meme-1" src="Voicy_Hey Ma Mataji.mp3" preload="none"></audio>
+        <audio id="sound-meme-2" src="Happy Diwali Happy Diwali - Jethalal Song.mp3" preload="none"></audio>
+        <audio id="sound-meme-3" src="Voicy_Tu kiyun ro raha ha tere Maa mr gaee ha paper ma.mp3" preload="none"></audio>
+        <audio id="sound-meme-4" src="Voicy_Daish ma kuch krna krwana ha to rishwat to deni pare gee.mp3" preload="none"></audio>
+        <audio id="sound-meme-5" src="Voicy_Tere ankhoon ma dal doon ga ya chata.mp3" preload="none"></audio>
+        <audio id="sound-meme-6" src="Voicy_Auratoon ko kyun chait ma sa jhank k dekhta ha.mp3" preload="none"></audio>
+        <audio id="sound-meme-7" src="Voicy_Jija g ma andr aoon.mp3" preload="none"></audio>
+        <audio id="sound-meme-8" src="Voicy_A dhelay zara diesel dal.mp3" preload="none"></audio>
+        <audio id="sound-meme-9" src="Voicy_Tu cheez baree ha mast mast .mp3" preload="none"></audio>
+        <audio id="sound-meme-10" src="Voicy_Kya gunda banega re tu.mp3" preload="none"></audio>
+        <audio id="sound-meme-11" src="Voicy_Tera bap ki shadi hai kiya ra.mp3" preload="none"></audio>
+        <audio id="sound-meme-12" src="Voicy_ Kesi han.mp3" preload="none"></audio>
+        <audio id="sound-meme-13" src="Voicy_ Cha maila.mp3" preload="none"></audio>
+        <audio id="sound-meme-14" src="Voicy_Ha ha ha ha.mp3" preload="none"></audio>
+        <audio id="sound-meme-15" src="Voicy_Ye baburao ka style hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-16" src="Voicy_Pakad mera ko mero ko janta ni hai ya.mp3" preload="none"></audio>
+        <audio id="sound-meme-17" src="babu_rao.mp3" preload="none"></audio>
+        <audio id="sound-meme-18" src="Voicy_To is ko mar ka dikha mujha dakhna hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-19" src="Voicy_ Mar ka dikha.mp3" preload="none"></audio>
+        <audio id="sound-meme-20" src="Voicy_Main pagl hun.mp3" preload="none"></audio>
+        <audio id="sound-meme-21" src="Voicy_Is ko bilkul ni ata.mp3" preload="none"></audio>
+        <audio id="sound-meme-22" src="Voicy_Totally kangal.mp3" preload="none"></audio>
+        <audio id="sound-meme-23" src="Voicy_Is tida ko bi yahi chor do.mp3" preload="none"></audio>
+        <audio id="sound-meme-24" src="Voicy_Paisa dana para ga.mp3" preload="none"></audio>
+        <audio id="sound-meme-25" src="Voicy_Hum koi mandir ka ghanta ha ka koi bi a ka baja jata hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-26" src="Voicy_ Humko maaro humko jinda mat choro salo.mp3" preload="none"></audio>
+        <audio id="sound-meme-27" src="aahhkk-ahhk-with-echo.mp3" preload="none"></audio>
+        <audio id="sound-meme-28" src="aah-meme-jacqueline-fernandez.mp3" preload="none"></audio>
+        <audio id="sound-meme-29" src="ae-ghargharghar-dhadam-a.mp3" preload="none"></audio>
+        <audio id="sound-meme-30" src="africa-crying-laugh-commercial.mp3" preload="none"></audio>
+        <audio id="sound-meme-31" src="anime-ahh.mp3" preload="none"></audio>
+        <audio id="sound-meme-32" src="baigan.mp3" preload="none"></audio>
+        <audio id="sound-meme-33" src="bhosdike-madarchod-been-k-loray-roadies.mp3" preload="none"></audio>
+        <audio id="sound-meme-34" src="cat-laugh-meme-1.mp3" preload="none"></audio>
+        <audio id="sound-meme-35" src="cid-acp-behn-choo.mp3" preload="none"></audio>
+        <audio id="sound-meme-36" src="confused-cross-eyed-kitten-meme.mp3" preload="none"></audio>
+        <audio id="sound-meme-37" src="dry-fart.mp3" preload="none"></audio>
+        <audio id="sound-meme-38" src="gaaayyyyy_vUi3hqB.mp3" preload="none"></audio>
+        <audio id="sound-meme-39" src="ghok-ghok.mp3" preload="none"></audio>
+        <audio id="sound-meme-40" src="indian-sorry.mp3" preload="none"></audio>
+        <audio id="sound-meme-41" src="le-mdrchd.mp3" preload="none"></audio>
+        <audio id="sound-meme-42" src="oh-ma-gaud-vine.mp3" preload="none"></audio>
+        <audio id="sound-meme-43" src="perfect-fart.mp3" preload="none"></audio>
+        <audio id="sound-meme-44" src="raven-caw-caw.mp3" preload="none"></audio>
+        <audio id="sound-meme-45" src="spongebob-fail.mp3" preload="none"></audio>
+        <audio id="sound-meme-46" src="studio-audience-awwww-sound-fx.mp3" preload="none"></audio>
+        <audio id="sound-meme-47" src="ye-meri-galti-h.mp3" preload="none"></audio>
+        <audio id="sound-meme-48" src="tmpgj3wv0ae.mp3" preload="none"></audio>
+        <audio id="sound-meme-49" src="vine-boom-sound-effect_KT89XIq.mp3" preload="none"></audio>
+        <audio id="sound-meme-50" src="tarkov-scav-laughing-3.mp3" preload="none"></audio>
+        <audio id="sound-meme-51" src="mylan_olE7cPM.mp3" preload="none"></audio>
+        <audio id="sound-meme-52" src="tudum-tedev.mp3" preload="none"></audio>
+        <audio id="sound-meme-53" src="rom-rom-bhaiyo.mp3" preload="none"></audio>
+        <audio id="sound-meme-54" src="yeah-boymp4.mp3" preload="none"></audio>
+        <audio id="sound-meme-55" src="happy-happy-happy-song.mp3" preload="none"></audio>
+        <audio id="sound-meme-56" src="omgwow.mp3" preload="none"></audio>
+        <audio id="sound-meme-57" src="kids-saying-yay-sound-effect_3.mp3" preload="none"></audio>
+        <audio id="sound-meme-58" src="007-james-bond-theme_WrKEvuW.mp3" preload="none"></audio>
+        <audio id="sound-meme-59" src="spiderman-meme-song-2-0.mp3" preload="none"></audio>
+        <audio id="sound-meme-60" src="helicopter-helicopter-parakofer-parakofer.mp3" preload="none"></audio>
+        <audio id="sound-meme-61" src="yooooooooooooooooooooooooo_4_objp8XX.mp3" preload="none"></audio>
+        <audio id="sound-meme-62" src="shah-rukh-khan.mp3" preload="none"></audio>
+        <audio id="sound-meme-63" src="Voicy_Abi thk kr ka data hun.mp3" preload="none"></audio>
+        <audio id="sound-meme-64" src="Voicy_Kahan sa utha ka laya ic mechanic ko.mp3" preload="none"></audio>
+        <audio id="sound-meme-65" src="Voicy_Madam madam.mp3" preload="none"></audio>
+        <audio id="sound-meme-66" src="Voicy_Ma to pura kala ho gya yar.mp3" preload="none"></audio>
+        <audio id="sound-meme-67" src="meme-de-creditos-finales.mp3" preload="none"></audio>
+        <audio id="sound-meme-68" src="896756048.mp3" preload="none"></audio>
+        <audio id="sound-meme-69" src="weeeee_original_1193597514938524841.mp3" preload="none"></audio>
+        <audio id="sound-meme-70" src="careless_whispers.mp3" preload="none"></audio>
+        <audio id="sound-meme-71" src="fahhh-pump-sound.mp3" preload="none"></audio>
+        <audio id="sound-meme-72" src="matlab-wo-alag-hi-level-ka-banda-tha.mp3" preload="none"></audio>
+        <audio id="sound-meme-73" src="gimme-some-ganja.mp3" preload="none"></audio>
+        <audio id="sound-meme-74" src="kung-fu_Xu8sssy.mp3" preload="none"></audio>
+        <audio id="sound-meme-75" src="chud-gayi.mp3" preload="none"></audio>
+        <audio id="sound-meme-76" src="chalti-firti-cocaine.mp3" preload="none"></audio>
+        <audio id="sound-meme-77" src="koun-hai-re_8ep4nAR.mp3" preload="none"></audio>
+        <audio id="sound-meme-78" src="ladle-meoww-ghop-ghop-ghop.mp3" preload="none"></audio>
+        <audio id="sound-meme-79" src="meow-ghop-ghop-ghop.mp3" preload="none"></audio>
+        <audio id="sound-meme-80" src="tf_nemesis.mp3" preload="none"></audio>
+        <audio id="sound-meme-81" src="tmp0gt0yo3e.mp3" preload="none"></audio>
+        <audio id="sound-meme-82" src="ma-ka-bhosda-aag.mp3" preload="none"></audio>
+        <audio id="sound-meme-83" src="oh-shit_4.mp3" preload="none"></audio>
+        <audio id="sound-meme-84" src="modi-ji-bkl.mp3" preload="none"></audio>
+        <audio id="sound-meme-85" src="Voicy_Is ka liya bari unchi pehchan chahiye unchi ponch chaiya.mp3" preload="none"></audio>
+        <audio id="sound-meme-86" src="Voicy_ Jor jor se bol ka logo ko scheme bata de.mp3" preload="none"></audio>
+    </div>
+
+    <main id="mainContainer" role="main">
+        <div class="hud">
+            <div class="stats-panel" aria-live="polite">
+                <div class="score-label">DISTANCE</div>
+                <div class="score-val"><span id="scoreUI">0</span>m</div>
+                <div class="boost-container">
+                    <span class="boost-label">BOOST CHARGE</span>
+                    <div class="boost-bar-outer"><div class="boost-bar-inner" id="boostBar"></div></div>
+                </div>
+            </div>
+            <div class="controls-panel">
+                <button id="pauseBtn" class="icon-btn" title="Play/Pause" aria-label="Pause Game">⏸</button>
+                <button id="soundBtn" class="icon-btn" title="Mute/Unmute" aria-label="Toggle Sound">🔊</button>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="1" aria-label="Game Volume Control">
+            </div>
+        </div>
+
+        <div id="game-container">
+            <!-- 3D Canvas will be injected here by Three.js -->
+            <canvas id="three-canvas" role="application" aria-label="Neon Overdrive 3D Game Board"></canvas>
+            
+            <div class="screen-overlay" id="menuScreen" role="dialog" aria-labelledby="titleText" aria-describedby="subText">
+                <h1 id="titleText">OVERDRIVE</h1>
+                <div class="sub-text" id="subText">Endless Modern Racing</div>
+                
+                <!-- PROMOTIONAL MOVIE BOX -->
+                <div class="promo-box" id="promoBox" style="display: none;">
+                    <h3>🍿 MOVIE TIME! 🎬</h3>
+                    <p>Need a break from gaming? Watch the latest blockbuster movies and shows on our premium platform!</p>
+                    <a href="https://moviedakhi.com/" class="promo-link-btn" rel="noopener noreferrer">VISIT MOVIE SITE</a>
+                </div>
+
+                <button class="btn" id="startBtn" tabindex="0">IGNITE ENGINES</button>
+            </div>
+
+            <div class="screen-overlay" id="pauseScreen" style="display: none; opacity: 0;">
+                <h1 style="color: var(--accent-cyan);">PAUSED</h1>
+                <button class="btn" id="resumeBtn">RESUME</button>
+            </div>
+
+            <div class="instructions">
+                <span class="accent">DRAG SCREEN</span> or use <span class="accent">A / D</span> to steer. Dodge traffic.<br>
+                Collect coins to charge <span class="yellow">BOOST</span>.<br>
+                <span class="yellow">DOUBLE TAP / SPACE</span> for HYPER-DRIVE!
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- Audio System ---
+        let audioCtx;
+        let globalVolume = 1.0;
+        
+        const allMemeSounds = [];
+        for(let i=0; i<=86; i++) {
+            const el = document.getElementById(`sound-meme-${i}`);
+            if(el) allMemeSounds.push(el);
+        }
+
+        const memeIndices = [];
+        let currentlyPlayingMeme = null;
+
+        function getNextSound() {
+            if (allMemeSounds.length === 0) return null;
+            if (memeIndices.length === 0) {
+                for (let i = 0; i < allMemeSounds.length; i++) memeIndices.push(i);
+                for (let i = memeIndices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [memeIndices[i], memeIndices[j]] = [memeIndices[j], memeIndices[i]];
+                }
+            }
+            return allMemeSounds[memeIndices.pop()];
+        }
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }
+
+        function playMeme() {
+            if (globalVolume === 0) return;
+            if (currentlyPlayingMeme) { currentlyPlayingMeme.pause(); currentlyPlayingMeme.currentTime = 0; }
+            const s = getNextSound();
+            if (s) {
+                currentlyPlayingMeme = s;
+                s.volume = globalVolume;
+                s.currentTime = 0;
+                s.onended = () => { if(currentlyPlayingMeme === s) currentlyPlayingMeme = null; };
+                s.play().catch(()=>{});
+            }
+        }
+
+        function playSynth(type) {
+            if (globalVolume === 0 || !audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            osc.connect(gainNode); gainNode.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+            
+            if (type === 'crash') {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(100, now);
+                osc.frequency.exponentialRampToValueAtTime(20, now + 0.6);
+                gainNode.gain.setValueAtTime(0.3 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+                osc.start(now); osc.stop(now + 0.6);
+            } else if (type === 'boost') {
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.exponentialRampToValueAtTime(600, now + 0.5);
+                gainNode.gain.setValueAtTime(0.1 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 2.0);
+                osc.start(now); osc.stop(now + 2.0);
+            } else if (type === 'smash') {
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(200, now);
+                osc.frequency.exponentialRampToValueAtTime(50, now + 0.2);
+                gainNode.gain.setValueAtTime(0.15 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+                osc.start(now); osc.stop(now + 0.2);
+            }
+        }
+
+        document.getElementById('volumeSlider').addEventListener("input", (e) => {
+            globalVolume = parseFloat(e.target.value);
+            document.getElementById('soundBtn').innerText = globalVolume === 0 ? "🔇" : "🔊";
+            if (currentlyPlayingMeme) currentlyPlayingMeme.volume = globalVolume;
+            initAudio(); 
+        });
+
+        document.getElementById('soundBtn').addEventListener("click", () => {
+            globalVolume = globalVolume > 0 ? 0 : 1;
+            document.getElementById('volumeSlider').value = globalVolume;
+            document.getElementById('soundBtn').innerText = globalVolume === 0 ? "🔇" : "🔊";
+            if (globalVolume === 0 && currentlyPlayingMeme) {
+                currentlyPlayingMeme.pause(); currentlyPlayingMeme.currentTime = 0; currentlyPlayingMeme = null;
+            }
+            initAudio();
+        });
+
+
+        // --- Modern 3D Racing Engine ---
+        window.onload = () => {
+            const container = document.getElementById('game-container');
+            const canvasEl = document.getElementById('three-canvas');
+            const scoreUI = document.getElementById('scoreUI');
+            const boostBar = document.getElementById('boostBar');
+            const menuScreen = document.getElementById('menuScreen');
+            const titleText = document.getElementById('titleText');
+            const subText = document.getElementById('subText');
+            const startBtn = document.getElementById('startBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const pauseScreen = document.getElementById('pauseScreen');
+            const resumeBtn = document.getElementById('resumeBtn');
+            const promoBox = document.getElementById('promoBox');
+
+            // Globals
+            let scene, camera, renderer;
+            let playerCar, playerBox;
+            let traffic = [];
+            let coins = [];
+            let particleSystem = [];
+            let roadLines = [];
+            
+            let gameRunning = false;
+            let isPaused = false;
+            let animationId;
+            let score = 0;
+            
+            // Speed & Mechanics
+            let baseSpeed = 40.0; 
+            let currentSpeed = baseSpeed;
+            let clock = new THREE.Clock();
+            
+            let boostCharge = 0;
+            const BOOST_MAX = 8;
+            let isBoosting = false;
+            let boostTimer = 0;
+
+            // Geometry bounds
+            const trackWidth = 24; 
+            let boundX = trackWidth / 2 - 1.5; 
+            
+            // High-Quality Modern Materials
+            const carMat = new THREE.MeshStandardMaterial({ color: 0xe2e8f0, metalness: 0.8, roughness: 0.2 });
+            const engineGlowMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
+            
+            const enemyMat = new THREE.MeshStandardMaterial({ color: 0x334155, metalness: 0.4, roughness: 0.6 });
+            const taillightMat = new THREE.MeshBasicMaterial({ color: 0xef4444 });
+            
+            const coinGeo = new THREE.TorusGeometry(0.7, 0.2, 8, 16);
+            const coinMat = new THREE.MeshStandardMaterial({ color: 0xfcd34d, emissive: 0xca8a04, emissiveIntensity: 0.5, metalness: 0.9, roughness: 0.1 });
+
+            // Controls
+            let targetX = 0;
+            const keys = { left: false, right: false };
+            let isDragging = false;
+            let pointerStartX = 0;
+            let targetStartX = 0;
+            const swipeSensitivity = 1.3;
+
+            function init3D() {
+                // Scene setup - Deep Slate/Navy background
+                scene = new THREE.Scene();
+                scene.background = new THREE.Color(0x0b0f19);
+                scene.fog = new THREE.FogExp2(0x0b0f19, 0.015); // Smooth exponential fog
+
+                // Camera (Placed slightly higher for better visibility)
+                camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 300);
+                camera.position.set(0, 4.5, 9);
+                camera.lookAt(0, 0, -20);
+
+                // Renderer with antialiasing
+                renderer = new THREE.WebGLRenderer({ canvas: canvasEl, antialias: true, alpha: false });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
+
+                // Lighting (Softer, more natural)
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.7); // Brighter ambient to reduce harsh contrast
+                scene.add(ambientLight);
+
+                const dirLight = new THREE.DirectionalLight(0x93c5fd, 0.6); // Soft blue directional light
+                dirLight.position.set(10, 20, -10);
+                scene.add(dirLight);
+
+                // Create Sleek Player Car
+                playerCar = new THREE.Group();
+                
+                // Sleek Body
+                const bodyGeo = new THREE.BoxGeometry(2.0, 0.6, 4.2);
+                const body = new THREE.Mesh(bodyGeo, carMat);
+                body.position.y = 0.5;
+                playerCar.add(body);
+                
+                // Cockpit canopy
+                const cabinGeo = new THREE.BoxGeometry(1.4, 0.4, 2.0);
+                const cabinMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, metalness: 0.9, roughness: 0.1 });
+                const cabin = new THREE.Mesh(cabinGeo, cabinMat);
+                cabin.position.set(0, 1.0, -0.4);
+                playerCar.add(cabin);
+
+                // Emissive Engine Thrusters
+                const thrusterGeo = new THREE.BoxGeometry(1.6, 0.2, 0.2);
+                const thruster = new THREE.Mesh(thrusterGeo, engineGlowMat);
+                thruster.position.set(0, 0.5, 2.1);
+                playerCar.add(thruster);
+                
+                const engineLight = new THREE.PointLight(0x38bdf8, 1, 10);
+                engineLight.position.set(0, 0.5, 3);
+                playerCar.add(engineLight);
+
+                scene.add(playerCar);
+                playerBox = new THREE.Box3();
+
+                // Environment Construction
+                // Solid Dark Asphalt Road
+                const trackGeo = new THREE.PlaneGeometry(trackWidth, 1000);
+                const trackMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.8, metalness: 0.1 });
+                const track = new THREE.Mesh(trackGeo, trackMat);
+                track.rotation.x = -Math.PI / 2;
+                track.position.z = -400;
+                scene.add(track);
+
+                // Soft Lane Markers
+                const markerGeo = new THREE.PlaneGeometry(0.3, 4);
+                const markerMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.3 });
+                
+                for(let i=0; i<15; i++) {
+                    // Center lines
+                    const line1 = new THREE.Mesh(markerGeo, markerMat);
+                    line1.rotation.x = -Math.PI / 2;
+                    line1.position.set(-trackWidth/6, 0.05, -i * 15);
+                    scene.add(line1);
+                    roadLines.push(line1);
+
+                    const line2 = new THREE.Mesh(markerGeo, markerMat);
+                    line2.rotation.x = -Math.PI / 2;
+                    line2.position.set(trackWidth/6, 0.05, -i * 15);
+                    scene.add(line2);
+                    roadLines.push(line2);
+
+                    // Track Borders (Solid)
+                    const borderGeo = new THREE.PlaneGeometry(0.5, 15);
+                    const borderLeft = new THREE.Mesh(borderGeo, markerMat);
+                    borderLeft.rotation.x = -Math.PI / 2;
+                    borderLeft.position.set(-trackWidth/2, 0.05, -i * 15);
+                    scene.add(borderLeft);
+                    roadLines.push(borderLeft);
+
+                    const borderRight = new THREE.Mesh(borderGeo, markerMat);
+                    borderRight.rotation.x = -Math.PI / 2;
+                    borderRight.position.set(trackWidth/2, 0.05, -i * 15);
+                    scene.add(borderRight);
+                    roadLines.push(borderRight);
+                }
+
+                window.addEventListener('resize', onWindowResize, false);
+                onWindowResize(); 
+            }
+
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                
+                // --- Mobile View Fix: Move camera back on narrow screens ---
+                if (camera.aspect < 1) {
+                    camera.position.y = 7;
+                    camera.position.z = 15; // Pull camera further back on mobile
+                } else {
+                    camera.position.y = 4.5;
+                    camera.position.z = 9;  // Default for desktop
+                }
+                
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                
+                // Dynamically calculate visible screen width at the player's depth
+                const vFOV = (camera.fov * Math.PI) / 180;
+                const visibleHeight = 2 * Math.tan(vFOV / 2) * camera.position.z;
+                const visibleWidth = visibleHeight * camera.aspect;
+                
+                // Ensure car and elements never go outside the visible screen or track limits
+                boundX = Math.min(trackWidth / 2 - 1.5, (visibleWidth / 2) * 0.85);
+            }
+
+            // --- Absolute Pointer Controls (Smooth mapping to mouse/finger position) ---
+            function updateTargetX(clientX) {
+                if(!gameRunning || isPaused) return;
+                const normalizedX = (clientX / window.innerWidth) * 2 - 1;
+                targetX = normalizedX * boundX * 1.3; 
+                if(targetX < -boundX) targetX = -boundX;
+                if(targetX > boundX) targetX = boundX;
+            }
+
+            window.addEventListener('mousemove', (e) => updateTargetX(e.clientX));
+
+            window.addEventListener('touchstart', (e) => { 
+                if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'A') {
+                    if (menuScreen.style.display === "none") e.preventDefault(); 
+                    updateTargetX(e.touches[0].clientX);
+                }
+            }, {passive: false});
+            
+            window.addEventListener('touchmove', (e) => { 
+                if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'A') {
+                    if(!gameRunning || isPaused) return;
+                    e.preventDefault(); 
+                    updateTargetX(e.touches[0].clientX);
+                }
+            }, {passive: false});
+
+            // Double tap / Space for Boost
+            let lastTapTime = 0;
+            window.addEventListener('mousedown', (e) => {
+                if(!gameRunning || isPaused || e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT' || e.target.tagName === 'A') return;
+                const now = Date.now();
+                if (now - lastTapTime < 300) activateBoost();
+                lastTapTime = now;
+            });
+            window.addEventListener('touchstart', (e) => {
+                if(!gameRunning || isPaused || e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT' || e.target.tagName === 'A') return;
+                const now = Date.now();
+                if (now - lastTapTime < 300) activateBoost();
+                lastTapTime = now;
+            }, {passive: false});
+
+            window.addEventListener('keydown', (e) => {
+                if(e.key === 'a' || e.key === 'ArrowLeft') keys.left = true;
+                if(e.key === 'd' || e.key === 'ArrowRight') keys.right = true;
+                if(e.code === 'Space' || e.key === 'Enter') {
+                    if (menuScreen.style.display !== "none") startBtn.click();
+                    else activateBoost();
+                }
+                if((e.key === 'p' || e.key === 'P' || e.key === 'Escape') && gameRunning) togglePause();
+            });
+            window.addEventListener('keyup', (e) => {
+                if(e.key === 'a' || e.key === 'ArrowLeft') keys.left = false;
+                if(e.key === 'd' || e.key === 'ArrowRight') keys.right = false;
+            });
+
+            // --- Spawners ---
+            function spawnTraffic(zPos) {
+                const carGroup = new THREE.Group();
+                
+                const bodyGeo = new THREE.BoxGeometry(2.2, 1.0, 4.0);
+                const body = new THREE.Mesh(bodyGeo, enemyMat);
+                body.position.y = 0.5;
+                carGroup.add(body);
+                
+                const cabinGeo = new THREE.BoxGeometry(1.8, 0.5, 2.0);
+                const cabinMat = new THREE.MeshStandardMaterial({ color: 0x0f172a });
+                const cabin = new THREE.Mesh(cabinGeo, cabinMat);
+                cabin.position.set(0, 1.25, 0);
+                carGroup.add(cabin);
+
+                // Taillights
+                const tailLight1 = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.2, 0.1), taillightMat);
+                tailLight1.position.set(0.7, 0.6, 2.05);
+                carGroup.add(tailLight1);
+                
+                const tailLight2 = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.2, 0.1), taillightMat);
+                tailLight2.position.set(-0.7, 0.6, 2.05);
+                carGroup.add(tailLight2);
+
+                carGroup.position.set((Math.random() - 0.5) * boundX * 2, 0, zPos);
+                scene.add(carGroup);
+
+                traffic.push({
+                    mesh: carGroup,
+                    box: new THREE.Box3(),
+                    speed: baseSpeed * 0.55 // Traffic moves slightly slower than player
+                });
+            }
+
+            function spawnCoin(zPos) {
+                const mesh = new THREE.Mesh(coinGeo, coinMat);
+                mesh.position.set((Math.random() - 0.5) * boundX * 1.8, 1.2, zPos);
+                // Rotate slightly for visual interest
+                mesh.rotation.x = Math.PI / 2;
+                scene.add(mesh);
+                
+                coins.push({
+                    mesh: mesh,
+                    box: new THREE.Box3(),
+                    rotSpeed: 3
+                });
+            }
+
+            function createExplosion(x, y, z, colorHex) {
+                const mat = new THREE.MeshBasicMaterial({ color: colorHex });
+                for(let i=0; i<12; i++) {
+                    const mesh = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.5, 0.5), mat);
+                    mesh.position.set(x, y, z);
+                    scene.add(mesh);
+                    particleSystem.push({
+                        mesh: mesh,
+                        vx: (Math.random() - 0.5) * 20,
+                        vy: Math.random() * 20 + 5,
+                        vz: (Math.random() - 0.5) * 20 - 10,
+                        life: 1.0
+                    });
+                }
+            }
+
+            function updateBoostUI() {
+                const pct = (boostCharge / BOOST_MAX) * 100;
+                boostBar.style.width = pct + "%";
+                if(boostCharge >= BOOST_MAX) {
+                    boostBar.classList.add('ready');
+                } else {
+                    boostBar.classList.remove('ready');
+                }
+            }
+
+            function activateBoost() {
+                if(boostCharge >= BOOST_MAX && !isBoosting && gameRunning && !isPaused) {
+                    isBoosting = true;
+                    boostCharge = 0;
+                    boostTimer = 3.5; 
+                    updateBoostUI();
+                    
+                    playSynth('boost');
+                    playMeme();
+                    
+                    // Visual changes: Soft engine flare
+                    engineGlowMat.color.setHex(0xfbbf24); 
+                }
+            }
+
+            function togglePause() {
+                if (!gameRunning) return;
+                isPaused = !isPaused;
+                if (isPaused) {
+                    pauseBtn.innerText = "▶";
+                    pauseScreen.style.display = "flex";
+                    setTimeout(() => pauseScreen.style.opacity = 1, 10);
+                } else {
+                    pauseBtn.innerText = "⏸";
+                    pauseScreen.style.opacity = 0;
+                    setTimeout(() => pauseScreen.style.display = "none", 400);
+                    clock.getDelta(); 
+                }
+            }
+
+            function startGame() {
+                initAudio();
+                
+                // Clear old arrays
+                traffic.forEach(t => scene.remove(t.mesh));
+                coins.forEach(c => scene.remove(c.mesh));
+                particleSystem.forEach(p => scene.remove(p.mesh));
+                traffic = [];
+                coins = [];
+                particleSystem = [];
+                promoBox.style.display = 'none';
+
+                // Reset state
+                score = 0;
+                scoreUI.innerText = score;
+                baseSpeed = 35.0; // Comfortable start
+                currentSpeed = baseSpeed;
+                
+                playerCar.position.set(0, 0, 0);
+                targetX = 0;
+                isPaused = false;
+                pauseBtn.innerText = "⏸";
+                pauseScreen.style.display = "none";
+                pauseScreen.style.opacity = 0;
+                
+                boostCharge = 0;
+                isBoosting = false;
+                boostTimer = 0;
+                updateBoostUI();
+                engineGlowMat.color.setHex(0x38bdf8); 
+                camera.fov = 70;
+                camera.updateProjectionMatrix();
+                
+                // Initial generation (Wide spacing)
+                for(let i=0; i<12; i++) {
+                    spawnTraffic(-120 - i*60); 
+                    if(Math.random() > 0.3) spawnCoin(-140 - i*50);
+                }
+
+                menuScreen.style.opacity = 0;
+                setTimeout(() => {
+                    menuScreen.style.display = "none";
+                    gameRunning = true;
+                    clock.getDelta(); 
+                    animate();
+                }, 400);
+            }
+
+            function gameOver() {
+                gameRunning = false;
+                cancelAnimationFrame(animationId);
+                
+                playSynth('crash');
+                playMeme(); 
+                createExplosion(playerCar.position.x, playerCar.position.y + 1, playerCar.position.z, 0xef4444);
+                
+                playerCar.visible = false; // Hide car
+                
+                container.classList.add("shake");
+                setTimeout(() => container.classList.remove("shake"), 400);
+
+                titleText.innerText = "WRECKED!";
+                titleText.classList.add("fail");
+                subText.innerText = `DISTANCE: ${Math.floor(score)}m`;
+                startBtn.innerText = "RESTART ENGINE";
+                
+                // Show Promotional Box on Game Over
+                promoBox.style.display = 'block';
+                
+                setTimeout(() => {
+                    menuScreen.style.display = "flex";
+                    playerCar.visible = true; // restore for next game
+                    setTimeout(() => menuScreen.style.opacity = 1, 50);
+                    startBtn.focus();
+                }, 800); 
+                
+                // Keep rendering explosion briefly
+                let expFrames = 60;
+                function renderExp() {
+                    if(expFrames-- > 0) {
+                        const dt = 0.016;
+                        for (let i = particleSystem.length - 1; i >= 0; i--) {
+                            let p = particleSystem[i];
+                            p.mesh.position.x += p.vx * dt;
+                            p.mesh.position.y += p.vy * dt;
+                            p.mesh.position.z += p.vz * dt;
+                            p.vy -= 40 * dt;
+                            p.life -= dt * 1.5;
+                            p.mesh.scale.setScalar(p.life);
+                            if(p.life <= 0) { scene.remove(p.mesh); particleSystem.splice(i, 1); }
+                        }
+                        renderer.render(scene, camera);
+                        requestAnimationFrame(renderExp);
+                    }
+                }
+                renderExp();
+            }
+
+            function animate() {
+                if(!gameRunning || isPaused) return;
+                animationId = requestAnimationFrame(animate);
+
+                const dt = clock.getDelta();
+                
+                // Boost Logic & Gentle Dynamic FOV
+                let targetFov = 70;
+                
+                if (isBoosting) {
+                    currentSpeed = baseSpeed * 2.2;
+                    targetFov = 85; // Wider, but not nauseatingly distorted
+                    boostTimer -= dt;
+                    if (boostTimer <= 0) {
+                        isBoosting = false;
+                        engineGlowMat.color.setHex(0x38bdf8);
+                    }
+                } else {
+                    baseSpeed += dt * 0.25; // Very smooth, slow difficulty scaling
+                    currentSpeed = baseSpeed;
+                    targetFov = 70 + (currentSpeed - 35) * 0.15; 
+                }
+
+                // Smoothly interpolate FOV
+                camera.fov += (targetFov - camera.fov) * 3 * dt;
+                camera.updateProjectionMatrix();
+
+                score += (currentSpeed / 10) * dt;
+                scoreUI.innerText = Math.floor(score);
+
+                // Keyboard Input overrides pointer
+                if(keys.left) { targetX -= 40 * dt; }
+                if(keys.right) { targetX += 40 * dt; }
+                
+                if(targetX < -boundX) targetX = -boundX;
+                if(targetX > boundX) targetX = boundX;
+
+                // Smooth player movement & Roll
+                playerCar.position.x += (targetX - playerCar.position.x) * 12 * dt;
+                const bankAngle = (playerCar.position.x - targetX) * 0.1;
+                playerCar.rotation.z = bankAngle; 
+                playerCar.rotation.x = -0.02 - (currentSpeed * 0.0005); 
+                
+                // Smooth Camera follow
+                camera.position.x += ((playerCar.position.x * 0.4) - camera.position.x) * 5 * dt;
+
+                // Move Environment (Road Lines)
+                for(let line of roadLines) {
+                    line.position.z += currentSpeed * dt;
+                    if(line.position.z > 10) line.position.z -= 225; // 15 lines * 15 spacing
+                }
+
+                // Update Player Hitbox
+                playerBox.setFromObject(playerCar);
+                playerBox.expandByScalar(-0.4); // Forgiving hitbox
+
+                // Update Traffic
+                for (let i = traffic.length - 1; i >= 0; i--) {
+                    let car = traffic[i];
+                    // Traffic moves towards camera (relative to player speed)
+                    car.mesh.position.z += (currentSpeed - car.speed) * dt;
+                    
+                    car.box.setFromObject(car.mesh);
+                    if (playerBox.intersectsBox(car.box)) {
+                        if (isBoosting) {
+                            // Destroy traffic gently
+                            createExplosion(car.mesh.position.x, car.mesh.position.y + 1, car.mesh.position.z, 0xef4444);
+                            playSynth('smash');
+                            playMeme();
+                            score += 50;
+                            // Recycle far away
+                            car.mesh.position.z -= 800;
+                            car.mesh.position.x = (Math.random() - 0.5) * boundX * 2;
+                        } else {
+                            gameOver();
+                            return; 
+                        }
+                    }
+
+                    // Recycle
+                    if (car.mesh.position.z > camera.position.z + 10) {
+                        car.mesh.position.z -= 800 + Math.random() * 400; 
+                        car.mesh.position.x = (Math.random() - 0.5) * boundX * 2;
+                    }
+                }
+
+                // Update Coins
+                for (let i = coins.length - 1; i >= 0; i--) {
+                    let c = coins[i];
+                    c.mesh.position.z += currentSpeed * dt;
+                    c.mesh.rotation.z += c.rotSpeed * dt; 
+                    
+                    c.box.setFromObject(c.mesh);
+                    c.box.expandByScalar(0.6); 
+                    
+                    if (playerBox.intersectsBox(c.box)) {
+                        score += 20;
+                        playMeme(); 
+                        
+                        if(!isBoosting) {
+                            boostCharge = Math.min(BOOST_MAX, boostCharge + 1);
+                            updateBoostUI();
+                        }
+                        
+                        c.mesh.position.z -= 600 + Math.random() * 300;
+                        c.mesh.position.x = (Math.random() - 0.5) * boundX * 1.8;
+                        continue;
+                    }
+
+                    if (c.mesh.position.z > camera.position.z + 5) {
+                        c.mesh.position.z -= 600 + Math.random() * 300;
+                        c.mesh.position.x = (Math.random() - 0.5) * boundX * 1.8;
+                    }
+                }
+                
+                // Update Particles
+                for (let i = particleSystem.length - 1; i >= 0; i--) {
+                    let p = particleSystem[i];
+                    p.mesh.position.x += p.vx * dt;
+                    p.mesh.position.y += p.vy * dt;
+                    p.mesh.position.z += (p.vz + currentSpeed) * dt;
+                    p.vy -= 40 * dt; 
+                    p.life -= dt * 1.5;
+                    
+                    p.mesh.scale.setScalar(p.life);
+                    
+                    if(p.life <= 0 || p.mesh.position.y < 0) {
+                        scene.remove(p.mesh);
+                        particleSystem.splice(i, 1);
+                    }
+                }
+
+                renderer.render(scene, camera);
+            }
+
+            // Init
+            init3D();
+            startBtn.addEventListener('click', startGame);
+            pauseBtn.addEventListener('click', togglePause);
+            resumeBtn.addEventListener('click', togglePause);
+        };
+    </script>
+
+    <!-- Security Script -->
+    <script>
+        (function() {
+            document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
+                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) { e.preventDefault(); return false; }
+                if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j' || e.keyCode === 74)) { e.preventDefault(); return false; }
+                if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) { e.preventDefault(); return false; }
+                if (e.ctrlKey && (e.key === 'S' || e.key === 's' || e.keyCode === 83)) { e.preventDefault(); return false; }
+                if (e.ctrlKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67 || e.key === 'A' || e.key === 'a' || e.keyCode === 65)) { e.preventDefault(); return false; }
+            });
+            document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+            setInterval(function() {
+                const before = new Date().getTime();
+                (function() { return false; }['constructor']('debugger')());
+                const after = new Date().getTime();
+                if (after - before > 100) {
+                    document.body.innerHTML = "<h1 style='color:red; text-align:center; margin-top:20%; font-family:sans-serif;'>DevTools is not allowed here!</h1>";
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>

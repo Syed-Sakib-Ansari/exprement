@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Comprehensive SEO Meta Tags -->
+    <title>Cyber Orbit | Meme Action Game</title>
+    <meta name="title" content="Cyber Orbit | Meme Action Game">
+    <meta name="description" content="Jump between neon orbits, dodge red spikes, and collect meme coins in this satisfying HTML5 arcade game. Play free online!">
+    <meta name="keywords" content="orbit game, circle runner, neon game, cyberpunk arcade, meme game, html5 game, browser game, free online game">
+    <meta name="author" content="PlayZone Games">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://playzone.games/cyber-orbit">
+    <meta property="og:title" content="Cyber Orbit | Meme Action Game">
+    <meta property="og:description" content="Jump between neon orbits, dodge red spikes, and collect meme coins in this satisfying HTML5 arcade game.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Cyber Orbit | Meme Action Game">
+    <meta property="twitter:description" content="Jump between neon orbits, dodge red spikes, and collect meme coins in this satisfying HTML5 arcade game.">
+
+    <!-- Best Practices & PWA Support -->
+    <meta name="theme-color" content="#060814">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Cyber Orbit">
+
+    <!-- Performance: Preconnect to Font APIs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Eye-Friendly Midnight Cyber Palette */
+            --bg-dark: #060814;
+            --neon-cyan: #00e5ff;
+            --neon-magenta: #ff0055;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffea00;
+            --ui-bg: rgba(15, 20, 40, 0.85);
+            --ui-border: rgba(0, 229, 255, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #e0e0e0;
+            font-family: 'Nunito', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh;
+            padding: 10px;
+            touch-action: none; 
+            overflow: hidden;
+            background-image: radial-gradient(circle at center, #101530 0%, #060814 100%);
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 10px 20px;
+            background: var(--ui-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--ui-border);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            flex: 0 0 auto;
+            z-index: 2;
+        }
+
+        .stats-container {
+            font-family: 'Bungee', cursive;
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            color: var(--neon-cyan);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .level-badge {
+            color: var(--neon-yellow);
+        }
+
+        .controls-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .game-wrapper {
+            width: 100%;
+            flex-grow: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            background-color: #060814; /* Solid color to prevent eye strain from motion blur */
+            cursor: pointer;
+            touch-action: none;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(6, 8, 20, 0.9);
+            backdrop-filter: blur(6px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity 0.4s ease;
+            will-change: opacity;
+        }
+
+        #message {
+            font-family: 'Bungee', cursive;
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 0 15px var(--neon-cyan);
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+
+        #message.fail { text-shadow: 0 0 15px var(--neon-magenta); color: #ff4081; }
+
+        #subMessage {
+            font-size: 1rem;
+            color: var(--neon-green);
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ------------------------------------------- */
+        /* PROMOTIONAL BOX STYLES */
+        /* ------------------------------------------- */
+        .promo-box {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 12px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+            animation: pulsePromo 2s infinite alternate;
+            display: none; /* Shown only on Game Over */
+            pointer-events: auto;
+            z-index: 100;
+        }
+
+        @keyframes pulsePromo {
+            from { box-shadow: 0 0 10px rgba(0, 229, 255, 0.1); border-color: rgba(0, 229, 255, 0.3); }
+            to { box-shadow: 0 0 25px rgba(0, 229, 255, 0.4); border-color: rgba(0, 229, 255, 0.8); }
+        }
+
+        .promo-box h3 {
+            font-family: 'Bungee', cursive;
+            color: var(--neon-yellow);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 234, 0, 0.5);
+        }
+
+        .promo-box p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+        }
+
+        .promo-link-btn {
+            font-family: 'Bungee', cursive;
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, var(--neon-magenta), var(--bg-dark));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
+        }
+
+        .promo-link-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.8);
+            color: #fff;
+        }
+
+        button.primary-btn {
+            font-family: 'Bungee', cursive;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background: linear-gradient(90deg, #00b4d8, #00838f);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+        }
+
+        button.primary-btn:hover, button.primary-btn:focus-visible { 
+            transform: scale(1.05); 
+            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.6);
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+        button.primary-btn:active { transform: scale(0.95); }
+
+        .icon-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--ui-border);
+            color: var(--neon-cyan);
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        
+        .icon-btn:hover, .icon-btn:focus-visible {
+            background: rgba(255, 255, 255, 0.15);
+            outline: 2px solid var(--neon-cyan);
+            outline-offset: 2px;
+        }
+        
+        .action-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            color: #00e5ff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-btn:hover, .action-btn:focus-visible {
+            background: rgba(0, 229, 255, 0.2);
+            outline: 2px solid var(--neon-cyan);
+            outline-offset: 2px;
+        }
+
+        #volumeSlider {
+            width: 70px;
+            height: 4px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        #volumeSlider:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 4px; }
+        
+        #volumeSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 8px var(--neon-cyan);
+            cursor: pointer;
+        }
+
+        .instructions {
+            margin-top: 15px;
+            color: #78909c;
+            font-size: 0.85rem;
+            text-align: center;
+            line-height: 1.5;
+            letter-spacing: 1px;
+            font-weight: 700;
+            flex: 0 0 auto;
+        }
+        
+        .accent { color: var(--neon-cyan); }
+        .pink-text { color: var(--neon-magenta); }
+
+        @media (max-width: 480px) {
+            .header { padding: 10px; }
+            .stats-container { font-size: 0.9rem; }
+            #volumeSlider { width: 60px; }
+            .action-btn { padding: 6px 10px; }
+            
+            .promo-box { padding: 15px; margin-top: 5px; margin-bottom: 15px; }
+            .promo-box h3 { font-size: 1.2rem; }
+            .promo-box p { font-size: 0.85rem; margin-bottom: 10px; }
+        }
+
+        .shake-active { animation: shake 0.3s ease-in-out; will-change: transform; }
+        @keyframes shake {
+            0% { transform: translate(1px, 1px); }
+            25% { transform: translate(-2px, -2px); }
+            50% { transform: translate(1px, 2px); }
+            75% { transform: translate(-1px, -1px); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Master Audio Playlist (Optimized with preload="none" for Performance) -->
+    <div id="audio-assets" style="display: none;" aria-hidden="true">
+        <audio id="sound-meme-0" src="Voicy_Jetha Nonsense.mp3" preload="none"></audio>
+        <audio id="sound-meme-1" src="Voicy_Hey Ma Mataji.mp3" preload="none"></audio>
+        <audio id="sound-meme-2" src="Happy Diwali Happy Diwali - Jethalal Song.mp3" preload="none"></audio>
+        <audio id="sound-meme-3" src="Voicy_Tu kiyun ro raha ha tere Maa mr gaee ha paper ma.mp3" preload="none"></audio>
+        <audio id="sound-meme-4" src="Voicy_Daish ma kuch krna krwana ha to rishwat to deni pare gee.mp3" preload="none"></audio>
+        <audio id="sound-meme-5" src="Voicy_Tere ankhoon ma dal doon ga ya chata.mp3" preload="none"></audio>
+        <audio id="sound-meme-6" src="Voicy_Auratoon ko kyun chait ma sa jhank k dekhta ha.mp3" preload="none"></audio>
+        <audio id="sound-meme-7" src="Voicy_Jija g ma andr aoon.mp3" preload="none"></audio>
+        <audio id="sound-meme-8" src="Voicy_A dhelay zara diesel dal.mp3" preload="none"></audio>
+        <audio id="sound-meme-9" src="Voicy_Tu cheez baree ha mast mast .mp3" preload="none"></audio>
+        <audio id="sound-meme-10" src="Voicy_Kya gunda banega re tu.mp3" preload="none"></audio>
+        <audio id="sound-meme-11" src="Voicy_Tera bap ki shadi hai kiya ra.mp3" preload="none"></audio>
+        <audio id="sound-meme-12" src="Voicy_ Kesi han.mp3" preload="none"></audio>
+        <audio id="sound-meme-13" src="Voicy_ Cha maila.mp3" preload="none"></audio>
+        <audio id="sound-meme-14" src="Voicy_Ha ha ha ha.mp3" preload="none"></audio>
+        <audio id="sound-meme-15" src="Voicy_Ye baburao ka style hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-16" src="Voicy_Pakad mera ko mero ko janta ni hai ya.mp3" preload="none"></audio>
+        <audio id="sound-meme-17" src="babu_rao.mp3" preload="none"></audio>
+        <audio id="sound-meme-18" src="Voicy_To is ko mar ka dikha mujha dakhna hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-19" src="Voicy_ Mar ka dikha.mp3" preload="none"></audio>
+        <audio id="sound-meme-20" src="Voicy_Main pagl hun.mp3" preload="none"></audio>
+        <audio id="sound-meme-21" src="Voicy_Is ko bilkul ni ata.mp3" preload="none"></audio>
+        <audio id="sound-meme-22" src="Voicy_Totally kangal.mp3" preload="none"></audio>
+        <audio id="sound-meme-23" src="Voicy_Is tida ko bi yahi chor do.mp3" preload="none"></audio>
+        <audio id="sound-meme-24" src="Voicy_Paisa dana para ga.mp3" preload="none"></audio>
+        <audio id="sound-meme-25" src="Voicy_Hum koi mandir ka ghanta ha ka koi bi a ka baja jata hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-26" src="Voicy_ Humko maaro humko jinda mat choro salo.mp3" preload="none"></audio>
+        <audio id="sound-meme-27" src="aahhkk-ahhk-with-echo.mp3" preload="none"></audio>
+        <audio id="sound-meme-28" src="aah-meme-jacqueline-fernandez.mp3" preload="none"></audio>
+        <audio id="sound-meme-29" src="ae-ghargharghar-dhadam-a.mp3" preload="none"></audio>
+        <audio id="sound-meme-30" src="africa-crying-laugh-commercial.mp3" preload="none"></audio>
+        <audio id="sound-meme-31" src="anime-ahh.mp3" preload="none"></audio>
+        <audio id="sound-meme-32" src="baigan.mp3" preload="none"></audio>
+        <audio id="sound-meme-33" src="bhosdike-madarchod-been-k-loray-roadies.mp3" preload="none"></audio>
+        <audio id="sound-meme-34" src="cat-laugh-meme-1.mp3" preload="none"></audio>
+        <audio id="sound-meme-35" src="cid-acp-behn-choo.mp3" preload="none"></audio>
+        <audio id="sound-meme-36" src="confused-cross-eyed-kitten-meme.mp3" preload="none"></audio>
+        <audio id="sound-meme-37" src="dry-fart.mp3" preload="none"></audio>
+        <audio id="sound-meme-38" src="gaaayyyyy_vUi3hqB.mp3" preload="none"></audio>
+        <audio id="sound-meme-39" src="ghok-ghok.mp3" preload="none"></audio>
+        <audio id="sound-meme-40" src="indian-sorry.mp3" preload="none"></audio>
+        <audio id="sound-meme-41" src="le-mdrchd.mp3" preload="none"></audio>
+        <audio id="sound-meme-42" src="oh-ma-gaud-vine.mp3" preload="none"></audio>
+        <audio id="sound-meme-43" src="perfect-fart.mp3" preload="none"></audio>
+        <audio id="sound-meme-44" src="raven-caw-caw.mp3" preload="none"></audio>
+        <audio id="sound-meme-45" src="spongebob-fail.mp3" preload="none"></audio>
+        <audio id="sound-meme-46" src="studio-audience-awwww-sound-fx.mp3" preload="none"></audio>
+        <audio id="sound-meme-47" src="ye-meri-galti-h.mp3" preload="none"></audio>
+        <audio id="sound-meme-48" src="tmpgj3wv0ae.mp3" preload="none"></audio>
+        <audio id="sound-meme-49" src="vine-boom-sound-effect_KT89XIq.mp3" preload="none"></audio>
+        <audio id="sound-meme-50" src="tarkov-scav-laughing-3.mp3" preload="none"></audio>
+        <audio id="sound-meme-51" src="mylan_olE7cPM.mp3" preload="none"></audio>
+        <audio id="sound-meme-52" src="tudum-tedev (1).mp3" preload="none"></audio>
+        <audio id="sound-meme-53" src="tudum-tedev.mp3" preload="none"></audio>
+        <audio id="sound-meme-54" src="rom-rom-bhaiyo.mp3" preload="none"></audio>
+        <audio id="sound-meme-55" src="yeah-boymp4.mp3" preload="none"></audio>
+        <audio id="sound-meme-56" src="happy-happy-happy-song.mp3" preload="none"></audio>
+        <audio id="sound-meme-57" src="omgwow.mp3" preload="none"></audio>
+        <audio id="sound-meme-58" src="kids-saying-yay-sound-effect_3.mp3" preload="none"></audio>
+        <audio id="sound-meme-59" src="007-james-bond-theme_WrKEvuW.mp3" preload="none"></audio>
+        <audio id="sound-meme-60" src="spiderman-meme-song-2-0.mp3" preload="none"></audio>
+        <audio id="sound-meme-61" src="helicopter-helicopter-parakofer-parakofer.mp3" preload="none"></audio>
+        <audio id="sound-meme-62" src="yooooooooooooooooooooooooo_4_objp8XX.mp3" preload="none"></audio>
+        <audio id="sound-meme-63" src="shah-rukh-khan.mp3" preload="none"></audio>
+        <audio id="sound-meme-64" src="Voicy_Abi thk kr ka data hun.mp3" preload="none"></audio>
+        <audio id="sound-meme-65" src="Voicy_Kahan sa utha ka laya ic mechanic ko.mp3" preload="none"></audio>
+        <audio id="sound-meme-66" src="Voicy_Madam madam.mp3" preload="none"></audio>
+        <audio id="sound-meme-67" src="Voicy_Ma to pura kala ho gya yar.mp3" preload="none"></audio>
+        <audio id="sound-meme-68" src="meme-de-creditos-finales.mp3" preload="none"></audio>
+        <audio id="sound-meme-69" src="896756048.mp3" preload="none"></audio>
+        <audio id="sound-meme-70" src="weeeee_original_1193597514938524841.mp3" preload="none"></audio>
+        <audio id="sound-meme-71" src="careless_whispers.mp3" preload="none"></audio>
+        <audio id="sound-meme-72" src="fahhh-pump-sound.mp3" preload="none"></audio>
+        <audio id="sound-meme-73" src="matlab-wo-alag-hi-level-ka-banda-tha.mp3" preload="none"></audio>
+        <audio id="sound-meme-74" src="gimme-some-ganja.mp3" preload="none"></audio>
+        <audio id="sound-meme-75" src="kung-fu_Xu8sssy.mp3" preload="none"></audio>
+        <audio id="sound-meme-76" src="chud-gayi.mp3" preload="none"></audio>
+        <audio id="sound-meme-77" src="chalti-firti-cocaine.mp3" preload="none"></audio>
+        <audio id="sound-meme-78" src="koun-hai-re_8ep4nAR.mp3" preload="none"></audio>
+        <audio id="sound-meme-79" src="ladle-meoww-ghop-ghop-ghop.mp3" preload="none"></audio>
+        <audio id="sound-meme-80" src="meow-ghop-ghop-ghop.mp3" preload="none"></audio>
+        <audio id="sound-meme-81" src="tf_nemesis.mp3" preload="none"></audio>
+        <audio id="sound-meme-82" src="tmp0gt0yo3e.mp3" preload="none"></audio>
+        <audio id="sound-meme-83" src="ma-ka-bhosda-aag.mp3" preload="none"></audio>
+        <audio id="sound-meme-84" src="oh-shit_4.mp3" preload="none"></audio>
+        <audio id="sound-meme-85" src="modi-ji-bkl.mp3" preload="none"></audio>
+        <audio id="sound-meme-86" src="Voicy_Is ka liya bari unchi pehchan chahiye unchi ponch chaiya.mp3" preload="none"></audio>
+        <audio id="sound-meme-87" src="Voicy_ Jor jor se bol ka logo ko scheme bata de.mp3" preload="none"></audio>
+    </div>
+
+    <main role="main">
+        <header class="header" role="banner">
+            <div class="stats-container" aria-live="polite">
+                <div>SCORE: <span id="score-val" style="color: #fff;">0</span></div>
+            </div>
+            <div class="controls-container">
+                <button id="soundIcon" class="icon-btn" aria-label="Mute or Unmute Game Sound" title="Toggle Sound">🔊</button>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="1" aria-label="Game Volume Control">
+                <button id="pauseBtn" class="action-btn" aria-label="Pause Game" style="display:none;">⏸ PAUSE</button>
+            </div>
+        </header>
+
+        <div class="game-wrapper" id="gameWrapper">
+            <canvas id="gameCanvas" role="application" aria-label="Cyber Orbit Game Board: Tap to jump between rings">
+                Your browser does not support the HTML5 canvas element.
+            </canvas>
+            
+            <div class="overlay" id="startScreen" role="dialog" aria-labelledby="message" aria-describedby="subMessage">
+                <h1 id="message">CYBER ORBIT</h1>
+                <div id="subMessage">Tap, Space or Arrows to Jump</div>
+                
+                <!-- PROMOTIONAL MOVIE BOX -->
+                <div class="promo-box" id="promoBox" style="display: none;">
+                    <h3>🍿 MOVIE TIME! 🎬</h3>
+                    <p>Need a break from gaming? Watch the latest blockbuster movies and shows on our premium platform!</p>
+                    <a href="https://moviedakhi.com/" class="promo-link-btn" rel="noopener noreferrer">VISIT MOVIE SITE</a>
+                </div>
+
+                <button id="startBtn" class="primary-btn" tabindex="0">INITIALIZE</button>
+            </div>
+        </div>
+
+        <footer class="instructions" role="contentinfo">
+            <span class="accent">Tap anywhere</span> or press <span class="accent">SPACE / ARROWS</span> to switch rings.<br>
+            Avoid the <span class="pink-text">Red Spikes</span>! Collect <span style="color:var(--neon-yellow);">Meme Coins</span>.
+        </footer>
+    </main>
+
+    <script>
+        'use strict';
+
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d", { alpha: false });
+        const startScreen = document.getElementById("startScreen");
+        const startBtn = document.getElementById("startBtn");
+        const pauseBtn = document.getElementById("pauseBtn");
+        const scoreDisplay = document.getElementById("score-val");
+        const messageDisplay = document.getElementById("message");
+        const subMessageDisplay = document.getElementById("subMessage");
+        const soundIcon = document.getElementById("soundIcon");
+        const volumeSlider = document.getElementById("volumeSlider");
+        const mainContainer = document.getElementById("mainContainer");
+        const promoBox = document.getElementById("promoBox");
+
+        // --- Audio System with Smart Shuffle ---
+        let audioCtx;
+        let globalVolume = 1.0;
+        let previousVolume = 1.0;
+        
+        const allMemeSounds = [];
+        for(let i=0; i<=87; i++) {
+            const el = document.getElementById(`sound-meme-${i}`);
+            if(el) allMemeSounds.push(el);
+        }
+
+        const memeIndices = [];
+        let currentlyPlayingMeme = null;
+        let lastPlayedIndex = -1;
+
+        function getNextSound() {
+            if (allMemeSounds.length === 0) return null;
+            if (memeIndices.length === 0) {
+                for (let i = 0; i < allMemeSounds.length; i++) memeIndices.push(i);
+                for (let i = memeIndices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [memeIndices[i], memeIndices[j]] = [memeIndices[j], memeIndices[i]];
+                }
+                if (memeIndices.length > 1 && memeIndices[memeIndices.length - 1] === lastPlayedIndex) {
+                    const temp = memeIndices[memeIndices.length - 1];
+                    memeIndices[memeIndices.length - 1] = memeIndices[0];
+                    memeIndices[0] = temp;
+                }
+            }
+            let nextIndex = memeIndices.pop();
+            lastPlayedIndex = nextIndex;
+            return allMemeSounds[nextIndex];
+        }
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }
+
+        function unlockAudioFiles() {
+            allMemeSounds.forEach(audio => {
+                if(audio && audio.readyState === 0) {
+                    audio.volume = 0; 
+                    const p = audio.play();
+                    if (p !== undefined) {
+                        p.then(() => { audio.pause(); audio.currentTime = 0; audio.volume = globalVolume; }).catch(() => {});
+                    }
+                }
+            });
+        }
+
+        function playMeme(forceSkip = false) {
+            if (globalVolume === 0) return;
+            if (currentlyPlayingMeme && !forceSkip) return; // Don't interrupt unless forced
+            if (currentlyPlayingMeme) { currentlyPlayingMeme.pause(); currentlyPlayingMeme.currentTime = 0; }
+            const s = getNextSound();
+            if (s) {
+                currentlyPlayingMeme = s;
+                s.volume = globalVolume;
+                s.currentTime = 0;
+                s.onended = () => currentlyPlayingMeme = null;
+                s.play().catch(()=>{});
+            }
+        }
+
+        function playSynth(type) {
+            if (globalVolume === 0 || !audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            
+            const now = audioCtx.currentTime;
+
+            if (type === 'jump') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(300, now); 
+                osc.frequency.exponentialRampToValueAtTime(600, now + 0.1); 
+                gain.gain.setValueAtTime(0.05 * globalVolume, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+                osc.start(now); osc.stop(now + 0.1);
+            } else if (type === 'loseGame') {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(200, now);
+                osc.frequency.exponentialRampToValueAtTime(50, now + 0.5);
+                gain.gain.setValueAtTime(0.15 * globalVolume, now);
+                gain.gain.linearRampToValueAtTime(0, now + 0.5);
+                osc.start(now); osc.stop(now + 0.5);
+            }
+        }
+
+        volumeSlider.addEventListener("input", (e) => {
+            globalVolume = parseFloat(e.target.value);
+            if (globalVolume > 0) previousVolume = globalVolume;
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : (globalVolume < 0.5 ? "🔉" : "🔊");
+            if (currentlyPlayingMeme) currentlyPlayingMeme.volume = globalVolume;
+            initAudio(); 
+        });
+
+        soundIcon.onclick = () => {
+            if (globalVolume > 0) {
+                previousVolume = globalVolume;
+                globalVolume = 0;
+                volumeSlider.value = 0;
+            } else {
+                globalVolume = previousVolume || 1.0;
+                volumeSlider.value = globalVolume;
+            }
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : (globalVolume < 0.5 ? "🔉" : "🔊");
+            if (currentlyPlayingMeme) currentlyPlayingMeme.volume = globalVolume;
+            initAudio();
+        };
+
+        // --- Game Engine ---
+        let gameState = 'start'; // start, playing, paused, game_over
+        let score = 0;
+        let bestScore = 0;
+        let lastTime = 0;
+        let animationId;
+        
+        let centerX = 0, centerY = 0;
+        let coreTime = 0;
+        
+        // Orbit definitions
+        let orbitRadii = [];
+        
+        // Entities
+        let player = { angle: 0, orbitIndex: 0, radius: 12, color: '#00e5ff' };
+        let obstacles = [];
+        let coins = [];
+        let particles = [];
+        
+        // Progression
+        let baseSpeed = 1.2; // Reduced starting speed (was 1.5)
+        let currentSpeed = baseSpeed;
+        let spawnTimer = 0;
+        let nextSpawnRate = 1.5;
+
+        function resizeCanvas() {
+            const wrapper = document.getElementById("gameWrapper");
+            canvas.width = wrapper.clientWidth;
+            canvas.height = wrapper.clientHeight;
+            centerX = canvas.width / 2;
+            centerY = canvas.height / 2;
+            
+            // Recalculate orbit sizes based on screen size
+            const minDim = Math.min(canvas.width, canvas.height);
+            orbitRadii = [
+                Math.floor(minDim * 0.22), // Inner
+                Math.floor(minDim * 0.38)  // Outer
+            ];
+
+            if(gameState === 'start' || gameState === 'paused') draw();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        function triggerShake() {
+            if(mainContainer) {
+                mainContainer.classList.add("shake-active");
+                setTimeout(() => mainContainer.classList.remove("shake-active"), 300);
+            }
+        }
+
+        function resetGame() {
+            score = 0;
+            scoreDisplay.innerText = score;
+            currentSpeed = baseSpeed;
+            
+            player.angle = 0;
+            player.orbitIndex = 0;
+            
+            obstacles = [];
+            coins = [];
+            particles = [];
+            
+            spawnTimer = 0;
+            nextSpawnRate = 1.5; // Start with more breathing room
+            coreTime = 0;
+            lastTime = 0;
+        }
+
+        function switchOrbit() {
+            if (gameState !== 'playing') return;
+            // Toggle between 0 and 1
+            player.orbitIndex = 1 - player.orbitIndex;
+            playSynth('jump');
+            createParticles(
+                centerX + Math.cos(player.angle) * orbitRadii[player.orbitIndex],
+                centerY + Math.sin(player.angle) * orbitRadii[player.orbitIndex],
+                player.color,
+                10
+            );
+        }
+
+        function spawnEntities() {
+            const isCoin = Math.random() > 0.5; // 50% chance for a pure coin wave
+            const orbitIdx = Math.random() > 0.5 ? 1 : 0;
+            
+            // Spawn ahead of the player consistently
+            const spawnAngle = player.angle + Math.PI + 0.5; 
+            
+            if (isCoin) {
+                coins.push({
+                    angle: spawnAngle,
+                    orbitIndex: orbitIdx,
+                    radius: 12, // Slightly larger coins
+                    collected: false
+                });
+            } else {
+                obstacles.push({
+                    angle: spawnAngle,
+                    orbitIndex: orbitIdx,
+                    radius: 12, // Reduced obstacle size (was 14) for fairer dodging
+                    // Enemies move in opposite direction, slower relative speed
+                    speed: currentSpeed * 0.5 
+                });
+
+                // 70% chance to spawn a guiding coin on the SAFE orbit
+                if (Math.random() > 0.3) {
+                    coins.push({
+                        angle: spawnAngle,
+                        orbitIndex: 1 - orbitIdx, // The safe lane
+                        radius: 12,
+                        collected: false
+                    });
+                }
+            }
+        }
+
+        function createParticles(x, y, color, count) {
+            for(let i=0; i<count; i++) {
+                particles.push({
+                    x: x, y: y,
+                    vx: (Math.random() - 0.5) * 200,
+                    vy: (Math.random() - 0.5) * 200,
+                    life: 1.0,
+                    color: color,
+                    size: Math.random() * 4 + 2
+                });
+            }
+        }
+
+        function update(dt) {
+            if (gameState !== 'playing') return;
+
+            coreTime += dt;
+            currentSpeed += dt * 0.01; // Slower speed creep (was 0.02)
+
+            // Player moves clockwise
+            player.angle += currentSpeed * dt;
+
+            // Normalize angle to keep it manageable
+            if (player.angle > Math.PI * 2) player.angle -= Math.PI * 2;
+
+            spawnTimer -= dt;
+            if (spawnTimer <= 0) {
+                spawnEntities();
+                // Ensure a safe minimum gap of 0.8 seconds (was 0.4)
+                nextSpawnRate = Math.max(0.8, 1.8 - (currentSpeed - baseSpeed)*0.5);
+                spawnTimer = nextSpawnRate;
+            }
+
+            // Calculate current player exact position for collision
+            const pRadius = orbitRadii[player.orbitIndex];
+            const px = centerX + Math.cos(player.angle) * pRadius;
+            const py = centerY + Math.sin(player.angle) * pRadius;
+
+            // Update Obstacles
+            for (let i = obstacles.length - 1; i >= 0; i--) {
+                let obs = obstacles[i];
+                // Obstacles move counter-clockwise
+                obs.angle -= obs.speed * dt;
+                
+                const oRadius = orbitRadii[obs.orbitIndex];
+                const ox = centerX + Math.cos(obs.angle) * oRadius;
+                const oy = centerY + Math.sin(obs.angle) * oRadius;
+
+                // Collision Check (More forgiving hitbox: -4 instead of -2)
+                if (Math.hypot(px - ox, py - oy) < player.radius + obs.radius - 4) {
+                    handleGameOver('ORBIT CRASH!');
+                    return;
+                }
+
+                // Remove old obstacles (they do one full rotation then disappear)
+                if (obs.angle < player.angle - Math.PI * 2) {
+                    obstacles.splice(i, 1);
+                    score++; // Score for surviving
+                    scoreDisplay.innerText = score;
+                }
+            }
+
+            // Update Coins
+            for (let i = coins.length - 1; i >= 0; i--) {
+                let c = coins[i];
+                // Coins stay static on the orbit
+                
+                const cRadius = orbitRadii[c.orbitIndex];
+                const cx = centerX + Math.cos(c.angle) * cRadius;
+                const cy = centerY + Math.sin(c.angle) * cRadius;
+
+                if (Math.hypot(px - cx, py - cy) < player.radius + c.radius) {
+                    // Collected
+                    score += 5;
+                    scoreDisplay.innerText = score;
+                    createParticles(cx, cy, "#ffea00", 15);
+                    playMeme(false); // Play fun sound
+                    coins.splice(i, 1);
+                    continue;
+                }
+
+                // Remove if player passed it entirely
+                if (player.angle > c.angle + Math.PI * 1.5) {
+                    coins.splice(i, 1);
+                }
+            }
+
+            // Update Particles
+            for(let i=particles.length-1; i>=0; i--) {
+                let p = particles[i];
+                p.x += p.vx * dt;
+                p.y += p.vy * dt;
+                p.life -= dt * 1.5;
+                if(p.life <= 0) particles.splice(i, 1);
+            }
+        }
+
+        function draw() {
+            // Solid background to prevent eye strain
+            ctx.fillStyle = "#060814";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Central Sun/Core
+            const pulse = Math.sin(coreTime * 5) * 5;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 30 + pulse, 0, Math.PI*2);
+            ctx.fillStyle = "#ff0055";
+            ctx.shadowBlur = 30;
+            ctx.shadowColor = "#ff0055";
+            ctx.fill();
+            ctx.shadowBlur = 0;
+            ctx.fillStyle = "#fff";
+            ctx.beginPath(); ctx.arc(centerX, centerY, 15 + pulse/2, 0, Math.PI*2); ctx.fill();
+
+            // Draw Orbit Rings
+            ctx.lineWidth = 2;
+            for(let i=0; i<orbitRadii.length; i++) {
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, orbitRadii[i], 0, Math.PI*2);
+                ctx.strokeStyle = i === player.orbitIndex ? "rgba(0, 229, 255, 0.4)" : "rgba(0, 229, 255, 0.1)";
+                ctx.stroke();
+            }
+
+            // Draw Coins
+            for (let c of coins) {
+                const cRadius = orbitRadii[c.orbitIndex];
+                const cx = centerX + Math.cos(c.angle) * cRadius;
+                const cy = centerY + Math.sin(c.angle) * cRadius;
+                
+                ctx.beginPath();
+                ctx.arc(cx, cy, c.radius, 0, Math.PI*2);
+                ctx.fillStyle = "#ffea00";
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = "#ffea00";
+                ctx.fill();
+                ctx.fillStyle = "#fff"; ctx.shadowBlur = 0;
+                ctx.beginPath(); ctx.arc(cx, cy, c.radius/2, 0, Math.PI*2); ctx.fill();
+            }
+
+            // Draw Obstacles (Spikes)
+            for (let obs of obstacles) {
+                const oRadius = orbitRadii[obs.orbitIndex];
+                const ox = centerX + Math.cos(obs.angle) * oRadius;
+                const oy = centerY + Math.sin(obs.angle) * oRadius;
+                
+                ctx.save();
+                ctx.translate(ox, oy);
+                ctx.rotate(obs.angle + Math.PI/2); // Point outward from center
+                
+                ctx.beginPath();
+                ctx.moveTo(0, -obs.radius);
+                ctx.lineTo(obs.radius, obs.radius);
+                ctx.lineTo(-obs.radius, obs.radius);
+                ctx.closePath();
+                
+                ctx.fillStyle = "#ff0055";
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = "#ff0055";
+                ctx.fill();
+                ctx.lineWidth = 2; ctx.strokeStyle = "#fff"; ctx.stroke();
+                ctx.restore();
+            }
+            ctx.shadowBlur = 0;
+
+            // Draw Particles
+            for(let p of particles) {
+                ctx.globalAlpha = Math.max(0, p.life);
+                ctx.fillStyle = p.color;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill();
+            }
+            ctx.globalAlpha = 1;
+
+            // Draw Player
+            if (gameState === 'playing' || gameState === 'paused') {
+                const pRadius = orbitRadii[player.orbitIndex];
+                const px = centerX + Math.cos(player.angle) * pRadius;
+                const py = centerY + Math.sin(player.angle) * pRadius;
+
+                // Trail line covering the orbit segment recently passed
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, pRadius, player.angle - 0.4, player.angle);
+                ctx.strokeStyle = player.color;
+                ctx.lineWidth = 4;
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(px, py, player.radius, 0, Math.PI*2);
+                ctx.fillStyle = player.color;
+                ctx.shadowBlur = 20; ctx.shadowColor = player.color;
+                ctx.fill();
+                ctx.fillStyle = "#fff"; ctx.shadowBlur = 0;
+                ctx.beginPath(); ctx.arc(px, py, player.radius/2, 0, Math.PI*2); ctx.fill();
+            }
+
+            // Draw Paused Screen Overlay
+            if (gameState === 'paused') {
+                ctx.fillStyle = "rgba(6, 8, 20, 0.75)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#fff";
+                ctx.font = "bold 30px 'Bungee', cursive";
+                ctx.textAlign = "center";
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = "#00e5ff";
+                ctx.fillText("PAUSED", canvas.width / 2, canvas.height / 2);
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        function loop(timestamp) {
+            if (!lastTime) lastTime = timestamp;
+            const dt = (timestamp - lastTime) / 1000;
+            lastTime = timestamp;
+
+            if (dt < 0.2) { // Prevent huge jumps
+                update(dt);
+            }
+            draw();
+            
+            animationId = requestAnimationFrame(loop);
+        }
+        
+        function handleGameOver(reason) {
+            if (gameState === 'game_over') return;
+            gameState = 'game_over';
+            pauseBtn.style.display = "none";
+            
+            // Explosion at player position
+            const pRadius = orbitRadii[player.orbitIndex];
+            const px = centerX + Math.cos(player.angle) * pRadius;
+            const py = centerY + Math.sin(player.angle) * pRadius;
+            createParticles(px, py, player.color, 40);
+            
+            playSynth('loseGame');
+            playMeme(true); 
+            triggerShake();
+
+            if(score > bestScore) bestScore = score;
+            
+            messageDisplay.classList.add("fail");
+            startScreen.style.display = "flex";
+            startBtn.style.display = "inline-block";
+            
+            // Show Promotional Box on Game Over
+            if(promoBox) promoBox.style.display = 'block';
+
+            setTimeout(() => {
+                startScreen.style.opacity = "1";
+                messageDisplay.innerText = reason;
+                subMessageDisplay.innerText = `SCORE: ${score} | BEST: ${bestScore}`;
+                startBtn.innerText = "RETRY LAUNCH";
+                startBtn.focus(); 
+            }, 800); 
+        }
+
+        startBtn.onclick = () => {
+            initAudio();
+            unlockAudioFiles();
+            
+            if (currentlyPlayingMeme) {
+                currentlyPlayingMeme.pause();
+                currentlyPlayingMeme.currentTime = 0;
+                currentlyPlayingMeme = null;
+            }
+
+            startScreen.style.opacity = 0;
+            startBtn.blur();
+            messageDisplay.classList.remove("fail");
+            if(promoBox) promoBox.style.display = 'none'; // Hide promo box
+            
+            setTimeout(() => {
+                startScreen.style.display = "none";
+                pauseBtn.style.display = "flex";
+                pauseBtn.innerText = "⏸ PAUSE";
+                resetGame();
+                gameState = 'playing';
+                lastTime = performance.now();
+                if (!animationId) animationId = requestAnimationFrame(loop);
+            }, 300);
+        };
+
+        pauseBtn.onclick = (e) => {
+            e.stopPropagation();
+            if (gameState === 'start' || gameState === 'game_over') return;
+            
+            if (gameState === 'playing') {
+                gameState = 'paused';
+                pauseBtn.innerText = "▶ PLAY";
+            } else if (gameState === 'paused') {
+                gameState = 'playing';
+                pauseBtn.innerText = "⏸ PAUSE";
+                lastTime = performance.now(); 
+            }
+        };
+
+        // --- Interaction ---
+        function handleAction(e) {
+            if (startScreen.style.display !== "none") return; 
+            if (e) e.preventDefault(); 
+            
+            if (gameState === 'playing') {
+                switchOrbit();
+            }
+        }
+
+        canvas.addEventListener("mousedown", handleAction);
+        canvas.addEventListener("touchstart", handleAction, {passive: false});
+
+        window.addEventListener("keydown", e => {
+            if (e.key === " " || e.code === "Space" || e.key === "ArrowUp" || e.key === "ArrowDown" || e.key === "Up" || e.key === "Down") {
+                if (startScreen.style.display !== "none") {
+                    e.preventDefault();
+                    startBtn.click();
+                } else {
+                    handleAction(e);
+                }
+            }
+            if ((e.key === "p" || e.key === "P" || e.key === "Escape") && gameState === 'playing') {
+                pauseBtn.click();
+            }
+        });
+
+        window.onload = () => { resizeCanvas(); draw(); };
+    </script>
+</body>
+</html>

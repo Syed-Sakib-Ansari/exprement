@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Primary Meta Tags for SEO -->
+    <title>Flappy Memes | Cyberpunk Arcade Game | Play Free Online</title>
+    <meta name="title" content="Flappy Memes | Cyberpunk Arcade Game | Play Free Online">
+    <meta name="description" content="Play Flappy Memes, a modern, fast-paced, vaporwave styled HTML5 arcade game featuring hilarious meme sound effects. Tap or press space to fly. Defeat the neon barriers!">
+    <meta name="keywords" content="flappy bird clone, meme game, cyberpunk game, free online game, html5 game, browser game, funny sound effects">
+    <meta name="author" content="PlayZone Games">
+    <link rel="canonical" href="https://yourwebsite.com/flappy-memes">
+
+    <!-- Best Practices & PWA Support -->
+    <meta name="theme-color" content="#0a0a16">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Flappy Memes">
+
+    <!-- Open Graph / Facebook / Twitter Meta Tags for Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/flappy-memes">
+    <meta property="og:title" content="Flappy Memes | Cyberpunk Arcade Game">
+    <meta property="og:description" content="Dodge the neon pipes and try not to laugh at the meme fails! Play this modern HTML5 arcade game now.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Flappy Memes | Cyberpunk Arcade Game">
+    <meta property="twitter:description" content="Dodge the neon pipes and try not to laugh at the meme fails! Play this modern HTML5 arcade game now.">
+
+    <!-- Performance: Preconnect to Font APIs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0a0a16;
+            --neon-pink: #ff2a6d;
+            --neon-cyan: #05d9e8;
+            --neon-purple: #d1f7ff;
+            --grid-color: rgba(5, 217, 232, 0.15);
+        }
+
+        /* Basic Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                linear-gradient(transparent 95%, var(--grid-color) 95%),
+                linear-gradient(90deg, transparent 95%, var(--grid-color) 95%);
+            background-size: 30px 30px;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh;
+            padding: 15px;
+            touch-action: none; /* Prevent scroll on mobile to avoid accidental zooming */
+            overflow: hidden;
+            animation: bgScroll 10s linear infinite;
+            will-change: background-position; /* Performance Optimization for animation */
+        }
+
+        @keyframes bgScroll {
+            0% { background-position: 0 0; }
+            100% { background-position: -30px 30px; }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            max-width: 450px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 12px 20px;
+            background: rgba(10, 10, 22, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(5, 217, 232, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(5, 217, 232, 0.2);
+            z-index: 2;
+            flex: 0 0 auto;
+        }
+
+        .stats-container {
+            font-family: 'Righteous', cursive;
+            font-size: 1.3rem;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 8px var(--neon-cyan);
+            letter-spacing: 1px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .controls-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .game-wrapper {
+            width: 100%;
+            flex-grow: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 42, 109, 0.3), inset 0 0 20px rgba(255, 42, 109, 0.2);
+            border: 2px solid var(--neon-pink);
+            background: radial-gradient(circle at 50% 120%, #20122e 0%, #0a0a16 80%);
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 22, 0.85);
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity 0.4s ease;
+        }
+
+        #message {
+            font-family: 'Righteous', cursive;
+            font-size: clamp(2rem, 10vw, 3.5rem);
+            color: transparent;
+            -webkit-text-stroke: 2px var(--neon-pink);
+            margin-bottom: 10px;
+            text-align: center;
+            text-shadow: 0 0 15px var(--neon-pink);
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, #fff, var(--neon-pink));
+            -webkit-background-clip: text;
+        }
+        
+        #subMessage {
+            font-size: 1.2rem;
+            color: var(--neon-purple);
+            margin-bottom: 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* ------------------------------------------- */
+        /* PROMOTIONAL BOX STYLES */
+        /* ------------------------------------------- */
+        .promo-box {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(5, 217, 232, 0.05);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 12px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(5, 217, 232, 0.15);
+            animation: pulsePromo 2s infinite alternate;
+            display: none; /* Shown only on Game Over */
+            pointer-events: auto;
+            z-index: 100;
+        }
+
+        @keyframes pulsePromo {
+            from { box-shadow: 0 0 10px rgba(5, 217, 232, 0.1); border-color: rgba(5, 217, 232, 0.3); }
+            to { box-shadow: 0 0 25px rgba(5, 217, 232, 0.4); border-color: rgba(5, 217, 232, 0.8); }
+        }
+
+        .promo-box h3 {
+            font-family: 'Righteous', cursive;
+            color: var(--neon-cyan);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
+        }
+
+        .promo-box p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+        }
+
+        .promo-link-btn {
+            font-family: 'Righteous', cursive;
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(255, 42, 109, 0.5);
+        }
+
+        .promo-link-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 42, 109, 0.8);
+            color: #fff;
+        }
+
+        button.primary-btn {
+            font-family: 'Righteous', cursive;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            background: transparent;
+            color: var(--neon-cyan);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 8px;
+            cursor: pointer;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.3), inset 0 0 10px rgba(5, 217, 232, 0.2);
+        }
+
+        button.primary-btn:hover, button.primary-btn:focus-visible {
+            background: var(--neon-cyan);
+            color: var(--bg-color);
+            box-shadow: 0 0 30px var(--neon-cyan);
+            outline: none;
+        }
+
+        button.primary-btn:active {
+            transform: translateY(2px);
+        }
+
+        .icon-btn {
+            background: transparent;
+            border: none;
+            color: var(--neon-cyan);
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, text-shadow 0.2s;
+            padding: 0;
+            text-shadow: 0 0 8px var(--neon-cyan);
+        }
+
+        .icon-btn:hover, .icon-btn:focus-visible {
+            transform: scale(1.1);
+            text-shadow: 0 0 15px var(--neon-cyan);
+            outline: 2px dashed var(--neon-cyan);
+            outline-offset: 4px;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(5, 217, 232, 0.3);
+            color: var(--neon-cyan);
+            font-family: 'Righteous', cursive;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            display: none; 
+        }
+
+        .action-btn:hover, .action-btn:focus-visible {
+            background: rgba(5, 217, 232, 0.2);
+            box-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
+            outline: none;
+        }
+
+        #volumeSlider {
+            width: 80px;
+            height: 4px;
+            -webkit-appearance: none;
+            background: rgba(5, 217, 232, 0.2);
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        #volumeSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 8px var(--neon-cyan);
+            cursor: pointer;
+        }
+        
+        .instructions {
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .accent-text {
+            color: var(--neon-pink);
+            font-weight: bold;
+        }
+
+        @media (max-width: 480px) {
+            .header { padding: 10px; }
+            .stats-container { font-size: 1.1rem; gap: 10px; }
+            .controls-container { gap: 8px; }
+            #volumeSlider { width: 60px; }
+            .action-btn { padding: 5px 8px; font-size: 0.8rem; }
+            .instructions { font-size: 0.8rem; }
+            .promo-box { padding: 15px; margin-top: 5px; margin-bottom: 15px; }
+            .promo-box h3 { font-size: 1.2rem; }
+            .promo-box p { font-size: 0.85rem; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Audio Elements for Preloading (Using preload="metadata" for Performance) -->
+    <!-- We do not use preload="auto" for 53 files as it severely impacts initial page load -->
+    <div id="audio-assets" style="display: none;">
+        <!-- Funny Fails (Life Lost) -->
+        <audio id="sound-fail-0" src="aahhkk-ahhk-with-echo.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-1" src="aah-meme-jacqueline-fernandez.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-2" src="ae-ghargharghar-dhadam-a.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-3" src="africa-crying-laugh-commercial.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-4" src="anime-ahh.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-5" src="baigan.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-6" src="bhosdike-madarchod-been-k-loray-roadies.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-7" src="cat-laugh-meme-1.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-8" src="cid-acp-behn-choo.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-9" src="confused-cross-eyed-kitten-meme.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-10" src="dry-fart.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-11" src="gaaayyyyy_vUi3hqB.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-12" src="ghok-ghok.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-13" src="indian-sorry.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-14" src="le-mdrchd.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-15" src="oh-ma-gaud-vine.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-16" src="perfect-fart.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-17" src="raven-caw-caw.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-18" src="spongebob-fail.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-19" src="studio-audience-awwww-sound-fx.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-20" src="ye-meri-galti-h.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-21" src="tmpgj3wv0ae.mp3" preload="metadata"></audio>
+        <audio id="sound-fail-22" src="vine-boom-sound-effect_KT89XIq.mp3" preload="metadata"></audio>
+        
+        <!-- Funny Success/Score -->
+        <audio id="sound-score-0" src="tarkov-scav-laughing-3.mp3" preload="metadata"></audio>
+        <audio id="sound-score-1" src="mylan_olE7cPM.mp3" preload="metadata"></audio>
+        <audio id="sound-score-2" src="tudum-tedev (1).mp3" preload="metadata"></audio>
+        <audio id="sound-score-3" src="tudum-tedev.mp3" preload="metadata"></audio>
+        <audio id="sound-score-4" src="rom-rom-bhaiyo.mp3" preload="metadata"></audio>
+        <audio id="sound-score-5" src="yeah-boymp4.mp3" preload="metadata"></audio>
+        <audio id="sound-score-6" src="happy-happy-happy-song.mp3" preload="metadata"></audio>
+        <audio id="sound-score-7" src="omgwow.mp3" preload="metadata"></audio>
+        <audio id="sound-score-8" src="kids-saying-yay-sound-effect_3.mp3" preload="metadata"></audio>
+        <audio id="sound-score-9" src="007-james-bond-theme_WrKEvuW.mp3" preload="metadata"></audio>
+        <audio id="sound-score-10" src="spiderman-meme-song-2-0.mp3" preload="metadata"></audio>
+        <audio id="sound-score-11" src="helicopter-helicopter-parakofer-parakofer.mp3" preload="metadata"></audio>
+        <audio id="sound-score-12" src="yooooooooooooooooooooooooo_4_objp8XX.mp3" preload="metadata"></audio>
+        <audio id="sound-score-13" src="Voicy_Kya gunda banega re tu.mp3" preload="metadata"></audio>
+        <audio id="sound-score-14" src="Voicy_Tera bap ki shadi hai kiya ra.mp3" preload="metadata"></audio>
+        <audio id="sound-score-15" src="Voicy_ Kesi han.mp3" preload="metadata"></audio>
+        <audio id="sound-score-16" src="Voicy_ Cha maila.mp3" preload="metadata"></audio>
+        <audio id="sound-score-17" src="Voicy_Ha ha ha ha.mp3" preload="metadata"></audio>
+        <audio id="sound-score-18" src="Voicy_Ye baburao ka style hai.mp3" preload="metadata"></audio>
+        <audio id="sound-score-19" src="Voicy_Pakad mera ko mero ko janta ni hai ya.mp3" preload="metadata"></audio>
+        <audio id="sound-score-20" src="babu_rao.mp3" preload="metadata"></audio>
+        <audio id="sound-score-21" src="Voicy_To is ko mar ka dikha mujha dakhna hai.mp3" preload="metadata"></audio>
+        <audio id="sound-score-22" src="Voicy_ Mar ka dikha.mp3" preload="metadata"></audio>
+        <audio id="sound-score-23" src="Voicy_Main pagl hun.mp3" preload="metadata"></audio>
+        <audio id="sound-score-24" src="Voicy_Is ko bilkul ni ata.mp3" preload="metadata"></audio>
+        <audio id="sound-score-25" src="Voicy_Totally kangal.mp3" preload="metadata"></audio>
+        <audio id="sound-score-26" src="Voicy_Is tida ko bi yahi chor do.mp3" preload="metadata"></audio>
+        <audio id="sound-score-27" src="Voicy_Paisa dana para ga.mp3" preload="metadata"></audio>
+        <audio id="sound-score-28" src="Voicy_Hum koi mandir ka ghanta ha ka koi bi a ka baja jata hai.mp3" preload="metadata"></audio>
+        <audio id="sound-score-29" src="Voicy_ Humko maaro humko jinda mat choro salo.mp3" preload="metadata"></audio>
+    </div>
+
+    <main>
+        <header class="header" role="banner">
+            <div class="stats-container" aria-live="polite">
+                <div>SCORE: <span id="score-val" style="color: #fff;">0</span></div>
+            </div>
+            <div class="controls-container">
+                <button id="soundIcon" class="icon-btn" aria-label="Mute or Unmute Game Sound" title="Toggle Sound">🔊</button>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="1" aria-label="Game Volume Control">
+                <button id="pauseBtn" class="action-btn" aria-label="Pause Game">⏸ PAUSE</button>
+            </div>
+        </header>
+
+        <!-- Accessibility: Canvas has role="img" and inner text for screen readers -->
+        <div class="game-wrapper" id="gameWrapper">
+            <canvas id="gameCanvas" role="img" aria-label="Flappy Memes Cyberpunk Game Board">
+                Your browser does not support the HTML5 canvas element. Please upgrade your browser to play this game.
+            </canvas>
+            
+            <!-- Start / Game Over Overlay -->
+            <div class="overlay" id="startScreen" role="dialog" aria-labelledby="message" aria-describedby="subMessage">
+                <h1 id="message">CYBER FLAP</h1>
+                <div id="subMessage">Space or Enter to Start</div>
+                
+                <!-- PROMOTIONAL MOVIE BOX -->
+                <div class="promo-box" id="promoBox" style="display: none;">
+                    <h3>🍿 MOVIE TIME! 🎬</h3>
+                    <p>Need a break from gaming? Watch the latest blockbuster movies and shows on our premium platform!</p>
+                    <a href="https://yourmoviesite.com" target="_blank" class="promo-link-btn">VISIT MOVIE SITE</a>
+                </div>
+
+                <button id="startBtn" class="primary-btn" tabindex="0">INITIALIZE</button>
+            </div>
+        </div>
+
+        <footer class="instructions" role="contentinfo">
+            Tap screen or press <span class="accent-text">SPACE</span> / <span class="accent-text">UP ARROW</span> to fly up<br>
+            Press <span class="accent-text">ENTER</span> to Reboot<br>
+            Avoid the neon barriers
+        </footer>
+    </main>
+
+    <script>
+        'use strict'; // Best practice for cleaner code
+
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d", { alpha: false }); // Performance: Disable alpha if background is fully drawn
+        const startScreen = document.getElementById("startScreen");
+        const startBtn = document.getElementById("startBtn");
+        const pauseBtn = document.getElementById("pauseBtn");
+        const scoreDisplay = document.getElementById("score-val");
+        const messageDisplay = document.getElementById("message");
+        const subMessageDisplay = document.getElementById("subMessage");
+        const soundIcon = document.getElementById("soundIcon");
+        const volumeSlider = document.getElementById("volumeSlider");
+        const promoBox = document.getElementById("promoBox");
+
+        // --- Audio System with Smart Playlist ---
+        let audioCtx;
+        let globalVolume = 1.0;
+
+        function getAudioElements(prefix, count) {
+            const arr = [];
+            for(let i=0; i<count; i++) {
+                const el = document.getElementById(`sound-${prefix}-${i}`);
+                if(el) arr.push(el);
+            }
+            return arr;
+        }
+
+        const customLifeLostSounds = getAudioElements('fail', 23);
+        const customScoreSounds = getAudioElements('score', 30); 
+
+        const lifeLostIndices = [];
+        const scoreIndices = [];
+        let currentlyPlayingMeme = null; 
+        
+        const lastPlayedIndex = { 'fail': -1, 'score': -1 };
+
+        function stopCurrentMeme() {
+            if (currentlyPlayingMeme) {
+                currentlyPlayingMeme.pause();
+                currentlyPlayingMeme.currentTime = 0;
+                currentlyPlayingMeme = null;
+            }
+        }
+
+        function getNextSound(type, soundArray, indicesArray) {
+            if (soundArray.length === 0) return null;
+            
+            if (indicesArray.length === 0) {
+                for (let i = 0; i < soundArray.length; i++) indicesArray.push(i);
+                for (let i = indicesArray.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [indicesArray[i], indicesArray[j]] = [indicesArray[j], indicesArray[i]];
+                }
+                if (indicesArray.length > 1 && indicesArray[indicesArray.length - 1] === lastPlayedIndex[type]) {
+                    const temp = indicesArray[indicesArray.length - 1];
+                    indicesArray[indicesArray.length - 1] = indicesArray[0];
+                    indicesArray[0] = temp;
+                }
+            }
+            
+            const nextIndex = indicesArray.pop();
+            lastPlayedIndex[type] = nextIndex;
+            return soundArray[nextIndex];
+        }
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }
+
+        function unlockAudioFiles() {
+            const allSounds = [...customLifeLostSounds, ...customScoreSounds];
+            allSounds.forEach(audio => {
+                if(audio && audio.readyState === 0) { // Check readyState for better performance
+                    audio.volume = 0; 
+                    const p = audio.play();
+                    if (p !== undefined) {
+                        p.then(() => { 
+                            audio.pause(); 
+                            audio.currentTime = 0; 
+                            audio.volume = globalVolume; 
+                        }).catch(() => { /* Ignore auto-play rejections */ });
+                    }
+                }
+            });
+        }
+
+        function playSound(type) {
+            if (globalVolume === 0) return;
+            
+            if (type === 'fail') {
+                stopCurrentMeme(); // Interrupt any playing sound with Fail
+                const s = getNextSound('fail', customLifeLostSounds, lifeLostIndices);
+                if (s) {
+                    currentlyPlayingMeme = s;
+                    s.volume = globalVolume;
+                    s.currentTime = 0;
+                    s.onended = () => { if (currentlyPlayingMeme === s) currentlyPlayingMeme = null; };
+                    s.play().catch(()=>{ if (currentlyPlayingMeme === s) currentlyPlayingMeme = null; });
+                }
+                return;
+            }
+            if (type === 'score') {
+                stopCurrentMeme(); // Prevent overlap: stop current to play new
+                const s = getNextSound('score', customScoreSounds, scoreIndices);
+                if (s) {
+                    currentlyPlayingMeme = s;
+                    s.volume = globalVolume;
+                    s.currentTime = 0;
+                    s.onended = () => { if (currentlyPlayingMeme === s) currentlyPlayingMeme = null; };
+                    s.play().catch(()=>{ if (currentlyPlayingMeme === s) currentlyPlayingMeme = null; });
+                }
+                return;
+            }
+
+            // Synth Sound for Flap (Jump) - Digital beep style
+            if (type === 'flap') {
+                if (!audioCtx) return;
+                const osc = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+                osc.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                const now = audioCtx.currentTime;
+                
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(400, now);
+                osc.frequency.exponentialRampToValueAtTime(800, now + 0.1);
+                gainNode.gain.setValueAtTime(0.05 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+                osc.start(now); osc.stop(now + 0.1);
+            }
+        }
+
+        volumeSlider.addEventListener("input", (e) => {
+            globalVolume = parseFloat(e.target.value);
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : (globalVolume < 0.5 ? "🔉" : "🔊");
+            if (currentlyPlayingMeme) currentlyPlayingMeme.volume = globalVolume;
+            initAudio(); 
+        });
+
+        soundIcon.addEventListener("click", () => {
+            globalVolume = globalVolume > 0 ? 0 : 1;
+            volumeSlider.value = globalVolume;
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : "🔊";
+            if (globalVolume === 0) stopCurrentMeme();
+            initAudio();
+        });
+
+        // --- Game State Variables ---
+        let frames = 0;
+        let score = 0;
+        let bestScore = 0;
+        let gameRunning = false;
+        let isPaused = false;
+        let isWaitingToStart = true;
+        let animationId;
+        let particles = [];
+        let pipes = [];
+
+        // Resize Handling ensuring integer values for clearer rendering
+        function resizeCanvas() {
+            const wrapper = document.getElementById("gameWrapper");
+            canvas.width = Math.floor(wrapper.clientWidth);
+            canvas.height = Math.floor(wrapper.clientHeight);
+            if(!gameRunning && !isWaitingToStart) {
+                 drawInitialScreen(); // Redraw if paused or stopped
+            }
+        }
+        
+        // Debounce resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(resizeCanvas, 150);
+        });
+
+        // Game Constants
+        const GRAVITY = 0.28;
+        const JUMP = -6.5;
+        const PIPE_SPEED = 3.5;
+        const PIPE_WIDTH = 50;
+        const PIPE_GAP = 170; 
+
+        // Modern Cyber-Ship Object
+        const bird = {
+            x: 60,
+            y: 150,
+            width: 30,
+            height: 20,
+            velocity: 0,
+            rotation: 0,
+            draw: function() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                
+                // Tilt ship based on velocity
+                this.rotation = Math.min(Math.PI / 4, Math.max(-Math.PI / 4, (this.velocity * 0.1)));
+                ctx.rotate(this.rotation);
+                
+                // Ship Body Path
+                ctx.beginPath();
+                ctx.moveTo(15, 0); // nose
+                ctx.lineTo(-15, 10); // bottom tail
+                ctx.lineTo(-10, 0); // back center
+                ctx.lineTo(-15, -10); // top tail
+                ctx.closePath();
+                
+                ctx.fillStyle = "#05d9e8"; // Cyan fill
+                ctx.fill();
+                
+                // Glowing border
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = "#fff";
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = "#05d9e8";
+                ctx.stroke();
+                
+                ctx.restore();
+            },
+            update: function() {
+                this.velocity += GRAVITY;
+                this.y += this.velocity;
+                
+                // Floor Collision
+                if (this.y + this.height/2 >= canvas.height) {
+                    this.y = canvas.height - this.height/2;
+                    handleGameOver();
+                }
+                // Ceiling Limit
+                if (this.y - this.height/2 <= 0) {
+                    this.y = this.height/2;
+                    this.velocity = 0;
+                }
+            },
+            flap: function() {
+                this.velocity = JUMP;
+                playSound('flap');
+                createEngineParticles(this.x - 15, this.y);
+            },
+            reset: function() {
+                this.y = canvas.height / 2;
+                this.velocity = 0;
+                this.rotation = 0;
+            }
+        };
+
+        // Engine Particles Effect
+        function createEngineParticles(x, y) {
+            for (let i = 0; i < 5; i++) {
+                particles.push({
+                    x: x, y: y + (Math.random() * 10 - 5),
+                    vx: -Math.random() * 3 - 2, 
+                    vy: Math.random() * 2 - 1,
+                    life: 1, 
+                    size: Math.random() * 4 + 2,
+                    color: i % 2 === 0 ? "#ff2a6d" : "#ffeb3b"
+                });
+            }
+        }
+
+        function drawParticles() {
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                ctx.globalAlpha = Math.max(0, p.life);
+                ctx.fillStyle = p.color;
+                
+                // Draw square particles for digital look
+                ctx.fillRect(Math.floor(p.x), Math.floor(p.y), p.size, p.size);
+                
+                p.x += p.vx; 
+                p.y += p.vy; 
+                p.life -= 0.05;
+                
+                if(p.life <= 0) particles.splice(i, 1);
+            }
+            ctx.globalAlpha = 1; 
+        }
+
+        function drawPipes() {
+            for (let i = 0; i < pipes.length; i++) {
+                const p = pipes[i];
+                const px = Math.floor(p.x);
+                
+                // Neon Pink Pipes Base
+                ctx.fillStyle = "rgba(255, 42, 109, 0.15)"; 
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = "#ff2a6d";
+                ctx.strokeStyle = "#ff2a6d";
+                ctx.lineWidth = 2;
+
+                // Top Pipe
+                ctx.fillRect(px, 0, PIPE_WIDTH, Math.floor(p.top));
+                ctx.strokeRect(px, 0, PIPE_WIDTH, Math.floor(p.top));
+                
+                // Bottom Pipe
+                ctx.fillRect(px, Math.floor(canvas.height - p.bottom), PIPE_WIDTH, Math.floor(p.bottom));
+                ctx.strokeRect(px, Math.floor(canvas.height - p.bottom), PIPE_WIDTH, Math.floor(p.bottom));
+                
+                // Pipe caps/rims (Solid color)
+                ctx.fillStyle = "#ff2a6d";
+                ctx.shadowBlur = 0; // Disable shadow for rims for crisper look
+                ctx.fillRect(px - 5, Math.floor(p.top - 10), PIPE_WIDTH + 10, 10);
+                ctx.fillRect(px - 5, Math.floor(canvas.height - p.bottom), PIPE_WIDTH + 10, 10);
+            }
+        }
+
+        function updatePipes() {
+            if (frames % 90 === 0) {
+                const minPipeHeight = 50;
+                const maxPipeHeight = canvas.height - PIPE_GAP - minPipeHeight;
+                const topPipeHeight = Math.max(minPipeHeight, Math.random() * maxPipeHeight);
+                const bottomPipeHeight = canvas.height - topPipeHeight - PIPE_GAP;
+
+                pipes.push({
+                    x: canvas.width,
+                    top: topPipeHeight,
+                    bottom: bottomPipeHeight,
+                    passed: false
+                });
+            }
+
+            for (let i = 0; i < pipes.length; i++) {
+                const p = pipes[i];
+                p.x -= PIPE_SPEED;
+
+                // Simple AABB Collision Detection
+                const bx = bird.x - bird.width/2;
+                const by = bird.y - bird.height/2;
+                
+                if (bx + bird.width > p.x && bx < p.x + PIPE_WIDTH) {
+                    if (by < p.top || by + bird.height > canvas.height - p.bottom) {
+                        handleGameOver();
+                    }
+                }
+
+                // Score update
+                if (p.x + PIPE_WIDTH < bx && !p.passed) {
+                    score++;
+                    scoreDisplay.innerText = score;
+                    p.passed = true;
+                    playSound('score'); 
+                }
+
+                if (p.x + PIPE_WIDTH < 0) {
+                    pipes.shift();
+                    i--;
+                }
+            }
+        }
+
+        function drawBackground() {
+            ctx.fillStyle = "#0a0a16";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // Main Game Loop
+        function loop() {
+            if (!gameRunning) return;
+
+            drawBackground();
+            drawParticles();
+            drawPipes();
+            bird.draw();
+
+            updatePipes();
+            bird.update();
+
+            frames++;
+            animationId = requestAnimationFrame(loop);
+        }
+
+        function handleGameOver() {
+            if (!gameRunning) return;
+            gameRunning = false;
+            pauseBtn.style.display = "none";
+            playSound('fail'); 
+            cancelAnimationFrame(animationId);
+
+            isWaitingToStart = true;
+            if(score > bestScore) bestScore = score;
+            
+            startScreen.style.display = "flex";
+            startBtn.style.display = "inline-block";
+            
+            // Show Promotional Box on Game Over
+            if(promoBox) promoBox.style.display = 'block';
+
+            // Allow UI to update before showing overlay
+            requestAnimationFrame(() => {
+                startScreen.style.opacity = "1";
+                messageDisplay.innerText = "SYSTEM FAILURE";
+                subMessageDisplay.innerText = `SCORE: ${score} // BEST: ${bestScore}`;
+                startBtn.innerText = "REBOOT SYSTEM";
+                startBtn.focus(); // Accessibility focus
+            });
+        }
+
+        // Start Game
+        startBtn.addEventListener("click", () => {
+            initAudio();
+            unlockAudioFiles();
+            stopCurrentMeme(); // Fix: Stop any playing sound when restarting
+
+            isWaitingToStart = false;
+            startScreen.style.opacity = "0";
+            if(promoBox) promoBox.style.display = 'none'; // Hide promo box
+            
+            setTimeout(() => {
+                startScreen.style.display = "none";
+                pauseBtn.style.display = "block";
+                pauseBtn.innerText = "⏸ PAUSE";
+                isPaused = false;
+                
+                pipes = [];
+                particles = [];
+                score = 0;
+                frames = 0;
+                scoreDisplay.innerText = score;
+                bird.reset();
+                
+                gameRunning = true;
+                loop();
+            }, 300); // Wait for fade out animation
+        });
+
+        pauseBtn.addEventListener("click", () => {
+            if (!gameRunning && isWaitingToStart) return; // Don't pause on start screen
+            
+            isPaused = !isPaused;
+            if (isPaused) {
+                gameRunning = false;
+                pauseBtn.innerText = "▶ PLAY";
+                pauseBtn.setAttribute("aria-label", "Resume Game");
+                cancelAnimationFrame(animationId);
+                
+                // Draw Paused Screen
+                ctx.fillStyle = "rgba(10, 10, 22, 0.7)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.font = "bold 40px 'Righteous', cursive";
+                ctx.fillStyle = "var(--neon-cyan)";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText("PAUSED", canvas.width / 2, canvas.height / 2);
+            } else {
+                gameRunning = true;
+                pauseBtn.innerText = "⏸ PAUSE";
+                pauseBtn.setAttribute("aria-label", "Pause Game");
+                loop(); 
+            }
+        });
+
+        function triggerFlap(e) {
+            // Prevent default behavior (like scrolling) only if game is active
+            if (gameRunning && !isPaused) {
+                e.preventDefault(); 
+                bird.flap();
+            }
+        }
+
+        // Event Listeners for Interaction
+        canvas.addEventListener("mousedown", triggerFlap);
+        canvas.addEventListener("touchstart", triggerFlap, { passive: false });
+        
+        document.addEventListener("keydown", (e) => {
+            // Keyboard handling for start/reboot
+            if (isWaitingToStart) {
+                if (e.code === "Space" || e.key === " " || e.key === "Enter") {
+                    e.preventDefault();
+                    startBtn.click();
+                    return;
+                }
+            }
+
+            // Keyboard handling for gameplay
+            if (e.code === "Space" || e.key === " " || e.key === "ArrowUp" || e.key === "Up") {
+                triggerFlap(e);
+            } 
+            // Keyboard handling for pause
+            else if ((e.key === "p" || e.key === "P" || e.key === "Escape") && !isWaitingToStart) {
+                pauseBtn.click();
+            }
+        });
+
+        // Initialize display before game starts
+        function drawInitialScreen() {
+            resizeCanvas();
+            drawBackground();
+            bird.draw();
+        }
+        
+        // Wait for fonts/styles to load before initial draw
+        window.onload = drawInitialScreen;
+
+    </script>
+
+    <!-- ========================================== -->
+    <!-- SECURITY SCRIPT: ANTI-INSPECT & ANTI-COPY  -->
+    <!-- ========================================== -->
+    <script>
+        (function() {
+            // 1. Disable Right Click (Context Menu)
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+
+            // 2. Disable specific Keyboard Shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Prevent F12
+                if (e.key === 'F12' || e.keyCode === 123) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Prevent Ctrl+Shift+I (Inspect Element)
+                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Prevent Ctrl+Shift+J (Console)
+                if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j' || e.keyCode === 74)) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Prevent Ctrl+U (View Source)
+                if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // Prevent Ctrl+S (Save Page)
+                if (e.ctrlKey && (e.key === 'S' || e.key === 's' || e.keyCode === 83)) {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // Prevent Ctrl+C / Ctrl+A (Copy / Select All)
+                if (e.ctrlKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67 || e.key === 'A' || e.key === 'a' || e.keyCode === 65)) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            // 3. Disable Text Selection
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+            });
+
+            // 4. Anti-Debugger Loop (Freezes DevTools if somehow opened)
+            setInterval(function() {
+                const before = new Date().getTime();
+                (function() { return false; }['constructor']('debugger')());
+                const after = new Date().getTime();
+                if (after - before > 100) {
+                    // DevTools is open and paused the debugger
+                    document.body.innerHTML = "<h1 style='color:red; text-align:center; margin-top:20%; font-family:sans-serif;'>DevTools is not allowed here!</h1>";
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>

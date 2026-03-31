@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Comprehensive SEO Meta Tags -->
+    <title>Cyber Drive 3D | Action Meme Runner</title>
+    <meta name="title" content="Cyber Drive 3D | Action Meme Runner">
+    <meta name="description" content="Experience a breathtaking 3D synthwave endless runner. Dodge obstacles, collect meme coins, and survive the neon grid in this free WebGL game!">
+    <meta name="keywords" content="cyber drive 3d, synthwave game, endless runner, 3d racing game, meme game, html5 game, browser game, free online game">
+    <meta name="author" content="PlayZone Games">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://yourwebsite.com/cyber-drive-3d">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/cyber-drive-3d">
+    <meta property="og:title" content="Cyber Drive 3D | Action Meme Runner">
+    <meta property="og:description" content="Experience a breathtaking 3D synthwave endless runner. Dodge obstacles, collect meme coins, and survive the neon grid!">
+    <meta property="og:image" content="https://yourwebsite.com/assets/cyber-drive-banner.jpg">
+    <meta property="og:site_name" content="PlayZone Games">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourwebsite.com/cyber-drive-3d">
+    <meta name="twitter:title" content="Cyber Drive 3D | Action Meme Runner">
+    <meta name="twitter:description" content="Experience a breathtaking 3D synthwave endless runner. Dodge obstacles, collect meme coins, and survive!">
+    <meta name="twitter:image" content="https://yourwebsite.com/assets/cyber-drive-banner.jpg">
+
+    <!-- Best Practices & PWA Support -->
+    <meta name="theme-color" content="#030108">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Cyber Drive">
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Cyber Drive 3D",
+      "url": "https://yourwebsite.com/cyber-drive-3d",
+      "description": "Experience a breathtaking 3D synthwave endless runner. Dodge obstacles, collect meme coins, and survive the neon grid!",
+      "genre": ["Action", "Racing", "Endless Runner"],
+      "playMode": "SinglePlayer",
+      "applicationCategory": "Game"
+    }
+    </script>
+
+    <!-- Performance: Preconnect to Font APIs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Include Three.js for 3D Rendering (Deferred for performance) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+    <style>
+        :root {
+            --neon-cyan: #00e5ff;
+            --neon-magenta: #ff0055;
+            --neon-yellow: #ffea00;
+            --ui-bg: rgba(5, 2, 15, 0.85);
+            --ui-border: rgba(0, 229, 255, 0.3);
+        }
+
+        /* CSS Reset */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh;
+            touch-action: none; 
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Accessibility Focus */
+        *:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 4px; }
+
+        #game-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            cursor: crosshair;
+        }
+
+        canvas { display: block; width: 100%; height: 100%; touch-action: none; outline: none; }
+
+        /* HUD */
+        .hud {
+            position: absolute;
+            top: 20px; left: 20px; right: 20px;
+            display: flex; justify-content: space-between;
+            align-items: flex-start; pointer-events: none; z-index: 10;
+        }
+
+        .stats-panel {
+            background: var(--ui-bg);
+            border: 1px solid var(--ui-border);
+            padding: 10px 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+            pointer-events: auto;
+        }
+
+        .score-val {
+            font-family: 'Bungee', cursive;
+            font-size: 1.5rem;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .controls-panel {
+            background: var(--ui-bg);
+            border: 1px solid var(--ui-border);
+            padding: 5px 10px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            pointer-events: auto;
+            display: flex; gap: 10px; align-items: center;
+        }
+
+        .icon-btn {
+            background: none; border: none; color: var(--neon-cyan);
+            font-size: 1.5rem; cursor: pointer; transition: 0.2s; padding: 0 5px;
+        }
+        .icon-btn:hover { text-shadow: 0 0 10px var(--neon-cyan); transform: scale(1.1); }
+
+        #volumeSlider { width: 70px; height: 4px; -webkit-appearance: none; background: rgba(255,255,255,0.2); border-radius: 2px; outline: none; cursor: pointer; }
+        #volumeSlider::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+
+        /* Overlay Screens */
+        .screen-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(2, 1, 6, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            z-index: 20; transition: opacity 0.4s ease;
+        }
+
+        h1 {
+            font-family: 'Bungee', cursive;
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            color: #fff;
+            text-shadow: 0 0 20px var(--neon-cyan);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h1.fail { color: var(--neon-magenta); text-shadow: 0 0 20px var(--neon-magenta); }
+
+        .sub-text {
+            font-size: 1.1rem;
+            color: var(--neon-yellow);
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* ------------------------------------------- */
+        /* PROMOTIONAL BOX STYLES */
+        /* ------------------------------------------- */
+        .promo-box {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 12px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+            animation: pulsePromo 2s infinite alternate;
+            display: none; /* Shown only on Game Over */
+            pointer-events: auto;
+        }
+
+        @keyframes pulsePromo {
+            from { box-shadow: 0 0 10px rgba(0, 229, 255, 0.1); border-color: rgba(0, 229, 255, 0.3); }
+            to { box-shadow: 0 0 25px rgba(0, 229, 255, 0.4); border-color: rgba(0, 229, 255, 0.8); }
+        }
+
+        .promo-box h3 {
+            font-family: 'Bungee', cursive;
+            color: var(--neon-yellow);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .promo-box p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .promo-link-btn {
+            font-family: 'Bungee', cursive;
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, var(--neon-magenta), #000);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
+        }
+
+        .promo-link-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.8);
+            color: #fff;
+        }
+
+        button.btn {
+            font-family: 'Bungee', cursive;
+            padding: 15px 50px;
+            font-size: 1.2rem;
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--neon-cyan);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        button.btn:hover { background: var(--neon-cyan); color: #000; box-shadow: 0 0 30px var(--neon-cyan); transform: scale(1.05); }
+
+        .instructions {
+            position: absolute; bottom: 20px; width: 100%; text-align: center;
+            color: rgba(255,255,255,0.6); font-size: 0.9rem; letter-spacing: 1px; pointer-events: none; z-index: 5;
+        }
+        
+        .shake { animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-2px, 2px, 0); }
+            20%, 80% { transform: translate3d(4px, -2px, 0); }
+            30%, 50%, 70% { transform: translate3d(-6px, 4px, 0); }
+            40%, 60% { transform: translate3d(6px, -4px, 0); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .stats-panel { padding: 5px 15px; }
+            .promo-box { padding: 15px; margin-bottom: 15px; }
+            .promo-box h3 { font-size: 1.1rem; }
+            .promo-box p { font-size: 0.8rem; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Audio Playlist -->
+    <div id="audio-assets" style="display: none;">
+        <audio id="sound-meme-0" src="Voicy_Jetha Nonsense.mp3" preload="none"></audio>
+        <audio id="sound-meme-1" src="Voicy_Hey Ma Mataji.mp3" preload="none"></audio>
+        <audio id="sound-meme-2" src="Happy Diwali Happy Diwali - Jethalal Song.mp3" preload="none"></audio>
+        <audio id="sound-meme-3" src="Voicy_Tu kiyun ro raha ha tere Maa mr gaee ha paper ma.mp3" preload="none"></audio>
+        <audio id="sound-meme-4" src="Voicy_Daish ma kuch krna krwana ha to rishwat to deni pare gee.mp3" preload="none"></audio>
+        <audio id="sound-meme-5" src="Voicy_Tere ankhoon ma dal doon ga ya chata.mp3" preload="none"></audio>
+        <audio id="sound-meme-6" src="Voicy_Auratoon ko kyun chait ma sa jhank k dekhta ha.mp3" preload="none"></audio>
+        <audio id="sound-meme-7" src="Voicy_Jija g ma andr aoon.mp3" preload="none"></audio>
+        <audio id="sound-meme-8" src="Voicy_A dhelay zara diesel dal.mp3" preload="none"></audio>
+        <audio id="sound-meme-9" src="Voicy_Tu cheez baree ha mast mast .mp3" preload="none"></audio>
+        <audio id="sound-meme-10" src="Voicy_Kya gunda banega re tu.mp3" preload="none"></audio>
+        <audio id="sound-meme-11" src="Voicy_Tera bap ki shadi hai kiya ra.mp3" preload="none"></audio>
+        <audio id="sound-meme-12" src="Voicy_ Kesi han.mp3" preload="none"></audio>
+        <audio id="sound-meme-13" src="Voicy_ Cha maila.mp3" preload="none"></audio>
+        <audio id="sound-meme-14" src="Voicy_Ha ha ha ha.mp3" preload="none"></audio>
+        <audio id="sound-meme-15" src="Voicy_Ye baburao ka style hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-16" src="Voicy_Pakad mera ko mero ko janta ni hai ya.mp3" preload="none"></audio>
+        <audio id="sound-meme-17" src="babu_rao.mp3" preload="none"></audio>
+        <audio id="sound-meme-18" src="Voicy_To is ko mar ka dikha mujha dakhna hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-19" src="Voicy_ Mar ka dikha.mp3" preload="none"></audio>
+        <audio id="sound-meme-20" src="Voicy_Main pagl hun.mp3" preload="none"></audio>
+        <audio id="sound-meme-21" src="Voicy_Is ko bilkul ni ata.mp3" preload="none"></audio>
+        <audio id="sound-meme-22" src="Voicy_Totally kangal.mp3" preload="none"></audio>
+        <audio id="sound-meme-23" src="Voicy_Is tida ko bi yahi chor do.mp3" preload="none"></audio>
+        <audio id="sound-meme-24" src="Voicy_Paisa dana para ga.mp3" preload="none"></audio>
+        <audio id="sound-meme-25" src="Voicy_Hum koi mandir ka ghanta ha ka koi bi a ka baja jata hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-26" src="Voicy_ Humko maaro humko jinda mat choro salo.mp3" preload="none"></audio>
+        <audio id="sound-meme-27" src="aahhkk-ahhk-with-echo.mp3" preload="none"></audio>
+        <audio id="sound-meme-28" src="aah-meme-jacqueline-fernandez.mp3" preload="none"></audio>
+        <audio id="sound-meme-29" src="ae-ghargharghar-dhadam-a.mp3" preload="none"></audio>
+        <audio id="sound-meme-30" src="africa-crying-laugh-commercial.mp3" preload="none"></audio>
+        <audio id="sound-meme-31" src="anime-ahh.mp3" preload="none"></audio>
+        <audio id="sound-meme-32" src="baigan.mp3" preload="none"></audio>
+        <audio id="sound-meme-33" src="bhosdike-madarchod-been-k-loray-roadies.mp3" preload="none"></audio>
+        <audio id="sound-meme-34" src="cat-laugh-meme-1.mp3" preload="none"></audio>
+        <audio id="sound-meme-35" src="cid-acp-behn-choo.mp3" preload="none"></audio>
+        <audio id="sound-meme-36" src="confused-cross-eyed-kitten-meme.mp3" preload="none"></audio>
+        <audio id="sound-meme-37" src="dry-fart.mp3" preload="none"></audio>
+        <audio id="sound-meme-38" src="gaaayyyyy_vUi3hqB.mp3" preload="none"></audio>
+        <audio id="sound-meme-39" src="ghok-ghok.mp3" preload="none"></audio>
+        <audio id="sound-meme-40" src="indian-sorry.mp3" preload="none"></audio>
+        <audio id="sound-meme-41" src="le-mdrchd.mp3" preload="none"></audio>
+        <audio id="sound-meme-42" src="oh-ma-gaud-vine.mp3" preload="none"></audio>
+        <audio id="sound-meme-43" src="perfect-fart.mp3" preload="none"></audio>
+        <audio id="sound-meme-44" src="raven-caw-caw.mp3" preload="none"></audio>
+        <audio id="sound-meme-45" src="spongebob-fail.mp3" preload="none"></audio>
+        <audio id="sound-meme-46" src="studio-audience-awwww-sound-fx.mp3" preload="none"></audio>
+        <audio id="sound-meme-47" src="ye-meri-galti-h.mp3" preload="none"></audio>
+        <audio id="sound-meme-48" src="tmpgj3wv0ae.mp3" preload="none"></audio>
+        <audio id="sound-meme-49" src="vine-boom-sound-effect_KT89XIq.mp3" preload="none"></audio>
+        <audio id="sound-meme-50" src="tarkov-scav-laughing-3.mp3" preload="none"></audio>
+        <audio id="sound-meme-51" src="mylan_olE7cPM.mp3" preload="none"></audio>
+        <audio id="sound-meme-52" src="tudum-tedev (1).mp3" preload="none"></audio>
+        <audio id="sound-meme-53" src="tudum-tedev.mp3" preload="none"></audio>
+        <audio id="sound-meme-54" src="rom-rom-bhaiyo.mp3" preload="none"></audio>
+        <audio id="sound-meme-55" src="yeah-boymp4.mp3" preload="none"></audio>
+        <audio id="sound-meme-56" src="happy-happy-happy-song.mp3" preload="none"></audio>
+        <audio id="sound-meme-57" src="omgwow.mp3" preload="none"></audio>
+        <audio id="sound-meme-58" src="kids-saying-yay-sound-effect_3.mp3" preload="none"></audio>
+        <audio id="sound-meme-59" src="007-james-bond-theme_WrKEvuW.mp3" preload="none"></audio>
+        <audio id="sound-meme-60" src="spiderman-meme-song-2-0.mp3" preload="none"></audio>
+        <audio id="sound-meme-61" src="helicopter-helicopter-parakofer-parakofer.mp3" preload="none"></audio>
+        <audio id="sound-meme-62" src="yooooooooooooooooooooooooo_4_objp8XX.mp3" preload="none"></audio>
+        <audio id="sound-meme-63" src="shah-rukh-khan.mp3" preload="none"></audio>
+        <audio id="sound-meme-64" src="Voicy_Abi thk kr ka data hun.mp3" preload="none"></audio>
+        <audio id="sound-meme-65" src="Voicy_Kahan sa utha ka laya ic mechanic ko.mp3" preload="none"></audio>
+        <audio id="sound-meme-66" src="Voicy_Madam madam.mp3" preload="none"></audio>
+        <audio id="sound-meme-67" src="Voicy_Ma to pura kala ho gya yar.mp3" preload="none"></audio>
+        <audio id="sound-meme-68" src="meme-de-creditos-finales.mp3" preload="none"></audio>
+        <audio id="sound-meme-69" src="896756048.mp3" preload="none"></audio>
+        <audio id="sound-meme-70" src="weeeee_original_1193597514938524841.mp3" preload="none"></audio>
+        <audio id="sound-meme-71" src="careless_whispers.mp3" preload="none"></audio>
+        <audio id="sound-meme-72" src="fahhh-pump-sound.mp3" preload="none"></audio>
+        <audio id="sound-meme-73" src="matlab-wo-alag-hi-level-ka-banda-tha.mp3" preload="none"></audio>
+        <audio id="sound-meme-74" src="gimme-some-ganja.mp3" preload="none"></audio>
+        <audio id="sound-meme-75" src="kung-fu_Xu8sssy.mp3" preload="none"></audio>
+        <audio id="sound-meme-76" src="chud-gayi.mp3" preload="none"></audio>
+        <audio id="sound-meme-77" src="chalti-firti-cocaine.mp3" preload="none"></audio>
+        <audio id="sound-meme-78" src="koun-hai-re_8ep4nAR.mp3" preload="none"></audio>
+        <audio id="sound-meme-79" src="ladle-meoww-ghop-ghop-ghop.mp3" preload="none"></audio>
+        <audio id="sound-meme-80" src="meow-ghop-ghop-ghop.mp3" preload="none"></audio>
+        <audio id="sound-meme-81" src="tf_nemesis.mp3" preload="none"></audio>
+        <audio id="sound-meme-82" src="tmp0gt0yo3e.mp3" preload="none"></audio>
+        <audio id="sound-meme-83" src="ma-ka-bhosda-aag.mp3" preload="none"></audio>
+        <audio id="sound-meme-84" src="oh-shit_4.mp3" preload="none"></audio>
+        <audio id="sound-meme-85" src="modi-ji-bkl.mp3" preload="none"></audio>
+        <audio id="sound-meme-86" src="Voicy_Is ka liya bari unchi pehchan chahiye unchi ponch chaiya.mp3" preload="none"></audio>
+        <audio id="sound-meme-87" src="Voicy_ Jor jor se bol ka logo ko scheme bata de.mp3" preload="none"></audio>
+    </div>
+
+    <div id="game-container">
+        <div class="hud">
+            <div class="stats-panel" aria-live="polite">
+                <div class="score-val">SCORE: <span id="scoreUI">0</span></div>
+            </div>
+            <div class="controls-panel">
+                <button onclick="window.location.href='index.html'" class="icon-btn" aria-label="Home" title="Back to Arcade">🏠</button>
+                <button id="pauseBtn" class="icon-btn" title="Play/Pause" aria-label="Pause Game">⏸</button>
+                <button id="soundBtn" class="icon-btn" title="Mute/Unmute" aria-label="Toggle Sound">🔊</button>
+                <label for="volumeSlider" style="display:none;">Volume</label>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="1" aria-label="Game Volume Control">
+            </div>
+        </div>
+
+        <div class="screen-overlay" id="menuScreen" role="dialog" aria-labelledby="titleText" aria-describedby="subText">
+            <h1 id="titleText">CYBER DRIVE 3D</h1>
+            <div class="sub-text" id="subText">Dodge & Survive The Grid</div>
+
+            <!-- PROMOTIONAL MOVIE BOX -->
+            <div class="promo-box" id="promoBox" style="display: none;">
+                <h3>🍿 MOVIE TIME! 🎬</h3>
+                <p>Need a break from gaming? Watch the latest blockbuster movies and shows on our premium platform!</p>
+                <a href="https://moviedakhi.com/" target="_blank" rel="noopener noreferrer" class="promo-link-btn">VISIT MOVIE SITE</a>
+            </div>
+
+            <button class="btn" id="startBtn" tabindex="0">START ENGINE</button>
+        </div>
+
+        <div class="screen-overlay" id="pauseScreen" style="display: none; opacity: 0;" role="dialog" aria-label="Pause Screen">
+            <h1 style="color: var(--neon-cyan);">PAUSED</h1>
+            <button class="btn" id="resumeBtn" tabindex="0">RESUME</button>
+        </div>
+
+        <div class="instructions" aria-hidden="true">
+            MOVE MOUSE / SWIPE TO STEER<br>
+            AVOID RED BLOCKS. COLLECT COINS!
+        </div>
+    </div>
+
+    <script>
+        // Use defer/DOMContentLoaded to ensure script runs after Three.js loads
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof THREE === 'undefined') {
+                console.error("Three.js failed to load!");
+                return;
+            }
+            initGameEngine();
+        });
+
+        function initGameEngine() {
+            // --- Audio System ---
+            let audioCtx;
+            let globalVolume = 1.0;
+            let previousVolume = 1.0;
+            
+            const allMemeSounds = [];
+            for(let i=0; i<=87; i++) {
+                const el = document.getElementById(`sound-meme-${i}`);
+                if(el) allMemeSounds.push(el);
+            }
+
+            const memeIndices = [];
+            let currentlyPlayingMeme = null;
+
+            function getNextSound() {
+                if (allMemeSounds.length === 0) return null;
+                if (memeIndices.length === 0) {
+                    for (let i = 0; i < allMemeSounds.length; i++) memeIndices.push(i);
+                    for (let i = memeIndices.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [memeIndices[i], memeIndices[j]] = [memeIndices[j], memeIndices[i]];
+                    }
+                }
+                return allMemeSounds[memeIndices.pop()];
+            }
+
+            function initAudio() {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+            }
+
+            function unlockAudioFiles() {
+                allMemeSounds.forEach(audio => {
+                    if(audio && audio.readyState === 0) {
+                        audio.volume = 0; 
+                        const p = audio.play();
+                        if (p !== undefined) {
+                            p.then(() => { audio.pause(); audio.currentTime = 0; audio.volume = globalVolume; }).catch(() => {});
+                        }
+                    }
+                });
+            }
+
+            function playMeme(forceSkip = false) {
+                if (globalVolume === 0) return;
+                if (currentlyPlayingMeme && !forceSkip) return;
+                if (currentlyPlayingMeme) { currentlyPlayingMeme.pause(); currentlyPlayingMeme.currentTime = 0; }
+                const s = getNextSound();
+                if (s) {
+                    currentlyPlayingMeme = s;
+                    s.volume = globalVolume;
+                    s.currentTime = 0;
+                    s.onended = () => { if(currentlyPlayingMeme === s) currentlyPlayingMeme = null; };
+                    s.play().catch(()=>{});
+                }
+            }
+
+            function playSynth(type) {
+                if (globalVolume === 0 || !audioCtx) return;
+                const osc = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+                osc.connect(gainNode); gainNode.connect(audioCtx.destination);
+                const now = audioCtx.currentTime;
+                if (type === 'crash') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(100, now);
+                    osc.frequency.exponentialRampToValueAtTime(10, now + 0.5);
+                    gainNode.gain.setValueAtTime(0.3 * globalVolume, now);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+                    osc.start(now); osc.stop(now + 0.5);
+                }
+            }
+
+            document.getElementById('volumeSlider').addEventListener("input", (e) => {
+                globalVolume = parseFloat(e.target.value);
+                if (globalVolume > 0) previousVolume = globalVolume;
+                document.getElementById('soundBtn').innerText = globalVolume === 0 ? "🔇" : (globalVolume < 0.5 ? "🔉" : "🔊");
+                if (currentlyPlayingMeme) currentlyPlayingMeme.volume = globalVolume;
+                initAudio(); 
+            });
+
+            document.getElementById('soundBtn').addEventListener("click", () => {
+                globalVolume = globalVolume > 0 ? 0 : previousVolume;
+                document.getElementById('volumeSlider').value = globalVolume;
+                document.getElementById('soundBtn').innerText = globalVolume === 0 ? "🔇" : "🔊";
+                if (globalVolume === 0 && currentlyPlayingMeme) {
+                    currentlyPlayingMeme.pause(); currentlyPlayingMeme.currentTime = 0; currentlyPlayingMeme = null;
+                }
+                initAudio();
+            });
+
+            // --- Three.js 3D Engine Setup ---
+            const container = document.getElementById('game-container');
+            const scoreUI = document.getElementById('scoreUI');
+            const menuScreen = document.getElementById('menuScreen');
+            const titleText = document.getElementById('titleText');
+            const subText = document.getElementById('subText');
+            const startBtn = document.getElementById('startBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const pauseScreen = document.getElementById('pauseScreen');
+            const resumeBtn = document.getElementById('resumeBtn');
+            const promoBox = document.getElementById('promoBox');
+
+            let scene, camera, renderer;
+            let player, playerBox;
+            let obstacles = [];
+            let coins = [];
+            let particleSystem = [];
+            let gridHelper;
+            
+            let gameRunning = false;
+            let isPaused = false;
+            let animationId;
+            let score = 0;
+            let speed = 1.0;
+            let baseSpeed = 1.0;
+            let clock = new THREE.Clock();
+
+            let currentPhase = 0;
+            let nextPhaseScore = 1000;
+            const themes = [
+                { player: 0x00e5ff, obs: 0xff0055, grid: 0x00e5ff, bg: 0x05010a },
+                { player: 0x00ff88, obs: 0xb026ff, grid: 0x00ff88, bg: 0x010502 },
+                { player: 0xffea00, obs: 0xff0000, grid: 0xffea00, bg: 0x050501 },
+                { player: 0xff8800, obs: 0x0055ff, grid: 0xff8800, bg: 0x050201 }
+            ];
+
+            let dirLight, pointLight, engineLight;
+            const obsMaterial = new THREE.MeshPhongMaterial({ color: 0xff0055, emissive: 0x440011, flatShading: true });
+            const coinMaterial = new THREE.MeshStandardMaterial({ color: 0xffea00, emissive: 0x333300, metalness: 1, roughness: 0.2 });
+
+            let targetX = 0;
+            let boundX = 20; 
+            const keys = { left: false, right: false };
+            
+            function init3D() {
+                scene = new THREE.Scene();
+                scene.fog = new THREE.FogExp2(0x05010a, 0.015);
+                camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 100);
+                camera.position.set(0, 5, 12);
+                camera.lookAt(0, 0, -20);
+                renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
+                container.insertBefore(renderer.domElement, container.firstChild);
+
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+                scene.add(ambientLight);
+                dirLight = new THREE.DirectionalLight(0x00e5ff, 0.8);
+                dirLight.position.set(10, 20, 10);
+                scene.add(dirLight);
+                pointLight = new THREE.PointLight(0xff0055, 1, 50);
+                pointLight.position.set(0, 2, 0);
+                scene.add(pointLight);
+
+                gridHelper = new THREE.GridHelper(200, 100, 0x00e5ff, 0x0a0515);
+                gridHelper.position.y = -1;
+                scene.add(gridHelper);
+
+                const shipGeometry = new THREE.ConeGeometry(1, 3, 4);
+                shipGeometry.rotateX(Math.PI / 2);
+                const shipMaterial = new THREE.MeshPhongMaterial({ 
+                    color: 0x00e5ff, emissive: 0x002244, flatShading: true, shininess: 100
+                });
+                player = new THREE.Mesh(shipGeometry, shipMaterial);
+                player.position.y = 0.5;
+                scene.add(player);
+                
+                engineLight = new THREE.PointLight(0x00e5ff, 1, 10);
+                engineLight.position.set(0, 0, 2);
+                player.add(engineLight);
+                playerBox = new THREE.Box3();
+
+                window.addEventListener('resize', onWindowResize, false);
+                onWindowResize(); 
+            }
+
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                boundX = Math.min(20, Math.max(5, 14 * camera.aspect));
+            }
+
+            function updateTargetX(clientX) {
+                if(!gameRunning || isPaused) return;
+                const normalizedX = (clientX / window.innerWidth) * 2 - 1;
+                targetX = normalizedX * boundX * 1.2; 
+                if(targetX < -boundX) targetX = -boundX;
+                if(targetX > boundX) targetX = boundX;
+            }
+
+            window.addEventListener('mousemove', (e) => updateTargetX(e.clientX));
+            window.addEventListener('touchstart', (e) => { 
+                if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A') {
+                    if (menuScreen.style.display === "none") e.preventDefault(); 
+                    updateTargetX(e.touches[0].clientX);
+                }
+            }, {passive: false});
+            window.addEventListener('touchmove', (e) => { 
+                if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A') {
+                    if(!gameRunning || isPaused) return;
+                    e.preventDefault(); updateTargetX(e.touches[0].clientX);
+                }
+            }, {passive: false});
+
+            function spawnObstacle(zPos) {
+                const geo = new THREE.BoxGeometry(2 + Math.random()*3, 3 + Math.random()*5, 2 + Math.random()*2);
+                const mesh = new THREE.Mesh(geo, obsMaterial);
+                mesh.position.set((Math.random() - 0.5) * boundX * 2, geo.parameters.height/2 - 1, zPos);
+                scene.add(mesh);
+                obstacles.push({ mesh: mesh, box: new THREE.Box3(), rotSpeed: (Math.random() - 0.5) * 2 });
+            }
+
+            function spawnCoin(zPos) {
+                const geo = new THREE.TorusGeometry(0.8, 0.3, 8, 16);
+                const mesh = new THREE.Mesh(geo, coinMaterial);
+                mesh.position.set((Math.random() - 0.5) * boundX * 1.5, 1, zPos);
+                scene.add(mesh);
+                coins.push({ mesh: mesh, box: new THREE.Box3(), rotSpeed: 3 });
+            }
+
+            function createExplosion(x, y, z, colorHex) {
+                const mat = new THREE.MeshBasicMaterial({ color: colorHex });
+                for(let i=0; i<15; i++) {
+                    const mesh = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.6, 0.6), mat);
+                    mesh.position.set(x, y, z);
+                    scene.add(mesh);
+                    particleSystem.push({
+                        mesh: mesh, vx: (Math.random() - 0.5) * 30, vy: Math.random() * 25 + 5, vz: (Math.random() - 0.5) * 30 - 10, life: 1.0
+                    });
+                }
+            }
+
+            function togglePause() {
+                if (!gameRunning) return;
+                isPaused = !isPaused;
+                if (isPaused) {
+                    pauseBtn.innerText = "▶";
+                    pauseScreen.style.display = "flex";
+                    setTimeout(() => pauseScreen.style.opacity = 1, 10);
+                } else {
+                    pauseBtn.innerText = "⏸";
+                    pauseScreen.style.opacity = 0;
+                    setTimeout(() => pauseScreen.style.display = "none", 400);
+                    clock.getDelta(); 
+                }
+            }
+
+            function startGame() {
+                initAudio();
+                unlockAudioFiles();
+                if (currentlyPlayingMeme) { currentlyPlayingMeme.pause(); currentlyPlayingMeme.currentTime = 0; currentlyPlayingMeme = null; }
+                
+                obstacles.forEach(o => scene.remove(o.mesh));
+                coins.forEach(c => scene.remove(c.mesh));
+                particleSystem.forEach(p => scene.remove(p.mesh));
+                obstacles = []; coins = []; particleSystem = [];
+                if(promoBox) promoBox.style.display = 'none';
+
+                score = 0; scoreUI.innerText = score;
+                speed = 25.0; player.position.set(0, 0.5, 0); 
+                targetX = 0; isPaused = false;
+                pauseBtn.innerText = "⏸"; pauseScreen.style.display = "none";
+                player.visible = true;
+                
+                currentPhase = 0; nextPhaseScore = 1000;
+                updateTheme(0);
+                
+                for(let i=0; i<12; i++) {
+                    spawnObstacle(-100 - i*70); 
+                    if(Math.random() > 0.3) spawnCoin(-120 - i*60);
+                }
+
+                menuScreen.style.opacity = 0;
+                setTimeout(() => {
+                    menuScreen.style.display = "none";
+                    gameRunning = true;
+                    clock.getDelta(); animate();
+                }, 400);
+            }
+
+            function gameOver() {
+                gameRunning = false;
+                cancelAnimationFrame(animationId);
+                playSynth('crash');
+                playMeme(true); 
+                
+                if(player) {
+                    createExplosion(player.position.x, player.position.y + 1, player.position.z, 0xef4444);
+                    player.visible = false; 
+                }
+
+                container.classList.add("shake");
+                setTimeout(() => container.classList.remove("shake"), 300);
+
+                titleText.innerText = "SYSTEM CRASH";
+                titleText.classList.add("fail");
+                subText.innerText = `SCORE: ${Math.floor(score)}`;
+                startBtn.innerText = "REBOOT";
+                
+                // SHOW PROMO BOX ON GAME OVER
+                if(promoBox) promoBox.style.display = 'block';
+
+                setTimeout(() => {
+                    menuScreen.style.display = "flex";
+                    setTimeout(() => menuScreen.style.opacity = 1, 50);
+                    startBtn.focus();
+                }, 800); 
+
+                let expFrames = 60;
+                function renderExp() {
+                    if(expFrames-- > 0) {
+                        const dt = 0.016;
+                        for (let i = particleSystem.length - 1; i >= 0; i--) {
+                            let p = particleSystem[i];
+                            p.mesh.position.x += p.vx * dt;
+                            p.mesh.position.y += p.vy * dt;
+                            p.mesh.position.z += p.vz * dt;
+                            p.vy -= 40 * dt; p.life -= dt * 1.5;
+                            p.mesh.scale.setScalar(p.life);
+                            if(p.life <= 0) { scene.remove(p.mesh); particleSystem.splice(i, 1); }
+                        }
+                        renderer.render(scene, camera);
+                        requestAnimationFrame(renderExp);
+                    }
+                }
+                renderExp();
+            }
+
+            function updateTheme(phaseIdx) {
+                const theme = themes[phaseIdx % themes.length];
+                player.material.color.setHex(theme.player);
+                engineLight.color.setHex(theme.player);
+                dirLight.color.setHex(theme.player);
+                obsMaterial.color.setHex(theme.obs);
+                pointLight.color.setHex(theme.obs);
+                gridHelper.material.color.setHex(theme.grid);
+                scene.fog.color.setHex(theme.bg);
+            }
+
+            function animate() {
+                if(!gameRunning || isPaused) return;
+                animationId = requestAnimationFrame(animate);
+
+                const dt = clock.getDelta();
+                speed += dt * 0.15;
+                score += dt * 10;
+                scoreUI.innerText = Math.floor(score);
+
+                if (score > nextPhaseScore) {
+                    currentPhase++;
+                    nextPhaseScore += 1000;
+                    updateTheme(currentPhase);
+                }
+
+                player.position.x += (targetX - player.position.x) * 14 * dt;
+                player.rotation.z = (player.position.x - targetX) * 0.1;
+                player.rotation.x = -0.1;
+
+                camera.position.x = player.position.x * 0.5;
+                camera.lookAt(player.position.x * 0.2, 0, -20);
+
+                gridHelper.position.z += speed * dt;
+                if(gridHelper.position.z > 10) gridHelper.position.z -= 10;
+
+                playerBox.setFromObject(player);
+                playerBox.expandByScalar(-0.75); 
+
+                for (let i = obstacles.length - 1; i >= 0; i--) {
+                    let obs = obstacles[i];
+                    obs.mesh.position.z += speed * dt;
+                    if (currentPhase > 0) {
+                        obs.mesh.rotation.y += obs.rotSpeed * dt;
+                        if (currentPhase > 1) obs.mesh.rotation.x += obs.rotSpeed * dt;
+                    }
+                    obs.box.setFromObject(obs.mesh);
+                    if (playerBox.intersectsBox(obs.box)) { gameOver(); return; }
+
+                    if (obs.mesh.position.z > camera.position.z + 5) {
+                        obs.mesh.position.z -= 900 + Math.random() * 400; 
+                        obs.mesh.position.x = (Math.random() - 0.5) * boundX * 2;
+                        obs.mesh.scale.set(1 + Math.random() * (1 + currentPhase*0.2), 1 + Math.random()*2, 1);
+                    }
+                }
+
+                for (let i = coins.length - 1; i >= 0; i--) {
+                    let c = coins[i];
+                    c.mesh.position.z += speed * dt;
+                    c.mesh.rotation.y += 5 * dt;
+                    c.box.setFromObject(c.mesh);
+                    if (playerBox.intersectsBox(c.box)) {
+                        score += 50; playMeme(false);
+                        c.mesh.position.z -= 900 + Math.random() * 300;
+                        c.mesh.position.x = (Math.random() - 0.5) * boundX * 1.5;
+                        continue;
+                    }
+                    if (c.mesh.position.z > camera.position.z + 5) {
+                        c.mesh.position.z -= 900 + Math.random() * 300;
+                        c.mesh.position.x = (Math.random() - 0.5) * boundX * 1.5;
+                    }
+                }
+                
+                for (let i = particleSystem.length - 1; i >= 0; i--) {
+                    let p = particleSystem[i];
+                    p.mesh.position.x += p.vx * dt;
+                    p.mesh.position.y += p.vy * dt;
+                    p.mesh.position.z += (p.vz + speed) * dt;
+                    p.vy -= 40 * dt; p.life -= dt * 1.5;
+                    p.mesh.scale.setScalar(p.life);
+                    if(p.life <= 0 || p.mesh.position.y < 0) { scene.remove(p.mesh); particleSystem.splice(i, 1); }
+                }
+
+                renderer.render(scene, camera);
+            }
+
+            init3D();
+            startBtn.addEventListener('click', startGame);
+            pauseBtn.addEventListener('click', togglePause);
+            resumeBtn.addEventListener('click', togglePause);
+        }
+    </script>
+    
+    <!-- ANTI-INSPECT SECURITY -->
+    <script>
+        (function() {
+            document.addEventListener('contextmenu', e => e.preventDefault());
+            document.addEventListener('keydown', e => {
+                if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) {
+                    e.preventDefault(); return false;
+                }
+            });
+            setInterval(() => {
+                const start = Date.now();
+                (function() { return false; }['constructor']('debugger')());
+                if (Date.now() - start > 100) document.body.innerHTML = "<h1 style='color:red; text-align:center; margin-top:20%;'>DevTools Blocked!</h1>";
+            }, 1000);
+        })();
+    </script>
+
+    <!-- ========================================== -->
+    <!-- SECURITY SCRIPT: ANTI-INSPECT & ANTI-COPY  -->
+    <!-- ========================================== -->
+    <script>
+        (function() {
+            // 1. Disable Right Click (Context Menu)
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+
+            // 2. Disable specific Keyboard Shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Prevent F12
+                if (e.key === 'F12' || e.keyCode === 123) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Prevent Ctrl+Shift+I (Inspect Element)
+                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Prevent Ctrl+Shift+J (Console)
+                if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j' || e.keyCode === 74)) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Prevent Ctrl+U (View Source)
+                if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // Prevent Ctrl+S (Save Page)
+                if (e.ctrlKey && (e.key === 'S' || e.key === 's' || e.keyCode === 83)) {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // Prevent Ctrl+C / Ctrl+A (Copy / Select All)
+                if (e.ctrlKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67 || e.key === 'A' || e.key === 'a' || e.keyCode === 65)) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            // 3. Disable Text Selection
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+            });
+
+            // 4. Anti-Debugger Loop (Freezes DevTools if somehow opened)
+            setInterval(function() {
+                const before = new Date().getTime();
+                (function() { return false; }['constructor']('debugger')());
+                const after = new Date().getTime();
+                if (after - before > 100) {
+                    // DevTools is open and paused the debugger
+                    document.body.innerHTML = "<h1 style='color:red; text-align:center; margin-top:20%; font-family:sans-serif;'>DevTools is not allowed here!</h1>";
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>

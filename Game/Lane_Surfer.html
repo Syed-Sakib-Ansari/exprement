@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Comprehensive SEO Meta Tags -->
+    <title>Cyber Lane Surfer | Meme Action Edition</title>
+    <meta name="title" content="Cyber Lane Surfer | Meme Action Edition">
+    <meta name="description" content="Survive the neon lanes! Collect coins to hear hilarious meme sounds. Refined eye-friendly design for long-term play. Play for free online!">
+    <meta name="keywords" content="lane surfer, cyber game, neon racing, meme game, endless runner, html5 game, free online game, arcade game">
+    <meta name="author" content="PlayZone Games">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://playzone.games/lane-surfer">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://playzone.games/lane-surfer">
+    <meta property="og:title" content="Cyber Lane Surfer | Meme Arcade">
+    <meta property="og:description" content="Survive the neon lanes! Collect coins to hear hilarious meme sounds. Play for free online!">
+    <meta property="og:image" content="https://playzone.games/assets/lane-surfer-banner.jpg">
+    <meta property="og:site_name" content="PlayZone Games">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://playzone.games/lane-surfer">
+    <meta name="twitter:title" content="Cyber Lane Surfer | Meme Arcade">
+    <meta name="twitter:description" content="Survive the neon lanes! Collect coins to hear hilarious meme sounds.">
+    <meta name="twitter:image" content="https://playzone.games/assets/lane-surfer-banner.jpg">
+
+    <!-- Best Practices & PWA Support -->
+    <meta name="theme-color" content="#0a0a14">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Lane Surfer">
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Cyber Lane Surfer",
+      "url": "https://playzone.games/lane-surfer",
+      "description": "Survive the neon lanes! Collect coins to hear hilarious meme sounds.",
+      "genre": ["Action", "Arcade", "Endless Runner"],
+      "playMode": "SinglePlayer",
+      "applicationCategory": "Game"
+    }
+    </script>
+
+    <!-- Performance: Preconnect to Font APIs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Refined Eye-Friendly Palette */
+            --bg-dark: #0a0a14;
+            --neon-cyan: #00bcd4;
+            --neon-magenta: #c2185b;
+            --neon-green: #4db6ac;
+            --neon-yellow: #fbc02d;
+            --ui-bg: rgba(15, 15, 30, 0.85);
+            --ui-border: rgba(0, 188, 212, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; -webkit-user-drag: none; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #e0e0e0;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh;
+            padding: 10px;
+            touch-action: none; 
+            overflow: hidden;
+            background-image: linear-gradient(180deg, #0a0a14 0%, #151525 100%);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Accessibility Focus */
+        *:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 4px; }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 10px 18px;
+            background: var(--ui-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--ui-border);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            flex: 0 0 auto;
+            z-index: 2;
+        }
+
+        .stats-container {
+            font-family: 'Bungee', cursive;
+            font-size: 1rem;
+            color: var(--neon-cyan);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .pulse-container {
+            font-size: 0.7rem;
+            color: var(--neon-yellow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .controls-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .game-wrapper {
+            width: 100%;
+            flex-grow: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            background-color: #080810;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+            outline: none;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 10, 20, 0.92);
+            backdrop-filter: blur(6px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity 0.4s ease;
+        }
+
+        #message {
+            font-family: 'Bungee', cursive;
+            font-size: clamp(2rem, 10vw, 3rem);
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 0 15px var(--neon-cyan);
+            margin-bottom: 5px;
+        }
+
+        #message.fail { text-shadow: 0 0 15px var(--neon-magenta); color: #d81b60; }
+
+        #subMessage {
+            font-size: 0.9rem;
+            color: var(--neon-green);
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ------------------------------------------- */
+        /* SLEEK PROMOTIONAL BANNER STYLES */
+        /* ------------------------------------------- */
+        .promo-banner {
+            display: none; /* Shown on game over */
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(90deg, rgba(0, 188, 212, 0.1), rgba(233, 30, 99, 0.1));
+            border: 1px solid rgba(0, 188, 212, 0.4);
+            padding: 12px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            gap: 15px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            pointer-events: auto;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .promo-banner:hover {
+            background: linear-gradient(90deg, rgba(0, 188, 212, 0.2), rgba(233, 30, 99, 0.2));
+            border-color: var(--neon-cyan);
+            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .promo-icon {
+            font-size: 1.8rem;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+        }
+
+        .promo-text {
+            flex-grow: 1;
+            text-align: left;
+            font-size: 0.85rem;
+            color: #e0e0e0;
+            line-height: 1.3;
+        }
+
+        .promo-text strong {
+            display: block;
+            color: var(--neon-yellow);
+            font-family: 'Bungee', cursive;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+            text-shadow: 0 0 5px rgba(251, 192, 45, 0.5);
+        }
+
+        .promo-btn {
+            background: var(--neon-magenta);
+            color: #fff;
+            font-family: 'Bungee', cursive;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            box-shadow: 0 0 10px rgba(233, 30, 99, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        button.primary-btn {
+            font-family: 'Bungee', cursive;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            background: linear-gradient(90deg, #0097a7, #0288d1);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 151, 167, 0.4);
+            transition: transform 0.2s;
+            text-transform: uppercase;
+        }
+
+        button.primary-btn:hover, button.primary-btn:focus-visible { 
+            transform: scale(1.05); 
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        .icon-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--ui-border);
+            color: var(--neon-cyan);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .icon-btn:hover, .icon-btn:focus-visible {
+            background: rgba(0, 188, 212, 0.2);
+            color: #fff;
+            outline: none;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+
+        .action-btn:hover, .action-btn:focus-visible {
+            background: rgba(0, 188, 212, 0.2);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        /* Mobile Controls Bar */
+        .mobile-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 15px;
+            margin-top: 15px;
+            flex: 0 0 auto;
+        }
+
+        .dir-btn {
+            flex: 1;
+            height: 60px;
+            background: linear-gradient(180deg, rgba(0, 188, 212, 0.05), rgba(0, 188, 212, 0.15));
+            border: 1px solid rgba(0, 188, 212, 0.2);
+            border-radius: 12px;
+            color: var(--neon-cyan);
+            font-family: 'Bungee', cursive;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            touch-action: manipulation;
+            user-select: none;
+        }
+
+        .dir-btn:active {
+            background: var(--neon-cyan);
+            color: #000;
+        }
+
+        .instructions {
+            margin-top: 10px;
+            color: #78909c;
+            font-size: 0.75rem;
+            text-align: center;
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .pulse-bar-outer {
+            width: 80px;
+            height: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(251, 192, 45, 0.2);
+            margin-top: 4px;
+        }
+        .pulse-bar-inner {
+            height: 100%;
+            width: 0%;
+            background: var(--neon-yellow);
+            box-shadow: 0 0 8px var(--neon-yellow);
+            transition: width 0.3s ease;
+        }
+
+        .volume-control-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #volumeSlider {
+            width: 70px;
+            height: 6px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        #volumeSlider:focus-visible {
+            outline: 2px solid var(--neon-cyan);
+            outline-offset: 4px;
+        }
+        
+        #volumeSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-controls { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .header { padding: 10px; flex-direction: column; gap: 10px; }
+            .stats-container { width: 100%; justify-content: space-around; font-size: 1.2rem; }
+            .controls-container { width: 100%; justify-content: space-between; }
+            #volumeSlider { width: 80px; }
+            .instructions { font-size: 0.7rem; }
+            
+            .promo-banner { padding: 8px 12px; margin-bottom: 15px; flex-wrap: wrap; justify-content: center; text-align: center; }
+            .promo-text { text-align: center; width: 100%; margin-bottom: 5px; }
+        }
+
+        .shake-active { animation: shake 0.3s ease-in-out; }
+        @keyframes shake {
+            0% { transform: translate(2px, 2px); }
+            25% { transform: translate(-2px, -2px); }
+            50% { transform: translate(2px, -2px); }
+            75% { transform: translate(-2px, 2px); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Playlist for 88 Sounds (Performance: preload="none") -->
+    <div id="audio-assets" style="display: none;" aria-hidden="true">
+        <audio id="sound-meme-0" src="Voicy_Jetha Nonsense.mp3" preload="none"></audio>
+        <audio id="sound-meme-1" src="Voicy_Hey Ma Mataji.mp3" preload="none"></audio>
+        <audio id="sound-meme-2" src="Happy Diwali Happy Diwali - Jethalal Song.mp3" preload="none"></audio>
+        <audio id="sound-meme-3" src="Voicy_Tu kiyun ro raha ha tere Maa mr gaee ha paper ma.mp3" preload="none"></audio>
+        <audio id="sound-meme-4" src="Voicy_Daish ma kuch krna krwana ha to rishwat to deni pare gee.mp3" preload="none"></audio>
+        <audio id="sound-meme-5" src="Voicy_Tere ankhoon ma dal doon ga ya chata.mp3" preload="none"></audio>
+        <audio id="sound-meme-6" src="Voicy_Auratoon ko kyun chait ma sa jhank k dekhta ha.mp3" preload="none"></audio>
+        <audio id="sound-meme-7" src="Voicy_Jija g ma andr aoon.mp3" preload="none"></audio>
+        <audio id="sound-meme-8" src="Voicy_A dhelay zara diesel dal.mp3" preload="none"></audio>
+        <audio id="sound-meme-9" src="Voicy_Tu cheez baree ha mast mast .mp3" preload="none"></audio>
+        <audio id="sound-meme-10" src="Voicy_Kya gunda banega re tu.mp3" preload="none"></audio>
+        <audio id="sound-meme-11" src="Voicy_Tera bap ki shadi hai kiya ra.mp3" preload="none"></audio>
+        <audio id="sound-meme-12" src="Voicy_ Kesi han.mp3" preload="none"></audio>
+        <audio id="sound-meme-13" src="Voicy_ Cha maila.mp3" preload="none"></audio>
+        <audio id="sound-meme-14" src="Voicy_Ha ha ha ha.mp3" preload="none"></audio>
+        <audio id="sound-meme-15" src="Voicy_Ye baburao ka style hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-16" src="Voicy_Pakad mera ko mero ko janta ni hai ya.mp3" preload="none"></audio>
+        <audio id="sound-meme-17" src="babu_rao.mp3" preload="none"></audio>
+        <audio id="sound-meme-18" src="Voicy_To is ko mar ka dikha mujha dakhna hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-19" src="Voicy_ Mar ka dikha.mp3" preload="none"></audio>
+        <audio id="sound-meme-20" src="Voicy_Main pagl hun.mp3" preload="none"></audio>
+        <audio id="sound-meme-21" src="Voicy_Is ko bilkul ni ata.mp3" preload="none"></audio>
+        <audio id="sound-meme-22" src="Voicy_Totally kangal.mp3" preload="none"></audio>
+        <audio id="sound-meme-23" src="Voicy_Is tida ko bi yahi chor do.mp3" preload="none"></audio>
+        <audio id="sound-meme-24" src="Voicy_Paisa dana para ga.mp3" preload="none"></audio>
+        <audio id="sound-meme-25" src="Voicy_Hum koi mandir ka ghanta ha ka koi bi a ka baja jata hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-26" src="Voicy_ Humko maaro humko jinda mat choro salo.mp3" preload="none"></audio>
+        <audio id="sound-meme-27" src="aahhkk-ahhk-with-echo.mp3" preload="none"></audio>
+        <audio id="sound-meme-28" src="aah-meme-jacqueline-fernandez.mp3" preload="none"></audio>
+        <audio id="sound-meme-29" src="ae-ghargharghar-dhadam-a.mp3" preload="none"></audio>
+        <audio id="sound-meme-30" src="africa-crying-laugh-commercial.mp3" preload="none"></audio>
+        <audio id="sound-meme-31" src="anime-ahh.mp3" preload="none"></audio>
+        <audio id="sound-meme-32" src="baigan.mp3" preload="none"></audio>
+        <audio id="sound-meme-33" src="bhosdike-madarchod-been-k-loray-roadies.mp3" preload="none"></audio>
+        <audio id="sound-meme-34" src="cat-laugh-meme-1.mp3" preload="none"></audio>
+        <audio id="sound-meme-35" src="cid-acp-behn-choo.mp3" preload="none"></audio>
+        <audio id="sound-meme-36" src="confused-cross-eyed-kitten-meme.mp3" preload="none"></audio>
+        <audio id="sound-meme-37" src="dry-fart.mp3" preload="none"></audio>
+        <audio id="sound-meme-38" src="gaaayyyyy_vUi3hqB.mp3" preload="none"></audio>
+        <audio id="sound-meme-39" src="ghok-ghok.mp3" preload="none"></audio>
+        <audio id="sound-meme-40" src="indian-sorry.mp3" preload="none"></audio>
+        <audio id="sound-meme-41" src="le-mdrchd.mp3" preload="none"></audio>
+        <audio id="sound-meme-42" src="oh-ma-gaud-vine.mp3" preload="none"></audio>
+        <audio id="sound-meme-43" src="perfect-fart.mp3" preload="none"></audio>
+        <audio id="sound-meme-44" src="raven-caw-caw.mp3" preload="none"></audio>
+        <audio id="sound-meme-45" src="spongebob-fail.mp3" preload="none"></audio>
+        <audio id="sound-meme-46" src="studio-audience-awwww-sound-fx.mp3" preload="none"></audio>
+        <audio id="sound-meme-47" src="ye-meri-galti-h.mp3" preload="none"></audio>
+        <audio id="sound-meme-48" src="tmpgj3wv0ae.mp3" preload="none"></audio>
+        <audio id="sound-meme-49" src="vine-boom-sound-effect_KT89XIq.mp3" preload="none"></audio>
+        <audio id="sound-meme-50" src="tarkov-scav-laughing-3.mp3" preload="none"></audio>
+        <audio id="sound-meme-51" src="mylan_olE7cPM.mp3" preload="none"></audio>
+        <audio id="sound-meme-52" src="tudum-tedev (1).mp3" preload="none"></audio>
+        <audio id="sound-meme-53" src="tudum-tedev.mp3" preload="none"></audio>
+        <audio id="sound-meme-54" src="rom-rom-bhaiyo.mp3" preload="none"></audio>
+        <audio id="sound-meme-55" src="yeah-boymp4.mp3" preload="none"></audio>
+        <audio id="sound-meme-56" src="happy-happy-happy-song.mp3" preload="none"></audio>
+        <audio id="sound-meme-57" src="omgwow.mp3" preload="none"></audio>
+        <audio id="sound-meme-58" src="kids-saying-yay-sound-effect_3.mp3" preload="none"></audio>
+        <audio id="sound-meme-59" src="007-bond-theme_WrKEvuW.mp3" preload="none"></audio>
+        <audio id="sound-meme-60" src="spiderman-meme-song-2-0.mp3" preload="none"></audio>
+        <audio id="sound-meme-61" src="helicopter-helicopter-parakofer-parakofer.mp3" preload="none"></audio>
+        <audio id="sound-meme-62" src="yooooooooooooooooooooooooo_4_objp8XX.mp3" preload="none"></audio>
+        <audio id="sound-meme-63" src="shah-rukh-khan.mp3" preload="none"></audio>
+        <audio id="sound-meme-64" src="Voicy_Abi thk kr ka data hun.mp3" preload="none"></audio>
+        <audio id="sound-meme-65" src="Voicy_Kahan sa utha ka laya ic mechanic ko.mp3" preload="none"></audio>
+        <audio id="sound-meme-66" src="Voicy_Madam madam.mp3" preload="none"></audio>
+        <audio id="sound-meme-67" src="Voicy_Ma to pura kala ho gya yar.mp3" preload="none"></audio>
+        <audio id="sound-meme-68" src="meme-de-creditos-finales.mp3" preload="none"></audio>
+        <audio id="sound-meme-69" src="896756048.mp3" preload="none"></audio>
+        <audio id="sound-meme-70" src="weeeee_original_1193597514938524841.mp3" preload="none"></audio>
+        <audio id="sound-meme-71" src="careless_whispers.mp3" preload="none"></audio>
+        <audio id="sound-meme-72" src="fahhh-pump-sound.mp3" preload="none"></audio>
+        <audio id="sound-meme-73" src="matlab-wo-alag-hi-level-ka-banda-tha.mp3" preload="none"></audio>
+        <audio id="sound-meme-74" src="gimme-some-ganja.mp3" preload="none"></audio>
+        <audio id="sound-meme-75" src="kung-fu_Xu8sssy.mp3" preload="none"></audio>
+        <audio id="sound-meme-76" src="chud-gayi.mp3" preload="none"></audio>
+        <audio id="sound-meme-77" src="chalti-firti-cocaine.mp3" preload="none"></audio>
+        <audio id="sound-meme-78" src="koun-hai-re_8ep4nAR.mp3" preload="none"></audio>
+        <audio id="sound-meme-79" src="ladle-meoww-ghop-ghop-ghop.mp3" preload="none"></audio>
+        <audio id="sound-meme-80" src="meow-ghop-ghop-ghop.mp3" preload="none"></audio>
+        <audio id="sound-meme-81" src="tf_nemesis.mp3" preload="none"></audio>
+        <audio id="sound-meme-82" src="tmp0gt0yo3e.mp3" preload="none"></audio>
+        <audio id="sound-meme-83" src="ma-ka-bhosda-aag.mp3" preload="none"></audio>
+        <audio id="sound-meme-84" src="oh-shit_4.mp3" preload="none"></audio>
+        <audio id="sound-meme-85" src="modi-ji-bkl.mp3" preload="none"></audio>
+        <audio id="sound-meme-86" src="Voicy_Is ka liya bari unchi pehchan chahiye unchi ponch chaiya.mp3" preload="none"></audio>
+        <audio id="sound-meme-87" src="Voicy_ Jor jor se bol ka logo ko scheme bata de.mp3" preload="none"></audio>
+    </div>
+
+    <main id="mainContainer">
+        <header class="header" role="banner">
+            <div class="stats-container" aria-live="polite">
+                <div>SCORE: <span id="score-val">0</span></div>
+                <div class="pulse-container">
+                    PULSE:
+                    <div class="pulse-bar-outer"><div class="pulse-bar-inner" id="pulseBar"></div></div>
+                </div>
+            </div>
+            <div class="controls-container">
+                <button onclick="window.location.href='index.html'" class="icon-btn" aria-label="Home" title="Back to Arcade" style="font-family: 'Bungee', cursive; margin-right: 5px;">🏠</button>
+                <div class="volume-control-wrapper">
+                    <button id="soundIcon" class="icon-btn" aria-label="Mute or Unmute Game Sound">🔊</button>
+                    <label for="volumeSlider" style="display:none;">Volume</label>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="1" aria-label="Game Volume Control">
+                </div>
+                <button id="pauseBtn" class="action-btn" aria-label="Pause Game" style="display:none;">⏸ PAUSE</button>
+            </div>
+        </header>
+
+        <div class="game-wrapper" id="gameWrapper">
+            <canvas id="gameCanvas" role="application" aria-label="Cyber Lane Surfer Game Board: Swipe or use arrows to change lanes"></canvas>
+            
+            <div class="overlay" id="startScreen" role="dialog" aria-labelledby="message" aria-describedby="subMessage">
+                <h1 id="message">CYBERSURF</h1>
+                <div id="subMessage">Tap a Lane to Move!</div>
+
+                <!-- SLEEK PROMOTIONAL MOVIE BANNER -->
+                <a href="https://moviedakhi.com/" rel="noopener noreferrer" class="promo-banner" id="promoBox" aria-label="Visit Movie Site">
+                    <span class="promo-icon">🍿</span>
+                    <div class="promo-text">
+                        <strong style="font-family: monospace;">MOVIE TIME!</strong>
+                        Watch blockbuster movies free.
+                    </div>
+                    <span class="promo-btn">VISIT</span>
+                </a>
+
+                <button id="startBtn" class="primary-btn" tabindex="0">INITIALIZE</button>
+            </div>
+        </div>
+
+        <nav class="mobile-controls" aria-label="Mobile Game Controls">
+            <button class="dir-btn" id="leftBtn" aria-label="Move Left">LEFT</button>
+            <button class="dir-btn" id="rightBtn" aria-label="Move Right">RIGHT</button>
+        </nav>
+
+        <footer class="instructions" role="contentinfo">
+            Desktop: <span class="accent-text">A/D</span> or <span class="accent-text">ARROWS</span>.<br>
+            Mobile: <span class="accent-text">TAP LANE</span> or <span class="accent-text">SWIPE</span>.<br>
+            <span class="accent-text">SPACE</span> or <span class="accent-text">DOUBLE TAP</span> for Pulse!
+        </footer>
+    </main>
+
+    <script>
+        'use strict';
+
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d", { alpha: false });
+        const startScreen = document.getElementById("startScreen");
+        const startBtn = document.getElementById("startBtn");
+        const pauseBtn = document.getElementById("pauseBtn");
+        const scoreDisplay = document.getElementById("score-val");
+        const pulseBar = document.getElementById("pulseBar");
+        const messageDisplay = document.getElementById("message");
+        const subMessageDisplay = document.getElementById("subMessage");
+        const soundIcon = document.getElementById("soundIcon");
+        const volumeSlider = document.getElementById("volumeSlider");
+        const mainContainer = document.getElementById("mainContainer");
+        const promoBox = document.getElementById("promoBox");
+
+        // --- Audio Management ---
+        let audioCtx;
+        let globalVolume = 1.0;
+        const allMemeSounds = [];
+        for(let i=0; i<=87; i++) {
+            const el = document.getElementById(`sound-meme-${i}`);
+            if(el) allMemeSounds.push(el);
+        }
+
+        const memeIndices = [];
+        let currentlyPlayingMeme = null;
+
+        function getNextSound() {
+            if (allMemeSounds.length === 0) return null;
+            if (memeIndices.length === 0) {
+                for (let i = 0; i < allMemeSounds.length; i++) memeIndices.push(i);
+                for (let i = memeIndices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [memeIndices[i], memeIndices[j]] = [memeIndices[j], memeIndices[i]];
+                }
+            }
+            return allMemeSounds[memeIndices.pop()];
+        }
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }
+
+        function unlockAudioFiles() {
+            allMemeSounds.forEach(audio => {
+                if(audio && audio.readyState === 0) {
+                    audio.volume = 0; 
+                    const p = audio.play();
+                    if (p !== undefined) {
+                        p.then(() => { audio.pause(); audio.currentTime = 0; audio.volume = globalVolume; }).catch(() => {});
+                    }
+                }
+            });
+        }
+
+        function playMeme(forceSkip = false) {
+            if (globalVolume === 0) return;
+            if (currentlyPlayingMeme && !forceSkip) return;
+            if (currentlyPlayingMeme) { currentlyPlayingMeme.pause(); currentlyPlayingMeme.currentTime = 0; currentlyPlayingMeme = null; }
+            
+            const s = getNextSound();
+            if (s) {
+                currentlyPlayingMeme = s;
+                s.volume = globalVolume;
+                s.currentTime = 0;
+                s.onended = () => { if (currentlyPlayingMeme === s) currentlyPlayingMeme = null; };
+                s.play().catch(()=>{ if (currentlyPlayingMeme === s) currentlyPlayingMeme = null; });
+            }
+        }
+
+        function playSynth(freq, type='sine', dur=0.1, volMult=0.05) {
+            if (globalVolume === 0 || !audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            gain.gain.setValueAtTime(volMult * globalVolume, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+            osc.start(); osc.stop(audioCtx.currentTime + dur);
+        }
+
+        volumeSlider.addEventListener("input", (e) => {
+            globalVolume = parseFloat(e.target.value);
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : (globalVolume < 0.5 ? "🔉" : "🔊");
+            if (currentlyPlayingMeme) currentlyPlayingMeme.volume = globalVolume;
+            initAudio(); 
+        });
+
+        soundIcon.onclick = () => {
+            globalVolume = globalVolume > 0 ? 0 : 1.0;
+            volumeSlider.value = globalVolume;
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : "🔊";
+            if (globalVolume === 0 && currentlyPlayingMeme) {
+                currentlyPlayingMeme.pause(); currentlyPlayingMeme.currentTime = 0; currentlyPlayingMeme = null;
+            }
+            initAudio();
+        };
+
+        // --- Game Logic ---
+        let gameRunning = false;
+        let isPaused = false;
+        let score = 0;
+        let bestScore = 0;
+        let lastTime = 0;
+        let animationId;
+        
+        let playerLane = 1;
+        let targetLane = 1;
+        let playerX = 0;
+        let laneWidth = 0;
+        
+        let obstacles = [];
+        let coins = [];
+        let pulseCharge = 0;
+        const PULSE_MAX = 4; // Reduced for easier charge
+        let pulseActive = 0; 
+
+        let speed = 300; // REDUCED START SPEED
+        let spawnTimer = 0;
+
+        function resizeCanvas() {
+            const wrapper = document.getElementById("gameWrapper");
+            canvas.width = wrapper.clientWidth;
+            canvas.height = wrapper.clientHeight;
+            laneWidth = canvas.width / 3;
+            playerX = laneWidth * playerLane + laneWidth / 2;
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        function triggerShake() {
+            mainContainer.classList.add("shake-active");
+            setTimeout(() => mainContainer.classList.remove("shake-active"), 300);
+        }
+
+        function resetGame() {
+            score = 0;
+            scoreDisplay.innerText = score;
+            pulseCharge = 0;
+            updatePulseUI();
+            obstacles = [];
+            coins = [];
+            playerLane = 1;
+            targetLane = 1;
+            speed = 300; // Start easy
+            spawnTimer = 0;
+            playerX = laneWidth * playerLane + laneWidth / 2;
+            isPaused = false;
+        }
+
+        function updatePulseUI() {
+            pulseBar.style.width = (pulseCharge / PULSE_MAX * 100) + "%";
+        }
+
+        function handleInput(dir) {
+            if (!gameRunning || isPaused) return;
+            if (dir === 'left' && targetLane > 0) targetLane--;
+            if (dir === 'right' && targetLane < 2) targetLane++;
+            playSynth(440, 'triangle', 0.05, 0.02);
+        }
+
+        function setLane(laneIndex) {
+            if (!gameRunning || isPaused) return;
+            if (laneIndex >= 0 && laneIndex <= 2) {
+                targetLane = laneIndex;
+                playSynth(440, 'triangle', 0.05, 0.02);
+            }
+        }
+
+        function triggerPulse() {
+            if (pulseCharge < PULSE_MAX || !gameRunning || isPaused) return;
+            pulseCharge = 0;
+            updatePulseUI();
+            pulseActive = 0.6; 
+            triggerShake();
+            playSynth(150, 'sawtooth', 0.5, 0.2); 
+            playMeme(true); 
+            
+            // CLEAR ALL OBSTACLES FOR SAFETY
+            obstacles = []; 
+        }
+
+        function update(dt) {
+            if (!gameRunning || isPaused) return;
+
+            // SLOWER SPEED PROGRESSION
+            speed += dt * 4; 
+            const targetX = laneWidth * targetLane + laneWidth / 2;
+            playerX += (targetX - playerX) * 0.15; // Smooth snap
+
+            spawnTimer -= dt;
+            if (spawnTimer <= 0) {
+                const lane = Math.floor(Math.random() * 3);
+                // MORE FORGIVING SPAWN RATE
+                if (Math.random() > 0.45) {
+                    obstacles.push({ x: lane * laneWidth, y: -100, w: laneWidth, h: 45 });
+                } else {
+                    coins.push({ x: lane * laneWidth + laneWidth/2, y: -100, r: 18 });
+                }
+                spawnTimer = Math.max(0.5, 1.2 - (speed / 1500));
+            }
+
+            for (let i = obstacles.length - 1; i >= 0; i--) {
+                const o = obstacles[i];
+                o.y += speed * dt;
+                const px = playerX;
+                const py = canvas.height - 85;
+                // Collision Hitbox
+                if (o.y + o.h > py - 15 && o.y < py + 15 && px > o.x + 15 && px < o.x + o.w - 15) {
+                    handleGameOver();
+                    return;
+                }
+                if (o.y > canvas.height) { obstacles.splice(i, 1); score++; scoreDisplay.innerText = score; }
+            }
+
+            for (let i = coins.length - 1; i >= 0; i--) {
+                const c = coins[i];
+                c.y += speed * dt;
+                if (Math.hypot(playerX - c.x, (canvas.height - 85) - c.y) < 45) {
+                    coins.splice(i, 1);
+                    pulseCharge = Math.min(PULSE_MAX, pulseCharge + 1);
+                    updatePulseUI();
+                    playMeme(true); // Force previous sound to stop and play new sound
+                    if (pulseCharge === PULSE_MAX) {
+                        playSynth(1200, 'sine', 0.2, 0.1);
+                    }
+                } else if (c.y > canvas.height) { coins.splice(i, 1); }
+            }
+
+            if (pulseActive > 0) pulseActive -= dt;
+        }
+
+        function draw() {
+            ctx.fillStyle = "#080810";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Lane Dividers
+            ctx.strokeStyle = "rgba(0, 188, 212, 0.08)";
+            ctx.lineWidth = 2;
+            for(let i=1; i<3; i++) {
+                ctx.beginPath();
+                ctx.moveTo(i * laneWidth, 0); ctx.lineTo(i * laneWidth, canvas.height);
+                ctx.stroke();
+            }
+
+            if (pulseActive > 0) {
+                ctx.fillStyle = `rgba(251, 192, 45, ${pulseActive * 0.5})`; 
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+
+            for (const c of coins) {
+                ctx.fillStyle = "#c2185b";
+                ctx.beginPath(); ctx.arc(c.x, c.y, c.r, 0, Math.PI*2); ctx.fill();
+                ctx.fillStyle = "#fff";
+                ctx.beginPath(); ctx.arc(c.x, c.y, c.r/2.5, 0, Math.PI*2); ctx.fill();
+            }
+
+            for (const o of obstacles) {
+                ctx.fillStyle = "rgba(216, 27, 96, 0.25)";
+                ctx.fillRect(o.x + 10, o.y, o.w - 20, o.h);
+                ctx.strokeStyle = "#d81b60";
+                ctx.lineWidth = 3;
+                ctx.strokeRect(o.x + 15, o.y + 5, o.w - 30, o.h - 10);
+            }
+
+            ctx.save();
+            ctx.translate(playerX, canvas.height - 85);
+            ctx.fillStyle = "#00bcd4";
+            ctx.shadowBlur = 12; ctx.shadowColor = "#00bcd4";
+            ctx.beginPath();
+            ctx.moveTo(0, -28); ctx.lineTo(20, 15); ctx.lineTo(-20, 15); ctx.closePath();
+            ctx.fill();
+            ctx.shadowBlur = 0;
+            ctx.fillStyle = "#fff";
+            ctx.beginPath(); ctx.arc(0, 5, 5, 0, Math.PI*2); ctx.fill();
+            ctx.restore();
+        }
+
+        function loop(timestamp) {
+            if (!lastTime) lastTime = timestamp;
+            const dt = (timestamp - lastTime) / 1000;
+            lastTime = timestamp;
+
+            update(dt);
+            draw();
+            animationId = requestAnimationFrame(loop);
+        }
+
+        function handleGameOver() {
+            gameRunning = false;
+            cancelAnimationFrame(animationId);
+            playMeme(true);
+            triggerShake();
+            if (score > bestScore) bestScore = score;
+            
+            messageDisplay.innerText = "SYSTEM CRASH";
+            messageDisplay.classList.add("fail");
+            subMessageDisplay.innerText = `SCORE: ${score} | BEST: ${bestScore}`;
+            startBtn.innerText = "REBOOT";
+            
+            startScreen.style.display = "flex";
+            if(promoBox) promoBox.style.display = "flex"; // Show banner on fail
+            pauseBtn.style.display = "none";
+            
+            setTimeout(() => {
+                startScreen.style.opacity = 1;
+                startBtn.focus();
+            }, 50);
+        }
+
+        startBtn.onclick = () => {
+            initAudio();
+            unlockAudioFiles();
+            startScreen.style.opacity = 0;
+            if(promoBox) promoBox.style.display = "none"; // Hide banner on start
+            
+            setTimeout(() => {
+                startScreen.style.display = "none";
+                pauseBtn.style.display = "flex";
+                pauseBtn.innerText = "⏸ PAUSE";
+                resetGame();
+                gameRunning = true;
+                lastTime = performance.now();
+                animationId = requestAnimationFrame(loop);
+            }, 300);
+        };
+
+        pauseBtn.onclick = () => {
+            if (!gameRunning) return;
+            isPaused = !isPaused;
+            pauseBtn.innerText = isPaused ? "▶ PLAY" : "⏸ PAUSE";
+            if (isPaused) {
+                ctx.fillStyle = "rgba(0, 0, 0, 0.75)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#fff";
+                ctx.font = "bold 30px Orbitron";
+                ctx.textAlign = "center";
+                ctx.fillText("PAUSED", canvas.width / 2, canvas.height / 2);
+            } else {
+                lastTime = performance.now();
+            }
+        };
+
+        window.addEventListener("keydown", e => {
+            if (e.key === "a" || e.key === "ArrowLeft") handleInput('left');
+            if (e.key === "d" || e.key === "ArrowRight") handleInput('right');
+            if (e.key === " " || e.code === "Space") {
+                if (!gameRunning && startScreen.style.display !== "none") {
+                    e.preventDefault();
+                    startBtn.click();
+                } else {
+                    e.preventDefault();
+                    triggerPulse();
+                }
+            }
+            if ((e.key === "p" || e.key === "P" || e.key === "Escape") && gameRunning) pauseBtn.click();
+        });
+
+        document.getElementById("leftBtn").onclick = (e) => { e.stopPropagation(); handleInput('left'); };
+        document.getElementById("rightBtn").onclick = (e) => { e.stopPropagation(); handleInput('right'); };
+
+        let touchStartX = 0;
+        let lastTap = 0;
+
+        document.getElementById("gameWrapper").addEventListener('touchstart', (e) => {
+            const touch = e.touches[0];
+            touchStartX = touch.clientX;
+            
+            const now = Date.now();
+            if (now - lastTap < 300) {
+                triggerPulse();
+            } else {
+                let rect = canvas.getBoundingClientRect();
+                let x = touch.clientX - rect.left;
+                let laneIndex = Math.floor(x / (rect.width / 3));
+                setLane(laneIndex);
+            }
+            lastTap = now;
+        }, {passive: true});
+
+        document.getElementById("gameWrapper").addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const deltaX = touchEndX - touchStartX;
+            if (Math.abs(deltaX) > 40) {
+                if (deltaX > 0) handleInput('right');
+                else handleInput('left');
+            }
+        }, {passive: true});
+
+        window.onload = () => { resizeCanvas(); draw(); };
+    </script>
+
+    <!-- ANTI-INSPECT SECURITY -->
+    <script>
+        (function() {
+            document.addEventListener('contextmenu', e => e.preventDefault());
+            document.addEventListener('keydown', e => {
+                if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) {
+                    e.preventDefault(); return false;
+                }
+            });
+            setInterval(() => {
+                const start = Date.now();
+                (function() { return false; }['constructor']('debugger')());
+                if (Date.now() - start > 100) document.body.innerHTML = "<h1 style='color:red; text-align:center; margin-top:20%; font-family:sans-serif;'>DevTools Blocked!</h1>";
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>

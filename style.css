@@ -141,7 +141,21 @@ body {
     transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: grab;
     touch-action: none; /* Crucial for preventing scrolling while dragging on touch screens */
+    animation: fab-intense-pulse 0.7s infinite cubic-bezier(0.2, 0.8, 0.2, 1);/* MOBILE FAB BUTTON ANIMATION */
 }
+
+#fabIconContainer {/* MOBILE FAB BUTTON ANIMATION */
+    transition: transform 0.3s ease;/* MOBILE FAB BUTTON ANIMATION */
+    animation: fab-intense-shake 1.8s infinite ease-in-out;/* MOBILE FAB BUTTON ANIMATION */
+}/* MOBILE FAB BUTTON ANIMATION */
+
+#mobileFab.menu-open,/* MOBILE FAB BUTTON ANIMATION */
+#mobileFab.menu-open #fabIconContainer,/* MOBILE FAB BUTTON ANIMATION */
+#mobileFab.animation-stopped,/* MOBILE FAB BUTTON ANIMATION */
+#mobileFab.animation-stopped #fabIconContainer {/* MOBILE FAB BUTTON ANIMATION */
+    animation: none !important;/* MOBILE FAB BUTTON ANIMATION */
+}/* MOBILE FAB BUTTON ANIMATION */
+
 
 /* Icon wrapper */
 #fabIconContainer {

@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Primary Meta Tags for SEO -->
+    <title>Neon Sky Command | Synthwave Arcade Defense</title>
+    <meta name="title" content="Neon Sky Command | Synthwave Arcade Defense">
+    <meta name="description" content="Trigger massive chain reactions and defend your synthwave cities! A visually stunning HTML5 arcade defense game with hilarious meme sounds. Play free online.">
+    <meta name="keywords" content="missile command clone, synthwave game, defend city, arcade game, meme game, html5 game, browser game, free online game">
+    <meta name="author" content="PlayZone Games">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/neon-sky-command">
+    <meta property="og:title" content="Neon Sky Command | Synthwave Defense">
+    <meta property="og:description" content="Trigger massive chain reactions and defend your synthwave cities! Play free online.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com/neon-sky-command">
+    <meta property="twitter:title" content="Neon Sky Command | Synthwave Defense">
+    <meta property="twitter:description" content="Trigger massive chain reactions and defend your synthwave cities! Play free online.">
+    
+    <!-- Best Practices & PWA Support -->
+    <meta name="theme-color" content="#050114">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sky Command">
+
+    <!-- Performance: Preconnect to Font APIs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #050114;
+            --neon-cyan: #00e5ff;
+            --neon-magenta: #ff0055;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffea00;
+            --neon-purple: #b026ff;
+            --ui-bg: rgba(10, 5, 25, 0.85);
+            --ui-border: rgba(0, 229, 255, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #e0e0e0;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh;
+            padding: 10px;
+            touch-action: none; 
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 100%, #2a004d 0%, #050114 80%);
+        }
+
+        /* CRT Scanline Effect for extra retro juice */
+        body::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 100;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 12px 20px;
+            background: var(--ui-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--ui-border);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            flex: 0 0 auto;
+            z-index: 2;
+        }
+
+        .stats-container {
+            font-family: 'Bungee', cursive;
+            font-size: clamp(1rem, 3.5vw, 1.4rem);
+            color: var(--neon-cyan);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+        
+        .stat-cities { color: var(--neon-green); text-shadow: 0 0 10px var(--neon-green); }
+        .stat-combo { color: var(--neon-yellow); text-shadow: 0 0 10px var(--neon-yellow); }
+
+        .controls-container {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .game-wrapper {
+            width: 100%;
+            flex-grow: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(176, 38, 255, 0.2), inset 0 0 20px rgba(0, 229, 255, 0.1);
+            border: 2px solid rgba(0, 229, 255, 0.5);
+            background-color: #03010a;
+            cursor: crosshair;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(5, 1, 20, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity 0.4s ease;
+        }
+
+        #message {
+            font-family: 'Bungee', cursive;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: transparent;
+            -webkit-text-stroke: 2px var(--neon-cyan);
+            margin-bottom: 5px;
+            text-align: center;
+            text-shadow: 0 0 20px var(--neon-cyan);
+            line-height: 1.1;
+            background: linear-gradient(to bottom, #fff, var(--neon-cyan));
+            -webkit-background-clip: text;
+        }
+
+        #message.fail { 
+            -webkit-text-stroke: 2px var(--neon-magenta);
+            text-shadow: 0 0 20px var(--neon-magenta);
+            background: linear-gradient(to bottom, #fff, var(--neon-magenta));
+            -webkit-background-clip: text;
+        }
+
+        #subMessage {
+            font-size: 1.1rem;
+            color: var(--neon-yellow);
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* ------------------------------------------- */
+        /* PROMOTIONAL BOX STYLES */
+        /* ------------------------------------------- */
+        .promo-box {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 12px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+            animation: pulsePromo 2s infinite alternate;
+            display: none; /* Shown only on Game Over */
+            pointer-events: auto;
+            z-index: 100;
+        }
+
+        @keyframes pulsePromo {
+            from { box-shadow: 0 0 10px rgba(0, 229, 255, 0.1); border-color: rgba(0, 229, 255, 0.3); }
+            to { box-shadow: 0 0 25px rgba(0, 229, 255, 0.4); border-color: rgba(0, 229, 255, 0.8); }
+        }
+
+        .promo-box h3 {
+            font-family: 'Bungee', cursive;
+            color: var(--neon-yellow);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 234, 0, 0.5);
+        }
+
+        .promo-box p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+        }
+
+        .promo-link-btn {
+            font-family: 'Bungee', cursive;
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, var(--neon-magenta), var(--neon-purple));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
+        }
+
+        .promo-link-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.8);
+            color: #fff;
+        }
+
+        button.primary-btn {
+            font-family: 'Bungee', cursive;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            background: linear-gradient(90deg, var(--neon-purple), var(--neon-magenta));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.4);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        button.primary-btn:hover, button.primary-btn:focus-visible { 
+            transform: scale(1.05); 
+            box-shadow: 0 0 35px rgba(255, 0, 85, 0.6); 
+            outline: 2px solid white;
+            outline-offset: 4px;
+        }
+
+        .icon-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--ui-border);
+            color: var(--neon-cyan);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+        }
+        
+        .icon-btn:hover, .icon-btn:focus-visible { 
+            background: rgba(0, 229, 255, 0.15); 
+            box-shadow: 0 0 10px var(--neon-cyan); 
+            outline: 2px solid var(--neon-cyan);
+            outline-offset: 2px;
+        }
+        
+        .action-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: none; 
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover, .action-btn:focus-visible {
+            background: rgba(0, 229, 255, 0.2);
+            outline: 2px solid var(--neon-cyan);
+            outline-offset: 2px;
+        }
+
+        .volume-control-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #volumeSlider {
+            width: 70px;
+            height: 4px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        #volumeSlider:focus-visible {
+            outline: 2px solid var(--neon-cyan);
+            outline-offset: 4px;
+        }
+        
+        #volumeSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 8px var(--neon-cyan);
+        }
+
+        .instructions {
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.5;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .accent { color: var(--neon-cyan); }
+        .pink-text { color: var(--neon-magenta); }
+
+        @media (max-width: 480px) {
+            .header { padding: 10px; flex-direction: column; gap: 10px; }
+            .stats-container { width: 100%; justify-content: space-around; font-size: 0.95rem; }
+            .controls-container { width: 100%; justify-content: space-between; }
+            #volumeSlider { width: 80px; }
+            .instructions { font-size: 0.75rem; }
+            
+            .promo-box { padding: 15px; margin-top: 5px; margin-bottom: 15px; }
+            .promo-box h3 { font-size: 1.2rem; }
+            .promo-box p { font-size: 0.85rem; margin-bottom: 10px; }
+        }
+
+        .shake-active { animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-2px, 2px, 0); }
+            20%, 80% { transform: translate3d(3px, -2px, 0); }
+            30%, 50%, 70% { transform: translate3d(-5px, 3px, 0); }
+            40%, 60% { transform: translate3d(5px, -3px, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Playlist for Memes with preload="none" for Performance -->
+    <div id="audio-assets" style="display: none;">
+        <audio id="sound-meme-0" src="Voicy_Jetha Nonsense.mp3" preload="none"></audio>
+        <audio id="sound-meme-1" src="Voicy_Hey Ma Mataji.mp3" preload="none"></audio>
+        <audio id="sound-meme-2" src="Happy Diwali Happy Diwali - Jethalal Song.mp3" preload="none"></audio>
+        <audio id="sound-meme-3" src="Voicy_Tu kiyun ro raha ha tere Maa mr gaee ha paper ma.mp3" preload="none"></audio>
+        <audio id="sound-meme-4" src="Voicy_Daish ma kuch krna krwana ha to rishwat to deni pare gee.mp3" preload="none"></audio>
+        <audio id="sound-meme-5" src="Voicy_Tere ankhoon ma dal doon ga ya chata.mp3" preload="none"></audio>
+        <audio id="sound-meme-6" src="Voicy_Auratoon ko kyun chait ma sa jhank k dekhta ha.mp3" preload="none"></audio>
+        <audio id="sound-meme-7" src="Voicy_Jija g ma andr aoon.mp3" preload="none"></audio>
+        <audio id="sound-meme-8" src="Voicy_A dhelay zara diesel dal.mp3" preload="none"></audio>
+        <audio id="sound-meme-9" src="Voicy_Tu cheez baree ha mast mast .mp3" preload="none"></audio>
+        <audio id="sound-meme-10" src="Voicy_Kya gunda banega re tu.mp3" preload="none"></audio>
+        <audio id="sound-meme-11" src="Voicy_Tera bap ki shadi hai kiya ra.mp3" preload="none"></audio>
+        <audio id="sound-meme-12" src="Voicy_ Kesi han.mp3" preload="none"></audio>
+        <audio id="sound-meme-13" src="Voicy_ Cha maila.mp3" preload="none"></audio>
+        <audio id="sound-meme-14" src="Voicy_Ha ha ha ha.mp3" preload="none"></audio>
+        <audio id="sound-meme-15" src="Voicy_Ye baburao ka style hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-16" src="Voicy_Pakad mera ko mero ko janta ni hai ya.mp3" preload="none"></audio>
+        <audio id="sound-meme-17" src="babu_rao.mp3" preload="none"></audio>
+        <audio id="sound-meme-18" src="Voicy_To is ko mar ka dikha mujha dakhna hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-19" src="Voicy_ Mar ka dikha.mp3" preload="none"></audio>
+        <audio id="sound-meme-20" src="Voicy_Main pagl hun.mp3" preload="none"></audio>
+        <audio id="sound-meme-21" src="Voicy_Is ko bilkul ni ata.mp3" preload="none"></audio>
+        <audio id="sound-meme-22" src="Voicy_Totally kangal.mp3" preload="none"></audio>
+        <audio id="sound-meme-23" src="Voicy_Is tida ko bi yahi chor do.mp3" preload="none"></audio>
+        <audio id="sound-meme-24" src="Voicy_Paisa dana para ga.mp3" preload="none"></audio>
+        <audio id="sound-meme-25" src="Voicy_Hum koi mandir ka ghanta ha ka koi bi a ka baja jata hai.mp3" preload="none"></audio>
+        <audio id="sound-meme-26" src="Voicy_ Humko maaro humko jinda mat choro salo.mp3" preload="none"></audio>
+        <audio id="sound-meme-27" src="aahhkk-ahhk-with-echo.mp3" preload="none"></audio>
+        <audio id="sound-meme-28" src="aah-meme-jacqueline-fernandez.mp3" preload="none"></audio>
+        <audio id="sound-meme-29" src="ae-ghargharghar-dhadam-a.mp3" preload="none"></audio>
+        <audio id="sound-meme-30" src="africa-crying-laugh-commercial.mp3" preload="none"></audio>
+        <audio id="sound-meme-31" src="anime-ahh.mp3" preload="none"></audio>
+        <audio id="sound-meme-32" src="baigan.mp3" preload="none"></audio>
+        <audio id="sound-meme-33" src="bhosdike-madarchod-been-k-loray-roadies.mp3" preload="none"></audio>
+        <audio id="sound-meme-34" src="cat-laugh-meme-1.mp3" preload="none"></audio>
+        <audio id="sound-meme-35" src="cid-acp-behn-choo.mp3" preload="none"></audio>
+        <audio id="sound-meme-36" src="confused-cross-eyed-kitten-meme.mp3" preload="none"></audio>
+        <audio id="sound-meme-37" src="dry-fart.mp3" preload="none"></audio>
+        <audio id="sound-meme-38" src="gaaayyyyy_vUi3hqB.mp3" preload="none"></audio>
+        <audio id="sound-meme-39" src="ghok-ghok.mp3" preload="none"></audio>
+        <audio id="sound-meme-40" src="indian-sorry.mp3" preload="none"></audio>
+        <audio id="sound-meme-41" src="le-mdrchd.mp3" preload="none"></audio>
+        <audio id="sound-meme-42" src="oh-ma-gaud-vine.mp3" preload="none"></audio>
+        <audio id="sound-meme-43" src="perfect-fart.mp3" preload="none"></audio>
+        <audio id="sound-meme-44" src="raven-caw-caw.mp3" preload="none"></audio>
+        <audio id="sound-meme-45" src="spongebob-fail.mp3" preload="none"></audio>
+        <audio id="sound-meme-46" src="studio-audience-awwww-sound-fx.mp3" preload="none"></audio>
+        <audio id="sound-meme-47" src="ye-meri-galti-h.mp3" preload="none"></audio>
+        <audio id="sound-meme-48" src="tmpgj3wv0ae.mp3" preload="none"></audio>
+        <audio id="sound-meme-49" src="vine-boom-sound-effect_KT89XIq.mp3" preload="none"></audio>
+        <audio id="sound-meme-50" src="tarkov-scav-laughing-3.mp3" preload="none"></audio>
+        <audio id="sound-meme-51" src="mylan_olE7cPM.mp3" preload="none"></audio>
+        <audio id="sound-meme-52" src="tudum-tedev (1).mp3" preload="none"></audio>
+        <audio id="sound-meme-53" src="tudum-tedev.mp3" preload="none"></audio>
+        <audio id="sound-meme-54" src="rom-rom-bhaiyo.mp3" preload="none"></audio>
+        <audio id="sound-meme-55" src="yeah-boymp4.mp3" preload="none"></audio>
+        <audio id="sound-meme-56" src="happy-happy-happy-song.mp3" preload="none"></audio>
+        <audio id="sound-meme-57" src="omgwow.mp3" preload="none"></audio>
+        <audio id="sound-meme-58" src="kids-saying-yay-sound-effect_3.mp3" preload="none"></audio>
+        <audio id="sound-meme-59" src="007-james-bond-theme_WrKEvuW.mp3" preload="none"></audio>
+        <audio id="sound-meme-60" src="spiderman-meme-song-2-0.mp3" preload="none"></audio>
+        <audio id="sound-meme-61" src="helicopter-helicopter-parakofer-parakofer.mp3" preload="none"></audio>
+        <audio id="sound-meme-62" src="yooooooooooooooooooooooooo_4_objp8XX.mp3" preload="none"></audio>
+        <audio id="sound-meme-63" src="shah-rukh-khan.mp3" preload="none"></audio>
+        <audio id="sound-meme-64" src="Voicy_Abi thk kr ka data hun.mp3" preload="none"></audio>
+        <audio id="sound-meme-65" src="Voicy_Kahan sa utha ka laya ic mechanic ko.mp3" preload="none"></audio>
+        <audio id="sound-meme-66" src="Voicy_Madam madam.mp3" preload="none"></audio>
+        <audio id="sound-meme-67" src="Voicy_Ma to pura kala ho gya yar.mp3" preload="none"></audio>
+        <audio id="sound-meme-68" src="meme-de-creditos-finales.mp3" preload="none"></audio>
+        <audio id="sound-meme-69" src="896756048.mp3" preload="none"></audio>
+        <audio id="sound-meme-70" src="weeeee_original_1193597514938524841.mp3" preload="none"></audio>
+        <audio id="sound-meme-71" src="careless_whispers.mp3" preload="none"></audio>
+        <audio id="sound-meme-72" src="fahhh-pump-sound.mp3" preload="none"></audio>
+        <audio id="sound-meme-73" src="matlab-wo-alag-hi-level-ka-banda-tha.mp3" preload="none"></audio>
+        <audio id="sound-meme-74" src="gimme-some-ganja.mp3" preload="none"></audio>
+        <audio id="sound-meme-75" src="kung-fu_Xu8sssy.mp3" preload="none"></audio>
+        <audio id="sound-meme-76" src="chud-gayi.mp3" preload="none"></audio>
+        <audio id="sound-meme-77" src="chalti-firti-cocaine.mp3" preload="none"></audio>
+        <audio id="sound-meme-78" src="koun-hai-re_8ep4nAR.mp3" preload="none"></audio>
+        <audio id="sound-meme-79" src="ladle-meoww-ghop-ghop-ghop.mp3" preload="none"></audio>
+        <audio id="sound-meme-80" src="meow-ghop-ghop-ghop.mp3" preload="none"></audio>
+        <audio id="sound-meme-81" src="tf_nemesis.mp3" preload="none"></audio>
+        <audio id="sound-meme-82" src="tmp0gt0yo3e.mp3" preload="none"></audio>
+        <audio id="sound-meme-83" src="ma-ka-bhosda-aag.mp3" preload="none"></audio>
+        <audio id="sound-meme-84" src="oh-shit_4.mp3" preload="none"></audio>
+        <audio id="sound-meme-85" src="modi-ji-bkl.mp3" preload="none"></audio>
+        <audio id="sound-meme-86" src="Voicy_Is ka liya bari unchi pehchan chahiye unchi ponch chaiya.mp3" preload="none"></audio>
+        <audio id="sound-meme-87" src="Voicy_ Jor jor se bol ka logo ko scheme bata de.mp3" preload="none"></audio>
+    </div>
+
+    <main id="mainContainer" role="main">
+        <header class="header" role="banner">
+            <div class="stats-container" aria-live="polite">
+                <div>SCORE: <span id="score-val">0</span></div>
+                <div class="stat-combo" id="comboDisplay" style="opacity: 0;">COMBO x1</div>
+                <div class="stat-cities">CITIES: <span id="cities-val">4</span></div>
+            </div>
+            <div class="controls-container">
+                <div class="volume-control-wrapper">
+                    <button id="soundIcon" class="icon-btn" aria-label="Mute or Unmute Game Sound">🔊</button>
+                    <label for="volumeSlider" style="display:none;">Volume</label>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="1" aria-label="Game Volume Control">
+                </div>
+                <button id="pauseBtn" class="action-btn" aria-label="Pause Game" style="display:none;">⏸ PAUSE</button>
+            </div>
+        </header>
+
+        <div class="game-wrapper" id="gameWrapper">
+            <canvas id="gameCanvas" role="application" aria-label="Neon Sky Command Game Board: Tap to launch EMP blasts"></canvas>
+            
+            <div class="overlay" id="startScreen" role="dialog" aria-labelledby="message" aria-describedby="subMessage">
+                <h1 id="message">SKY COMMAND</h1>
+                <div id="subMessage">Trigger Chain Reactions</div>
+                
+                <!-- PROMOTIONAL MOVIE BOX -->
+                <div class="promo-box" id="promoBox" style="display: none;">
+                    <h3>🍿 MOVIE TIME! 🎬</h3>
+                    <p>Need a break from gaming? Watch the latest blockbuster movies and shows on our premium platform!</p>
+                    <a href="https://moviedakhi.com/" class="promo-link-btn">VISIT MOVIE SITE</a>
+                </div>
+
+                <button id="startBtn" class="primary-btn" tabindex="0">START DEFENSE</button>
+            </div>
+        </div>
+
+        <footer class="instructions" role="contentinfo">
+            <span class="accent">TAP or CLICK</span> anywhere in the sky to launch an EMP blast.<br>
+            Chain explosions together for <span class="stat-combo">MASSIVE COMBOS</span>!<br>
+            Destroy the <span class="pink-text">RED MISSILES</span> before they hit your cities.
+        </footer>
+    </main>
+
+    <script>
+        'use strict';
+
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d", { alpha: false });
+        const startScreen = document.getElementById("startScreen");
+        const startBtn = document.getElementById("startBtn");
+        const pauseBtn = document.getElementById("pauseBtn");
+        const scoreDisplay = document.getElementById("score-val");
+        const citiesDisplay = document.getElementById("cities-val");
+        const comboDisplay = document.getElementById("comboDisplay");
+        const messageDisplay = document.getElementById("message");
+        const subMessageDisplay = document.getElementById("subMessage");
+        const soundIcon = document.getElementById("soundIcon");
+        const volumeSlider = document.getElementById("volumeSlider");
+        const mainContainer = document.getElementById("mainContainer");
+        const promoBox = document.getElementById("promoBox");
+
+        // --- Audio System ---
+        let audioCtx;
+        let globalVolume = 1.0;
+        let previousVolume = 1.0;
+
+        const allMemeSounds = [];
+        for(let i=0; i<=87; i++) {
+            const el = document.getElementById(`sound-meme-${i}`);
+            if(el) allMemeSounds.push(el);
+        }
+
+        const memeIndices = [];
+        let currentlyPlayingMeme = null;
+        let lastPlayedIndex = -1;
+
+        function getNextSound() {
+            if (allMemeSounds.length === 0) return null;
+            if (memeIndices.length === 0) {
+                for (let i = 0; i < allMemeSounds.length; i++) memeIndices.push(i);
+                for (let i = memeIndices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [memeIndices[i], memeIndices[j]] = [memeIndices[j], memeIndices[i]];
+                }
+                if (memeIndices.length > 1 && memeIndices[memeIndices.length - 1] === lastPlayedIndex) {
+                    const temp = memeIndices[memeIndices.length - 1];
+                    memeIndices[memeIndices.length - 1] = memeIndices[0];
+                    memeIndices[0] = temp;
+                }
+            }
+            const nextIndex = memeIndices.pop();
+            lastPlayedIndex = nextIndex;
+            return allMemeSounds[nextIndex];
+        }
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }
+
+        function unlockAudioFiles() {
+            allMemeSounds.forEach(audio => {
+                if(audio && audio.readyState === 0) {
+                    audio.volume = 0; 
+                    const p = audio.play();
+                    if (p !== undefined) {
+                        p.then(() => { audio.pause(); audio.currentTime = 0; audio.volume = globalVolume; }).catch(() => {});
+                    }
+                }
+            });
+        }
+
+        function playMeme(forceSkip = false) {
+            if (globalVolume === 0) return;
+            if (currentlyPlayingMeme && !forceSkip) return;
+            if (currentlyPlayingMeme) { currentlyPlayingMeme.pause(); currentlyPlayingMeme.currentTime = 0; }
+            const s = getNextSound();
+            if (s) {
+                currentlyPlayingMeme = s;
+                s.volume = globalVolume;
+                s.currentTime = 0;
+                s.onended = () => currentlyPlayingMeme = null;
+                s.play().catch(()=>{});
+            }
+        }
+
+        function playSynth(type) {
+            if (globalVolume === 0 || !audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            osc.connect(gainNode); gainNode.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+            
+            if (type === 'shoot') {
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(600, now);
+                osc.frequency.exponentialRampToValueAtTime(100, now + 0.1);
+                gainNode.gain.setValueAtTime(0.05 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+                osc.start(now); osc.stop(now + 0.1);
+            } else if (type === 'explosion') {
+                // Deeper bassier explosion for chain reactions
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.exponentialRampToValueAtTime(20, now + 0.3);
+                gainNode.gain.setValueAtTime(0.15 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+                osc.start(now); osc.stop(now + 0.3);
+            } else if (type === 'cityDestroyed') {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(50, now);
+                osc.frequency.exponentialRampToValueAtTime(10, now + 0.6);
+                gainNode.gain.setValueAtTime(0.25 * globalVolume, now);
+                gainNode.gain.linearRampToValueAtTime(0.001, now + 0.6);
+                osc.start(now); osc.stop(now + 0.6);
+            } else if (type === 'combo') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(800, now);
+                osc.frequency.exponentialRampToValueAtTime(1600, now + 0.15);
+                gainNode.gain.setValueAtTime(0.08 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+                osc.start(now); osc.stop(now + 0.15);
+            }
+        }
+
+        volumeSlider.addEventListener("input", (e) => {
+            globalVolume = parseFloat(e.target.value);
+            if (globalVolume > 0) previousVolume = globalVolume;
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : (globalVolume < 0.5 ? "🔉" : "🔊");
+            if (currentlyPlayingMeme) currentlyPlayingMeme.volume = globalVolume;
+            initAudio(); 
+        });
+
+        soundIcon.addEventListener("click", () => {
+            globalVolume = globalVolume > 0 ? 0 : previousVolume;
+            volumeSlider.value = globalVolume;
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : "🔊";
+            if (globalVolume === 0 && currentlyPlayingMeme) {
+                currentlyPlayingMeme.pause(); currentlyPlayingMeme.currentTime = 0; currentlyPlayingMeme = null;
+            }
+            initAudio();
+        });
+
+        function triggerShake(intensity = 1) {
+            mainContainer.classList.remove("shake-active");
+            void mainContainer.offsetWidth; // Trigger reflow
+            mainContainer.style.animationDuration = `${0.3 * intensity}s`;
+            mainContainer.classList.add("shake-active");
+        }
+
+        // --- Game Engine Variables ---
+        let gameRunning = false, isPaused = false, animationId, lastTime = 0;
+        let score = 0, bestScore = 0;
+        let level = 1;
+        let spawnTimer = 0;
+        let enemySpeedMultiplier = 1.0;
+        let timeElapsed = 0; // for background animation
+
+        // Combo System
+        let combo = 1;
+        let comboTimer = 0;
+        const COMBO_TIMEOUT = 1.5; // seconds to keep combo active
+
+        let cities = [];
+        let enemies = [];
+        let playerMissiles = [];
+        let explosions = [];
+        let particles = [];
+        let floatingTexts = [];
+
+        // Constants
+        const HORIZON_Y = 0.7; // 70% down the screen
+        const GROUND_HEIGHT = 50;
+        const CITY_WIDTH = 60;
+        const CITY_HEIGHT = 40;
+        const P_MISSILE_SPEED = 1000; 
+        const E_MISSILE_BASE_SPEED = 70;
+        const MAX_EXPLOSION_RADIUS = 75; // Increased for better chain reactions
+
+        function resizeCanvas() {
+            const wrapper = document.getElementById("gameWrapper");
+            canvas.width = wrapper.clientWidth;
+            canvas.height = wrapper.clientHeight;
+            if(!gameRunning) initCities(); 
+        }
+        window.addEventListener('resize', () => { resizeCanvas(); if(!gameRunning) draw(); });
+
+        function initCities() {
+            cities = [];
+            const numCities = 4;
+            const spacing = canvas.width / (numCities + 1);
+            for(let i = 1; i <= numCities; i++) {
+                cities.push({
+                    x: spacing * i,
+                    y: canvas.height - GROUND_HEIGHT,
+                    width: CITY_WIDTH,
+                    height: CITY_HEIGHT,
+                    alive: true
+                });
+            }
+        }
+
+        function resetGame() {
+            score = 0;
+            level = 1;
+            combo = 1;
+            comboTimer = 0;
+            scoreDisplay.innerText = score;
+            comboDisplay.style.opacity = 0;
+            
+            enemySpeedMultiplier = 1.0;
+            spawnTimer = 0;
+            timeElapsed = 0;
+            
+            initCities();
+            citiesDisplay.innerText = cities.length;
+
+            enemies = [];
+            playerMissiles = [];
+            explosions = [];
+            particles = [];
+            floatingTexts = [];
+            
+            lastTime = 0;
+        }
+
+        function spawnEnemy(yOffset = 0) {
+            let aliveCities = cities.filter(c => c.alive);
+            if(aliveCities.length === 0) return; 
+
+            let targetCity = aliveCities[Math.floor(Math.random() * aliveCities.length)];
+            let tx = targetCity.x + (Math.random() - 0.5) * targetCity.width;
+            let ty = targetCity.y;
+
+            let sx = Math.random() * canvas.width;
+            let sy = -30 - yOffset;
+
+            let angle = Math.atan2(ty - sy, tx - sx);
+            
+            // Varied enemies
+            let isFast = Math.random() > 0.85;
+            let speed = E_MISSILE_BASE_SPEED * enemySpeedMultiplier * (isFast ? 1.8 : (0.8 + Math.random() * 0.4));
+            let color = isFast ? "#ffea00" : "#ff0055";
+            let size = isFast ? 3 : 5;
+
+            enemies.push({
+                x: sx, y: sy,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                trail: [], 
+                color: color,
+                size: size,
+                isFast: isFast
+            });
+        }
+
+        function firePlayerMissile(targetX, targetY) {
+            if (!gameRunning || isPaused) return;
+            
+            // Limit target Y to above the cities
+            if (targetY > canvas.height - GROUND_HEIGHT - 30) targetY = canvas.height - GROUND_HEIGHT - 30;
+
+            let startX = canvas.width / 2;
+            let startY = canvas.height - 10;
+
+            let angle = Math.atan2(targetY - startY, targetX - startX);
+
+            playerMissiles.push({
+                x: startX, y: startY,
+                tx: targetX, ty: targetY,
+                vx: Math.cos(angle) * P_MISSILE_SPEED,
+                vy: Math.sin(angle) * P_MISSILE_SPEED,
+                distance: Math.hypot(targetX - startX, targetY - startY),
+                traveled: 0
+            });
+
+            playSynth('shoot');
+        }
+
+        function createExplosion(x, y, radius = MAX_EXPLOSION_RADIUS) {
+            explosions.push({
+                x: x, y: y,
+                radius: 1,
+                maxRadius: radius,
+                life: 1.0, 
+                state: 'expand'
+            });
+            playSynth('explosion');
+            
+            // Shake screen slightly on explosion
+            triggerShake(0.5);
+        }
+
+        function createParticles(x, y, color, count, speedMult = 1) {
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: x, y: y,
+                    vx: (Math.random() - 0.5) * 300 * speedMult,
+                    vy: (Math.random() - 0.5) * 300 * speedMult,
+                    life: 1.0,
+                    size: Math.random() * 4 + 1,
+                    color: color
+                });
+            }
+        }
+        
+        function addFloatingText(x, y, text, color) {
+            floatingTexts.push({ x: x, y: y, text: text, color: color, life: 1.0 });
+        }
+
+        function update(dt) {
+            timeElapsed += dt;
+            
+            // Combo Timer Logic
+            if (comboTimer > 0) {
+                comboTimer -= dt;
+                if (comboTimer <= 0) {
+                    combo = 1;
+                    comboDisplay.style.opacity = 0;
+                } else {
+                    comboDisplay.style.opacity = comboTimer / COMBO_TIMEOUT;
+                    comboDisplay.innerText = `COMBO x${combo}`;
+                }
+            }
+
+            // Level Progression
+            enemySpeedMultiplier += dt * 0.005; // Slower speed scaling for fairer gameplay
+            if (enemySpeedMultiplier > 2.5) enemySpeedMultiplier = 2.5; // Cap maximum speed
+            
+            if (score > level * 150) { // Lowered threshold for faster level ups
+                level++;
+            }
+
+            // Spawn Enemies
+            spawnTimer -= dt;
+            if (spawnTimer <= 0) {
+                spawnEnemy();
+                // Cap minimum spawn rate to 0.7 seconds so it doesn't become impossible
+                spawnTimer = Math.max(0.7, 1.8 - (level * 0.1) - (enemySpeedMultiplier * 0.15));
+                if(level > 2 && Math.random() > 0.6) spawnEnemy(60); // Staggered double spawn
+                if(level > 5 && Math.random() > 0.8) spawnEnemy(120); // Staggered triple spawn
+            }
+
+            // Update Player Missiles
+            for (let i = playerMissiles.length - 1; i >= 0; i--) {
+                let m = playerMissiles[i];
+                let moveDist = P_MISSILE_SPEED * dt;
+                m.x += m.vx * dt;
+                m.y += m.vy * dt;
+                m.traveled += moveDist;
+
+                if (m.traveled >= m.distance) {
+                    createExplosion(m.tx, m.ty);
+                    playerMissiles.splice(i, 1);
+                }
+            }
+
+            // Update Explosions
+            for (let i = explosions.length - 1; i >= 0; i--) {
+                let exp = explosions[i];
+                
+                if (exp.state === 'expand') {
+                    exp.radius += 300 * dt; 
+                    if (exp.radius >= exp.maxRadius) {
+                        exp.radius = exp.maxRadius;
+                        exp.state = 'linger';
+                        exp.lingerTime = 0.35; // Increased linger time for better chain reactions!
+                    }
+                } else if (exp.state === 'linger') {
+                    exp.lingerTime -= dt;
+                    if (exp.lingerTime <= 0) exp.state = 'fade';
+                } else {
+                    exp.life -= 1.5 * dt; // Slower fade out
+                    if (exp.life <= 0) explosions.splice(i, 1);
+                }
+            }
+
+            // Update Enemies & Check Collisions
+            for (let i = enemies.length - 1; i >= 0; i--) {
+                let e = enemies[i];
+                
+                // Trail logic
+                e.trail.push({x: e.x, y: e.y});
+                if(e.trail.length > 10) e.trail.shift();
+
+                e.x += e.vx * dt;
+                e.y += e.vy * dt;
+
+                // 1. Check Collision with Explosions (CHAIN REACTIONS)
+                let destroyedByPlayer = false;
+                for (let exp of explosions) {
+                    // If explosion is active (expanding or lingering)
+                    if (exp.life > 0.5 && Math.hypot(e.x - exp.x, e.y - exp.y) < exp.radius) {
+                        destroyedByPlayer = true;
+                        
+                        // Score Calculation with Combo
+                        let points = 10 * combo;
+                        score += points;
+                        scoreDisplay.innerText = score;
+                        
+                        // Combo Update
+                        combo++;
+                        comboTimer = COMBO_TIMEOUT;
+                        if (combo > 2) {
+                            playSynth('combo');
+                            if (combo % 5 === 0) playMeme(false); // Play meme on big combos
+                        }
+                        
+                        addFloatingText(e.x, e.y - 10, `+${points}`, e.color);
+                        createParticles(e.x, e.y, e.color, 15);
+                        
+                        // --- CHAIN REACTION MAGIC ---
+                        // Spawn a smaller explosion where the enemy died
+                        createExplosion(e.x, e.y, MAX_EXPLOSION_RADIUS * 0.6);
+                        
+                        break;
+                    }
+                }
+
+                if (destroyedByPlayer) {
+                    enemies.splice(i, 1);
+                    continue;
+                }
+
+                // 2. Check Collision with Cities
+                if (e.y >= canvas.height - GROUND_HEIGHT) {
+                    let hitCity = false;
+                    for (let c of cities) {
+                        if (c.alive && Math.abs(e.x - c.x) < c.width / 2 + 10) {
+                            c.alive = false;
+                            hitCity = true;
+                            createParticles(c.x, c.y, "#00ff88", 60, 2);
+                            playSynth('cityDestroyed');
+                            playMeme(true); // Force play fail meme
+                            triggerShake(2);
+                            
+                            combo = 1; // Reset combo on hit
+                            comboTimer = 0;
+                            
+                            let aliveCount = cities.filter(city => city.alive).length;
+                            citiesDisplay.innerText = aliveCount;
+                            
+                            if (aliveCount === 0) {
+                                handleGameOver();
+                                return;
+                            }
+                            break;
+                        }
+                    }
+                    
+                    if(!hitCity) {
+                        createParticles(e.x, canvas.height - GROUND_HEIGHT, e.color, 10);
+                        playSynth('explosion');
+                    }
+                    
+                    enemies.splice(i, 1);
+                }
+            }
+
+            // Update Particles
+            for (let i = particles.length - 1; i >= 0; i--) {
+                let p = particles[i];
+                p.x += p.vx * dt;
+                p.y += p.vy * dt;
+                p.vy += 200 * dt; // Gravity effect on particles
+                p.life -= dt * 1.5;
+                if(p.life <= 0) particles.splice(i, 1);
+            }
+            
+            // Update Floating Texts
+            for (let i = floatingTexts.length - 1; i >= 0; i--) {
+                let f = floatingTexts[i];
+                f.y -= 30 * dt; // float up
+                f.life -= dt * 1.2;
+                if (f.life <= 0) floatingTexts.splice(i, 1);
+            }
+        }
+
+        function drawBackground() {
+            // Draw deep synthwave sky gradient
+            let skyGrad = ctx.createLinearGradient(0, 0, 0, canvas.height * HORIZON_Y);
+            skyGrad.addColorStop(0, "#050114");
+            skyGrad.addColorStop(1, "#3a005c");
+            ctx.fillStyle = skyGrad;
+            ctx.fillRect(0, 0, canvas.width, canvas.height * HORIZON_Y);
+
+            // Draw Synthwave Sun
+            ctx.save();
+            ctx.translate(canvas.width / 2, canvas.height * HORIZON_Y);
+            ctx.fillStyle = "#ff0055";
+            ctx.shadowBlur = 40; 
+            ctx.shadowColor = "#ff0055";
+            ctx.beginPath(); 
+            ctx.arc(0, 0, canvas.width * 0.15, Math.PI, 0, false); 
+            ctx.fill();
+            
+            // Sun grid cutouts
+            ctx.globalCompositeOperation = 'destination-out';
+            for(let i=0; i<6; i++) {
+                let yOffset = -(i * 12) - 5;
+                let height = 2 + (i * 1.5);
+                ctx.fillRect(-canvas.width, yOffset, canvas.width * 2, height);
+            }
+            ctx.restore();
+
+            // Draw Ground / 3D Grid
+            let groundGrad = ctx.createLinearGradient(0, canvas.height * HORIZON_Y, 0, canvas.height);
+            groundGrad.addColorStop(0, "#1a0033");
+            groundGrad.addColorStop(1, "#050114");
+            ctx.fillStyle = groundGrad;
+            ctx.fillRect(0, canvas.height * HORIZON_Y, canvas.width, canvas.height * (1 - HORIZON_Y));
+
+            ctx.strokeStyle = "rgba(0, 229, 255, 0.3)";
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            
+            // Perspective Vertical Lines
+            let vanishX = canvas.width / 2;
+            let vanishY = canvas.height * HORIZON_Y;
+            for(let i = -10; i <= 10; i++) {
+                let startX = vanishX + (i * 150); // Spacing at bottom
+                ctx.moveTo(vanishX, vanishY);
+                ctx.lineTo(startX, canvas.height);
+            }
+            
+            // Horizontal moving lines
+            let gridSpeed = (timeElapsed * 2) % 1;
+            for(let i = 1; i < 8; i++) {
+                let yPos = vanishY + Math.pow((i + gridSpeed)/8, 2) * (canvas.height - vanishY);
+                ctx.moveTo(0, yPos);
+                ctx.lineTo(canvas.width, yPos);
+            }
+            ctx.stroke();
+            
+            // Draw Horizon Line
+            ctx.shadowBlur = 15;
+            ctx.shadowColor = "#00e5ff";
+            ctx.strokeStyle = "#00e5ff";
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(0, vanishY);
+            ctx.lineTo(canvas.width, vanishY);
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+        }
+
+        function draw() {
+            drawBackground();
+
+            // Draw Player Main Base (Bottom Center Cannon)
+            ctx.fillStyle = "#00e5ff";
+            ctx.shadowBlur = 15; ctx.shadowColor = "#00e5ff";
+            ctx.beginPath();
+            ctx.moveTo(canvas.width/2 - 20, canvas.height);
+            ctx.lineTo(canvas.width/2 + 20, canvas.height);
+            ctx.lineTo(canvas.width/2, canvas.height - 35);
+            ctx.closePath();
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            // Draw Cities (Synthwave Buildings)
+            for (let c of cities) {
+                if (!c.alive) {
+                    ctx.fillStyle = "#221133";
+                    ctx.fillRect(c.x - c.width/2, c.y - 10, c.width, 10);
+                    continue;
+                }
+                
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = "#00ff88";
+                ctx.fillStyle = "#00ff88";
+                
+                // Building silhouette
+                ctx.fillRect(c.x - c.width/2, c.y - 20, 15, 20);
+                ctx.fillRect(c.x - c.width/2 + 15, c.y - 35, 20, 35);
+                ctx.fillRect(c.x - c.width/2 + 35, c.y - 25, 25, 25);
+                
+                ctx.shadowBlur = 0;
+                ctx.fillStyle = "#000";
+                // Windows
+                for(let w=0; w<3; w++) {
+                    ctx.fillRect(c.x - c.width/2 + 2, c.y - 15 + (w*5), 3, 3);
+                    ctx.fillRect(c.x - c.width/2 + 20, c.y - 30 + (w*8), 4, 4);
+                    ctx.fillRect(c.x - c.width/2 + 40, c.y - 20 + (w*6), 10, 3);
+                }
+            }
+
+            // Draw Enemy Missiles
+            for (let e of enemies) {
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = e.color;
+                ctx.strokeStyle = e.color;
+                ctx.lineWidth = e.size;
+                
+                // Glowing Trail
+                if(e.trail.length > 0) {
+                    ctx.beginPath();
+                    ctx.moveTo(e.trail[0].x, e.trail[0].y);
+                    for(let i=1; i<e.trail.length; i++) {
+                        ctx.lineTo(e.trail[i].x, e.trail[i].y);
+                    }
+                    ctx.lineTo(e.x, e.y);
+                    ctx.globalAlpha = 0.6;
+                    ctx.stroke();
+                    ctx.globalAlpha = 1.0;
+                }
+                
+                // Meteor/Missile Head
+                ctx.fillStyle = "#fff";
+                ctx.beginPath();
+                // Draw a diamond shape pointing down
+                ctx.moveTo(e.x, e.y + e.size*2);
+                ctx.lineTo(e.x + e.size, e.y);
+                ctx.lineTo(e.x, e.y - e.size*2);
+                ctx.lineTo(e.x - e.size, e.y);
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            // Draw Player Missiles
+            for (let m of playerMissiles) {
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = "#00e5ff";
+                ctx.fillStyle = "#fff";
+                
+                // Stretched laser look
+                ctx.save();
+                ctx.translate(m.x, m.y);
+                ctx.rotate(Math.atan2(m.vy, m.vx));
+                ctx.fillRect(-10, -2, 20, 4);
+                ctx.restore();
+                
+                // Target Crosshair
+                ctx.strokeStyle = "rgba(0, 229, 255, 0.6)";
+                ctx.lineWidth = 1;
+                ctx.shadowBlur = 0;
+                ctx.beginPath();
+                ctx.arc(m.tx, m.ty, 6, 0, Math.PI*2);
+                ctx.moveTo(m.tx - 10, m.ty); ctx.lineTo(m.tx + 10, m.ty);
+                ctx.moveTo(m.tx, m.ty - 10); ctx.lineTo(m.tx, m.ty + 10);
+                ctx.stroke();
+            }
+
+            // Draw Explosions (Synthwave multi-layered rings)
+            for (let exp of explosions) {
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = "#b026ff";
+                
+                // Inner bright core
+                ctx.fillStyle = `rgba(255, 255, 255, ${exp.life})`;
+                ctx.beginPath(); ctx.arc(exp.x, exp.y, exp.radius * 0.3, 0, Math.PI*2); ctx.fill();
+                
+                // Middle purple blast
+                ctx.fillStyle = `rgba(176, 38, 255, ${exp.life * 0.5})`; 
+                ctx.beginPath(); ctx.arc(exp.x, exp.y, exp.radius * 0.7, 0, Math.PI*2); ctx.fill();
+                
+                // Outer Cyan shockwave ring
+                ctx.strokeStyle = `rgba(0, 229, 255, ${exp.life})`;
+                ctx.lineWidth = 3;
+                ctx.beginPath(); ctx.arc(exp.x, exp.y, exp.radius, 0, Math.PI*2); ctx.stroke();
+            }
+            ctx.shadowBlur = 0;
+
+            // Draw Particles
+            for (let p of particles) {
+                ctx.globalAlpha = Math.max(0, p.life);
+                ctx.fillStyle = p.color;
+                ctx.shadowBlur = 5; ctx.shadowColor = p.color;
+                
+                // Draw as small motion-blurred lines based on velocity
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p.x - p.vx*0.03, p.y - p.vy*0.03);
+                ctx.strokeStyle = p.color;
+                ctx.lineWidth = p.size;
+                ctx.stroke();
+            }
+            ctx.globalAlpha = 1;
+            ctx.shadowBlur = 0;
+            
+            // Draw Floating Texts
+            for (let f of floatingTexts) {
+                ctx.globalAlpha = Math.max(0, f.life);
+                ctx.fillStyle = f.color;
+                ctx.font = "bold 16px Bungee";
+                ctx.textAlign = "center";
+                ctx.shadowBlur = 10; ctx.shadowColor = f.color;
+                ctx.fillText(f.text, f.x, f.y);
+            }
+            ctx.globalAlpha = 1;
+            ctx.shadowBlur = 0;
+        }
+
+        function loop(timestamp) {
+            animationId = requestAnimationFrame(loop);
+            
+            if (!lastTime) lastTime = timestamp;
+            let dt = (timestamp - lastTime) / 1000;
+            lastTime = timestamp;
+
+            if (dt > 0.1) dt = 0.1; 
+
+            if (gameRunning && !isPaused) {
+                update(dt);
+                draw();
+            }
+        }
+
+        function handleGameOver() {
+            gameRunning = false;
+            pauseBtn.style.display = "none";
+            cancelAnimationFrame(animationId);
+            animationId = null; 
+            
+            playMeme(true); 
+            draw(); 
+
+            if(score > bestScore) bestScore = score;
+            
+            messageDisplay.classList.add("fail");
+            startScreen.style.display = "flex";
+            startBtn.style.display = "inline-block";
+            
+            // Show Promotional Box on Game Over
+            if(promoBox) promoBox.style.display = 'block';
+            
+            setTimeout(() => {
+                startScreen.style.opacity = "1";
+                messageDisplay.innerText = "SYSTEM FAILED";
+                subMessageDisplay.innerText = `SCORE: ${score} // BEST: ${bestScore}`;
+                startBtn.innerText = "REBOOT DEFENSE";
+                startBtn.focus(); 
+            }, 100); 
+        }
+
+        startBtn.addEventListener("click", () => {
+            initAudio();
+            unlockAudioFiles();
+            
+            if (currentlyPlayingMeme) {
+                currentlyPlayingMeme.pause();
+                currentlyPlayingMeme.currentTime = 0;
+                currentlyPlayingMeme = null;
+            }
+            
+            startBtn.blur(); 
+            startScreen.style.opacity = "0";
+            messageDisplay.classList.remove("fail");
+            if(promoBox) promoBox.style.display = 'none'; // Hide promo box
+            
+            setTimeout(() => {
+                startScreen.style.display = "none";
+                pauseBtn.style.display = "flex";
+                pauseBtn.innerText = "⏸ PAUSE";
+                isPaused = false;
+                
+                resetGame();
+                lastTime = performance.now();
+                gameRunning = true;
+                if (!animationId) animationId = requestAnimationFrame(loop);
+            }, 300); 
+        });
+
+        pauseBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (!gameRunning && startScreen.style.display !== "none") return; 
+            
+            isPaused = !isPaused;
+            if (isPaused) {
+                pauseBtn.innerText = "▶ PLAY";
+                ctx.save();
+                ctx.fillStyle = "rgba(5, 1, 20, 0.75)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.font = "bold 40px 'Bungee', cursive";
+                ctx.fillStyle = "#00e5ff";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.shadowBlur = 15; ctx.shadowColor = "#00e5ff";
+                ctx.fillText("PAUSED", canvas.width / 2, canvas.height / 2);
+                ctx.shadowBlur = 0;
+                ctx.restore();
+            } else {
+                pauseBtn.innerText = "⏸ PAUSE";
+                lastTime = performance.now(); 
+            }
+        });
+
+        function getActualPos(clientX, clientY) {
+            let rect = canvas.getBoundingClientRect();
+            let scaleX = canvas.width / rect.width;
+            let scaleY = canvas.height / rect.height;
+            return {
+                x: (clientX - rect.left) * scaleX,
+                y: (clientY - rect.top) * scaleY
+            };
+        }
+
+        canvas.addEventListener("mousedown", (e) => {
+            if (!gameRunning || isPaused) return;
+            let pos = getActualPos(e.clientX, e.clientY);
+            firePlayerMissile(pos.x, pos.y);
+        });
+
+        canvas.addEventListener("touchstart", (e) => {
+            if (!gameRunning || isPaused) return;
+            e.preventDefault(); 
+            for(let i = 0; i < e.changedTouches.length; i++) {
+                let pos = getActualPos(e.changedTouches[i].clientX, e.changedTouches[i].clientY);
+                firePlayerMissile(pos.x, pos.y);
+            }
+        }, {passive: false});
+
+        window.addEventListener("keydown", e => {
+            if (e.code === "Space" || e.key === "Enter") {
+                if (startScreen.style.display !== "none") {
+                    e.preventDefault();
+                    startBtn.click();
+                }
+            }
+            if ((e.key === "p" || e.key === "P" || e.key === "Escape") && gameRunning) {
+                pauseBtn.click();
+            }
+        });
+
+        window.onload = () => { 
+            resizeCanvas(); 
+            initCities();
+            drawBackground();
+            draw(); 
+        };
+    </script>
+</body>
+</html>

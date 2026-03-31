@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Cyber Survivor | Action Meme Arena Game Free</title>
+    <meta name="title" content="Cyber Survivor | Action Meme Arena Game Free">
+    <meta name="description" content="Survive the endless neon swarm in this action-packed arena game! Auto-fire lasers, dodge enemies, and listen to hilarious meme sounds. Play free online.">
+    <meta name="keywords" content="arena survivor, action game, cyber game, meme game, html5 game, browser game, free online game, twin stick shooter, auto fire">
+    <meta name="author" content="PlayZone Games">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/cyber-survivor">
+    
+    <!-- Best Practices & PWA Support -->
+    <meta name="theme-color" content="#090a0f">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Cyber Survivor">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/cyber-survivor">
+    <meta property="og:title" content="Cyber Survivor | Action Arena Game">
+    <meta property="og:description" content="Dodge the endless swarm of enemies and blast them with auto-aim lasers in this high-octane HTML5 survival game!">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Cyber Survivor | Action Arena">
+    <meta property="twitter:description" content="Dodge the endless swarm of enemies and blast them with auto-aim lasers!">
+
+    <!-- Performance: Preconnect to Font APIs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #090a0f;
+            --neon-cyan: #00e5ff;
+            --neon-magenta: #ff0055;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffea00;
+            --ui-bg: rgba(15, 5, 30, 0.75);
+            --ui-border: rgba(0, 229, 255, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh;
+            padding: 10px;
+            touch-action: none; 
+            overflow: hidden;
+            background-image: 
+                radial-gradient(circle at center, #1b0a2e 0%, #090a0f 80%);
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            max-width: 900px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 12px 25px;
+            background: var(--ui-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--ui-border);
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+            flex: 0 0 auto;
+            z-index: 2;
+        }
+
+        .stats-container {
+            font-family: 'Bungee', cursive;
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            letter-spacing: 2px;
+        }
+        
+        .stat-lives {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* --- NEW XP BAR STYLES --- */
+        .xp-bar-container {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .xp-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #00ff88, #00e5ff);
+            box-shadow: 0 0 10px #00ff88;
+            transition: width 0.2s;
+        }
+
+        .controls-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .game-wrapper {
+            width: 100%;
+            flex-grow: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(0, 229, 255, 0.15), inset 0 0 20px rgba(0, 229, 255, 0.05);
+            border: 2px solid rgba(0, 229, 255, 0.5);
+            background-color: var(--bg-dark);
+            touch-action: none;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(9, 10, 15, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity 0.4s ease;
+        }
+
+        #message {
+            font-family: 'Bungee', cursive;
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            color: #fff;
+            margin-bottom: 5px;
+            text-align: center;
+            text-shadow: 0 0 20px var(--neon-cyan), 4px 4px 0px var(--neon-magenta);
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        #message.fail {
+            text-shadow: 0 0 20px var(--neon-magenta), 4px 4px 0px #ff0000;
+        }
+        
+        #subMessage {
+            font-size: 1.1rem;
+            color: var(--neon-green);
+            margin-bottom: 35px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-shadow: 0 0 8px var(--neon-green);
+            text-transform: uppercase;
+        }
+
+        /* ------------------------------------------- */
+        /* PROMOTIONAL BOX STYLES */
+        /* ------------------------------------------- */
+        .promo-box {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 12px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+            animation: pulsePromo 2s infinite alternate;
+            display: none; /* Shown only on Game Over */
+            pointer-events: auto;
+            z-index: 100;
+        }
+
+        @keyframes pulsePromo {
+            from { box-shadow: 0 0 10px rgba(0, 229, 255, 0.1); border-color: rgba(0, 229, 255, 0.3); }
+            to { box-shadow: 0 0 25px rgba(0, 229, 255, 0.4); border-color: rgba(0, 229, 255, 0.8); }
+        }
+
+        .promo-box h3 {
+            font-family: 'Bungee', cursive;
+            color: var(--neon-cyan);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        .promo-box p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+        }
+
+        .promo-link-btn {
+            font-family: 'Bungee', cursive;
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, var(--neon-magenta), var(--neon-purple));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
+        }
+
+        .promo-link-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.8);
+            color: #fff;
+        }
+
+        button.primary-btn {
+            font-family: 'Bungee', cursive;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            background: linear-gradient(90deg, #00e5ff, #0077ff);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            letter-spacing: 3px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button.primary-btn:hover, button.primary-btn:focus-visible {
+            box-shadow: 0 0 40px var(--neon-cyan);
+            transform: translateY(-3px) scale(1.05);
+            outline: none;
+        }
+
+        button.primary-btn:active { transform: translateY(2px) scale(0.98); }
+
+        .icon-btn {
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid var(--ui-border);
+            color: var(--neon-cyan);
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .icon-btn:hover, .icon-btn:focus-visible {
+            background: rgba(0, 229, 255, 0.2);
+            box-shadow: 0 0 15px var(--neon-cyan);
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        .action-btn {
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+            text-transform: uppercase;
+        }
+
+        .action-btn:hover, .action-btn:focus-visible {
+            background: var(--neon-cyan);
+            color: #fff;
+            box-shadow: 0 0 20px var(--neon-cyan);
+            transform: translateY(-2px);
+        }
+
+        .volume-control-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #volumeSlider {
+            width: 80px;
+            height: 6px;
+            -webkit-appearance: none;
+            background: rgba(0, 229, 255, 0.3);
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        #volumeSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 10px var(--neon-cyan);
+            cursor: pointer;
+        }
+
+        /* Virtual Joystick for Mobile */
+        .joystick-zone {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(0, 229, 255, 0.3);
+            border-radius: 50%;
+            display: none; /* Shown only on touch devices */
+            z-index: 5;
+            touch-action: none;
+        }
+
+        .joystick-knob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 229, 255, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px var(--neon-cyan);
+            pointer-events: none;
+        }
+
+        .instructions {
+            margin-top: 12px;
+            color: #a0aabf;
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.6;
+            font-weight: 600;
+            flex: 0 0 auto;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .accent-text { color: var(--neon-cyan); }
+        .red-text { color: var(--neon-magenta); }
+
+        @media (max-width: 768px) {
+            .joystick-zone { display: block; } /* Show joystick on smaller screens */
+            .instructions-desktop { display: none; }
+        }
+        @media (min-width: 769px) {
+            .instructions-mobile { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .header { padding: 10px; flex-direction: column; gap: 10px; }
+            .stats-container { width: 100%; justify-content: space-between; font-size: 1.1rem; }
+            .controls-container { width: 100%; justify-content: flex-end; }
+            #volumeSlider { width: 60px; }
+            .instructions { font-size: 0.75rem; }
+            .joystick-zone { width: 100px; height: 100px; }
+            .joystick-knob { width: 40px; height: 40px; }
+            .promo-box { padding: 15px; margin-top: 5px; margin-bottom: 15px; }
+            .promo-box h3 { font-size: 1.2rem; }
+            .promo-box p { font-size: 0.85rem; margin-bottom: 10px; }
+        }
+        
+        /* Screen shake animation class */
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        .shake-active {
+            animation: shake 0.3s;
+            animation-iteration-count: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Audio Elements (metadata only) -->
+    <div id="audio-assets" style="display: none;">
+        <!-- ONE Single Unified Playlist (0 to 87) -->
+        <audio id="sound-meme-0" src="Voicy_Jetha Nonsense.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-1" src="Voicy_Hey Ma Mataji.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-2" src="Happy Diwali Happy Diwali - Jethalal Song.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-3" src="Voicy_Tu kiyun ro raha ha tere Maa mr gaee ha paper ma.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-4" src="Voicy_Daish ma kuch krna krwana ha to rishwat to deni pare gee.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-5" src="Voicy_Tere ankhoon ma dal doon ga ya chata.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-6" src="Voicy_Auratoon ko kyun chait ma sa jhank k dekhta ha.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-7" src="Voicy_Jija g ma andr aoon.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-8" src="Voicy_A dhelay zara diesel dal.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-9" src="Voicy_Tu cheez baree ha mast mast .mp3" preload="metadata"></audio>
+        
+        <audio id="sound-meme-10" src="Voicy_Kya gunda banega re tu.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-11" src="Voicy_Tera bap ki shadi hai kiya ra.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-12" src="Voicy_ Kesi han.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-13" src="Voicy_ Cha maila.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-14" src="Voicy_Ha ha ha ha.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-15" src="Voicy_Ye baburao ka style hai.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-16" src="Voicy_Pakad mera ko mero ko janta ni hai ya.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-17" src="babu_rao.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-18" src="Voicy_To is ko mar ka dikha mujha dakhna hai.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-19" src="Voicy_ Mar ka dikha.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-20" src="Voicy_Main pagl hun.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-21" src="Voicy_Is ko bilkul ni ata.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-22" src="Voicy_Totally kangal.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-23" src="Voicy_Is tida ko bi yahi chor do.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-24" src="Voicy_Paisa dana para ga.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-25" src="Voicy_Hum koi mandir ka ghanta ha ka koi bi a ka baja jata hai.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-26" src="Voicy_ Humko maaro humko jinda mat choro salo.mp3" preload="metadata"></audio>
+        
+        <audio id="sound-meme-27" src="aahhkk-ahhk-with-echo.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-28" src="aah-meme-jacqueline-fernandez.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-29" src="ae-ghargharghar-dhadam-a.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-30" src="africa-crying-laugh-commercial.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-31" src="anime-ahh.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-32" src="baigan.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-33" src="bhosdike-madarchod-been-k-loray-roadies.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-34" src="cat-laugh-meme-1.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-35" src="cid-acp-behn-choo.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-36" src="confused-cross-eyed-kitten-meme.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-37" src="dry-fart.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-38" src="gaaayyyyy_vUi3hqB.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-39" src="ghok-ghok.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-40" src="indian-sorry.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-41" src="le-mdrchd.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-42" src="oh-ma-gaud-vine.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-43" src="perfect-fart.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-44" src="raven-caw-caw.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-45" src="spongebob-fail.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-46" src="studio-audience-awwww-sound-fx.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-47" src="ye-meri-galti-h.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-48" src="tmpgj3wv0ae.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-49" src="vine-boom-sound-effect_KT89XIq.mp3" preload="metadata"></audio>
+        
+        <audio id="sound-meme-50" src="tarkov-scav-laughing-3.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-51" src="mylan_olE7cPM.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-52" src="tudum-tedev (1).mp3" preload="metadata"></audio>
+        <audio id="sound-meme-53" src="tudum-tedev.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-54" src="rom-rom-bhaiyo.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-55" src="yeah-boymp4.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-56" src="happy-happy-happy-song.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-57" src="omgwow.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-58" src="kids-saying-yay-sound-effect_3.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-59" src="007-james-bond-theme_WrKEvuW.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-60" src="spiderman-meme-song-2-0.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-61" src="helicopter-helicopter-parakofer-parakofer.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-62" src="yooooooooooooooooooooooooo_4_objp8XX.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-63" src="shah-rukh-khan.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-64" src="Voicy_Abi thk kr ka data hun.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-65" src="Voicy_Kahan sa utha ka laya ic mechanic ko.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-66" src="Voicy_Madam madam.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-67" src="Voicy_Ma to pura kala ho gya yar.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-68" src="meme-de-creditos-finales.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-69" src="896756048.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-70" src="weeeee_original_1193597514938524841.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-71" src="careless_whispers.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-72" src="fahhh-pump-sound.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-73" src="matlab-wo-alag-hi-level-ka-banda-tha.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-74" src="gimme-some-ganja.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-75" src="kung-fu_Xu8sssy.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-76" src="chud-gayi.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-77" src="chalti-firti-cocaine.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-78" src="koun-hai-re_8ep4nAR.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-79" src="ladle-meoww-ghop-ghop-ghop.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-80" src="meow-ghop-ghop-ghop.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-81" src="tf_nemesis.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-82" src="tmp0gt0yo3e.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-83" src="ma-ka-bhosda-aag.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-84" src="oh-shit_4.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-85" src="modi-ji-bkl.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-86" src="Voicy_Is ka liya bari unchi pehchan chahiye unchi ponch chaiya.mp3" preload="metadata"></audio>
+        <audio id="sound-meme-87" src="Voicy_ Jor jor se bol ka logo ko scheme bata de.mp3" preload="metadata"></audio>
+    </div>
+
+    <main id="mainContainer" role="main">
+        <header class="header" role="banner">
+            <div style="width: 100%;">
+                <div class="stats-container" aria-live="polite">
+                    <div>LVL: <span id="lvl-val" style="color: #00ff88;">1</span></div>
+                    <div>KILLS: <span id="score-val" style="color: #fff;">0</span></div>
+                    <div class="stat-lives">HP: <span id="lives-val" style="color: #fff;">100</span></div>
+                </div>
+                <div class="xp-bar-container">
+                    <div class="xp-bar-fill" id="xpBar"></div>
+                </div>
+            </div>
+            <div class="controls-container">
+                <div class="volume-control-wrapper">
+                    <button id="soundIcon" class="icon-btn" aria-label="Mute or Unmute Game Sound">🔊</button>
+                    <label for="volumeSlider" style="display:none;">Volume</label>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="1" aria-label="Game Volume Control">
+                </div>
+                <button id="pauseBtn" class="action-btn" aria-label="Pause Game" style="display:none;">⏸ PAUSE</button>
+            </div>
+        </header>
+
+        <div class="game-wrapper" id="gameWrapper">
+            <canvas id="gameCanvas" role="application" aria-label="Cyber Survivor Game Board: Survive the swarm">
+                Your browser does not support the HTML5 canvas element.
+            </canvas>
+            
+            <!-- Virtual Joystick for Mobile -->
+            <div class="joystick-zone" id="joystickZone">
+                <div class="joystick-knob" id="joystickKnob"></div>
+            </div>
+
+            <div class="overlay" id="startScreen" role="dialog" aria-labelledby="message" aria-describedby="subMessage">
+                <h1 id="message">CYBER SURVIVOR</h1>
+                <div id="subMessage">Dodge & Auto-Fire</div>
+                
+                <!-- PROMOTIONAL MOVIE BOX -->
+                <div class="promo-box" id="promoBox" style="display: none;">
+                    <h3>🍿 MOVIE TIME! 🎬</h3>
+                    <p>Need a break from gaming? Watch the latest blockbuster movies and shows on our premium platform!</p>
+                    <a href="https://moviedakhi.com/" class="promo-link-btn">VISIT MOVIE SITE</a>
+                </div>
+
+                <button id="startBtn" class="primary-btn" tabindex="0">ENTER ARENA</button>
+            </div>
+        </div>
+
+        <footer class="instructions" role="contentinfo">
+            <span class="instructions-desktop">Move with <span class="accent-text">MOUSE</span> or <span class="accent-text">W A S D</span>.</span>
+            <span class="instructions-mobile">Use the <span class="accent-text">JOYSTICK</span> on the bottom left to move.</span>
+            <br>
+            Collect <span style="color: #00e5ff; font-weight: bold;">GEMS</span> to Level Up & gain <span class="red-text">MULTI-SHOT</span>!
+        </footer>
+    </main>
+
+    <script>
+        'use strict';
+
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d", { alpha: false }); 
+        const startScreen = document.getElementById("startScreen");
+        const startBtn = document.getElementById("startBtn");
+        const pauseBtn = document.getElementById("pauseBtn");
+        const scoreDisplay = document.getElementById("score-val");
+        const livesDisplay = document.getElementById("lives-val");
+        const lvlDisplay = document.getElementById("lvl-val");
+        const xpBar = document.getElementById("xpBar");
+        const messageDisplay = document.getElementById("message");
+        const subMessageDisplay = document.getElementById("subMessage");
+        const soundIcon = document.getElementById("soundIcon");
+        const volumeSlider = document.getElementById("volumeSlider");
+        const mainContainer = document.getElementById("mainContainer");
+        const promoBox = document.getElementById("promoBox");
+
+        // Mobile Joystick elements
+        const joystickZone = document.getElementById("joystickZone");
+        const joystickKnob = document.getElementById("joystickKnob");
+
+        // --- Audio System: ONE Giant Master Playlist (88 sounds) ---
+        let audioCtx;
+        let globalVolume = 1.0;
+
+        const allMemeSounds = [];
+        for(let i = 0; i <= 87; i++) {
+            const el = document.getElementById(`sound-meme-${i}`);
+            if(el) allMemeSounds.push(el);
+        }
+
+        const memeIndices = [];
+        let currentlyPlayingMeme = null; 
+        let lastPlayedIndex = -1;
+
+        function getNextSound() {
+            if (allMemeSounds.length === 0) return null;
+            if (memeIndices.length === 0) {
+                for (let i = 0; i < allMemeSounds.length; i++) memeIndices.push(i);
+                for (let i = memeIndices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [memeIndices[i], memeIndices[j]] = [memeIndices[j], memeIndices[i]];
+                }
+                if (memeIndices.length > 1 && memeIndices[memeIndices.length - 1] === lastPlayedIndex) {
+                    const temp = memeIndices[memeIndices.length - 1];
+                    memeIndices[memeIndices.length - 1] = memeIndices[0];
+                    memeIndices[0] = temp;
+                }
+            }
+            const nextIndex = memeIndices.pop();
+            lastPlayedIndex = nextIndex;
+            return allMemeSounds[nextIndex];
+        }
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }
+
+        function unlockAudioFiles() {
+            allMemeSounds.forEach(audio => {
+                if(audio && audio.readyState === 0) {
+                    audio.volume = 0; 
+                    const p = audio.play();
+                    if (p !== undefined) {
+                        p.then(() => { 
+                            audio.pause(); 
+                            audio.currentTime = 0; 
+                            audio.volume = globalVolume; 
+                        }).catch(() => {});
+                    }
+                }
+            });
+        }
+
+        function playMeme(forceSkip = false) {
+            if (globalVolume === 0) return;
+            if (currentlyPlayingMeme) {
+                if (!forceSkip) return; 
+                currentlyPlayingMeme.pause();
+                currentlyPlayingMeme.currentTime = 0;
+                currentlyPlayingMeme = null;
+            }
+            const s = getNextSound();
+            if (s) {
+                currentlyPlayingMeme = s;
+                s.volume = globalVolume;
+                s.currentTime = 0;
+                s.onended = () => { if (currentlyPlayingMeme === s) currentlyPlayingMeme = null; };
+                s.play().catch(()=>{ if (currentlyPlayingMeme === s) currentlyPlayingMeme = null; });
+            }
+        }
+
+        function playSynthSound(type) {
+            if (globalVolume === 0 || !audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+            
+            if (type === 'shoot') {
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(800, now);
+                osc.frequency.exponentialRampToValueAtTime(300, now + 0.1);
+                gainNode.gain.setValueAtTime(0.02 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+                osc.start(now); osc.stop(now + 0.1);
+            } else if (type === 'hit') {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.exponentialRampToValueAtTime(50, now + 0.2);
+                gainNode.gain.setValueAtTime(0.1 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+                osc.start(now); osc.stop(now + 0.2);
+            } else if (type === 'xp') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(1200, now);
+                osc.frequency.exponentialRampToValueAtTime(2000, now + 0.05);
+                gainNode.gain.setValueAtTime(0.02 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+                osc.start(now); osc.stop(now + 0.05);
+            } else if (type === 'explosion') {
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.exponentialRampToValueAtTime(10, now + 0.3);
+                gainNode.gain.setValueAtTime(0.15 * globalVolume, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+                osc.start(now); osc.stop(now + 0.3);
+            }
+        }
+
+        volumeSlider.addEventListener("input", (e) => {
+            globalVolume = parseFloat(e.target.value);
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : (globalVolume < 0.5 ? "🔉" : "🔊");
+            if (currentlyPlayingMeme) currentlyPlayingMeme.volume = globalVolume;
+            initAudio(); 
+        });
+
+        soundIcon.addEventListener("click", () => {
+            globalVolume = globalVolume > 0 ? 0 : 1;
+            volumeSlider.value = globalVolume;
+            soundIcon.innerText = globalVolume === 0 ? "🔇" : "🔊";
+            if (globalVolume === 0 && currentlyPlayingMeme) {
+                currentlyPlayingMeme.pause();
+                currentlyPlayingMeme.currentTime = 0;
+                currentlyPlayingMeme = null;
+            }
+            initAudio();
+        });
+
+        // --- Arena Survivor Game Logic ---
+        let score = 0;
+        let hp = 100;
+        let bestScore = 0;
+        let gameRunning = false;
+        let isPaused = false;
+        let animationId;
+        let lastTime = 0;
+
+        // --- NEW RPG / ENGAGEMENT VARIABLES ---
+        let playerLvl = 1;
+        let xp = 0;
+        let xpNeeded = 5;
+        let multiShot = 1;
+        let SHOOT_COOLDOWN = 0.35; // Slower start for balanced progression
+        
+        let gems = [];
+        let floatingTexts = [];
+
+        // Player
+        let player = {
+            x: 0, y: 0,
+            radius: 15,
+            speed: 350, // Comfortable starting speed
+            color: '#00e5ff',
+            dx: 0, dy: 0,
+            trail: [] 
+        };
+        
+        // --- MOUSE CONTROL VARIABLES ---
+        let mouseX = 0, mouseY = 0;
+        let useMouse = false;
+
+        let projectiles = [];
+        let enemies = [];
+        let particles = [];
+        
+        let shootTimer = 0;
+        
+        let spawnTimer = 0;
+        let spawnRate = 1.5; // Start slower
+        let difficultyMultiplier = 1;
+        let swarmTimer = 30; // Swarm event every 30 seconds (more balanced)
+
+        // Input state
+        const keys = { w: false, a: false, s: false, d: false, ArrowUp: false, ArrowLeft: false, ArrowDown: false, ArrowRight: false };
+
+        function resizeCanvas() {
+            const wrapper = document.getElementById("gameWrapper");
+            canvas.width = wrapper.clientWidth;
+            canvas.height = wrapper.clientHeight;
+            if(!gameRunning && hp === 100) {
+                player.x = canvas.width / 2;
+                player.y = canvas.height / 2;
+                draw();
+            }
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+
+        function resetGame() {
+            score = 0;
+            hp = 100;
+            playerLvl = 1;
+            xp = 0;
+            xpNeeded = 5;
+            multiShot = 1;
+            SHOOT_COOLDOWN = 0.35;
+            
+            scoreDisplay.innerText = score;
+            livesDisplay.innerText = hp;
+            lvlDisplay.innerText = playerLvl;
+            xpBar.style.width = "0%";
+            
+            projectiles = [];
+            enemies = [];
+            particles = [];
+            gems = [];
+            floatingTexts = [];
+            
+            spawnTimer = 0;
+            spawnRate = 1.5;
+            difficultyMultiplier = 1;
+            swarmTimer = 30;
+            lastTime = 0;
+            
+            player.x = canvas.width / 2;
+            player.y = canvas.height / 2;
+            player.dx = 0;
+            player.dy = 0;
+            player.trail = []; 
+            player.color = '#00e5ff'; // Reset color
+            useMouse = false;
+            
+            joystickKnob.style.transform = `translate(-50%, -50%)`;
+        }
+
+        function spawnEnemy() {
+            // Spawn outside the canvas
+            let side = Math.floor(Math.random() * 4);
+            let ex, ey;
+            const buffer = 50;
+            
+            if (side === 0) { ex = Math.random() * canvas.width; ey = -buffer; } // Top
+            else if (side === 1) { ex = canvas.width + buffer; ey = Math.random() * canvas.height; } // Right
+            else if (side === 2) { ex = Math.random() * canvas.width; ey = canvas.height + buffer; } // Bottom
+            else { ex = -buffer; ey = Math.random() * canvas.height; } // Left
+
+            // Types of enemies - balanced for early game
+            let rand = Math.random();
+            let isTank = rand > 0.90; // Only 10% Tanks early on
+            let isDasher = rand < 0.15; // Only 15% Dashers
+
+            let radius = isTank ? 20 : (isDasher ? 10 : 14);
+            let baseSpeed = isTank ? 40 : (isDasher ? 140 : 70); // Slightly slower base speeds
+            
+            // Enemies scale HP, but tanks are more manageable now
+            let baseHp = isTank ? (3 + Math.floor(playerLvl/3)) : (isDasher ? 1 : (1 + Math.floor(playerLvl/5)));
+            
+            let color = isTank ? '#ffea00' : (isDasher ? '#b026ff' : '#ff0055');
+
+            enemies.push({
+                x: ex, y: ey,
+                radius: radius,
+                speed: baseSpeed * difficultyMultiplier,
+                hp: baseHp,
+                maxHp: baseHp,
+                color: color,
+                isTank: isTank,
+                isDasher: isDasher
+            });
+        }
+
+        function createParticles(x, y, color, count) {
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: x, y: y,
+                    vx: (Math.random() - 0.5) * 300, 
+                    vy: (Math.random() - 0.5) * 300,
+                    life: 1,
+                    size: Math.random() * 4 + 2,
+                    color: color
+                });
+            }
+        }
+
+        // Screen Shake
+        function triggerShake() {
+            mainContainer.classList.remove("shake-active");
+            void mainContainer.offsetWidth; // trigger reflow
+            mainContainer.classList.add("shake-active");
+        }
+
+        function update(dt) {
+            // Update difficulty smoothly - not too fast
+            difficultyMultiplier += dt * 0.015; 
+            spawnRate = Math.max(0.25, 1.5 - (difficultyMultiplier - 1) * 0.5); 
+
+            // Spawn Enemies
+            spawnTimer -= dt;
+            if (spawnTimer <= 0) {
+                spawnEnemy();
+                spawnTimer = spawnRate;
+            }
+
+            // Swarm Event!
+            swarmTimer -= dt;
+            if (swarmTimer <= 0) {
+                swarmTimer = 30 + Math.random() * 10; // Swarm every 30-40 seconds
+                
+                floatingTexts.push({ x: player.x, y: player.y - 60, text: "SWARM INCOMING!", age: 2.5, color: "#ff0055" });
+                playSynthSound('hit'); // Warning sound
+                triggerShake();
+
+                // Spawn a circle of enemies - amount scales with level but is capped
+                let swarmCount = Math.min(30, 8 + Math.floor(playerLvl * 2));
+                let radius = Math.max(canvas.width, canvas.height) * 0.5;
+                
+                for(let i=0; i<swarmCount; i++) {
+                    let angle = (i / swarmCount) * Math.PI * 2;
+                    let ex = player.x + Math.cos(angle) * radius;
+                    let ey = player.y + Math.sin(angle) * radius;
+                    
+                    let baseHp = 1 + Math.floor(playerLvl/5);
+                    enemies.push({
+                        x: ex, y: ey,
+                        radius: 12,
+                        speed: 80 * difficultyMultiplier,
+                        hp: baseHp, maxHp: baseHp,
+                        color: '#ff0055',
+                        isTank: false, isDasher: false
+                    });
+                }
+            }
+
+            // Player Movement (Keyboard overrides joystick if both used)
+            let moveX = player.dx;
+            let moveY = player.dy;
+            
+            if (keys.a || keys.ArrowLeft) moveX = -1;
+            if (keys.d || keys.ArrowRight) moveX = 1;
+            if (keys.w || keys.ArrowUp) moveY = -1;
+            if (keys.s || keys.ArrowDown) moveY = 1;
+
+            // Mouse Follow Logic (Overrides keys if active)
+            if (useMouse) {
+                let dx = mouseX - player.x;
+                let dy = mouseY - player.y;
+                let dist = Math.hypot(dx, dy);
+                if (dist > 2) { 
+                    // Snap-to-mouse feel: highly responsive distance-based speed
+                    let dynamicSpeed = Math.min(dist * 15, player.speed * 3); 
+                    moveX = (dx / dist) * (dynamicSpeed / player.speed);
+                    moveY = (dy / dist) * (dynamicSpeed / player.speed);
+                } else {
+                    moveX = 0;
+                    moveY = 0;
+                }
+            }
+
+            // Normalize diagonal movement
+            if (moveX !== 0 && moveY !== 0 && !useMouse) {
+                let length = Math.sqrt(moveX*moveX + moveY*moveY);
+                moveX /= length;
+                moveY /= length;
+            }
+
+            player.x += moveX * player.speed * dt;
+            player.y += moveY * player.speed * dt;
+
+            // Update Player Trail
+            player.trail.push({x: player.x, y: player.y});
+            if(player.trail.length > 8) player.trail.shift();
+
+            // Constrain player to arena
+            player.x = Math.max(player.radius, Math.min(canvas.width - player.radius, player.x));
+            player.y = Math.max(player.radius, Math.min(canvas.height - player.radius, player.y));
+
+            // Auto-Aim & Shooting
+            shootTimer -= dt;
+            if (shootTimer <= 0 && enemies.length > 0) {
+                // Find closest enemy
+                let closest = null;
+                let minDist = Infinity;
+                for (let e of enemies) {
+                    // FIX: Only target enemies that are INSIDE the visible screen
+                    if (e.x >= 0 && e.x <= canvas.width && e.y >= 0 && e.y <= canvas.height) {
+                        let d = Math.hypot(e.x - player.x, e.y - player.y);
+                        if (d < minDist) {
+                            minDist = d;
+                            closest = e;
+                        }
+                    }
+                }
+
+                if (closest && minDist < 500) { // Range limit
+                    let baseAngle = Math.atan2(closest.y - player.y, closest.x - player.x);
+                    
+                    // Multi-shot spread logic
+                    let spread = 0.20; // Tighter angle between bullets
+                    let startAngle = baseAngle - (spread * (multiShot - 1)) / 2;
+
+                    for(let i=0; i<multiShot; i++) {
+                        let angle = startAngle + (i * spread);
+                        projectiles.push({
+                            x: player.x, y: player.y,
+                            vx: Math.cos(angle) * 1200, 
+                            vy: Math.sin(angle) * 1200,
+                            radius: 4 + (playerLvl * 0.1), 
+                            color: '#00ff88'
+                        });
+                    }
+                    playSynthSound('shoot');
+                    shootTimer = SHOOT_COOLDOWN;
+                }
+            }
+
+            // Update Projectiles
+            for (let i = projectiles.length - 1; i >= 0; i--) {
+                let p = projectiles[i];
+                p.x += p.vx * dt;
+                p.y += p.vy * dt;
+
+                // Remove offscreen
+                if (p.x < 0 || p.x > canvas.width || p.y < 0 || p.y > canvas.height) {
+                    projectiles.splice(i, 1);
+                    continue;
+                }
+
+                // Check collision with enemies
+                let hit = false;
+                for (let j = enemies.length - 1; j >= 0; j--) {
+                    let e = enemies[j];
+                    if (Math.hypot(p.x - e.x, p.y - e.y) < p.radius + e.radius) {
+                        e.hp--;
+                        createParticles(p.x, p.y, p.color, 5);
+                        hit = true;
+                        
+                        if (e.hp <= 0) {
+                            score++;
+                            scoreDisplay.innerText = score;
+                            createParticles(e.x, e.y, e.color, e.isTank ? 30 : 15);
+                            
+                            // Drop XP Gem (Tanks drop massive XP, Dashers drop less)
+                            let xpAmount = e.isTank ? 4 : (e.isDasher ? 1 : 2);
+                            gems.push({
+                                x: e.x, y: e.y, 
+                                radius: e.isTank ? 7 : 4,
+                                xpVal: xpAmount,
+                                color: '#00e5ff'
+                            });
+
+                            if (e.isTank) {
+                                playSynthSound('explosion');
+                                playMeme(false); // 100% chance to play meme for Tank destruction!
+                            } else if (Math.random() < 0.05) {
+                                playMeme(false); // 5% chance for normal enemies
+                            }
+
+                            enemies.splice(j, 1);
+                        } else {
+                            // KNOCKBACK EFFECT - Reduced for Tanks!
+                            let knockbackForce = e.isTank ? 0.01 : 0.04;
+                            e.x += (e.x - p.x) * knockbackForce;
+                            e.y += (e.y - p.y) * knockbackForce;
+                        }
+                        break;
+                    }
+                }
+                if (hit) projectiles.splice(i, 1);
+            }
+
+            // Update Enemies
+            for (let i = enemies.length - 1; i >= 0; i--) {
+                let e = enemies[i];
+                
+                // Move towards player
+                let angle = Math.atan2(player.y - e.y, player.x - e.x);
+                e.x += Math.cos(angle) * e.speed * dt;
+                e.y += Math.sin(angle) * e.speed * dt;
+
+                // Player Collision
+                if (Math.hypot(player.x - e.x, player.y - e.y) < player.radius + e.radius) {
+                    hp -= e.isTank ? 20 : (e.isDasher ? 5 : 10); // Tanks hit harder!
+                    livesDisplay.innerText = Math.max(0, hp);
+                    triggerShake();
+                    playSynthSound('hit');
+                    createParticles(player.x, player.y, '#ff0055', 20);
+                    
+                    // Push enemy back slightly so they don't instakill
+                    e.x -= Math.cos(angle) * 40;
+                    e.y -= Math.sin(angle) * 40;
+
+                    if (hp <= 0) {
+                        handleGameOver();
+                        return;
+                    }
+                }
+            }
+
+            // Update Gems (Magnetic Effect)
+            for (let i = gems.length - 1; i >= 0; i--) {
+                let g = gems[i];
+                let dist = Math.hypot(player.x - g.x, player.y - g.y);
+                
+                // Magnet radius much larger for satisfying collection
+                if (dist < 200 + (playerLvl * 15)) {
+                    let angle = Math.atan2(player.y - g.y, player.x - g.x);
+                    g.x += Math.cos(angle) * 700 * dt; // Stronger magnetic pull
+                    g.y += Math.sin(angle) * 700 * dt;
+                }
+
+                // Collection
+                if (dist < player.radius + g.radius) {
+                    xp += g.xpVal;
+                    gems.splice(i, 1);
+                    playSynthSound('xp'); 
+
+                    // Level Up Check
+                    if (xp >= xpNeeded) {
+                        xp -= xpNeeded;
+                        playerLvl++;
+                        xpNeeded = Math.floor(xpNeeded * 1.4); // Smoother XP curve
+                        
+                        // Upgrades - Balanced progression
+                        multiShot = Math.min(6, 1 + Math.floor(playerLvl / 3)); // Max 6 shots, gained slower
+                        SHOOT_COOLDOWN = Math.max(0.1, 0.35 - (playerLvl * 0.02)); // Fire rate increases smoothly
+                        hp = Math.min(100, hp + 25); // Better healing on level up to keep player in the game
+                        
+                        // Evolve Player Color
+                        const evolveColors = ['#00e5ff', '#00ff88', '#ffea00', '#ff0055', '#b026ff', '#ffffff'];
+                        player.color = evolveColors[Math.min(evolveColors.length - 1, Math.floor((playerLvl - 1) / 2))];
+
+                        lvlDisplay.innerText = playerLvl;
+                        livesDisplay.innerText = hp;
+                        
+                        floatingTexts.push({ x: player.x, y: player.y - 30, text: "LEVEL UP!", age: 1.5, color: "#ffea00" });
+                        
+                        // Play guaranteed meme on level up!
+                        playMeme(true);
+                        triggerShake();
+                        createParticles(player.x, player.y, player.color, 50);
+                    }
+                    
+                    // Update XP Bar UI
+                    xpBar.style.width = `${(xp / xpNeeded) * 100}%`;
+                }
+            }
+
+            // Update Floating Texts
+            for(let i = floatingTexts.length - 1; i >= 0; i--) {
+                floatingTexts[i].y -= 40 * dt; // Float upwards
+                floatingTexts[i].age -= dt * 1.5;
+                if(floatingTexts[i].age <= 0) floatingTexts.splice(i, 1);
+            }
+
+            // Update Particles
+            for (let i = particles.length - 1; i >= 0; i--) {
+                let p = particles[i];
+                p.x += p.vx * dt; 
+                p.y += p.vy * dt;
+                p.life -= dt * 2; // fade speed
+                if(p.life <= 0) particles.splice(i, 1);
+            }
+        }
+
+        function draw() {
+            // Clear with slight trail effect
+            ctx.fillStyle = "rgba(9, 10, 15, 0.4)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Grid lines (Cyberpunk floor)
+            ctx.strokeStyle = "rgba(0, 229, 255, 0.05)";
+            ctx.lineWidth = 1;
+            const gridSize = 40;
+            const offsetX = (player.x * 0.1) % gridSize;
+            const offsetY = (player.y * 0.1) % gridSize;
+            
+            ctx.beginPath();
+            for(let x = -offsetX; x < canvas.width; x += gridSize) {
+                ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height);
+            }
+            for(let y = -offsetY; y < canvas.height; y += gridSize) {
+                ctx.moveTo(0, y); ctx.lineTo(canvas.width, y);
+            }
+            ctx.stroke();
+
+            // Draw Particles
+            for (let p of particles) {
+                ctx.globalAlpha = Math.max(0, p.life);
+                ctx.fillStyle = p.color;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+                ctx.fill();
+            }
+            ctx.globalAlpha = 1;
+            ctx.shadowBlur = 0;
+
+            // Draw Gems
+            for (let g of gems) {
+                ctx.fillStyle = "#fff";
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = g.color;
+                
+                // Draw Diamond shape
+                ctx.beginPath();
+                ctx.moveTo(g.x, g.y - g.radius);
+                ctx.lineTo(g.x + g.radius, g.y);
+                ctx.lineTo(g.x, g.y + g.radius);
+                ctx.lineTo(g.x - g.radius, g.y);
+                ctx.closePath();
+                ctx.fill();
+            }
+            ctx.shadowBlur = 0;
+
+            // Draw Projectiles
+            for (let p of projectiles) {
+                ctx.fillStyle = "#fff";
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI*2);
+                ctx.fill();
+                
+                // Trail
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p.x - (p.vx * 0.02), p.y - (p.vy * 0.02));
+                ctx.strokeStyle = p.color;
+                ctx.lineWidth = p.radius * 2;
+                ctx.lineCap = "round";
+                ctx.stroke();
+            }
+            ctx.shadowBlur = 0;
+
+            // Draw Enemies
+            for (let e of enemies) {
+                ctx.fillStyle = e.color;
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = e.color;
+                
+                ctx.save();
+                ctx.translate(e.x, e.y);
+                // Rotate towards player
+                ctx.rotate(Math.atan2(player.y - e.y, player.x - e.x));
+                
+                if (e.isTank) {
+                    // Tank (Square with inner armor lines)
+                    ctx.fillRect(-e.radius, -e.radius, e.radius*2, e.radius*2);
+                    ctx.strokeStyle = "#fff";
+                    ctx.lineWidth = 2;
+                    ctx.strokeRect(-e.radius, -e.radius, e.radius*2, e.radius*2);
+                    // HP visual indicator inside
+                    ctx.fillStyle = "#fff";
+                    ctx.fillRect(-e.radius + 2, -2, (e.radius*2 - 4) * (e.hp/e.maxHp), 4);
+                } else if (e.isDasher) {
+                    // Dasher (Sharp Diamond/Dart)
+                    ctx.beginPath();
+                    ctx.moveTo(e.radius + 5, 0); // Pointy nose
+                    ctx.lineTo(-e.radius, e.radius);
+                    ctx.lineTo(-e.radius + 5, 0); // Indented back
+                    ctx.lineTo(-e.radius, -e.radius);
+                    ctx.closePath();
+                    ctx.fill();
+                } else {
+                    // Chaser (Standard Triangle)
+                    ctx.beginPath();
+                    ctx.moveTo(e.radius, 0); // pointing right (towards player due to rotation)
+                    ctx.lineTo(-e.radius, e.radius);
+                    ctx.lineTo(-e.radius, -e.radius);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+                ctx.restore();
+            }
+            ctx.shadowBlur = 0;
+
+            // Draw Player Trail
+            if (player.trail.length > 1) {
+                ctx.beginPath();
+                ctx.moveTo(player.trail[0].x, player.trail[0].y);
+                for(let i=1; i<player.trail.length; i++) {
+                    ctx.lineTo(player.trail[i].x, player.trail[i].y);
+                }
+                // Trail matches player color
+                ctx.strokeStyle = player.color; 
+                ctx.globalAlpha = 0.3;
+                ctx.lineWidth = player.radius * 1.5;
+                ctx.lineCap = "round";
+                ctx.lineJoin = "round";
+                ctx.stroke();
+                ctx.globalAlpha = 1.0;
+            }
+
+            // --- EVOLVING PLAYER AVATAR ---
+            ctx.fillStyle = player.color;
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = player.color;
+            ctx.strokeStyle = player.color;
+            ctx.lineWidth = 2;
+            
+            ctx.save();
+            ctx.translate(player.x, player.y);
+            
+            // Base Circle (Always present)
+            ctx.beginPath();
+            ctx.arc(0, 0, player.radius, 0, Math.PI*2);
+            ctx.fill();
+
+            // Evolution Stage 1: Wings (Level 3+)
+            if (playerLvl >= 3) {
+                ctx.beginPath();
+                ctx.moveTo(-player.radius, 0);
+                ctx.lineTo(-player.radius - 10, -10);
+                ctx.lineTo(-player.radius - 5, 10);
+                ctx.moveTo(player.radius, 0);
+                ctx.lineTo(player.radius + 10, -10);
+                ctx.lineTo(player.radius + 5, 10);
+                ctx.fill();
+            }
+
+            // Evolution Stage 2: Outer Shield Ring (Level 5+)
+            if (playerLvl >= 5) {
+                ctx.beginPath();
+                // Rotating ring
+                ctx.rotate(lastTime * 0.002);
+                ctx.setLineDash([10, 10]);
+                ctx.arc(0, 0, player.radius + 8, 0, Math.PI*2);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                // Reverse rotation for next elements if needed
+                ctx.rotate(-lastTime * 0.002); 
+            }
+
+            // Evolution Stage 3: Spiky Star Core (Level 7+)
+            if (playerLvl >= 7) {
+                ctx.fillStyle = "#fff";
+                ctx.beginPath();
+                for(let i=0; i<8; i++) {
+                    ctx.rotate(Math.PI / 4);
+                    ctx.lineTo(0, -player.radius - 4);
+                    ctx.lineTo(4, -player.radius + 4);
+                }
+                ctx.fill();
+            }
+
+            ctx.restore();
+            
+            // Inner Core (Always present)
+            ctx.fillStyle = "#fff";
+            ctx.shadowBlur = 0;
+            ctx.beginPath();
+            ctx.arc(player.x, player.y, player.radius/2, 0, Math.PI*2);
+            ctx.fill();
+
+            // Draw Aiming Line/Sight
+            if (enemies.length > 0) {
+                let closest = null;
+                let minDist = Infinity;
+                for (let e of enemies) {
+                    // FIX: Make sure aiming line also only targets visible enemies
+                    if (e.x >= 0 && e.x <= canvas.width && e.y >= 0 && e.y <= canvas.height) {
+                        let d = Math.hypot(e.x - player.x, e.y - player.y);
+                        if (d < minDist) { minDist = d; closest = e; }
+                    }
+                }
+                if (closest && minDist < 400) {
+                    ctx.beginPath();
+                    ctx.moveTo(player.x, player.y);
+                    ctx.lineTo(closest.x, closest.y);
+                    ctx.strokeStyle = "rgba(0, 255, 136, 0.2)";
+                    ctx.setLineDash([5, 15]);
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                }
+            }
+            
+            // Draw Floating Texts
+            for(let ft of floatingTexts) {
+                ctx.globalAlpha = Math.max(0, ft.age);
+                ctx.fillStyle = ft.color || "#ffea00";
+                ctx.font = "bold 22px Bungee";
+                ctx.textAlign = "center";
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = ft.color || "#ffea00";
+                ctx.fillText(ft.text, ft.x, ft.y);
+            }
+            ctx.globalAlpha = 1;
+            ctx.shadowBlur = 0;
+        }
+
+        function loop(timestamp) {
+            animationId = requestAnimationFrame(loop);
+            
+            if (!lastTime) lastTime = timestamp;
+            let dt = (timestamp - lastTime) / 1000;
+            lastTime = timestamp;
+
+            if (dt > 0.1) dt = 0.1; 
+
+            // FIX: Now game will fully freeze when paused
+            if (gameRunning && !isPaused) {
+                update(dt);
+                draw();
+            }
+        }
+
+        function handleGameOver() {
+            gameRunning = false;
+            pauseBtn.style.display = "none";
+            
+            playMeme(true); // Play fail meme 
+
+            if(score > bestScore) bestScore = score;
+            
+            messageDisplay.classList.add("fail");
+            startScreen.style.display = "flex";
+            startBtn.style.display = "inline-block";
+            
+            // Show Promotional Box on Game Over
+            if(promoBox) promoBox.style.display = 'block';
+            
+            setTimeout(() => {
+                startScreen.style.opacity = "1";
+                messageDisplay.innerText = "SYSTEM FAILURE";
+                subMessageDisplay.innerText = `KILLS: ${score} // BEST: ${bestScore}`;
+                startBtn.innerText = "REBOOT ARENA";
+                startBtn.focus(); 
+            }, 100); 
+        }
+
+        startBtn.addEventListener("click", () => {
+            initAudio();
+            unlockAudioFiles();
+            
+            if (currentlyPlayingMeme) {
+                currentlyPlayingMeme.pause();
+                currentlyPlayingMeme.currentTime = 0;
+                currentlyPlayingMeme = null;
+            }
+            
+            startBtn.blur();
+            startScreen.style.opacity = "0";
+            messageDisplay.classList.remove("fail");
+            if(promoBox) promoBox.style.display = 'none'; // Hide promo box
+            
+            setTimeout(() => {
+                startScreen.style.display = "none";
+                pauseBtn.style.display = "flex";
+                pauseBtn.innerText = "⏸ PAUSE";
+                isPaused = false;
+                
+                resetGame();
+                lastTime = performance.now();
+                gameRunning = true;
+                if (!animationId) animationId = requestAnimationFrame(loop);
+            }, 300); 
+        });
+
+        pauseBtn.addEventListener("click", () => {
+            if (!gameRunning && startScreen.style.display !== "none") return; 
+            
+            isPaused = !isPaused;
+            if (isPaused) {
+                pauseBtn.innerText = "▶ PLAY";
+                ctx.save();
+                ctx.fillStyle = "rgba(9, 10, 15, 0.7)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.font = "bold 40px 'Bungee', cursive";
+                ctx.fillStyle = "var(--neon-cyan)";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = "var(--neon-cyan)";
+                ctx.fillText("SYSTEM PAUSED", canvas.width / 2, canvas.height / 2);
+                ctx.restore();
+            } else {
+                pauseBtn.innerText = "⏸ PAUSE";
+                lastTime = performance.now(); 
+            }
+        });
+
+        // --- Keyboard Inputs ---
+        document.addEventListener("keydown", (e) => {
+            useMouse = false; // Disable mouse follow on key press
+            if(keys.hasOwnProperty(e.key)) keys[e.key] = true;
+            if (e.code === "Space" || e.key === "Enter") {
+                if (!gameRunning && startScreen.style.opacity !== "0") {
+                    e.preventDefault();
+                    startBtn.click();
+                }
+            } else if ((e.key === "p" || e.key === "P" || e.key === "Escape") && gameRunning) {
+                pauseBtn.click();
+            }
+        });
+        document.addEventListener("keyup", (e) => {
+            if(keys.hasOwnProperty(e.key)) keys[e.key] = false;
+        });
+
+        // --- Virtual Joystick Logic ---
+        let joystickActive = false;
+        let joyStartX = 0, joyStartY = 0;
+        const maxJoyDist = 40;
+
+        joystickZone.addEventListener('touchstart', (e) => {
+            if (!gameRunning) return;
+            e.preventDefault();
+            joystickActive = true;
+            let rect = joystickZone.getBoundingClientRect();
+            // Center of the joystick base
+            joyStartX = rect.left + rect.width / 2;
+            joyStartY = rect.top + rect.height / 2;
+            updateJoystick(e.touches[0]);
+        }, {passive: false});
+
+        joystickZone.addEventListener('touchmove', (e) => {
+            if (!joystickActive || !gameRunning) return;
+            e.preventDefault();
+            updateJoystick(e.touches[0]);
+        }, {passive: false});
+
+        const resetJoystick = () => {
+            joystickActive = false;
+            player.dx = 0;
+            player.dy = 0;
+            joystickKnob.style.transform = `translate(-50%, -50%)`;
+        };
+
+        joystickZone.addEventListener('touchend', resetJoystick);
+        joystickZone.addEventListener('touchcancel', resetJoystick);
+
+        function updateJoystick(touch) {
+            let dx = touch.clientX - joyStartX;
+            let dy = touch.clientY - joyStartY;
+            let dist = Math.hypot(dx, dy);
+            
+            if (dist > maxJoyDist) {
+                dx = (dx / dist) * maxJoyDist;
+                dy = (dy / dist) * maxJoyDist;
+            }
+            
+            joystickKnob.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`;
+            
+            // Normalize for player speed (-1 to 1)
+            player.dx = dx / maxJoyDist;
+            player.dy = dy / maxJoyDist;
+            useMouse = false; // Disable mouse follow if using joystick
+        }
+
+        // --- Desktop Mouse Follow Logic ---
+        canvas.addEventListener("mousemove", (e) => {
+            if (!gameRunning) return;
+            let rect = canvas.getBoundingClientRect();
+            mouseX = (e.clientX - rect.left) * (canvas.width / rect.width);
+            mouseY = (e.clientY - rect.top) * (canvas.height / rect.height);
+            
+            // Only activate mouse control if not heavily using keyboard/joystick
+            if (!keys.w && !keys.a && !keys.s && !keys.d && !keys.ArrowUp && !keys.ArrowLeft && !keys.ArrowDown && !keys.ArrowRight && !joystickActive) {
+                useMouse = true;
+            }
+        });
+
+        window.onload = () => {
+            resizeCanvas();
+            draw(); 
+        };
+
+    </script>
+</body>
+</html>
