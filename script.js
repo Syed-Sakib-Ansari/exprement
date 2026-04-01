@@ -1,9 +1,9 @@
 const contentData = [
     {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-3", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
-            { number: 2, title: "Episode 2", embedUrl: "https://moviedakhi.4meplayer.com/#pouwk" },
-            { number: 3, title: "Episode 3", embedUrl: "https://moviedakhi.4meplayer.com/#nji6h" },
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
         ]
     }, {
         title: "Humint (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xmdiz", posterUrl: "https://a.ltrbxd.com/resized/film-poster/1/1/5/2/0/9/1/1152091-humint-0-230-0-345-crop.jpg?v=a7d6143755", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xmdiz&dl=1"
@@ -3487,9 +3487,9 @@ const contentData = [
 
     {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-3", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
-            { number: 2, title: "Episode 2", embedUrl: "https://moviedakhi.4meplayer.com/#pouwk" },
-            { number: 3, title: "Episode 3", embedUrl: "https://moviedakhi.4meplayer.com/#nji6h" },
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
         ]
     }, {
         title: "House of David (2025)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWExMTJiMGQtYTA3OC00ZGM0LTg5MGQtZjMwM2VlNTU3YjRhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "History, Drama, Action, Adventure", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-8", episodes: [
