@@ -274,8 +274,8 @@
                         <div class="flex flex-wrap justify-center gap-4">
                             <!-- Custom Action Download Button -->
                             <button id="mainDownloadBtn" onclick="handleDownloadClick()"
-                                class="bg-white/5 border border-white/10 text-white px-6 py-3.5 rounded-lg font-bold hover:bg-white/10 transition text-sm flex items-center gap-3">
-                                <i class="fas fa-cloud-download-alt"></i> <span id="downloadBtnText">Download</span>
+                                class="relative overflow-hidden bg-gradient-to-r from-[#125CFF] to-[#125CFF] border border-[#125CFF] text-white px-8 py-3.5 rounded-md font-black hover:scale-105 transition-all duration-300 text-sm md:text-sm uppercase tracking-widest flex items-center gap-3 btn-shimmer group">
+                                <i class="fas fa-cloud-download-alt text-md relative z-10 group:-translate-y-1 transition-transform duration-300"></i> <span id="downloadBtnText" class="relative z-10">Download</span>
                             </button>
 
                             <button onclick="closeModal()"
