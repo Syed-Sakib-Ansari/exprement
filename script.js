@@ -1,5 +1,11 @@
 const contentData = [
     {
+        title: "Trending (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#jljlj", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTQ3ZDE4NTQtNDI4OS00YWU5LWE1ZjEtYmRhMWNlZDMzNTZiXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jljlj&dl=1",
+    }, {
+        title: "My Lord (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xme1s", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjI3ZDllZDItZWMwMC00NjI4LWI2NWEtM2U0M2E5ZGMxMGMxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xme1s&dl=1",
+    }, {
+        title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3gyoz", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3gyoz&dl=1",
+    }, {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-3", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
@@ -31,12 +37,6 @@ const contentData = [
         title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6ewyu", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ewyu&dl=1",
     }, {
         title: "Monella (Frivolous Lola) (1998)", embedUrl: "https://moviedakhi.4meplayer.com/#c5edn", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/0ac67915da04969d4c41e0640c1660321561ccca5eb502837f067bc8a3acd0e6.jpg", genre: "Adult, Comedy, Romance", category: "Recent Adds", language: "English", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5edn&dl=1"
-    }, {
-        title: "Girls to Buy (2022)", embedUrl: "https://short.icu/kOe-UEtCW", posterUrl: "https://resizing.flixster.com/tk50i6i2keTgUrQ3AWUIqv0diQs=/fit-in/705x460/v2/https://resizing.flixster.com/YcCr9niAIsr-_hYZ_taOdfgXwb0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQ2NWNhMDJlLTAyMTAtNGU1My05ZTgyLTQxMGY2ODE2NDYzNy5qcGc=", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "The Madison (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6e5tj", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGFiODdjY2UtNzAxZC00Mjc3LWJiZTQtYzQ2ZTM3ZWMzNjk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Action", category: "Recent Adds", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6e5tj&dl=1", seriesInfo: "Season 1, Episode ALL",
-    }, {
-        title: "Alpha: Men Love Vengeance (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8atwh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmU4MDlkOGMtMGNjNi00YWE4LWExZDctNDdhZDQzZTVjZTQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action", category: "Recent Adds", language: "hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8atwh&dl=1",
     },
 
 
@@ -2108,6 +2108,12 @@ const contentData = [
 
 
     {
+        title: "Trending (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#jljlj", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTQ3ZDE4NTQtNDI4OS00YWU5LWE1ZjEtYmRhMWNlZDMzNTZiXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jljlj&dl=1",
+    }, {
+        title: "My Lord (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xme1s", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjI3ZDllZDItZWMwMC00NjI4LWI2NWEtM2U0M2E5ZGMxMGMxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xme1s&dl=1",
+    }, {
+        title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3gyoz", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3gyoz&dl=1",
+    }, {
         title: "Chaurya Paatham (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#c51gy", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTM3MjYwOTUtZmJhYi00ZGExLWJlYzItY2Y3MTIzNzQ5ZmZhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c51gy&dl=1",
     }, {
         title: "Sampradayaini Suppini Suddapusaani (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rbdmx", posterUrl: "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/LPVsnSMfxxASGC676h3G3kXg2obfZLj5_300x442.jpg?t=1771924324", genre: "Drama, Thriller", category: "South", language: "hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rbdmx&dl=1",
