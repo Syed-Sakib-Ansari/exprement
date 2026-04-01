@@ -1,5 +1,11 @@
 const contentData = [
     {
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-3", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
+            { number: 2, title: "Episode 2", embedUrl: "https://moviedakhi.4meplayer.com/#pouwk" },
+            { number: 3, title: "Episode 3", embedUrl: "https://moviedakhi.4meplayer.com/#nji6h" },
+        ]
+    }, {
         title: "Humint (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xmdiz", posterUrl: "https://a.ltrbxd.com/resized/film-poster/1/1/5/2/0/9/1/1152091-humint-0-230-0-345-crop.jpg?v=a7d6143755", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xmdiz&dl=1"
     }, {
         title: "Dolly (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vtkdl", posterUrl: "https://resizing.flixster.com/48NlKPIGU2_wiMnCVzCxgj6_HME=/fit-in/705x460/v2/https://resizing.flixster.com/eZiQvYiMLlIDakHsqnKzMTBVPNE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UxYmE1NDQ0LTI1OTctNDA0OC05M2M1LWRhODhhYzg1Y2VlNi5qcGc=", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vtkdl&dl=1",
@@ -31,8 +37,6 @@ const contentData = [
         title: "The Madison (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6e5tj", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGFiODdjY2UtNzAxZC00Mjc3LWJiZTQtYzQ2ZTM3ZWMzNjk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Action", category: "Recent Adds", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6e5tj&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
         title: "Alpha: Men Love Vengeance (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8atwh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmU4MDlkOGMtMGNjNi00YWE4LWExZDctNDdhZDQzZTVjZTQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action", category: "Recent Adds", language: "hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8atwh&dl=1",
-    }, {
-        title: "The Murder Files (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#himmr", posterUrl: "https://instagram.fdac189-1.fna.fbcdn.net/v/t39.30808-6/656821714_122260542236167873_7692242048585016408_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzg2MDM5MzY0NTYxNDkxOTA2Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=tJ2Inaway4cQ7kNvwHLRQ3o&_nc_oc=Adr9BfCdnxBsDM9ZtMgBZgDuH5RYgGOVqHIR_hOaFUiqrvstQGeNBHFzuHcJetgHJew&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fdac189-1.fna&_nc_gid=UUNNFrIz-aBCqZ0tBAwzaw&_nc_ss=7a32e&oh=00_AfwtNtq74kFeE6oqCoIv6P7j1bPrR82P7QOJ3c80WQw7nA&oe=69CF9F3D", genre: "Crime, Drama, Thriller, Mystery", category: "Recent Adds", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#himmr&dl=1",
     },
 
 
@@ -3482,6 +3486,12 @@ const contentData = [
 
 
     {
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-3", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
+            { number: 2, title: "Episode 2", embedUrl: "https://moviedakhi.4meplayer.com/#pouwk" },
+            { number: 3, title: "Episode 3", embedUrl: "https://moviedakhi.4meplayer.com/#nji6h" },
+        ]
+    }, {
         title: "House of David (2025)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWExMTJiMGQtYTA3OC00ZGM0LTg5MGQtZjMwM2VlNTU3YjRhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "History, Drama, Action, Adventure", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/f6M3SH4R3" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/lDc3SS13l" },
@@ -3518,10 +3528,6 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/AxTC0Jq9o" },
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/8ys3gKClW" },
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/GSLSw1-gL" },
-        ]
-    }, {
-        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#6es39" },
         ]
     }, {
         title: "The Beauty (2026)", posterUrl: "https://images.justwatch.com/poster/340658801/s718/the-beauty.jpg", genre: "Horror, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-11", episodes: [
