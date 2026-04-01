@@ -4,7 +4,7 @@ const contentData = [
     }, {
         title: "Dolly (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vtkdl", posterUrl: "https://resizing.flixster.com/48NlKPIGU2_wiMnCVzCxgj6_HME=/fit-in/705x460/v2/https://resizing.flixster.com/eZiQvYiMLlIDakHsqnKzMTBVPNE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UxYmE1NDQ0LTI1OTctNDA0OC05M2M1LWRhODhhYzg1Y2VlNi5qcGc=", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vtkdl&dl=1",
     }, {
-        title: "Happy Patel: Khatarnak Jasoos (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56tmb", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWUyZTBjYTctMGQyNS00Mjg0LTg5ZTMtZDA1YmEyZDIxZjRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Comedy, Crime", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56tmb&dl=1"
+        title: "Happy Patel: Khatarnak Jasoos (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56tmb", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWUyZTBjYTctMGQyNS00Mjg0LTg5ZTMtZDA1YmEyZDIxZjRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Comedy, Crime", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56tmb&dl=1"
     }, {
         title: "Blonde (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#8a9b6", posterUrl: "https://lh4.googleusercontent.com/proxy/BChCJfJg4io9FiNsaFSseeFzIjvAnigLVIPspo6FfmoLQ6u7Zs_by-m164k_ULRU2cUR3XEbaL1Do6IOo4HlQr5oTdG5flQW", genre: "Adult, Erotic, Romance", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8a9b6&dl=1"
     }, {
@@ -42,7 +42,7 @@ const contentData = [
 
 
     {
-        title: "Happy Patel: Khatarnak Jasoos (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56tmb", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWUyZTBjYTctMGQyNS00Mjg0LTg5ZTMtZDA1YmEyZDIxZjRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Comedy, Crime", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56tmb&dl=1"
+        title: "Happy Patel: Khatarnak Jasoos (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56tmb", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWUyZTBjYTctMGQyNS00Mjg0LTg5ZTMtZDA1YmEyZDIxZjRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Comedy, Crime", category: "Bollywood", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56tmb&dl=1"
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
     }, {
