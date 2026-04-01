@@ -239,16 +239,26 @@
         <div class="fixed inset-0 z-[140] overflow-y-auto" id="modalScrollContainer">
             <div class="flex min-h-full items-center justify-center p-4" id="modalFlexContainer">
                 <div class="relative w-full max-w-5xl rounded-2xl bg-[#111] shadow-2xl my-8 overflow-hidden">
-                    <div class="aspect-video w-full bg-black relative flex items-center justify-center">
-                        <div class="text-center group cursor-pointer" id="videoPlaceholder" onclick="playDefault()">
-                            <div
-                                class="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition shadow-lg shadow-red-600/30">
-                                <i class="fas fa-play text-xl md:text-2xl"></i>
+                    <div class="aspect-video w-full bg-black relative flex items-center justify-center overflow-hidden">
+                        
+                        <!-- ================== NEW CODE START: ENHANCED PLAY BUTTON ================== -->
+                        <div class="text-center group cursor-pointer absolute z-20 flex items-center justify-center" id="videoPlaceholder" onclick="playDefault()">
+                            <!-- Expanding Ripple Effects -->
+                            <div class="absolute w-16 h-16 md:w-24 md:h-24 bg-red-600 rounded-full animate-ping opacity-75"></div>
+                            <div class="absolute w-20 h-20 md:w-28 md:h-28 border border-red-500 rounded-full animate-[ping_2.5s_cubic-bezier(0,0,0.2,1)_infinite_0.5s] opacity-50"></div>
+                            
+                            <!-- Core Play Button with Continuous Shine (btn-shimmer) -->
+                            <div class="relative w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-red-500 to-red-800 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(229,9,20,0.6)] group-hover:shadow-[0_0_50px_rgba(229,9,20,1)] border border-red-400/50 backdrop-blur-sm z-10 overflow-hidden btn-shimmer">
+                                
+                                <i class="fas fa-play text-white text-2xl md:text-3xl ml-1 md:ml-2 drop-shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div id="actualVideo" class="hidden absolute inset-0 bg-black">
-                            <iframe id="videoIframe" class="w-full h-full" src="" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        <!-- ================== NEW CODE END ================== -->
+
+                        <div id="actualVideo" class="hidden absolute inset-0 bg-black w-full h-full z-10">
+                            <iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="" frameborder="0"
+                                scrolling="no" marginwidth="0" marginheight="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
                         </div>
                     </div>
