@@ -4524,82 +4524,57 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     }
 }
 
-// =======================================================================
-// 1. OLD BADGE STYLE/ OLD BADGE STYLE/ OLD BADGE STYLE
-// =======================================================================
-
-// function createMovieCard(item) {
-//     const card = document.createElement('div');
-//     card.className = 'movie-card relative flex flex-col group';
-//     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
-//     const qualityBadgeHtml = item.quality ?
-//         `<div class="absolute top-2 left-2 z-20">
-//             <span class="bg-[#E50914] text-white px-[6px] py-[2px] rounded-[2px] font-black text-[10px] uppercase tracking-[0.5px] shadow-[0_2px_8px_rgba(0,0,0,0.8)] border-none">
-//                 ${item.quality}
-//             </span>
-//         </div>` : '';
-//     card.innerHTML = `
-// <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3]">
-// ${qualityBadgeHtml}
-// <div class="absolute top-2 right-2 z-20"><span class="lang-badge border-none shadow-lg">${item.language}</span></div>
-// <img 
-// src="${getOptimizedImageUrl(item.posterUrl)}" 
-// alt="${item.title}" 
-// class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
-// loading="lazy" 
-// decoding="async"
-// >
-// <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-center items-center p-5 transition-all duration-300">
-// <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
-// </div>
-// </div>
-// <div class="mt-4 text-center">
-// <h4 class="font-black text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
-// ${infoText}
-// </div>`;
-//     card.onclick = () => openModal(item.id);
-//     return card;
-// }
-
-// =======================================================================
-// 1. NEW BADGE STYLE/ NEW BADGE STYLE/ NEW BADGE STYLE
-// =======================================================================
-
 function createMovieCard(item) {
     const card = document.createElement('div');
     card.className = 'movie-card relative flex flex-col group';
     
-    // Restored original series info text format
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
     
-    // Quality Badge: Top-Left, solid red, flush, rounded-br-lg
+    // Smart Quality Badge: Adapts to Mobile (Flush) and Desktop (Floating)
     const qualityBadgeHtml = item.quality ? 
-        `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[9px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">
+        `<!-- Mobile Quality Badge -->
+        <div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider rounded-br-lg shadow-md md:hidden">
             ${item.quality}
+        </div>
+        <!-- Desktop Quality Badge -->
+        <div class="absolute top- left-2 z-20 hidden md:block">
+            <span class="bg-[#E50914] text-white px-[6px] py-[2px] rounded-[2px] font-black text-[10px] uppercase tracking-[0.5px] shadow-[0_2px_8px_rgba(0,0,0,0.8)] border-none">
+                ${item.quality}
+            </span>
         </div>` : '';
 
-    // Language Badge: Top-Right, solid red, flush, rounded-bl-lg
+    // Smart Language Badge: Adapts to Mobile (Flush) and Desktop (Floating)
     const languageBadgeHtml = item.language ? 
-        `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[9px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">
+        `<!-- Mobile Language Badge -->
+        <div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md md:hidden">
             ${item.language}
+        </div>
+        <!-- Desktop Language Badge -->
+        <div class="absolute top- right-2 z-20 hidden md:block">
+            <span class="lang-badge border-none shadow-lg">${item.language}</span>
         </div>` : '';
 
     card.innerHTML = `
-<div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 transition-all duration-300 group-hover:ring-white/20">
+<div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 md:ring-0 transition-all duration-300 group-hover:ring-white/20 md:group-hover:ring-transparent">
 ${qualityBadgeHtml}
 ${languageBadgeHtml}
 <img 
 src="${getOptimizedImageUrl(item.posterUrl)}" 
 alt="${item.title}" 
-class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+class="w-full h-full object-cover transition-transform duration-500 md:duration-300 group-hover:scale-110" 
 loading="lazy" 
 decoding="async"
 >
-<div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex flex-col justify-center items-center p-5 transition-all duration-300">
+<!-- Mobile Play Overlay -->
+<div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center items-center p-5 transition-all duration-300">
 <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)] group-hover:scale-110 transition-transform duration-300"><i class="fas fa-play text-white text-lg ml-1"></i></div>
 </div>
+<!-- Desktop Play Overlay -->
+<div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300">
+<div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
 </div>
-<div class="mt-4 text-center flex flex-col items-center">
+</div>
+<div class="mt-4 text-center flex flex-col items-center md:block">
 <h4 class="font-black text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
 ${infoText}
 </div>`;
@@ -5025,58 +5000,58 @@ function closeAnnouncement() {
 // ==========================================
 
 // 1. Disable Right Click entirely to hide 'Inspect' everywhere
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-});
+// document.addEventListener('contextmenu', (e) => {
+//     e.preventDefault();
+// });
 
-document.addEventListener('keydown', (e) => {
-    // Allow normal keyboard behavior inside the search box
-    if (e.target.id === 'searchInput') return;
+// document.addEventListener('keydown', (e) => {
+//     // Allow normal keyboard behavior inside the search box
+//     if (e.target.id === 'searchInput') return;
 
-    // Block F12 (DevTools)
-    if (e.key === 'F12') {
-        e.preventDefault();
-    }
+//     // Block F12 (DevTools)
+//     if (e.key === 'F12') {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
+//     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+U / Cmd+Opt+U (View Source)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+U / Cmd+Opt+U (View Source)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+S / Cmd+S (Save Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+S / Cmd+S (Save Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+P / Cmd+P (Print Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+P / Cmd+P (Print Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+//         e.preventDefault();
+//     }
 
-    // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
-        e.preventDefault();
-    }
-});
+//     // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
+//         e.preventDefault();
+//     }
+// });
 
-// 3. Prevent Native Copy, Cut, Paste events (except search box)
-['copy', 'cut', 'paste'].forEach(evt => {
-    document.addEventListener(evt, (e) => {
-        if (e.target.id !== 'searchInput') {
-            e.preventDefault();
-        }
-    });
-});
+// // 3. Prevent Native Copy, Cut, Paste events (except search box)
+// ['copy', 'cut', 'paste'].forEach(evt => {
+//     document.addEventListener(evt, (e) => {
+//         if (e.target.id !== 'searchInput') {
+//             e.preventDefault();
+//         }
+//     });
+// });
 
-// 4. Prevent Dragging elements (like ghost-dragging images to save them)
-document.addEventListener('dragstart', (e) => {
-    // Allow FAB pointer dragging, but prevent native HTML element dragging
-    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-        e.preventDefault();
-    }
-});
+// // 4. Prevent Dragging elements (like ghost-dragging images to save them)
+// document.addEventListener('dragstart', (e) => {
+//     // Allow FAB pointer dragging, but prevent native HTML element dragging
+//     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+//         e.preventDefault();
+//     }
+// });
