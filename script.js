@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Bhairathi Ranagal (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#asx8r", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWNhOWY3YWQtYmIzYy00MTQ0LTg0OGEtZDY1ZjgyZDZlMjNmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#asx8r&dl=1",
+    }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
     }, {
         title: "Basic Instinct (1992)", embedUrl: "https://moviedakhi.4meplayer.com/#6ea9u", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2U2ODc1N2ItNTBiOC00MjA0LTgwNDAtODYwYWE5NTE5ODU3XkEyXkFqcGc@._V1_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Recent Adds", language: "dual audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ea9u&dl=1"
@@ -35,8 +37,6 @@ const contentData = [
         title: "Blonde (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#8a9b6", posterUrl: "https://lh4.googleusercontent.com/proxy/BChCJfJg4io9FiNsaFSseeFzIjvAnigLVIPspo6FfmoLQ6u7Zs_by-m164k_ULRU2cUR3XEbaL1Do6IOo4HlQr5oTdG5flQW", genre: "Adult, Erotic, Romance", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8a9b6&dl=1"
     }, {
         title: "Hoppers (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#odyue", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzRiMzZlMTMtNmU3OC00MDUwLThmNDUtMTBjZmQ3MWQ4NTljXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#odyue&dl=1"
-    }, {
-        title: "Chaurya Paatham (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#c51gy", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTM3MjYwOTUtZmJhYi00ZGExLWJlYzItY2Y3MTIzNzQ5ZmZhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c51gy&dl=1",
     }, 
 
 
@@ -2110,6 +2110,8 @@ const contentData = [
 
 
     {
+        title: "Bhairathi Ranagal (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#asx8r", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWNhOWY3YWQtYmIzYy00MTQ0LTg0OGEtZDY1ZjgyZDZlMjNmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#asx8r&dl=1",
+    }, {
         title: "Eesha (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#chlwa", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjFjNzFkNzQtNTk4MS00N2ZhLTk0YzEtMDU3NDg3MTRkZDFkXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "South", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#chlwa&dl=1",
     }, {
         title: "Trending (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#jljlj", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTQ3ZDE4NTQtNDI4OS00YWU5LWE1ZjEtYmRhMWNlZDMzNTZiXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jljlj&dl=1",
@@ -2521,6 +2523,10 @@ const contentData = [
 
 
     {
+        title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#irz5h", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "English", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#irz5h&dl=1"
+    }, {
+        title: "The Super Mario Bros (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#8diuc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGU4NGQ4NjYtMWI3Ni00MDNkLWJmZTEtNzg0N2MyYjk0YzgxXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8diuc&dl=1"
+    }, {
         title: "Hoppers (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#odyue", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzRiMzZlMTMtNmU3OC00MDUwLThmNDUtMTBjZmQ3MWQ4NTljXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Animation", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#odyue&dl=1"
     }, {
         title: "GOAT (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#kwhrs", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzE5OTJkOGMtYWFiNi00NTlkLWE3ZWItY2ZlNjkyOWVhMjMyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Animation", language: "dual audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#kwhrs&dl=1"
