@@ -1,7 +1,7 @@
 const contentData = [
     {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
-    },{
+    }, {
         title: "Basic Instinct (1992)", embedUrl: "https://moviedakhi.4meplayer.com/#6ea9u", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2U2ODc1N2ItNTBiOC00MjA0LTgwNDAtODYwYWE5NTE5ODU3XkEyXkFqcGc@._V1_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Recent Adds", language: "dual audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ea9u&dl=1"
     }, {
         title: "Basic Instinct 2 (2006)", embedUrl: "https://moviedakhi.4meplayer.com/#9nip3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkzNzM3ODY3Nl5BMl5BanBnXkFtZTcwNzMyNDcyNA@@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Recent Adds", language: "dual audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9nip3&dl=1"
@@ -3306,7 +3306,7 @@ const contentData = [
     }, {
         title: "Treasure Chest of Horrors II (2013)", embedUrl: "https://short.icu/SgpGdLtlg", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p21441967_p_v8_aa.jpg", genre: "Drama, Adult, Comedy Horror", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Lizzie Borden's Revenge (2013)", embedUrl: "https://short.icu/XB8vT9yCb", posterUrl: "https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2012/05/Lizzie-Bordens-Revenge-front.jpg", genre: "Drama, Adult, Comedy Horror", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Lizzie Borden's Revenge (2013)", embedUrl: "https://short.icu/XB8vT9yCb", posterUrl: "https://a.ltrbxd.com/resized/film-poster/1/6/1/9/8/7/161987-lizzie-borden-s-revenge-0-230-0-345-crop.jpg?v=96ccf878a1", genre: "Drama, Adult, Comedy Horror", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Ang kapitbahay (2024)", embedUrl: "https://short.icu/Lv0oeMKQXQ", posterUrl: "https://m.media-amazon.com/images/M/MV5BODRiNzllMTItZjZjMy00NDk5LTljN2YtMzY2YTQzZjgzZGQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Comedy Horror", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -4524,32 +4524,82 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     }
 }
 
+// =======================================================================
+// 1. OLD BADGE STYLE/ OLD BADGE STYLE/ OLD BADGE STYLE
+// =======================================================================
+
+// function createMovieCard(item) {
+//     const card = document.createElement('div');
+//     card.className = 'movie-card relative flex flex-col group';
+//     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
+//     const qualityBadgeHtml = item.quality ?
+//         `<div class="absolute top-2 left-2 z-20">
+//             <span class="bg-[#E50914] text-white px-[6px] py-[2px] rounded-[2px] font-black text-[10px] uppercase tracking-[0.5px] shadow-[0_2px_8px_rgba(0,0,0,0.8)] border-none">
+//                 ${item.quality}
+//             </span>
+//         </div>` : '';
+//     card.innerHTML = `
+// <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3]">
+// ${qualityBadgeHtml}
+// <div class="absolute top-2 right-2 z-20"><span class="lang-badge border-none shadow-lg">${item.language}</span></div>
+// <img 
+// src="${getOptimizedImageUrl(item.posterUrl)}" 
+// alt="${item.title}" 
+// class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+// loading="lazy" 
+// decoding="async"
+// >
+// <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-center items-center p-5 transition-all duration-300">
+// <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
+// </div>
+// </div>
+// <div class="mt-4 text-center">
+// <h4 class="font-black text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
+// ${infoText}
+// </div>`;
+//     card.onclick = () => openModal(item.id);
+//     return card;
+// }
+
+// =======================================================================
+// 1. NEW BADGE STYLE/ NEW BADGE STYLE/ NEW BADGE STYLE
+// =======================================================================
+
 function createMovieCard(item) {
     const card = document.createElement('div');
     card.className = 'movie-card relative flex flex-col group';
+    
+    // Restored original series info text format
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
-    const qualityBadgeHtml = item.quality ?
-        `<div class="absolute top-2 left-2 z-20">
-            <span class="bg-[#E50914] text-white px-[6px] py-[2px] rounded-[2px] font-black text-[10px] uppercase tracking-[0.5px] shadow-[0_2px_8px_rgba(0,0,0,0.8)] border-none">
-                ${item.quality}
-            </span>
+    
+    // Quality Badge: Top-Left, solid red, flush, rounded-br-lg
+    const qualityBadgeHtml = item.quality ? 
+        `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[9px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">
+            ${item.quality}
         </div>` : '';
+
+    // Language Badge: Top-Right, solid red, flush, rounded-bl-lg
+    const languageBadgeHtml = item.language ? 
+        `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[9px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">
+            ${item.language}
+        </div>` : '';
+
     card.innerHTML = `
-<div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3]">
+<div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 transition-all duration-300 group-hover:ring-white/20">
 ${qualityBadgeHtml}
-<div class="absolute top-2 right-2 z-20"><span class="lang-badge border-none shadow-lg">${item.language}</span></div>
+${languageBadgeHtml}
 <img 
 src="${getOptimizedImageUrl(item.posterUrl)}" 
 alt="${item.title}" 
-class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
 loading="lazy" 
 decoding="async"
 >
-<div class="play-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-center items-center p-5 transition-all duration-300">
-<div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
+<div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex flex-col justify-center items-center p-5 transition-all duration-300">
+<div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)] group-hover:scale-110 transition-transform duration-300"><i class="fas fa-play text-white text-lg ml-1"></i></div>
 </div>
 </div>
-<div class="mt-4 text-center">
+<div class="mt-4 text-center flex flex-col items-center">
 <h4 class="font-black text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
 ${infoText}
 </div>`;
