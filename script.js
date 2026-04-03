@@ -1,5 +1,9 @@
 const contentData = [
     {
+        title: "Skull Island (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#rlc31", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDg4ZTVlZDctMTRjNy00MWFlLWI5ZWItNWM3YTNhM2ExYmQyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure", category: "Recent Adds", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rlc31&dl=1"
+    }, {
+        title: "Killer Whale (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9zicg", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDlkM2Y3NjUtZTlkNS00NzA5LTk5ZmMtNzE0MTdkYjJhNDZiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Horror, Mystery, Thriller, Survival", category: "Recent Adds", language: "Dual Audio", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zicg&dl=1",
+    }, {
         title: "Bhairathi Ranagal (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#asx8r", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWNhOWY3YWQtYmIzYy00MTQ0LTg0OGEtZDY1ZjgyZDZlMjNmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#asx8r&dl=1",
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
@@ -33,10 +37,6 @@ const contentData = [
         title: "Dolly (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vtkdl", posterUrl: "https://resizing.flixster.com/48NlKPIGU2_wiMnCVzCxgj6_HME=/fit-in/705x460/v2/https://resizing.flixster.com/eZiQvYiMLlIDakHsqnKzMTBVPNE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UxYmE1NDQ0LTI1OTctNDA0OC05M2M1LWRhODhhYzg1Y2VlNi5qcGc=", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vtkdl&dl=1",
     }, {
         title: "Happy Patel: Khatarnak Jasoos (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56tmb", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWUyZTBjYTctMGQyNS00Mjg0LTg5ZTMtZDA1YmEyZDIxZjRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Comedy, Crime", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56tmb&dl=1"
-    }, {
-        title: "Blonde (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#8a9b6", posterUrl: "https://lh4.googleusercontent.com/proxy/BChCJfJg4io9FiNsaFSseeFzIjvAnigLVIPspo6FfmoLQ6u7Zs_by-m164k_ULRU2cUR3XEbaL1Do6IOo4HlQr5oTdG5flQW", genre: "Adult, Erotic, Romance", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8a9b6&dl=1"
-    }, {
-        title: "Hoppers (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#odyue", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzRiMzZlMTMtNmU3OC00MDUwLThmNDUtMTBjZmQ3MWQ4NTljXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Music, Animation", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#odyue&dl=1"
     }, 
 
 
@@ -428,6 +428,14 @@ const contentData = [
 
 
     {
+        title: "Killer Whale (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9zicg", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDlkM2Y3NjUtZTlkNS00NzA5LTk5ZmMtNzE0MTdkYjJhNDZiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Horror, Mystery, Thriller, Survival", category: "Hollywood", language: "Dual Audio", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zicg&dl=1",
+    }, {
+        title: "Skull: The Mask (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#ygfmv", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzU4M2NmNWQtNWY4Mi00NzE2LTg5ZjItMTliZTQ3Y2RkZGJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Fantasy", category: "Hollywood", language: "Dual Audio", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ygfmv&dl=1",
+    }, {
+        title: "Hollow Man II (2006)", embedUrl: "https://moviedakhi.4meplayer.com/#5i8kg", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcxNzEyMTIzMV5BMl5BanBnXkFtZTgwMDAzNjAwNzE@._V1_FMjpg_UX1000_.jpg", genre: "Action, Horror, Mystery, Thriller, Sci-Fi", category: "Hollywood", language: "English", quality:"bluray", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5i8kg&dl=1",
+    }, {
+        title: "Hollow Man (2000)", embedUrl: "https://moviedakhi.4meplayer.com/#jwmob", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fmetadata-static.plex.tv%2Fd%2Fgracenote%2Fd102571bf1ca96d8833f1b7c6612e067.jpg", genre: "Action, Horror, Mystery, Thriller, Sci-Fi", category: "Hollywood", language: "English", quality:"bluray", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jwmob&dl=1",
+    }, {
         title: "Intruders (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#9nhwf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTg4NjQ4ODcxNV5BMl5BanBnXkFtZTgwNzU2NTgzNzE@._V1_.jpg", genre: "Drama, Horror, Mystery, Thriller", category: "Hollywood", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9nhwf&dl=1",
     }, {
         title: "Dolly (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vtkdl", posterUrl: "https://resizing.flixster.com/48NlKPIGU2_wiMnCVzCxgj6_HME=/fit-in/705x460/v2/https://resizing.flixster.com/eZiQvYiMLlIDakHsqnKzMTBVPNE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UxYmE1NDQ0LTI1OTctNDA0OC05M2M1LWRhODhhYzg1Y2VlNi5qcGc=", genre: "Horror, Mystery, Thriller", category: "Hollywood", language: "Dual Audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vtkdl&dl=1",
@@ -584,7 +592,7 @@ const contentData = [
     }, {
         title: "Murder Mystery 2 (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#8avvx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDYxMjRjMjYtMjQ3MC00NWM0LWJkMzItYTVmZmJkOTM0OWRmXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Comedy, Mystery & Thriller", category: "Hollywood", language: "dual audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8avvx&dl=1"
     }, {
-        title: "The Lion King (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#vt86q", posterUrl: "https://resizing.flixster.com/UMqiMps2UGD9EulGHbkG250QfrI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31530484_p_v8_ac.jpg", genre: "Kids & Family, Adventure, Drama", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt86q&dl=1"
+        title: "The Lion King (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#vt86q", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjIwMjE1Nzc4NV5BMl5BanBnXkFtZTgwNDg4OTA1NzM@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Adventure, Drama", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt86q&dl=1"
     }, {
         title: "Mufasa: The Lion King (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#6ecln", posterUrl: "https://lumiere-a.akamaihd.net/v1/images/image_5c6b5dcc.jpeg", genre: "Kids & Family, Adventure, Drama", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ecln&dl=1"
     }, {
@@ -2523,6 +2531,14 @@ const contentData = [
 
 
     {
+        title: "The Bad Guys (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#qn6cm", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTljOGJiNjYtYTY1Ni00Yzk4LWI2YTUtNTdhYmYyMTgyNDMxXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Action, Animation", category: "Animation", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qn6cm&dl=1"
+    }, {
+        title: "The Bad Guys 2 (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#gvjph", posterUrl: "https://images.moviesanywhere.com/1b8be53a8e8e291c2832c79413dbfdd1/177749e0-c173-45d8-b9b1-5fbe02b22054.jpg", genre: "Kids & Family, Comedy, Adventure, Action, Animation", category: "Animation", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gvjph&dl=1"
+    }, {
+        title: "The Bad Guys: Haunted Heist (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#kubok", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDQ0NTRkNGMtMDM2NS00ZTkxLWE3NWYtNzE3MTQ4YTg4Njg2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Action, Animation", category: "Animation", language: "Dual-Audio", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#kubok&dl=1"
+    }, {
+        title: "The Bad Guys: A Very Bad Holiday (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#vpwzx", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDMwNGFmMjMtYzY5MS00Y2IyLWJjZjYtYWJiZGJkOWMwNDRiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Action, Animation", category: "Animation", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vpwzx&dl=1"
+    }, {
         title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#irz5h", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "English", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#irz5h&dl=1"
     }, {
         title: "The Super Mario Bros (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#8diuc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGU4NGQ4NjYtMWI3Ni00MDNkLWJmZTEtNzg0N2MyYjk0YzgxXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8diuc&dl=1"
@@ -2954,6 +2970,8 @@ const contentData = [
 
 
     {
+        title: "Skull Island (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#rlc31", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDg4ZTVlZDctMTRjNy00MWFlLWI5ZWItNWM3YTNhM2ExYmQyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure", category: "Chinese", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rlc31&dl=1"
+    }, {
         title: "Death Game (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#9n35f", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDFhYzI4YjMtMGE2My00MzI1LWE4NWItZDJiMzRlZTY4NzFiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, History", category: "Chinese", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9n35f&dl=1"
     }, {
         title: "Legends of the Condor Heroes: The Gallants (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#a1g8k", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmRmNjdkOGUtMGIyMC00NGEyLTk3M2EtNjg2NTM3MTNkZWYxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Drama, History", category: "Chinese", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#a1g8k&dl=1"
