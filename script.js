@@ -1,5 +1,44 @@
 const contentData = [
     {
+        title: "Bloodhounds (2023)", posterUrl: "https://resizing.flixster.com/dsA-Ag4_K7MwC7zPTGiZ4oaB6tg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24811658_b_v8_ac.jpg", genre: "Drama, Mystery & Thriller, Sports, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/v0oaHP8be" }, 
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/VJkXQVmNn" }, 
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/vFx_NmoGI" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/1vgWC7GON" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/396ydw9Gs" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/lBEH2VCgG" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/XGynbRJKgq" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/q1q895up1" },]
+    }, {
+        title: "Bloodhounds (2026)", posterUrl: "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQYptQmMPHj4jbNgGy0-0jD1XPusbbqHMi5slk_gy5Ue9MWtWqoSRzffxSMRYNEPzzrmOEWECd_s-TRjZcIS83A9_0qXVvEcUhdeEmyAtescXa1_y-JMWnXJVHRsUZ43i3js6eu_B1Omt0QSbP7XhkL0l.jpg?r=d5c", genre: "Drama, Mystery & Thriller, Sports, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/0KgeAymfK" }, 
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/B9dLy0EC4" }, 
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/4CeLma4gn7" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/VoqjOKk0k" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/RL1Jp6Cbi" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/3MuH44tLg" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/bIBuYq_VW" },]
+    }, {
+        title: "Maamla Legal Hai (2024)", posterUrl: "https://occ-0-648-299.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABeesuK11XmPJP9CwMZhzs9GdNPiL_tGGLeNHSASX1gm9oRt3fsrHwkSThkXRmfTt2fIGuSm4Ksc9ys_wvzST1cMivdTUsTPmbANa.jpg?r=d7b", genre: "Comedy, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/AkQAhOiaY" }, 
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/IaMLnK7tjr" }, 
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/i_68X5bx_" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/QQXRiMepq" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/y6gooV5Z7" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/fSfeIuWa7" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/TW3oQJZq1C" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/pQx1gH07O" },]
+    }, {
+        title: "Maamla Legal Hai (2026)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26774733_b_v8_ab.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/faGSYUEHJ" }, 
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/jAowo7ztJT" }, 
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/-9Fj2Q62c" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/99bJUX6QH" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/9nmRHv5bH" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/bE_vQ3rDJ" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/gScPS1mxd" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/rpzO14n56_" },]
+    }, {
         title: "Mrithyunjay (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qn6ut", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTU1ODY3N2UtZjZkYy00MGUxLWEzN2MtODU3NDMwZWIzZGJhXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qn6ut&dl=1",
     }, {
         title: "Sampradayini Suppini Suddapoosani (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#emvft", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Sampradayini-Suppini-Suddapoosani-poster-12350c60-1148-11f1-a57b-5bff48fad14c.jpg", genre: "Drama, Thriller, Crime, Comedy", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#emvft&dl=1",
@@ -25,19 +64,7 @@ const contentData = [
         title: "Crime 101 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#irzad", posterUrl: "https://resizing.flixster.com/Mv63F7tYNvWkA57kSncR8nwYGbQ=/fit-in/705x460/v2/https://resizing.flixster.com/6HH4xeWyY3W8I3mkI7kVKnLuUeo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA3NTc3ZGNkLWE4ZDQtNDU1NC04MmQ3LTViYTUxY2Y3NDMzNy5qcGc=", genre: "Crime, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#irzad&dl=1"
     }, {
         title: "Modern Times (1936)", embedUrl: "https://moviedakhi.4meplayer.com/#irzad", posterUrl: "https://upload.wikimedia.org/wikipedia/commons/3/36/Modern_Times_poster.jpg", genre: "Comedy, Drama, Romance", category: "Recent Adds", language: "English", quality:"Blu-Ray", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#irzad&dl=1"
-    }, {
-        title: "Trending (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#jljlj", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTQ3ZDE4NTQtNDI4OS00YWU5LWE1ZjEtYmRhMWNlZDMzNTZiXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jljlj&dl=1",
-    }, {
-        title: "My Lord (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xme1s", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjI3ZDllZDItZWMwMC00NjI4LWI2NWEtM2U0M2E5ZGMxMGMxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xme1s&dl=1",
-    }, {
-        title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3gyoz", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3gyoz&dl=1",
-    }, {
-        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-3", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
-        ]
-    }, 
+    },
 
 
     // =======================================================================
@@ -3389,6 +3416,26 @@ const contentData = [
 
 
     {
+        title: "Maamla Legal Hai (2024)", posterUrl: "https://occ-0-648-299.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABeesuK11XmPJP9CwMZhzs9GdNPiL_tGGLeNHSASX1gm9oRt3fsrHwkSThkXRmfTt2fIGuSm4Ksc9ys_wvzST1cMivdTUsTPmbANa.jpg?r=d7b", genre: "Comedy, Drama", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/AkQAhOiaY" }, 
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/IaMLnK7tjr" }, 
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/i_68X5bx_" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/QQXRiMepq" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/y6gooV5Z7" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/fSfeIuWa7" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/TW3oQJZq1C" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/pQx1gH07O" },]
+    }, {
+        title: "Maamla Legal Hai (2026)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26774733_b_v8_ab.jpg", genre: "Comedy, Drama", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/faGSYUEHJ" }, 
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/jAowo7ztJT" }, 
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/-9Fj2Q62c" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/99bJUX6QH" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/9nmRHv5bH" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/bE_vQ3rDJ" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/gScPS1mxd" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/rpzO14n56_" },]
+    }, {
         title: "Kasargod Embassy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#nj6xn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDZmNGRkMzYtYmE0Yi00YjJhLWEyMDMtMzNkMjU1NmQzZmIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller", category: "Bollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nj6xn&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
         title: "Zung: The Rust (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#spo65", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmEyZWYyNWYtODA3ZC00NmVjLWE5NDItNjk5ZDdkZTdkMWY0XkEyXkFqcGc@._V1_QL75_UY281_CR18,0,190,281_.jpg", genre: "Drama, Thriller", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#spo65&dl=1", seriesInfo: "Season 1, Episode ALL",
@@ -4049,6 +4096,25 @@ const contentData = [
 
 
     {
+        title: "Bloodhounds (2023)", posterUrl: "https://resizing.flixster.com/dsA-Ag4_K7MwC7zPTGiZ4oaB6tg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24811658_b_v8_ac.jpg", genre: "Drama, Mystery & Thriller, Sports, Action", category: "Korean Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/v0oaHP8be" }, 
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/VJkXQVmNn" }, 
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/vFx_NmoGI" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/1vgWC7GON" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/396ydw9Gs" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/lBEH2VCgG" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/XGynbRJKgq" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/q1q895up1" },]
+    }, {
+        title: "Bloodhounds (2026)", posterUrl: "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQYptQmMPHj4jbNgGy0-0jD1XPusbbqHMi5slk_gy5Ue9MWtWqoSRzffxSMRYNEPzzrmOEWECd_s-TRjZcIS83A9_0qXVvEcUhdeEmyAtescXa1_y-JMWnXJVHRsUZ43i3js6eu_B1Omt0QSbP7XhkL0l.jpg?r=d5c", genre: "Drama, Mystery & Thriller, Sports, Action", category: "Korean Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/0KgeAymfK" }, 
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/B9dLy0EC4" }, 
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/4CeLma4gn7" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/VoqjOKk0k" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/RL1Jp6Cbi" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/3MuH44tLg" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/bIBuYq_VW" },]
+    }, {
         title: "The Art of Sarah (2026)", embedUrl: "https://short.icu/Rk2zJKz3P", posterUrl: "https://resizing.flixster.com/o_em7aB_fmuHoFx3MMgKSIx5ZuU=/fit-in/705x460/v2/https://resizing.flixster.com/UTLrAc8_4B5rm_0mapKYg1RJV9g=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMzliNWU1NDctNWFhNy00YTVlLTkxODktMjkxZDhiNjA0MmQ1LmpwZw==", genre: "Mystery & Thriller", category: "Korean Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode ALL" /* NEW SERIES INFO */
     }, {
         title: "Cheat on Me, If You Can (2021)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDgyZTQ1MDItNmIxMy00Mjk1LTk5NmEtNjQxZGYyOWMyMGFiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Thriller, Mystery", category: "Korean Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-16", episodes: [
