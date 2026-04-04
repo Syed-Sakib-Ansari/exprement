@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Alanis (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#cpjqb", posterUrl: "https://www.moviezine.se/wp-content/uploads/2025/02/large_45dbd95239a64d7ba893b958370fa97a-MV5BMTAxZTIwZWEtYTcwMy00MDk0LWJjM2YtNWU2YjE2YTYyZjhjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1.jpg", genre: "Drama, Adult", category: "Recent Adds", language: "Spanish", quality:"webrip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#cpjqb&dl=1"
+    }, {
         title: "Bloodhounds (2023)", posterUrl: "https://resizing.flixster.com/dsA-Ag4_K7MwC7zPTGiZ4oaB6tg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24811658_b_v8_ac.jpg", genre: "Drama, Mystery & Thriller, Sports, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/v0oaHP8be" }, 
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/VJkXQVmNn" }, 
