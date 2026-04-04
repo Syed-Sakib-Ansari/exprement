@@ -1,5 +1,9 @@
 const contentData = [
     {
+        title: "Kill Her Goats (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#1tppi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjIwN2NkYTItYzgyZi00MTE0LWIyNTktZGU2YWZmNjFlN2MzXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller, Comedy", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1tppi&dl=1",
+    }, {
+        title: "Bone Lake (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#5if6t", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGJiZmEwOWUtZDViNS00N2IyLTgzY2UtZDJmOGJiYmRkMGY4XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5if6t&dl=1",
+    }, {
         title: "Alanis (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#cpjqb", posterUrl: "https://www.moviezine.se/wp-content/uploads/2025/02/large_45dbd95239a64d7ba893b958370fa97a-MV5BMTAxZTIwZWEtYTcwMy00MDk0LWJjM2YtNWU2YjE2YTYyZjhjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1.jpg", genre: "Drama, Adult", category: "Recent Adds", language: "Spanish", quality:"webrip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#cpjqb&dl=1"
     }, {
         title: "Bloodhounds (2023)", posterUrl: "https://resizing.flixster.com/dsA-Ag4_K7MwC7zPTGiZ4oaB6tg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24811658_b_v8_ac.jpg", genre: "Drama, Mystery & Thriller, Sports, Action", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
@@ -60,10 +64,6 @@ const contentData = [
         title: "Basic Instinct (1992)", embedUrl: "https://moviedakhi.4meplayer.com/#6ea9u", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2U2ODc1N2ItNTBiOC00MjA0LTgwNDAtODYwYWE5NTE5ODU3XkEyXkFqcGc@._V1_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Recent Adds", language: "dual audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ea9u&dl=1"
     }, {
         title: "Basic Instinct 2 (2006)", embedUrl: "https://moviedakhi.4meplayer.com/#9nip3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkzNzM3ODY3Nl5BMl5BanBnXkFtZTcwNzMyNDcyNA@@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Recent Adds", language: "dual audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9nip3&dl=1"
-    }, {
-        title: "Eesha (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#chlwa", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjFjNzFkNzQtNTk4MS00N2ZhLTk0YzEtMDU3NDg3MTRkZDFkXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#chlwa&dl=1",
-    }, {
-        title: "Crime 101 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#irzad", posterUrl: "https://resizing.flixster.com/Mv63F7tYNvWkA57kSncR8nwYGbQ=/fit-in/705x460/v2/https://resizing.flixster.com/6HH4xeWyY3W8I3mkI7kVKnLuUeo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA3NTc3ZGNkLWE4ZDQtNDU1NC04MmQ3LTViYTUxY2Y3NDMzNy5qcGc=", genre: "Crime, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#irzad&dl=1"
     },
 
 
@@ -455,6 +455,22 @@ const contentData = [
 
 
     {
+        title: "Kill Her Goats (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#1tppi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjIwN2NkYTItYzgyZi00MTE0LWIyNTktZGU2YWZmNjFlN2MzXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller, Comedy", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1tppi&dl=1",
+    }, {
+        title: "Eden Lake (2008)", embedUrl: "https://moviedakhi.4meplayer.com/#hfnzk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWNmNDI2ZTYtYTliOC00ZjExLWE5MTktZjQzMjUzYWEwMTc3XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller, Mystery", category: "Hollywood", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfnzk&dl=1",
+    }, {
+        title: "Caddo Lake (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#hfnfu", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmIyOGI3NjgtZWJlYS00NzQ0LWJkMDUtNjhlYmFkYjI3NTM5XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Sci-Fi, Time Travel, Thriller", category: "Hollywood", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfnfu&dl=1",
+    }, {
+        title: "Bone Lake (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#5if6t", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGJiZmEwOWUtZDViNS00N2IyLTgzY2UtZDJmOGJiYmRkMGY4XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5if6t&dl=1",
+    }, {
+        title: "It Follows (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#6xr1z", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmI0ZTg2ZmUtZThiNy00MTQxLWE5MzMtZTQzMGFlOWRkOGRmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller, Mystery", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xr1z&dl=1",
+    }, {
+        title: "Chaos Walking (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#qnzan", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTVlODY5MWMtZWM0Zi00ZWJkLTg1MTItZjViNTg1YzZmZDIwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Drama, Fantasy, Sci-Fi, Survival", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qnzan&dl=1",
+    }, {
+        title: "The Babadook (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#vp59y", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk0NzMzODc2NF5BMl5BanBnXkFtZTgwOTYzNTM1MzE@._V1_.jpg", genre: "Drama, Mystery, Horror, Thriller", category: "Hollywood", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vp59y&dl=1",
+    }, {
+        title: "The Darker the Lake (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#5iff5", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGFlMzUxNDEtZDFkMS00NmRhLWJlMDYtNTM5MTZkYjM0ZjQzXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller, Mystery", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5iff5&dl=1",
+    }, {
         title: "Killer Whale (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9zicg", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDlkM2Y3NjUtZTlkNS00NzA5LTk5ZmMtNzE0MTdkYjJhNDZiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Horror, Mystery, Thriller, Survival", category: "Hollywood", language: "Dual Audio", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zicg&dl=1",
     }, {
         title: "Skull: The Mask (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#ygfmv", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzU4M2NmNWQtNWY4Mi00NzE2LTg5ZjItMTliZTQ3Y2RkZGJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Fantasy", category: "Hollywood", language: "Dual Audio", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ygfmv&dl=1",
@@ -3189,6 +3205,8 @@ const contentData = [
 
 
     {
+        title: "1000 Men and Me: The Bonnie Blue Story (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#5ifn5", posterUrl: "https://flixpatrol.com/runtime/cache/files/posters/5/w350/5dcgoyf8nt6xt4vsr6nrn6nwhuz.jpg", genre: "Adult, Erotic, Romance", category: "Others", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ifn5&dl=1"
+    }, {
         title: "Monella (Frivolous Lola) (1998)", embedUrl: "https://moviedakhi.4meplayer.com/#c5edn", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/0ac67915da04969d4c41e0640c1660321561ccca5eb502837f067bc8a3acd0e6.jpg", genre: "Adult, Comedy, Romance", category: "Others", language: "English", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5edn&dl=1"
     }, {
         title: "After Porn Ends (2012)", embedUrl: "https://moviedakhi.4meplayer.com/#yzeny", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjE0NTg2NTM1NF5BMl5BanBnXkFtZTcwNTExNjg3Nw@@._V1_.jpg", genre: "Documentary, Adult", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzeny&dl=1"
