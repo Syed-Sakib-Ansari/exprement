@@ -64,8 +64,6 @@ const contentData = [
         title: "Eesha (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#chlwa", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjFjNzFkNzQtNTk4MS00N2ZhLTk0YzEtMDU3NDg3MTRkZDFkXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#chlwa&dl=1",
     }, {
         title: "Crime 101 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#irzad", posterUrl: "https://resizing.flixster.com/Mv63F7tYNvWkA57kSncR8nwYGbQ=/fit-in/705x460/v2/https://resizing.flixster.com/6HH4xeWyY3W8I3mkI7kVKnLuUeo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA3NTc3ZGNkLWE4ZDQtNDU1NC04MmQ3LTViYTUxY2Y3NDMzNy5qcGc=", genre: "Crime, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#irzad&dl=1"
-    }, {
-        title: "Modern Times (1936)", embedUrl: "https://moviedakhi.4meplayer.com/#irzad", posterUrl: "https://upload.wikimedia.org/wikipedia/commons/3/36/Modern_Times_poster.jpg", genre: "Comedy, Drama, Romance", category: "Recent Adds", language: "English", quality:"Blu-Ray", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#irzad&dl=1"
     },
 
 
