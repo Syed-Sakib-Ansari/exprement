@@ -3450,16 +3450,6 @@ const contentData = [
 
 
     {
-        title: "Maamla Legal Hai (2024)", posterUrl: "https://occ-0-648-299.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABeesuK11XmPJP9CwMZhzs9GdNPiL_tGGLeNHSASX1gm9oRt3fsrHwkSThkXRmfTt2fIGuSm4Ksc9ys_wvzST1cMivdTUsTPmbANa.jpg?r=d7b", genre: "Comedy, Drama", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/AkQAhOiaY" }, 
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/IaMLnK7tjr" }, 
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/i_68X5bx_" }, 
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/QQXRiMepq" }, 
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/y6gooV5Z7" }, 
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/fSfeIuWa7" }, 
-            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/TW3oQJZq1C" },
-            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/pQx1gH07O" },]
-    }, {
         title: "Maamla Legal Hai (2026)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26774733_b_v8_ab.jpg", genre: "Comedy, Drama", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/faGSYUEHJ" }, 
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/jAowo7ztJT" }, 
@@ -3483,6 +3473,16 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/bq_EYMkLO" },]
     }, {
         title: "Talaash (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qfytq", posterUrl: "https://xstreamcp-assets-msp.streamready.in/assets/HOICHOI/SERIES/694b3d79f918603faf7b2d4c/images/PORTRAIT/1311184e6212-4a8e-b44c-df9ef96d3a9e-Talaash_3x4.jpg", genre: "Thriller, Crime", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfytq&dl=1", seriesInfo: "Season 1, Episode All"
+    }, {
+        title: "Maamla Legal Hai (2024)", posterUrl: "https://occ-0-648-299.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABeesuK11XmPJP9CwMZhzs9GdNPiL_tGGLeNHSASX1gm9oRt3fsrHwkSThkXRmfTt2fIGuSm4Ksc9ys_wvzST1cMivdTUsTPmbANa.jpg?r=d7b", genre: "Comedy, Drama", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/AkQAhOiaY" }, 
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/IaMLnK7tjr" }, 
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/i_68X5bx_" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/QQXRiMepq" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/y6gooV5Z7" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/fSfeIuWa7" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/TW3oQJZq1C" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/pQx1gH07O" },]
     }, {
         title: "Sankalp (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fxhof", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTcwMWIwMGMtOTNhZS00Yzk5LWI0ZDYtZTM2NmE5MjdhZWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller, Drama", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode All"
     }, {
