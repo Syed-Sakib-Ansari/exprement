@@ -1,5 +1,9 @@
 const contentData = [
     {
+        title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oerkb", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oerkb&dl=1"
+    }, {
+        title: "105 Minutes (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#8drcf", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTk0MjAyMTgtM2RhOC00MzY0LTlmYmEtYjcwZTEzNDdkODI2XkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Horror", category: "Recent Adds", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8drcf&dl=1",
+    }, {
         title: "Kill Her Goats (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#1tppi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjIwN2NkYTItYzgyZi00MTE0LWIyNTktZGU2YWZmNjFlN2MzXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller, Comedy", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1tppi&dl=1",
     }, {
         title: "Bone Lake (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#5if6t", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGJiZmEwOWUtZDViNS00N2IyLTgzY2UtZDJmOGJiYmRkMGY4XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5if6t&dl=1",
@@ -60,10 +64,6 @@ const contentData = [
         title: "Bhairathi Ranagal (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#asx8r", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWNhOWY3YWQtYmIzYy00MTQ0LTg0OGEtZDY1ZjgyZDZlMjNmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#asx8r&dl=1",
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
-    }, {
-        title: "Basic Instinct (1992)", embedUrl: "https://moviedakhi.4meplayer.com/#6ea9u", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2U2ODc1N2ItNTBiOC00MjA0LTgwNDAtODYwYWE5NTE5ODU3XkEyXkFqcGc@._V1_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Recent Adds", language: "dual audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ea9u&dl=1"
-    }, {
-        title: "Basic Instinct 2 (2006)", embedUrl: "https://moviedakhi.4meplayer.com/#9nip3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkzNzM3ODY3Nl5BMl5BanBnXkFtZTcwNzMyNDcyNA@@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Recent Adds", language: "dual audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9nip3&dl=1"
     },
 
 
@@ -2161,6 +2161,8 @@ const contentData = [
 
 
     {
+        title: "105 Minutes (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#8drcf", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTk0MjAyMTgtM2RhOC00MzY0LTlmYmEtYjcwZTEzNDdkODI2XkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Horror", category: "South", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8drcf&dl=1",
+    }, {
         title: "Mrithyunjay (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qn6ut", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTU1ODY3N2UtZjZkYy00MGUxLWEzN2MtODU3NDMwZWIzZGJhXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qn6ut&dl=1",
     }, {
         title: "Sampradayini Suppini Suddapoosani (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dcmq6", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Sampradayini-Suppini-Suddapoosani-poster-12350c60-1148-11f1-a57b-5bff48fad14c.jpg", genre: "Drama, Thriller, Crime, Comedy", category: "South", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dcmq6&dl=1",
@@ -2584,7 +2586,7 @@ const contentData = [
     }, {
         title: "The Bad Guys: A Very Bad Holiday (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#vpwzx", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDMwNGFmMjMtYzY5MS00Y2IyLWJjZjYtYWJiZGJkOWMwNDRiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Action, Animation", category: "Animation", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vpwzx&dl=1"
     }, {
-        title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#irz5h", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "English", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#irz5h&dl=1"
+        title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oerkb", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oerkb&dl=1"
     }, {
         title: "The Super Mario Bros (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#8diuc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGU4NGQ4NjYtMWI3Ni00MDNkLWJmZTEtNzg0N2MyYjk0YzgxXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8diuc&dl=1"
     }, {
