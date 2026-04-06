@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Seetha Payanam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ixqx", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWUyNDdjYmQtOGNkZi00MmRkLTgyOGUtZmU4MmM2YWZhODcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ixqx&dl=1",
+    }, {
         title: "Under Fire (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#9zjdz", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjBhN2Y5NmMtODZjYy00ZDQxLTg2OTYtOTBhYTU4MTA1OTUyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zjdz&dl=1",
     }, {
         title: "God Father (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#6xcjy", posterUrl: "https://m.media-amazon.com/images/M/MV5BODY5ODg2NTItNmVlOC00NmQ0LTgzZTEtYTAyNzc2NGY3YmEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Action, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xcjy&dl=1",
@@ -62,8 +64,6 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/bE_vQ3rDJ" }, 
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/gScPS1mxd" },
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/rpzO14n56_" },]
-    }, {
-        title: "Mrithyunjay (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qn6ut", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTU1ODY3N2UtZjZkYy00MGUxLWEzN2MtODU3NDMwZWIzZGJhXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qn6ut&dl=1",
     },
 
 
@@ -455,6 +455,14 @@ const contentData = [
 
 
     {
+        title: "Coma (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#s56mx", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2Y1ZDI3YTMtZDI1ZS00NDU0LWI1Y2ItMTRhN2U3NzQ3NDU1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Mystery, Sci-Fi", category: "Hollywood", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s56mx&dl=1",
+    }, {
+        title: "A.I. Rising (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#z1ujz", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmExOWI5MTktMjVjOC00MTRhLWIyMzItYjk4OWFjYzQzMDMwXkEyXkFqcGc@._V1_.jpg", genre: "Sci-Fi, Romance", category: "Hollywood", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#z1ujz&dl=1",
+    }, {
+        title: "Pulse 2: Afterlife (2008)", embedUrl: "https://moviedakhi.4meplayer.com/#8ds69", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjE0NjExNDk5NF5BMl5BanBnXkFtZTgwNzg0NzAwNzE@._V1_.jpg", genre: "Drama, Horror, Sci-Fi", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8ds69&dl=1",
+    }, {
+        title: "Do Not Enter (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jwy1u", posterUrl: "https://m.media-amazon.com/images/M/MV5BODJkYzMxNGUtNmU4OS00NTFmLTg0NWMtMDM0YTI0YmU4MGQzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jwy1u&dl=1",
+    }, {
         title: "Under Fire (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#9zjdz", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjBhN2Y5NmMtODZjYy00ZDQxLTg2OTYtOTBhYTU4MTA1OTUyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Hollywood", language: "Dual Audio", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zjdz&dl=1",
     }, {
         title: "The Drama (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#z1co3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcwOGZhYmItYTg3ZS00NjUwLWJiMmQtMjU5YjEwYWY0NmNkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Romance", category: "Hollywood", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#z1co3&dl=1",
@@ -477,11 +485,27 @@ const contentData = [
     }, {
         title: "The Babadook (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#vp59y", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk0NzMzODc2NF5BMl5BanBnXkFtZTgwOTYzNTM1MzE@._V1_.jpg", genre: "Drama, Mystery, Horror, Thriller", category: "Hollywood", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vp59y&dl=1",
     }, {
+        title: "The Purge (2013)", embedUrl: "https://moviedakhi.4meplayer.com/#6xman", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTQzNTcwODEyM15BMl5BanBnXkFtZTcwMjM1MDI0OQ@@._V1_.jpg", genre: "Sci-Fi, Mystery, Horror, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xman&dl=1",
+    }, {
+        title: "The Purge: Election Year (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#irbdq", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjI3MDI0MTA1N15BMl5BanBnXkFtZTgwOTk4NjU5ODE@._V1_.jpg", genre: "Sci-Fi, Mystery, Horror, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#irbdq&dl=1",
+    }, {
+        title: "The Purge: Anarchy (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#8dsg6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDA0NWNhMTMtMmE4ZS00OGQ0LWEyMDctNThjMzhkNjZlYzMwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Sci-Fi, Mystery, Horror, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8dsg6&dl=1",
+    }, {
+        title: "The Forever Purge (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#nkw1w", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWVmYmE5ZWQtY2E3NC00Mzk1LWEzMzYtNjkyM2E0MGY0MjcxXkEyXkFqcGc@._V1_.jpg", genre: "Sci-Fi, Mystery, Horror, Thriller, Action, Crime", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nkw1w&dl=1",
+    }, {
+        title: "Climax (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#p6eog", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWQwOTVmNGQtNGU1Ny00ODNkLTkzMmMtYzY1ZWQyMzk0Y2ZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Mystery, Horror, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#p6eog&dl=1",
+    }, {
+        title: "The House That Jack Built (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#3avgh", posterUrl: "https://upload.wikimedia.org/wikipedia/en/4/4c/The_House_That_Jack_Built.png", genre: "Drama, Mystery, Horror, Thriller, Crime", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3avgh&dl=1",
+    }, {
+        title: "Hush (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#9zkz6", posterUrl: "https://resizing.flixster.com/wRnCS9N2bCqbkW4bt5Vyz71vXgM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUwN2YwNDZjLTZiZTEtNDU1Zi04OGQwLTI4NDlkMzY1OWI2MC5qcGc=", genre: "Drama, Mystery, Horror, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zkz6&dl=1",
+    }, {
         title: "The Darker the Lake (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#5iff5", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGFlMzUxNDEtZDFkMS00NmRhLWJlMDYtNTM5MTZkYjM0ZjQzXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller, Mystery", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5iff5&dl=1",
     }, {
         title: "Killer Whale (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9zicg", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDlkM2Y3NjUtZTlkNS00NzA5LTk5ZmMtNzE0MTdkYjJhNDZiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Horror, Mystery, Thriller, Survival", category: "Hollywood", language: "Dual Audio", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zicg&dl=1",
     }, {
         title: "Skull: The Mask (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#ygfmv", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzU4M2NmNWQtNWY4Mi00NzE2LTg5ZjItMTliZTQ3Y2RkZGJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Fantasy", category: "Hollywood", language: "Dual Audio", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ygfmv&dl=1",
+    }, {
+        title: "Panic Room (2002)", embedUrl: "https://moviedakhi.4meplayer.com/#3avaq", posterUrl: "https://m.media-amazon.com/images/M/MV5BODU0ZGM0MjctM2YxYy00OWY1LTk2N2YtNWE4ZWQ2ODQwMTI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Thriller", category: "Hollywood", language: "Dual Audio", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3avaq&dl=1",
     }, {
         title: "Hollow Man II (2006)", embedUrl: "https://moviedakhi.4meplayer.com/#5i8kg", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcxNzEyMTIzMV5BMl5BanBnXkFtZTgwMDAzNjAwNzE@._V1_FMjpg_UX1000_.jpg", genre: "Action, Horror, Mystery, Thriller, Sci-Fi", category: "Hollywood", language: "Hindi", quality:"bluray", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5i8kg&dl=1",
     }, {
@@ -2177,6 +2201,8 @@ const contentData = [
 
 
     {
+        title: "Seetha Payanam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ixqx", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWUyNDdjYmQtOGNkZi00MmRkLTgyOGUtZmU4MmM2YWZhODcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ixqx&dl=1",
+    }, {
         title: "God Father (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#6xcjy", posterUrl: "https://m.media-amazon.com/images/M/MV5BODY5ODg2NTItNmVlOC00NmQ0LTgzZTEtYTAyNzc2NGY3YmEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Action, Thriller", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xcjy&dl=1",
     }, {
         title: "Maarnami (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8djxe", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjIxMmI4NmMtNzJmYy00NGQ1LTllNmQtOTdkOTkxMWQ4OTM1XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8djxe&dl=1",
