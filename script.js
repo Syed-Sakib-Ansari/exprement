@@ -1,5 +1,13 @@
 const contentData = [
     {
+        title: "Under Fire (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#9zjdz", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjBhN2Y5NmMtODZjYy00ZDQxLTg2OTYtOTBhYTU4MTA1OTUyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zjdz&dl=1",
+    }, {
+        title: "God Father (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#6xcjy", posterUrl: "https://m.media-amazon.com/images/M/MV5BODY5ODg2NTItNmVlOC00NmQ0LTgzZTEtYTAyNzc2NGY3YmEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Action, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xcjy&dl=1",
+    }, {
+        title: "Maarnami (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8djxe", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjIxMmI4NmMtNzJmYy00NGQ1LTllNmQtOTdkOTkxMWQ4OTM1XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8djxe&dl=1",
+    }, {
+        title: "Bhartha Mahasayulaku Wignyapthi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#astbm", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmZiZmFjZjktZmM3ZC00MjUxLTkyODktY2FiMzdlY2FmN2Q5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#astbm&dl=1",
+    }, {
         title: "The Drama (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#z1co3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcwOGZhYmItYTg3ZS00NjUwLWJiMmQtMjU5YjEwYWY0NmNkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Romance", category: "Recent Adds", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#z1co3&dl=1",
     }, {
         title: "Subservience (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#yge9b", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzFlOTI1MzQtYjNiNC00ZDc4LTgyODQtZWI0N2JiZjVjOGI1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Sci-Fi, Thriller, Adult", category: "Recent Adds", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yge9b&dl=1",
@@ -56,14 +64,6 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/rpzO14n56_" },]
     }, {
         title: "Mrithyunjay (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qn6ut", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTU1ODY3N2UtZjZkYy00MGUxLWEzN2MtODU3NDMwZWIzZGJhXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qn6ut&dl=1",
-    }, {
-        title: "Sampradayini Suppini Suddapoosani (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dcmq6", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Sampradayini-Suppini-Suddapoosani-poster-12350c60-1148-11f1-a57b-5bff48fad14c.jpg", genre: "Drama, Thriller, Crime, Comedy", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dcmq6&dl=1",
-    }, {
-        title: "Vadh 2 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#askas", posterUrl: "https://resizing.flixster.com/jgC3iEPqNAxo1n-aifVLCx7AKTk=/fit-in/705x460/v2/https://resizing.flixster.com/KYE6nIQEb_rXr5HLOrJ7Rv7fYmc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzliMWY2OWY0LTcwMzAtNDdhYi05MTM0LTU0ZmI1OTI4ODQwNC5qcGc=", genre: "Mystery & Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#askas&dl=1"
-    }, {
-        title: "Bhabiji Ghar Par Hain – Fun on the Run (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oegyd", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTU5NzQwMTktZTVhOC00MjllLThjZDEtMGNkYjgwNWFhMmVmXkEyXkFqcGc@._V1_FMjpg_UY600_.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oegyd&dl=1"
-    }, {
-        title: "Skull Island (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#rlc31", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDg4ZTVlZDctMTRjNy00MWFlLWI5ZWItNWM3YTNhM2ExYmQyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure", category: "Recent Adds", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rlc31&dl=1"
     },
 
 
@@ -455,6 +455,8 @@ const contentData = [
 
 
     {
+        title: "Under Fire (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#9zjdz", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjBhN2Y5NmMtODZjYy00ZDQxLTg2OTYtOTBhYTU4MTA1OTUyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Hollywood", language: "Dual Audio", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zjdz&dl=1",
+    }, {
         title: "The Drama (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#z1co3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcwOGZhYmItYTg3ZS00NjUwLWJiMmQtMjU5YjEwYWY0NmNkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Romance", category: "Hollywood", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#z1co3&dl=1",
     }, {
         title: "Subservience (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#yge9b", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzFlOTI1MzQtYjNiNC00ZDc4LTgyODQtZWI0N2JiZjVjOGI1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Sci-Fi, Thriller, Adult", category: "Hollywood", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yge9b&dl=1",
@@ -2175,6 +2177,12 @@ const contentData = [
 
 
     {
+        title: "God Father (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#6xcjy", posterUrl: "https://m.media-amazon.com/images/M/MV5BODY5ODg2NTItNmVlOC00NmQ0LTgzZTEtYTAyNzc2NGY3YmEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Action, Thriller", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xcjy&dl=1",
+    }, {
+        title: "Maarnami (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8djxe", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjIxMmI4NmMtNzJmYy00NGQ1LTllNmQtOTdkOTkxMWQ4OTM1XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8djxe&dl=1",
+    }, {
+        title: "Bhartha Mahasayulaku Wignyapthi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#astbm", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmZiZmFjZjktZmM3ZC00MjUxLTkyODktY2FiMzdlY2FmN2Q5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#astbm&dl=1",
+    }, {
         title: "105 Minutes (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#8drcf", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTk0MjAyMTgtM2RhOC00MzY0LTlmYmEtYjcwZTEzNDdkODI2XkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Horror", category: "South", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8drcf&dl=1",
     }, {
         title: "Mrithyunjay (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qn6ut", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTU1ODY3N2UtZjZkYy00MGUxLWEzN2MtODU3NDMwZWIzZGJhXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qn6ut&dl=1",
