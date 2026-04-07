@@ -5057,41 +5057,41 @@ searchInput.addEventListener('keydown', (e) => {
     }
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     renderCategories();
-//     initHeroSlider();
-//     renderRecentAdds();
-//     renderCategorySections();
-//     initLibraryRender();
-//     updateCanonical(window.location.href);
+document.addEventListener('DOMContentLoaded', () => {
+    renderCategories();
+    initHeroSlider();
+    renderRecentAdds();
+    renderCategorySections();
+    initLibraryRender();
+    updateCanonical(window.location.href);
 
-//     const isBlob = window.location.protocol === 'blob:';
+    const isBlob = window.location.protocol === 'blob:';
 
-//     if (history.state) {
-//         const state = history.state;
-//         switchView(state.view, state.category, false, state.displayedCount);
-//         setTimeout(() => window.scrollTo(0, state.scrollY || 0), 100); // 100ms safety delay allowing DOM to paint before restoring scroll
-//     } else if (!isBlob) {
-//         const params = new URLSearchParams(window.location.search);
-//         const view = params.get('view') || 'home';
-//         const category = params.get('category');
-//         try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, ''); } catch (e) { }
-//         switchView(view, category, false);
-//     } else {
-//         switchView('home', null, false);
-//     }
+    if (history.state) {
+        const state = history.state;
+        switchView(state.view, state.category, false, state.displayedCount);
+        setTimeout(() => window.scrollTo(0, state.scrollY || 0), 100); // 100ms safety delay allowing DOM to paint before restoring scroll
+    } else if (!isBlob) {
+        const params = new URLSearchParams(window.location.search);
+        const view = params.get('view') || 'home';
+        const category = params.get('category');
+        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, ''); } catch (e) { }
+        switchView(view, category, false);
+    } else {
+        switchView('home', null, false);
+    }
 
-//             // TRIGGER POPUP ON LOAD (COMMENTED OUT)
+            // TRIGGER POPUP ON LOAD (COMMENTED OUT)
             
-//             setTimeout(() => {
-//                 // NOTE: If you only want to show this ONCE per session, uncomment the 3 lines below:
-//                 // if (!sessionStorage.getItem('popupSeen')) {
-//                     showAnnouncement();
-//                 //     sessionStorage.setItem('popupSeen', 'true');
-//                 // }
-//             }, 5500);
+            setTimeout(() => {
+                // NOTE: If you only want to show this ONCE per session, uncomment the 3 lines below:
+                // if (!sessionStorage.getItem('popupSeen')) {
+                    showAnnouncement();
+                //     sessionStorage.setItem('popupSeen', 'true');
+                // }
+            }, 5500);
             
-// });
+});
 
 // OPTIMIZATION: Use setTimeout to allow the browser to paint the background/navbar 
 // BEFORE locking the main thread with heavy JS rendering
