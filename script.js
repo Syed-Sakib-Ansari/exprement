@@ -5081,15 +5081,15 @@ searchInput.addEventListener('keydown', (e) => {
 //         switchView('home', null, false);
 //     }
 
-//             // TRIGGER POPUP ON LOAD (COMMENTED OUT)
+            // TRIGGER POPUP ON LOAD (COMMENTED OUT)
             
-//             setTimeout(() => {
-//                 // NOTE: If you only want to show this ONCE per session, uncomment the 3 lines below:
-//                 // if (!sessionStorage.getItem('popupSeen')) {
-//                     showAnnouncement();
-//                 //     sessionStorage.setItem('popupSeen', 'true');
-//                 // }
-//             }, 5500);
+            setTimeout(() => {
+                // NOTE: If you only want to show this ONCE per session, uncomment the 3 lines below:
+                // if (!sessionStorage.getItem('popupSeen')) {
+                    showAnnouncement();
+                //     sessionStorage.setItem('popupSeen', 'true');
+                // }
+            }, 5500);
             
 // });
 
