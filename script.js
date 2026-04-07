@@ -5057,41 +5057,41 @@ searchInput.addEventListener('keydown', (e) => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderCategories();
-    initHeroSlider();
-    renderRecentAdds();
-    renderCategorySections();
-    initLibraryRender();
-    updateCanonical(window.location.href);
+// document.addEventListener('DOMContentLoaded', () => {
+//     renderCategories();
+//     initHeroSlider();
+//     renderRecentAdds();
+//     renderCategorySections();
+//     initLibraryRender();
+//     updateCanonical(window.location.href);
 
-    const isBlob = window.location.protocol === 'blob:';
+//     const isBlob = window.location.protocol === 'blob:';
 
-    if (history.state) {
-        const state = history.state;
-        switchView(state.view, state.category, false, state.displayedCount);
-        setTimeout(() => window.scrollTo(0, state.scrollY || 0), 100); // 100ms safety delay allowing DOM to paint before restoring scroll
-    } else if (!isBlob) {
-        const params = new URLSearchParams(window.location.search);
-        const view = params.get('view') || 'home';
-        const category = params.get('category');
-        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, ''); } catch (e) { }
-        switchView(view, category, false);
-    } else {
-        switchView('home', null, false);
-    }
+//     if (history.state) {
+//         const state = history.state;
+//         switchView(state.view, state.category, false, state.displayedCount);
+//         setTimeout(() => window.scrollTo(0, state.scrollY || 0), 100); // 100ms safety delay allowing DOM to paint before restoring scroll
+//     } else if (!isBlob) {
+//         const params = new URLSearchParams(window.location.search);
+//         const view = params.get('view') || 'home';
+//         const category = params.get('category');
+//         try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, ''); } catch (e) { }
+//         switchView(view, category, false);
+//     } else {
+//         switchView('home', null, false);
+//     }
 
-            // TRIGGER POPUP ON LOAD (COMMENTED OUT)
+//             // TRIGGER POPUP ON LOAD (COMMENTED OUT)
             
-            setTimeout(() => {
-                // NOTE: If you only want to show this ONCE per session, uncomment the 3 lines below:
-                // if (!sessionStorage.getItem('popupSeen')) {
-                    showAnnouncement();
-                //     sessionStorage.setItem('popupSeen', 'true');
-                // }
-            }, 5500);
+//             setTimeout(() => {
+//                 // NOTE: If you only want to show this ONCE per session, uncomment the 3 lines below:
+//                 // if (!sessionStorage.getItem('popupSeen')) {
+//                     showAnnouncement();
+//                 //     sessionStorage.setItem('popupSeen', 'true');
+//                 // }
+//             }, 5500);
             
-});
+// });
 
 // OPTIMIZATION: Use setTimeout to allow the browser to paint the background/navbar 
 // BEFORE locking the main thread with heavy JS rendering
@@ -5149,39 +5149,39 @@ window.addEventListener('click', (e) => {
 // ANNOUNCEMENT POPUP LOGIC (COMMENTED OUT)
 // ==========================================
 
-function showAnnouncement() {
-    const popup = document.getElementById('announcementPopup');
-    popup.classList.remove('hidden');
-    popup.classList.add('flex');
+// function showAnnouncement() {
+//     const popup = document.getElementById('announcementPopup');
+//     popup.classList.remove('hidden');
+//     popup.classList.add('flex');
     
-    // Stop background scroll when popup is active
-    savedScrollY = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${savedScrollY}px`;
-    document.body.style.width = '100%';
+//     // Stop background scroll when popup is active
+//     savedScrollY = window.scrollY;
+//     document.body.style.position = 'fixed';
+//     document.body.style.top = `-${savedScrollY}px`;
+//     document.body.style.width = '100%';
     
-    // Small timeout to allow display:flex to apply before animating opacity/transform
-    setTimeout(() => {
-        popup.classList.add('active');
-    }, 50);
-}
+//     // Small timeout to allow display:flex to apply before animating opacity/transform
+//     setTimeout(() => {
+//         popup.classList.add('active');
+//     }, 50);
+// }
 
-function closeAnnouncement() {
-    const popup = document.getElementById('announcementPopup');
-    popup.classList.remove('active');
+// function closeAnnouncement() {
+//     const popup = document.getElementById('announcementPopup');
+//     popup.classList.remove('active');
     
-    // Wait for transition to finish before hiding display
-    setTimeout(() => {
-        popup.classList.add('hidden');
-        popup.classList.remove('flex');
+//     // Wait for transition to finish before hiding display
+//     setTimeout(() => {
+//         popup.classList.add('hidden');
+//         popup.classList.remove('flex');
         
-        // Restore background scroll
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        window.scrollTo(0, savedScrollY);
-    }, 500); 
-}
+//         // Restore background scroll
+//         document.body.style.position = '';
+//         document.body.style.top = '';
+//         document.body.style.width = '';
+//         window.scrollTo(0, savedScrollY);
+//     }, 500); 
+// }
         
 
 // ==========================================
