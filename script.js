@@ -5149,39 +5149,39 @@ window.addEventListener('click', (e) => {
 // ANNOUNCEMENT POPUP LOGIC (COMMENTED OUT)
 // ==========================================
 
-// function showAnnouncement() {
-//     const popup = document.getElementById('announcementPopup');
-//     popup.classList.remove('hidden');
-//     popup.classList.add('flex');
+function showAnnouncement() {
+    const popup = document.getElementById('announcementPopup');
+    popup.classList.remove('hidden');
+    popup.classList.add('flex');
     
-//     // Stop background scroll when popup is active
-//     savedScrollY = window.scrollY;
-//     document.body.style.position = 'fixed';
-//     document.body.style.top = `-${savedScrollY}px`;
-//     document.body.style.width = '100%';
+    // Stop background scroll when popup is active
+    savedScrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.width = '100%';
     
-//     // Small timeout to allow display:flex to apply before animating opacity/transform
-//     setTimeout(() => {
-//         popup.classList.add('active');
-//     }, 50);
-// }
+    // Small timeout to allow display:flex to apply before animating opacity/transform
+    setTimeout(() => {
+        popup.classList.add('active');
+    }, 50);
+}
 
-// function closeAnnouncement() {
-//     const popup = document.getElementById('announcementPopup');
-//     popup.classList.remove('active');
+function closeAnnouncement() {
+    const popup = document.getElementById('announcementPopup');
+    popup.classList.remove('active');
     
-//     // Wait for transition to finish before hiding display
-//     setTimeout(() => {
-//         popup.classList.add('hidden');
-//         popup.classList.remove('flex');
+    // Wait for transition to finish before hiding display
+    setTimeout(() => {
+        popup.classList.add('hidden');
+        popup.classList.remove('flex');
         
-//         // Restore background scroll
-//         document.body.style.position = '';
-//         document.body.style.top = '';
-//         document.body.style.width = '';
-//         window.scrollTo(0, savedScrollY);
-//     }, 500); 
-// }
+        // Restore background scroll
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, savedScrollY);
+    }, 500); 
+}
         
 
 // ==========================================
