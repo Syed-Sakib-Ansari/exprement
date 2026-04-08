@@ -1,5 +1,24 @@
 const contentData = [
     {
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-4", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
+            { number: 4, title: "Episode 4", embedUrl: "https://moviedakhi.4meplayer.com/#rl699" },
+        ]
+    }, {
+        title: "Urban Myths (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#6xl8k", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjhlMGNjNTQtODlmMi00MWZiLThlMTYtNjIzMWVjMDU5ZTgyXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery, Fantasy, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xl8k&dl=1"
+    }, {
+        title: "Agent from Above (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQ1OTFlM2ItYmU3Yi00NWVjLTkzYzUtZTRhMDRhOTQ4YzcxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Crime, Drama, Fantasy, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/fcE1d1ZHW" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/eFueZal4K" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/jiPLkMe1H" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/TcnO1rPct" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/3luRjPmJK" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/6M9hJ8ZFs" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/GXj8YaVg1w" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/PIr1for6G" },,]
+    }, {
         title: "Keeper (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hfsgk", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c6/Keeper_2025_film_poster.jpg", genre: "Horror", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfsgk&dl=1",
     }, {
         title: "Lovebug (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#gv9cf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDgyZGZlYTMtMzAwZS00NjAzLWEzMGYtM2YxNzJkNTIwMDE4XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Romance", category: "Recent Adds", language: "Hindi", quality:"Cam-Hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gv9cf&dl=1",
@@ -27,12 +46,6 @@ const contentData = [
         title: "The Carpenter's Son (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#oejqo", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGI4NGY0Y2UtNzRhOC00YTk4LTkzNTctODhkOTRjOTI5ZGI2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oejqo&dl=1",
     }, {
         title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oerkb", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oerkb&dl=1"
-    }, {
-        title: "105 Minutes (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#8drcf", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTk0MjAyMTgtM2RhOC00MzY0LTlmYmEtYjcwZTEzNDdkODI2XkEyXkFqcGc@._V1_.jpg", genre: "Thriller, Horror", category: "Recent Adds", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8drcf&dl=1",
-    }, {
-        title: "Kill Her Goats (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#1tppi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjIwN2NkYTItYzgyZi00MTE0LWIyNTktZGU2YWZmNjFlN2MzXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller, Comedy", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1tppi&dl=1",
-    }, {
-        title: "Bone Lake (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#5if6t", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGJiZmEwOWUtZDViNS00N2IyLTgzY2UtZDJmOGJiYmRkMGY4XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5if6t&dl=1",
     },
 
 
@@ -440,7 +453,7 @@ const contentData = [
     }, {
         title: "Coma (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#s56mx", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2Y1ZDI3YTMtZDI1ZS00NDU0LWI1Y2ItMTRhN2U3NzQ3NDU1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Mystery, Sci-Fi", category: "Hollywood", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s56mx&dl=1",
     }, {
-        title: "Dead Ringers (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#dcqgf", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjQ0ZjNiYmYtYWE0Yy00NjBlLTgyNjUtZTlkZmQyZjc0OTUyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dcqgf&dl=1",
+        title: "Dead Ringers (1988)", embedUrl: "https://moviedakhi.4meplayer.com/#dcqgf", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTMwZDViNDMtZGJjNC00YzM4LWFiN2YtZjVjNjAwOWNjMTIxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dcqgf&dl=1",
     }, {
         title: "A.I. Rising (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#z1ujz", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmExOWI5MTktMjVjOC00MTRhLWIyMzItYjk4OWFjYzQzMDMwXkEyXkFqcGc@._V1_.jpg", genre: "Sci-Fi, Romance", category: "Hollywood", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#z1ujz&dl=1",
     }, {
@@ -2621,6 +2634,29 @@ const contentData = [
 
 
     {
+        title: "The Bad Guys: Breaking In (2025)", posterUrl: "https://resizing.flixster.com/Vzb33919UsyUnFQu2NaUNxqGoho=/fit-in/705x460/v2/https://resizing.flixster.com/0I1264voZoeRrB5wcOOjO1fSiH0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNTAzNmU1ZDctMzg5NC00ODZiLWIyODAtYzYyYjIxMzFkMjcwLmpwZw==", genre: "Comedy, Adventure, Action, Animation", category: "Animation", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/XMF8aveRE" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/KWeFsH5neZ" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/lOwv7GJ-r" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/j-1HPeUhA" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/DqgYzVUD1" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/mRy63-F6f" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/uhKzi6ZqY" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/V8vweDfxc" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/ADIuOS71Y" },]
+    }, {
+        title: "The Bad Guys: The Series (2026)", posterUrl: "https://resizing.flixster.com/1ydUjABz6jR-mRsvLV4sPA_Jwqc=/fit-in/705x460/v2/https://resizing.flixster.com/wTSPIawAscBICxr2A_0J8z2N8j4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMzIxMmU2Y2MtOWQzNi00YjdmLWIwNzYtMjA0YWUyMzBhNjQ1LmpwZw==", genre: "Comedy, Adventure, Action, Animation", category: "Animation", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/VMi4Oj6Z0" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/M1kPqB-en" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/FaRZflOrx" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/eMGJsxGDp" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/_VWzUPFuA" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/--9yfWE6d" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/l8GDGRKsU" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/0bwFd_2wV" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/OPMuH_-V1" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/W-ZmNgytL" },]
+    }, {
         title: "The Bad Guys (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#qn6cm", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTljOGJiNjYtYTY1Ni00Yzk4LWI2YTUtNTdhYmYyMTgyNDMxXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Action, Animation", category: "Animation", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qn6cm&dl=1"
     }, {
         title: "The Bad Guys 2 (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#gvjph", posterUrl: "https://images.moviesanywhere.com/1b8be53a8e8e291c2832c79413dbfdd1/177749e0-c173-45d8-b9b1-5fbe02b22054.jpg", genre: "Kids & Family, Comedy, Adventure, Action, Animation", category: "Animation", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gvjph&dl=1"
@@ -3062,6 +3098,16 @@ const contentData = [
 
 
     {
+        title: "Agent from Above (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQ1OTFlM2ItYmU3Yi00NWVjLTkzYzUtZTRhMDRhOTQ4YzcxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Crime, Drama, Fantasy, Thriller", category: "Chinese", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/fcE1d1ZHW" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/eFueZal4K" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/jiPLkMe1H" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/TcnO1rPct" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/3luRjPmJK" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/6M9hJ8ZFs" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/GXj8YaVg1w" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/PIr1for6G" },,]
+    }, {
         title: "Skull Island (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#rlc31", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDg4ZTVlZDctMTRjNy00MWFlLWI5ZWItNWM3YTNhM2ExYmQyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure", category: "Chinese", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rlc31&dl=1"
     }, {
         title: "Death Game (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#9n35f", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDFhYzI4YjMtMGE2My00MzI1LWE4NWItZDJiMzRlZTY4NzFiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, History", category: "Chinese", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9n35f&dl=1"
@@ -3634,10 +3680,19 @@ const contentData = [
 
 
     {
+        title: "Dead Ringers (2023)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjQ0ZjNiYmYtYWE0Yy00NjBlLTgyNjUtZTlkZmQyZjc0OTUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/j9pgHg4r7" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/JwETmlJ5w" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/oxpBabb2F" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/OOzvUwS94" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/vJH2UJPTz" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/-c0BfD9PYf" },]
+    }, {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-3", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
+            { number: 4, title: "Episode 4", embedUrl: "https://moviedakhi.4meplayer.com/#rl699" },
         ]
     }, {
         title: "House of David (2025)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWExMTJiMGQtYTA3OC00ZGM0LTg5MGQtZjMwM2VlNTU3YjRhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "History, Drama, Action, Adventure", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-8", episodes: [
@@ -4161,6 +4216,24 @@ const contentData = [
 
 
     {
+        title: "The Silent Sea (2021)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmRmN2JiMDktNWRkNS00NGYwLWI2ZGEtZTE0ZTc0ZWIwMTUxXkEyXkFqcGc@._V1_.jpg", genre: "Sci-Fi, Mystery & Thriller, Space", category: "Korean Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/nyys9rP4p" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/op3rArCln" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/jI-ss798T" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/ncMiAjPJF" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/kNCYKDL1c" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/7-OEgwrs3" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/kgo-XnL2o" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/kfxewKOUw" },]
+    }, {
+        title: "The Bad Guys: The Series (2026)", posterUrl: "https://upload.wikimedia.org/wikipedia/en/d/dd/Family_Matters_%28South_Korean_TV_series%29_poster.png", genre: "Thriller, Drama, Mystery, Thriller", category: "Korean Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/0F4QIUnPI" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/znpSnOkk0" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/sVgHIYhNs" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/qJsR3adeG" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/KTtFKcAEK" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/KrXGFEI5R" },]
+    }, {
         title: "Bloodhounds (2023)", posterUrl: "https://resizing.flixster.com/dsA-Ag4_K7MwC7zPTGiZ4oaB6tg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24811658_b_v8_ac.jpg", genre: "Drama, Mystery & Thriller, Sports, Action", category: "Korean Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/v0oaHP8be" }, 
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/VJkXQVmNn" }, 
