@@ -1,5 +1,15 @@
 const contentData = [
     {
+        title: "Swap (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#dc8d6", posterUrl: "https://img.rgstatic.com/content/movie/f7bdade4-0e71-4373-b0d4-3fdd23f8fcbf/poster-342.jpg", genre: "Horror, Adult, Erotic, Romance", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dc8d6&dl=1"
+    }, {
+        title: "Granny (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oeub1", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzRkMmRiNjMtMmI1NC00NGYxLThlYWMtNGNiODYzNDAyZjFkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oeub1&dl=1",
+    }, {
+        title: "The Ugly (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s5aom", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDdmNGFiOTEtYjYzNS00NThjLThlNDEtZjVjMDY4YTgzM2IwXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5aom&dl=1"
+    }, {
+        title: "Restart the Earth (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#hfcho", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmIzNGYwMGQtYWQzZC00YjljLWEyY2QtNTY4ODY1NzIyNzgyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfcho&dl=1"
+    }, {
+        title: "Now Apocalypse (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#hfcev", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc2YTM0ZDMtMmI3Yi00YTU2LWE1MDMtM2UyNGVlNzEyODhiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfcev&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, {
         title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-2", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },,]
@@ -38,16 +48,6 @@ const contentData = [
         title: "Under Fire (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#9zjdz", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjBhN2Y5NmMtODZjYy00ZDQxLTg2OTYtOTBhYTU4MTA1OTUyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zjdz&dl=1",
     }, {
         title: "God Father (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#6xcjy", posterUrl: "https://m.media-amazon.com/images/M/MV5BODY5ODg2NTItNmVlOC00NmQ0LTgzZTEtYTAyNzc2NGY3YmEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Action, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xcjy&dl=1",
-    }, {
-        title: "Maarnami (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8djxe", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjIxMmI4NmMtNzJmYy00NGQ1LTllNmQtOTdkOTkxMWQ4OTM1XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8djxe&dl=1",
-    }, {
-        title: "Bhartha Mahasayulaku Wignyapthi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#astbm", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmZiZmFjZjktZmM3ZC00MjUxLTkyODktY2FiMzdlY2FmN2Q5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#astbm&dl=1",
-    }, {
-        title: "The Drama (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#z1co3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcwOGZhYmItYTg3ZS00NjUwLWJiMmQtMjU5YjEwYWY0NmNkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Romance", category: "Recent Adds", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#z1co3&dl=1",
-    }, {
-        title: "Subservience (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#yge9b", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzFlOTI1MzQtYjNiNC00ZDc4LTgyODQtZWI0N2JiZjVjOGI1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Sci-Fi, Thriller, Adult", category: "Recent Adds", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yge9b&dl=1",
-    }, {
-        title: "The Carpenter's Son (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#oejqo", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGI4NGY0Y2UtNzRhOC00YTk4LTkzNTctODhkOTRjOTI5ZGI2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oejqo&dl=1",
     },
 
 
@@ -445,6 +445,12 @@ const contentData = [
 
 
     {
+        title: "The Spiderwick Chronicles (2008)", embedUrl: "https://moviedakhi.4meplayer.com/#irpli", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWRiMmUzZTctYWUxNy00ZjkyLWE4NTctMzFlMTFkYmI5NmFkXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Drama,Family, Fantasy, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#irpli&dl=1",
+    }, {
+        title: "Urban Legend (1998)", embedUrl: "https://moviedakhi.4meplayer.com/#s5gfu", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWNkZjQ1NzktNTlkZC00MDRiLWIzNjEtMmQwNDg5NzdjYTI5XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5gfu&dl=1",
+    }, {
+        title: "The Lovely Bones (2010) ", embedUrl: "https://moviedakhi.4meplayer.com/#3awkq", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjAwNDA1MTM2MF5BMl5BanBnXkFtZTcwMzg3NDcwMw@@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Fantasy, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3awkq&dl=1",
+    }, {
         title: "Keeper (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hfsgk", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c6/Keeper_2025_film_poster.jpg", genre: "Horror", category: "Hollywood", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfsgk&dl=1",
     }, {
         title: "Lovebug (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#gv9cf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDgyZGZlYTMtMzAwZS00NjAzLWEzMGYtM2YxNzJkNTIwMDE4XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Romance", category: "Hollywood", language: "Hindi", quality:"Cam-Hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gv9cf&dl=1",
@@ -2207,6 +2213,8 @@ const contentData = [
 
 
     {
+        title: "Granny (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oeub1", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzRkMmRiNjMtMmI1NC00NGYxLThlYWMtNGNiODYzNDAyZjFkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oeub1&dl=1",
+    }, {
         title: "Repu Udayam 10 Gantalaku (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dc3wv", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Repu-Udayam-10-Gantalaku-3bacc810-1bd1-11f1-a70f-69ec258fbf2f.jpg", genre: "Thriller", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dc3wv&dl=1",
     }, {
         title: "Vadam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6xtjt", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDYwNWVjMWQtMmY2Ny00MzA1LTg4MjctZWZhNDZmMTMyN2QzXkEyXkFqcGc@._V1_.jpg", genre: "Action", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xtjt&dl=1",
@@ -3040,6 +3048,8 @@ const contentData = [
 
 
     {
+        title: "The Ugly (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s5aom", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDdmNGFiOTEtYjYzNS00NThjLThlNDEtZjVjMDY4YTgzM2IwXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Korean Country", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5aom&dl=1"
+    }, {
         title: "Urban Myths (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#6xl8k", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjhlMGNjNTQtODlmMi00MWZiLThlMTYtNjIzMWVjMDU5ZTgyXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery, Fantasy, Thriller", category: "Korean Country", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xl8k&dl=1"
     }, {
         title: "Humint (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xmdiz", posterUrl: "https://a.ltrbxd.com/resized/film-poster/1/1/5/2/0/9/1/1152091-humint-0-230-0-345-crop.jpg?v=a7d6143755", genre: "Action, Drama, Thriller", category: "Korean Country", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xmdiz&dl=1"
@@ -3100,6 +3110,8 @@ const contentData = [
 
 
     {
+        title: "Restart the Earth (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#hfcho", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmIzNGYwMGQtYWQzZC00YjljLWEyY2QtNTY4ODY1NzIyNzgyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Sci-Fi, Thriller", category: "Chinese", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfcho&dl=1"
+    }, {
         title: "Agent from Above (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQ1OTFlM2ItYmU3Yi00NWVjLTkzYzUtZTRhMDRhOTQ4YzcxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Crime, Drama, Fantasy, Thriller", category: "Chinese", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/fcE1d1ZHW" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/eFueZal4K" },
@@ -3300,6 +3312,8 @@ const contentData = [
 
 
     {
+        title: "Swap (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#dc8d6", posterUrl: "https://img.rgstatic.com/content/movie/f7bdade4-0e71-4373-b0d4-3fdd23f8fcbf/poster-342.jpg", genre: "Horror, Adult, Erotic, Romance", category: "Others", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dc8d6&dl=1"
+    }, {
         title: "1000 Men and Me: The Bonnie Blue Story (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#5ifn5", posterUrl: "https://flixpatrol.com/runtime/cache/files/posters/5/w350/5dcgoyf8nt6xt4vsr6nrn6nwhuz.jpg", genre: "Adult, Erotic, Romance", category: "Others", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ifn5&dl=1"
     }, {
         title: "Monella (Frivolous Lola) (1998)", embedUrl: "https://moviedakhi.4meplayer.com/#c5edn", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/0ac67915da04969d4c41e0640c1660321561ccca5eb502837f067bc8a3acd0e6.jpg", genre: "Adult, Comedy, Romance", category: "Others", language: "English", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5edn&dl=1"
@@ -3682,6 +3696,8 @@ const contentData = [
 
 
     {
+        title: "Now Apocalypse (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#hfcev", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc2YTM0ZDMtMmI3Yi00YTU2LWE1MDMtM2UyNGVlNzEyODhiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfcev&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, {
         title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-2", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },,]
