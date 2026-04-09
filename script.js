@@ -1,5 +1,22 @@
 const contentData = [
     {
+        title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
+    }, {
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-4", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/pYGSgWI-C" },
+        ]
+    }, {
+        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-2", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },,]
+    }, {
+        title: "Kaakaa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yg5pi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzMwY2ZjZjUtZTkzOC00YTI1LWI4MTctZTBmYTFlMmE5ZmUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Recent Adds", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yg5pi&dl=1",
+    }, {
+        title: "Anthony (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5iwnd", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2FiMzcxZWUtM2ZhMS00ZjRjLTgxM2YtYWZiYjU4Nzc0ODJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5iwnd&dl=1",
+    }, {
         title: "Swap (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#dc8d6", posterUrl: "https://img.rgstatic.com/content/movie/f7bdade4-0e71-4373-b0d4-3fdd23f8fcbf/poster-342.jpg", genre: "Horror, Adult, Erotic, Romance", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dc8d6&dl=1"
     }, {
         title: "Granny (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oeub1", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzRkMmRiNjMtMmI1NC00NGYxLThlYWMtNGNiODYzNDAyZjFkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oeub1&dl=1",
@@ -9,17 +26,6 @@ const contentData = [
         title: "Restart the Earth (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#hfcho", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmIzNGYwMGQtYWQzZC00YjljLWEyY2QtNTY4ODY1NzIyNzgyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfcho&dl=1"
     }, {
         title: "Now Apocalypse (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#hfcev", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc2YTM0ZDMtMmI3Yi00YTU2LWE1MDMtM2UyNGVlNzEyODhiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfcev&dl=1", seriesInfo: "Season 1, Episode ALL",
-    }, {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-2", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },,]
-    }, {
-        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-4", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/pYGSgWI-C" },
-        ]
     }, {
         title: "Urban Myths (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#6xl8k", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjhlMGNjNTQtODlmMi00MWZiLThlMTYtNjIzMWVjMDU5ZTgyXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery, Fantasy, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xl8k&dl=1"
     }, {
@@ -42,12 +48,6 @@ const contentData = [
         title: "Repu Udayam 10 Gantalaku (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dc3wv", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Repu-Udayam-10-Gantalaku-3bacc810-1bd1-11f1-a70f-69ec258fbf2f.jpg", genre: "Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dc3wv&dl=1",
     }, {
         title: "Vadam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6xtjt", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDYwNWVjMWQtMmY2Ny00MzA1LTg4MjctZWZhNDZmMTMyN2QzXkEyXkFqcGc@._V1_.jpg", genre: "Action", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xtjt&dl=1",
-    }, {
-        title: "Seetha Payanam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ixqx", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWUyNDdjYmQtOGNkZi00MmRkLTgyOGUtZmU4MmM2YWZhODcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ixqx&dl=1",
-    }, {
-        title: "Under Fire (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#9zjdz", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjBhN2Y5NmMtODZjYy00ZDQxLTg2OTYtOTBhYTU4MTA1OTUyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9zjdz&dl=1",
-    }, {
-        title: "God Father (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#6xcjy", posterUrl: "https://m.media-amazon.com/images/M/MV5BODY5ODg2NTItNmVlOC00NmQ0LTgzZTEtYTAyNzc2NGY3YmEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Action, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xcjy&dl=1",
     },
 
 
@@ -57,17 +57,17 @@ const contentData = [
 
 
     {
-        title: "Nude: Chitraa (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#gv5fp", posterUrl: "https://chinmaynakhwa.wordpress.com/wp-content/uploads/2018/04/img_20180429_100822.jpg?w=600", genre: "Drama, Adult", category: "Bollywood", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gv5fp&dl=1"
-    }, {
-        title: "Happy Patel: Khatarnak Jasoos (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56tmb", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWUyZTBjYTctMGQyNS00Mjg0LTg5ZTMtZDA1YmEyZDIxZjRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Comedy, Crime", category: "Bollywood", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56tmb&dl=1"
+        title: "Dukaan (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vt3ja", posterUrl: "https://assets.gadgets360cdn.com/pricee/assets/product/202403/Dukaan_poster_1_1710410867.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt3ja&dl=1",
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
     }, {
         title: "Sanduk (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6e5pk", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzliZTUzMGUtYjQ1NC00YmY0LWIwZGEtYzI5MDdmNWZmZTM2XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy", category: "Bollywood", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6e5pk&dl=1",
     }, {
-        title: "Aayushmati Geeta Matric Pass (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#8ab3a", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmRlNTgxZWUtYzc5NC00MjdkLWFkYTItNDM4ZTFjMzIyZGVkXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8ab3a&dl=1",
+        title: "Nude: Chitraa (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#gv5fp", posterUrl: "https://chinmaynakhwa.wordpress.com/wp-content/uploads/2018/04/img_20180429_100822.jpg?w=600", genre: "Drama, Adult", category: "Bollywood", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gv5fp&dl=1"
     }, {
-        title: "Dukaan (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vt3ja", posterUrl: "https://img.rgstatic.com/content/show/fc63facc-8ffe-45b9-9aba-11edaae1f9ee/poster-342.webp", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt3ja&dl=1",
+        title: "Happy Patel: Khatarnak Jasoos (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#56tmb", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWUyZTBjYTctMGQyNS00Mjg0LTg5ZTMtZDA1YmEyZDIxZjRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Comedy, Crime", category: "Bollywood", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#56tmb&dl=1"
+    }, {
+        title: "Aayushmati Geeta Matric Pass (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#8ab3a", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmRlNTgxZWUtYzc5NC00MjdkLWFkYTItNDM4ZTFjMzIyZGVkXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8ab3a&dl=1",
     }, {
         title: "Durlabh Prasad Ki Dusri Shadi (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#c5yav", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzZiYjU1YWItMDkxMi00ZjQzLTkwMjItMDg2OGRmNGUyODMyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Family", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c5yav&dl=1",
     }, {
@@ -2213,6 +2213,12 @@ const contentData = [
 
 
     {
+        title: "Kaakaa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yg5pi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzMwY2ZjZjUtZTkzOC00YTI1LWI4MTctZTBmYTFlMmE5ZmUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "South", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yg5pi&dl=1",
+    }, {
+        title: "Anthony (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5iwnd", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2FiMzcxZWUtM2ZhMS00ZjRjLTgxM2YtYWZiYjU4Nzc0ODJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5iwnd&dl=1",
+    }, {
+        title: "Sarkeet (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#8d5x9", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTM3ZmYyZTItYTdkOS00NzIwLWJmOGYtMmUxMDVmZjVmNjdkXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Dual-Audio", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8d5x9&dl=1",
+    }, {
         title: "Granny (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oeub1", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzRkMmRiNjMtMmI1NC00NGYxLThlYWMtNGNiODYzNDAyZjFkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oeub1&dl=1",
     }, {
         title: "Repu Udayam 10 Gantalaku (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dc3wv", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Repu-Udayam-10-Gantalaku-3bacc810-1bd1-11f1-a70f-69ec258fbf2f.jpg", genre: "Thriller", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dc3wv&dl=1",
@@ -5281,58 +5287,58 @@ function closeAnnouncement() {
 // ==========================================
 
 // 1. Disable Right Click entirely to hide 'Inspect' everywhere
-// document.addEventListener('contextmenu', (e) => {
-//     e.preventDefault();
-// });
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
 
-// document.addEventListener('keydown', (e) => {
-//     // Allow normal keyboard behavior inside the search box
-//     if (e.target.id === 'searchInput') return;
+document.addEventListener('keydown', (e) => {
+    // Allow normal keyboard behavior inside the search box
+    if (e.target.id === 'searchInput') return;
 
-//     // Block F12 (DevTools)
-//     if (e.key === 'F12') {
-//         e.preventDefault();
-//     }
+    // Block F12 (DevTools)
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
     
-//     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
-//     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
+        e.preventDefault();
+    }
 
-//     // Block Ctrl+U / Cmd+Opt+U (View Source)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+U / Cmd+Opt+U (View Source)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+        e.preventDefault();
+    }
     
-//     // Block Ctrl+S / Cmd+S (Save Page)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+S / Cmd+S (Save Page)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+        e.preventDefault();
+    }
     
-//     // Block Ctrl+P / Cmd+P (Print Page)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+P / Cmd+P (Print Page)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+        e.preventDefault();
+    }
 
-//     // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
-//         e.preventDefault();
-//     }
-// });
+    // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
+        e.preventDefault();
+    }
+});
 
-// // 3. Prevent Native Copy, Cut, Paste events (except search box)
-// ['copy', 'cut', 'paste'].forEach(evt => {
-//     document.addEventListener(evt, (e) => {
-//         if (e.target.id !== 'searchInput') {
-//             e.preventDefault();
-//         }
-//     });
-// });
+// 3. Prevent Native Copy, Cut, Paste events (except search box)
+['copy', 'cut', 'paste'].forEach(evt => {
+    document.addEventListener(evt, (e) => {
+        if (e.target.id !== 'searchInput') {
+            e.preventDefault();
+        }
+    });
+});
 
-// // 4. Prevent Dragging elements (like ghost-dragging images to save them)
-// document.addEventListener('dragstart', (e) => {
-//     // Allow FAB pointer dragging, but prevent native HTML element dragging
-//     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-//         e.preventDefault();
-//     }
-// });
+// 4. Prevent Dragging elements (like ghost-dragging images to save them)
+document.addEventListener('dragstart', (e) => {
+    // Allow FAB pointer dragging, but prevent native HTML element dragging
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+        e.preventDefault();
+    }
+});
