@@ -13,6 +13,18 @@ const contentData = [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },,]
     }, {
+        title: "Everybody Loves Sohrab Handa (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s5115", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDI5MjcwZmUtZDNhYS00YzZjLTk2ZjQtZDIxZjE0ODU3NzIzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5115&dl=1",
+    }, {
+        title: "Tu Yaa Main (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5it5q", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTI0NmU5MTItY2RjNC00MzRiLThkMzEtNGFhMTAxZDU1MDdiXkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5it5q&dl=1"
+    }, {
+        title: "Bhagavanth Kesari (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s51vh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzA4MmI3NjgtOThjMS00NDY4LWI3ZTAtZTJhZGY0ZjIzYWYwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s51vh&dl=1",
+    }, {
+        title: "Toh Ti Ani Fuji (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gvnfk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjZjYjhmOTUtNDg2MS00YjcwLTg4NzMtMWY1OTA4NWU0MDVkXkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gvnfk&dl=1",
+    }, {
+        title: "Thaai Kizhavi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dcgnu", posterUrl: "https://upload.wikimedia.org/wikipedia/en/6/62/Thaai_Kizhavi.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dcgnu&dl=1",
+    }, {
+        title: "PSI Mangal Mukhi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#aszib", posterUrl: "https://bingeddata.s3.amazonaws.com/uploads/2026/04/4uzi0nuz8i0c8uoowkueh4qa1cu-1.webp", genre: "Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#aszib&dl=1", seriesInfo: "Season 1, Episode ALL"
+    }, {
         title: "Kaakaa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yg5pi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzMwY2ZjZjUtZTkzOC00YTI1LWI4MTctZTBmYTFlMmE5ZmUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Recent Adds", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yg5pi&dl=1",
     }, {
         title: "Anthony (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5iwnd", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2FiMzcxZWUtM2ZhMS00ZjRjLTgxM2YtYWZiYjU4Nzc0ODJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5iwnd&dl=1",
@@ -28,26 +40,6 @@ const contentData = [
         title: "Now Apocalypse (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#hfcev", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc2YTM0ZDMtMmI3Yi00YTU2LWE1MDMtM2UyNGVlNzEyODhiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfcev&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
         title: "Urban Myths (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#6xl8k", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjhlMGNjNTQtODlmMi00MWZiLThlMTYtNjIzMWVjMDU5ZTgyXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery, Fantasy, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xl8k&dl=1"
-    }, {
-        title: "Agent from Above (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQ1OTFlM2ItYmU3Yi00NWVjLTkzYzUtZTRhMDRhOTQ4YzcxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Crime, Drama, Fantasy, Thriller", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/fcE1d1ZHW" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/eFueZal4K" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/jiPLkMe1H" }, 
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/TcnO1rPct" }, 
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/3luRjPmJK" }, 
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/6M9hJ8ZFs" }, 
-            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/GXj8YaVg1w" }, 
-            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/PIr1for6G" },,]
-    }, {
-        title: "Keeper (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hfsgk", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c6/Keeper_2025_film_poster.jpg", genre: "Horror", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfsgk&dl=1",
-    }, {
-        title: "Lovebug (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#gv9cf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDgyZGZlYTMtMzAwZS00NjAzLWEzMGYtM2YxNzJkNTIwMDE4XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Romance", category: "Recent Adds", language: "Hindi", quality:"Cam-Hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gv9cf&dl=1",
-    }, {
-        title: "The Bride! (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8dmpf", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2VmMDVlNzgtNThhZC00ZGMwLTg4MmEtZTUzNmRiYTkxYzUyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Romance", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8dmpf&dl=1",
-    }, {
-        title: "Repu Udayam 10 Gantalaku (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dc3wv", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Repu-Udayam-10-Gantalaku-3bacc810-1bd1-11f1-a70f-69ec258fbf2f.jpg", genre: "Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dc3wv&dl=1",
-    }, {
-        title: "Vadam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6xtjt", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDYwNWVjMWQtMmY2Ny00MzA1LTg4MjctZWZhNDZmMTMyN2QzXkEyXkFqcGc@._V1_.jpg", genre: "Action", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xtjt&dl=1",
     },
 
 
@@ -57,6 +49,8 @@ const contentData = [
 
 
     {
+        title: "Everybody Loves Sohrab Handa (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s5115", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDI5MjcwZmUtZDNhYS00YzZjLTk2ZjQtZDIxZjE0ODU3NzIzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5115&dl=1",
+    }, {
         title: "Dukaan (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vt3ja", posterUrl: "https://assets.gadgets360cdn.com/pricee/assets/product/202403/Dukaan_poster_1_1710410867.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt3ja&dl=1",
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
@@ -95,7 +89,7 @@ const contentData = [
     }, {
         title: "O' Romeo (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yzs8c", posterUrl: "https://resizing.flixster.com/sbiwNmlSx6welFpp36aIJoKZj28=/fit-in/705x460/v2/https://resizing.flixster.com/3RPG01zNRu9KnzRzJvjtRto17Nc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUzNzBlZjQwLTZjYmEtNGViNy1iZjExLTk3NTYwMGQ0MTgwOS5wbmc=", genre: "Action, Mystery & Thriller, Romance", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzs8c&dl=1"
     }, {
-        title: "Tu Yaa Main (2026)", embedUrl: "https://short.icu/3_ecKgh0d", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWFiODg3ZmQtYTUxZS00ZDkzLWJiNTEtYTExMzNlMDlhZjNjXkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Tu Yaa Main (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5it5q", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTI0NmU5MTItY2RjNC00MzRiLThkMzEtNGFhMTAxZDU1MDdiXkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5it5q&dl=1"
     }, {
         title: "Vadh 2 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#askas", posterUrl: "https://resizing.flixster.com/jgC3iEPqNAxo1n-aifVLCx7AKTk=/fit-in/705x460/v2/https://resizing.flixster.com/KYE6nIQEb_rXr5HLOrJ7Rv7fYmc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzliMWY2OWY0LTcwMzAtNDdhYi05MTM0LTU0ZmI1OTI4ODQwNC5qcGc=", genre: "Mystery & Thriller, Drama", category: "Bollywood", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#askas&dl=1"
     }, {
@@ -2213,6 +2207,12 @@ const contentData = [
 
 
     {
+        title: "Bhagavanth Kesari (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s51vh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzA4MmI3NjgtOThjMS00NDY4LWI3ZTAtZTJhZGY0ZjIzYWYwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s51vh&dl=1",
+    }, {
+        title: "Toh Ti Ani Fuji (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gvnfk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjZjYjhmOTUtNDg2MS00YjcwLTg4NzMtMWY1OTA4NWU0MDVkXkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gvnfk&dl=1",
+    }, {
+        title: "Thaai Kizhavi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dcgnu", posterUrl: "https://upload.wikimedia.org/wikipedia/en/6/62/Thaai_Kizhavi.jpg", genre: "Comedy, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dcgnu&dl=1",
+    }, {
         title: "Kaakaa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yg5pi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzMwY2ZjZjUtZTkzOC00YTI1LWI4MTctZTBmYTFlMmE5ZmUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "South", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yg5pi&dl=1",
     }, {
         title: "Anthony (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5iwnd", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2FiMzcxZWUtM2ZhMS00ZjRjLTgxM2YtYWZiYjU4Nzc0ODJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5iwnd&dl=1",
@@ -3549,6 +3549,8 @@ const contentData = [
 
 
     {
+        title: "PSI Mangal Mukhi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#aszib", posterUrl: "https://bingeddata.s3.amazonaws.com/uploads/2026/04/4uzi0nuz8i0c8uoowkueh4qa1cu-1.webp", genre: "Thriller", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#aszib&dl=1", seriesInfo: "Season 1, Episode ALL"
+    }, {
         title: "Maamla Legal Hai (2026)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26774733_b_v8_ab.jpg", genre: "Comedy, Drama", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/faGSYUEHJ" }, 
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/jAowo7ztJT" }, 
