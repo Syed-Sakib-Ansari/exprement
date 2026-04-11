@@ -2,6 +2,8 @@ const contentData = [
     {
         title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hf5zf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hf5zf&dl=1",
     }, {
+        title: "Nee Forever (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9g3k5", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZlZGRlYWItOWE1YS00Mjg2LWJiNDktMWJmN2VlYmUyM2M0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9g3k5&dl=1",
+    }, {
         title: "LIK: Love Insurance Kompany (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#cqbqv", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243636/LIK-27X40.jpg", genre: "Comedy, Romance, Sci-Fi", category: "Recent Adds", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#cqbqv&dl=1",
     }, {
         title: "Prathichaya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fkz1e", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmEyN2QxODMtMGI2MS00ZDVlLTk3NDUtMmI4NWViNzNjZjQxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fkz1e&dl=1",
@@ -28,8 +30,6 @@ const contentData = [
         title: "Tu Yaa Main (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5it5q", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTI0NmU5MTItY2RjNC00MzRiLThkMzEtNGFhMTAxZDU1MDdiXkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5it5q&dl=1"
     }, {
         title: "Bhagavanth Kesari (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s51vh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzA4MmI3NjgtOThjMS00NDY4LWI3ZTAtZTJhZGY0ZjIzYWYwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s51vh&dl=1",
-    }, {
-        title: "18th Rose (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rlx1z", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjg0ODBhZDMtZTc2OC00NWZiLTliYzgtOGU1MDAxMzhkNDhiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rlx1z&dl=1",
     }, {
         title: "Star Wars: Maul - Shadow Lord (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmUzZWRkOGMtOGM2OC00ODk0LWFjZjUtMjUyOGRjYzgwYjdjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Animation, Family, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-2", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/p3MI4dDpW" },
@@ -67,13 +67,15 @@ const contentData = [
 
 
     {
-        title: "Everybody Loves Sohrab Handa (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s5115", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDI5MjcwZmUtZDNhYS00YzZjLTk2ZjQtZDIxZjE0ODU3NzIzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5115&dl=1",
-    }, {
-        title: "Dukaan (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vt3ja", posterUrl: "https://assets.gadgets360cdn.com/pricee/assets/product/202403/Dukaan_poster_1_1710410867.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt3ja&dl=1",
-    }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
     }, {
         title: "Sanduk (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6e5pk", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzliZTUzMGUtYjQ1NC00YmY0LWIwZGEtYzI5MDdmNWZmZTM2XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy", category: "Bollywood", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6e5pk&dl=1",
+    }, {
+        title: "Bhouri (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#fkzuc", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTFjYjVjNjgtNDEwNS00MzNkLWI3YzEtNGIwMDVhY2EyM2I5XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fkzuc&dl=1",
+    }, {
+        title: "Everybody Loves Sohrab Handa (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s5115", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDI5MjcwZmUtZDNhYS00YzZjLTk2ZjQtZDIxZjE0ODU3NzIzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5115&dl=1",
+    }, {
+        title: "Dukaan (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vt3ja", posterUrl: "https://assets.gadgets360cdn.com/pricee/assets/product/202403/Dukaan_poster_1_1710410867.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vt3ja&dl=1",
     }, {
         title: "Nude: Chitraa (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#gv5fp", posterUrl: "https://chinmaynakhwa.wordpress.com/wp-content/uploads/2018/04/img_20180429_100822.jpg?w=600", genre: "Drama, Adult", category: "Bollywood", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gv5fp&dl=1"
     }, {
@@ -2237,6 +2239,8 @@ const contentData = [
 
 
     {
+        title: "Nee Forever (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9g3k5", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZlZGRlYWItOWE1YS00Mjg2LWJiNDktMWJmN2VlYmUyM2M0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "South", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9g3k5&dl=1",
+    }, {
         title: "LIK: Love Insurance Kompany (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#cqbqv", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243636/LIK-27X40.jpg", genre: "Comedy, Romance, Sci-Fi", category: "South", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#cqbqv&dl=1",
     }, {
         title: "Prathichaya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fkz1e", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmEyN2QxODMtMGI2MS00ZDVlLTk3NDUtMmI4NWViNzNjZjQxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fkz1e&dl=1",
