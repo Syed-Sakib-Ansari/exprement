@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shw96", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shw96&dl=1",
+    }, {
         title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hf5zf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hf5zf&dl=1",
     }, {
         title: "Nee Forever (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9g3k5", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZlZGRlYWItOWE1YS00Mjg2LWJiNDktMWJmN2VlYmUyM2M0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9g3k5&dl=1",
@@ -44,16 +46,6 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/oLPv5kQGw" },
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/UhkvOrxJJ" },
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/SwzHofqWLr" },]
-    }, {
-        title: "Big Mistakes (2026)", posterUrl: "https://resizing.flixster.com/bhmRt0fW49RdiHVOSXd_Ql8XCaE=/fit-in/705x460/v2/https://resizing.flixster.com/kNq-EMz4ZxsrvQ9OeeUJK5iMNIA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2I4MDk2MGMtOWNhNC00NWNlLTg5YjktZWNkOTlkZjFjNzhiLmpwZw==", genre: "Crime, Comedy", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/a8WgkIVwc" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/12ZFdo4hO" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/Bm2QnXRcj" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/GRysqdPFO" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/SEocQ9esWl" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/VKSVqI7FA" },
-            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/5Hk-F_UTt5" },
-            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/LYupw0cV5" },]
     }, {
         title: "Toh Ti Ani Fuji (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gvnfk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjZjYjhmOTUtNDg2MS00YjcwLTg4NzMtMWY1OTA4NWU0MDVkXkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gvnfk&dl=1",
     }, {
@@ -519,6 +511,8 @@ const contentData = [
     }, {
         title: "The Purge: Anarchy (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#8dsg6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDA0NWNhMTMtMmE4ZS00OGQ0LWEyMDctNThjMzhkNjZlYzMwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Sci-Fi, Mystery, Horror, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8dsg6&dl=1",
     }, {
+        title: "Dracula Untold (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#ya6nn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkzNzI1OTI4N15BMl5BanBnXkFtZTgwNTQ2NzEwMjE@._V1_FMjpg_UX1000_.jpg", genre: "Action, Drama, Fantasy, Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ya6nn&dl=1",
+    }, {
         title: "The Forever Purge (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#nkw1w", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWVmYmE5ZWQtY2E3NC00Mzk1LWEzMzYtNjkyM2E0MGY0MjcxXkEyXkFqcGc@._V1_.jpg", genre: "Sci-Fi, Mystery, Horror, Thriller, Action, Crime", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nkw1w&dl=1",
     }, {
         title: "Climax (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#p6eog", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWQwOTVmNGQtNGU1Ny00ODNkLTkzMmMtYzY1ZWQyMzk0Y2ZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Mystery, Horror, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#p6eog&dl=1",
@@ -581,7 +575,7 @@ const contentData = [
     }, {
         title: "Patriots Day: The City of Boston (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#hiatg", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM0MjRlZTEtYzQxZS00ODIwLThkYTYtNjA4NjNjZTM3NTRmXkEyXkFqcGc@._V1_.jpg", genre: "Documentary", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hiatg&dl=1",
     }, {
-        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6ewyu", posterUrl: "https://img.rgstatic.com/content/movie/caa590cc-61f6-4ba8-a614-eb21dfd56215/poster-342.webp", genre: "Drama, Sci-Fi, Thriller", category: "Hollywood", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ewyu&dl=1",
+        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shw96", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Sci-Fi, Thriller", category: "Hollywood", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shw96&dl=1",
     }, {
         title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1uoif", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1uoif&dl=1",
     }, {
@@ -3362,6 +3356,10 @@ const contentData = [
 
 
     {
+        title: "Melissa P. (2005)", embedUrl: "https://moviedakhi.4meplayer.com/#ijnpq", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2Q0MzI2Y2UtZDZmNS00NzgzLWE3MTEtZWE4NjI5MGY3MzgxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Erotic, Romance", category: "Others", language: "Italian", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ijnpq&dl=1"
+    }, {
+        title: "Sex, Party and Lies (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#ace9x", posterUrl: "https://resizing.flixster.com/qtifbu_-iTqAC6sueckrKmKIUP0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8277081_p_v12_ad.jpg", genre: "Adult, Erotic, Romance", category: "Others", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ace9x&dl=1"
+    }, {
         title: "Swap (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#dc8d6", posterUrl: "https://img.rgstatic.com/content/movie/f7bdade4-0e71-4373-b0d4-3fdd23f8fcbf/poster-342.jpg", genre: "Horror, Adult, Erotic, Romance", category: "Others", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dc8d6&dl=1"
     }, {
         title: "1000 Men and Me: The Bonnie Blue Story (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#5ifn5", posterUrl: "https://flixpatrol.com/runtime/cache/files/posters/5/w350/5dcgoyf8nt6xt4vsr6nrn6nwhuz.jpg", genre: "Adult, Erotic, Romance", category: "Others", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ifn5&dl=1"
@@ -3381,6 +3379,28 @@ const contentData = [
         title: "Alanis (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#cpjqb", posterUrl: "https://www.moviezine.se/wp-content/uploads/2025/02/large_45dbd95239a64d7ba893b958370fa97a-MV5BMTAxZTIwZWEtYTcwMy00MDk0LWJjM2YtNWU2YjE2YTYyZjhjXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1.jpg", genre: "Drama, Adult", category: "Others", language: "Spanish", quality:"webrip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#cpjqb&dl=1"
     }, {
         title: "Censor (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#xcfw9", posterUrl: "https://m.media-amazon.com/images/M/MV5BODA2ZDhmY2YtZGVlYi00MGFlLTk0OTgtMWZhOWUwOGEwNjU4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult", category: "Others", language: "dual audio", quality:"hdrip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xcfw9&dl=1"
+    }, {
+        title: "Cape Fear (1991)", embedUrl: "https://moviedakhi.4meplayer.com/#oxita", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTBkNTYwZTctOTgxYS00ZmIyLTgzNDAtODJhZjg2MDUwNmFlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "dual audio", quality:"hdrip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oxita&dl=1"
+    }, {
+        title: "The Naked Director (2019)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWM4ODE0ZjgtZDU4Mi00NWJhLTg3MjEtNjY0NmEyOGQ1ZTZhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/p1ozh8wt3" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/dG6l3IIDF" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/XERZIZx47" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/z6l77Uiu-" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/bpSwavZBn" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/8eN9gBBak" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/lDglnmkaK" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/jei5XJK0j" },]
+    }, {
+        title: "The Naked Director (2019)", posterUrl: "https://resizing.flixster.com/fj09P4FWymIULYJKAzWKAP8YM7c=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p19842691_i_v8_ac.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/lQpe3mDtG" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/WHJ_7gabv" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/y4C-tga74" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/t6jwwgYk2" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/gaUxF7xu-" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/rdaTh5Zp1" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/5qCKFp3J5" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/MPjA0r6LL" },]
     }, {
         title: "Vladimir (2026)", posterUrl: "https://resizing.flixster.com/nNncZq7HrRZZ-LCyg9bYHez1AsA=/fit-in/705x460/v2/https://resizing.flixster.com/sIpEYv9fwRQsyt0ahSjbU_XmdvY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNjg3MjVmZWYtMTQ5YS00NzVkLWE0ZjMtZTI4NTU2NTJhYmI2LmpwZw==", genre: "Comedy, Drama, Adult", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/YgrRHTfWXK" },
