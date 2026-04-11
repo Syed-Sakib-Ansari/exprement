@@ -4757,13 +4757,13 @@ function clearSearch(preventRestore = false) {
     }
 }
 
-function updateCanonical(url) {
-    const canonicalLink = document.getElementById('canonicalLink');
-    if (canonicalLink) {
-        // এটি যেকোনো পরিস্থিতিতে Canonical ট্যাগকে মেইন হোমপেজেই ফিক্সড রাখবে
-        canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
-    }
-}
+// function updateCanonical(url) {
+//     const canonicalLink = document.getElementById('canonicalLink');
+//     if (canonicalLink) {
+//         // এটি যেকোনো পরিস্থিতিতে Canonical ট্যাগকে মেইন হোমপেজেই ফিক্সড রাখবে
+//         canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
+//     }
+// }
 
 // function updateCanonical(url) {
 //     const canonicalLink = document.getElementById('canonicalLink');
