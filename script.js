@@ -4,6 +4,10 @@ const contentData = [
     }, {
         title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hf5zf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hf5zf&dl=1",
     }, {
+        title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gsjbu", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FlbrnJY7E0a9xxgj2cotNp6YI4dz.jpg", genre: "Drama, Action, Thriller, Romance", category: "Recent Adds", language: "Telugu", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gsjbu&dl=1",
+    }, {
+        title: "Om Shanti Shanti Shantihi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktbpg", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2QyZDhkODgtMTQ4Yi00N2RiLTg5MjItMjM4YzYyYTcwMTFlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktbpg&dl=1",
+    }, {
         title: "Nee Forever (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9g3k5", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZlZGRlYWItOWE1YS00Mjg2LWJiNDktMWJmN2VlYmUyM2M0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9g3k5&dl=1",
     }, {
         title: "LIK: Love Insurance Kompany (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#cqbqv", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243636/LIK-27X40.jpg", genre: "Comedy, Romance, Sci-Fi", category: "Recent Adds", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#cqbqv&dl=1",
@@ -46,10 +50,6 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/oLPv5kQGw" },
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/UhkvOrxJJ" },
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/SwzHofqWLr" },]
-    }, {
-        title: "Toh Ti Ani Fuji (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gvnfk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjZjYjhmOTUtNDg2MS00YjcwLTg4NzMtMWY1OTA4NWU0MDVkXkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gvnfk&dl=1",
-    }, {
-        title: "Thaai Kizhavi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dcgnu", posterUrl: "https://upload.wikimedia.org/wikipedia/en/6/62/Thaai_Kizhavi.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dcgnu&dl=1",
     },
 
 
@@ -2233,6 +2233,10 @@ const contentData = [
 
 
     {
+        title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gsjbu", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FlbrnJY7E0a9xxgj2cotNp6YI4dz.jpg", genre: "Drama, Action, Thriller, Romance", category: "South", language: "Telugu", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gsjbu&dl=1",
+    }, {
+        title: "Om Shanti Shanti Shantihi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktbpg", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2QyZDhkODgtMTQ4Yi00N2RiLTg5MjItMjM4YzYyYTcwMTFlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktbpg&dl=1",
+    }, {
         title: "Nee Forever (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9g3k5", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZlZGRlYWItOWE1YS00Mjg2LWJiNDktMWJmN2VlYmUyM2M0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "South", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9g3k5&dl=1",
     }, {
         title: "LIK: Love Insurance Kompany (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#cqbqv", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243636/LIK-27X40.jpg", genre: "Comedy, Romance, Sci-Fi", category: "South", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#cqbqv&dl=1",
