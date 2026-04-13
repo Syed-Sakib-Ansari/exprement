@@ -1,5 +1,11 @@
 const contentData = [
     {
+        title: "Reminders of Him (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shhoo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjI4OGM1NDEtYzA1NS00ZDg3LWFmZjUtMjg1MGQ4MTk3NjQzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shhoo&dl=1",
+    }, {
+        title: "The Cure (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnfby", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGZkNjI4MTUtMjc3MC00MDdmLTlhNDMtYWZlOTgwZDQ4ZjBkXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "Hindi", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnfby&dl=1",
+    }, {
+        title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1p58e", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FlbrnJY7E0a9xxgj2cotNp6YI4dz.jpg", genre: "Drama, Action, Thriller, Romance", category: "Recent Adds", language: "Hindi", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1p58e&dl=1",
+    }, {
         title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shw96", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shw96&dl=1",
     }, {
         title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hf5zf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hf5zf&dl=1",
@@ -7,8 +13,6 @@ const contentData = [
         title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8eauk", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "English", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8eauk&dl=1",
     }, {
         title: "Psycho Killer (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shpgd", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmM1MWQzYmUtNjhiOS00N2RlLWJjMDUtNGM1YTQ1ZWZlZmRkXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Drama, Horror, Mystery", category: "Recent Adds", language: "English", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shpgd&dl=1",
-    }, {
-        title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gsjbu", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FlbrnJY7E0a9xxgj2cotNp6YI4dz.jpg", genre: "Drama, Action, Thriller, Romance", category: "Recent Adds", language: "Telugu", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gsjbu&dl=1",
     }, {
         title: "Om Shanti Shanti Shantihi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktbpg", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2QyZDhkODgtMTQ4Yi00N2RiLTg5MjItMjM4YzYyYTcwMTFlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktbpg&dl=1",
     }, {
@@ -36,12 +40,7 @@ const contentData = [
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },,]
     }, {
         title: "Everybody Loves Sohrab Handa (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s5115", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDI5MjcwZmUtZDNhYS00YzZjLTk2ZjQtZDIxZjE0ODU3NzIzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5115&dl=1",
-    }, {
-        title: "Tu Yaa Main (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5it5q", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTI0NmU5MTItY2RjNC00MzRiLThkMzEtNGFhMTAxZDU1MDdiXkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller, Drama", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5it5q&dl=1"
-    }, {
-        title: "Bhagavanth Kesari (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s51vh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzA4MmI3NjgtOThjMS00NDY4LWI3ZTAtZTJhZGY0ZjIzYWYwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s51vh&dl=1",
     },
-
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
     // =======================================================================
@@ -440,6 +439,10 @@ const contentData = [
 
 
     {
+        title: "Reminders of Him (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shhoo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjI4OGM1NDEtYzA1NS00ZDg3LWFmZjUtMjg1MGQ4MTk3NjQzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shhoo&dl=1",
+    }, {
+        title: "The Cure (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnfby", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGZkNjI4MTUtMjc3MC00MDdmLTlhNDMtYWZlOTgwZDQ4ZjBkXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Hollywood", language: "Hindi", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnfby&dl=1",
+    }, {
         title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8eauk", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Hollywood", language: "English", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8eauk&dl=1",
     }, {
         title: "Psycho Killer (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shpgd", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmM1MWQzYmUtNjhiOS00N2RlLWJjMDUtNGM1YTQ1ZWZlZmRkXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Drama, Horror, Mystery", category: "Hollywood", language: "English", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shpgd&dl=1",
@@ -2226,7 +2229,7 @@ const contentData = [
 
 
     {
-        title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gsjbu", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FlbrnJY7E0a9xxgj2cotNp6YI4dz.jpg", genre: "Drama, Action, Thriller, Romance", category: "South", language: "Telugu", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gsjbu&dl=1",
+        title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1p58e", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FlbrnJY7E0a9xxgj2cotNp6YI4dz.jpg", genre: "Drama, Action, Thriller, Romance", category: "South", language: "Hindi", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1p58e&dl=1",
     }, {
         title: "Om Shanti Shanti Shantihi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktbpg", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2QyZDhkODgtMTQ4Yi00N2RiLTg5MjItMjM4YzYyYTcwMTFlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktbpg&dl=1",
     }, {
