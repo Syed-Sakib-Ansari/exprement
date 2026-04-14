@@ -430,6 +430,8 @@ const contentData = [
         title: "Welcome (2007)", embedUrl: "https://short.icu/CUs16szyU", posterUrl: "https://upload.wikimedia.org/wikipedia/en/f/f4/Welcome_poster_2007.jpg", genre: "Comedy, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Bhool Bhulaiyaa (2007)", embedUrl: "https://short.icu/pxspiRXxf", posterUrl: "https://resizing.flixster.com/YgRxxRoFxd-hOEs9vYG-iBK3pHM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p173317_p_v8_ab.jpg", genre: "Comedy, Horror, Mystery, Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Sui Dhaaga: Made in India (2018)", embedUrl: "https://short.icu/-B8UySkqj", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTc3YzJmZDUtZDRiZi00NDdiLTgyOWItZmE0NzYwNGZmZTQ0XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
 
 
@@ -439,6 +441,16 @@ const contentData = [
 
 
     {
+        title: "Newborn (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jut81", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWNjMjJmYTktMTk1YS00NTg2LTkxODEtOGJkMjAwNDEzNWRiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Thriller", category: "Hollywood", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jut81&dl=1",
+    }, {
+        title: "Monster Man (2005)", embedUrl: "https://moviedakhi.4meplayer.com/#oxrm5", posterUrl: "https://resizing.flixster.com/AJnLTQ_Ko-QWJS_6_uNTBpIV-Tc=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p82739_v_v11_ac.jpg", genre: "Comedy, Crime, Documentary, Sport", category: "Hollywood", language: "Hindi", quality:"BluRay", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oxrm5&dl=1",
+    }, {
+        title: "Untold Chess Mates (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ga1c", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2ZiMTM3NDgtZTk2My00NDViLThlZGYtYmFmZDQ3NTA2M2U3XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Crime, Documentary, Sport", category: "Hollywood", language: "English", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ga1c&dl=1",
+    }, {
+        title: "For Worse (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#zvstt", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzBlMjg0OTMtMGZhNy00YjUxLTg5NGEtYjMzODJjMjE2MzViXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Romance", category: "Hollywood", language: "English", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvstt&dl=1",
+    }, {
+        title: "I Was a Stranger (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3desr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGEwOTRmYmYtMzIyZS00YjQ1LThiNmYtYWJjZDg3NTU0NzQ5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3desr&dl=1",
+    }, {
         title: "Reminders of Him (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shhoo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjI4OGM1NDEtYzA1NS00ZDg3LWFmZjUtMjg1MGQ4MTk3NjQzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shhoo&dl=1",
     }, {
         title: "The Cure (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnfby", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGZkNjI4MTUtMjc3MC00MDdmLTlhNDMtYWZlOTgwZDQ4ZjBkXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Hollywood", language: "Hindi", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnfby&dl=1",
@@ -3637,7 +3649,7 @@ const contentData = [
 
 
     {
-        title: "Maa Ka Sum (2026)", posterUrl: "https://resizing.flixster.com/WeLR6ajyYhgJBpFpKVyPY83FNR0=/fit-in/705x460/v2/https://resizing.flixster.com/_EEOIc4GNJFibRzax5v308ZHzbE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNTVkNzA4MjktODM3ZS00YjU4LTk3ZWQtYjg0ZDBmZWRkYzcyLmpwZw==", genre: "Comedy", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+        title: "Maa Ka Sum (2026)", posterUrl: "https://resizing.flixster.com/WeLR6ajyYhgJBpFpKVyPY83FNR0=/fit-in/705x460/v2/https://resizing.flixster.com/_EEOIc4GNJFibRzax5v308ZHzbE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNTVkNzA4MjktODM3ZS00YjU4LTk3ZWQtYjg0ZDBmZWRkYzcyLmpwZw==", genre: "Comedy", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/D3wAx4Pwz" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/gDngFTtW2" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/L9yeWjxzo" },
@@ -3802,6 +3814,10 @@ const contentData = [
 
 
     {
+        title: "Euphoria (2026)", posterUrl: "https://pbs.twimg.com/media/HE9qMvUaUAAScjn.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/IasDw3x8x" },
+        ]
+    }, {
         title: "Big Mistakes (2026)", posterUrl: "https://resizing.flixster.com/bhmRt0fW49RdiHVOSXd_Ql8XCaE=/fit-in/705x460/v2/https://resizing.flixster.com/kNq-EMz4ZxsrvQ9OeeUJK5iMNIA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2I4MDk2MGMtOWNhNC00NWNlLTg5YjktZWNkOTlkZjFjNzhiLmpwZw==", genre: "Crime, Comedy", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/a8WgkIVwc" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/12ZFdo4hO" },
@@ -4346,9 +4362,42 @@ const contentData = [
             { number: 10, title: "Episode 10", embedUrl: "https://short.icu/orTo11kNy" },
         ]
     }, {
-        title: "Willow (2022)", posterUrl: "https://resizing.flixster.com/PcrmLLfLDdiisITDEmF0a1ebEYk=/fit-in/705x460/v2/https://resizing.flixster.com/QpE5wfUv6p8Id6PCs7tF3tHwMqI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzMxZGQ3MjQtMzI1Ny00MjM1LTk1MGQtM2RlNTNiN2MyMGY0LmpwZw==", genre: "Fantasy, Adventure", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season  Episode 1-8", episodes: [
+        title: "Willow (2022)", posterUrl: "https://resizing.flixster.com/PcrmLLfLDdiisITDEmF0a1ebEYk=/fit-in/705x460/v2/https://resizing.flixster.com/QpE5wfUv6p8Id6PCs7tF3tHwMqI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzMxZGQ3MjQtMzI1Ny00MjM1LTk1MGQtM2RlNTNiN2MyMGY0LmpwZw==", genre: "Fantasy, Adventure", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season  Episode 1-2", episodes: [
             { number: 1, title: "Episode 1-4", embedUrl: "https://short.icu/TI5sc5GzM6" },
             { number: 2, title: "Episode 5-8", embedUrl: "https://short.icu/qhV_qs8p-" },]
+    }, {
+        title: "Sky Rojo (2023)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23587545_b_v13_aa.jpg", genre: "Crime, Drama, Action, Adventure", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/p6JVVpRte" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/aKwiLnMbf" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/4yLyvRT2n" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/hHtyzhiY1" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/8-HbZ_uQU" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/h2wYWHbDZ" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/yOprPH47g" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/oeUaWN4ka" },
+        ]
+    }, {
+        title: "Euphoria (2022)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18988683_b_v13_ab.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/7L6Pt-cxl" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/lLwc5tbXJ" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/Uw2GsZoJo" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/HZSe-QCml" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/S1YeoLMXF" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/7Bbuprtk2" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/UWOUHBnp5" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/ldv-5XBQQ" },
+        ]
+    }, {
+        title: "Euphoria (2020)", posterUrl: "https://resizing.flixster.com/k6BYR6wVDKzZjW0uMSoi2YTTXKs=/fit-in/705x460/v2/https://resizing.flixster.com/MijjKvqCa5ePNJ5Oxa_s8IaW3UY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjc5ODgzMi53ZWJw", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/HRskVDYfM" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/GfX_E1xEE" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/55Ew0RFz8" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/J_68hjNMa" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/ARYlXKPX3" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/DEwjgnSW_" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/ICIu7RLJh" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/5NYTXzhYv" },
+        ]
     },
 
 
