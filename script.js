@@ -10,7 +10,7 @@ const contentData = [
     }, {
         title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#juhzc", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#juhzc&dl=1"
     }, {
-        title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yarwr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yarwr&dl=1",
+        title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yarwr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yarwr&dl=1",
     }, {
         title: "Biker (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktqnx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDRjOGQ1MGQtZjAzNS00NzliLWIxZGUtY2U1ODgzYTQ3MmU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Family, Sport", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktqnx&dl=1",
     }, {
@@ -2242,7 +2242,7 @@ const contentData = [
 
 
     {
-        title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yarwr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Dual Audio", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yarwr&dl=1",
+        title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yarwr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yarwr&dl=1",
     }, {
         title: "Biker (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktqnx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDRjOGQ1MGQtZjAzNS00NzliLWIxZGUtY2U1ODgzYTQ3MmU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Family, Sport", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktqnx&dl=1",
     }, {
