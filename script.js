@@ -1,5 +1,9 @@
 const contentData = [
     {
+        title: "Noise (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zvtrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhhNDUxM2EtYjFhNy00OTIyLWFkNzItMjUxYTFjMWIzMDc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvtrn&dl=1"
+    }, {
+        title: "Ustaad Bhagat Singh (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6rmnw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE4YzdhZTItMmIxYS00ZjdjLTg5OGQtYjc0YjUzOWQ3NzcyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Action, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rmnw&dl=1",
+    }, {
         title: "Toaster (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5fdeq", posterUrl: "https://resizing.flixster.com/B9SBadqf-7FZ7MxcRkx-zt4VUf8=/fit-in/705x460/v2/https://resizing.flixster.com/ltuhDjJZ8F1iNYw4IagAHMgO-Bs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E2YTdkNmJlLTdiNGEtNDBjNC1iNzhkLWExYTYxNzUxODUyNC5qcGc=", genre: "Mystery & Thriller, Comedy", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5fdeq&dl=1",
     }, {
         title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-3", episodes: [
@@ -39,10 +43,6 @@ const contentData = [
         title: "The Cure (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnfby", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGZkNjI4MTUtMjc3MC00MDdmLTlhNDMtYWZlOTgwZDQ4ZjBkXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "Hindi", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnfby&dl=1",
     }, {
         title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1p58e", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FlbrnJY7E0a9xxgj2cotNp6YI4dz.jpg", genre: "Drama, Action, Thriller, Romance", category: "Recent Adds", language: "Hindi", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1p58e&dl=1",
-    }, {
-        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shw96", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shw96&dl=1",
-    }, {
-        title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hf5zf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hf5zf&dl=1",
     }, 
 
 
@@ -487,6 +487,8 @@ const contentData = [
         title: "Keeper (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hfsgk", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c6/Keeper_2025_film_poster.jpg", genre: "Horror", category: "Hollywood", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfsgk&dl=1",
     }, {
         title: "Lovebug (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#gv9cf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDgyZGZlYTMtMzAwZS00NjAzLWEzMGYtM2YxNzJkNTIwMDE4XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Romance", category: "Hollywood", language: "Hindi", quality:"Cam-Hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gv9cf&dl=1",
+    }, {
+        title: "Undertone (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6rbdz", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjg1YTY5ODQtOWUxYi00MGU5LWE0MGItZDkwODcyMzc3OGQ3XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Sci-Fi, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rbdz&dl=1",
     }, {
         title: "The Bride! (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8dmpf", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2VmMDVlNzgtNThhZC00ZGMwLTg4MmEtZTUzNmRiYTkxYzUyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Romance", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8dmpf&dl=1",
     }, {
@@ -2252,6 +2254,8 @@ const contentData = [
 
 
     {
+        title: "Ustaad Bhagat Singh (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6rmnw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE4YzdhZTItMmIxYS00ZjdjLTg5OGQtYjc0YjUzOWQ3NzcyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Action, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rmnw&dl=1",
+    }, {
         title: "Youth (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlq1o", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/244876/Youth-Telugu-27x40.jpg", genre: "Comedy, Family, Romance", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlq1o&dl=1",
     }, {
         title: "Raakaasa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnd5e", posterUrl: "https://m.media-amazon.com/images/M/MV5BODBlMTkxOWYtZGUxOC00MDkyLWI2NWMtYmM5MDE4NmJkNGM1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Fantasy", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnd5e&dl=1",
@@ -3127,6 +3131,8 @@ const contentData = [
 
 
     {
+        title: "Noise (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zvtrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhhNDUxM2EtYjFhNy00OTIyLWFkNzItMjUxYTFjMWIzMDc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Korean Country", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvtrn&dl=1"
+    }, {
         title: "The Ugly (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s5aom", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDdmNGFiOTEtYjYzNS00NThjLThlNDEtZjVjMDY4YTgzM2IwXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Korean Country", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5aom&dl=1"
     }, {
         title: "Urban Myths (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#6xl8k", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjhlMGNjNTQtODlmMi00MWZiLThlMTYtNjIzMWVjMDU5ZTgyXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery, Fantasy, Thriller", category: "Korean Country", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xl8k&dl=1"
