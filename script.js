@@ -18,6 +18,12 @@ const contentData = [
     }, {
         title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#juhzc", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#juhzc&dl=1"
     }, {
+        title: "Fake Profile (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qzj6p", posterUrl: "https://resizing.flixster.com/B4tNRf4vM5p0Qm-_xPRiMtNaeqQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vN2I3M2FmMjgtMmY5My00OGZmLWI5NmYtYWIyNTQxMmViZTY3LmpwZw==", genre: "Drama, Mystery & Thriller, Romance", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qzj6p&dl=1", seriesInfo: "Season 3 Episode ALL",
+    }, {
+        title: "Balls Up (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gsw5b", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjJlMDFmOWMtY2NhZS00MzAwLWFiOWQtNzBiZDNiOWRiMDA4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Crime, Sport", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gsw5b&dl=1",
+    }, {
+        title: "Youth (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlq1o", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/244876/Youth-Telugu-27x40.jpg", genre: "Comedy, Family, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlq1o&dl=1",
+    }, {
         title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yarwr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yarwr&dl=1",
     }, {
         title: "Raakaasa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnd5e", posterUrl: "https://m.media-amazon.com/images/M/MV5BODBlMTkxOWYtZGUxOC00MDkyLWI2NWMtYmM5MDE4NmJkNGM1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Fantasy", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnd5e&dl=1",
@@ -35,14 +41,6 @@ const contentData = [
         title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1p58e", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FlbrnJY7E0a9xxgj2cotNp6YI4dz.jpg", genre: "Drama, Action, Thriller, Romance", category: "Recent Adds", language: "Hindi", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1p58e&dl=1",
     }, {
         title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shw96", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shw96&dl=1",
-    }, {
-        title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hf5zf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hf5zf&dl=1",
-    }, {
-        title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8eauk", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "English", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8eauk&dl=1",
-    }, {
-        title: "Psycho Killer (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shpgd", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmM1MWQzYmUtNjhiOS00N2RlLWJjMDUtNGM1YTQ1ZWZlZmRkXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Drama, Horror, Mystery", category: "Recent Adds", language: "English", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shpgd&dl=1",
-    }, {
-        title: "Om Shanti Shanti Shantihi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktbpg", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2QyZDhkODgtMTQ4Yi00N2RiLTg5MjItMjM4YzYyYTcwMTFlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktbpg&dl=1",
     },
 
 
@@ -448,6 +446,8 @@ const contentData = [
 
 
     {
+        title: "Balls Up (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gsw5b", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjJlMDFmOWMtY2NhZS00MzAwLWFiOWQtNzBiZDNiOWRiMDA4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Crime, Sport", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gsw5b&dl=1",
+    }, {
         title: "Wardriver (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qzel1", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQwNGMxNDAtZTg4MC00MGYyLWE0YmMtZTE1ZWY0MmRjYmJjXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qzel1&dl=1",
     }, {
         title: "Newborn (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jut81", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWNjMjJmYTktMTk1YS00NTg2LTkxODEtOGJkMjAwNDEzNWRiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Thriller", category: "Hollywood", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jut81&dl=1",
@@ -2250,6 +2250,8 @@ const contentData = [
 
 
     {
+        title: "Youth (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlq1o", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/244876/Youth-Telugu-27x40.jpg", genre: "Comedy, Family, Romance", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlq1o&dl=1",
+    }, {
         title: "Raakaasa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnd5e", posterUrl: "https://m.media-amazon.com/images/M/MV5BODBlMTkxOWYtZGUxOC00MDkyLWI2NWMtYmM5MDE4NmJkNGM1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Fantasy", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnd5e&dl=1",
     }, {
         title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yarwr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yarwr&dl=1",
@@ -4380,6 +4382,8 @@ const contentData = [
             { number: 10, title: "Episode 10", embedUrl: "https://short.icu/orTo11kNy" },
         ]
     }, {
+        title: "Fake Profile (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qzj6p", posterUrl: "https://resizing.flixster.com/B4tNRf4vM5p0Qm-_xPRiMtNaeqQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vN2I3M2FmMjgtMmY5My00OGZmLWI5NmYtYWIyNTQxMmViZTY3LmpwZw==", genre: "Drama, Mystery & Thriller, Romance", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qzj6p&dl=1", seriesInfo: "Season 3 Episode ALL",
+    }, {
         title: "Willow (2022)", posterUrl: "https://resizing.flixster.com/PcrmLLfLDdiisITDEmF0a1ebEYk=/fit-in/705x460/v2/https://resizing.flixster.com/QpE5wfUv6p8Id6PCs7tF3tHwMqI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzMxZGQ3MjQtMzI1Ny00MjM1LTk1MGQtM2RlNTNiN2MyMGY0LmpwZw==", genre: "Fantasy, Adventure", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season  Episode 1-2", episodes: [
             { number: 1, title: "Episode 1-4", embedUrl: "https://short.icu/TI5sc5GzM6" },
             { number: 2, title: "Episode 5-8", embedUrl: "https://short.icu/qhV_qs8p-" },]
@@ -4416,7 +4420,89 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/ICIu7RLJh" },
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/5NYTXzhYv" },
         ]
+    }, {
+        title: "Mr. Robot (2015)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11710290_b_v8_aa.jpg", genre: "Drama, Crime, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/XIs_Fa_fK" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/KdK4XjpE2" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/uZBdsniAn" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/5IErTh2h2" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/WhF2wH8gd" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/Sy8mwqBQv" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/sQ7evGJap" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/hgH1I7H0j" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/1mFwi5GNs" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/5RU6EoBSO" },
+        ]
+    }, {
+        title: "Mr. Robot (2016)", posterUrl: "https://resizing.flixster.com/L95XRpXmvp8-QjUv7Ro2ShR-Tuw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12922738_b_v9_aa.jpg", genre: "Drama, Crime, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-12", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/_cF_-5c2y" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/022ohOmdB" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/PZe-yGygW" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/t1VQytCL9" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/E8IQc1qtZ" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/z9sFIRxTG" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/vFFozG-XW" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/wki0JfzR8" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/S_xC19nrw" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/9lSNPX_SN" },
+            { number: 11, title: "Episode 11", embedUrl: "https://short.icu/9I05BmRd6" },
+            { number: 12, title: "Episode 12", embedUrl: "https://short.icu/uay-M6lxO" },
+        ]
+    }, {
+        title: "Mr. Robot (2017)", posterUrl: "https://resizing.flixster.com/Pt4zdWK1ON9vLlD2GUwguZo68w4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p14461667_b_v9_aa.jpg", genre: "Drama, Crime, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3, Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/9t2ByB7qm" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/Wq-fOzhHM" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/FN0nNCrb5" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/_kPqdITq1-" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/d20KmoTxV" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/0U2I4SlvT" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/XRXuUFKAt" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/1sY-1Hqjr" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/Csi71zmlq" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/BB9pwSkHb" },
+        ]
+    }, {
+        title: "Severance (2022)", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTg4NTBiZDAtZTc0YS00NzZlLTg4Y2ItNGQ3M2ZlMDM5MWQzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Crime, Mystery & Thriller, Sci-Fi", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4, Episode 1-13", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/FTwB5Dy6u" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/wCrRoPVCB" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/6H-8b2yiZ" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/Q3OfixyjW" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/TmgsY1mU7" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/2sdrNgK5j" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/wKJhGEqsB" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/2Y97dvj3B" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/qiowEZQG5" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/FGEfahXgu" },
+            { number: 11, title: "Episode 11", embedUrl: "https://short.icu/xrDo8d5J7" },
+            { number: 12, title: "Episode 12", embedUrl: "https://short.icu/0UoJoBVoA" },
+            { number: 13, title: "Episode 13", embedUrl: "https://short.icu/U2858620d" },
+        ]
+    }, {
+        title: "Pluribus (2025)", posterUrl: "https://resizing.flixster.com/U97uBdc-OSUWpJ7b7n9e_eSbg0g=/fit-in/705x460/v2/https://resizing.flixster.com/TnmWs-1kvQZQfNrzQmZYsu4NJPw=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vN2NmMTAxNWQtMDZlOS00ZDY5LWI3OTItZDM4ODBlMDIxOGYyLnBuZw==", genre: "Drama", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/Z-N_g4TaM" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V2kHrH2K3" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/23v7ht111" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/fUuFPOqYv" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/_HbBT5xbh" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/jaoZmH3gd" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/vJmXnmyjE" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/uyNmS2LYy" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/PI5e_Z-8I" },
+        ]
+    }, {
+        title: "Severance (2022)", posterUrl: "https://m.media-amazon.com/images/I/713HILcikjL._AC_UF894,1000_QL80_.jpg", genre: "Drama, Mystery & Thriller, Sci-Fi", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/V9oCFUO-u" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/5rJqylNaoC" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/Sm60dgonS" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/1-L3N2GUO" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/nNeXsNlXh" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/MWnuF8-jE" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/vSVsFvsDt" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/hxRb9Dj3S" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/in2pbHg1M" },
+        ]
     },
+
 
 
     // =======================================================================
