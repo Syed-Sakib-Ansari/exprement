@@ -1,6 +1,6 @@
 const contentData = [
     {
-        title: "Noise (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zvtrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhhNDUxM2EtYjFhNy00OTIyLWFkNzItMjUxYTFjMWIzMDc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvtrn&dl=1"
+        title: "Noise (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zvtrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhhNDUxM2EtYjFhNy00OTIyLWFkNzItMjUxYTFjMWIzMDc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvtrn&dl=1"
     }, {
         title: "Ustaad Bhagat Singh (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6rmnw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE4YzdhZTItMmIxYS00ZjdjLTg5OGQtYjc0YjUzOWQ3NzcyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Action, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rmnw&dl=1",
     }, {
@@ -3131,7 +3131,7 @@ const contentData = [
 
 
     {
-        title: "Noise (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zvtrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhhNDUxM2EtYjFhNy00OTIyLWFkNzItMjUxYTFjMWIzMDc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Korean Country", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvtrn&dl=1"
+        title: "Noise (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zvtrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhhNDUxM2EtYjFhNy00OTIyLWFkNzItMjUxYTFjMWIzMDc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Korean Country", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvtrn&dl=1"
     }, {
         title: "The Ugly (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s5aom", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDdmNGFiOTEtYjYzNS00NThjLThlNDEtZjVjMDY4YTgzM2IwXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Korean Country", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5aom&dl=1"
     }, {
