@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Suyodhana (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oxltw", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjYzZmJiMDktZTJiYy00NDg1LTljNzQtYjYzYTY0MGRlZDJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Mystery", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oxltw&dl=1",
+    }, {
         title: "Matka King (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmFiOTNjNGQtNjVlZC00MjQ2LTk3MjAtZjVmNTI3ODZiNTZkXkEyXkFqcGc@._V1_.jpg", genre: "Ganster, Crime, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/etT7maFnb" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/8oTUyI286" },
@@ -49,8 +51,6 @@ const contentData = [
         title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yarwr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yarwr&dl=1",
     }, {
         title: "Raakaasa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnd5e", posterUrl: "https://m.media-amazon.com/images/M/MV5BODBlMTkxOWYtZGUxOC00MDkyLWI2NWMtYmM5MDE4NmJkNGM1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Fantasy", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnd5e&dl=1",
-    }, {
-        title: "Biker (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktqnx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDRjOGQ1MGQtZjAzNS00NzliLWIxZGUtY2U1ODgzYTQ3MmU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Family, Sport", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktqnx&dl=1",
     },
 
 
@@ -2266,6 +2266,8 @@ const contentData = [
 
 
     {
+        title: "Suyodhana (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oxltw", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjYzZmJiMDktZTJiYy00NDg1LTljNzQtYjYzYTY0MGRlZDJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Mystery", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oxltw&dl=1",
+    }, {
         title: "Seetharam Benoy Case No. 18 (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#yass6", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcxOWE3ODctODk5MS00ODBmLWE0MmUtZjU0YmJmYTRhM2ZlXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Mystery", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yass6&dl=1",
     }, {
         title: "Ustaad Bhagat Singh (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6rmnw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE4YzdhZTItMmIxYS00ZjdjLTg5OGQtYjc0YjUzOWQ3NzcyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Action, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rmnw&dl=1",
