@@ -1,5 +1,13 @@
 const contentData = [
     {
+        title: "Agra (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#6rlwc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWVhYWEzOWEtZTdiOC00N2RhLWI1YTQtZThlMzJlMzQ3YjQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Adult", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rlwc&dl=1",
+    }, {
+        title: "Seetharam Benoy Case No. 18 (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#yass6", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcxOWE3ODctODk5MS00ODBmLWE0MmUtZjU0YmJmYTRhM2ZlXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Mystery", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yass6&dl=1",
+    }, {
+        title: "Do Deewane Seher Mein (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ju83z", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk4ZTc1ZjAtOThkNS00NmZkLTkwNTQtZTI2ZDhiOWY4ZjAzXkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ju83z&dl=1"
+    }, {
+        title: "Assi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v5i6h", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Assi_film_poster.jpg/250px-Assi_film_poster.jpg", genre: "Courtroom, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v5i6h&dl=1"
+    }, {
         title: "Noise (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zvtrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhhNDUxM2EtYjFhNy00OTIyLWFkNzItMjUxYTFjMWIzMDc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvtrn&dl=1"
     }, {
         title: "Ustaad Bhagat Singh (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6rmnw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE4YzdhZTItMmIxYS00ZjdjLTg5OGQtYjc0YjUzOWQ3NzcyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Action, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rmnw&dl=1",
@@ -35,15 +43,7 @@ const contentData = [
         title: "Biker (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktqnx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDRjOGQ1MGQtZjAzNS00NzliLWIxZGUtY2U1ODgzYTQ3MmU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Family, Sport", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktqnx&dl=1",
     }, {
         title: "Carmeni Selvam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktht3", posterUrl: "https://pbs.twimg.com/media/HCqZL_kaUAAUjHs.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktht3&dl=1",
-    }, {
-        title: "Wardriver (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qzel1", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQwNGMxNDAtZTg4MC00MGYyLWE0YmMtZTE1ZWY0MmRjYmJjXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qzel1&dl=1",
-    }, {
-        title: "Reminders of Him (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shhoo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjI4OGM1NDEtYzA1NS00ZDg3LWFmZjUtMjg1MGQ4MTk3NjQzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shhoo&dl=1",
-    }, {
-        title: "The Cure (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnfby", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGZkNjI4MTUtMjc3MC00MDdmLTlhNDMtYWZlOTgwZDQ4ZjBkXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "Hindi", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnfby&dl=1",
-    }, {
-        title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1p58e", posterUrl: "https://images.plex.tv/photo?size=large-1280&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FlbrnJY7E0a9xxgj2cotNp6YI4dz.jpg", genre: "Drama, Action, Thriller, Romance", category: "Recent Adds", language: "Hindi", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1p58e&dl=1",
-    }, 
+    },
 
 
     // =======================================================================
@@ -52,6 +52,8 @@ const contentData = [
 
 
     {
+        title: "Agra (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#6rlwc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWVhYWEzOWEtZTdiOC00N2RhLWI1YTQtZThlMzJlMzQ3YjQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Adult", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rlwc&dl=1",
+    }, {
         title: "Toaster (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5fdeq", posterUrl: "https://resizing.flixster.com/B9SBadqf-7FZ7MxcRkx-zt4VUf8=/fit-in/705x460/v2/https://resizing.flixster.com/ltuhDjJZ8F1iNYw4IagAHMgO-Bs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E2YTdkNmJlLTdiNGEtNDBjNC1iNzhkLWExYTYxNzUxODUyNC5qcGc=", genre: "Mystery & Thriller, Comedy", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5fdeq&dl=1",
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
@@ -90,9 +92,9 @@ const contentData = [
     }, {
         title: "Accused (2026)", embedUrl: "https://short.icu/aymtJl0tQ", posterUrl: "https://resizing.flixster.com/ZyREzLssaTnrOqn9iR3Qz5lxh3Y=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32453986_p_v8_aa.jpg", genre: "Drama, Mystery & Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Do Deewane Seher Mein (2026)", embedUrl: "https://short.icu/sDWrcCpYn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk4ZTc1ZjAtOThkNS00NmZkLTkwNTQtZTI2ZDhiOWY4ZjAzXkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Do Deewane Seher Mein (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ju83z", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk4ZTc1ZjAtOThkNS00NmZkLTkwNTQtZTI2ZDhiOWY4ZjAzXkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ju83z&dl=1"
     }, {
-        title: "Assi (2026)", embedUrl: "https://short.icu/hTsDsIuc9", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Assi_film_poster.jpg/250px-Assi_film_poster.jpg", genre: "Courtroom, Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Assi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v5i6h", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Assi_film_poster.jpg/250px-Assi_film_poster.jpg", genre: "Courtroom, Thriller", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v5i6h&dl=1"
     }, {
         title: "O' Romeo (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yzs8c", posterUrl: "https://resizing.flixster.com/sbiwNmlSx6welFpp36aIJoKZj28=/fit-in/705x460/v2/https://resizing.flixster.com/3RPG01zNRu9KnzRzJvjtRto17Nc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUzNzBlZjQwLTZjYmEtNGViNy1iZjExLTk3NTYwMGQ0MTgwOS5wbmc=", genre: "Action, Mystery & Thriller, Romance", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzs8c&dl=1"
     }, {
@@ -523,6 +525,8 @@ const contentData = [
         title: "It Follows (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#6xr1z", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmI0ZTg2ZmUtZThiNy00MTQxLWE5MzMtZTQzMGFlOWRkOGRmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller, Mystery", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xr1z&dl=1",
     }, {
         title: "Chaos Walking (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#qnzan", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTVlODY5MWMtZWM0Zi00ZWJkLTg1MTItZjViNTg1YzZmZDIwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Drama, Fantasy, Sci-Fi, Survival", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qnzan&dl=1",
+    }, {
+        title: "No Tears in Hell (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#kto6i", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjdmOTEyMzAtYzNiMy00MTRmLWFiNDUtNTljZGI2NGM1YmYzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Crime", category: "Hollywood", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#kto6i&dl=1",
     }, {
         title: "The Babadook (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#vp59y", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk0NzMzODc2NF5BMl5BanBnXkFtZTgwOTYzNTM1MzE@._V1_.jpg", genre: "Drama, Mystery, Horror, Thriller", category: "Hollywood", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vp59y&dl=1",
     }, {
@@ -2254,6 +2258,8 @@ const contentData = [
 
 
     {
+        title: "Seetharam Benoy Case No. 18 (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#yass6", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcxOWE3ODctODk5MS00ODBmLWE0MmUtZjU0YmJmYTRhM2ZlXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Mystery", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yass6&dl=1",
+    }, {
         title: "Ustaad Bhagat Singh (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6rmnw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE4YzdhZTItMmIxYS00ZjdjLTg5OGQtYjc0YjUzOWQ3NzcyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Action, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rmnw&dl=1",
     }, {
         title: "Youth (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlq1o", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/244876/Youth-Telugu-27x40.jpg", genre: "Comedy, Family, Romance", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlq1o&dl=1",
