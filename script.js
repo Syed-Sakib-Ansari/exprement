@@ -1,5 +1,15 @@
 const contentData = [
     {
+        title: "Matka King (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmFiOTNjNGQtNjVlZC00MjQ2LTk3MjAtZjVmNTI3ODZiNTZkXkEyXkFqcGc@._V1_.jpg", genre: "Ganster, Crime, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/etT7maFnb" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/8oTUyI286" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/lJaA_mSy1" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/b6f2Q9WFM" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/8ddyzj7q_" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/sTVc8wxQD" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/TglTodU_w" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/xtHRtXqFC" },]
+    }, {
         title: "Agra (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#6rlwc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWVhYWEzOWEtZTdiOC00N2RhLWI1YTQtZThlMzJlMzQ3YjQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Adult", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rlwc&dl=1",
     }, {
         title: "Seetharam Benoy Case No. 18 (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#yass6", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcxOWE3ODctODk5MS00ODBmLWE0MmUtZjU0YmJmYTRhM2ZlXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Mystery", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yass6&dl=1",
@@ -41,8 +51,6 @@ const contentData = [
         title: "Raakaasa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnd5e", posterUrl: "https://m.media-amazon.com/images/M/MV5BODBlMTkxOWYtZGUxOC00MDkyLWI2NWMtYmM5MDE4NmJkNGM1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Fantasy", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnd5e&dl=1",
     }, {
         title: "Biker (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktqnx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDRjOGQ1MGQtZjAzNS00NzliLWIxZGUtY2U1ODgzYTQ3MmU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Family, Sport", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktqnx&dl=1",
-    }, {
-        title: "Carmeni Selvam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktht3", posterUrl: "https://pbs.twimg.com/media/HCqZL_kaUAAUjHs.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktht3&dl=1",
     },
 
 
@@ -3680,6 +3688,16 @@ const contentData = [
 
 
     {
+        title: "Matka King (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmFiOTNjNGQtNjVlZC00MjQ2LTk3MjAtZjVmNTI3ODZiNTZkXkEyXkFqcGc@._V1_.jpg", genre: "Ganster, Crime, Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/etT7maFnb" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/8oTUyI286" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/lJaA_mSy1" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/b6f2Q9WFM" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/8ddyzj7q_" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/sTVc8wxQD" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/TglTodU_w" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/xtHRtXqFC" },]
+    }, {
         title: "Maa Ka Sum (2026)", posterUrl: "https://resizing.flixster.com/WeLR6ajyYhgJBpFpKVyPY83FNR0=/fit-in/705x460/v2/https://resizing.flixster.com/_EEOIc4GNJFibRzax5v308ZHzbE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNTVkNzA4MjktODM3ZS00YjU4LTk3ZWQtYjg0ZDBmZWRkYzcyLmpwZw==", genre: "Comedy", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/D3wAx4Pwz" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/gDngFTtW2" },
