@@ -1,5 +1,11 @@
 const contentData = [
     {
+        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9gtko", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9gtko&dl=1",
+    }, {
+        title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlzhi", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "Recent Adds", language: "Tamil", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlzhi&dl=1",
+    }, {
+        title: "Vengeance (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yap1t", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWVjZTNmYWItYzdkNy00YWViLWFhNjktZDk4YTFkZWJlOTcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Crime, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yap1t&dl=1",
+    }, {
         title: "Roommates (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8eur6", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjk2YmRhNTItOGY5Ni00MjgwLTk4ZGMtMzE0MTQzMmMxYWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8eur6&dl=1",
     }, {
         title: "180 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fk5kl", posterUrl: "https://resizing.flixster.com/3WXVFdUH7ZPuKnOKXrdAdACcors=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32718140_v_v8_aa.jpg", genre: "Mystery & Thriller, Crime, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fk5kl&dl=1",
@@ -45,12 +51,6 @@ const contentData = [
         ]
     }, {
         title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#juhzc", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#juhzc&dl=1"
-    }, {
-        title: "Fake Profile (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qzj6p", posterUrl: "https://resizing.flixster.com/B4tNRf4vM5p0Qm-_xPRiMtNaeqQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vN2I3M2FmMjgtMmY5My00OGZmLWI5NmYtYWIyNTQxMmViZTY3LmpwZw==", genre: "Drama, Mystery & Thriller, Romance", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qzj6p&dl=1", seriesInfo: "Season 3 Episode ALL",
-    }, {
-        title: "Balls Up (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gsw5b", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjJlMDFmOWMtY2NhZS00MzAwLWFiOWQtNzBiZDNiOWRiMDA4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Crime, Sport", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gsw5b&dl=1",
-    }, {
-        title: "Youth (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlq1o", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/244876/Youth-Telugu-27x40.jpg", genre: "Comedy, Family, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlq1o&dl=1",
     },
 
 
@@ -60,6 +60,8 @@ const contentData = [
 
 
     {
+        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9gtko", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Bollywood", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9gtko&dl=1",
+    }, {
         title: "Badass Ravikumar (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6rtjz", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmNjNmM0ZWMtZWIwZS00ZmFmLWFmNDAtMWE1MzQ4YjMzZTE3XkEyXkFqcGc@._V1_.jpg", genre: "Parody, Action, Comedy, Musical", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rtjz&dl=1",
     }, {
         title: "Agra (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#6rlwc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWVhYWEzOWEtZTdiOC00N2RhLWI1YTQtZThlMzJlMzQ3YjQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Adult", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rlwc&dl=1",
@@ -460,6 +462,8 @@ const contentData = [
 
 
     {
+        title: "Vengeance (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yap1t", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWVjZTNmYWItYzdkNy00YWViLWFhNjktZDk4YTFkZWJlOTcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Crime, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yap1t&dl=1",
+    }, {
         title: "Roommates (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8eur6", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjk2YmRhNTItOGY5Ni00MjgwLTk4ZGMtMzE0MTQzMmMxYWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8eur6&dl=1",
     }, {
         title: "180 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fk5kl", posterUrl: "https://resizing.flixster.com/3WXVFdUH7ZPuKnOKXrdAdACcors=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32718140_v_v8_aa.jpg", genre: "Mystery & Thriller, Crime, Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fk5kl&dl=1",
@@ -502,6 +506,8 @@ const contentData = [
     }, {
         title: "Keeper (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hfsgk", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c6/Keeper_2025_film_poster.jpg", genre: "Horror", category: "Hollywood", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfsgk&dl=1",
     }, {
+        title: "Pain & Gain (2013)", embedUrl: "https://moviedakhi.4meplayer.com/#rwnvk", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTU0NDE5NTU0OV5BMl5BanBnXkFtZTcwMzI1OTMzOQ@@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Action, Biography, Comedy", category: "Hollywood", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rwnvk&dl=1",
+    }, {
         title: "Lovebug (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#gv9cf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDgyZGZlYTMtMzAwZS00NjAzLWEzMGYtM2YxNzJkNTIwMDE4XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Romance", category: "Hollywood", language: "Hindi", quality:"Cam-Hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gv9cf&dl=1",
     }, {
         title: "Undertone (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6rbdz", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjg1YTY5ODQtOWUxYi00MGU5LWE0MGItZDkwODcyMzc3OGQ3XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Sci-Fi, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rbdz&dl=1",
@@ -529,6 +535,8 @@ const contentData = [
         title: "The Carpenter's Son (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#oejqo", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGI4NGY0Y2UtNzRhOC00YTk4LTkzNTctODhkOTRjOTI5ZGI2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "Hollywood", language: "Hindi", quality:"hd-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oejqo&dl=1",
     }, {
         title: "Kill Her Goats (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#1tppi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjIwN2NkYTItYzgyZi00MTE0LWIyNTktZGU2YWZmNjFlN2MzXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller, Comedy", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1tppi&dl=1",
+    }, {
+        title: "Assassin's Creed (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#hnb9u", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTU2Mjc1ODY2OV5BMl5BanBnXkFtZTgwNTMzMTYzMDI@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Sci-Fi", category: "Hollywood", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnb9u&dl=1",
     }, {
         title: "Eden Lake (2008)", embedUrl: "https://moviedakhi.4meplayer.com/#hfnzk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWNmNDI2ZTYtYTliOC00ZjExLWE5MTktZjQzMjUzYWEwMTc3XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller, Mystery", category: "Hollywood", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfnzk&dl=1",
     }, {
@@ -2272,6 +2280,8 @@ const contentData = [
 
 
     {
+        title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlzhi", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "South", language: "Tamil", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlzhi&dl=1",
+    }, {
         title: "Suyodhana (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oxltw", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjYzZmJiMDktZTJiYy00NDg1LTljNzQtYjYzYTY0MGRlZDJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Mystery", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oxltw&dl=1",
     }, {
         title: "Seetharam Benoy Case No. 18 (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#yass6", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcxOWE3ODctODk5MS00ODBmLWE0MmUtZjU0YmJmYTRhM2ZlXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Mystery", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yass6&dl=1",
@@ -3484,6 +3494,16 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/rdaTh5Zp1" }, 
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/5qCKFp3J5" }, 
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/MPjA0r6LL" },]
+    }, {
+        title: "Supersex (2024)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmEwYjFlNmEtMWM2Yi00M2RlLTg4NTktZTYxNDA0NmQ4ZmFhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/ZO5-1FxTZ" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/gvooFbG7b" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/OX832SNfq" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/q9RQDHOeo" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/0fNioC39b" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/HMaVjQOZS" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/INyvAO430" }, 
+            ]
     }, {
         title: "Vladimir (2026)", posterUrl: "https://resizing.flixster.com/nNncZq7HrRZZ-LCyg9bYHez1AsA=/fit-in/705x460/v2/https://resizing.flixster.com/sIpEYv9fwRQsyt0ahSjbU_XmdvY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNjg3MjVmZWYtMTQ5YS00NzVkLWE0ZjMtZTI4NTU2NTJhYmI2LmpwZw==", genre: "Comedy, Drama, Adult", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/YgrRHTfWXK" },
