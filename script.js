@@ -1,5 +1,9 @@
 const contentData = [
     {
+        title: "Roommates (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8eur6", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjk2YmRhNTItOGY5Ni00MjgwLTk4ZGMtMzE0MTQzMmMxYWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8eur6&dl=1",
+    }, {
+        title: "180 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fk5kl", posterUrl: "https://resizing.flixster.com/3WXVFdUH7ZPuKnOKXrdAdACcors=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32718140_v_v8_aa.jpg", genre: "Mystery & Thriller, Crime, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fk5kl&dl=1",
+    }, {
         title: "Suyodhana (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oxltw", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjYzZmJiMDktZTJiYy00NDg1LTljNzQtYjYzYTY0MGRlZDJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Mystery", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oxltw&dl=1",
     }, {
         title: "Matka King (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmFiOTNjNGQtNjVlZC00MjQ2LTk3MjAtZjVmNTI3ODZiNTZkXkEyXkFqcGc@._V1_.jpg", genre: "Ganster, Crime, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
@@ -47,10 +51,6 @@ const contentData = [
         title: "Balls Up (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gsw5b", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjJlMDFmOWMtY2NhZS00MzAwLWFiOWQtNzBiZDNiOWRiMDA4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Crime, Sport", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gsw5b&dl=1",
     }, {
         title: "Youth (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlq1o", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/244876/Youth-Telugu-27x40.jpg", genre: "Comedy, Family, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlq1o&dl=1",
-    }, {
-        title: "Sambhavam Adhyayam Onnu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yarwr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGNmODVmOTMtYzU0OC00MGY1LWIxZTAtMTQ1NzEzYjk2ODRmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yarwr&dl=1",
-    }, {
-        title: "Raakaasa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hnd5e", posterUrl: "https://m.media-amazon.com/images/M/MV5BODBlMTkxOWYtZGUxOC00MDkyLWI2NWMtYmM5MDE4NmJkNGM1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Fantasy", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hnd5e&dl=1",
     },
 
 
@@ -60,6 +60,8 @@ const contentData = [
 
 
     {
+        title: "Badass Ravikumar (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6rtjz", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmNjNmM0ZWMtZWIwZS00ZmFmLWFmNDAtMWE1MzQ4YjMzZTE3XkEyXkFqcGc@._V1_.jpg", genre: "Parody, Action, Comedy, Musical", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rtjz&dl=1",
+    }, {
         title: "Agra (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#6rlwc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWVhYWEzOWEtZTdiOC00N2RhLWI1YTQtZThlMzJlMzQ3YjQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Adult", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rlwc&dl=1",
     }, {
         title: "Toaster (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#juop3", posterUrl: "https://resizing.flixster.com/B9SBadqf-7FZ7MxcRkx-zt4VUf8=/fit-in/705x460/v2/https://resizing.flixster.com/ltuhDjJZ8F1iNYw4IagAHMgO-Bs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E2YTdkNmJlLTdiNGEtNDBjNC1iNzhkLWExYTYxNzUxODUyNC5qcGc=", genre: "Mystery & Thriller, Comedy", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#juop3&dl=1",
@@ -458,6 +460,10 @@ const contentData = [
 
 
     {
+        title: "Roommates (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8eur6", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjk2YmRhNTItOGY5Ni00MjgwLTk4ZGMtMzE0MTQzMmMxYWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8eur6&dl=1",
+    }, {
+        title: "180 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fk5kl", posterUrl: "https://resizing.flixster.com/3WXVFdUH7ZPuKnOKXrdAdACcors=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32718140_v_v8_aa.jpg", genre: "Mystery & Thriller, Crime, Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fk5kl&dl=1",
+    }, {
         title: "Balls Up (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gsw5b", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjJlMDFmOWMtY2NhZS00MzAwLWFiOWQtNzBiZDNiOWRiMDA4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Crime, Sport", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gsw5b&dl=1",
     }, {
         title: "Wardriver (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qzel1", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGQwNGMxNDAtZTg4MC00MGYyLWE0YmMtZTE1ZWY0MmRjYmJjXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qzel1&dl=1",
