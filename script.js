@@ -1,6 +1,6 @@
 const contentData = [
     {
-        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9gtko", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9gtko&dl=1",
+        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
     }, {
         title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlzhi", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "Recent Adds", language: "Tamil", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlzhi&dl=1",
     }, {
@@ -60,7 +60,7 @@ const contentData = [
 
 
     {
-        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9gtko", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Bollywood", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9gtko&dl=1",
+        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Bollywood", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
     }, {
         title: "Badass Ravikumar (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6rtjz", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmNjNmM0ZWMtZWIwZS00ZmFmLWFmNDAtMWE1MzQ4YjMzZTE3XkEyXkFqcGc@._V1_.jpg", genre: "Parody, Action, Comedy, Musical", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rtjz&dl=1",
     }, {
