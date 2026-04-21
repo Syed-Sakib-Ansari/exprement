@@ -5,7 +5,7 @@ const contentData = [
         ]
     }, {
         title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
-    },    {
+    }, {
         title: "Muck (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#9ao8x", posterUrl: "https://m.media-amazon.com/images/I/91DQD83MRoL._AC_UF894,1000_QL80_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ao8x&dl=1",
     }, {
         title: "Cut! (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#6jn8j", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzNjE1MjI3NV5BMl5BanBnXkFtZTcwOTQxNTgyNw@@._V1_.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jn8j&dl=1",
@@ -3911,6 +3911,45 @@ const contentData = [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h" },
         ]
     }, {
+        title: "From (2024)", posterUrl: "https://resizing.flixster.com/3nP5cqgEFMXg-MccmojN03wlcXQ=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27981554_b_v12_aa.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/E0FfFXcnV" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/qZwvJGH5y" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/Bjj6dv4k2" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/8VjnkCYOf" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/fpqtv8aga" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/2kl4y14mY" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/5Zz10geAW" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/8k1qwanBZ" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/ncK-gaaR2" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/XgsuNMvFm" },
+        ]
+    }, {
+        title: "From (2023)", posterUrl: "https://resizing.flixster.com/TYIepQv30d9HbzwAIgf3rK2-TtU=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23817967_b_v12_aa.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zcTi0u-_N" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/feQuT_Hgz" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/--40aF6M_" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/YICmXfPE6" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/zXqC2evcA" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/HJ0jRlPgv" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/230ce1GVW" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/a9NNQtbdj" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/dZwbdijgK" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/0Kd_HU9o3" },
+        ]
+    }, {
+        title: "From (2022)", posterUrl: "https://resizing.flixster.com/UdbivSb8CeEbWOwx4w8etbBqnD8=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p21200256_b_v13_aa.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/lyTSTBLUH" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/ALBBm6IWB" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/fl6er9K8O" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/RZb4xdIjr" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/9XSdbKh4o" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/eyPBhMckJN" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/2WrrLQCfu" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/G2cNY9syJ" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/6ryNhZ4VC" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/isP0I4EsW" },
+        ]
+    }, {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-5", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
@@ -3919,8 +3958,9 @@ const contentData = [
             { number: 5, title: "Episode 5", embedUrl: "https://short.icu/HoeFyS8Vj" },
         ]
     }, {
-        title: "Euphoria (2026)", posterUrl: "https://pbs.twimg.com/media/HE9qMvUaUAAScjn.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1", episodes: [
+        title: "Euphoria (2026)", posterUrl: "https://pbs.twimg.com/media/HE9qMvUaUAAScjn.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-2", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/IasDw3x8x" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/v_l0Mz0F_" },
         ]
     }, {
         title: "Big Mistakes (2026)", posterUrl: "https://resizing.flixster.com/bhmRt0fW49RdiHVOSXd_Ql8XCaE=/fit-in/705x460/v2/https://resizing.flixster.com/kNq-EMz4ZxsrvQ9OeeUJK5iMNIA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2I4MDk2MGMtOWNhNC00NWNlLTg5YjktZWNkOTlkZjFjNzhiLmpwZw==", genre: "Crime, Comedy", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
