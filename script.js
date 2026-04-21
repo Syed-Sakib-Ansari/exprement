@@ -5,6 +5,16 @@ const contentData = [
         ]
     }, {
         title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
+    },    {
+        title: "Muck (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#9ao8x", posterUrl: "https://m.media-amazon.com/images/I/91DQD83MRoL._AC_UF894,1000_QL80_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ao8x&dl=1",
+    }, {
+        title: "Cut! (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#6jn8j", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzNjE1MjI3NV5BMl5BanBnXkFtZTcwOTQxNTgyNw@@._V1_.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jn8j&dl=1",
+    }, {
+        title: "Middle Men (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#pfqwr", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F6%2Fgracenote%2F65a8018dce0dbcd8725159f5d2c4d597.jpg", genre: "Comedy, Crime, Drama", category: "Recent Adds", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#pfqwr&dl=1",
+    }, {
+        title: "The Glass Coffin (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#gcefx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzg0ODM2OTYtZTVhMy00MGRiLWFiODEtMmNkZGUxYzcxZTliXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gcefx&dl=1",
+    }, {
+        title: "Silent Night, Deadly Night (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ornnb", posterUrl: "https://revuecinema.ca/wp-content/uploads/2025/10/silent_night,_deadly_night_tmdb-xv3cjedmqzkmahznoni86izd370-683x1024.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ornnb&dl=1",
     }, {
         title: "Pallichattambi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qz5ac", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGM3YWEzOTktYzM3Yy00YzFkLTg0OGItMGY1OGYwMzUzY2RkXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qz5ac&dl=1",
     }, {
@@ -33,20 +43,6 @@ const contentData = [
         title: "Seetharam Benoy Case No. 18 (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#yass6", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcxOWE3ODctODk5MS00ODBmLWE0MmUtZjU0YmJmYTRhM2ZlXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Mystery", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yass6&dl=1",
     }, {
         title: "Do Deewane Seher Mein (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ju83z", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk4ZTc1ZjAtOThkNS00NmZkLTkwNTQtZTI2ZDhiOWY4ZjAzXkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ju83z&dl=1"
-    }, {
-        title: "Assi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v5i6h", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Assi_film_poster.jpg/250px-Assi_film_poster.jpg", genre: "Courtroom, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v5i6h&dl=1"
-    }, {
-        title: "Noise (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zvtrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhhNDUxM2EtYjFhNy00OTIyLWFkNzItMjUxYTFjMWIzMDc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvtrn&dl=1"
-    }, {
-        title: "Ustaad Bhagat Singh (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6rmnw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE4YzdhZTItMmIxYS00ZjdjLTg5OGQtYjc0YjUzOWQ3NzcyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Action, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rmnw&dl=1",
-    }, {
-        title: "Toaster (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#juop3", posterUrl: "https://resizing.flixster.com/B9SBadqf-7FZ7MxcRkx-zt4VUf8=/fit-in/705x460/v2/https://resizing.flixster.com/ltuhDjJZ8F1iNYw4IagAHMgO-Bs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E2YTdkNmJlLTdiNGEtNDBjNC1iNzhkLWExYTYxNzUxODUyNC5qcGc=", genre: "Mystery & Thriller, Comedy", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#juop3&dl=1",
-    }, {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-3", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/PyNsruhwI" },
-        ]
     },
 
 
@@ -458,6 +454,16 @@ const contentData = [
 
 
     {
+        title: "Muck (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#9ao8x", posterUrl: "https://m.media-amazon.com/images/I/91DQD83MRoL._AC_UF894,1000_QL80_.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ao8x&dl=1",
+    }, {
+        title: "Cut! (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#6jn8j", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzNjE1MjI3NV5BMl5BanBnXkFtZTcwOTQxNTgyNw@@._V1_.jpg", genre: "Horror, Mystery, Thriller", category: "Hollywood", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jn8j&dl=1",
+    }, {
+        title: "Middle Men (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#pfqwr", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F6%2Fgracenote%2F65a8018dce0dbcd8725159f5d2c4d597.jpg", genre: "Comedy, Crime, Drama", category: "Hollywood", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#pfqwr&dl=1",
+    }, {
+        title: "The Glass Coffin (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#gcefx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzg0ODM2OTYtZTVhMy00MGRiLWFiODEtMmNkZGUxYzcxZTliXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "Hollywood", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gcefx&dl=1",
+    }, {
+        title: "Silent Night, Deadly Night (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ornnb", posterUrl: "https://revuecinema.ca/wp-content/uploads/2025/10/silent_night,_deadly_night_tmdb-xv3cjedmqzkmahznoni86izd370-683x1024.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ornnb&dl=1",
+    }, {
         title: "Lee Cronin's the Mummy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktkvf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhlNTAyYTgtOGRmZS00ZmE0LTk4ZTUtMjk3ZjZhMWE4YWY0XkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktkvf&dl=1",
     }, {
         title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#shw96", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Sci-Fi, Thriller", category: "Hollywood", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#shw96&dl=1",
@@ -597,6 +603,8 @@ const contentData = [
         title: "Last Breath (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#oej8n", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmNjMDg1Y2EtNmZiOS00NGUzLThjZGYtNzU2OGI5M2VkMDFhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Thriller", category: "Hollywood", language: "Dual-Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oej8n&dl=1",
     }, {
         title: "Dolly (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vtkdl", posterUrl: "https://resizing.flixster.com/48NlKPIGU2_wiMnCVzCxgj6_HME=/fit-in/705x460/v2/https://resizing.flixster.com/eZiQvYiMLlIDakHsqnKzMTBVPNE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UxYmE1NDQ0LTI1OTctNDA0OC05M2M1LWRhODhhYzg1Y2VlNi5qcGc=", genre: "Horror, Mystery, Thriller", category: "Hollywood", language: "Dual Audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vtkdl&dl=1",
+    }, {
+        title: "Evil Ed (1995)", embedUrl: "https://moviedakhi.4meplayer.com/#elkrf", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWFmMzNlYjItMDhkYy00M2RmLWEyNzYtMDBjZDFjZWVlNThhXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Satire, Horror", category: "Hollywood", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#elkrf&dl=1",
     }, {
         title: "Intruders (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#od35r", posterUrl: "https://resizing.flixster.com/IEEOeXv8rAmB0ShIZU85G8TUkVU=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9038024_v_v12_an.jpg", genre: "Drama, Horror, Mystery, Thriller", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#od35r&dl=1",
     }, {
@@ -3169,6 +3177,8 @@ const contentData = [
 
 
     {
+        title: "The Kill List (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#6jn33", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjc1YjkxMmUtM2MxZS00MDgwLWE4ZjYtZDAyNTY3NWFjMWI1XkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Korean Country", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jn33&dl=1"
+    }, {
         title: "Noise (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zvtrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhhNDUxM2EtYjFhNy00OTIyLWFkNzItMjUxYTFjMWIzMDc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Korean Country", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvtrn&dl=1"
     }, {
         title: "The Ugly (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s5aom", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDdmNGFiOTEtYjYzNS00NThjLThlNDEtZjVjMDY4YTgzM2IwXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Korean Country", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5aom&dl=1"
