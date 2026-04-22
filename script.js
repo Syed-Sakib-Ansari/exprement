@@ -6,6 +6,17 @@ const contentData = [
     }, {
         title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
     }, {
+        title: "The Secret Agent (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#f1dvd", posterUrl: "https://resizing.flixster.com/eMrhAzVGr5GHqvZML_zhRids_Hw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p29982560_v_v12_af.jpg", genre: "Drama, Mystery & Thriller, History", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1dvd&dl=1",
+    }, {
+        title: "Unchosen (2026)", posterUrl: "https://resizing.flixster.com/ion1WMNPwmtIWaRhvIxfnY2uhw8=/fit-in/705x460/v2/https://resizing.flixster.com/S5LqkvaxxkSQ3ZJGcwNuxJ2FHog=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzQxNzMzMDItM2Y1OS00YzBmLTkyMjktOGQ1MTNjMDA1ZDgyLmpwZw==", genre: "Drama, Mystery & Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/-9iOLC6PI" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/TqtPpYPSy" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/1rIYmbQuE" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/xPFjEXTiE" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/hgyPf5iOa" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/8ZeICvd8F" },
+        ]
+    }, {
         title: "Muck (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#9ao8x", posterUrl: "https://m.media-amazon.com/images/I/91DQD83MRoL._AC_UF894,1000_QL80_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ao8x&dl=1",
     }, {
         title: "Cut! (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#6jn8j", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzNjE1MjI3NV5BMl5BanBnXkFtZTcwOTQxNTgyNw@@._V1_.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jn8j&dl=1",
@@ -39,10 +50,6 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/xtHRtXqFC" },]
     }, {
         title: "Agra (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#6rlwc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWVhYWEzOWEtZTdiOC00N2RhLWI1YTQtZThlMzJlMzQ3YjQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Adult", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rlwc&dl=1",
-    }, {
-        title: "Seetharam Benoy Case No. 18 (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#yass6", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcxOWE3ODctODk5MS00ODBmLWE0MmUtZjU0YmJmYTRhM2ZlXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Mystery", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yass6&dl=1",
-    }, {
-        title: "Do Deewane Seher Mein (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ju83z", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk4ZTc1ZjAtOThkNS00NmZkLTkwNTQtZTI2ZDhiOWY4ZjAzXkEyXkFqcGc@._V1_.jpg", genre: "Romance, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ju83z&dl=1"
     },
 
 
@@ -454,6 +461,8 @@ const contentData = [
 
 
     {
+        title: "The Secret Agent (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#f1dvd", posterUrl: "https://resizing.flixster.com/eMrhAzVGr5GHqvZML_zhRids_Hw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p29982560_v_v12_af.jpg", genre: "Drama, Mystery & Thriller, History", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1dvd&dl=1",
+    }, {
         title: "Muck (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#9ao8x", posterUrl: "https://m.media-amazon.com/images/I/91DQD83MRoL._AC_UF894,1000_QL80_.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ao8x&dl=1",
     }, {
         title: "Cut! (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#6jn8j", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzNjE1MjI3NV5BMl5BanBnXkFtZTcwOTQxNTgyNw@@._V1_.jpg", genre: "Horror, Mystery, Thriller", category: "Hollywood", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jn8j&dl=1",
@@ -3907,6 +3916,15 @@ const contentData = [
 
 
     {
+        title: "Unchosen (2026)", posterUrl: "https://resizing.flixster.com/ion1WMNPwmtIWaRhvIxfnY2uhw8=/fit-in/705x460/v2/https://resizing.flixster.com/S5LqkvaxxkSQ3ZJGcwNuxJ2FHog=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzQxNzMzMDItM2Y1OS00YzBmLTkyMjktOGQ1MTNjMDA1ZDgyLmpwZw==", genre: "Drama, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/-9iOLC6PI" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/TqtPpYPSy" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/1rIYmbQuE" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/xPFjEXTiE" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/hgyPf5iOa" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/8ZeICvd8F" },
+        ]
+    }, {
         title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h" },
         ]
