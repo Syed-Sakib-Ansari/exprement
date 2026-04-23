@@ -22,6 +22,18 @@ const contentData = [
     }, {
         title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
     }, {
+        title: "Santita (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzFiZDg5MGQtMGY0Ny00N2M3LWIwYjktNDQ0NDAzOTliN2Y0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/cqN4sD0Wd" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/rDZjnUQBd" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/d2DbKtSgr" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/JSBTddM5_" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/82kYbQt2a" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/R5gV421k7" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/KlpdsZqCO" },
+        ]
+    }, {
+        title: "Candy and the Pizza Ggirl (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#nvvau", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDJlY2IzM2MtMWE4Yy00MDU2LWFlZTktYTc3Y2U3ZTU2YTM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Fantasy", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nvvau&dl=1",
+    }, {
         title: "The Secret Agent (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#f1dvd", posterUrl: "https://resizing.flixster.com/eMrhAzVGr5GHqvZML_zhRids_Hw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p29982560_v_v12_af.jpg", genre: "Drama, Mystery & Thriller, History", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1dvd&dl=1",
     }, {
         title: "Unchosen (2026)", posterUrl: "https://resizing.flixster.com/ion1WMNPwmtIWaRhvIxfnY2uhw8=/fit-in/705x460/v2/https://resizing.flixster.com/S5LqkvaxxkSQ3ZJGcwNuxJ2FHog=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzQxNzMzMDItM2Y1OS00YzBmLTkyMjktOGQ1MTNjMDA1ZDgyLmpwZw==", genre: "Drama, Mystery & Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-6", episodes: [
@@ -50,10 +62,6 @@ const contentData = [
         title: "Vengeance (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yap1t", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWVjZTNmYWItYzdkNy00YWViLWFhNjktZDk4YTFkZWJlOTcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Crime, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yap1t&dl=1",
     }, {
         title: "Roommates (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8eur6", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjk2YmRhNTItOGY5Ni00MjgwLTk4ZGMtMzE0MTQzMmMxYWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8eur6&dl=1",
-    }, {
-        title: "180 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fk5kl", posterUrl: "https://resizing.flixster.com/3WXVFdUH7ZPuKnOKXrdAdACcors=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32718140_v_v8_aa.jpg", genre: "Mystery & Thriller, Crime, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fk5kl&dl=1",
-    }, {
-        title: "Suyodhana (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oxltw", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjYzZmJiMDktZTJiYy00NDg1LTljNzQtYjYzYTY0MGRlZDJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Mystery", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oxltw&dl=1",
     },
 
 
@@ -465,6 +473,8 @@ const contentData = [
 
 
     {
+        title: "Candy and the Pizza Ggirl (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#nvvau", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDJlY2IzM2MtMWE4Yy00MDU2LWFlZTktYTc3Y2U3ZTU2YTM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Fantasy", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nvvau&dl=1",
+    }, {
         title: "The Secret Agent (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#f1dvd", posterUrl: "https://resizing.flixster.com/eMrhAzVGr5GHqvZML_zhRids_Hw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p29982560_v_v12_af.jpg", genre: "Drama, Mystery & Thriller, History", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1dvd&dl=1",
     }, {
         title: "Muck (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#9ao8x", posterUrl: "https://m.media-amazon.com/images/I/91DQD83MRoL._AC_UF894,1000_QL80_.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ao8x&dl=1",
@@ -2303,6 +2313,8 @@ const contentData = [
 
 
     {
+        title: "Athiran (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#dbbrm", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGRiOTZkNjEtNzJkNy00YTQ0LWE4MDYtNDM2MzcyM2I0NWJhXkEyXkFqcGc@._V1_.jpg", genre: "Mystery, Romance, Drama, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbbrm&dl=1",
+    }, {
         title: "Pallichattambi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qz5ac", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGM3YWEzOTktYzM3Yy00YzFkLTg0OGItMGY1OGYwMzUzY2RkXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "South", language: "Dual Audio", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qz5ac&dl=1",
     }, {
         title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlzhi", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "South", language: "Tamil", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlzhi&dl=1",
@@ -3920,6 +3932,16 @@ const contentData = [
 
 
     {
+        title: "Santita (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzFiZDg5MGQtMGY0Ny00N2M3LWIwYjktNDQ0NDAzOTliN2Y0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/cqN4sD0Wd" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/rDZjnUQBd" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/d2DbKtSgr" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/JSBTddM5_" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/82kYbQt2a" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/R5gV421k7" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/KlpdsZqCO" },
+        ]
+    }, {
         title: "Unchosen (2026)", posterUrl: "https://resizing.flixster.com/ion1WMNPwmtIWaRhvIxfnY2uhw8=/fit-in/705x460/v2/https://resizing.flixster.com/S5LqkvaxxkSQ3ZJGcwNuxJ2FHog=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzQxNzMzMDItM2Y1OS00YzBmLTkyMjktOGQ1MTNjMDA1ZDgyLmpwZw==", genre: "Drama, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-6", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/-9iOLC6PI" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/TqtPpYPSy" },
