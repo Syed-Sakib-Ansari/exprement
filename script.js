@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Apex (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#f1myj", posterUrl: "https://static0.colliderimages.com/wordpress/wp-content/uploads/sharedimages/2026/03/unnamed-3-1.jpg?q=49&fit=contain&w=480&dpr=2", genre: "Action, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1myj&dl=1"
+    }, {
         title: "Michael (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dbtyo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzllNmRlN2EtMDQyOC00ODJjLTg4OWQtZDNmNGU3YzlkNjc1XkEyXkFqcGc@._V1_.jpg", genre: "Biography, Drama, History, Music", category: "Recent Adds", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbtyo&dl=1"
     }, {
         title: "Safe House (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qgac1", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM2Y2Q0NGMtOGUwZC00MDcyLWEzNzAtZTg4YjMyYTAxODRjXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qgac1&dl=1"
@@ -60,8 +62,6 @@ const contentData = [
         title: "Middle Men (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#pfqwr", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F6%2Fgracenote%2F65a8018dce0dbcd8725159f5d2c4d597.jpg", genre: "Comedy, Crime, Drama", category: "Recent Adds", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#pfqwr&dl=1",
     }, {
         title: "The Glass Coffin (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#gcefx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzg0ODM2OTYtZTVhMy00MGRiLWFiODEtMmNkZGUxYzcxZTliXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gcefx&dl=1",
-    }, {
-        title: "Silent Night, Deadly Night (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ornnb", posterUrl: "https://revuecinema.ca/wp-content/uploads/2025/10/silent_night,_deadly_night_tmdb-xv3cjedmqzkmahznoni86izd370-683x1024.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ornnb&dl=1",
     },
 
 
@@ -477,6 +477,8 @@ const contentData = [
 
 
     {
+        title: "Apex (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#f1myj", posterUrl: "https://static0.colliderimages.com/wordpress/wp-content/uploads/sharedimages/2026/03/unnamed-3-1.jpg?q=49&fit=contain&w=480&dpr=2", genre: "Action, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1myj&dl=1"
+    }, {
         title: "Michael (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dbtyo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzllNmRlN2EtMDQyOC00ODJjLTg4OWQtZDNmNGU3YzlkNjc1XkEyXkFqcGc@._V1_.jpg", genre: "Biography, Drama, History, Music", category: "Hollywood", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbtyo&dl=1"
     }, {
         title: "Safe House (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qgac1", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM2Y2Q0NGMtOGUwZC00MDcyLWEzNzAtZTg4YjMyYTAxODRjXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qgac1&dl=1"
