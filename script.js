@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Michael (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dbtyo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzllNmRlN2EtMDQyOC00ODJjLTg4OWQtZDNmNGU3YzlkNjc1XkEyXkFqcGc@._V1_.jpg", genre: "Biography, Drama, History, Music", category: "Recent Adds", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbtyo&dl=1"
+    }, {
         title: "Safe House (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qgac1", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM2Y2Q0NGMtOGUwZC00MDcyLWEzNzAtZTg4YjMyYTAxODRjXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qgac1&dl=1"
     }, {
         title: "Greenland 2: Migration (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8xrz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWEzM2IzZTMtYzA2Yi00NjY0LWE1ODktNTllZmI3ZTI1MzBmXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8xrz5&dl=1"
@@ -60,8 +62,6 @@ const contentData = [
         title: "The Glass Coffin (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#gcefx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzg0ODM2OTYtZTVhMy00MGRiLWFiODEtMmNkZGUxYzcxZTliXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gcefx&dl=1",
     }, {
         title: "Silent Night, Deadly Night (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ornnb", posterUrl: "https://revuecinema.ca/wp-content/uploads/2025/10/silent_night,_deadly_night_tmdb-xv3cjedmqzkmahznoni86izd370-683x1024.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ornnb&dl=1",
-    }, {
-        title: "Pallichattambi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qz5ac", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGM3YWEzOTktYzM3Yy00YzFkLTg0OGItMGY1OGYwMzUzY2RkXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qz5ac&dl=1",
     },
 
 
@@ -71,6 +71,8 @@ const contentData = [
 
 
     {
+        title: "Nukkad Naatak (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#iksop", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzNiZmRlMzctNTRmYi00OTk1LWFhZGMtMTE2NjM3NDNlZGNmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#iksop&dl=1",
+    }, {
         title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Bollywood", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
     }, {
         title: "Badass Ravikumar (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6rtjz", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmNjNmM0ZWMtZWIwZS00ZmFmLWFmNDAtMWE1MzQ4YjMzZTE3XkEyXkFqcGc@._V1_.jpg", genre: "Parody, Action, Comedy, Musical", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rtjz&dl=1",
@@ -475,6 +477,8 @@ const contentData = [
 
 
     {
+        title: "Michael (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dbtyo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzllNmRlN2EtMDQyOC00ODJjLTg4OWQtZDNmNGU3YzlkNjc1XkEyXkFqcGc@._V1_.jpg", genre: "Biography, Drama, History, Music", category: "Hollywood", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbtyo&dl=1"
+    }, {
         title: "Safe House (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qgac1", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM2Y2Q0NGMtOGUwZC00MDcyLWEzNzAtZTg4YjMyYTAxODRjXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qgac1&dl=1"
     }, {
         title: "Greenland 2: Migration (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8xrz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWEzM2IzZTMtYzA2Yi00NjY0LWE1ODktNTllZmI3ZTI1MzBmXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Mystery & Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8xrz5&dl=1"
@@ -5267,28 +5271,16 @@ function createMovieCard(item) {
     
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
     
-    // Smart Quality Badge: Adapts to Mobile (Flush) and Desktop (Floating)
+    // Unified Quality Badge: Flush Top-Left on ALL devices, matching original clean font weight
     const qualityBadgeHtml = item.quality ? 
-        `<!-- Mobile Quality Badge -->
-        <div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider rounded-br-lg shadow-md md:hidden">
+        `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">
             ${item.quality}
-        </div>
-        <!-- Desktop Quality Badge -->
-        <div class="absolute top- left-2 z-20 hidden md:block">
-            <span class="bg-[#E50914] text-white px-[6px] py-[2px] rounded-[2px] font-black text-[10px] uppercase tracking-[0.5px] shadow-[0_2px_8px_rgba(0,0,0,0.8)] border-none">
-                ${item.quality}
-            </span>
         </div>` : '';
 
-    // Smart Language Badge: Adapts to Mobile (Flush) and Desktop (Floating)
+    // Unified Language Badge: Flush Top-Right on ALL devices, matching original clean font weight
     const languageBadgeHtml = item.language ? 
-        `<!-- Mobile Language Badge -->
-        <div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md md:hidden">
+        `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">
             ${item.language}
-        </div>
-        <!-- Desktop Language Badge -->
-        <div class="absolute top- right-2 z-20 hidden md:block">
-            <span class="lang-badge border-none shadow-lg">${item.language}</span>
         </div>` : '';
 
     card.innerHTML = `
@@ -5318,6 +5310,64 @@ ${infoText}
     card.onclick = () => openModal(item.id);
     return card;
 }
+
+// function createMovieCard(item) {
+//     const card = document.createElement('div');
+//     card.className = 'movie-card relative flex flex-col group';
+    
+//     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
+    
+//     // Smart Quality Badge: Adapts to Mobile (Flush) and Desktop (Floating)
+//     const qualityBadgeHtml = item.quality ? 
+//         `<!-- Mobile Quality Badge -->
+//         <div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider rounded-br-lg shadow-md md:hidden">
+//             ${item.quality}
+//         </div>
+//         <!-- Desktop Quality Badge -->
+//         <div class="absolute top- left-2 z-20 hidden md:block">
+//             <span class="bg-[#E50914] text-white px-[6px] py-[2px] rounded-[2px] font-black text-[10px] uppercase tracking-[0.5px] shadow-[0_2px_8px_rgba(0,0,0,0.8)] border-none">
+//                 ${item.quality}
+//             </span>
+//         </div>` : '';
+
+//     // Smart Language Badge: Adapts to Mobile (Flush) and Desktop (Floating)
+//     const languageBadgeHtml = item.language ? 
+//         `<!-- Mobile Language Badge -->
+//         <div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md md:hidden">
+//             ${item.language}
+//         </div>
+//         <!-- Desktop Language Badge -->
+//         <div class="absolute top- right-2 z-20 hidden md:block">
+//             <span class="lang-badge border-none shadow-lg">${item.language}</span>
+//         </div>` : '';
+
+//     card.innerHTML = `
+// <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 md:ring-0 transition-all duration-300 group-hover:ring-white/20 md:group-hover:ring-transparent">
+// ${qualityBadgeHtml}
+// ${languageBadgeHtml}
+// <img 
+// src="${getOptimizedImageUrl(item.posterUrl)}" 
+// alt="${item.title}" 
+// class="w-full h-full object-cover transition-transform duration-500 md:duration-300 group-hover:scale-110" 
+// loading="lazy" 
+// decoding="async"
+// >
+// <!-- Mobile Play Overlay -->
+// <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center items-center p-5 transition-all duration-300">
+// <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)] group-hover:scale-110 transition-transform duration-300"><i class="fas fa-play text-white text-lg ml-1"></i></div>
+// </div>
+// <!-- Desktop Play Overlay -->
+// <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300">
+// <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
+// </div>
+// </div>
+// <div class="mt-4 text-center flex flex-col items-center md:block">
+// <h4 class="font-black text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
+// ${infoText}
+// </div>`;
+//     card.onclick = () => openModal(item.id);
+//     return card;
+// }
 
 function renderRecentAdds() {
     recentAddsGrid.innerHTML = '';
@@ -5766,58 +5816,58 @@ function closeAnnouncement() {
 // ==========================================
 
 // 1. Disable Right Click entirely to hide 'Inspect' everywhere
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-});
+// document.addEventListener('contextmenu', (e) => {
+//     e.preventDefault();
+// });
 
-document.addEventListener('keydown', (e) => {
-    // Allow normal keyboard behavior inside the search box
-    if (e.target.id === 'searchInput') return;
+// document.addEventListener('keydown', (e) => {
+//     // Allow normal keyboard behavior inside the search box
+//     if (e.target.id === 'searchInput') return;
 
-    // Block F12 (DevTools)
-    if (e.key === 'F12') {
-        e.preventDefault();
-    }
+//     // Block F12 (DevTools)
+//     if (e.key === 'F12') {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
+//     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+U / Cmd+Opt+U (View Source)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+U / Cmd+Opt+U (View Source)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+S / Cmd+S (Save Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+S / Cmd+S (Save Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+P / Cmd+P (Print Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+P / Cmd+P (Print Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+//         e.preventDefault();
+//     }
 
-    // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
-        e.preventDefault();
-    }
-});
+//     // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
+//         e.preventDefault();
+//     }
+// });
 
-// 3. Prevent Native Copy, Cut, Paste events (except search box)
-['copy', 'cut', 'paste'].forEach(evt => {
-    document.addEventListener(evt, (e) => {
-        if (e.target.id !== 'searchInput') {
-            e.preventDefault();
-        }
-    });
-});
+// // 3. Prevent Native Copy, Cut, Paste events (except search box)
+// ['copy', 'cut', 'paste'].forEach(evt => {
+//     document.addEventListener(evt, (e) => {
+//         if (e.target.id !== 'searchInput') {
+//             e.preventDefault();
+//         }
+//     });
+// });
 
-// 4. Prevent Dragging elements (like ghost-dragging images to save them)
-document.addEventListener('dragstart', (e) => {
-    // Allow FAB pointer dragging, but prevent native HTML element dragging
-    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-        e.preventDefault();
-    }
-});
+// // 4. Prevent Dragging elements (like ghost-dragging images to save them)
+// document.addEventListener('dragstart', (e) => {
+//     // Allow FAB pointer dragging, but prevent native HTML element dragging
+//     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+//         e.preventDefault();
+//     }
+// });
