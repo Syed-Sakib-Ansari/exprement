@@ -2832,6 +2832,18 @@ const contentData = [
 
 
     {
+        title: "Stranger Things: Tales from '85 (2026)", posterUrl: "https://static.wikia.nocookie.net/strangerthings8338/images/6/6b/Tales_From_%E2%80%9985_Teaser_Poster.jpg/revision/latest?cb=20260202144739", genre: "Comedy, Adventure, Action, Animation, Horror, Fantasy", category: "Animation", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/3QRgmt_LV" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/cqu60Frmd" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/YoIieOVue" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/fwEeyeSUN" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/M_uJluU3f" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/nD8ehhgxW" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/hqh2w_3WB" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/1hea2cUzS" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/M2CM2fW87" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/P3xOdDQes" },]
+    }, {
         title: "KPop Demon Hunters (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#3ej1a", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTBiYWJlMjQtOTIyMy00NTY4LWFhOWItOWZhNzc3NGMyMjc2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3ej1a&dl=1"
     }, {
         title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#juhzc", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#juhzc&dl=1"
@@ -3984,6 +3996,27 @@ const contentData = [
 
 
     {
+        title: "Flunked (2020)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzUwYjNjMTItOWM1Mi00NDJlLTk5ZTgtM2U4NzRiY2RiNTlkXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/1ryo2gBTH" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/o5MduRxxK" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ueS4B_Zdp" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/m4rYdBhqY" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/nzfSeP8M2" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/Xk23ZkX_2" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/TXP4tF7il" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/IBNZBjPWo" },]
+    }, {
+        title: "Grand Army (2020)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWQ4ODJhM2QtNjZlNy00ZDA1LTgzMGYtMTAxOGQ0MzBkYjlmXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/hyNyE6Mn4" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/oTAG89Wo2" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/KatdcQa5u" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/s7lqWIMWt" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/hRPslEH6I" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/iRMzPpwGL" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/LVNfIhAwO" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/anQO8jMC4" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/Wz39iBQxy" },]
+    }, {
         title: "Santita (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzFiZDg5MGQtMGY0Ny00N2M3LWIwYjktNDQ0NDAzOTliN2Y0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/cqN4sD0Wd" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/rDZjnUQBd" },
