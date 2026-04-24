@@ -1,5 +1,15 @@
 const contentData = [
     {
+        title: "If Wishes Could Kill (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTIyODI5YzgtMjg1OC00OTMzLWE1ODgtNDQzMjViMDZhOTQ1XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/poowlmhcY" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/1gHaa_y4l" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/3GAXh43T8" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/_5zxIXt3U" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/olVbLf41F" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/w2UfZW221" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/4uvhE9cNk" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/sD6JqgrDm" },]
+    }, {
         title: "Apex (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#f1myj", posterUrl: "https://static0.colliderimages.com/wordpress/wp-content/uploads/sharedimages/2026/03/unnamed-3-1.jpg?q=49&fit=contain&w=480&dpr=2", genre: "Action, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1myj&dl=1"
     }, {
         title: "Michael (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dbtyo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzllNmRlN2EtMDQyOC00ODJjLTg4OWQtZDNmNGU3YzlkNjc1XkEyXkFqcGc@._V1_.jpg", genre: "Biography, Drama, History, Music", category: "Recent Adds", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbtyo&dl=1"
@@ -60,10 +70,7 @@ const contentData = [
         title: "Cut! (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#6jn8j", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzNjE1MjI3NV5BMl5BanBnXkFtZTcwOTQxNTgyNw@@._V1_.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jn8j&dl=1",
     }, {
         title: "Middle Men (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#pfqwr", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F6%2Fgracenote%2F65a8018dce0dbcd8725159f5d2c4d597.jpg", genre: "Comedy, Crime, Drama", category: "Recent Adds", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#pfqwr&dl=1",
-    }, {
-        title: "The Glass Coffin (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#gcefx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzg0ODM2OTYtZTVhMy00MGRiLWFiODEtMmNkZGUxYzcxZTliXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gcefx&dl=1",
     },
-
 
     // =======================================================================
     // 1. BOLLYWOOD / BOLLYWOOD / BOLLYWOOD/ BOLLYWOOD /
@@ -4762,6 +4769,16 @@ const contentData = [
 
 
     {
+        title: "If Wishes Could Kill (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTIyODI5YzgtMjg1OC00OTMzLWE1ODgtNDQzMjViMDZhOTQ1XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Drama, Thriller", category: "Korean Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/poowlmhcY" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/1gHaa_y4l" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/3GAXh43T8" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/_5zxIXt3U" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/olVbLf41F" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/w2UfZW221" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/4uvhE9cNk" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/sD6JqgrDm" },]
+    }, {
         title: "The Silent Sea (2021)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmRmN2JiMDktNWRkNS00NGYwLWI2ZGEtZTE0ZTc0ZWIwMTUxXkEyXkFqcGc@._V1_.jpg", genre: "Sci-Fi, Mystery & Thriller, Space", category: "Korean Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/nyys9rP4p" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/op3rArCln" },
@@ -5567,7 +5584,16 @@ function openModal(id) {
 
     // Reset download button state
     downloadClickCount = 0;
+    const downloadBtn = document.getElementById('mainDownloadBtn');
     document.getElementById('downloadBtnText').innerText = "Download";
+    
+    // Restore vibrant green styles
+    downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+    downloadBtn.classList.add('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
+    
+    // Restore shine wave
+    const wave = downloadBtn.querySelector('.animate-shine-wave');
+    if(wave) wave.classList.remove('hidden');
 
     const seriesSec = document.getElementById('seriesSection');
     const epList = document.getElementById('episodeList');
@@ -5602,6 +5628,23 @@ function openModal(id) {
 function handleDownloadClick() {
     if (!currentItem) return;
     
+    if (downloadClickCount >= 3) {
+        // Reset button to the original state
+        downloadClickCount = 0;
+        const downloadBtn = document.getElementById('mainDownloadBtn');
+        document.getElementById('downloadBtnText').innerText = "Download";
+        
+        // Restore vibrant green styles
+        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+        downloadBtn.classList.add('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
+        
+        // Restore shine wave
+        const wave = downloadBtn.querySelector('.animate-shine-wave');
+        if(wave) wave.classList.remove('hidden');
+        
+        return;
+    }
+    
     downloadClickCount++;
 
     if (downloadClickCount === 1) {
@@ -5614,8 +5657,18 @@ function handleDownloadClick() {
         if (currentItem.downloadUrl1) {
             window.open(currentItem.downloadUrl1, '_blank');
         }
-    } else {
-        // 3rd click and beyond
+    } else if (downloadClickCount === 3) {
+        document.getElementById('downloadBtnText').innerText = "Link Expire";
+        
+        // Change button style to look expired/disabled
+        const downloadBtn = document.getElementById('mainDownloadBtn');
+        downloadBtn.classList.remove('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
+        downloadBtn.classList.add('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+        
+        // Remove the continuous shine wave when expired
+        const wave = downloadBtn.querySelector('.animate-shine-wave');
+        if(wave) wave.classList.add('hidden');
+
         if (currentItem.downloadUrl2) {
             window.open(currentItem.downloadUrl2, '_blank');
         }
@@ -5851,58 +5904,58 @@ function closeAnnouncement() {
 // ==========================================
 
 // 1. Disable Right Click entirely to hide 'Inspect' everywhere
-// document.addEventListener('contextmenu', (e) => {
-//     e.preventDefault();
-// });
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
 
-// document.addEventListener('keydown', (e) => {
-//     // Allow normal keyboard behavior inside the search box
-//     if (e.target.id === 'searchInput') return;
+document.addEventListener('keydown', (e) => {
+    // Allow normal keyboard behavior inside the search box
+    if (e.target.id === 'searchInput') return;
 
-//     // Block F12 (DevTools)
-//     if (e.key === 'F12') {
-//         e.preventDefault();
-//     }
+    // Block F12 (DevTools)
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
     
-//     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
-//     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
+        e.preventDefault();
+    }
 
-//     // Block Ctrl+U / Cmd+Opt+U (View Source)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+U / Cmd+Opt+U (View Source)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+        e.preventDefault();
+    }
     
-//     // Block Ctrl+S / Cmd+S (Save Page)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+S / Cmd+S (Save Page)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+        e.preventDefault();
+    }
     
-//     // Block Ctrl+P / Cmd+P (Print Page)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+P / Cmd+P (Print Page)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+        e.preventDefault();
+    }
 
-//     // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
-//         e.preventDefault();
-//     }
-// });
+    // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
+        e.preventDefault();
+    }
+});
 
-// // 3. Prevent Native Copy, Cut, Paste events (except search box)
-// ['copy', 'cut', 'paste'].forEach(evt => {
-//     document.addEventListener(evt, (e) => {
-//         if (e.target.id !== 'searchInput') {
-//             e.preventDefault();
-//         }
-//     });
-// });
+// 3. Prevent Native Copy, Cut, Paste events (except search box)
+['copy', 'cut', 'paste'].forEach(evt => {
+    document.addEventListener(evt, (e) => {
+        if (e.target.id !== 'searchInput') {
+            e.preventDefault();
+        }
+    });
+});
 
-// // 4. Prevent Dragging elements (like ghost-dragging images to save them)
-// document.addEventListener('dragstart', (e) => {
-//     // Allow FAB pointer dragging, but prevent native HTML element dragging
-//     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-//         e.preventDefault();
-//     }
-// });
+// 4. Prevent Dragging elements (like ghost-dragging images to save them)
+document.addEventListener('dragstart', (e) => {
+    // Allow FAB pointer dragging, but prevent native HTML element dragging
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+        e.preventDefault();
+    }
+});
