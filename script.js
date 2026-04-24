@@ -1,5 +1,11 @@
 const contentData = [
     {
+        title: "Safe House (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qgac1", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM2Y2Q0NGMtOGUwZC00MDcyLWEzNzAtZTg4YjMyYTAxODRjXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qgac1&dl=1"
+    }, {
+        title: "Greenland 2: Migration (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8xrz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWEzM2IzZTMtYzA2Yi00NjY0LWE1ODktNTllZmI3ZTI1MzBmXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8xrz5&dl=1"
+    }, {
+        title: "24: India (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6j16n", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzhiMzY3ZDYtYmI0OS00OTUwLWJhNjEtYzM5NTU5MTcyZDliXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Action, Adventure, Crime, Mystery", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6j16n&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-6", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
@@ -56,12 +62,6 @@ const contentData = [
         title: "Silent Night, Deadly Night (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ornnb", posterUrl: "https://revuecinema.ca/wp-content/uploads/2025/10/silent_night,_deadly_night_tmdb-xv3cjedmqzkmahznoni86izd370-683x1024.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ornnb&dl=1",
     }, {
         title: "Pallichattambi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qz5ac", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGM3YWEzOTktYzM3Yy00YzFkLTg0OGItMGY1OGYwMzUzY2RkXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qz5ac&dl=1",
-    }, {
-        title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlzhi", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "Recent Adds", language: "Tamil", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlzhi&dl=1",
-    }, {
-        title: "Vengeance (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yap1t", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWVjZTNmYWItYzdkNy00YWViLWFhNjktZDk4YTFkZWJlOTcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Crime, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yap1t&dl=1",
-    }, {
-        title: "Roommates (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8eur6", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjk2YmRhNTItOGY5Ni00MjgwLTk4ZGMtMzE0MTQzMmMxYWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8eur6&dl=1",
     },
 
 
@@ -100,6 +100,8 @@ const contentData = [
         title: "The Taj Story (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#5obar", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzYwODI0ODgtMjBiZi00OGM4LWJlODgtYWQzYTQ5OTBhZWNkXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5obar&dl=1",
     }, {
         title: "Kissa Court Kachehari Ka (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xcnvw", posterUrl: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kissa-court-kachehari-ka-et00490304-1772712914.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xcnvw&dl=1",
+    }, {
+        title: "A Stranger by the Hill (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#5ngtr", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTIxZGY3NzEtNWRiNi00ZWViLThjYWQtNjlmYzJlMTNlOWJjXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Bollywood", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ngtr&dl=1",
     }, {
         title: "Charak Fair of Faith (2026)", embedUrl: "https://short.icu/4lb0Aty3c", posterUrl: "https://image.tmdb.org/t/p/w500/zavEC8ywCrM3mgvYzttHdkOzOgs.jpg", genre: "Thriller, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",
     }, {
@@ -473,6 +475,10 @@ const contentData = [
 
 
     {
+        title: "Safe House (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qgac1", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM2Y2Q0NGMtOGUwZC00MDcyLWEzNzAtZTg4YjMyYTAxODRjXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qgac1&dl=1"
+    }, {
+        title: "Greenland 2: Migration (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8xrz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWEzM2IzZTMtYzA2Yi00NjY0LWE1ODktNTllZmI3ZTI1MzBmXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Mystery & Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8xrz5&dl=1"
+    }, {
         title: "Candy and the Pizza Ggirl (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#nvvau", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDJlY2IzM2MtMWE4Yy00MDU2LWFlZTktYTc3Y2U3ZTU2YTM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Fantasy", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nvvau&dl=1",
     }, {
         title: "The Secret Agent (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#f1dvd", posterUrl: "https://resizing.flixster.com/eMrhAzVGr5GHqvZML_zhRids_Hw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p29982560_v_v12_af.jpg", genre: "Drama, Mystery & Thriller, History", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1dvd&dl=1",
@@ -580,6 +586,32 @@ const contentData = [
         title: "Bone Lake (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#5if6t", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGJiZmEwOWUtZDViNS00N2IyLTgzY2UtZDJmOGJiYmRkMGY4XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5if6t&dl=1",
     }, {
         title: "It Follows (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#6xr1z", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmI0ZTg2ZmUtZThiNy00MTQxLWE5MzMtZTQzMGFlOWRkOGRmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller, Mystery", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6xr1z&dl=1",
+    }, {
+        title: "Circle (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#vhqtp", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12253314_p_v10_ab.jpg", genre: "Horror, Thriller, Mystery, Drama, Sci-Fi", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vhqtp&dl=1",
+    }, {
+        title: "The Lost Bus (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ambsw", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTIzNmQzYzUtNTdlNi00NmY5LThmNTYtMGFmZjUxMTgzOGNmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Disaster, Biography, Drama, History, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ambsw&dl=1",
+    }, {
+        title: "The Belko Experiment (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#9addr", posterUrl: "https://m.media-amazon.com/images/M/MV5BODQyMDkyOTE2MF5BMl5BanBnXkFtZTgwNDQ1NTQwMTI@._V1_.jpg", genre: "Comedy, Action, Horror, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9addr&dl=1",
+    }, {
+        title: "The Cellar (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#9adwg", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTg4ZmVmYjAtMzk1NS00NWVlLTgxZWUtNDZhMWFlYjE0ZTQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller & Mystery", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9adwg&dl=1",
+    }, {
+        title: "The Monkey's Paw (2013)", embedUrl: "https://moviedakhi.4meplayer.com/#ydxhm", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM3MDgxMzgxMF5BMl5BanBnXkFtZTgwNTg4MDExMDE@._V1_.jpg", genre: "Horror, Thriller & Mystery", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ydxhm&dl=1",
+    }, {
+        title: "Sinners (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#eltli", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjIwZWY4ZDEtMmIxZS00NDA4LTg4ZGMtMzUwZTYyNzgxMzk5XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller & Action, Drama", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#eltli&dl=1",
+    }, {
+        title: "Hannibal (2001)", embedUrl: "https://moviedakhi.4meplayer.com/#amwbu", posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Hannibal_movie_poster.jpg/250px-Hannibal_movie_poster.jpg", genre: "Horror", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#amwbu&dl=1",
+    }, {
+        title: "Hannibal Rising (2007)", embedUrl: "https://moviedakhi.4meplayer.com/#nvmb8", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTIzMTA0NTM4NF5BMl5BanBnXkFtZTcwNjY3ODM0MQ@@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nvmb8&dl=1",
+    }, {
+        title: "Train Dreams (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hzdfl", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDkzNzkyNTktYzNhMi00YjhiLWI5YmUtZjliMTY0ZDc5NmMyXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hzdfl&dl=1",
+    }, {
+        title: "Bugonia (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#amwvm", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzIzNWQxMjEtZmQ3MS00OTk2LWFlZjktZDUyYWRkM2M3NWVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Crime, Sci-Fi, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#amwvm&dl=1",
+    }, {
+        title: "Everest (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#5nz6u", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAzOTYxMTctY2ViNi00NDI3LTgwMGItY2FhN2JjZWE5MjRkXkEyXkFqcGc@._V1_.jpg", genre: "Survival, Adventure, Biography, Drama, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5nz6u&dl=1",
+    }, {
+        title: "Society of the Snow (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#rutw6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBhNmMwOTEtZmZhZi00NjZmLTk1NjAtNGZiZWU4NDJjYzliXkEyXkFqcGc@._V1_.jpg", genre: "Survival, Adventure, Biography, Drama, Thriller, History", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rutw6&dl=1",
+    }, {
+        title: "No One Gets Out Alive (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#5ngur", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmRiYWUyNGUtN2U5ZC00NTZiLTlmNjItZjVmZDY4MzhhMjEwXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Drama, Mystery, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ngur&dl=1",
     }, {
         title: "Chaos Walking (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#qnzan", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTVlODY5MWMtZWM0Zi00ZWJkLTg1MTItZjViNTg1YzZmZDIwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Drama, Fantasy, Sci-Fi, Survival", category: "Hollywood", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qnzan&dl=1",
     }, {
@@ -910,8 +942,6 @@ const contentData = [
         title: "Weapons (2025)", embedUrl: "https://short.icu/Be_a6nwyj", posterUrl: "https://resizing.flixster.com/urnEX1TNbxIyYQPcRuEISEPcCqM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30053254_v_v13_ah.jpg", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "One Last Adventure: The Making of Stranger Things 5 (2026)", embedUrl: "https://short.icu/pwMvswIvRX", posterUrl: "https://resizing.flixster.com/RySUwR7xtWFEWIVTTWle9T0yUKE=/fit-in/705x460/v2/https://resizing.flixster.com/Y9LuKKzz7gyGwXOiuHQ45yVzyHc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q0MTc5M2JlLTU3NDYtNDNhNS04NzI0LTI4YzAyZWRmNDVjOC5qcGc=", genre: "Documentary", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "Greenland 2: Migration (2026)", embedUrl: "https://short.icu/dd0LN4Kqb", posterUrl: "https://resizing.flixster.com/Jcagxp8DzEFJ6TE1LiWFs0IvnJ8=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31225913_v_v13_ae.jpg", genre: "Action, Adventure, Mystery & Thriller", category: "Hollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "The Paramedic (2020)", embedUrl: "https://short.icu/JWp1BI4c0", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTM2ZWI1NWItNzZlYS00ZjJkLWI5OTMtMDM2YTg2NTIwYzQ4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Thriller", category: "Hollywood", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -2313,6 +2343,8 @@ const contentData = [
 
 
     {
+        title: "Theeyavar Kulaigal Nadunga (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#pfgyd", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGMyNDAzZTAtNzE1ZC00Nzg0LTliM2YtYmU5NDMxMzlkZmRiXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#pfgyd&dl=1",
+    }, {
         title: "Athiran (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#dbbrm", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGRiOTZkNjEtNzJkNy00YTQ0LWE4MDYtNDM2MzcyM2I0NWJhXkEyXkFqcGc@._V1_.jpg", genre: "Mystery, Romance, Drama, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbbrm&dl=1",
     }, {
         title: "Pallichattambi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qz5ac", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGM3YWEzOTktYzM3Yy00YzFkLTg0OGItMGY1OGYwMzUzY2RkXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "South", language: "Dual Audio", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qz5ac&dl=1",
@@ -2339,11 +2371,11 @@ const contentData = [
     }, {
         title: "Om Shanti Shanti Shantihi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktbpg", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2QyZDhkODgtMTQ4Yi00N2RiLTg5MjItMjM4YzYyYTcwMTFlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktbpg&dl=1",
     }, {
-        title: "Nee Forever (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9g3k5", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZlZGRlYWItOWE1YS00Mjg2LWJiNDktMWJmN2VlYmUyM2M0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "South", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9g3k5&dl=1",
+        title: "Nee Forever (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#f1cgu", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZlZGRlYWItOWE1YS00Mjg2LWJiNDktMWJmN2VlYmUyM2M0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1cgu&dl=1",
     }, {
         title: "LIK: Love Insurance Kompany (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#cqbqv", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243636/LIK-27X40.jpg", genre: "Comedy, Romance, Sci-Fi", category: "South", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#cqbqv&dl=1",
     }, {
-        title: "Prathichaya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fkz1e", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmEyN2QxODMtMGI2MS00ZDVlLTk3NDUtMmI4NWViNzNjZjQxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fkz1e&dl=1",
+        title: "Prathichaya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ikviq", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmEyN2QxODMtMGI2MS00ZDVlLTk3NDUtMmI4NWViNzNjZjQxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ikviq&dl=1",
     }, {
         title: "RDX Love (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#5f5yy", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTNiZDA5NGUtN2ZhNy00NjY4LWE4MzMtY2RkNTE4NGJkODI4XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5f5yy&dl=1",
     }, {
@@ -2794,6 +2826,8 @@ const contentData = [
 
 
     {
+        title: "KPop Demon Hunters (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#3ej1a", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTBiYWJlMjQtOTIyMy00NTY4LWFhOWItOWZhNzc3NGMyMjc2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3ej1a&dl=1"
+    }, {
         title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#juhzc", posterUrl: "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Super_Mario_Galaxy_Movie_poster.jpeg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#juhzc&dl=1"
     }, {
         title: "Star Wars: Maul - Shadow Lord (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmUzZWRkOGMtOGM2OC00ODk0LWFjZjUtMjUyOGRjYzgwYjdjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Animation, Family, Sci-Fi", category: "Animation", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-2", episodes: [
@@ -3202,6 +3236,10 @@ const contentData = [
 
 
     {
+        title: "Mission Possible (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#8xkzt", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjgyZDhmZDEtZTEwMy00ZDYwLWIzMDgtMTY0YjVjYTBmMzRkXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Crime", category: "Korean Country", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8xkzt&dl=1"
+    }, {
+        title: "Operation Undead (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zsmfi", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2ZiZDhhNDEtZjI4ZS00NzVkLThlYzUtYjZlYmI4Yzg1YzU5XkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller, Drama, History, Horror", category: "Korean Country", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zsmfi&dl=1"
+    }, {
         title: "The Kill List (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#6jn33", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjc1YjkxMmUtM2MxZS00MDgwLWE4ZjYtZDAyNTY3NWFjMWI1XkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Korean Country", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jn33&dl=1"
     }, {
         title: "Noise (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#zvtrn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzhhNDUxM2EtYjFhNy00OTIyLWFkNzItMjUxYTFjMWIzMDc4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Korean Country", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zvtrn&dl=1"
@@ -3356,6 +3394,12 @@ const contentData = [
 
 
     {
+        title: "Friends with Benefits (2011)", embedUrl: "https://moviedakhi.4meplayer.com/#dblb5", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTQ2MzQ0NTk4N15BMl5BanBnXkFtZTcwMDc2NDYzNQ@@._V1_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dblb5&dl=1"
+    }, {
+        title: "21 & Over (2013)", embedUrl: "https://moviedakhi.4meplayer.com/#ik11d", posterUrl: "https://m.media-amazon.com/images/I/713s5glnUNL.jpg", genre: "Adult, Comedy, Drama, Romance", category: "Adult Comedy", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ik11d&dl=1"
+    }, {
+        title: "Dirty Grandpa (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#6jk5s", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjg2ZTJhMjUtNjUwYy00ODQzLTg1YTktMGYyZTJiMmQ2MzQyXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Comedy, Drama, Romance", category: "Adult Comedy", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jk5s&dl=1"
+    }, {
         title: "Snack Shack (2014)", embedUrl: "https://short.icu/WE3u-Jqbd", posterUrl: "https://resizing.flixster.com/mAhwZxBF8CdUrOlnLci-VSNkyxI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25990560_p_v13_ac.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "No Hard Feelings (2023)", embedUrl: "https://short.icu/KudrJsmlT", posterUrl: "https://resizing.flixster.com/7ok8FTdI8QSuRRTMHVp2ERkS5XQ=/fit-in/705x460/v2/https://resizing.flixster.com/DDToSwhHClBZGg_iBmbyfuEybas=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzc0MTM0MGM4LTg0ODItNGQyOC1hYzBkLTUzZjVhOTBlNDVmMy5qcGc=", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
@@ -3757,6 +3801,8 @@ const contentData = [
 
 
     {
+        title: "24: India (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6j16n", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzhiMzY3ZDYtYmI0OS00OTUwLWJhNjEtYzM5NTU5MTcyZDliXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Action, Adventure, Crime, Mystery", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6j16n&dl=1", seriesInfo: "Season 1, Episode ALL",
+    }, {
         title: "Matka King (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmFiOTNjNGQtNjVlZC00MjQ2LTk3MjAtZjVmNTI3ODZiNTZkXkEyXkFqcGc@._V1_.jpg", genre: "Ganster, Crime, Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/etT7maFnb" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/8oTUyI286" },
