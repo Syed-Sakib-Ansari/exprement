@@ -127,8 +127,8 @@ body {
 /* ==================================================== */
 #mobileFab {
     position: fixed;
-    top: 10px; /* Placed exactly at the top for mobile */
-    bottom: auto; 
+    top: auto; /* Placed exactly at the top for mobile */
+    bottom: 10px; 
     right: 10px; /* Placed exactly at the right for mobile */
     left: auto;
     width: 68px; /* Proper circle size for mobile */

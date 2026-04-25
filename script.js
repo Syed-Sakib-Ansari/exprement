@@ -1,5 +1,9 @@
 const contentData = [
     {
+        title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6jmnu", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Tamil", quality:"Web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jmnu&dl=1",
+    }, {
+        title: "Happy Raj (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ydj5m", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTI3YTQ0MTMtMWFmZi00YzFiLWE5ZTEtNGM5ZTc5MWRiMGRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Family, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ydj5m&dl=1",
+    }, {
         title: "If Wishes Could Kill (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTIyODI5YzgtMjg1OC00OTMzLWE1ODgtNDQzMjViMDZhOTQ1XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/poowlmhcY" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/1gHaa_y4l" },
@@ -66,10 +70,6 @@ const contentData = [
         ]
     }, {
         title: "Muck (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#9ao8x", posterUrl: "https://m.media-amazon.com/images/I/91DQD83MRoL._AC_UF894,1000_QL80_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ao8x&dl=1",
-    }, {
-        title: "Cut! (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#6jn8j", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzNjE1MjI3NV5BMl5BanBnXkFtZTcwOTQxNTgyNw@@._V1_.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jn8j&dl=1",
-    }, {
-        title: "Middle Men (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#pfqwr", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F6%2Fgracenote%2F65a8018dce0dbcd8725159f5d2c4d597.jpg", genre: "Comedy, Crime, Drama", category: "Recent Adds", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#pfqwr&dl=1",
     },
 
     // =======================================================================
@@ -577,6 +577,14 @@ const contentData = [
         title: "A.I. Rising (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#z1ujz", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmExOWI5MTktMjVjOC00MTRhLWIyMzItYjk4OWFjYzQzMDMwXkEyXkFqcGc@._V1_.jpg", genre: "Sci-Fi, Romance", category: "Hollywood", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#z1ujz&dl=1",
     }, {
         title: "Pulse 2: Afterlife (2008)", embedUrl: "https://moviedakhi.4meplayer.com/#8ds69", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjE0NjExNDk5NF5BMl5BanBnXkFtZTgwNzg0NzAwNzE@._V1_.jpg", genre: "Drama, Horror, Sci-Fi", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8ds69&dl=1",
+    }, {
+        title: "Spiral (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#ruhgv", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWFjMWVkZDItZTg5Mi00OWIwLThmOWMtOWQwNGNmMTM0ZWMzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Mystery, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ruhgv&dl=1",
+    }, {
+        title: "Star Trek (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#sq8ra", posterUrl: "https://throughthesilverscreen.com/wp-content/uploads/2016/07/star-trek-2009-movie-poster.jpg", genre: "Action, Adventure, Thriller Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#sq8ra&dl=1",
+    }, {
+        title: "Star Trek Into Darkness (2013)", embedUrl: "https://moviedakhi.4meplayer.com/#elp61", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjVmYjBkZDMtNjcyYy00NDMwLWI4MWYtNmY0M2ViNjE5NDgxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Thriller Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#elp61&dl=1",
+    }, {
+        title: "Star Trek Beyond (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#vh3ea", posterUrl: "https://m.media-amazon.com/images/M/MV5BN2FhNDI1YTYtNWI0OC00ZjYxLWJlYWEtN2ZiZjRmZDY1MWJjXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Thriller Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vh3ea&dl=1",
     }, {
         title: "Do Not Enter (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#jwy1u", posterUrl: "https://m.media-amazon.com/images/M/MV5BODJkYzMxNGUtNmU4OS00NTFmLTg0NWMtMDM0YTI0YmU4MGQzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jwy1u&dl=1",
     }, {
@@ -2356,6 +2364,10 @@ const contentData = [
 
 
     {
+        title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6jmnu", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "South", language: "Tamil", quality:"Web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jmnu&dl=1",
+    }, {
+        title: "Happy Raj (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ydj5m", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTI3YTQ0MTMtMWFmZi00YzFiLWE5ZTEtNGM5ZTc5MWRiMGRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Family, Romance", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ydj5m&dl=1",
+    }, {
         title: "Theeyavar Kulaigal Nadunga (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#pfgyd", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGMyNDAzZTAtNzE1ZC00Nzg0LTliM2YtYmU5NDMxMzlkZmRiXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#pfgyd&dl=1",
     }, {
         title: "Athiran (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#dbbrm", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGRiOTZkNjEtNzJkNy00YTQ0LWE4MDYtNDM2MzcyM2I0NWJhXkEyXkFqcGc@._V1_.jpg", genre: "Mystery, Romance, Drama, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbbrm&dl=1",
@@ -2391,8 +2403,6 @@ const contentData = [
         title: "Prathichaya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ikviq", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmEyN2QxODMtMGI2MS00ZDVlLTk3NDUtMmI4NWViNzNjZjQxXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ikviq&dl=1",
     }, {
         title: "RDX Love (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#5f5yy", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTNiZDA5NGUtN2ZhNy00NjY4LWE4MzMtY2RkNTE4NGJkODI4XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5f5yy&dl=1",
-    }, {
-        title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hf5zf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "South", language: "Tamil", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hf5zf&dl=1",
     }, {
         title: "Bhagavanth Kesari (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s51vh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzA4MmI3NjgtOThjMS00NDY4LWI3ZTAtZTJhZGY0ZjIzYWYwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s51vh&dl=1",
     }, {
@@ -2839,6 +2849,10 @@ const contentData = [
 
 
     {
+        title: "Onward (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#hzemt", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTMyZDM4NjAtMWI5NC00NTAxLWIxMmQtNmNjODRlNGM3NDdhXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hzemt&dl=1"
+    }, {
+        title: "Over the Moon (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#zslyh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTZmYTNiYjctYzM2Ni00NjIwLTg2NzQtNDZkN2M4ZjgwYjExXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zslyh&dl=1"
+    }, {
         title: "Stranger Things: Tales from '85 (2026)", posterUrl: "https://static.wikia.nocookie.net/strangerthings8338/images/6/6b/Tales_From_%E2%80%9985_Teaser_Poster.jpg/revision/latest?cb=20260202144739", genre: "Comedy, Adventure, Action, Animation, Horror, Fantasy", category: "Animation", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-10", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/3QRgmt_LV" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/cqu60Frmd" },
