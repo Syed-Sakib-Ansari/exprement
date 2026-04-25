@@ -5194,8 +5194,6 @@ fab.addEventListener('click', (e) => {
 // Ensure FAB stays inside bounds if window resizes/rotates
 window.addEventListener('resize', () => {
 
-            if (!hasBeenDragged) return; // If untouched, let native CSS handle the browser bar adjustments!
-            
             const clientWidth = document.documentElement.clientWidth;
             const clientHeight = document.documentElement.clientHeight;
             const rect = fab.getBoundingClientRect();
@@ -5217,6 +5215,7 @@ window.addEventListener('resize', () => {
                 fab.style.bottom = 'auto';
                 fab.style.top = '0px';
             }
+        });
 
     const maxX = document.documentElement.clientWidth - fab.offsetWidth;
     const maxY = document.documentElement.clientHeight - fab.offsetHeight;
