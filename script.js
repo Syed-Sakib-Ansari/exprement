@@ -5137,8 +5137,6 @@ function drag(e) {
                 // Remove the GPU transform
                 fab.style.transform = 'none';
                 
-                /* --- SMART ANCHORING COMMENTED OUT ---
-                // SMART ANCHORING: Bind to the closest edges so it dynamically adapts to browser UI hide/show natively!
                 if (newY > clientHeight / 2) {
                     fab.style.top = 'auto';
                     fab.style.bottom = `${clientHeight - newY - fab.offsetHeight}px`;
@@ -5154,7 +5152,6 @@ function drag(e) {
                     fab.style.right = 'auto';
                     fab.style.left = `${newX}px`;
                 }
-                */
 
                 // RESTORED ORIGINAL DRAG PLACEMENT
                 fab.style.left = `${newX}px`;
