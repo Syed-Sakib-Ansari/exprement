@@ -5077,40 +5077,100 @@ function drag(e) {
     }
 }
 
-function dragEnd(e) {
-    if (!isDragging) return;
-    isDragging = false;
-    fab.releasePointerCapture(e.pointerId);
+// function dragEnd(e) {
+//     if (!isDragging) return;
+//     isDragging = false;
+//     fab.releasePointerCapture(e.pointerId);
     
-    if (moved) {
-        // Calculate final dropped coordinates
-        let newX = initialX + translateX;
-        let newY = initialY + translateY;
+//     if (moved) {
+//         // Calculate final dropped coordinates
+//         let newX = initialX + translateX;
+//         let newY = initialY + translateY;
 
-        // Viewport boundaries
-        const maxX = document.documentElement.clientWidth - fab.offsetWidth;
-        const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+//         // Viewport boundaries
+//         const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+//         const maxY = document.documentElement.clientHeight - fab.offsetHeight;
         
-        // Clamp coordinates to ensure it stays strictly within the screen bounds
-        newX = Math.max(0, Math.min(newX, maxX));
-        newY = Math.max(0, Math.min(newY, maxY));
+//         // Clamp coordinates to ensure it stays strictly within the screen bounds
+//         newX = Math.max(0, Math.min(newX, maxX));
+//         newY = Math.max(0, Math.min(newY, maxY));
 
-        // Remove the GPU transform and bake the final dropped coordinates into left/top
-        fab.style.transform = 'none';
-        fab.style.left = `${newX}px`;
-        fab.style.top = `${newY}px`;
+//         // Remove the GPU transform and bake the final dropped coordinates into left/top
+//         fab.style.transform = 'none';
+//         fab.style.left = `${newX}px`;
+//         fab.style.top = `${newY}px`;
         
-        // Reset translation values for the next drag
-        translateX = 0;
-        translateY = 0;
-    }
+//         // Reset translation values for the next drag
+//         translateX = 0;
+//         translateY = 0;
+//     }
 
-    // Flush the DOM changes so transitions don't fight the layout coordinates
-    void fab.offsetWidth;
+//     // Flush the DOM changes so transitions don't fight the layout coordinates
+//     void fab.offsetWidth;
     
-    // Restore standard visual transitions for both drag drops and taps
-    fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-}
+//     // Restore standard visual transitions for both drag drops and taps
+//     fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+// } +++++++++++++++++++++++++++++++++++++++++++++++++++++++++**********************************
+
+        function dragEnd(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            fab.releasePointerCapture(e.pointerId);
+            
+            if (moved) {
+                // hasBeenDragged = true; // Mark as explicitly moved by user
+                
+                // Calculate final dropped coordinates
+                let newX = initialX + translateX;
+                let newY = initialY + translateY;
+
+                // Viewport boundaries
+                const clientWidth = document.documentElement.clientWidth;
+                const clientHeight = document.documentElement.clientHeight;
+                const maxX = clientWidth - fab.offsetWidth;
+                const maxY = clientHeight - fab.offsetHeight;
+                
+                // Clamp coordinates to ensure it stays strictly within the screen bounds
+                newX = Math.max(0, Math.min(newX, maxX));
+                newY = Math.max(0, Math.min(newY, maxY));
+
+                // Remove the GPU transform
+                fab.style.transform = 'none';
+                
+                /* --- SMART ANCHORING COMMENTED OUT ---
+                // SMART ANCHORING: Bind to the closest edges so it dynamically adapts to browser UI hide/show natively!
+                if (newY > clientHeight / 2) {
+                    fab.style.top = 'auto';
+                    fab.style.bottom = `${clientHeight - newY - fab.offsetHeight}px`;
+                } else {
+                    fab.style.bottom = 'auto';
+                    fab.style.top = `${newY}px`;
+                }
+
+                if (newX > clientWidth / 2) {
+                    fab.style.left = 'auto';
+                    fab.style.right = `${clientWidth - newX - fab.offsetWidth}px`;
+                } else {
+                    fab.style.right = 'auto';
+                    fab.style.left = `${newX}px`;
+                }
+                */
+
+                // RESTORED ORIGINAL DRAG PLACEMENT
+                fab.style.left = `${newX}px`;
+                fab.style.top = `${newY}px`;
+                
+                // Reset translation values for the next drag
+                translateX = 0;
+                translateY = 0;
+            }
+
+            // Flush the DOM changes so transitions don't fight the layout coordinates
+            void fab.offsetWidth;
+            
+            // Restore standard visual transitions for both drag drops and taps
+            fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        }
 
 // Using Pointer Events covers both mouse and touch flawlessly
 fab.addEventListener('pointerdown', dragStart);
@@ -5136,6 +5196,31 @@ fab.addEventListener('click', (e) => {
 
 // Ensure FAB stays inside bounds if window resizes/rotates
 window.addEventListener('resize', () => {
+
+            if (!hasBeenDragged) return; // If untouched, let native CSS handle the browser bar adjustments!
+            
+            const clientWidth = document.documentElement.clientWidth;
+            const clientHeight = document.documentElement.clientHeight;
+            const rect = fab.getBoundingClientRect();
+            
+            // Just clamp it to keep it inside the screen if a screen rotation forces it out of bounds
+            if (rect.right > clientWidth) {
+                fab.style.left = 'auto';
+                fab.style.right = '0px';
+            }
+            if (rect.bottom > clientHeight) {
+                fab.style.top = 'auto';
+                fab.style.bottom = '0px';
+            }
+            if (rect.left < 0) {
+                fab.style.right = 'auto';
+                fab.style.left = '0px';
+            }
+            if (rect.top < 0) {
+                fab.style.bottom = 'auto';
+                fab.style.top = '0px';
+            }
+
     const maxX = document.documentElement.clientWidth - fab.offsetWidth;
     const maxY = document.documentElement.clientHeight - fab.offsetHeight;
     const currentX = fab.offsetLeft;
