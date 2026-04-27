@@ -1,5 +1,17 @@
 const contentData = [
     {
+        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
+    }, {
+        title: "G-Force (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#3et19", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTM4NTY3MzY2MV5BMl5BanBnXkFtZTcwMDQ1NTM2Mg@@._V1_.jpg", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3et19&dl=1"
+    }, {
+        title: "Rat Race (2001)", embedUrl: "https://moviedakhi.4meplayer.com/#3etkq", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWEzN2I0ODgtYjRlNi00NGZhLTg1MzktOTc1OTA3ZGNhMWJjXkEyXkFqcGc@._V1_.jpg", genre: "Comedy", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3etkq&dl=1"
+    }, {
+        title: "Usiru (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qglat", posterUrl: "https://m.media-amazon.com/images/M/MV5BODg5NWVmMTMtMDRmYS00YWM5LTg5N2QtM2JjNDM1ODk0NzEyXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qglat&dl=1",
+    }, {
+        title: "Agnyathavasi (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ydugm", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzA3NzM1MmItMDg2My00ZTAxLWE2NTAtMDkzZThhMGMwYjk3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ydugm&dl=1",
+    }, {
+        title: "Ginny Wedss Sunny 2 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vhd3m", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDk5OTkyYjgtZTQ4ZS00YWMyLWFiMWEtZGUxYWRjNmVjODUzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Family, Romance", category: "Recent Adds", language: "Hindi", quality:"HDTS", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vhd3m&dl=1",
+    }, {
         title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6jmnu", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Tamil", quality:"Web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jmnu&dl=1",
     }, {
         title: "Happy Raj (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ydj5m", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTI3YTQ0MTMtMWFmZi00YzFiLWE5ZTEtNGM5ZTc5MWRiMGRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Family, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ydj5m&dl=1",
@@ -43,33 +55,6 @@ const contentData = [
         title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h" },
         ]
-    }, {
-        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
-    }, {
-        title: "Santita (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzFiZDg5MGQtMGY0Ny00N2M3LWIwYjktNDQ0NDAzOTliN2Y0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-7", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/cqN4sD0Wd" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/rDZjnUQBd" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/d2DbKtSgr" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/JSBTddM5_" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/82kYbQt2a" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/R5gV421k7" },
-            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/KlpdsZqCO" },
-        ]
-    }, {
-        title: "Candy and the Pizza Ggirl (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#nvvau", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDJlY2IzM2MtMWE4Yy00MDU2LWFlZTktYTc3Y2U3ZTU2YTM4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Fantasy", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nvvau&dl=1",
-    }, {
-        title: "The Secret Agent (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#f1dvd", posterUrl: "https://resizing.flixster.com/eMrhAzVGr5GHqvZML_zhRids_Hw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p29982560_v_v12_af.jpg", genre: "Drama, Mystery & Thriller, History", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1dvd&dl=1",
-    }, {
-        title: "Unchosen (2026)", posterUrl: "https://resizing.flixster.com/ion1WMNPwmtIWaRhvIxfnY2uhw8=/fit-in/705x460/v2/https://resizing.flixster.com/S5LqkvaxxkSQ3ZJGcwNuxJ2FHog=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzQxNzMzMDItM2Y1OS00YzBmLTkyMjktOGQ1MTNjMDA1ZDgyLmpwZw==", genre: "Drama, Mystery & Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1 Episode 1-6", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/-9iOLC6PI" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/TqtPpYPSy" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/1rIYmbQuE" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/xPFjEXTiE" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/hgyPf5iOa" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/8ZeICvd8F" },
-        ]
-    }, {
-        title: "Muck (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#9ao8x", posterUrl: "https://m.media-amazon.com/images/I/91DQD83MRoL._AC_UF894,1000_QL80_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ao8x&dl=1",
     },
 
     // =======================================================================
@@ -78,6 +63,8 @@ const contentData = [
 
 
     {
+        title: "Ginny Wedss Sunny 2 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vhd3m", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDk5OTkyYjgtZTQ4ZS00YWMyLWFiMWEtZGUxYWRjNmVjODUzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Family, Romance", category: "Bollywood", language: "Hindi", quality:"HDTS", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vhd3m&dl=1",
+    }, {
         title: "Nukkad Naatak (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#iksop", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzNiZmRlMzctNTRmYi00OTk1LWFhZGMtMTE2NjM3NDNlZGNmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#iksop&dl=1",
     }, {
         title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Bollywood", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
@@ -484,6 +471,10 @@ const contentData = [
 
 
     {
+        title: "G-Force (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#3et19", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTM4NTY3MzY2MV5BMl5BanBnXkFtZTcwMDQ1NTM2Mg@@._V1_.jpg", genre: "Comedy", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3et19&dl=1"
+    }, {
+        title: "Rat Race (2001)", embedUrl: "https://moviedakhi.4meplayer.com/#3etkq", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWEzN2I0ODgtYjRlNi00NGZhLTg1MzktOTc1OTA3ZGNhMWJjXkEyXkFqcGc@._V1_.jpg", genre: "Comedy", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3etkq&dl=1"
+    }, {
         title: "Apex (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#f1myj", posterUrl: "https://static0.colliderimages.com/wordpress/wp-content/uploads/sharedimages/2026/03/unnamed-3-1.jpg?q=49&fit=contain&w=480&dpr=2", genre: "Action, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1myj&dl=1"
     }, {
         title: "Michael (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dbtyo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzllNmRlN2EtMDQyOC00ODJjLTg4OWQtZDNmNGU3YzlkNjc1XkEyXkFqcGc@._V1_.jpg", genre: "Biography, Drama, History, Music", category: "Hollywood", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbtyo&dl=1"
@@ -2364,6 +2355,10 @@ const contentData = [
 
 
     {
+        title: "Usiru (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qglat", posterUrl: "https://m.media-amazon.com/images/M/MV5BODg5NWVmMTMtMDRmYS00YWM5LTg5N2QtM2JjNDM1ODk0NzEyXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qglat&dl=1",
+    }, {
+        title: "Agnyathavasi (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ydugm", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzA3NzM1MmItMDg2My00ZTAxLWE2NTAtMDkzZThhMGMwYjk3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ydugm&dl=1",
+    }, {
         title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6jmnu", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "South", language: "Tamil", quality:"Web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jmnu&dl=1",
     }, {
         title: "Happy Raj (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ydj5m", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTI3YTQ0MTMtMWFmZi00YzFiLWE5ZTEtNGM5ZTc5MWRiMGRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Family, Romance", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ydj5m&dl=1",
@@ -3439,23 +3434,23 @@ const contentData = [
     }, {
         title: "Dirty Grandpa (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#6jk5s", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjg2ZTJhMjUtNjUwYy00ODQzLTg1YTktMGYyZTJiMmQ2MzQyXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Comedy, Drama, Romance", category: "Adult Comedy", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jk5s&dl=1"
     }, {
-        title: "Snack Shack (2014)", embedUrl: "https://short.icu/WE3u-Jqbd", posterUrl: "https://resizing.flixster.com/mAhwZxBF8CdUrOlnLci-VSNkyxI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25990560_p_v13_ac.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/tdlccsitdsfsgg1"
+        title: "Snack Shack (2014)", embedUrl: "https://short.icu/WE3u-Jqbd", posterUrl: "https://resizing.flixster.com/mAhwZxBF8CdUrOlnLci-VSNkyxI=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25990560_p_v13_ac.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/vg00c7vp0qzl6l4"
     }, {
-        title: "No Hard Feelings (2023)", embedUrl: "https://short.icu/KudrJsmlT", posterUrl: "https://resizing.flixster.com/7ok8FTdI8QSuRRTMHVp2ERkS5XQ=/fit-in/705x460/v2/https://resizing.flixster.com/DDToSwhHClBZGg_iBmbyfuEybas=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzc0MTM0MGM4LTg0ODItNGQyOC1hYzBkLTUzZjVhOTBlNDVmMy5qcGc=", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/gqnyr0fg0q2xfo2"
+        title: "No Hard Feelings (2023)", embedUrl: "https://short.icu/KudrJsmlT", posterUrl: "https://resizing.flixster.com/7ok8FTdI8QSuRRTMHVp2ERkS5XQ=/fit-in/705x460/v2/https://resizing.flixster.com/DDToSwhHClBZGg_iBmbyfuEybas=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzc0MTM0MGM4LTg0ODItNGQyOC1hYzBkLTUzZjVhOTBlNDVmMy5qcGc=", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/0ds1mnry8i7itir"
     }, {
         title: "The Dictator (2012)", embedUrl: "https://short.icu/vuOAV6anD", posterUrl: "https://resizing.flixster.com/ce7HVomzKONTqJ5a5YPLk16qsH0=/fit-in/705x460/v2/https://resizing.flixster.com/dnJO-Te141UoWLJV2xeX6qqlwLE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzhiMWNmNWQ5LTA0NDMtNGFiYy1iYTVkLWI5Yjk4NTcwMDY2NC53ZWJw", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/jufrjqzjro7qjrb"
     }, {
         title: "Hot Tub Time Machine (2010)", embedUrl: "https://short.icu/8JYKk08W0", posterUrl: "https://resizing.flixster.com/UMN_rBjSp5uDYxtw87-nj2UZe94=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7820979_k_v8_ab.jpg", genre: "Sci-Fi, Fantasy, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/sbLdgAhT5ANkcpgu_BDVfmsLdCjuKdOlKzgfF8t7TBMoxndGcz3DOFULnGRr-G9EdYVaEzXGk3EAc4SYMRPyE9MDEVuPYHyHrh1pB2gvwAq0fiVI42ErVX1FoQ5vDNiaXuOA8aU5DiP0i7cdqJv-HlJXNp2hU_VVj0K1gSmq2EazSbrUmx7AbuM9LNyUkrSt"
     }, {
-        title: "Mike and Dave Need Wedding Dates (2016)", embedUrl: "https://short.icu/1N7e-7Wsh", posterUrl: "https://resizing.flixster.com/eG_cGvtxZVtq5_kW7Qf2-f_nKPk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12393973_v_v8_aa.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Mike and Dave Need Wedding Dates (2016)", embedUrl: "https://short.icu/1N7e-7Wsh", posterUrl: "https://resizing.flixster.com/eG_cGvtxZVtq5_kW7Qf2-f_nKPk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12393973_v_v8_aa.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/n6_6uutzmllm51q"
     }, {
         title: "Not Another Teen Movie (2001)", embedUrl: "https://short.icu/Tb3kQESXm", posterUrl: "https://upload.wikimedia.org/wikipedia/en/4/4a/Not_Another_Teen_Movie_poster.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/1kypiyucnbhaynn"
     }, {
         title: "Superbad (2007)", embedUrl: "https://short.icu/5peK7r1Sz", posterUrl: "https://resizing.flixster.com/SadW5uy6cUY6TnAD7w40ZNeyrJM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/NowShowing/59303/59303_aa.jpg", genre: "Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/bvpcctqxkcqcq8b"
     }, {
-        title: "Sophomore (2012)", embedUrl: "https://short.icu/3d0BR3bHBw", posterUrl: "https://resizing.flixster.com/R2jTE3nUIT7seTMciYI6BvB4kg4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10673642_p_v7_ab.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Sophomore (2012)", embedUrl: "https://short.icu/3d0BR3bHBw", posterUrl: "https://resizing.flixster.com/R2jTE3nUIT7seTMciYI6BvB4kg4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10673642_p_v7_ab.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/zqq5y1pp3dsz7nc"
     }, {
-        title: "Naked Run (2011)", embedUrl: "https://short.icu/tN9-NjM3E", posterUrl: "https://a.ltrbxd.com/resized/film-poster/4/6/4/5/4/7/464547-naked-run-0-1000-0-1500-crop.jpg?v=e890b958c7", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/cWcByHnIM3x7X2QlirvxoUPPwztbdcUL2fEWG9klsCpZnlqQ9W6_9W4KTtDUwVM06AowQvPcC9RTYHwMl6ZBwrtucxqsu0h2opTLXgusHAt1b3aix3LoF14T97MWc93Uv3CrsLNjIyGnWoB_jtjNgahKaVLKZjg7OsbuPWoHeEY"
+        title: "Naked Run (2011)", embedUrl: "https://short.icu/tN9-NjM3E", posterUrl: "https://a.ltrbxd.com/resized/film-poster/4/6/4/5/4/7/464547-naked-run-0-1000-0-1500-crop.jpg?v=e890b958c7", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/2upkl0kp2pccg1d"
     }, {
         title: "Girls Gone Dead (2012)", embedUrl: "https://short.icu/EIWtalXVf", posterUrl: "https://resizing.flixster.com/HrH5FV8WRKVKiagk_WeguslXLwM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9316766_p_v8_aa.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -3463,17 +3458,17 @@ const contentData = [
     }, {
         title: "You Don't Mess With the Zohan (2008)", embedUrl: "https://short.icu/zShegW6bF", posterUrl: "https://resizing.flixster.com/-qPJKqBMq6plr-zwe4dKzBRJZds=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p172787_p_v8_aj.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/oeebn2e8kgm8b6j"
     }, {
-        title: "The Sex Trip (2017)", embedUrl: "https://short.icu/cBSpyqKgP", posterUrl: "https://resizing.flixster.com/ihqqgf2_Twp9TAINt3eK_gkmBS0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p14445293_v_v8_ac.jpg", genre: "Adult, Fantasy, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "The Sex Trip (2017)", embedUrl: "https://short.icu/cBSpyqKgP", posterUrl: "https://resizing.flixster.com/ihqqgf2_Twp9TAINt3eK_gkmBS0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p14445293_v_v8_ac.jpg", genre: "Adult, Fantasy, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/ilccci1vpcx1ufv"
     }, {
-        title: "Scary Movie (2000)", embedUrl: "https://short.icu/9v-z2NmI7", posterUrl: "https://resizing.flixster.com/J_CDaWHjaggD8Si_Tw0hKx9b39Y=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25765_v_v8_ag.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/ZgYQHeia92PeGtvo9wJ-JuyI_ecJgn11NOodiiCgoPxF7WKPzlDou87bHAhL0jnn2x9Xb9x9oLxZ9IjtxU28vfatvqbc_dIPSQ8kTauYqkj9rGV6IAqwmnDcJt_emOjV3OAXjadgUD17MCYgnvpD7CNgoFe_Z16MB5s5shhGW2o"
+        title: "Scary Movie (2000)", embedUrl: "https://short.icu/9v-z2NmI7", posterUrl: "https://resizing.flixster.com/J_CDaWHjaggD8Si_Tw0hKx9b39Y=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25765_v_v8_ag.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/ghdf7hk5hliuu78"
     }, {
-        title: "Scary Movie 2 (2001)", embedUrl: "https://short.icu/2sGm0YRNM", posterUrl: "https://resizing.flixster.com/3iki8wkrQ1JnPRTTfnnFM6BAwog=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27977_v_v8_ae.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/bxJLxWRXA9SthFA0-LhYwjuKiTA2F1sla-ATy3pVeBvQO6_WULdkR3sjEN3MirEnF3s5rdk-w3QGfNnEulzVAjfPUYBRW_JLHmtQI8DXBRDEL3ULYIxDOI_BSHklgjqzKxR6pPnu29MJZtXBjk-mf_xq2fPF11mKW0qPOn53eZw"
+        title: "Scary Movie 2 (2001)", embedUrl: "https://short.icu/2sGm0YRNM", posterUrl: "https://resizing.flixster.com/3iki8wkrQ1JnPRTTfnnFM6BAwog=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27977_v_v8_ae.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/ey5e9g59f3kakyy"
     }, {
-        title: "Scary Movie 3 (2003)", embedUrl: "https://short.icu/5ShCaLZZe", posterUrl: "https://resizing.flixster.com/_N9Sn1bhGERVpc4LaNRRnClWl0I=/fit-in/705x460/v2/https://resizing.flixster.com/Ydn-5mvgv83tHhf7YLaJm5PMkG4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQwNDZlNGM2LTE1YmYtNGQ5MC1hMGQ5LWQyZTEzOThjY2E4Mi53ZWJw", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/DpPqcT6mOqVV2ZtDUNd_rePDdhtw35A1FzGWmPZ9MXVDagA5qWSQ1NazrBZAxsQElA7RK39tHSuQ8rRq56ymRkWk1kdwIQHASVUaEH9s7kekZFcO4gAI1pbe_u2paXf3pm2gJT-JocHhkY90kPUkCHE1_YPN23Mn8UUcCzHURtA"
+        title: "Scary Movie 3 (2003)", embedUrl: "https://short.icu/5ShCaLZZe", posterUrl: "https://resizing.flixster.com/_N9Sn1bhGERVpc4LaNRRnClWl0I=/fit-in/705x460/v2/https://resizing.flixster.com/Ydn-5mvgv83tHhf7YLaJm5PMkG4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQwNDZlNGM2LTE1YmYtNGQ5MC1hMGQ5LWQyZTEzOThjY2E4Mi53ZWJw", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/ruuvkkpku0m6kx5"
     }, {
-        title: "Scary Movie 4 (2006)", embedUrl: "https://short.icu/vTLzMu9_L", posterUrl: "https://resizing.flixster.com/EoBRerNQY4LfZLgi2EqxZOod6GA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p159780_v_v8_aa.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/8CEfzXbv6uYItOBg0HLY9n3j2QKpA-w9cwpE3X8uPD7xT4D8AJQxYlBZLQp-UczgRg0hYUuHdPDzACMbe7Tfqu8wDp8YiI7sK6XXXanCTOarB8k1sMYgB6_ZGqvG04kP2VSy-4xChfBUR35QzRF_lHnNoGEDQBcDShWeGi_x2zk"
+        title: "Scary Movie 4 (2006)", embedUrl: "https://short.icu/vTLzMu9_L", posterUrl: "https://resizing.flixster.com/EoBRerNQY4LfZLgi2EqxZOod6GA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p159780_v_v8_aa.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/fwcqgg19gz2vcgx"
     }, {
-        title: "Scary Movie 5 (2013)", embedUrl: "https://short.icu/vUhK_xB3_", posterUrl: "https://resizing.flixster.com/oJbuPu9N-pBAULBoFQMgurf-YTA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8915708_p_v8_bf.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/V84_JvSYS-3Nj8k0rOx7w5-mjt9yf8R1cekM4iVRIlc5YqccKttbn5mePJ6BYiLrl_mZRMscpV6peEgRQ4T6fkYxO20OOiPwM7G3kNzQAe5emyyv7UZg_gfYFXVA-i-A-u_anyCybjXLfxCo41HzHnfklTk9Q2UEIgeOIcTqWlI"
+        title: "Scary Movie 5 (2013)", embedUrl: "https://short.icu/vUhK_xB3_", posterUrl: "https://resizing.flixster.com/oJbuPu9N-pBAULBoFQMgurf-YTA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8915708_p_v8_bf.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/V84_JvSYS-3Nj8k0rOx7w5-mjt9yf8R1cekM4iVRIlc5YqccKttbn5mePJ6BYiLrl_mZRMscpV6peEgRQ4T6fkYxO20OOiPwM7G3kNzQAe5emyyv7UZg_gfYFXVA-i-A-u_anyCybjXLfxCo41HzHnfklTk9Q2UEIgeOIcTqWlI"
     }, {
         title: "Grand Masti (2013)", embedUrl: "https://short.icu/Ti_b36bDN", posterUrl: "https://resizing.flixster.com/ibb0MlPJeKLsqEOX0ZChoUeTorQ=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10204813_v_v8_aa.jpg", genre: "Adult, Comedy, Drama, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/o1fykdkvc4oldoo"
     }, {
@@ -3503,17 +3498,17 @@ const contentData = [
     }, {
         title: "American Pie 2 (2001)", embedUrl: "https://short.icu/y9yWWrUen", posterUrl: "https://resizing.flixster.com/HHe4eyvRk45J2IjK1qALAY97Qfg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28143_v_v8_aa.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/wojm6oxmn2e2gxx"
     }, {
-        title: "American Pie (1999)", embedUrl: "https://short.icu/uq-h1ME6i", posterUrl: "https://resizing.flixster.com/ww3QIQ3ONwhUMEpF2QjnbZvX9y4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23343_v_v8_ah.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/rRUxo391f7LOBuDa048UvNVVtXfbV96kdHpHB95uUmAs4qgqf-WcPPWweUHJDVaIPY5ER0v7OX6Wi4MZ_wzNv3GhidK6ax_aOdyBpYZHOzPc97s01uT0Uk_fyZGl63bRhim5_ymQa5JOxLhDZBytqkE6EKmrBuClg262QxK43hY"
+        title: "American Pie (1999)", embedUrl: "https://short.icu/uq-h1ME6i", posterUrl: "https://resizing.flixster.com/ww3QIQ3ONwhUMEpF2QjnbZvX9y4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23343_v_v8_ah.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/ua1swnylvw5tvax"
     }, {
-        title: "American Pie 2 (2001)", embedUrl: "https://short.icu/y9yWWrUen", posterUrl: "https://resizing.flixster.com/HHe4eyvRk45J2IjK1qALAY97Qfg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28143_v_v8_aa.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/SxsRYhYuNOV3D7Hsj3Vz5dHdF6Y8-tvY4Je0XkfiydN0ZtKtTQ1OaVA8fUd_jyhWCnx4LZkWaIc225-2K6Qah0rVdnRQbTG142I8QdmNnGRCRxR192eHYRfEMLCTkMb1uGfris5BB3YZe4y-43WdKv1IWx4Z1KFrun6TsANP3-Q"
+        title: "American Pie 2 (2001)", embedUrl: "https://short.icu/y9yWWrUen", posterUrl: "https://resizing.flixster.com/HHe4eyvRk45J2IjK1qALAY97Qfg=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28143_v_v8_aa.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/wojm6oxmn2e2gxx"
     }, {
-        title: "American Pie Presents: Girls' Rules (2020)", embedUrl: "https://short.icu/l_ACVxaHr", posterUrl: "https://resizing.flixster.com/tD4tJ2rKtUcoqvHB4HvceeRT1CM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18805837_p_v8_aa.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/w9eVFpC72K_V7FuIo9JgaEVo1_zxWcQlwEZmIXUp7kOo8gZa-KfxJxBCx8bTrZrPutRZnezZ_IX1p3ftdPMs5ip-dtZeSbdN_EiMDMztxXCQTugg-oqMuVKBcQH4XhChhgXfwcgNKu4wn_XeS1Mf8wZnRwrxbzPip91bqQGFmLqLaUlE5t8uhbRwA5ch16staF137gtVuRCd5nDf7cMZTw"
+        title: "American Pie Presents: Girls' Rules (2020)", embedUrl: "https://short.icu/l_ACVxaHr", posterUrl: "https://resizing.flixster.com/tD4tJ2rKtUcoqvHB4HvceeRT1CM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18805837_p_v8_aa.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/zitoztktxsott1h"
     }, {
-        title: "American Pie Presents: Band Camp (2005)", embedUrl: "https://short.icu/Yubm8FHkA", posterUrl: "https://resizing.flixster.com/Gs4eG8tVAsyDr-x31p5tHiFZCcY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p160422_p_v8_aq.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/YTd66dsgfswQLcfPQPFd38J4kitjedzRciGCbYdnyGLZDBypYqeFlaQkkvBbbu0Uv1ol5p9ebK6Dj4crBk5pIoqqKX4F7Tv7-yVGGGxLUCg7_OP5JNxJ2q007tGQ49Zb_z6cDciP5BEz6YtSX28yNrTpJiP8jtSX4Q3U7LbIeEzS1tN-Pm-MERDUXQ4lZx-1rhpU_JwMjWr3mgpLqfxDUQ"
+        title: "American Pie Presents: Band Camp (2005)", embedUrl: "https://short.icu/Yubm8FHkA", posterUrl: "https://resizing.flixster.com/Gs4eG8tVAsyDr-x31p5tHiFZCcY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p160422_p_v8_aq.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/rm8dcfldx718mx5"
     }, {
-        title: "American Pie Presents: The Naked Mile (2006)", embedUrl: "https://short.icu/wBv2xlNM0", posterUrl: "https://resizing.flixster.com/P8sf7NvaUAUNLrXuu_5KUHBGOXs=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p165702_v_v8_ap.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/O91Qe13zlerXrS7-Q3ewaJLIURihvtcuW8r5V9Cg-LeRuRSgSIrrwzc0EiFZ5fSFSZ_Hrw6Q6jgrsC4bSYfLNEWB8InVk021DL0IV1qLy6EAfbecfpgkXCtZQGgWU4-zQydaWvHbYJYqYg75_7uXY1io5Go7HhHG1gpUbJAyJe8J6NRknn6h1y6_IUD4rx-_fL7MnXi5MLSRphFgZddDbA"
+        title: "American Pie Presents: The Naked Mile (2006)", embedUrl: "https://short.icu/wBv2xlNM0", posterUrl: "https://resizing.flixster.com/P8sf7NvaUAUNLrXuu_5KUHBGOXs=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p165702_v_v8_ap.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/qnyqhwohyrhyvqq"
     }, {
-        title: "American Pie Presents: The Book of Love (2009)", embedUrl: "https://short.icu/thndYa5bu", posterUrl: "https://resizing.flixster.com/u3mU-1n3ezSVMTE7ca_bIY8bRY0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7932738_v_v8_ak.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/evEsVjUyt3mvkaKg0oKlbnwKkOarVaH_ETuPKYc4SKPUrDWQE0s3VNSOr0E7zjcEK8tEInVu9NX9BcIokGVLPlwrSsUF6hNMaqY44cglh9z7kxwHr726rQ1w06gmOKr_q3Qd_7UcT1nqMGPBr7RdbJf0aPykl8ij1QphrQWRASj4j9VSFALIX4m4axvuGAVJeSwEDLiWYbftISPcYxmn5g"
+        title: "American Pie Presents: The Book of Love (2009)", embedUrl: "https://short.icu/thndYa5bu", posterUrl: "https://resizing.flixster.com/u3mU-1n3ezSVMTE7ca_bIY8bRY0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7932738_v_v8_ak.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/i86z4be4kenixkk"
     }, {
         title: "American Reunion (2012)", embedUrl: "https://short.icu/o4DPtTu2q", posterUrl: "https://resizing.flixster.com/cnoijfJAA31iU_mUNpAcf0VJ3es=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8856830_v_v13_aa.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/aylfmmpvmgr61md"
     }, {
@@ -3525,25 +3520,25 @@ const contentData = [
     }, {
         title: "The Girl Next Door (2004)", embedUrl: "https://short.icu/CuLj9AI_g", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTQ0ODIyMzE1N15BMl5BanBnXkFtZTcwODEwODczMw@@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/K-eeo102H-vBBiLhLEXd_KsQm5u0_zPqlnDHpkiSHH_IWGKcvQ8uDaqXZbnQWOc4g2awK_rEqcaoBLAVRP7E8wwbmCRrO5-BaoAwuVRlOWN5_zzueupPFVNMA6zrtXhJ2XUsA3NBY6z0NT1QY--wdC_fnq7LSEi8MynvmTJJJfIP5XRgzXy7ZfCT_BQtWcgn"
     }, {
-        title: "Accepted (2006)", embedUrl: "https://short.icu/VmqC--HNp", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkzNzY5OTc3Nl5BMl5BanBnXkFtZTcwNjE4NDQzMQ@@._V1_.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/H_6aV1nbl5IX2b9laTtaJCIzcKFKRanyTz3-DWFWCA_QftzL8-IYb4irxVg9F_A8NQz2d8QXI719isv9pJxXhbPxA5_Xv2fF4ikAyU1chrcsG6ufa-ZOzGqvdmiCnKaNC_lTZr7wyFEWoyJbJYUgNXtK1-Q906sGCBvB3voOiBE"
+        title: "Accepted (2006)", embedUrl: "https://short.icu/VmqC--HNp", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkzNzY5OTc3Nl5BMl5BanBnXkFtZTcwNjE4NDQzMQ@@._V1_.jpg", genre: "Adult, Comedy, Romance", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/sdoki3iklsq35m9"
     }, {
-        title: "Mean Girls (2024)", embedUrl: "https://short.icu/9fmL-nKuE", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzlhMTkxZWMtYzQwNi00OWI4LWI2ZGQtOWQ0OGM4NDlkYTdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/55r_6QYBrV7BMLojQTSJzSzduZ6xLF_qX6BOfKDIb9qmYsvO8kg0SiA2B8YPdZrc1TT7TZkK2r2TJoCcMIYTB1Brc6kWKKdK3iHyrmebZJbYHjkjiwwehwfdI8uqn43BX8D359v4Ee6jro6bwpU5DqbU2qRF-i1-xNjNy-AM11s6qRlYyWTWKG0LDL2dmkwt"
+        title: "Mean Girls (2024)", embedUrl: "https://short.icu/9fmL-nKuE", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzlhMTkxZWMtYzQwNi00OWI4LWI2ZGQtOWQ0OGM4NDlkYTdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/8c78pskjfgtgffu"
     }, {
         title: "Mean Girls (2004)", embedUrl: "https://short.icu/bdM0tcIeT", posterUrl: "https://public-website-assets.paramountpictures.com/paramount2025/s3fs-public/styles/poster_medium/public/meangirls_2019update_en__800x1200.jpg?itok=-NeIZLrJ", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/5Hs5jTN9I-jQS4D7zhodAWsUvpnIHPbyWF_KvLVxFMX7jZJO_a-LuB5LUANq6C7IMLPVHystqUChQROG8UktE0DRZuPgKspRzZN4T5OwcBVSCPmom88mZxrRfE3iqGShEi2CEwhvSGb-wJTlo75dPG3ih1Il1FUd4NIma0uLbfc"
     }, {
         title: "Mean Girls 2 (2011)", embedUrl: "https://short.icu/JUhcT2nec", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTYzMjUxNjQ3OF5BMl5BanBnXkFtZTcwMzgyMTkyNA@@._V1_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "The Kissing Booth (2018)", embedUrl: "https://short.icu/svht6QaC3", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3b/The_Kissing_Booth.png", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/5MAGHWrDiU9RWlc9y3ssBqyXYsEQBk-KUfDJN9PwRWjl_9lE4bqllp4ZDou_A3vCA0g9B8WZsn_trWioR1jg2s-f50z82gEJAXj0Lz9x1vR20iedN9tNVoL5bwdPH5Xit0Oa4y1fXZp1FzaT4gf79GKQiTKElFnKtdHcJxsNO40lCfAdnLllWdY59nsivtrI"
+        title: "The Kissing Booth (2018)", embedUrl: "https://short.icu/svht6QaC3", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3b/The_Kissing_Booth.png", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/jmbe1spytibssbs"
     }, {
-        title: "The Kissing Booth 2 (2020)", embedUrl: "https://short.icu/I7AJ0MZ2P", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzg0ZmFkN2EtYTViMy00ODU5LWE3MGMtMzE3ZWNiOWNkNTRhXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/Axq2ry0pu9_rDjYZtJlj-mfR5STATBUvW38QP9yje0VmYlzzJpHvDt_nKFB5Fda0OztPERgTAocptkQ8dnu6cEMVCiKc1qZYB2QqmFg96onZ077_eHInv9meYbXMO_JCe5vYJePGxgcku-F4ELUJpcsW7UOYm5c9b9do6QSCqxpBemSMDqybHVfDl8oN1hi9"
+        title: "The Kissing Booth 2 (2020)", embedUrl: "https://short.icu/I7AJ0MZ2P", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzg0ZmFkN2EtYTViMy00ODU5LWE3MGMtMzE3ZWNiOWNkNTRhXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/bzl7ldgll1nlukv"
     }, {
-        title: "The Kissing Booth 3 (2020)", embedUrl: "https://short.icu/Qu-Lrm6e4", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c3/The_Kissing_Booth_3.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/Rtiza3H4h16I84Ts4EIK2ZwA477ZOUzLkbTV_OH98fMXm-ZTn0msEUrlfSqwEFwnkUchOEtviCpci3nr5K1Ioy9AhpCcnUVMnN60v9VKZvapVSzO1MU8qiVz9Y0y9zUjXpSYtfDpCwSjW5Bj6dZ_ufZdJSKpx0ttGJLK-UAj21LOC6owooH83fMEdwlJj6cp"
+        title: "The Kissing Booth 3 (2020)", embedUrl: "https://short.icu/Qu-Lrm6e4", posterUrl: "https://upload.wikimedia.org/wikipedia/en/c/c3/The_Kissing_Booth_3.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/ovxkf3ffz314z4f"
     }, {
-        title: "Easy A (2010)", embedUrl: "https://short.icu/65homHi-72", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjE1MzU1Mjg1OF5BMl5BanBnXkFtZTcwNDc3NDQ2Mw@@._V1_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/-7VgrRxoDNKY7WHaA6me2Hy7oMJNsuZD7A66UmyuwiqR71sIXBOSgi1Lk2MOQ8Ci_W7ZyLDrA2sSg3-vOBpLPv2UZY2ZF-QmF9jNIrFD04yM4ITlZZ2AgLBiH_3HdFM9mndBMiIO00Zi3dpNhK3Hdt6s977_oSax_9BZ7fRu_ac"
+        title: "Easy A (2010)", embedUrl: "https://short.icu/65homHi-72", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjE1MzU1Mjg1OF5BMl5BanBnXkFtZTcwNDc3NDQ2Mw@@._V1_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/wvtayttryruy1tk"
     }, {
-        title: "She's Out of My League (2010)", embedUrl: "https://short.icu/6JZ-eIeSi", posterUrl: "https://m.media-amazon.com/images/I/81UIZeFHWFL._AC_UF894,1000_QL80_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/lxNqaWDZTJAVzwXRmt0mLgKnkQb8wduDSPU819DMIDUsGfGpXHzyCRP0-1JtG7vGIg0rOLFXHgjsc7b4De54rSi427Id8_vS8lZAo5UkurwBP8Iz-MdElZ0K925hxVNdY7gD1fHmU4kew0u4yX5ZMOd3da8ssl7e2KIUvvEVGSh_yXsyivBBerGg6kbx0dij"
+        title: "She's Out of My League (2010)", embedUrl: "https://short.icu/6JZ-eIeSi", posterUrl: "https://m.media-amazon.com/images/I/81UIZeFHWFL._AC_UF894,1000_QL80_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/jqe2vjuuet1qoev"
     }, {
-        title: "She's the Man (2006)", embedUrl: "https://short.icu/IiXie3coy", posterUrl: "https://m.media-amazon.com/images/I/91x9ZS4woKL._AC_UF894,1000_QL80_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "http://5vtw3p.movielinkbd.li/file/Lo7iFBUHfepcUguF0hzbUloDZqfOUY-JkJzAKJyzSzmpfE1a7ckNgQLE_81glGsGInH1HBQ3T3Xx2Ba0lxvVE4N60xttx6Qlm3tF2r0x-i2nKHxp_HwSYlafAX1rtNZxAvtYPy6XG3i_VJiWy8LEIkIUbMfvp8h4tX2X_MjxUqc"
+        title: "She's the Man (2006)", embedUrl: "https://short.icu/IiXie3coy", posterUrl: "https://m.media-amazon.com/images/I/91x9ZS4woKL._AC_UF894,1000_QL80_.jpg", genre: "Adult, Comedy", category: "Adult Comedy", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/v9exdc1j8gj11dx"
     },
 
 
@@ -5919,58 +5914,58 @@ function closeAnnouncement() {
 // ==========================================
 
 // 1. Disable Right Click entirely to hide 'Inspect' everywhere
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-});
+// document.addEventListener('contextmenu', (e) => {
+//     e.preventDefault();
+// });
 
-document.addEventListener('keydown', (e) => {
-    // Allow normal keyboard behavior inside the search box
-    if (e.target.id === 'searchInput') return;
+// document.addEventListener('keydown', (e) => {
+//     // Allow normal keyboard behavior inside the search box
+//     if (e.target.id === 'searchInput') return;
 
-    // Block F12 (DevTools)
-    if (e.key === 'F12') {
-        e.preventDefault();
-    }
+//     // Block F12 (DevTools)
+//     if (e.key === 'F12') {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
+//     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+U / Cmd+Opt+U (View Source)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+U / Cmd+Opt+U (View Source)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+S / Cmd+S (Save Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+S / Cmd+S (Save Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+//         e.preventDefault();
+//     }
     
-    // Block Ctrl+P / Cmd+P (Print Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+P / Cmd+P (Print Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+//         e.preventDefault();
+//     }
 
-    // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
-        e.preventDefault();
-    }
-});
+//     // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
+//         e.preventDefault();
+//     }
+// });
 
-// 3. Prevent Native Copy, Cut, Paste events (except search box)
-['copy', 'cut', 'paste'].forEach(evt => {
-    document.addEventListener(evt, (e) => {
-        if (e.target.id !== 'searchInput') {
-            e.preventDefault();
-        }
-    });
-});
+// // 3. Prevent Native Copy, Cut, Paste events (except search box)
+// ['copy', 'cut', 'paste'].forEach(evt => {
+//     document.addEventListener(evt, (e) => {
+//         if (e.target.id !== 'searchInput') {
+//             e.preventDefault();
+//         }
+//     });
+// });
 
-// 4. Prevent Dragging elements (like ghost-dragging images to save them)
-document.addEventListener('dragstart', (e) => {
-    // Allow FAB pointer dragging, but prevent native HTML element dragging
-    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-        e.preventDefault();
-    }
-});
+// // 4. Prevent Dragging elements (like ghost-dragging images to save them)
+// document.addEventListener('dragstart', (e) => {
+//     // Allow FAB pointer dragging, but prevent native HTML element dragging
+//     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+//         e.preventDefault();
+//     }
+// });
