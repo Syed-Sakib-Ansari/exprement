@@ -1,5 +1,21 @@
 const contentData = [
     {
+        title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-2", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/842vHmS4E" },
+        ]
+    }, {
+        title: "Straight to Hell (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWExMjQ0MDMtMWI4ZS00ZmVjLTgyNjMtZGE3OGM4Yzc2Mjk2XkEyXkFqcGc@._V1_.jpg", genre: "Docudrama, Biography, Drama, History", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/97qST1txnBjL", seriesInfo: "Season 1, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/52LCoEevN" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/XZrWItlKo" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/EJVWrtYhD" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/JBttIkMpL" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/0Ibb2ccYR" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/fZP0KPhId" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/jvokwpU4w" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/7eIWN6TmS" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/b6pM7ayaB" },]
+    }, {
         title: "They Will Kill You (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ikygc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjg5ZjQ0ZGQtMmY1NS00NTgyLTlkZWYtMDhlNzE3ZGY5ZDdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Action, Horror", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ikygc&dl=1"
     }, {
         title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
@@ -37,22 +53,6 @@ const contentData = [
         title: "Greenland 2: Migration (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8xrz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWEzM2IzZTMtYzA2Yi00NjY0LWE1ODktNTllZmI3ZTI1MzBmXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8xrz5&dl=1"
     }, {
         title: "24: India (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6j16n", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzhiMzY3ZDYtYmI0OS00OTUwLWJhNjEtYzM5NTU5MTcyZDliXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Action, Adventure, Crime, Mystery", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6j16n&dl=1", seriesInfo: "Season 1, Episode ALL",
-    }, {
-        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-6", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/pYGSgWI-C" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/HoeFyS8Vj" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/ryDWSHaUB" },
-        ]
-    }, {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-4", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/PyNsruhwI" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/H2mRGyi_8" },
-        ]
     },
 
     // =======================================================================
@@ -4018,6 +4018,11 @@ const contentData = [
 
 
     {
+        title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-2", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/842vHmS4E" },
+        ]
+    }, {
         title: "Flunked (2020)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzUwYjNjMTItOWM1Mi00NDJlLTk5ZTgtM2U4NzRiY2RiNTlkXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/1ryo2gBTH" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/o5MduRxxK" },
@@ -4056,10 +4061,6 @@ const contentData = [
             { number: 4, title: "Episode 4", embedUrl: "https://short.icu/xPFjEXTiE" },
             { number: 5, title: "Episode 5", embedUrl: "https://short.icu/hgyPf5iOa" },
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/8ZeICvd8F" },
-        ]
-    }, {
-        title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h" },
         ]
     }, {
         title: "From (2024)", posterUrl: "https://resizing.flixster.com/3nP5cqgEFMXg-MccmojN03wlcXQ=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p27981554_b_v12_aa.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-10", episodes: [
@@ -4785,6 +4786,17 @@ const contentData = [
 
 
     {
+        title: "Straight to Hell (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWExMjQ0MDMtMWI4ZS00ZmVjLTgyNjMtZGE3OGM4Yzc2Mjk2XkEyXkFqcGc@._V1_.jpg", genre: "Docudrama, Biography, Drama, History", category: "Korean Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/97qST1txnBjL", seriesInfo: "Season 1, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/52LCoEevN" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/XZrWItlKo" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/EJVWrtYhD" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/JBttIkMpL" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/0Ibb2ccYR" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/fZP0KPhId" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/jvokwpU4w" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/7eIWN6TmS" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/b6pM7ayaB" },]
+    }, {
         title: "If Wishes Could Kill (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTIyODI5YzgtMjg1OC00OTMzLWE1ODgtNDQzMjViMDZhOTQ1XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Drama, Thriller", category: "Korean Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/poowlmhcY" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/1gHaa_y4l" },
