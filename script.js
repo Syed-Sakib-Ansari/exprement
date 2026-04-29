@@ -1,5 +1,13 @@
 const contentData = [
     {
+        title: "Psycho (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#1hlqj", posterUrl: "https://images.fandango.com/ImageRenderer/820/0/redesign/static/img/default_poster.png/0/images/masterrepository/fandango/222239/Psycho-posterart.jpg", genre: "Thriller, Crime", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1hlqj&dl=1",
+    }, {
+        title: "Tarot (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#gmdfj", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjY3NTkxMjQtZWNjNy00NGU2LTlhOTMtMmRhZGEwNzRmMDcyXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gmdfj&dl=1"
+    }, {
+        title: "Forbidden Fruits (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3xoho", posterUrl: "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2026/03/10063105/t3hvrrrqvRoURz4y1A1aCys6WD9-683x1024.jpg", genre: "Horror, Comedy", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3xoho&dl=1"
+    }, {
+        title: "Eye for an Eye (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#fvzyh", posterUrl: "https://m.media-amazon.com/images/M/MV5BODg0ZjgyODYtZjJmYi00MTU4LTgyYTEtYmJiOGRhMjg4NTliXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fvzyh&dl=1"
+    }, {
         title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-2", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/842vHmS4E" },
@@ -45,14 +53,6 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/sD6JqgrDm" },]
     }, {
         title: "Apex (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#f1myj", posterUrl: "https://static0.colliderimages.com/wordpress/wp-content/uploads/sharedimages/2026/03/unnamed-3-1.jpg?q=49&fit=contain&w=480&dpr=2", genre: "Action, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1myj&dl=1"
-    }, {
-        title: "Michael (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dbtyo", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzllNmRlN2EtMDQyOC00ODJjLTg4OWQtZDNmNGU3YzlkNjc1XkEyXkFqcGc@._V1_.jpg", genre: "Biography, Drama, History, Music", category: "Recent Adds", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbtyo&dl=1"
-    }, {
-        title: "Safe House (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qgac1", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjM2Y2Q0NGMtOGUwZC00MDcyLWEzNzAtZTg4YjMyYTAxODRjXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qgac1&dl=1"
-    }, {
-        title: "Greenland 2: Migration (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8xrz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWEzM2IzZTMtYzA2Yi00NjY0LWE1ODktNTllZmI3ZTI1MzBmXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8xrz5&dl=1"
-    }, {
-        title: "24: India (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6j16n", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzhiMzY3ZDYtYmI0OS00OTUwLWJhNjEtYzM5NTU5MTcyZDliXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Action, Adventure, Crime, Mystery", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6j16n&dl=1", seriesInfo: "Season 1, Episode ALL",
     },
 
     // =======================================================================
@@ -469,6 +469,14 @@ const contentData = [
 
 
     {
+        title: "Tarot (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#gmdfj", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjY3NTkxMjQtZWNjNy00NGU2LTlhOTMtMmRhZGEwNzRmMDcyXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gmdfj&dl=1"
+    }, {
+        title: "Forbidden Fruits (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3xoho", posterUrl: "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2026/03/10063105/t3hvrrrqvRoURz4y1A1aCys6WD9-683x1024.jpg", genre: "Horror, Comedy", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3xoho&dl=1"
+    }, {
+        title: "Eye for an Eye (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#fvzyh", posterUrl: "https://m.media-amazon.com/images/M/MV5BODg0ZjgyODYtZjJmYi00MTU4LTgyYTEtYmJiOGRhMjg4NTliXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fvzyh&dl=1"
+    }, {
+        title: "Gone (2012)", embedUrl: "https://moviedakhi.4meplayer.com/#1hlpe", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTgzMTEyOTgyOF5BMl5BanBnXkFtZTcwOTY1ODkxNw@@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Mystery, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1hlpe&dl=1"
+    }, {
         title: "They Will Kill You (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ikygc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjg5ZjQ0ZGQtMmY1NS00NTgyLTlkZWYtMDhlNzE3ZGY5ZDdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Action, Horror", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ikygc&dl=1"
     }, {
         title: "Tyler Perry's Joe's College Road Trip (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#15dhu", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWU2OWI0MDQtNjEyYi00MzMwLTlmYTQtYjc1MWViNjAzZGUwXkEyXkFqcGc@._V1_.jpg", genre: "Comedy", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#15dhu&dl=1"
@@ -2361,6 +2369,8 @@ const contentData = [
 
 
     {
+        title: "Psycho (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#1hlqj", posterUrl: "https://images.fandango.com/ImageRenderer/820/0/redesign/static/img/default_poster.png/0/images/masterrepository/fandango/222239/Psycho-posterart.jpg", genre: "Thriller, Crime", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1hlqj&dl=1",
+    }, {
         title: "Usiru (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qglat", posterUrl: "https://m.media-amazon.com/images/M/MV5BODg5NWVmMTMtMDRmYS00YWM5LTg5N2QtM2JjNDM1ODk0NzEyXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qglat&dl=1",
     }, {
         title: "Agnyathavasi (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ydugm", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzA3NzM1MmItMDg2My00ZTAxLWE2NTAtMDkzZThhMGMwYjk3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ydugm&dl=1",
