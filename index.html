@@ -85,6 +85,7 @@
         ]
         }
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -175,6 +176,39 @@
                 <!-- Categories will be injected here -->
             </div>
         </div>
+    </div>
+
+        <div id="toastMessage"
+        class="fixed top-6 md:top-10 left-1/2 transform -translate-x-1/2 bg-[#111111]/95 backdrop-blur-xl border border-white/10 text-white px-4 py-3 rounded-xl shadow-[0_15px_40px_rgba(0,0,0,0.8)] font-medium text-xs md:text-sm tracking-wide z-[9999] transition-all duration-400 opacity-0 -translate-y-8 pointer-events-none flex items-center gap-3 w-[90%] max-w-sm border-b-2 border-b-red-600">
+        <div class="bg-red-600/20 p-1.5 rounded-full flex-shrink-0 animate-pulse">
+            <i class="fas fa-info-circle text-red-500 text-base"></i>
+        </div>
+        <span id="toastText" class="flex-1 leading-tight text-gray-200">Message</span>
+    </div>
+
+    <div id="bookmarkPopup" onclick="triggerBookmark(event)" class="fixed bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 bg-[#141414] border-l-4 border-red-600 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] z-[9999] transition-all duration-500 translate-y-32 opacity-0 flex items-center gap-3 md:gap-4 p-3 md:p-3.5 w-[92%] max-w-md pointer-events-none cursor-pointer hover:bg-[#1f1f1f] group overflow-hidden">
+        
+        <div class="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-full blur-3xl -z-10 group-hover:bg-red-600/20 transition-all"></div>
+        
+        <div class="relative bg-gradient-to-br from-red-500 to-red-800 h-10 w-10 flex items-center justify-center rounded-full flex-shrink-0 shadow-[0_0_15px_rgba(229,9,20,0.5)] group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-bookmark text-white text-base md:text-lg relative z-10"></i>
+            <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-white shadow-sm"></span>
+            </span>
+        </div>
+        
+        <div class="flex-1 z-10">
+            <h4 class="font-black text-sm md:text-base text-white tracking-wide uppercase mb-1.5 drop-shadow-sm">Never Lose Us!</h4>
+            <!-- Added md:whitespace-nowrap to guarantee it STAYS on one line on desktop -->
+            <p id="bookmarkDesc" class="text-[10px] md:text-xs text-gray-200 font-bold leading-tight md:leading-snug md:whitespace-nowrap">
+                <!-- Dynamically injected from JS below -->
+            </p>
+        </div>
+        
+        <button onclick="closeBookmarkPopup(event)" class="text-gray-400 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition-colors flex-shrink-0 z-10 -mr-1 md:-mr-1.5">
+            <i class="fas fa-times text-sm md:text-base"></i>
+        </button>
     </div>
 
     <!-- HOME VIEW -->
@@ -303,113 +337,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Announcement/Warning Popup Box -->
-    <!-- <div id="announcementPopup" class="fixed inset-0 z-[200] hidden items-center justify-center pointer-events-none">
-        
-        <div class="absolute inset-0 bg-[#050505]/80 backdrop-blur-md transition-opacity duration-500 opacity-0 pointer-events-none"
-            id="popupBackdrop" onclick="closeAnnouncement()"></div>
-
-
-        <div class="relative w-[90%] max-w-md transform scale-90 translate-y-12 opacity-0 transition-all duration-[600ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] flex flex-col items-center pointer-events-none"
-            id="popupBox">
-
-
-            <div
-                class="relative w-full bg-[#111111]/60 backdrop-blur-3xl border border-white/10 rounded-[32px] p-8 shadow-[0_30px_60px_rgba(0,0,0,0.8)] overflow-hidden z-10 text-center pointer-events-auto">
-
-
-                <div
-                    class="absolute -top-20 -left-20 w-64 h-64 bg-red-600/30 blur-[80px] rounded-full pointer-events-none animate-pulse">
-                </div>
-                <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-purple-600/20 blur-[80px] rounded-full pointer-events-none animate-pulse"
-                    style="animation-delay: 1s;"></div>
-
-
-                <div
-                    class="absolute top-0 left-1/4 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent">
-                </div>
-                <div
-                    class="absolute bottom-0 left-1/4 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent">
-                </div>
-
-
-                <button onclick="closeAnnouncement()"
-                    class="absolute top-5 right-5 text-white/40 hover:text-white bg-white/5 hover:bg-red-600 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 z-20 cursor-pointer border border-transparent hover:border-white/20 hover:scale-110 hover:rotate-90">
-                    <i class="fas fa-times text-sm"></i>
-                </button>
-
-
-                <div class="relative w-20 h-20 mx-auto mb-6 group cursor-default">
-
-                    <div
-                        class="absolute inset-0 bg-red-600/30 rounded-2xl rotate-6 transition-transform duration-500 group-hover:rotate-12 blur-sm">
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-purple-600/30 rounded-2xl -rotate-6 transition-transform duration-500 group-hover:-rotate-12 blur-sm">
-                    </div>
-
-                    <div
-                        class="relative w-full h-full bg-gradient-to-br from-[#2a2a2a] to-[#0a0a0a] border border-white/20 rounded-2xl flex items-center justify-center shadow-xl transition-transform duration-500 group-hover:scale-110">
-                        <i
-                            class="fas fa-rocket text-3xl text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-white"></i>
-                    </div>
-                </div>
-
-                <h3 class="text-2xl font-black uppercase tracking-[0.2em] text-white mb-3 drop-shadow-lg">Notice</h3>
-
-                <p class="text-gray-300 text-sm font-medium leading-relaxed mb-8 px-2">
-                    Welcome to <span class="text-white font-black">MovieDakhi</span>! We have recently upgraded our core
-                    servers for a seamless streaming experience.
-                </p>
-
-
-                <a href="https://t.me/+oeXeresjsFA1MjI1" target="_blank"
-                    class="relative inline-flex items-center justify-center w-full bg-[#1a1a1a] hover:bg-blue-600 border border-white/10 hover:border-blue-400 text-white font-bold tracking-[0.15em] uppercase text-xs py-4 rounded-2xl transition-all duration-300 group overflow-hidden shadow-lg">
-
-                    <div
-                        class="absolute inset-0 w-1/4 h-full bg-white/20 skew-x-[-20deg] group-hover:translate-x-[400%] transition-transform duration-700 pointer-events-none -translate-x-[150%]">
-                    </div>
-                    <i
-                        class="fab fa-telegram-plane text-blue-400 group-hover:text-white text-lg mr-3 transition-colors"></i>
-                    Join Telegram
-                </a>
-
-                <a href="../Game/gamehome.html" target="_blank"
-                    class="relative mt-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-purple-600 to-pink-600 border border-pink-400/50 text-white font-black tracking-[0.15em] uppercase text-xs py-4 rounded-2xl transition-all duration-300 group overflow-hidden shadow-[0_0_20px_rgba(219,39,119,0.5)] hover:shadow-[0_0_30px_rgba(219,39,119,0.8)] hover:scale-[1.02]">
-
-                    <div
-                        class="absolute inset-0 w-1/4 h-full bg-white/30 skew-x-[-20deg] group-hover:translate-x-[400%] transition-transform duration-700 pointer-events-none -translate-x-[150%]">
-                    </div>
-                    <i class="fas fa-gamepad text-white text-xl mr-3 animate-pulse"></i> Play Premium Games Free
-                </a>
-
-                <div class="relative z-10 mt-6 flex justify-center gap-4 pointer-events-auto">
-                    <a href="https://www.facebook.com/profile.php?id=61586165302830" target="_blank"
-                        class="w-12 h-12 rounded-[14px] bg-[#111]/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] hover:shadow-[0_10px_20px_rgba(24,119,242,0.4)] transition-all duration-300 hover:-translate-y-2 group"
-                        title="Facebook">
-                        <i class="fab fa-facebook-f text-lg group-hover:scale-125 transition-transform"></i>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCCqqgRAlSnZ_oBuLsFqTLog" target="_blank"
-                        class="w-12 h-12 rounded-[14px] bg-[#111]/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-[#FF0000] hover:border-[#FF0000] hover:shadow-[0_10px_20px_rgba(255,0,0,0.4)] transition-all duration-300 hover:-translate-y-2 group"
-                        title="YouTube">
-                        <i class="fab fa-youtube text-lg group-hover:scale-125 transition-transform"></i>
-                    </a>
-                    <a href="https://t.me/+oeXeresjsFA1MjI1" target="_blank"
-                        class="w-12 h-12 rounded-[14px] bg-[#111]/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-[#0088cc] hover:border-[#0088cc] hover:shadow-[0_10px_20px_rgba(0,136,204,0.4)] transition-all duration-300 hover:-translate-y-2 group"
-                        title="Telegram">
-                        <i class="fab fa-telegram-plane text-xl group-hover:scale-125 transition-transform"></i>
-                    </a>
-                    <a href="https://www.instagram.com/moviedakhi/" target="_blank"
-                        class="w-12 h-12 rounded-[14px] bg-[#111]/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-gradient-to-br hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045] hover:border-[#fd1d1d] hover:shadow-[0_10px_20px_rgba(253,29,29,0.4)] transition-all duration-300 hover:-translate-y-2 group"
-                        title="Instagram">
-                        <i class="fab fa-instagram text-lg group-hover:scale-125 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div> -->
 
     <!-- Announcement/Warning Popup Box -->
     <div id="announcementPopup" class="fixed inset-0 z-[200] hidden items-center justify-center pointer-events-none">

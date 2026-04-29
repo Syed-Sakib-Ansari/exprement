@@ -4870,7 +4870,14 @@ const contentData = [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/QgsbbPIUD" }, { number: 2, title: "Episode 2", embedUrl: "https://short.icu/SfBzAptc3" }, { number: 3, title: "Episode 3", embedUrl: "https://short.icu/8KIjf4DzP" }, { number: 4, title: "Episode 4", embedUrl: "https://short.icu/u1oZYEa0h" }, { number: 5, title: "Episode 5", embedUrl: "https://short.icu/8zx_H0cBq" }, { number: 6, title: "Episode 6", embedUrl: "https://short.icu/a4beTZ_v6" }, { number: 7, title: "Episode 7", embedUrl: "https://short.icu/8vMs58ima" }, { number: 8, title: "Episode 8", embedUrl: "https://short.icu/y1KMD1QAp" },]
     }, {
         title: "Alice in Borderlan (2022)", posterUrl: "https://m.media-amazon.com/images/I/61idXIynNqL._AC_UF894,1000_QL80_.jpg", genre: "Thriller, Survival", category: "Korean Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/XE3LtOCTf" }, { number: 2, title: "Episode 2", embedUrl: "https://short.icu/UI16ZJ_H-" }, { number: 3, title: "Episode 3", embedUrl: "https://short.icu/VWHxJkbycJ" }, { number: 4, title: "Episode 4", embedUrl: "https://short.icu/r_Y214inY" }, { number: 5, title: "Episode 5", embedUrl: "https://short.icu/F7s29r6M1" }, { number: 6, title: "Episode 6", embedUrl: "https://short.icu/FJo7hD6-3" }, { number: 7, title: "Episode 7", embedUrl: "https://short.icu/WXSfC3maj" }, { number: 8, title: "Episode 8", embedUrl: "https://short.icu/xm3QB3xVD" },]
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/XE3LtOCTf" }, 
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/UI16ZJ_H-" }, 
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/VWHxJkbycJ" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/r_Y214inY" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/F7s29r6M1" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/FJo7hD6-3" }, 
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/WXSfC3maj" }, 
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/xm3QB3xVD" },]
     },
 
 ];
@@ -4885,6 +4892,9 @@ const categories = [
 
 let currentItem = null;
 let downloadClickCount = 0; // Track the clicks for custom download button logic
+// ================== NEW FUNCTION START ==================
+let currentEpisodeIndex = null;
+// ================== NEW FUNCTION END ==================
 let preSearchState = null; // Stores user location before search starts
 let currentView = 'home';
 let sliderInterval;
@@ -5618,12 +5628,18 @@ function openModal(id) {
     
     // Restore vibrant green styles
     downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-    downloadBtn.classList.add('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
+    downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
     
     // Restore shine wave
     const wave = downloadBtn.querySelector('.animate-shine-wave');
     if(wave) wave.classList.remove('hidden');
-
+    // ================== NEW FUNCTION START ==================
+    if (item.episodes && item.episodes.length > 0) {
+        currentEpisodeIndex = 0;
+    } else {
+        currentEpisodeIndex = null;
+    }
+    // ================== NEW FUNCTION END ==================
     const seriesSec = document.getElementById('seriesSection');
     const epList = document.getElementById('episodeList');
     if (item.episodes) {
@@ -5665,7 +5681,7 @@ function handleDownloadClick() {
         
         // Restore vibrant green styles
         downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-        downloadBtn.classList.add('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
+        downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
         
         // Restore shine wave
         const wave = downloadBtn.querySelector('.animate-shine-wave');
@@ -5688,19 +5704,32 @@ function handleDownloadClick() {
         }
     } else if (downloadClickCount === 3) {
         document.getElementById('downloadBtnText').innerText = "Link Expire";
-        
+
         // Change button style to look expired/disabled
         const downloadBtn = document.getElementById('mainDownloadBtn');
-        downloadBtn.classList.remove('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
-        downloadBtn.classList.add('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-        
-        // Remove the continuous shine wave when expired
-        const wave = downloadBtn.querySelector('.animate-shine-wave');
-        if(wave) wave.classList.add('hidden');
+        if (downloadBtn) {
+            // ================== LINK EXPIRE BUTTON DESIGN START ==================
+            // Remove vibrant styles
+            downloadBtn.classList.remove('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
+            
+            // Add solid dark design with white border matching image (no gradient)
+            downloadBtn.classList.add('!bg-none', '!bg-[#111]', '!border-white', '!text-white', 'cursor-not-allowed', 'opacity-80');
+            // ================== LINK EXPIRE BUTTON DESIGN END ==================
 
-        if (currentItem.downloadUrl2) {
+            // Remove the continuous shine wave when expired
+            const wave = downloadBtn.querySelector('.animate-shine-wave');
+            if (wave) wave.classList.add('hidden');
+        }
+
+        // ================== NEW FUNCTION START ==================
+        // Check if an episode is selected and it has a specific downloadUrl
+        if (currentEpisodeIndex !== null && currentItem.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl) {
+            window.open(currentItem.episodes[currentEpisodeIndex].downloadUrl, '_blank');
+        } else if (currentItem.downloadUrl2) {
+            // Fallback to main downloadUrl2 if no episode selected or no episode download url exists
             window.open(currentItem.downloadUrl2, '_blank');
         }
+        // ================== NEW FUNCTION END ==================
     }
 }
 
@@ -5733,6 +5762,21 @@ function playEpisode(index, btnElement) {
     
     document.getElementById('videoPlaceholder').classList.add('hidden');
     document.getElementById('actualVideo').classList.remove('hidden');
+    // ================== NEW FUNCTION START ==================
+    // Update the selected episode for downloading, and reset the download button process
+    currentEpisodeIndex = index;
+    downloadClickCount = 0;
+    const downloadBtn = document.getElementById('mainDownloadBtn');
+    document.getElementById('downloadBtnText').innerText = "Download";
+
+    // Restore original active styling to download button
+    downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+    downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
+
+    // Restore shine wave if it exists
+    const wave = downloadBtn.querySelector('.animate-shine-wave');
+    if (wave) wave.classList.remove('hidden');
+    // ================== NEW FUNCTION END ==================
 }
 
 function closeModal(triggerBack = true) {
@@ -5800,6 +5844,108 @@ searchInput.addEventListener('keydown', (e) => {
         searchInput.blur();
     }
 });
+
+        // TRIGGER POPUP ON LOAD (COMMENTED OUT)
+
+        setTimeout(() => {
+            // NOTE: If you only want to show this ONCE per session, uncomment the 3 lines below:
+            // if (!sessionStorage.getItem('popupSeen')) {
+            showAnnouncement();
+            //     sessionStorage.setItem('popupSeen', 'true');
+            // }
+        }, 7500);
+
+        // ================== NEW FUNCTION START: BOOKMARK LOGIC (COMMENTED OUT) ==================
+        
+        // Helper function to show toast messages
+        function showToast(message) {
+            const toast = document.getElementById('toastMessage');
+            const toastText = document.getElementById('toastText');
+            if (!toast || !toastText) return;
+
+            toastText.innerHTML = message; // Using innerHTML to allow bold text/icons
+            
+            toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }, 4000);
+        }
+
+        // Show bookmark popup (called automatically when announcement popup closes)
+        function showBookmarkPopup() {
+            const bookmarkPopup = document.getElementById('bookmarkPopup');
+            const bookmarkDesc = document.getElementById('bookmarkDesc');
+            if (!bookmarkPopup || !bookmarkDesc) return;
+            
+            // Detect device to show appropriate message
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+            
+            if (isMobile) {
+                // whitespace-nowrap prevents 'Add to Home Screen' from splitting awkwardly on small phones
+                bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px]">Tap menu</span> <i class="fas fa-ellipsis-v mx-1.5 text-gray-400"></i> <span class="font-black text-white text-[11px]">& select</span> <strong class="text-white font-black bg-white/10 px-1.5 py-0.5 rounded ml-1 whitespace-nowrap shadow-inner">Add to Home Screen</strong>`;
+            } else if (isMac) {
+                bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Cmd + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
+            } else {
+                // Explicitly set for standard desktop (Windows/Linux)
+                bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Ctrl + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
+            }
+
+            bookmarkPopup.classList.remove('translate-y-32', 'opacity-0');
+            bookmarkPopup.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+            
+            // Auto-hide after 20 seconds if they ignore it
+            setTimeout(() => {
+                closeBookmarkPopup();
+            }, 20000);
+        }
+
+        function triggerBookmark(e) {
+            // Prevent the close button from triggering this event
+            if (e && e.target.closest('button')) return;
+
+            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+            const shortcut = isMac ? 'Cmd + D' : 'Ctrl + D';
+            const kbd = document.getElementById('kbdShortcut');
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+            if(isMobile) {
+                showToast("Tap menu <i class='fas fa-ellipsis-v mx-1 text-gray-500'></i> & select <strong class='text-white font-black'>Add to Home Screen</strong>!");
+            } else {
+                // Try legacy IE approach just in case (rarely works on modern browsers)
+                if (window.external && ('AddFavorite' in window.external)) {
+                    try {
+                        window.external.AddFavorite(window.location.href, document.title);
+                        closeBookmarkPopup();
+                        return;
+                    } catch(err) {}
+                }
+                
+                // Elegant hover/click flash effect for the keyboard shortcut
+                if(kbd) {
+                    kbd.classList.add('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
+                    setTimeout(() => {
+                        kbd.classList.remove('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
+                    }, 400);
+                }
+                showToast(`Press ${shortcut} on your keyboard to save this site!`);
+            }
+        }
+
+        function closeBookmarkPopup(e) {
+            if(e) {
+                e.stopPropagation(); // Prevent triggerBookmark from firing
+            }
+            const bookmarkPopup = document.getElementById('bookmarkPopup');
+            if (bookmarkPopup) {
+                bookmarkPopup.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                bookmarkPopup.classList.add('translate-y-32', 'opacity-0');
+            }
+        }
+        
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     renderCategories();
@@ -5893,22 +6039,20 @@ window.addEventListener('click', (e) => {
 // ANNOUNCEMENT POPUP LOGIC (COMMENTED OUT)
 // ==========================================
 
-function showAnnouncement() {
-    const popup = document.getElementById('announcementPopup');
-    popup.classList.remove('hidden');
-    popup.classList.add('flex');
-    
-    // Stop background scroll when popup is active
-    savedScrollY = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${savedScrollY}px`;
-    document.body.style.width = '100%';
-    
-    // Small timeout to allow display:flex to apply before animating opacity/transform
-    setTimeout(() => {
-        popup.classList.add('active');
-    }, 50);
-}
+        function showAnnouncement() {
+            const popup = document.getElementById('announcementPopup');
+            if (!popup) return;
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+
+            // Stop background scroll when popup is active without jumping to the top
+            document.body.style.overflow = 'hidden';
+
+            // Small timeout to allow display:flex to apply before animating opacity/transform
+            setTimeout(() => {
+                popup.classList.add('active');
+            }, 50);
+        }
 
 function closeAnnouncement() {
     const popup = document.getElementById('announcementPopup');
@@ -5918,12 +6062,12 @@ function closeAnnouncement() {
     setTimeout(() => {
         popup.classList.add('hidden');
         popup.classList.remove('flex');
-        
-        // Restore background scroll
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        window.scrollTo(0, savedScrollY);
+        document.body.style.overflow = '';
+
+        setTimeout(() => {
+            showBookmarkPopup();
+        }, 500);
+                
     }, 500); 
 }
         
