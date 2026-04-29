@@ -1,5 +1,31 @@
 const contentData = [
     {
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/pYGSgWI-C" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/HoeFyS8Vj" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/ryDWSHaUB" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/JICrcPUCtT" },
+        ]
+    }, {
+        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-5", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/PyNsruhwI" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/H2mRGyi_8" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/rdgm10RA6" },
+        ]
+    }, {
+        title: "S Line (2025)", posterUrl: "https://m.media-amazon.com/images/M/MV5BODVlYjY0YjUtZmVlYS00Y2RiLWIyZmUtODRjNjI3ZmQzMzlkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Mystery, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/8VAloy4hkLCY", seriesInfo: "Season 1, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zmc9ZANNt" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/UFou-99Nb" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/cAwYuNgQW" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/LWYVcNG5R" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/0hM-k0e0Q" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/CP-lqxQnY" },]
+    }, {
         title: "Psycho (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#1hlqj", posterUrl: "https://images.fandango.com/ImageRenderer/820/0/redesign/static/img/default_poster.png/0/images/masterrepository/fandango/222239/Psycho-posterart.jpg", genre: "Thriller, Crime", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1hlqj&dl=1",
     }, {
         title: "Tarot (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#gmdfj", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjY3NTkxMjQtZWNjNy00NGU2LTlhOTMtMmRhZGEwNzRmMDcyXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gmdfj&dl=1"
@@ -39,20 +65,6 @@ const contentData = [
         title: "Ginny Wedss Sunny 2 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vhd3m", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDk5OTkyYjgtZTQ4ZS00YWMyLWFiMWEtZGUxYWRjNmVjODUzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Family, Romance", category: "Recent Adds", language: "Hindi", quality:"HDTS", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vhd3m&dl=1",
     }, {
         title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6jmnu", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Tamil", quality:"Web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jmnu&dl=1",
-    }, {
-        title: "Happy Raj (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ydj5m", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTI3YTQ0MTMtMWFmZi00YzFiLWE5ZTEtNGM5ZTc5MWRiMGRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Family, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ydj5m&dl=1",
-    }, {
-        title: "If Wishes Could Kill (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTIyODI5YzgtMjg1OC00OTMzLWE1ODgtNDQzMjViMDZhOTQ1XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/poowlmhcY" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/1gHaa_y4l" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/3GAXh43T8" }, 
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/_5zxIXt3U" }, 
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/olVbLf41F" }, 
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/w2UfZW221" }, 
-            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/4uvhE9cNk" }, 
-            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/sD6JqgrDm" },]
-    }, {
-        title: "Apex (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#f1myj", posterUrl: "https://static0.colliderimages.com/wordpress/wp-content/uploads/sharedimages/2026/03/unnamed-3-1.jpg?q=49&fit=contain&w=480&dpr=2", genre: "Action, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#f1myj&dl=1"
     },
 
     // =======================================================================
@@ -4028,6 +4040,24 @@ const contentData = [
 
 
     {
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/pYGSgWI-C" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/HoeFyS8Vj" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/ryDWSHaUB" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/JICrcPUCtT" },
+        ]
+    }, {
+        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-5", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/PyNsruhwI" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/H2mRGyi_8" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/rdgm10RA6" },
+        ]
+    }, {
         title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-2", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/842vHmS4E" },
@@ -4112,15 +4142,6 @@ const contentData = [
             { number: 10, title: "Episode 10", embedUrl: "https://short.icu/isP0I4EsW" },
         ]
     }, {
-        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-6", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/pYGSgWI-C" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/HoeFyS8Vj" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/ryDWSHaUB" },
-        ]
-    }, {
         title: "Euphoria (2026)", posterUrl: "https://pbs.twimg.com/media/HE9qMvUaUAAScjn.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-3", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/IasDw3x8x" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/v_l0Mz0F_" },
@@ -4138,13 +4159,6 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/LYupw0cV5" },]
     }, {
         title: "Now Apocalypse (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#hfcev", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc2YTM0ZDMtMmI3Yi00YTU2LWE1MDMtM2UyNGVlNzEyODhiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfcev&dl=1", seriesInfo: "Season 1, Episode ALL",
-    }, {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-4", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/PyNsruhwI" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/H2mRGyi_8" },
-        ]
     }, {
         title: "Dead Ringers (2023)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjQ0ZjNiYmYtYWE0Yy00NjBlLTgyNjUtZTlkZmQyZjc0OTUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Horror, Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-6", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/j9pgHg4r7" },
@@ -4796,6 +4810,14 @@ const contentData = [
 
 
     {
+        title: "S Line (2025)", posterUrl: "https://m.media-amazon.com/images/M/MV5BODVlYjY0YjUtZmVlYS00Y2RiLWIyZmUtODRjNjI3ZmQzMzlkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Mystery, Sci-Fi, Thriller", category: "Korean Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/8VAloy4hkLCY", seriesInfo: "Season 1, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zmc9ZANNt" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/UFou-99Nb" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/cAwYuNgQW" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/LWYVcNG5R" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/0hM-k0e0Q" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/CP-lqxQnY" },]
+    }, {
         title: "Straight to Hell (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWExMjQ0MDMtMWI4ZS00ZmVjLTgyNjMtZGE3OGM4Yzc2Mjk2XkEyXkFqcGc@._V1_.jpg", genre: "Docudrama, Biography, Drama, History", category: "Korean Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/97qST1txnBjL", seriesInfo: "Season 1, Episode 1-9", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/52LCoEevN" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/XZrWItlKo" },
