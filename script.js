@@ -1,5 +1,15 @@
 const contentData = [
     {
+        title: "Man on Fire (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjFlMTMyZTAtY2NiZS00NzdjLWEwZTUtNDJjYjI4ZmU4NTBiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/x5lrdmtXgJoa", seriesInfo: "Season 1 Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/LzN-cNxgS" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/1RtCTsSJk" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/0S-0ho5_B" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/HyNhRRNL7" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/sl59t7aYx" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/uapcCofJJ" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/Rfvm-KCN_" },
+        ]
+    }, {
         title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ojdjp", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ojdjp&dl=1",
     }, {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-7", episodes: [
@@ -63,8 +73,6 @@ const contentData = [
         title: "Agnyathavasi (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ydugm", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzA3NzM1MmItMDg2My00ZTAxLWE2NTAtMDkzZThhMGMwYjk3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ydugm&dl=1",
     }, {
         title: "Ginny Wedss Sunny 2 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vhd3m", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDk5OTkyYjgtZTQ4ZS00YWMyLWFiMWEtZGUxYWRjNmVjODUzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Family, Romance", category: "Recent Adds", language: "Hindi", quality:"HDTS", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vhd3m&dl=1",
-    }, {
-        title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6jmnu", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Tamil", quality:"Web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6jmnu&dl=1",
     },
 
     // =======================================================================
@@ -2836,7 +2844,7 @@ const contentData = [
     }, {
         title: "Love Today (2022)", embedUrl: "https://short.icu/PpYkyut39", posterUrl: "https://resizing.flixster.com/uz-f60pxgkMltTj6rTBR7vf1FGo=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23364878_p_v7_aa.jpg", genre: "Comedy, Drama, Romance", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "The Girlfriend (2025)", embedUrl: "https://short.icu/1R_-ceghI", posterUrl: "https://resizing.flixster.com/om4pnHn6A8x--k60SzQM3SJmTOc=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31630799_p_v10_aa.jpg", genre: "Drama, Romance", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "The Girlfriend (2025)", embedUrl: "https://short.icu/1R_-ceghI", posterUrl: "https://resizing.flixster.com/om4pnHn6A8x--k60SzQM3SJmTOc=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31630799_p_v10_aa.jpg", genre: "Drama, Romance", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/n2RfVioV3RhB"
     }, {
         title: "The Akaali (2024)", embedUrl: "https://short.icu/ALKAs7zsJ", posterUrl: "https://resizing.flixster.com/tRylTyB1SXtob2n3ZUWDmMkrL2o=/fit-in/705x460/v2/https://resizing.flixster.com/sSqUbhO4wqvO4yj236PTHoePRsI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzVkZDY5MGQwLTllZDEtNDQ0ZC1hZTYzLTY2NjlmZGIxMjQ1Ny5qcGc=", genre: "Drama", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -3628,7 +3636,31 @@ const contentData = [
     }, {
         title: "Addiction (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3dfwu", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDAzYjE1MDUtMDllNy00N2NjLTgxZjQtNjBhMzBmN2IwNzk5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Erotic, Romance", category: "Others", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3dfwu&dl=1"
     }, {
-        title: "The Naked Director (2019)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWM4ODE0ZjgtZDU4Mi00NWJhLTg3MjEtNjY0NmEyOGQ1ZTZhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+        title: "Personal Shopper (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#gkodl", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmQ4NDA1YzktZTg4OS00YjA0LThlZDYtMzZjMzVkMjIzM2IxXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Action, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gkodl&dl=1"
+    }, {
+        title: "I Spit on Your Grave (2010)", embedUrl: "https://moviedakhi.4meplayer.com/#h6px9", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkxMTE3NzEzMl5BMl5BanBnXkFtZTcwMzc4MTU2Mw@@._V1_.jpg", genre: "Adult, Horror, Thriller", category: "Others", language: "dual audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#h6px9&dl=1"
+    }, {
+        title: "I Spit on Your Grave 2 (2013)", embedUrl: "https://moviedakhi.4meplayer.com/#rmeqc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGQwZGNlZjctOWY3Ni00MTg4LWE3YzctZmFhMmJjNjY0MzVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Horror, Thriller", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rmeqc&dl=1"
+    }, {
+        title: "I Spit on Your Grave III: Vengeance is Mine (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#nrilj", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzJhMjgzZGQtNGJiZi00ODgzLWFjOGYtNWZmOWRjZDAxYmFkXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Horror, Thriller", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nrilj&dl=1"
+    }, {
+        title: "An American Werewolf in Paris (1997)", embedUrl: "https://moviedakhi.4meplayer.com/#esa5b", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTc0MjBjY2QtYThlZS00MGM0LWFjMjEtMzA4ZTg2MWNmMTg5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Horror, Thriller", category: "Others", language: "dual audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#esa5b&dl=1"
+    }, {
+        title: "Basic Instinct (1992)", embedUrl: "https://moviedakhi.4meplayer.com/#6ea9u", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2U2ODc1N2ItNTBiOC00MjA0LTgwNDAtODYwYWE5NTE5ODU3XkEyXkFqcGc@._V1_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Others", language: "dual audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ea9u&dl=1"
+    }, {
+        title: "Basic Instinct 2 (2006)", embedUrl: "https://moviedakhi.4meplayer.com/#9nip3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkzNzM3ODY3Nl5BMl5BanBnXkFtZTcwNzMyNDcyNA@@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Others", language: "dual audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9nip3&dl=1"
+    }, {
+        title: "Sugar Baby (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#ixd3q", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28439839_v_v13_aa.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ixd3q&dl=1"
+    }, {
+        title: "Fall for Me (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#3gqcp", posterUrl: "https://m.media-amazon.com/images/M/MV5BODUyOTc1ZDYtNjc5Ny00MzRkLTg5MDQtYTU3ZjM1MTExY2Y4XkEyXkFqcGc@._V1_.jpgv", genre: "Adult, Erotic, Romance", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3gqcp&dl=1"
+    }, {
+        title: "Blonde (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#8a9b6", posterUrl: "https://lh4.googleusercontent.com/proxy/BChCJfJg4io9FiNsaFSseeFzIjvAnigLVIPspo6FfmoLQ6u7Zs_by-m164k_ULRU2cUR3XEbaL1Do6IOo4HlQr5oTdG5flQW", genre: "Adult, Erotic, Romance", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8a9b6&dl=1"
+    }, {
+        title: "Fair Play (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#powjz", posterUrl: "https://dnm.nflximg.net/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcfkK_WOHixD9Vfy5s_a8IUiCq1ltzBHFQ4QIxYk7ceh-imdN_WlEvGyeXAFyxwv5D4W8wlytAqhLYhuwMQS5iJgGF3fJlYCUnT2.jpg?r=c6c", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#powjz&dl=1"
+    }, {
+        title: "Lady Chatterley's Lover (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#qfpvp", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTgwMjQ1NWUtYTIxNi00NjRjLWIwMTctZDAwZDlhMmIzYjA0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfpvp&dl=1"
+    }, {
+        title: "The Naked Director (2019)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWM4ODE0ZjgtZDU4Mi00NWJhLTg3MjEtNjY0NmEyOGQ1ZTZhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/NJ6l8uoXEJ4B", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/p1ozh8wt3" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/dG6l3IIDF" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/XERZIZx47" }, 
@@ -3638,7 +3670,7 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/lDglnmkaK" }, 
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/jei5XJK0j" },]
     }, {
-        title: "The Naked Director (2019)", posterUrl: "https://resizing.flixster.com/fj09P4FWymIULYJKAzWKAP8YM7c=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p19842691_i_v8_ac.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2, Episode 1-8", episodes: [
+        title: "The Naked Director (2019)", posterUrl: "https://resizing.flixster.com/fj09P4FWymIULYJKAzWKAP8YM7c=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p19842691_i_v8_ac.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/xR5H535llJ7C", seriesInfo: "Season 2, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/lQpe3mDtG" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/WHJ_7gabv" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/y4C-tga74" }, 
@@ -3648,7 +3680,7 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/5qCKFp3J5" }, 
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/MPjA0r6LL" },]
     }, {
-        title: "Supersex (2024)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmEwYjFlNmEtMWM2Yi00M2RlLTg4NTktZTYxNDA0NmQ4ZmFhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-7", episodes: [
+        title: "Supersex (2024)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmEwYjFlNmEtMWM2Yi00M2RlLTg4NTktZTYxNDA0NmQ4ZmFhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/4ont12pDzZRD", seriesInfo: "Season 1, Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/ZO5-1FxTZ" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/gvooFbG7b" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/OX832SNfq" }, 
@@ -3658,7 +3690,7 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/INyvAO430" }, 
             ]
     }, {
-        title: "Vladimir (2026)", posterUrl: "https://resizing.flixster.com/nNncZq7HrRZZ-LCyg9bYHez1AsA=/fit-in/705x460/v2/https://resizing.flixster.com/sIpEYv9fwRQsyt0ahSjbU_XmdvY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNjg3MjVmZWYtMTQ5YS00NzVkLWE0ZjMtZTI4NTU2NTJhYmI2LmpwZw==", genre: "Comedy, Drama, Adult", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+        title: "Vladimir (2026)", posterUrl: "https://resizing.flixster.com/nNncZq7HrRZZ-LCyg9bYHez1AsA=/fit-in/705x460/v2/https://resizing.flixster.com/sIpEYv9fwRQsyt0ahSjbU_XmdvY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNjg3MjVmZWYtMTQ5YS00NzVkLWE0ZjMtZTI4NTU2NTJhYmI2LmpwZw==", genre: "Comedy, Drama, Adult", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/zTOEcrwF2ZLZ", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/YgrRHTfWXK" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/EANy6Ujh2" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/4jyT12-wD" },
@@ -3676,43 +3708,43 @@ const contentData = [
             { number: 5, title: "Episode 5", embedUrl: "https://short.icu/-f-2TpAYn" },
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/Zfjnsqf4i" },]
     }, {
-        title: "Midnight Peepshow (2022)", embedUrl: "https://short.icu/1i3Q5JHgt", posterUrl: "https://resizing.flixster.com/vE7xwDLu9Ia4qbeWSUKgWJB0IUw=/fit-in/705x460/v2/https://resizing.flixster.com/kT_c3kC3piCHduezRgeu6fZxDzk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUwOTJiOTVkLTM2N2EtNDVjNy05MDkwLWVjMGRhZmVkOWMwNi5qcGc=", genre: "Drama, Adult, Horror", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Midnight Peepshow (2022)", embedUrl: "https://short.icu/1i3Q5JHgt", posterUrl: "https://resizing.flixster.com/vE7xwDLu9Ia4qbeWSUKgWJB0IUw=/fit-in/705x460/v2/https://resizing.flixster.com/kT_c3kC3piCHduezRgeu6fZxDzk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzUwOTJiOTVkLTM2N2EtNDVjNy05MDkwLWVjMGRhZmVkOWMwNi5qcGc=", genre: "Drama, Adult, Horror", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/0fsM8yxX3JQb"
     }, {
-        title: "Nymphomaniac: Vol. II (2013)", embedUrl: "https://short.icu/TdqO0qkRY", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTYxMTMwMjAxNl5BMl5BanBnXkFtZTgwNTk3Mjg3MDE@._V1_.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Nymphomaniac: Vol. II (2013)", embedUrl: "https://short.icu/TdqO0qkRY", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTYxMTMwMjAxNl5BMl5BanBnXkFtZTgwNTk3Mjg3MDE@._V1_.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/X2YYF3xh0byS"
     }, {
-        title: "Nymphomaniac: Vol. I (2013)", embedUrl: "https://short.icu/fsR5oQwly", posterUrl: "https://upload.wikimedia.org/wikipedia/en/e/e5/Nymphomaniac_Vol._I_%26_II.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Nymphomaniac: Vol. I (2013)", embedUrl: "https://short.icu/fsR5oQwly", posterUrl: "https://upload.wikimedia.org/wikipedia/en/e/e5/Nymphomaniac_Vol._I_%26_II.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/X5Ig4nwxUBAC"
     }, {
-        title: "Sinner: The Secret Diary of a Nymphomaniac (1973)", embedUrl: "https://short.icu/HKmXgP0s6", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTJmY2JhNDQtOGUwMC00NjMyLTk0YzEtMWZlNjg4ZGFjYzczXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Sinner: The Secret Diary of a Nymphomaniac (1973)", embedUrl: "https://short.icu/HKmXgP0s6", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTJmY2JhNDQtOGUwMC00NjMyLTk0YzEtMWZlNjg4ZGFjYzczXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/8SXuEn8BXTpS"
     }, {
-        title: "Supervixens (1975)", embedUrl: "https://short.icu/eab2467rW", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTNiOGJmNjctODJlMy00ZmRjLWI4MzAtNTdiNzllNzUxNGZiXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Supervixens (1975)", embedUrl: "https://short.icu/eab2467rW", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTNiOGJmNjctODJlMy00ZmRjLWI4MzAtNTdiNzllNzUxNGZiXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/EUDZ1z1HjBjC"
     }, {
-        title: "The Dreamers (2003)", embedUrl: "https://short.icu/N-VPcJCQD", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p33818_p_v7_ai.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "The Dreamers (2003)", embedUrl: "https://short.icu/N-VPcJCQD", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p33818_p_v7_ai.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/6hfpMz5X3JwA"
     }, {
-        title: "Cashback (2006)", embedUrl: "https://short.icu/RJJLhJy8l", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDA3ZDBmZjgtZjUzYS00MDg3LTkwYWMtMzMyNjFjMjMxZWJiXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Cashback (2006)", embedUrl: "https://short.icu/RJJLhJy8l", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDA3ZDBmZjgtZjUzYS00MDg3LTkwYWMtMzMyNjFjMjMxZWJiXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Comedy", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/7X26srgTBTyY"
     }, {
-        title: "The Client List (2011)", embedUrl: "https://short.icu/oBtFDqhMfD", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzI2YzIyOWYtMDE1Ni00MDlkLTg2NzYtZGRmZmU2M2FiZDQ4XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "The Client List (2011)", embedUrl: "https://short.icu/oBtFDqhMfD", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzI2YzIyOWYtMDE1Ni00MDlkLTg2NzYtZGRmZmU2M2FiZDQ4XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/q5gA5jhn2Zga"
     }, {
-        title: "Iconic (2024)", embedUrl: "https://short.icu/ObpRnmTYZ", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F0%2Fgracenote%2F035e82ddea6829da852fd406a467e108.jpg", genre: "Drama, Adult, Comedy Horror", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Iconic (2024)", embedUrl: "https://short.icu/ObpRnmTYZ", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F0%2Fgracenote%2F035e82ddea6829da852fd406a467e108.jpg", genre: "Drama, Adult, Comedy Horror", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/iqljd24DkRSY"
     }, {
         title: "Stripperland (2011)", embedUrl: "https://short.icu/WMgJztTOU", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTM2MDgzMTI5NF5BMl5BanBnXkFtZTcwMjcwMjYxMw@@._V1_.jpg", genre: "Drama, Adult, Comedy Horror", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
-        title: "Pussy Kills (2017)", embedUrl: "https://short.icu/VwRgz_0om", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDYxZmE1NzYtMGEzMS00ZmYzLWJjMWYtMDVmYzdkOTAyY2JlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Comedy Horror", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Pussy Kills (2017)", embedUrl: "https://short.icu/VwRgz_0om", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDYxZmE1NzYtMGEzMS00ZmYzLWJjMWYtMDVmYzdkOTAyY2JlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Comedy Horror", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/BgGiN2snSRiR"
     }, {
-        title: "Boobs: An American Obsession (2010)", embedUrl: "https://short.icu/75kRtEIvt", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10960117_p_v8_aa.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Boobs: An American Obsession (2010)", embedUrl: "https://short.icu/75kRtEIvt", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10960117_p_v8_aa.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/TCcwVutR0bDZ"
     }, {
-        title: "Room in Rome (2010)", embedUrl: "https://short.icu/OaBPOg7lK", posterUrl: "https://resizing.flixster.com/w0DnKvaYBPV6xliqPM1J5ul-72I=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8329367_p_v7_ac.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Room in Rome (2010)", embedUrl: "https://short.icu/OaBPOg7lK", posterUrl: "https://resizing.flixster.com/w0DnKvaYBPV6xliqPM1J5ul-72I=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8329367_p_v7_ac.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/lJOx061HDJQB"
     }, {
-        title: "Dirty Entertainers: The Business of Indian Erotica (2025)", embedUrl: "https://short.icu/1glXpiQQd", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmQyYWY2Y2QtZTliMy00ZTc0LTk2OGItODE2MTQzYjVhYjUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Dirty Entertainers: The Business of Indian Erotica (2025)", embedUrl: "https://short.icu/1glXpiQQd", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmQyYWY2Y2QtZTliMy00ZTc0LTk2OGItODE2MTQzYjVhYjUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/0chIAi1DzZKB"
     }, {
-        title: "Kapag Tumayo Ang Testigo (2025)", embedUrl: "https://short.icu/f8nkzBZXk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTM3YjdjNGEtYWVkMi00YTQ3LWI0ZDctOWZkMDk3ZjgwZmExXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Tagalog", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Kapag Tumayo Ang Testigo (2025)", embedUrl: "https://short.icu/f8nkzBZXk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTM3YjdjNGEtYWVkMi00YTQ3LWI0ZDctOWZkMDk3ZjgwZmExXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Tagalog", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/DDD7Az8RlBxS"
     }, {
-        title: "The Balconettes (2024)", embedUrl: "https://short.icu/NTJoiFcam", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2QxYTljNTYtNDJjYy00ODZhLWJlMWItYjI2ZDI5MDhjY2RkXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Frence", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "The Balconettes (2024)", embedUrl: "https://short.icu/NTJoiFcam", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2QxYTljNTYtNDJjYy00ODZhLWJlMWItYjI2ZDI5MDhjY2RkXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Romance, Drama", category: "Others", language: "Frence", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/ogaE17lhCBRS"
     }, {
-        title: "Sex Pot (2009)", embedUrl: "https://short.icu/rFhCWHut2", posterUrl: "https://resizing.flixster.com/um_2a9g47Nm-zHovdb7Z9ONOWm0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7865351_p_v10_aa.jpg", genre: "Comedy, Adult", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "Sex Pot (2009)", embedUrl: "https://short.icu/rFhCWHut2", posterUrl: "https://resizing.flixster.com/um_2a9g47Nm-zHovdb7Z9ONOWm0=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p7865351_p_v10_aa.jpg", genre: "Comedy, Adult", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/tZ2x0uthiDhC"
     }, {
-        title: "The Seduction (2025)", embedUrl: "https://short.icu/5kh1jT0tR", posterUrl: "https://resizing.flixster.com/94Jz0EEPyEvjCaLm03Dg306mgPs=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31475526_b_v10_aa.jpg", genre: "Comedy, Adult", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: "The Seduction (2025)", embedUrl: "https://short.icu/5kh1jT0tR", posterUrl: "https://resizing.flixster.com/94Jz0EEPyEvjCaLm03Dg306mgPs=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31475526_b_v10_aa.jpg", genre: "Comedy, Adult", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/98r60u0l3ZZY"
     }, {
-        title: " Virgin Territory (2007)", embedUrl: "https://short.icu/WAEJaL6oq", posterUrl: "https://resizing.flixster.com/FX6vqZgpWb5ln7k0e_4vI1RIwJY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p163807_v_v8_ad.jpg", genre: "Comedy, Adult, Drama", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+        title: " Virgin Territory (2007)", embedUrl: "https://short.icu/WAEJaL6oq", posterUrl: "https://resizing.flixster.com/FX6vqZgpWb5ln7k0e_4vI1RIwJY=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p163807_v_v8_ad.jpg", genre: "Comedy, Adult, Drama", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/TNt6h6132bgR"
     }, {
         title: "Bitch Slap (2009)", embedUrl: "https://short.icu/6AJ9-7gxe", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk0OTAzOTY2NF5BMl5BanBnXkFtZTcwMzcwMzM4MQ@@._V1_.jpg", genre: "Comedy, Adult, Action", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -3833,30 +3865,6 @@ const contentData = [
         title: "The Machine Girl (2008)", embedUrl: "https://short.icu/qGy6UA6_S", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTYzNTQ4NTQwMl5BMl5BanBnXkFtZTgwODc2NjcwMzE@._V1_.jpg", genre: "Adult, Action, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Rise of the Machine Girls (2019)", embedUrl: "https://short.icu/FlR4shiC9", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTEzYTYzNzUtNjUyYS00MzRhLTk4NjUtZTQ1MmNjZTU0YWQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Action, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "Personal Shopper (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#gkodl", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmQ4NDA1YzktZTg4OS00YjA0LThlZDYtMzZjMzVkMjIzM2IxXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Action, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gkodl&dl=1"
-    }, {
-        title: "I Spit on Your Grave (2010)", embedUrl: "https://moviedakhi.4meplayer.com/#h6px9", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkxMTE3NzEzMl5BMl5BanBnXkFtZTcwMzc4MTU2Mw@@._V1_.jpg", genre: "Adult, Horror, Thriller", category: "Others", language: "dual audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#h6px9&dl=1"
-    }, {
-        title: "I Spit on Your Grave 2 (2013)", embedUrl: "https://moviedakhi.4meplayer.com/#rmeqc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGQwZGNlZjctOWY3Ni00MTg4LWE3YzctZmFhMmJjNjY0MzVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Horror, Thriller", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rmeqc&dl=1"
-    }, {
-        title: "I Spit on Your Grave III: Vengeance is Mine (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#nrilj", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzJhMjgzZGQtNGJiZi00ODgzLWFjOGYtNWZmOWRjZDAxYmFkXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Horror, Thriller", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nrilj&dl=1"
-    }, {
-        title: "An American Werewolf in Paris (1997)", embedUrl: "https://moviedakhi.4meplayer.com/#esa5b", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTc0MjBjY2QtYThlZS00MGM0LWFjMjEtMzA4ZTg2MWNmMTg5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Horror, Thriller", category: "Others", language: "dual audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#esa5b&dl=1"
-    }, {
-        title: "Basic Instinct (1992)", embedUrl: "https://moviedakhi.4meplayer.com/#6ea9u", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2U2ODc1N2ItNTBiOC00MjA0LTgwNDAtODYwYWE5NTE5ODU3XkEyXkFqcGc@._V1_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Others", language: "dual audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6ea9u&dl=1"
-    }, {
-        title: "Basic Instinct 2 (2006)", embedUrl: "https://moviedakhi.4meplayer.com/#9nip3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkzNzM3ODY3Nl5BMl5BanBnXkFtZTcwNzMyNDcyNA@@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Others", language: "dual audio", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9nip3&dl=1"
-    }, {
-        title: "Sugar Baby (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#ixd3q", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28439839_v_v13_aa.jpg", genre: "Adult, Drama, Mystery, Thriller", category: "Others", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ixd3q&dl=1"
-    }, {
-        title: "Fall for Me (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#3gqcp", posterUrl: "https://m.media-amazon.com/images/M/MV5BODUyOTc1ZDYtNjc5Ny00MzRkLTg5MDQtYTU3ZjM1MTExY2Y4XkEyXkFqcGc@._V1_.jpgv", genre: "Adult, Erotic, Romance", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3gqcp&dl=1"
-    }, {
-        title: "Blonde (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#8a9b6", posterUrl: "https://lh4.googleusercontent.com/proxy/BChCJfJg4io9FiNsaFSseeFzIjvAnigLVIPspo6FfmoLQ6u7Zs_by-m164k_ULRU2cUR3XEbaL1Do6IOo4HlQr5oTdG5flQW", genre: "Adult, Erotic, Romance", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8a9b6&dl=1"
-    }, {
-        title: "Fair Play (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#powjz", posterUrl: "https://dnm.nflximg.net/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcfkK_WOHixD9Vfy5s_a8IUiCq1ltzBHFQ4QIxYk7ceh-imdN_WlEvGyeXAFyxwv5D4W8wlytAqhLYhuwMQS5iJgGF3fJlYCUnT2.jpg?r=c6c", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#powjz&dl=1"
-    }, {
-        title: "Lady Chatterley's Lover (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#qfpvp", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTgwMjQ1NWUtYTIxNi00NjRjLWIwMTctZDAwZDlhMmIzYjA0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfpvp&dl=1"
     },
 
 
@@ -4044,6 +4052,16 @@ const contentData = [
 
 
     {
+        title: "Man on Fire (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjFlMTMyZTAtY2NiZS00NzdjLWEwZTUtNDJjYjI4ZmU4NTBiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/x5lrdmtXgJoa", seriesInfo: "Season 1 Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/LzN-cNxgS" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/1RtCTsSJk" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/0S-0ho5_B" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/HyNhRRNL7" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/sl59t7aYx" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/uapcCofJJ" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/Rfvm-KCN_" },
+        ]
+    }, {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
@@ -6114,58 +6132,58 @@ function closeAnnouncement() {
 // ==========================================
 
 // 1. Disable Right Click entirely to hide 'Inspect' everywhere
-// document.addEventListener('contextmenu', (e) => {
-//     e.preventDefault();
-// });
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
 
-// document.addEventListener('keydown', (e) => {
-//     // Allow normal keyboard behavior inside the search box
-//     if (e.target.id === 'searchInput') return;
+document.addEventListener('keydown', (e) => {
+    // Allow normal keyboard behavior inside the search box
+    if (e.target.id === 'searchInput') return;
 
-//     // Block F12 (DevTools)
-//     if (e.key === 'F12') {
-//         e.preventDefault();
-//     }
+    // Block F12 (DevTools)
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
     
-//     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
-//     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
+        e.preventDefault();
+    }
 
-//     // Block Ctrl+U / Cmd+Opt+U (View Source)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+U / Cmd+Opt+U (View Source)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+        e.preventDefault();
+    }
     
-//     // Block Ctrl+S / Cmd+S (Save Page)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+S / Cmd+S (Save Page)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+        e.preventDefault();
+    }
     
-//     // Block Ctrl+P / Cmd+P (Print Page)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
-//         e.preventDefault();
-//     }
+    // Block Ctrl+P / Cmd+P (Print Page)
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+        e.preventDefault();
+    }
 
-//     // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
-//         e.preventDefault();
-//     }
-// });
+    // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
+        e.preventDefault();
+    }
+});
 
-// // 3. Prevent Native Copy, Cut, Paste events (except search box)
-// ['copy', 'cut', 'paste'].forEach(evt => {
-//     document.addEventListener(evt, (e) => {
-//         if (e.target.id !== 'searchInput') {
-//             e.preventDefault();
-//         }
-//     });
-// });
+// 3. Prevent Native Copy, Cut, Paste events (except search box)
+['copy', 'cut', 'paste'].forEach(evt => {
+    document.addEventListener(evt, (e) => {
+        if (e.target.id !== 'searchInput') {
+            e.preventDefault();
+        }
+    });
+});
 
-// // 4. Prevent Dragging elements (like ghost-dragging images to save them)
-// document.addEventListener('dragstart', (e) => {
-//     // Allow FAB pointer dragging, but prevent native HTML element dragging
-//     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-//         e.preventDefault();
-//     }
-// });
+// 4. Prevent Dragging elements (like ghost-dragging images to save them)
+document.addEventListener('dragstart', (e) => {
+    // Allow FAB pointer dragging, but prevent native HTML element dragging
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+        e.preventDefault();
+    }
+});
