@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ojdjp", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ojdjp&dl=1",
+    }, {
         title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 2 Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
@@ -52,8 +54,6 @@ const contentData = [
     }, {
         title: "They Will Kill You (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ikygc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjg5ZjQ0ZGQtMmY1NS00NTgyLTlkZWYtMDhlNzE3ZGY5ZDdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Action, Horror", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ikygc&dl=1"
     }, {
-        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
-    }, {
         title: "G-Force (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#3et19", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTM4NTY3MzY2MV5BMl5BanBnXkFtZTcwMDQ1NTM2Mg@@._V1_.jpg", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3et19&dl=1"
     }, {
         title: "Rat Race (2001)", embedUrl: "https://moviedakhi.4meplayer.com/#3etkq", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWEzN2I0ODgtYjRlNi00NGZhLTg1MzktOTc1OTA3ZGNhMWJjXkEyXkFqcGc@._V1_.jpg", genre: "Comedy", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3etkq&dl=1"
@@ -73,11 +73,11 @@ const contentData = [
 
 
     {
+        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ojdjp", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Bollywood", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ojdjp&dl=1",
+    }, {
         title: "Ginny Wedss Sunny 2 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vhd3m", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDk5OTkyYjgtZTQ4ZS00YWMyLWFiMWEtZGUxYWRjNmVjODUzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Family, Romance", category: "Bollywood", language: "Hindi", quality:"HDTS", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vhd3m&dl=1",
     }, {
         title: "Nukkad Naatak (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#iksop", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzNiZmRlMzctNTRmYi00OTk1LWFhZGMtMTE2NjM3NDNlZGNmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#iksop&dl=1",
-    }, {
-        title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6r98g", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Bollywood", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6r98g&dl=1",
     }, {
         title: "Badass Ravikumar (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6rtjz", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmNjNmM0ZWMtZWIwZS00ZmFmLWFmNDAtMWE1MzQ4YjMzZTE3XkEyXkFqcGc@._V1_.jpg", genre: "Parody, Action, Comedy, Musical", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rtjz&dl=1",
     }, {
@@ -481,6 +481,8 @@ const contentData = [
 
 
     {
+        title: "Sarah's Oil (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#5z6z8", posterUrl: "https://m.media-amazon.com/images/M/MV5BODYwNmM0NjUtMGFlMS00YjIzLWEwYTAtZGE3ZWYzMGUxMmZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Biography, Drama, History", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5z6z8&dl=1"
+    }, {
         title: "Tarot (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#gmdfj", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjY3NTkxMjQtZWNjNy00NGU2LTlhOTMtMmRhZGEwNzRmMDcyXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gmdfj&dl=1"
     }, {
         title: "Forbidden Fruits (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3xoho", posterUrl: "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2026/03/10063105/t3hvrrrqvRoURz4y1A1aCys6WD9-683x1024.jpg", genre: "Horror, Comedy", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3xoho&dl=1"
@@ -2381,6 +2383,8 @@ const contentData = [
 
 
     {
+        title: "TN (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#nsxtj", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3d/TN_2026_poster.jpg", genre: "Comedy, Drama", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nsxtj&dl=1",
+    }, {
         title: "Psycho (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#1hlqj", posterUrl: "https://images.fandango.com/ImageRenderer/820/0/redesign/static/img/default_poster.png/0/images/masterrepository/fandango/222239/Psycho-posterart.jpg", genre: "Thriller, Crime", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1hlqj&dl=1",
     }, {
         title: "Usiru (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qglat", posterUrl: "https://m.media-amazon.com/images/M/MV5BODg5NWVmMTMtMDRmYS00YWM5LTg5N2QtM2JjNDM1ODk0NzEyXkEyXkFqcGc@._V1_.jpg", genre: "Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qglat&dl=1",
@@ -2435,7 +2439,7 @@ const contentData = [
     }, {
         title: "Kaakaa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yg5pi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzMwY2ZjZjUtZTkzOC00YTI1LWI4MTctZTBmYTFlMmE5ZmUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy", category: "South", language: "Hindi", quality:"HD-Cam", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yg5pi&dl=1",
     }, {
-        title: "Suryapet Junction (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#rwb6s", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGUyM2MzMWQtOWU0OC00MmI3LWFmODctODc4NGZiMjMxYWU2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Drama", category: "South", language: "Dual Audio", quality:"HEVC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rwb6s&dl=1",
+        title: "Suryapet Junction (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#k5bfb", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGUyM2MzMWQtOWU0OC00MmI3LWFmODctODc4NGZiMjMxYWU2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#k5bfb&dl=1",
     }, {
         title: "Kaapa (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#rwb6s", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWYzZDhmMmEtYzRmOC00ZDM1LTgzZWEtMjZkMDI1MzJhYTFhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller", category: "South", language: "Dual Audio", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rwb6s&dl=1",
     }, {
@@ -5391,20 +5395,21 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 function createMovieCard(item) {
     const card = document.createElement('div');
     card.className = 'movie-card relative flex flex-col group';
-    
+
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
-    
+
+    // ================== Reduce Space START ==================
     // Unified Quality Badge: Flush Top-Left on ALL devices, matching original clean font weight
-    const qualityBadgeHtml = item.quality ? 
-        `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">
-            ${item.quality}
-        </div>` : '';
+    const qualityBadgeHtml = item.quality ?
+        `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">
+    ${item.quality}
+</div>` : '';
 
     // Unified Language Badge: Flush Top-Right on ALL devices, matching original clean font weight
-    const languageBadgeHtml = item.language ? 
-        `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">
-            ${item.language}
-        </div>` : '';
+    const languageBadgeHtml = item.language ?
+        `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">
+    ${item.language}
+</div>` : '';
 
     card.innerHTML = `
 <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 md:ring-0 transition-all duration-300 group-hover:ring-white/20 md:group-hover:ring-transparent">
