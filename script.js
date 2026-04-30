@@ -5933,12 +5933,99 @@ searchInput.addEventListener('keydown', (e) => {
 
             bookmarkPopup.classList.remove('translate-y-32', 'opacity-0');
             bookmarkPopup.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+
+            // Mobile video Start
+            // Changed key to V3 to reset your testing state
+            const lastSeen = localStorage.getItem('videoInstructionLastSeenV3');
+            const now = new Date().getTime();
+            const oneDay = 24 * 60 * 60 * 1000;
+
+            // Strict Mobile-Only condition, once every 24 hours
+            if (isMobile && (!lastSeen || (now - parseInt(lastSeen)) > oneDay)) {
+                // Wait slightly for the bottom popup to appear, then show the video modal overlay
+                setTimeout(() => {
+                    showVideoInstruction();
+                }, 800);
+                localStorage.setItem('videoInstructionLastSeenV3', now.toString());
+            }
+            // Mobile video End
             
             // Auto-hide after 20 seconds if they ignore it
             setTimeout(() => {
                 closeBookmarkPopup();
             }, 20000);
         }
+
+        // Mobile video Start
+        function showVideoInstruction() {
+            const modal = document.getElementById('videoInstructionModal');
+            const backdrop = document.getElementById('videoModalBackdrop');
+            const box = document.getElementById('videoModalBox');
+            const video = document.getElementById('instructionVideo');
+            
+            if (!modal || !video) return;
+
+            // Only loading the mobile video
+            video.innerHTML = ''; // Clear previous
+            const sourceElement = document.createElement('source');
+            sourceElement.src = 'For Mobile.mp4';
+            sourceElement.type = 'video/mp4';
+            video.appendChild(sourceElement);
+            video.load();
+            
+            // Auto close when video is finished
+            video.onended = function() {
+                closeVideoInstruction();
+            };
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // SCROLL FIX: Stop background scrolling when video popup is open
+            document.body.style.overflow = 'hidden';
+            
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0', 'pointer-events-none');
+                backdrop.classList.add('opacity-100', 'pointer-events-auto');
+                
+                box.classList.remove('scale-90', 'translate-y-8', 'opacity-0', 'pointer-events-none');
+                box.classList.add('scale-100', 'translate-y-0', 'opacity-100', 'pointer-events-auto');
+                
+                video.play().catch(e => console.log("Autoplay prevented:", e));
+            }, 50);
+        }
+
+        function closeVideoInstruction() {
+            const modal = document.getElementById('videoInstructionModal');
+            const backdrop = document.getElementById('videoModalBackdrop');
+            const box = document.getElementById('videoModalBox');
+            const video = document.getElementById('instructionVideo');
+            
+            if (!modal) return;
+
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            
+            box.classList.remove('scale-100', 'translate-y-0', 'opacity-100', 'pointer-events-auto');
+            box.classList.add('scale-90', 'translate-y-8', 'opacity-0', 'pointer-events-none');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                
+                // SCROLL FIX: Restore background scrolling when video popup is closed
+                document.body.style.overflow = '';
+                
+                if (video) {
+                    video.pause();
+                    video.onended = null; // Clean up listener
+                    video.innerHTML = ""; // Clean up source tag
+                    video.removeAttribute('src'); // Ensure src attribute is cleared too
+                    video.load();
+                }
+            }, 500);
+        }
+        // Mobile video End
 
         function triggerBookmark(e) {
             // Prevent the close button from triggering this event

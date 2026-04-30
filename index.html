@@ -211,6 +211,38 @@
         </button>
     </div>
 
+        <!-- Mobile video Start -->
+    <div id="videoInstructionModal" class="fixed inset-0 z-[10000] hidden items-center justify-center pointer-events-none p-4">
+        <div class="absolute inset-0 bg-[#050505]/90 backdrop-blur-sm transition-opacity duration-500 opacity-0 pointer-events-none" id="videoModalBackdrop" onclick="closeVideoInstruction()"></div>
+
+        <div class="relative w-[92%] max-w-[360px] h-auto max-h-[85vh] transform scale-90 translate-y-8 opacity-0 transition-all duration-500 flex flex-col items-center pointer-events-none" id="videoModalBox">
+            
+            <div class="relative w-full flex flex-col max-h-[85vh] bg-[#141414] border border-white/10 rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.9)] overflow-hidden z-10 pointer-events-auto">
+                
+                <div class="bg-[#1a1a1a] px-4 py-3 border-b border-white/5 flex justify-between items-center shrink-0">
+                    <h3 class="text-white font-black text-xs tracking-widest uppercase flex items-center gap-2">
+                        <i class="fas fa-bookmark text-red-600"></i> How to Save MovieDakhi
+                    </h3>
+                    <button onclick="closeVideoInstruction()" class="text-gray-500 hover:text-white transition-colors p-1 bg-white/5 rounded-full hover:bg-red-600 w-7 h-7 flex items-center justify-center shrink-0">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="w-full bg-black flex-1 min-h-0 relative flex justify-center items-center py-2">
+                     <video id="instructionVideo" class="w-full max-h-[60vh] object-contain" autoplay muted playsinline preload="auto"></video>
+                </div>
+                
+                <div class="p-3 bg-[#141414] text-center border-t border-white/5 shrink-0">
+                    <button onclick="closeVideoInstruction()" class="w-full bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white font-black uppercase text-xs tracking-widest py-3 rounded-xl transition-all shadow-lg hover:shadow-red-600/50">
+                        I Got It!
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Mobile video End -->
+
     <!-- HOME VIEW -->
     <div id="homeView" class="view-container active">
         <!-- Dynamic Hero Slider -->
