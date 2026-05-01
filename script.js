@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Swapped (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#i1vl1", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWFlNWM2Y2YtY2VhOC00MWFiLWExNWYtYWViYzJhMDQyMTJiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#i1vl1&dl=1"
+    }, {
         title: "Project Y (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9da96", posterUrl: "https://cityonfire.com/wp-content/uploads/2026/03/Project-Y.jpg", genre: "Action, Adventure, Crime, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9da96&dl=1"
     }, {
         title: "The Kerala Story 2: Goes Beyond (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xuwef", posterUrl: "https://m.media-amazon.com/images/M/MV5BODA0ZWI5YTktZmE3Ny00NTUyLWEwZGMtNjEyMWZhZDhmNGRlXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xuwef&dl=1"
@@ -71,8 +73,6 @@ const contentData = [
             { number: 9, title: "Episode 9", embedUrl: "https://short.icu/b6pM7ayaB" },]
     }, {
         title: "They Will Kill You (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ikygc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjg5ZjQ0ZGQtMmY1NS00NTgyLTlkZWYtMDhlNzE3ZGY5ZDdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Action, Horror", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ikygc&dl=1"
-    }, {
-        title: "G-Force (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#3et19", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTM4NTY3MzY2MV5BMl5BanBnXkFtZTcwMDQ1NTM2Mg@@._V1_.jpg", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3et19&dl=1"
     },
 
     // =======================================================================
@@ -2886,6 +2886,8 @@ const contentData = [
 
 
     {
+        title: "Swapped (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#i1vl1", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWFlNWM2Y2YtY2VhOC00MWFiLWExNWYtYWViYzJhMDQyMTJiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#i1vl1&dl=1"
+    }, {
         title: "Onward (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#hzemt", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTMyZDM4NjAtMWI5NC00NTAxLWIxMmQtNmNjODRlNGM3NDdhXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hzemt&dl=1"
     }, {
         title: "Over the Moon (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#zslyh", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTZmYTNiYjctYzM2Ni00NjIwLTg2NzQtNDZkN2M4ZjgwYjExXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zslyh&dl=1"
@@ -3879,7 +3881,7 @@ const contentData = [
 
 
     {
-        title: "Glory (2026)", posterUrl: "https://serializd-tmdb-images.b-cdn.net/t/p/w500/juAQ7fFQGu2n3A2gW5tfNub1cW8.jpg", genre: "Mystery, Thriller, Action, Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 1, Episode 1-7", episodes: [
+        title: "Glory (2026)", posterUrl: "https://serializd-tmdb-images.b-cdn.net/t/p/w500/juAQ7fFQGu2n3A2gW5tfNub1cW8.jpg", genre: "Mystery, Thriller, Action, Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/yOs7knllDBwT", seriesInfo: "Season 1, Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/_SZI2ytBn" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/7zP-73p-Y" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/XRX1i2A1E" }, 
