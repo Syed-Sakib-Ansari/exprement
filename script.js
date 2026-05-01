@@ -3879,6 +3879,15 @@ const contentData = [
 
 
     {
+        title: "Glory (2026)", posterUrl: "https://serializd-tmdb-images.b-cdn.net/t/p/w500/juAQ7fFQGu2n3A2gW5tfNub1cW8.jpg", genre: "Mystery, Thriller, Action, Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 1, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/_SZI2ytBn" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/7zP-73p-Y" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/XRX1i2A1E" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/TDAQpY0EP" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/6wN-VHj5q-" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/AEQIOxbgI" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/5w3NBxlxB" },]
+    }, {
         title: "24: India (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6j16n", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzhiMzY3ZDYtYmI0OS00OTUwLWJhNjEtYzM5NTU5MTcyZDliXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Action, Adventure, Crime, Mystery", category: "Bollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6j16n&dl=1", seriesInfo: "Season 1, Episode ALL",
     }, {
         title: "Matka King (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmFiOTNjNGQtNjVlZC00MjQ2LTk3MjAtZjVmNTI3ODZiNTZkXkEyXkFqcGc@._V1_.jpg", genre: "Ganster, Crime, Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/QQWEz1knTLzY", seriesInfo: "Season 1, Episode 1-8", episodes: [
@@ -4844,6 +4853,15 @@ const contentData = [
             { number: 5, title: "Episode 5", embedUrl: "https://short.icu/0hM-k0e0Q" }, 
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/CP-lqxQnY" },]
     }, {
+        title: "Mask Girl (2023)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDYxNmFkYmItNGMzYS00NzEwLThlYmYtNWZhOTAxZWQxZTEzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Horror, Thriller", category: "Korean Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/lBPSs6tRARbY", seriesInfo: "Season 1, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/VNHwK5SQK" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/EMgeroL2f" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/IBRNYCOv-" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/Oo5CluC21" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/QtsnAwiml" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/6bgjOT3WU" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/trxyaOPeA" },]
+    }, {
         title: "Straight to Hell (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWExMjQ0MDMtMWI4ZS00ZmVjLTgyNjMtZGE3OGM4Yzc2Mjk2XkEyXkFqcGc@._V1_.jpg", genre: "Docudrama, Biography, Drama, History", category: "Korean Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/97qST1txnBjL", seriesInfo: "Season 1, Episode 1-9", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/52LCoEevN" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/XZrWItlKo" },
@@ -4855,7 +4873,7 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/7eIWN6TmS" },
             { number: 9, title: "Episode 9", embedUrl: "https://short.icu/b6pM7ayaB" },]
     }, {
-        title: "If Wishes Could Kill (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTIyODI5YzgtMjg1OC00OTMzLWE1ODgtNDQzMjViMDZhOTQ1XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Drama, Thriller", category: "Korean Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
+        title: "If Wishes Could Kill (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTIyODI5YzgtMjg1OC00OTMzLWE1ODgtNDQzMjViMDZhOTQ1XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Drama, Thriller", category: "Korean Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/4u76pqsXBR5K", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/poowlmhcY" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/1gHaa_y4l" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/3GAXh43T8" }, 
