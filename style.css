@@ -4,6 +4,30 @@
     --card-bg: #1a1a1a;
 }
 
+/* ================== Cursor problem start ================== */
+* {
+    -webkit-tap-highlight-color: transparent; /* Removes mobile grey tap highlight box globally */
+    -webkit-user-select: none; /* Safari */
+    user-select: none; /* Standard - completely disables text selection on ALL elements to kill the I-beam cursor */
+}
+
+html, body {
+    cursor: default; /* Forces standard arrow cursor everywhere */
+}
+
+/* Restore cursor text and typing functionality ONLY for input fields */
+input[type="text"], input[type="email"], input[type="search"] {
+    -webkit-user-select: auto;
+    user-select: auto;
+    cursor: text !important;
+}
+
+/* Ensure interactive elements still show the clicking hand pointer */
+a, button, .cursor-pointer, .movie-card, .category-pill, .cat-menu-item, .view-all-card, i.fas, i.fab {
+    cursor: pointer;
+}
+/* ================== Cursor problem end ================== */
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--dark-bg);
