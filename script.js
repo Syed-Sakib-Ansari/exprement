@@ -97,6 +97,8 @@ const contentData = [
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
     }, {
+        title: "Dhurandhar (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#k5yak", posterUrl: "https://resizing.flixster.com/e9BwbefXTLrSGZl_SyKa5WEYtq4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30946914_p_v8_aa.jpg", genre: "Action, Adventure, Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#k5yak&dl=1"
+    }, {
         title: "Bhouri (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#fkzuc", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTFjYjVjNjgtNDEwNS00MzNkLWI3YzEtNGIwMDVhY2EyM2I5XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fkzuc&dl=1",
     }, {
         title: "Everybody Loves Sohrab Handa (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s5115", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDI5MjcwZmUtZDNhYS00YzZjLTk2ZjQtZDIxZjE0ODU3NzIzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s5115&dl=1",
@@ -152,8 +154,6 @@ const contentData = [
         title: "Mardaani 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6elve", posterUrl: "https://resizing.flixster.com/qUb0VXN2zyd885MnWZRqmloMxfQ=/fit-in/705x460/v2/https://resizing.flixster.com/LpUnLQy3qzVOAqkF-d_Rh7Xiuh4=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzFlNzRlMDI3LTY3ZGItNDljNi1iYzQ4LWRlZGY5Y2UxYWNkNi5qcGc=", genre: "Crime, Drama, Mystery & Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6elve&dl=1"
     }, {
         title: "Mayasabha - The Hall of Illusion (2026)", embedUrl: "https://short.icu/jjI1E8EcU", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmU0NTRjNTItNThhOS00OWFjLWFjNjQtN2ZkNDVhYWFmOWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Psychological Fantasy, Thriller", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "Dhurandhar (2025)", embedUrl: "https://short.icu/Hnkt83Mcj", posterUrl: "https://resizing.flixster.com/e9BwbefXTLrSGZl_SyKa5WEYtq4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30946914_p_v8_aa.jpg", genre: "Action, Adventure, Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Tere Ishk Mein (2025)", embedUrl: "https://short.icu/yd6gKaOkv", posterUrl: "https://resizing.flixster.com/vrwacTEP-wO8O15a5RQAWzIerm0=/fit-in/705x460/v2/https://resizing.flixster.com/GzikacWEGk9HUQ2VMzByP6Q9GW0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2MzY2EyMjQyLTI5OGMtNDdmOS1iODhlLTYxNDhiYjg3NTY4ZC5qcGc=", genre: "Drama, Musical", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -2393,6 +2393,8 @@ const contentData = [
 
 
     {
+        title: "Aadu 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qajz3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWFlOThhOTEtZTg4Ny00NWUxLTk2Y2ItMWM1MDc5NDU2OWFlXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Comedy, Fantasy", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qajz3&dl=1",
+    }, {
         title: "Biker (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dlbav", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDRjOGQ1MGQtZjAzNS00NzliLWIxZGUtY2U1ODgzYTQ3MmU0XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Family, Sport", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dlbav&dl=1",
     }, {
         title: "Raakaasa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qagqh", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzQ1NDY0N2EtOGQxZi00NTRjLTliNzUtNDgzZGNmYTNhZDNlXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Fantasy", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qagqh&dl=1",
@@ -4067,6 +4069,18 @@ const contentData = [
 
 
     {
+        title: "Monarch: Legacy of Monsters (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjZjNGFmYmItMzVjYy00Yzc3LWFhN2EtOGU1ZTc2MWEwODUzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Sci-Fi", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1qbhS-SvjUivhE8rIknNR5_Ia6rqoeS8S", seriesInfo: "Season 2, Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/b6PBhQ4OI" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/rKuh-YM5u9" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/0hXPaPbpD" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/F1cNbguky" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/Us0IDNcUc" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/eSpXP-xLT" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/kuGVgCJUf" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/OrYhqizel" },
+            { number: 9, title: "Episode 9", embedUrl: "https://short.icu/r1LJuVvck" },
+            { number: 10, title: "Episode 10", embedUrl: "https://short.icu/BBaEZR6GA" }]
+    }, {
         title: "Man on Fire (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjFlMTMyZTAtY2NiZS00NzdjLWEwZTUtNDJjYjI4ZmU4NTBiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/x5lrdmtXgJoa", seriesInfo: "Season 1 Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/LzN-cNxgS" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/1RtCTsSJk" },
