@@ -5751,6 +5751,12 @@ function openModal(id) {
     document.getElementById('videoPlaceholder').classList.remove('hidden');
     videoIframe.src = "";
 
+            // ================== Immediately Full Modal Box Close START ==================
+        if (actualVideo) {
+            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+        }
+        // ================== Immediately Full Modal Box Close END ==================
+
     const modal = document.getElementById('movieModal');
     modal.classList.remove('hidden');
     void modal.offsetWidth;
@@ -5829,6 +5835,13 @@ function handleDownloadClick() {
 function playDefault() {
     if (!currentItem) return;
     let url = currentItem.episodes ? currentItem.episodes[0].embedUrl : currentItem.embedUrl;
+
+            // ================== Immediately Full Modal Box Close START ==================
+        const actualVideo = document.getElementById('actualVideo');
+        if (actualVideo) {
+            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+        }
+        // ================== Immediately Full Modal Box Close END ==================
     
     // Force iframe reload (Fixes hash-based URL caching issues)
     videoIframe.src = 'about:blank';
@@ -5846,6 +5859,13 @@ function playEpisode(index, btnElement) {
     btnElement.classList.add('active');
     
     let url = episode.embedUrl;
+
+                // ================== Immediately Full Modal Box Close START ==================
+            const actualVideo = document.getElementById('actualVideo');
+            if (actualVideo) {
+                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+            }
+            // ================== Immediately Full Modal Box Close END ==================
 
     // Force iframe reload (Fixes hash-based URL caching issues)
     videoIframe.src = 'about:blank';
@@ -5878,6 +5898,23 @@ function closeModal(triggerBack = true) {
 
     // Show FAB button gracefully again
     document.getElementById('mobileFab').classList.remove('fab-hidden');
+
+            // ================== Immediately Full Modal Box Close START ==================
+        const actualVideo = document.getElementById('actualVideo');
+        if (actualVideo) {
+            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+        }
+
+        if (!triggerBack) {
+            modal.classList.add('hidden');
+            modal.classList.remove('active');
+        } else {
+            modal.classList.remove('active');
+            setTimeout(() => { 
+                modal.classList.add('hidden'); 
+            }, 300);
+        }
+        // ================== Immediately Full Modal Box Close END ==================
 
     modal.classList.remove('active');
     setTimeout(() => { modal.classList.add('hidden'); videoIframe.src = ""; }, 300);
