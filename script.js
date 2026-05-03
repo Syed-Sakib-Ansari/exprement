@@ -1,5 +1,9 @@
 const contentData = [
     {
+        title: "Raja Shivaji (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fvuqa", posterUrl: "https://images.fandango.com/ImageRenderer/500/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/245563/rajashivaji-1080x1600English.jpg", genre: "Action, Biography, Drama, History", category: "Recent Adds", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fvuqa&dl=1"
+    }, {
+        title: "Kara (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ew98e", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2QzYWRjYWItYjJiMS00ZTY4LTgyOTEtMTRkOTUzNmFlMjIxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Mystery & Thriller, Crime, Drama", category: "Recent Adds", language: "Tamil", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ew98e&dl=1",
+    }, {
         title: "Money Shot: The Pornhub Story (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#hn8aw", posterUrl: "https://m.media-amazon.com/images/M/MV5BODA4MzYzNWMtYmRiZi00ZDNlLWI3YWUtZmU1NzliYjJlOTBjXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Erotic, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hn8aw&dl=1"
     }, {
         title: "After Porn Ends (2012)", embedUrl: "https://moviedakhi.4meplayer.com/#yzeny", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjE0NTg2NTM1NF5BMl5BanBnXkFtZTcwNTExNjg3Nw@@._V1_.jpg", genre: "Documentary, Adult", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzeny&dl=1"
@@ -57,10 +61,6 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/CP-lqxQnY" },]
     }, {
         title: "Psycho (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#1hlqj", posterUrl: "https://images.fandango.com/ImageRenderer/820/0/redesign/static/img/default_poster.png/0/images/masterrepository/fandango/222239/Psycho-posterart.jpg", genre: "Thriller, Crime", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1hlqj&dl=1",
-    }, {
-        title: "Tarot (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#gmdfj", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjY3NTkxMjQtZWNjNy00NGU2LTlhOTMtMmRhZGEwNzRmMDcyXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gmdfj&dl=1"
-    }, {
-        title: "Forbidden Fruits (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3xoho", posterUrl: "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2026/03/10063105/t3hvrrrqvRoURz4y1A1aCys6WD9-683x1024.jpg", genre: "Horror, Comedy", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3xoho&dl=1"
     },
 
     // =======================================================================
@@ -69,6 +69,8 @@ const contentData = [
 
 
     {
+        title: "Raja Shivaji (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fvuqa", posterUrl: "https://images.fandango.com/ImageRenderer/500/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/245563/rajashivaji-1080x1600English.jpg", genre: "Action, Biography, Drama, History", category: "Bollywood", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fvuqa&dl=1"
+    }, {
         title: "The Kerala Story 2: Goes Beyond (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xuwef", posterUrl: "https://m.media-amazon.com/images/M/MV5BODA0ZWI5YTktZmE3Ny00NTUyLWEwZGMtNjEyMWZhZDhmNGRlXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xuwef&dl=1"
     }, {
         title: "Bhooth Bangla (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ojdjp", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE2NmNkZTctYjM3OC00Y2YyLWFhYjgtNjgwZWZiNWZlZDMxXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror", category: "Bollywood", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ojdjp&dl=1",
@@ -520,6 +522,8 @@ const contentData = [
         title: "Middle Men (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#pfqwr", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F6%2Fgracenote%2F65a8018dce0dbcd8725159f5d2c4d597.jpg", genre: "Comedy, Crime, Drama", category: "Hollywood", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#pfqwr&dl=1",
     }, {
         title: "The Glass Coffin (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#gcefx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzg0ODM2OTYtZTVhMy00MGRiLWFiODEtMmNkZGUxYzcxZTliXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "Hollywood", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gcefx&dl=1",
+    }, {
+        title: "Kidnap (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#8rmtb", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcyNDgyODEzOV5BMl5BanBnXkFtZTgwMTI4MTA2MjI@._V1_.jpg", genre: "Action, Crime, Thriller", category: "Hollywood", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8rmtb&dl=1",
     }, {
         title: "Silent Night, Deadly Night (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ornnb", posterUrl: "https://revuecinema.ca/wp-content/uploads/2025/10/silent_night,_deadly_night_tmdb-xv3cjedmqzkmahznoni86izd370-683x1024.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ornnb&dl=1",
     }, {
@@ -2381,6 +2385,8 @@ const contentData = [
 
 
     {
+        title: "Kara (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ew98e", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2QzYWRjYWItYjJiMS00ZTY4LTgyOTEtMTRkOTUzNmFlMjIxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Mystery & Thriller, Crime, Drama", category: "South", language: "Tamil", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ew98e&dl=1",
+    }, {
         title: "Aadu 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qajz3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWFlOThhOTEtZTg4Ny00NWUxLTk2Y2ItMWM1MDc5NDU2OWFlXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Comedy, Fantasy", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qajz3&dl=1",
     }, {
         title: "Biker (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dlbav", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDRjOGQ1MGQtZjAzNS00NzliLWIxZGUtY2U1ODgzYTQ3MmU0XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Family, Sport", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dlbav&dl=1",
@@ -3655,6 +3661,12 @@ const contentData = [
         title: "Fair Play (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#powjz", posterUrl: "https://dnm.nflximg.net/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcfkK_WOHixD9Vfy5s_a8IUiCq1ltzBHFQ4QIxYk7ceh-imdN_WlEvGyeXAFyxwv5D4W8wlytAqhLYhuwMQS5iJgGF3fJlYCUnT2.jpg?r=c6c", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#powjz&dl=1"
     }, {
         title: "Lady Chatterley's Lover (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#qfpvp", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTgwMjQ1NWUtYTIxNi00NjRjLWIwMTctZDAwZDlhMmIzYjA0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qfpvp&dl=1"
+    }, {
+        title: "Cruel Intentions (1999)", embedUrl: "https://moviedakhi.4meplayer.com/#gm53u", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjAwODE4MDc0N15BMl5BanBnXkFtZTcwNjQ5NzI5NA@@._V1_.jpg", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gm53u&dl=1"
+    }, {
+        title: "Cruel Intentions 2 (2000)", embedUrl: "https://moviedakhi.4meplayer.com/#8rmli", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGQ4OTNhODEtN2IxZi00NGFiLWFkYjctMzE3ZDI1MzlhYzQyXkEyXkFqcGc@._V1_.jpg", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8rmli&dl=1"
+    }, {
+        title: "Cruel Intentions 3 (2004)", embedUrl: "https://moviedakhi.4meplayer.com/#6klwg", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTg3NjQyMDUxMF5BMl5BanBnXkFtZTgwNTY5NTAwNzE@._V1_.jpg", genre: "Adult, Erotic, Romance, Drama", category: "Others", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6klwg&dl=1"
     }, {
         title: "The Naked Director (2019)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWM4ODE0ZjgtZDU4Mi00NWJhLTg3MjEtNjY0NmEyOGQ1ZTZhXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adult, Erotic, Romance", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/NJ6l8uoXEJ4B", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/p1ozh8wt3" },
