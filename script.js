@@ -35,6 +35,15 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://short.icu/fvQef0zPm" },
         ]
     }, {
+        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/UdO-mt0vG" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/6NBG4Xl05" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/PyNsruhwI" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/H2mRGyi_8" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/rdgm10RA6" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/H-kl3Tx9S" },
+        ]
+    }, {
         title: "Raja Shivaji (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fvuqa", posterUrl: "https://images.fandango.com/ImageRenderer/500/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/245563/rajashivaji-1080x1600English.jpg", genre: "Action, Biography, Drama, History", category: "Recent Adds", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fvuqa&dl=1"
     }, {
         title: "Kara (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ew98e", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2QzYWRjYWItYjJiMS00ZTY4LTgyOTEtMTRkOTUzNmFlMjIxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Mystery & Thriller, Crime, Drama", category: "Recent Adds", language: "Tamil", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ew98e&dl=1",
@@ -48,8 +57,6 @@ const contentData = [
         title: "After Porn Ends 3 (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#yzenh", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWRhMGI4YTktZThlZC00NjlhLWFjMjctODI4ZDMyZWM0MDkzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Documentary, Adult", category: "Recent Adds", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yzenh&dl=1"
     }, {
         title: "Swapped (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#i1vl1", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWFlNWM2Y2YtY2VhOC00MWFiLWExNWYtYWViYzJhMDQyMTJiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#i1vl1&dl=1"
-    }, {
-        title: "Project Y (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9da96", posterUrl: "https://cityonfire.com/wp-content/uploads/2026/03/Project-Y.jpg", genre: "Action, Adventure, Crime, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9da96&dl=1"
     },
 
     // =======================================================================
@@ -4093,7 +4100,7 @@ const contentData = [
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/PyNsruhwI" },
             { number: 4, title: "Episode 4", embedUrl: "https://short.icu/H2mRGyi_8" },
             { number: 5, title: "Episode 5", embedUrl: "https://short.icu/rdgm10RA6" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/bR0DezrJ2P" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/H-kl3Tx9S" },
         ]
     }, {
         title: "Monarch: Legacy of Monsters (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjZjNGFmYmItMzVjYy00Yzc3LWFhN2EtOGU1ZTc2MWEwODUzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Sci-Fi", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1qbhS-SvjUivhE8rIknNR5_Ia6rqoeS8S", seriesInfo: "Season 2, Episode 1-10", episodes: [
