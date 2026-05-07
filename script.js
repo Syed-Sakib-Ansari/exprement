@@ -1,5 +1,15 @@
 const contentData = [
     {
+        title: "Citadel (2026)", posterUrl: "https://resizing.flixster.com/8cklBvy_xVLKNLa4t7qtFcxq4nA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32999894_b_v12_aa.jpg", genre: "Mystery & Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1aFSanQ3sz9v_b9Kjglm5ScTGry9tDJ1c", seriesInfo: "Season 2 Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/lEFbCrvvt" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/WeGyvc6PK" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/iKog7MnFB" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/wWi4UpRMe-" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/EnyUy8bru" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/bFGfjfo1Q" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/NfrQaa8b5" },
+        ]
+    }, {
         title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v9mqa", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", quality:"Web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9mqa&dl=1",
     }, {
         title: "Patriot (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#haygn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkyOTUyNjctNmU5MC00ZjYwLTlkODktNTRjNWY5OTk2YTc4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "Recent Adds", language: "Malayalam", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#haygn&dl=1",
@@ -40,8 +50,6 @@ const contentData = [
         title: "Swapped (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#i1vl1", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWFlNWM2Y2YtY2VhOC00MWFiLWExNWYtYWViYzJhMDQyMTJiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#i1vl1&dl=1"
     }, {
         title: "Project Y (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9da96", posterUrl: "https://cityonfire.com/wp-content/uploads/2026/03/Project-Y.jpg", genre: "Action, Adventure, Crime, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9da96&dl=1"
-    }, {
-        title: "The Kerala Story 2: Goes Beyond (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xuwef", posterUrl: "https://m.media-amazon.com/images/M/MV5BODA0ZWI5YTktZmE3Ny00NTUyLWEwZGMtNjEyMWZhZDhmNGRlXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xuwef&dl=1"
     },
 
     // =======================================================================
@@ -4058,7 +4066,17 @@ const contentData = [
 
 
     {
-        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1BEY8UsyEdhUHUav0GYKTRdfCoczeFJ7r", seriesInfo: "Season 2 Episode 1-8", episodes: [
+        title: "Citadel (2026)", posterUrl: "https://resizing.flixster.com/8cklBvy_xVLKNLa4t7qtFcxq4nA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32999894_b_v12_aa.jpg", genre: "Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1aFSanQ3sz9v_b9Kjglm5ScTGry9tDJ1c", seriesInfo: "Season 2 Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/lEFbCrvvt" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/WeGyvc6PK" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/iKog7MnFB" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/wWi4UpRMe-" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/EnyUy8bru" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/bFGfjfo1Q" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/NfrQaa8b5" },
+        ]
+    }, {
+        title: "Daredevil: Born Again (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDBkMWRhMzEtM2M0Ny00OGZhLThkZGMtMTY1NWUwZWNhODdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Sci-Fi, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1BEY8UsyEdhUHUav0GYKTRdfCoczeFJ7r", seriesInfo: "Season 2 Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/zynDSk4RD" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/V9EwBNqPy" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/ThV8qLko9" },
