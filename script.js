@@ -1,5 +1,7 @@
 const contentData = [
     {
+        title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rpbeq", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rpbeq&dl=1"
+    }, {
         title: "Citadel (2026)", posterUrl: "https://resizing.flixster.com/8cklBvy_xVLKNLa4t7qtFcxq4nA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32999894_b_v12_aa.jpg", genre: "Mystery & Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1aFSanQ3sz9v_b9Kjglm5ScTGry9tDJ1c", seriesInfo: "Season 2 Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/lEFbCrvvt" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/WeGyvc6PK" },
@@ -68,8 +70,6 @@ const contentData = [
         title: "The Whisper (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jirp", posterUrl: "https://resizing.flixster.com/YmxiNFj_W_7IfVze_-l_WjBpVhE=/fit-in/705x460/v2/https://resizing.flixster.com/BXkMoQ-kzIw-KSKnNmOASxrTXl8=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzVmZDQ0YTc5LTRjMDYtNDhmYS05OWNhLTRiOTRhZWJhOTEzOC5qcGc=", genre: "Horror, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jirp&dl=1"
     }, {
         title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rp1t1", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rp1t1&dl=1",
-    }, {
-        title: "The Drama (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yxoek", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcwOGZhYmItYTg3ZS00NjUwLWJiMmQtMjU5YjEwYWY0NmNkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama, Romance", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yxoek&dl=1",
     },
 
     // =======================================================================
@@ -488,6 +488,8 @@ const contentData = [
 
 
     {
+        title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rpbeq", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rpbeq&dl=1"
+    }, {
         title: "Insanitarium (2008)", embedUrl: "https://moviedakhi.4meplayer.com/#1quug", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGYwZGVhODItNThjYi00Yzk5LWI2MWItZTg2YTVhMTFkNGYyXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1quug&dl=1"
     }, {
         title: "Other (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#v9tt3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzg0ZjM3YWQtM2Y4Zi00MWJjLTlhY2YtNjllOTkzZjhlY2E5XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Drama, Mystery & Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9tt3&dl=1"
