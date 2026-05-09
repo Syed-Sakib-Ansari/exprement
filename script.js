@@ -5,7 +5,7 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
-        title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rpbeq", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rpbeq&dl=1"
+        title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jx53", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jx53&dl=1"
     }, {
         title: "Citadel (2026)", posterUrl: "https://resizing.flixster.com/8cklBvy_xVLKNLa4t7qtFcxq4nA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32999894_b_v12_aa.jpg", genre: "Mystery & Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1aFSanQ3sz9v_b9Kjglm5ScTGry9tDJ1c", seriesInfo: "Season 2 Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/lEFbCrvvt" },
@@ -493,7 +493,7 @@ const contentData = [
 
 
     {
-        title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rpbeq", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood", language: "English", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rpbeq&dl=1"
+        title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jx53", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jx53&dl=1"
     }, {
         title: "Insanitarium (2008)", embedUrl: "https://moviedakhi.4meplayer.com/#1quug", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGYwZGVhODItNThjYi00Yzk5LWI2MWItZTg2YTVhMTFkNGYyXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1quug&dl=1"
     }, {
