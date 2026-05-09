@@ -7,6 +7,21 @@ const contentData = [
     {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jx53", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jx53&dl=1"
     }, {
+        title: "Fantasy Life (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#rpugw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjRkYTU5NGItY2Y0Yi00ZDgyLWExYjMtY2Y5YzUxZmQ4ZWQ1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rpugw&dl=1"
+    }, {
+        title: "No Place to Be Single (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c3h6c", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWJmNjFiMDQtNjU1MS00MjJjLWFlOWMtYjljYmMxMjA4ZWNkXkEyXkFqcGc@._V1_.jpg", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c3h6c&dl=1"
+    }, {
+        title: "Thank You, Next (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmI5YzA0MGQtMDBlZS00ZTJmLWI0ODYtYzZmMzNlNWFhNDUyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/4A4nTegzkbaZ", seriesInfo: "Season 3 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/aqsjKGnW3" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/uTg6K_lb4" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/dck_SKMFf" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/SHTorXzZ4" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/nMnS8P2vh" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/yqO5JUoem" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/eK9TJxaBY" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/WPnxUvk9c" },
+        ]
+    }, {
         title: "Citadel (2026)", posterUrl: "https://resizing.flixster.com/8cklBvy_xVLKNLa4t7qtFcxq4nA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32999894_b_v12_aa.jpg", genre: "Mystery & Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1aFSanQ3sz9v_b9Kjglm5ScTGry9tDJ1c", seriesInfo: "Season 2 Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/lEFbCrvvt" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/WeGyvc6PK" },
@@ -71,10 +86,6 @@ const contentData = [
         ]
     }, {
         title: "LIK: Love Insurance Kompany (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fsgsk", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTQzMzNmYjYtMThmNC00NGJkLThkMDEtN2U3MjVkYThkY2I1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Romance, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fsgsk&dl=1",
-    }, {
-        title: "The Whisper (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jirp", posterUrl: "https://resizing.flixster.com/YmxiNFj_W_7IfVze_-l_WjBpVhE=/fit-in/705x460/v2/https://resizing.flixster.com/BXkMoQ-kzIw-KSKnNmOASxrTXl8=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzVmZDQ0YTc5LTRjMDYtNDhmYS05OWNhLTRiOTRhZWJhOTEzOC5qcGc=", genre: "Horror, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jirp&dl=1"
-    }, {
-        title: "Ready or Not 2: Here I Come (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rp1t1", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Ready-or-Not-2_Gallery-deb1a640-0964-11f1-82ad-51a56f6e6fb8.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rp1t1&dl=1",
     },
 
     // =======================================================================
@@ -493,6 +504,12 @@ const contentData = [
 
 
     {
+        title: "Fantasy Life (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#rpugw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjRkYTU5NGItY2Y0Yi00ZDgyLWExYjMtY2Y5YzUxZmQ4ZWQ1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rpugw&dl=1"
+    }, {
+        title: "No Place to Be Single (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c3h6c", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWJmNjFiMDQtNjU1MS00MjJjLWFlOWMtYjljYmMxMjA4ZWNkXkEyXkFqcGc@._V1_.jpg", genre: "Comedy", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c3h6c&dl=1"
+    }, {
+        title: "Lake George (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#dwbnk", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2RlZDU5YTktMDZiNC00ZmQ3LWFmYWEtZmU3Y2RmNWY0YWFmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dwbnk&dl=1"
+    }, {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jx53", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jx53&dl=1"
     }, {
         title: "Insanitarium (2008)", embedUrl: "https://moviedakhi.4meplayer.com/#1quug", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGYwZGVhODItNThjYi00Yzk5LWI2MWItZTg2YTVhMTFkNGYyXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery & Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1quug&dl=1"
@@ -4121,6 +4138,39 @@ const contentData = [
 
 
     {
+        title: "Thank You, Next (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmI5YzA0MGQtMDBlZS00ZTJmLWI0ODYtYzZmMzNlNWFhNDUyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/4A4nTegzkbaZ", seriesInfo: "Season 3 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/aqsjKGnW3" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/uTg6K_lb4" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/dck_SKMFf" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/SHTorXzZ4" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/nMnS8P2vh" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/yqO5JUoem" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/eK9TJxaBY" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/WPnxUvk9c" },
+        ]
+    }, {
+        title: "Thank You, Next (2025)", posterUrl: "https://image.tmdb.org/t/p/w342/hSSJTusL87prer8V9HDj00fZW6j.jpg", genre: "Comedy, Drama, Romance", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1m2uGQzSWOAvwFMJQBoaOJmDuDt1sv524", seriesInfo: "Season 2 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/nrM-BiJUf" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/uAqiB9k8N" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/7Y8quLpns" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/s68A881tu" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/ElEPIJqa4" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/1sQ3Ep7B8" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/jPEyR1_ZA" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/LMb0VTg-A" },
+        ]
+    }, {
+        title: "Thank You, Next (2024)", posterUrl: "https://resizing.flixster.com/NEGQPjrnxrxbFzhfUMiWFGOnas4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24386540_v_v8_ab.jpg", genre: "Comedy, Drama, Romance", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1huGg_X-4CKLLWaxoibnX-_CFHmWxWFVK", seriesInfo: "Season 1 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/rPdS3kUn1X" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/QeXkHWJSo" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/vnRNl61OE" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/MyFu5GsuC" },
+            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/lIhBKGoXZ" },
+            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/EuE8X4D0I" },
+            { number: 7, title: "Episode 7", embedUrl: "https://short.icu/6f1UtGCvv" },
+            { number: 8, title: "Episode 8", embedUrl: "https://short.icu/_KuXUTkK9" },
+        ]
+    }, {
         title: "Legends (2026)", posterUrl: "https://resizing.flixster.com/MVGYAKem7z2IE08oi4VtGliyoFc=/fit-in/705x460/v2/https://resizing.flixster.com/IdmU3H5Y8px_SFptOKASm0dVM8A=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vODNlYTAzMjEtMGJlNy00OWJlLThlZDAtNDNiZmYzNmVlYmU5LmpwZw==", genre: "Crime, Drama", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1Sz8dL9y9ezceXpXh1JgbmPKyx3-Cv0Fj", seriesInfo: "Season 1 Episode 1-6", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/7MziTpUMw" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/CD6mDRGxp" },
