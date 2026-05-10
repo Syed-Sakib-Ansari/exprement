@@ -6096,8 +6096,11 @@ ${infoText}
         // If they are in Facebook, show the popup almost instantly (500ms) as a fallback in case 
         // the auto-escape above was blocked by FB. Otherwise, wait the normal 7.5 seconds.
         setTimeout(() => {
-            showAnnouncement();
-        }, isFBCheck ? 500 : 3500);
+            const urlParams2 = new URLSearchParams(window.location.search);
+            if (!urlParams2.get('fb_fallback')) {
+                showAnnouncement();
+            }
+        }, isFBCheck ? 500 : 7500);
         // After Every Reload End
 
         // Helper function to show toast messages
@@ -6310,6 +6313,12 @@ ${infoText}
                 if(popupWelcomeText) popupWelcomeText.classList.add('hidden');
                 if(popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
                 if(popupGamesBtn) popupGamesBtn.classList.add('hidden');
+                
+                // Make container even more compact
+                if(popupBoxContainer) {
+                    popupBoxContainer.classList.remove('p-5', 'md:p-8');
+                    popupBoxContainer.classList.add('p-4');
+                }
             } else {
                 if(suggestionBox) suggestionBox.classList.add('hidden'); // Keep hidden otherwise
                 if(topCloseBtn) topCloseBtn.classList.remove('hidden'); // Ensure Top X is visible
@@ -6320,6 +6329,12 @@ ${infoText}
                 if(popupWelcomeText) popupWelcomeText.classList.remove('hidden');
                 if(popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
                 if(popupGamesBtn) popupGamesBtn.classList.remove('hidden');
+                
+                // Restore regular padding
+                if(popupBoxContainer) {
+                    popupBoxContainer.classList.add('p-5', 'md:p-8');
+                    popupBoxContainer.classList.remove('p-4');
+                }
             }
 
             popup.classList.remove('hidden');
@@ -6389,16 +6404,14 @@ ${infoText}
 
                 const packages = browserPackages[browser] || [];
                 
-                // The ultimate fallback: A generic Intent that prompts the Android OS "App Chooser".
-                // This guarantees an escape from Facebook even if NO exact matching browser version is found!
-                let intentStr = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
-                
-                // Build a fallback chain: tries Stable -> Beta -> Dev -> Generic OS Chooser
-                for (let i = packages.length - 1; i >= 0; i--) {
-                    intentStr = `intent://${targetDomain}#Intent;scheme=https;package=${packages[i]};action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(intentStr)};end;`;
+                if (packages.length > 0) {
+                    // Set up the next fallback iteration
+                    const nextPkg = packages[1] || 'generic';
+                    const nextFallbackUrl = encodeURIComponent(`https://${targetDomain}?fb_fallback=${nextPkg}&fb_next_idx=2&browser=${browser}`);
+                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=${packages[0]};action=android.intent.action.VIEW;S.browser_fallback_url=${nextFallbackUrl};end;`;
+                } else {
+                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
                 }
-                
-                targetUrl = intentStr;
 
             } else if (isIOS) {
                 // iOS Custom URL Schemes (these automatically translate to https://moviedakhi.com inside the app)
@@ -6413,11 +6426,18 @@ ${infoText}
                 else if (browser === 'duckduckgo') { targetUrl = `ddg://${targetDomain}`; }
             }
 
-            // Direct assignment is required to escape Facebook/Instagram WebViews.
-            window.location.href = targetUrl;
+            // Aggressive anchor click method to bypass Facebook WebView strict blocking
+            const a = document.createElement('a');
+            a.href = targetUrl;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
             
             // Provide user feedback while the OS attempts to launch the app
-            if (!isAndroid && !isIOS) {
+            if (isIOS && browser === 'safari') {
+                // Apple heavily blocks Safari deep links in Facebook, so we MUST tell the user the manual way just in case.
+                showToast(`If Safari doesn't open, tap the 3 dots (•••) at the top right and tap 'Open in System Browser'.`);
+            } else if (!isAndroid && !isIOS) {
                 showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
             } else {
                 showToast("Redirecting to browser...");
