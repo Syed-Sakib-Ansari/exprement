@@ -6097,7 +6097,7 @@ ${infoText}
         // the auto-escape above was blocked by FB. Otherwise, wait the normal 7.5 seconds.
         setTimeout(() => {
             showAnnouncement();
-        }, isFBCheck ? 500 : 7500);
+        }, isFBCheck ? 500 : 3500);
         // After Every Reload End
 
         // Helper function to show toast messages
