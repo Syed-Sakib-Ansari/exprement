@@ -5785,6 +5785,11 @@ ${infoText}
             // Save precise scroll position before opening
             savedScrollY = window.scrollY;
 
+            // ================== Facebook browser problem Start ==================
+            // Save the open movie ID to restore it if Facebook browser reloads/drops state after ad redirect
+            sessionStorage.setItem('MovieDakhi_OpenModalId', id);
+            // ================== Facebook browser problem End ==================
+
             const currentState = history.state || {};
             // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
             try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
@@ -5975,6 +5980,11 @@ ${infoText}
         function closeModal(triggerBack = true) {
             const modal = document.getElementById('movieModal');
             if (modal.classList.contains('hidden')) return;
+
+            // ================== Facebook browser problem Start ==================
+            // Clear the saved modal ID when user intentionally closes the modal
+            sessionStorage.removeItem('MovieDakhi_OpenModalId');
+            // ================== Facebook browser problem End ==================
 
             // Show FAB button gracefully again
             document.getElementById('mobileFab').classList.remove('fab-hidden');
@@ -6220,6 +6230,18 @@ ${infoText}
                 window.scrollTo({ top: finalScroll, behavior: 'instant' });
                 setTimeout(() => window.scrollTo({ top: finalScroll, behavior: 'instant' }), 10);
             });
+
+            // ================== Facebook browser problem Start ==================
+            // Restore modal if it was open before reload/redirect (fixes Facebook webview issue)
+            const savedModalId = sessionStorage.getItem('MovieDakhi_OpenModalId');
+            if (savedModalId !== null) {
+                const modalIdInt = parseInt(savedModalId, 10);
+                if (!isNaN(modalIdInt)) openModal(modalIdInt, true);
+            } else if (history.state && history.state.isModalOpen && history.state.modalId !== undefined) {
+                openModal(history.state.modalId, true);
+            }
+            // ================== Facebook browser problem End ==================
+
         });
 
         window.addEventListener('popstate', (event) => {
@@ -6237,6 +6259,14 @@ ${infoText}
                 // Synchronously force DOM layout
                 void document.documentElement.offsetHeight;
                 window.scrollTo({ top: state.scrollY || 0, behavior: 'instant' });
+
+                // ================== Facebook browser problem Start ==================
+                // If user navigates back to a state where a modal was open, reopen it natively
+                if (state.isModalOpen && state.modalId !== undefined) {
+                    openModal(state.modalId, true);
+                }
+                // ================== Facebook browser problem End ==================
+                
             } else { 
                 switchView('home', null, false); 
                 void document.documentElement.offsetHeight;
