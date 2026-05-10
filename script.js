@@ -6295,17 +6295,31 @@ ${infoText}
             const topCloseBtn = document.getElementById('announcementCloseBtnTop');
             const bottomCloseBtn = document.getElementById('announcementCloseBtnBottom');
             const backdrop = document.getElementById('popupBackdrop');
+            const popupWelcomeText = document.getElementById('popupWelcomeText');
+            const popupTelegramBtn = document.getElementById('popupTelegramBtn');
+            const popupGamesBtn = document.getElementById('popupGamesBtn');
+            const popupBoxContainer = document.getElementById('popupBoxContainer');
             
             if (isFacebookApp) {
                 if(suggestionBox) suggestionBox.classList.remove('hidden'); // Show if on Facebook
                 if(topCloseBtn) topCloseBtn.classList.add('hidden'); // Hide Top X
                 if(bottomCloseBtn) bottomCloseBtn.classList.add('hidden'); // Hide Bottom Close
                 if(backdrop) backdrop.onclick = null; // Disable clicking background to close
+                
+                // Hide extraneous elements to save massive vertical space
+                if(popupWelcomeText) popupWelcomeText.classList.add('hidden');
+                if(popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
+                if(popupGamesBtn) popupGamesBtn.classList.add('hidden');
             } else {
                 if(suggestionBox) suggestionBox.classList.add('hidden'); // Keep hidden otherwise
                 if(topCloseBtn) topCloseBtn.classList.remove('hidden'); // Ensure Top X is visible
                 if(bottomCloseBtn) bottomCloseBtn.classList.remove('hidden'); // Ensure Bottom Close is visible
                 if(backdrop) backdrop.onclick = closeAnnouncement; // Re-enable background close
+                
+                // Ensure extraneous elements are visible
+                if(popupWelcomeText) popupWelcomeText.classList.remove('hidden');
+                if(popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
+                if(popupGamesBtn) popupGamesBtn.classList.remove('hidden');
             }
 
             popup.classList.remove('hidden');

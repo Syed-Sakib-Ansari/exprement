@@ -344,11 +344,12 @@
         <div class="absolute inset-0 bg-[#050505]/80 backdrop-blur-md transition-opacity duration-500 opacity-0 pointer-events-none"
             id="popupBackdrop" onclick="closeAnnouncement()"></div>
 
-        <div class="relative w-full max-w-md transform scale-90 translate-y-12 opacity-0 transition-all duration-[600ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] flex flex-col items-center pointer-events-none max-h-[90vh]"
+        <div class="relative w-full max-w-md transform scale-90 translate-y-12 opacity-0 transition-all duration-[600ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] flex flex-col items-center pointer-events-none"
             id="popupBox">
 
-            <div
-                class="relative w-full bg-[#111111]/60 backdrop-blur-3xl border border-white/10 rounded-[24px] md:rounded-[32px] p-5 md:p-8 shadow-[0_30px_60px_rgba(0,0,0,0.8)] overflow-y-auto overflow-x-hidden no-scrollbar z-10 text-center pointer-events-auto max-h-[90vh]">
+            <!-- Container for the Modal -->
+            <div id="popupBoxContainer"
+                class="relative w-full bg-[#111111]/60 backdrop-blur-3xl border border-white/10 rounded-[20px] md:rounded-[32px] px-4 pb-4 pt-12 md:px-8 md:pb-8 md:pt-14 shadow-[0_30px_60px_rgba(0,0,0,0.8)] z-10 text-center pointer-events-auto flex flex-col justify-center">
 
                 <div
                     class="absolute -top-20 -left-20 w-64 h-64 bg-red-600/30 blur-[80px] rounded-full pointer-events-none animate-pulse">
@@ -363,124 +364,127 @@
                     class="absolute bottom-0 left-1/4 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent">
                 </div>
 
+                <!-- Fix: Positioned higher and made larger to not overlap text -->
                 <button id="announcementCloseBtnTop" onclick="closeAnnouncement()"
-                    class="absolute top-4 right-4 md:top-5 md:right-5 bg-[#E50914] text-white w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 z-20 cursor-pointer border border-red-400/50 shadow-[0_0_15px_rgba(229,9,20,0.6)] hover:bg-red-500 hover:scale-110 hover:rotate-90">
-                    <i class="fas fa-times text-sm"></i>
+                    class="absolute top-3 right-3 md:top-5 md:right-5 bg-[#E50914] text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-all duration-300 z-20 cursor-pointer border border-red-400/50 shadow-[0_0_15px_rgba(229,9,20,0.6)] hover:bg-red-500 hover:scale-110 hover:rotate-90">
+                    <i class="fas fa-times text-sm md:text-lg"></i>
                 </button>
 
                 <!-- Browser Suggestion Box -->
-                <div id="browserSuggestionBox" class="relative z-10 w-full mt-8 mb-5 md:mt-10 md:mb-8 group hidden">
+                <div id="browserSuggestionBox" class="relative z-10 w-full mt-2 mb-4 md:mt-4 md:mb-6 group hidden">
                     <!-- Modern Glowing Border Effect -->
                     <div class="absolute -inset-[1px] bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 rounded-xl md:rounded-2xl opacity-50 blur-md group-hover:opacity-80 transition duration-700"></div>
                     
-                    <div class="relative bg-[#0f0f0f] rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/10 flex flex-col items-center">
-                        <!-- Eye-catching Top Badge -->
-                        <div class="absolute -top-3.5 md:-top-4 px-4 md:px-6 py-1 md:py-1.5 bg-gradient-to-r from-[#E50914] to-red-800 rounded-full border border-red-400/50 shadow-[0_0_20px_rgba(229,9,20,0.6)]">
-                            <span class="text-[10px] md:text-xs font-black text-white uppercase tracking-[0.15em] flex items-center gap-1.5 md:gap-2 whitespace-nowrap">
+                    <!-- Fix: Added top padding to push content safely below absolute badge -->
+                    <div class="relative bg-[#0f0f0f] rounded-xl md:rounded-2xl px-3 pb-4 pt-6 md:px-6 md:pb-6 md:pt-8 border border-white/10 flex flex-col items-center">
+                        
+                        <!-- Eye-catching Top Badge - Fix: Made text explicitly larger -->
+                        <div class="absolute -top-4 md:-top-5 px-4 md:px-6 py-1.5 md:py-2 bg-gradient-to-r from-[#E50914] to-red-800 rounded-full border border-red-400/50 shadow-[0_0_20px_rgba(229,9,20,0.6)]">
+                            <span class="text-[11px] md:text-[14px] font-black text-white uppercase tracking-[0.1em] md:tracking-[0.15em] flex items-center gap-1.5 md:gap-2 whitespace-nowrap">
                                 <i class="fas fa-bolt text-yellow-400 animate-pulse"></i> Always Use These Browsers
                             </span>
                         </div>
 
-                        <p class="text-gray-300 text-xs md:text-sm font-medium mt-4 md:mt-5 mb-4 md:mb-6 text-center leading-relaxed">
+                        <!-- Fix: Made text larger -->
+                        <p class="text-gray-200 text-[12px] md:text-[15px] font-medium mt-2 md:mt-3 mb-4 md:mb-6 text-center leading-relaxed">
                             Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!
                         </p>
 
-                        <!-- All 9 Browsers Grid/Wrap Container -->
-                        <div class="flex flex-wrap justify-center gap-2 md:gap-3 w-full">
+                        <!-- All 9 Browsers Grid - Fix: Pure grid system prevents squishing and overlap -->
+                        <div class="grid grid-cols-3 sm:grid-cols-3 gap-2.5 md:gap-4 w-full">
                             <!-- Chrome -->
-                            <button onclick="openInBrowser('chrome')" class="relative w-[31%] sm:w-[23%] lg:w-[18%] flex-shrink-0 flex flex-col items-center justify-between p-2 md:p-3 rounded-[14px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#34A853] shadow-lg hover:shadow-[0_0_25px_rgba(52,168,83,0.4)] transition-all duration-300 group/btn transform hover:-translate-y-1 overflow-hidden">
+                            <button onclick="openInBrowser('chrome')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#34A853] shadow-md hover:shadow-[0_0_20px_rgba(52,168,83,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#34A853]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" alt="Chrome" class="w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[10px] font-black text-white uppercase tracking-widest relative z-10 mb-2 md:mb-2.5">Chrome</span>
-                                <div class="w-full bg-[#34A853] text-white text-[8px] md:text-[9px] font-black uppercase tracking-wider py-1 rounded-xl shadow-md relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#34A853] transition-colors">Open</div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/chrome/chrome_128x128.png" alt="Chrome" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Chrome</span>
+                                <div class="w-full bg-[#34A853] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#34A853] transition-colors mt-0.5">Open</div>
                             </button>
 
                             <!-- Edge -->
-                            <button onclick="openInBrowser('edge')" class="relative w-[31%] sm:w-[23%] lg:w-[18%] flex-shrink-0 flex flex-col items-center justify-between p-2 md:p-3 rounded-[14px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#0078D7] shadow-lg hover:shadow-[0_0_25px_rgba(0,120,215,0.4)] transition-all duration-300 group/btn transform hover:-translate-y-1 overflow-hidden">
+                            <button onclick="openInBrowser('edge')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#0078D7] shadow-md hover:shadow-[0_0_20px_rgba(0,120,215,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#0078D7]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg" alt="Edge" class="w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[10px] font-black text-white uppercase tracking-widest relative z-10 mb-2 md:mb-2.5">Edge</span>
-                                <div class="w-full bg-[#0078D7] text-white text-[8px] md:text-[9px] font-black uppercase tracking-wider py-1 rounded-xl shadow-md relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#0078D7] transition-colors">Open</div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/edge/edge_128x128.png" alt="Edge" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Edge</span>
+                                <div class="w-full bg-[#0078D7] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#0078D7] transition-colors mt-0.5">Open</div>
                             </button>
 
                             <!-- Opera -->
-                            <button onclick="openInBrowser('opera')" class="relative w-[31%] sm:w-[23%] lg:w-[18%] flex-shrink-0 flex flex-col items-center justify-between p-2 md:p-3 rounded-[14px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF1B2D] shadow-lg hover:shadow-[0_0_25px_rgba(255,27,45,0.4)] transition-all duration-300 group/btn transform hover:-translate-y-1 overflow-hidden">
+                            <button onclick="openInBrowser('opera')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF1B2D] shadow-md hover:shadow-[0_0_20px_rgba(255,27,45,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#FF1B2D]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Opera_2015_icon.svg" alt="Opera" class="w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[10px] font-black text-white uppercase tracking-widest relative z-10 mb-2 md:mb-2.5">Opera</span>
-                                <div class="w-full bg-[#FF1B2D] text-white text-[8px] md:text-[9px] font-black uppercase tracking-wider py-1 rounded-xl shadow-md relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF1B2D] transition-colors">Open</div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/opera/opera_128x128.png" alt="Opera" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Opera</span>
+                                <div class="w-full bg-[#FF1B2D] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF1B2D] transition-colors mt-0.5">Open</div>
                             </button>
                             
                             <!-- Firefox -->
-                            <button onclick="openInBrowser('firefox')" class="relative w-[31%] sm:w-[23%] lg:w-[18%] flex-shrink-0 flex flex-col items-center justify-between p-2 md:p-3 rounded-[14px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF7139] shadow-lg hover:shadow-[0_0_25px_rgba(255,113,57,0.4)] transition-all duration-300 group/btn transform hover:-translate-y-1 overflow-hidden">
+                            <button onclick="openInBrowser('firefox')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF7139] shadow-md hover:shadow-[0_0_20px_rgba(255,113,57,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#FF7139]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" alt="Firefox" class="w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[10px] font-black text-white uppercase tracking-widest relative z-10 mb-2 md:mb-2.5">Firefox</span>
-                                <div class="w-full bg-[#FF7139] text-white text-[8px] md:text-[9px] font-black uppercase tracking-wider py-1 rounded-xl shadow-md relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF7139] transition-colors">Open</div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/firefox/firefox_128x128.png" alt="Firefox" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Firefox</span>
+                                <div class="w-full bg-[#FF7139] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF7139] transition-colors mt-0.5">Open</div>
                             </button>
                             
                             <!-- Brave -->
-                            <button onclick="openInBrowser('brave')" class="relative w-[31%] sm:w-[23%] lg:w-[18%] flex-shrink-0 flex flex-col items-center justify-between p-2 md:p-3 rounded-[14px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF2000] shadow-lg hover:shadow-[0_0_25px_rgba(255,32,0,0.4)] transition-all duration-300 group/btn transform hover:-translate-y-1 overflow-hidden">
+                            <button onclick="openInBrowser('brave')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF2000] shadow-md hover:shadow-[0_0_20px_rgba(255,32,0,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#FF2000]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Brave_icon_lion_face.svg" alt="Brave" class="w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[10px] font-black text-white uppercase tracking-widest relative z-10 mb-2 md:mb-2.5">Brave</span>
-                                <div class="w-full bg-[#FF2000] text-white text-[8px] md:text-[9px] font-black uppercase tracking-wider py-1 rounded-xl shadow-md relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF2000] transition-colors">Open</div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/brave/brave_128x128.png" alt="Brave" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Brave</span>
+                                <div class="w-full bg-[#FF2000] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF2000] transition-colors mt-0.5">Open</div>
                             </button>
 
                             <!-- UC Browser -->
-                            <button onclick="openInBrowser('ucbrowser')" class="relative w-[31%] sm:w-[23%] lg:w-[18%] flex-shrink-0 flex flex-col items-center justify-between p-2 md:p-3 rounded-[14px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF8C00] shadow-lg hover:shadow-[0_0_25px_rgba(255,140,0,0.4)] transition-all duration-300 group/btn transform hover:-translate-y-1 overflow-hidden">
+                            <button onclick="openInBrowser('ucbrowser')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF8C00] shadow-md hover:shadow-[0_0_20px_rgba(255,140,0,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#FF8C00]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/7.0.4/uc/uc_128x128.png" alt="UC Browser" class="w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[10px] font-black text-white uppercase tracking-widest relative z-10 mb-2 md:mb-2.5">UC Browser</span>
-                                <div class="w-full bg-[#FF8C00] text-white text-[8px] md:text-[9px] font-black uppercase tracking-wider py-1 rounded-xl shadow-md relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF8C00] transition-colors">Open</div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/uc/uc_128x128.png" alt="UC Browser" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">UC</span>
+                                <div class="w-full bg-[#FF8C00] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF8C00] transition-colors mt-0.5">Open</div>
                             </button>
 
                             <!-- Safari -->
-                            <button onclick="openInBrowser('safari')" class="relative w-[31%] sm:w-[23%] lg:w-[18%] flex-shrink-0 flex flex-col items-center justify-between p-2 md:p-3 rounded-[14px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#007AFF] shadow-lg hover:shadow-[0_0_25px_rgba(0,122,255,0.4)] transition-all duration-300 group/btn transform hover:-translate-y-1 overflow-hidden">
+                            <button onclick="openInBrowser('safari')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#007AFF] shadow-md hover:shadow-[0_0_20px_rgba(0,122,255,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#007AFF]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/7.0.4/safari/safari_128x128.png" alt="Safari" class="w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[10px] font-black text-white uppercase tracking-widest relative z-10 mb-2 md:mb-2.5">Safari</span>
-                                <div class="w-full bg-[#007AFF] text-white text-[8px] md:text-[9px] font-black uppercase tracking-wider py-1 rounded-xl shadow-md relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#007AFF] transition-colors">Open</div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/safari/safari_128x128.png" alt="Safari" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Safari</span>
+                                <div class="w-full bg-[#007AFF] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#007AFF] transition-colors mt-0.5">Open</div>
                             </button>
 
                             <!-- Vivaldi -->
-                            <button onclick="openInBrowser('vivaldi')" class="relative w-[31%] sm:w-[23%] lg:w-[18%] flex-shrink-0 flex flex-col items-center justify-between p-2 md:p-3 rounded-[14px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#EF3939] shadow-lg hover:shadow-[0_0_25px_rgba(239,57,57,0.4)] transition-all duration-300 group/btn transform hover:-translate-y-1 overflow-hidden">
+                            <button onclick="openInBrowser('vivaldi')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#EF3939] shadow-md hover:shadow-[0_0_20px_rgba(239,57,57,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#EF3939]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/7.0.4/vivaldi/vivaldi_128x128.png" alt="Vivaldi" class="w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[10px] font-black text-white uppercase tracking-widest relative z-10 mb-2 md:mb-2.5">Vivaldi</span>
-                                <div class="w-full bg-[#EF3939] text-white text-[8px] md:text-[9px] font-black uppercase tracking-wider py-1 rounded-xl shadow-md relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#EF3939] transition-colors">Open</div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/vivaldi/vivaldi_128x128.png" alt="Vivaldi" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Vivaldi</span>
+                                <div class="w-full bg-[#EF3939] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#EF3939] transition-colors mt-0.5">Open</div>
                             </button>
 
                             <!-- DuckDuckGo -->
-                            <button onclick="openInBrowser('duckduckgo')" class="relative w-[31%] sm:w-[23%] lg:w-[18%] flex-shrink-0 flex flex-col items-center justify-between p-2 md:p-3 rounded-[14px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#DE5833] shadow-lg hover:shadow-[0_0_25px_rgba(222,88,51,0.4)] transition-all duration-300 group/btn transform hover:-translate-y-1 overflow-hidden">
+                            <button onclick="openInBrowser('duckduckgo')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#DE5833] shadow-md hover:shadow-[0_0_20px_rgba(222,88,51,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#DE5833]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://upload.wikimedia.org/wikipedia/en/9/90/The_DuckDuckGo_Duck.svg" alt="DuckDuckGo" class="w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[10px] font-black text-white uppercase tracking-widest relative z-10 mb-2 md:mb-2.5">DuckDuckGo</span>
-                                <div class="w-full bg-[#DE5833] text-white text-[8px] md:text-[9px] font-black uppercase tracking-wider py-1 rounded-xl shadow-md relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#DE5833] transition-colors">Open</div>
+                                <img src="https://duckduckgo.com/assets/icons/meta/DDG-icon_256x256.png" alt="DuckDuckGo" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Duck</span>
+                                <div class="w-full bg-[#DE5833] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#DE5833] transition-colors mt-0.5">Open</div>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <p class="text-gray-300 text-sm md:text-base font-medium leading-relaxed mb-5 md:mb-8 px-2 md:px-4">
-                    Welcome to <span class="text-white font-black">MovieDakhi</span>! We have recently upgraded our core
-                    servers for a seamless streaming experience.
+                <p id="popupWelcomeText" class="text-gray-300 text-[11px] md:text-[14px] font-medium leading-relaxed mb-4 md:mb-6 px-1 md:px-4 mt-2">
+                    Welcome to <span class="text-white font-black">MovieDakhi</span>! We have recently upgraded our core servers for a seamless streaming experience.
                 </p>
 
-                <a href="https://t.me/+oeXeresjsFA1MjI1" target="_blank"
-                    class="relative inline-flex items-center justify-center w-full bg-blue-600 border border-blue-400 text-white font-black tracking-[0.15em] uppercase text-xs md:text-sm py-3.5 md:py-4 rounded-xl md:rounded-2xl transition-all duration-300 group overflow-hidden shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] hover:scale-[1.02]">
+                <a id="popupTelegramBtn" href="https://t.me/+oeXeresjsFA1MjI1" target="_blank"
+                    class="relative inline-flex items-center justify-center w-full bg-blue-600 border border-blue-400 text-white font-black tracking-[0.15em] uppercase text-[10px] md:text-xs py-3 md:py-4 rounded-xl md:rounded-2xl transition-all duration-300 group overflow-hidden shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] hover:scale-[1.02]">
                     <i class="fab fa-telegram-plane text-white text-lg md:text-xl mr-2 md:mr-3 relative z-10"></i> <span
                         class="relative z-10">Join Telegram</span>
                 </a>
 
-                <a href="../Game/gamehome.html"
-                    class="relative mt-3 md:mt-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-purple-600 to-pink-600 border border-pink-400/50 text-white font-black tracking-[0.15em] uppercase text-xs md:text-sm py-3.5 md:py-4 rounded-xl md:rounded-2xl transition-all duration-300 group overflow-hidden shadow-[0_0_20px_rgba(219,39,119,0.5)] hover:shadow-[0_0_30px_rgba(219,39,119,0.8)] hover:scale-[1.02]">
+                <a id="popupGamesBtn" href="../Game/gamehome.html"
+                    class="relative mt-2 md:mt-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-purple-600 to-pink-600 border border-pink-400/50 text-white font-black tracking-[0.15em] uppercase text-[10px] md:text-xs py-3 md:py-4 rounded-xl md:rounded-2xl transition-all duration-300 group overflow-hidden shadow-[0_0_20px_rgba(219,39,119,0.5)] hover:shadow-[0_0_30px_rgba(219,39,119,0.8)] hover:scale-[1.02]">
                     <i class="fas fa-gamepad text-white text-lg md:text-xl mr-2 md:mr-3 animate-pulse relative z-10"></i> <span
                         class="relative z-10">Play Meme Games</span>
                 </a>
 
                 <button id="announcementCloseBtnBottom" onclick="closeAnnouncement()"
-                    class="relative mt-3 md:mt-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-red-600 to-red-800 border border-red-500/50 text-white font-black tracking-[0.15em] uppercase text-xs md:text-sm py-3.5 md:py-4 rounded-xl md:rounded-2xl transition-all duration-300 group overflow-hidden shadow-[0_0_20px_rgba(229,9,20,0.4)] hover:shadow-[0_0_30px_rgba(229,9,20,0.6)] hover:scale-[1.02]">
+                    class="relative mt-2 md:mt-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-red-600 to-red-800 border border-red-500/50 text-white font-black tracking-[0.15em] uppercase text-[10px] md:text-xs py-3 md:py-4 rounded-xl md:rounded-2xl transition-all duration-300 group overflow-hidden shadow-[0_0_20px_rgba(229,9,20,0.4)] hover:shadow-[0_0_30px_rgba(229,9,20,0.6)] hover:scale-[1.02]">
                     <i class="fas fa-times text-white text-lg md:text-xl mr-2 md:mr-3 relative z-10"></i> <span
                         class="relative z-10">Close</span>
                 </button>
