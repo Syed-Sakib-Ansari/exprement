@@ -96,68 +96,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    <script>
-        // ==========================================
-        // FACEBOOK AUTO-ESCAPE & FALLBACK ENGINE
-        // ==========================================
-        (function handleFacebookEscapes() {
-            const ua = navigator.userAgent || navigator.vendor || window.opera;
-            const isFacebookApp = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
-            const targetDomain = 'moviedakhi.com';
-            const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
-            const isAndroid = /android/i.test(ua);
 
-            // Check if this is a fallback loop triggered by a missing browser version
-            const urlParams = new URLSearchParams(window.location.search);
-            const fallbackPkg = urlParams.get('fb_fallback');
-            const nextIdx = parseInt(urlParams.get('fb_next_idx') || '0', 10);
-            const browserName = urlParams.get('browser') || 'chrome';
-
-            if (fallbackPkg) {
-                // Ultimate fallback if none of the specific packages worked -> Trigger OS App Chooser
-                if (fallbackPkg === 'generic') {
-                    window.location.href = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
-                    return;
-                }
-
-                // Map of all major browser packages including Beta, Mini, Dev, and Nightly versions
-                const browserPackages = {
-                    chrome: ['com.android.chrome', 'com.chrome.beta', 'com.chrome.dev', 'com.chrome.canary'],
-                    edge: ['com.microsoft.emmx', 'com.microsoft.emmx.beta', 'com.microsoft.emmx.canary'],
-                    opera: ['com.opera.browser', 'com.opera.mini.native', 'com.opera.touch', 'com.opera.browser.beta'],
-                    firefox: ['org.mozilla.firefox', 'org.mozilla.firefox_beta', 'org.mozilla.fenix', 'org.mozilla.focus'],
-                    brave: ['com.brave.browser', 'com.brave.browser_beta', 'com.brave.browser_nightly'],
-                    ucbrowser: ['com.UCMobile.intl', 'com.UCMobile.internet.org', 'com.uc.browser.en', 'com.uc.browser.hd'],
-                    vivaldi: ['com.vivaldi.browser', 'com.vivaldi.browser.snapshot'],
-                    duckduckgo: ['com.duckduckgo.mobile.android']
-                };
-                
-                const packages = browserPackages[browserName] || [];
-                let nextFallbackUrl = encodeURIComponent(`https://${targetDomain}?fb_fallback=generic`);
-                
-                if (nextIdx < packages.length) {
-                    // Set up the next fallback iteration
-                    nextFallbackUrl = encodeURIComponent(`https://${targetDomain}?fb_fallback=${packages[nextIdx]}&fb_next_idx=${nextIdx + 1}&browser=${browserName}`);
-                }
-
-                // Fire the specific intent version (Beta, Dev, etc)
-                window.location.href = `intent://${targetDomain}#Intent;scheme=https;package=${fallbackPkg};action=android.intent.action.VIEW;S.browser_fallback_url=${nextFallbackUrl};end;`;
-                return;
-            }
-
-            if (isFacebookApp && !fallbackPkg) {
-                // Auto escape on initial load with full fallback chain enabled
-                if (isAndroid) {
-                    const initialFallback = encodeURIComponent(`https://${targetDomain}?fb_fallback=com.chrome.beta&fb_next_idx=2&browser=chrome`);
-                    window.location.href = `intent://${targetDomain}#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;S.browser_fallback_url=${initialFallback};end;`;
-                } else if (isIOS) {
-                    window.location.href = `googlechrome://${targetDomain}`;
-                }
-            }
-        })();
-    </script>
-    
 </head>
 
 <body>
