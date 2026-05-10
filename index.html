@@ -340,7 +340,7 @@
         </div>
     </div>
 
-    <!-- Announcement/Warning Popup Box -->
+    <!-- New Popup Box Start -->
     <div id="announcementPopup" class="fixed inset-0 z-[200] hidden items-center justify-center pointer-events-none">
 
         <div class="absolute inset-0 bg-[#050505]/80 backdrop-blur-md transition-opacity duration-500 opacity-0 pointer-events-none"
@@ -376,10 +376,39 @@
                         class="fas fa-crown text-6xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600"></i>
                 </div>
 
-                <h3 class="text-2xl font-black uppercase tracking-[0.2em] text-white mb-3 drop-shadow-lg">Notice</h3>
+                <h3 class="text-2xl font-black uppercase tracking-[0.2em] text-white mb-2 drop-shadow-lg">Notice</h3>
 
-                <p class="text-gray-300 text-sm font-medium leading-relaxed mb-3 px-2">
-                    Welcome to <span class="text-white font-black">MovieDakhi</span> For Any <span class="text-white font-black">PROBLEM</span> And <span class="text-white font-black">REQUEST</span> Join <span class="text-white font-black">Telegram</span> 👇
+                <!-- Browser Suggestion Box -->
+                <div class="relative z-10 my-5 bg-[#1a1a1a]/80 backdrop-blur-sm p-4 rounded-2xl border border-white/5 pointer-events-auto text-center shadow-inner">
+                    <p class="text-[10px] text-gray-300 font-bold uppercase tracking-widest mb-3">For better experience, open in:</p>
+                    <div class="flex justify-center gap-6">
+                        <!-- Chrome -->
+                        <button onclick="openInBrowser('chrome')" class="flex flex-col items-center group transition-transform hover:scale-105">
+                            <div class="w-12 h-12 rounded-[14px] bg-white flex items-center justify-center shadow-[0_4px_15px_rgba(66,133,244,0.3)] mb-2 group-hover:shadow-[0_4px_20px_rgba(66,133,244,0.6)] transition-shadow">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" alt="Chrome" class="w-7 h-7 group-hover:scale-110 transition-transform drop-shadow-sm">
+                            </div>
+                            <span class="text-[10px] font-black text-gray-400 group-hover:text-[#4285F4] uppercase tracking-wider transition-colors">Chrome</span>
+                        </button>
+                        <!-- Edge -->
+                        <button onclick="openInBrowser('edge')" class="flex flex-col items-center group transition-transform hover:scale-105">
+                            <div class="w-12 h-12 rounded-[14px] bg-white flex items-center justify-center shadow-[0_4px_15px_rgba(0,120,215,0.3)] mb-2 group-hover:shadow-[0_4px_20px_rgba(0,120,215,0.6)] transition-shadow">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg" alt="Edge" class="w-7 h-7 group-hover:scale-110 transition-transform drop-shadow-sm">
+                            </div>
+                            <span class="text-[10px] font-black text-gray-400 group-hover:text-[#0078D7] uppercase tracking-wider transition-colors">Edge</span>
+                        </button>
+                        <!-- Opera -->
+                        <button onclick="openInBrowser('opera')" class="flex flex-col items-center group transition-transform hover:scale-105">
+                            <div class="w-12 h-12 rounded-[14px] bg-white flex items-center justify-center shadow-[0_4px_15px_rgba(255,27,45,0.3)] mb-2 group-hover:shadow-[0_4px_20px_rgba(255,27,45,0.6)] transition-shadow">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Opera_2015_icon.svg" alt="Opera" class="w-7 h-7 group-hover:scale-110 transition-transform drop-shadow-sm">
+                            </div>
+                            <span class="text-[10px] font-black text-gray-400 group-hover:text-[#FF1B2D] uppercase tracking-wider transition-colors">Opera</span>
+                        </button>
+                    </div>
+                </div>
+
+                <p class="text-gray-300 text-sm font-medium leading-relaxed mb-4 px-2">
+                    Welcome to <span class="text-white font-black">MovieDakhi</span>! We have recently upgraded our core
+                    servers for a seamless streaming experience.
                 </p>
 
                 <a href="https://t.me/+oeXeresjsFA1MjI1" target="_blank"
@@ -399,34 +428,11 @@
                     <i class="fas fa-times text-white text-xl mr-3 relative z-10"></i> <span
                         class="relative z-10">Close</span>
                 </button>
-
-                <div
-                    class="relative z-10 mt-8 pt-6 border-t border-white/10 flex justify-center gap-4 pointer-events-auto">
-                    <a href="https://www.facebook.com/profile.php?id=61586165302830" target="_blank"
-                        class="w-12 h-12 rounded-[14px] bg-[#111]/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] hover:shadow-[0_10px_20px_rgba(24,119,242,0.4)] transition-all duration-300 hover:-translate-y-2 group"
-                        title="Facebook">
-                        <i class="fab fa-facebook-f text-lg group-hover:scale-125 transition-transform"></i>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCCqqgRAlSnZ_oBuLsFqTLog" target="_blank"
-                        class="w-12 h-12 rounded-[14px] bg-[#111]/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-[#FF0000] hover:border-[#FF0000] hover:shadow-[0_10px_20px_rgba(255,0,0,0.4)] transition-all duration-300 hover:-translate-y-2 group"
-                        title="YouTube">
-                        <i class="fab fa-youtube text-lg group-hover:scale-125 transition-transform"></i>
-                    </a>
-                    <a href="https://t.me/+oeXeresjsFA1MjI1" target="_blank"
-                        class="w-12 h-12 rounded-[14px] bg-[#111]/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-[#0088cc] hover:border-[#0088cc] hover:shadow-[0_10px_20px_rgba(0,136,204,0.4)] transition-all duration-300 hover:-translate-y-2 group"
-                        title="Telegram">
-                        <i class="fab fa-telegram-plane text-xl group-hover:scale-125 transition-transform"></i>
-                    </a>
-                    <a href="https://www.instagram.com/moviedakhi/" target="_blank"
-                        class="w-12 h-12 rounded-[14px] bg-[#111]/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-gradient-to-br hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045] hover:border-[#fd1d1d] hover:shadow-[0_10px_20px_rgba(253,29,29,0.4)] transition-all duration-300 hover:-translate-y-2 group"
-                        title="Instagram">
-                        <i class="fab fa-instagram text-lg group-hover:scale-125 transition-transform"></i>
-                    </a>
-                </div>
             </div>
 
         </div>
     </div>
+    <!-- New Popup Box End -->
 
     <!-- Toast Notification for Messages -->
     <div id="toastMessage"

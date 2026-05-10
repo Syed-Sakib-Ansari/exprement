@@ -5115,313 +5115,313 @@ const contentData = [
 
 ];
 
-        contentData.forEach((item, index) => { item.id = index; });
+contentData.forEach((item, index) => { item.id = index; });
 
-        const categories = [
-            "all", "Bollywood", "Hollywood", "South", "Animation",
-            "Korean Country", "Chinese", "Bollywood Series", "Hollywood Series",
-            "Korean Series", "Adult Comedy", "Others"
-        ];
+const categories = [
+    "all", "Bollywood", "Hollywood", "South", "Animation",
+    "Korean Country", "Chinese", "Bollywood Series", "Hollywood Series",
+    "Korean Series", "Adult Comedy", "Others"
+];
 
-        let currentItem = null;
-        let downloadClickCount = 0; // Track the clicks for custom download button logic
-        // ================== NEW FUNCTION START ==================
-        let currentEpisodeIndex = null;
-        // ================== NEW FUNCTION END ==================
-        let preSearchState = null; // Stores user location before search starts
-        let currentView = 'home';
-        let sliderInterval;
-        const homeView = document.getElementById('homeView');
-        const libraryView = document.getElementById('libraryView');
-        const recentAddsGrid = document.getElementById('recentAddsGrid');
-        const libraryGrid = document.getElementById('libraryGrid');
-        const categorySections = document.getElementById('categorySections');
-        const sliderWrapper = document.getElementById('sliderWrapper');
-        const sliderDots = document.getElementById('sliderDots');
-        const searchInput = document.getElementById('searchInput');
-        const searchIcon = document.getElementById('searchIcon');
-        const videoIframe = document.getElementById('videoIframe');
-        const categoryMenu = document.getElementById('categoryMenu');
+let currentItem = null;
+let downloadClickCount = 0; // Track the clicks for custom download button logic
+// ================== NEW FUNCTION START ==================
+let currentEpisodeIndex = null;
+// ================== NEW FUNCTION END ==================
+let preSearchState = null; // Stores user location before search starts
+let currentView = 'home';
+let sliderInterval;
+const homeView = document.getElementById('homeView');
+const libraryView = document.getElementById('libraryView');
+const recentAddsGrid = document.getElementById('recentAddsGrid');
+const libraryGrid = document.getElementById('libraryGrid');
+const categorySections = document.getElementById('categorySections');
+const sliderWrapper = document.getElementById('sliderWrapper');
+const sliderDots = document.getElementById('sliderDots');
+const searchInput = document.getElementById('searchInput');
+const searchIcon = document.getElementById('searchIcon');
+const videoIframe = document.getElementById('videoIframe');
+const categoryMenu = document.getElementById('categoryMenu');
 
-        let libraryData = [];
-        let libraryDisplayedCount = 0;
-        const ITEMS_PER_PAGE = 30;
+let libraryData = [];
+let libraryDisplayedCount = 0;
+const ITEMS_PER_PAGE = 30;
 
-        function getOptimizedImageUrl(url, width = 300) {
-            if (!url) return "";
-            if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
-                return url;
-            }
-            return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=80`;
-        }
+function getOptimizedImageUrl(url, width = 300) {
+    if (!url) return "";
+    if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
+        return url;
+    }
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=80`;
+}
 
-        function debounce(func, wait) {
-            let timeout;
-            return function (...args) {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func.apply(this, args), wait);
-            };
-        }
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
 
-        function renderCategories() {
-            const mobileGrid = document.getElementById('mobileCategoryGrid');
-            const desktopNav = document.getElementById('desktopCategoryPills');
-            const libraryFilters = document.getElementById('libraryFilters');
+function renderCategories() {
+    const mobileGrid = document.getElementById('mobileCategoryGrid');
+    const desktopNav = document.getElementById('desktopCategoryPills');
+    const libraryFilters = document.getElementById('libraryFilters');
 
-            mobileGrid.innerHTML = ''; desktopNav.innerHTML = ''; libraryFilters.innerHTML = '';
+    mobileGrid.innerHTML = ''; desktopNav.innerHTML = ''; libraryFilters.innerHTML = '';
 
-            categories.forEach(cat => {
-                const label = cat === 'Korean Country' ? 'Korean' : cat;
+    categories.forEach(cat => {
+        const label = cat === 'Korean Country' ? 'Korean' : cat;
 
-                // If the category is 'all', handle it differently
-                if (cat === 'all') {
-                    // Mobile FAB Menu: Replace 'All' with 'Home'
-                    const mobileItem = document.createElement('a');
-                    mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
-                    mobileItem.innerText = 'Home';
-                    mobileItem.href = '#';
-                    mobileItem.onclick = (e) => {
-                        e.preventDefault();
-                        toggleCategoryMenu(false, false);
-                        clearSearch(true); // Reset search state
-                        switchView('home', null, 'replace'); // Go back to main page
-                    };
-                    mobileGrid.appendChild(mobileItem);
-
-                    // Return early so 'All' is NOT added to Desktop Nav or Library Filters
-                    return;
-                }
-
-                const realLink = `?view=library&category=${encodeURIComponent(cat)}`;
-
-                const mobileItem = document.createElement('a');
-                mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
-                mobileItem.innerText = label;
-                mobileItem.href = realLink;
-                mobileItem.onclick = (e) => {
-                    e.preventDefault();
-                    toggleCategoryMenu(false, false);
-                    switchView('library', cat, 'replace');
-                };
-                mobileGrid.appendChild(mobileItem);
-
-                const desktopItem = document.createElement('a');
-                desktopItem.href = realLink;
-                desktopItem.className = 'category-pill border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 transition';
-                desktopItem.innerText = label;
-                desktopItem.onclick = (e) => {
-                    e.preventDefault();
-                    switchView('library', cat);
-                };
-                desktopNav.appendChild(desktopItem);
-
-                const filterItem = desktopItem.cloneNode(true);
-                filterItem.setAttribute('data-category', cat);
-                filterItem.onclick = (e) => {
-                    e.preventDefault();
-                    switchView('library', cat);
-                };
-                libraryFilters.appendChild(filterItem);
-            });
-        }
-
-        // ==========================================
-        // FAB OPEN / CLOSE ANIMATIONS & SCROLL FIX
-        // ==========================================
-        let savedScrollY = 0;
-
-        function toggleCategoryMenu(show, triggerBack = true) {
-            const fab = document.getElementById('mobileFab');
-
-            if (show) {
-                // Save precise scroll position before opening
-                savedScrollY = window.scrollY;
-
-                const currentState = history.state || {};
-                try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-                try { window.history.pushState({ ...currentState, isMenuOpen: true }, ''); } catch (e) { }
-
-                categoryMenu.classList.remove('hidden');
-                void categoryMenu.offsetWidth; // Trigger reflow
-                categoryMenu.classList.add('active');
-
-                // Bulletproof body lock - stops background scrolling and jumping
-                document.body.style.position = 'fixed';
-                document.body.style.top = `-${savedScrollY}px`;
-                document.body.style.width = '100%';
-
-                fab.classList.add('menu-open'); // Triggers CSS transitions on icons
-
-            } else {
-                categoryMenu.classList.remove('active');
-                setTimeout(() => categoryMenu.classList.add('hidden'), 400); // Matches the 0.4s CSS transition
-
-                // Remove body lock and instantly restore the exact scroll position
-                document.body.style.position = '';
-                document.body.style.top = '';
-                document.body.style.width = '';
-                window.scrollTo(0, savedScrollY);
-
-                if (triggerBack && window.history.state?.isMenuOpen) {
-                    window.history.back();
-                }
-
-                fab.classList.remove('menu-open'); // Reverts CSS transitions on icons
-            }
-        }
-
-        // ==========================================
-        // 60FPS SMOOTH FREELY DRAGGABLE FAB LOGIC
-        // ==========================================
-        const fab = document.getElementById('mobileFab');
-        let isDragging = false;
-        let startX, startY, initialX, initialY;
-        let translateX = 0, translateY = 0;
-        let moved = false;
-
-        function dragStart(e) {
-            moved = false;
-            isDragging = true;
-            startX = e.clientX;
-            startY = e.clientY;
-
-            // Get exact current position relative to viewport
-            const rect = fab.getBoundingClientRect();
-            initialX = rect.left;
-            initialY = rect.top;
-
-            // Lock it to left/top instantly before dragging to prevent jumps
-            fab.style.left = `${initialX}px`;
-            fab.style.top = `${initialY}px`;
-            fab.style.bottom = 'auto';
-            fab.style.right = 'auto';
-
-            fab.style.transition = 'none';
-            // Capture pointer to track dragging seamlessly even if mouse/finger leaves the element
-            fab.setPointerCapture(e.pointerId);
-        }
-
-        function drag(e) {
-            if (!isDragging) return;
-
-            const dx = e.clientX - startX;
-            const dy = e.clientY - startY;
-
-            // Increased threshold to 8px to prevent "accidental drags" when attempting to just tap
-            if (Math.abs(dx) > 8 || Math.abs(dy) > 8) {
-                moved = true;
-            }
-
-            if (moved) {
-                // Calculate prospective coordinates
-                let nextX = initialX + dx;
-                let nextY = initialY + dy;
-
-                // Use clientWidth/clientHeight instead of innerWidth/innerHeight to exclude scrollbars and prevent clipping!
-                const maxX = document.documentElement.clientWidth - fab.offsetWidth;
-                const maxY = document.documentElement.clientHeight - fab.offsetHeight;
-
-                // No bleeding allowed, constrained strictly between 0 and Max
-                nextX = Math.max(0, Math.min(nextX, maxX));
-                nextY = Math.max(0, Math.min(nextY, maxY));
-
-                // Calculate the actual translation to the bounded coordinate
-                translateX = nextX - initialX;
-                translateY = nextY - initialY;
-
-                // Use Hardware-Accelerated transform for buttery smooth 60fps drag
-                fab.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
-            }
-        }
-
-        function dragEnd(e) {
-            if (!isDragging) return;
-            isDragging = false;
-            fab.releasePointerCapture(e.pointerId);
-
-            if (moved) {
-                // Calculate final dropped coordinates
-                let newX = initialX + translateX;
-                let newY = initialY + translateY;
-
-                // Viewport boundaries
-                const maxX = document.documentElement.clientWidth - fab.offsetWidth;
-                const maxY = document.documentElement.clientHeight - fab.offsetHeight;
-
-                // Clamp coordinates to ensure it stays strictly within the screen bounds
-                newX = Math.max(0, Math.min(newX, maxX));
-                newY = Math.max(0, Math.min(newY, maxY));
-
-                // Remove the GPU transform and bake the final dropped coordinates into left/top
-                fab.style.transform = 'none';
-                fab.style.left = `${newX}px`;
-                fab.style.top = `${newY}px`;
-
-                // Reset translation values for the next drag
-                translateX = 0;
-                translateY = 0;
-            }
-
-            // Flush the DOM changes so transitions don't fight the layout coordinates
-            void fab.offsetWidth;
-
-            // Restore standard visual transitions for both drag drops and taps
-            fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        }
-
-        // Using Pointer Events covers both mouse and touch flawlessly
-        fab.addEventListener('pointerdown', dragStart);
-        fab.addEventListener('pointermove', drag);
-        fab.addEventListener('pointerup', dragEnd);
-        fab.addEventListener('pointercancel', dragEnd);
-
-        // A Dedicated click event guarantees taps trigger reliably after tracking ends
-        fab.addEventListener('click', (e) => {
-            if (moved) {
-                // If it was dragged, don't execute a tap action
+        // If the category is 'all', handle it differently
+        if (cat === 'all') {
+            // Mobile FAB Menu: Replace 'All' with 'Home'
+            const mobileItem = document.createElement('a');
+            mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
+            mobileItem.innerText = 'Home';
+            mobileItem.href = '#';
+            mobileItem.onclick = (e) => {
                 e.preventDefault();
-                e.stopPropagation();
-                return;
-            }
+                toggleCategoryMenu(false, false);
+                clearSearch(true); // Reset search state
+                switchView('home', null, 'replace'); // Go back to main page
+            };
+            mobileGrid.appendChild(mobileItem);
 
-            // Stop the animation permanently once the user has noticed and clicked it
-            fab.classList.add('animation-stopped');
+            // Return early so 'All' is NOT added to Desktop Nav or Library Filters
+            return;
+        }
 
-            const isMenuOpen = categoryMenu.classList.contains('active');
-            toggleCategoryMenu(!isMenuOpen);
-        });
+        const realLink = `?view=library&category=${encodeURIComponent(cat)}`;
 
-        // Ensure FAB stays inside bounds if window resizes/rotates
-        window.addEventListener('resize', () => {
+        const mobileItem = document.createElement('a');
+        mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
+        mobileItem.innerText = label;
+        mobileItem.href = realLink;
+        mobileItem.onclick = (e) => {
+            e.preventDefault();
+            toggleCategoryMenu(false, false);
+            switchView('library', cat, 'replace');
+        };
+        mobileGrid.appendChild(mobileItem);
 
-            const maxX = document.documentElement.clientWidth - fab.offsetWidth;
-            const maxY = document.documentElement.clientHeight - fab.offsetHeight;
-            const currentX = fab.offsetLeft;
-            const currentY = fab.offsetTop;
+        const desktopItem = document.createElement('a');
+        desktopItem.href = realLink;
+        desktopItem.className = 'category-pill border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 transition';
+        desktopItem.innerText = label;
+        desktopItem.onclick = (e) => {
+            e.preventDefault();
+            switchView('library', cat);
+        };
+        desktopNav.appendChild(desktopItem);
 
-            // Just clamp it to keep it inside the screen if resizing makes it go out of bounds
-            if (currentX > maxX) fab.style.left = `${maxX}px`;
-            if (currentY > maxY) fab.style.top = `${maxY}px`;
-            if (currentX < 0) fab.style.left = `0px`;
-            if (currentY < 0) fab.style.top = `0px`;
-        });
-        // ==========================================
+        const filterItem = desktopItem.cloneNode(true);
+        filterItem.setAttribute('data-category', cat);
+        filterItem.onclick = (e) => {
+            e.preventDefault();
+            switchView('library', cat);
+        };
+        libraryFilters.appendChild(filterItem);
+    });
+}
 
-        function initHeroSlider() {
-            if (!sliderWrapper || !sliderDots) return;
-            const slides = contentData.filter(item => item.category === "Recent Adds").slice(0, 6);
-            if (slides.length === 0) return;
+// ==========================================
+// FAB OPEN / CLOSE ANIMATIONS & SCROLL FIX
+// ==========================================
+let savedScrollY = 0;
 
-            let currentSlide = 0;
-            sliderWrapper.innerHTML = '';
-            sliderDots.innerHTML = '';
+function toggleCategoryMenu(show, triggerBack = true) {
+    const fab = document.getElementById('mobileFab');
 
-            slides.forEach((movie, index) => {
-                const slide = document.createElement('div');
-                slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
-                const loadingAttr = index === 0 ? 'eager' : 'lazy';
+    if (show) {
+        // Save precise scroll position before opening
+        savedScrollY = window.scrollY;
 
-                slide.innerHTML = `
+        const currentState = history.state || {};
+        try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+        try { window.history.pushState({ ...currentState, isMenuOpen: true }, ''); } catch (e) { }
+
+        categoryMenu.classList.remove('hidden');
+        void categoryMenu.offsetWidth; // Trigger reflow
+        categoryMenu.classList.add('active');
+
+        // Bulletproof body lock - stops background scrolling and jumping
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${savedScrollY}px`;
+        document.body.style.width = '100%';
+
+        fab.classList.add('menu-open'); // Triggers CSS transitions on icons
+
+    } else {
+        categoryMenu.classList.remove('active');
+        setTimeout(() => categoryMenu.classList.add('hidden'), 400); // Matches the 0.4s CSS transition
+
+        // Remove body lock and instantly restore the exact scroll position
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, savedScrollY);
+
+        if (triggerBack && window.history.state?.isMenuOpen) {
+            window.history.back();
+        }
+
+        fab.classList.remove('menu-open'); // Reverts CSS transitions on icons
+    }
+}
+
+// ==========================================
+// 60FPS SMOOTH FREELY DRAGGABLE FAB LOGIC
+// ==========================================
+const fab = document.getElementById('mobileFab');
+let isDragging = false;
+let startX, startY, initialX, initialY;
+let translateX = 0, translateY = 0;
+let moved = false;
+
+function dragStart(e) {
+    moved = false;
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+
+    // Get exact current position relative to viewport
+    const rect = fab.getBoundingClientRect();
+    initialX = rect.left;
+    initialY = rect.top;
+
+    // Lock it to left/top instantly before dragging to prevent jumps
+    fab.style.left = `${initialX}px`;
+    fab.style.top = `${initialY}px`;
+    fab.style.bottom = 'auto';
+    fab.style.right = 'auto';
+
+    fab.style.transition = 'none';
+    // Capture pointer to track dragging seamlessly even if mouse/finger leaves the element
+    fab.setPointerCapture(e.pointerId);
+}
+
+function drag(e) {
+    if (!isDragging) return;
+
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+
+    // Increased threshold to 8px to prevent "accidental drags" when attempting to just tap
+    if (Math.abs(dx) > 8 || Math.abs(dy) > 8) {
+        moved = true;
+    }
+
+    if (moved) {
+        // Calculate prospective coordinates
+        let nextX = initialX + dx;
+        let nextY = initialY + dy;
+
+        // Use clientWidth/clientHeight instead of innerWidth/innerHeight to exclude scrollbars and prevent clipping!
+        const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+        const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+
+        // No bleeding allowed, constrained strictly between 0 and Max
+        nextX = Math.max(0, Math.min(nextX, maxX));
+        nextY = Math.max(0, Math.min(nextY, maxY));
+
+        // Calculate the actual translation to the bounded coordinate
+        translateX = nextX - initialX;
+        translateY = nextY - initialY;
+
+        // Use Hardware-Accelerated transform for buttery smooth 60fps drag
+        fab.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+    }
+}
+
+function dragEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    fab.releasePointerCapture(e.pointerId);
+
+    if (moved) {
+        // Calculate final dropped coordinates
+        let newX = initialX + translateX;
+        let newY = initialY + translateY;
+
+        // Viewport boundaries
+        const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+        const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+
+        // Clamp coordinates to ensure it stays strictly within the screen bounds
+        newX = Math.max(0, Math.min(newX, maxX));
+        newY = Math.max(0, Math.min(newY, maxY));
+
+        // Remove the GPU transform and bake the final dropped coordinates into left/top
+        fab.style.transform = 'none';
+        fab.style.left = `${newX}px`;
+        fab.style.top = `${newY}px`;
+
+        // Reset translation values for the next drag
+        translateX = 0;
+        translateY = 0;
+    }
+
+    // Flush the DOM changes so transitions don't fight the layout coordinates
+    void fab.offsetWidth;
+
+    // Restore standard visual transitions for both drag drops and taps
+    fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+}
+
+// Using Pointer Events covers both mouse and touch flawlessly
+fab.addEventListener('pointerdown', dragStart);
+fab.addEventListener('pointermove', drag);
+fab.addEventListener('pointerup', dragEnd);
+fab.addEventListener('pointercancel', dragEnd);
+
+// A Dedicated click event guarantees taps trigger reliably after tracking ends
+fab.addEventListener('click', (e) => {
+    if (moved) {
+        // If it was dragged, don't execute a tap action
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    }
+
+    // Stop the animation permanently once the user has noticed and clicked it
+    fab.classList.add('animation-stopped');
+
+    const isMenuOpen = categoryMenu.classList.contains('active');
+    toggleCategoryMenu(!isMenuOpen);
+});
+
+// Ensure FAB stays inside bounds if window resizes/rotates
+window.addEventListener('resize', () => {
+
+    const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+    const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+    const currentX = fab.offsetLeft;
+    const currentY = fab.offsetTop;
+
+    // Just clamp it to keep it inside the screen if resizing makes it go out of bounds
+    if (currentX > maxX) fab.style.left = `${maxX}px`;
+    if (currentY > maxY) fab.style.top = `${maxY}px`;
+    if (currentX < 0) fab.style.left = `0px`;
+    if (currentY < 0) fab.style.top = `0px`;
+});
+// ==========================================
+
+function initHeroSlider() {
+    if (!sliderWrapper || !sliderDots) return;
+    const slides = contentData.filter(item => item.category === "Recent Adds").slice(0, 6);
+    if (slides.length === 0) return;
+
+    let currentSlide = 0;
+    sliderWrapper.innerHTML = '';
+    sliderDots.innerHTML = '';
+
+    slides.forEach((movie, index) => {
+        const slide = document.createElement('div');
+        slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
+        const loadingAttr = index === 0 ? 'eager' : 'lazy';
+
+        slide.innerHTML = `
 <img src="${getOptimizedImageUrl(movie.posterUrl, 1000)}" class="w-full h-full object-cover object-center" alt="${movie.title}" loading="${loadingAttr}">
 <div class="absolute inset-0 bg-black/40"></div>
 <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
@@ -5434,177 +5434,177 @@ const contentData = [
 </button>
 </div>
 </div>`;
-                sliderWrapper.appendChild(slide);
+        sliderWrapper.appendChild(slide);
 
-                const dot = document.createElement('button');
-                dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
-                dot.onclick = () => goToSlide(index);
-                sliderDots.appendChild(dot);
-            });
+        const dot = document.createElement('button');
+        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
+        dot.onclick = () => goToSlide(index);
+        sliderDots.appendChild(dot);
+    });
 
-            function startSlideTimer() {
-                clearInterval(sliderInterval);
-                sliderInterval = setInterval(() => { goToSlide((currentSlide + 1) % slides.length); }, 3000);
-            }
+    function startSlideTimer() {
+        clearInterval(sliderInterval);
+        sliderInterval = setInterval(() => { goToSlide((currentSlide + 1) % slides.length); }, 3000);
+    }
 
-            window.goToSlide = (index) => {
-                const allSlides = document.querySelectorAll('.slide');
-                const allDots = sliderDots.children;
-                if (allSlides.length > 0) {
-                    allSlides[currentSlide].classList.remove('active');
-                    allDots[currentSlide].className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300';
-                    currentSlide = index;
-                    allSlides[currentSlide].classList.add('active');
-                    allDots[currentSlide].className = 'w-6 h-2 rounded-full bg-white transition-all duration-300';
-                    startSlideTimer();
-                }
-            };
-            setTimeout(() => {
-                const activeSlide = document.querySelector('.slide.active .slide-content');
-                if (activeSlide) { activeSlide.style.opacity = '1'; activeSlide.style.transform = 'translateY(0)'; }
-            }, 50);
+    window.goToSlide = (index) => {
+        const allSlides = document.querySelectorAll('.slide');
+        const allDots = sliderDots.children;
+        if (allSlides.length > 0) {
+            allSlides[currentSlide].classList.remove('active');
+            allDots[currentSlide].className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300';
+            currentSlide = index;
+            allSlides[currentSlide].classList.add('active');
+            allDots[currentSlide].className = 'w-6 h-2 rounded-full bg-white transition-all duration-300';
             startSlideTimer();
         }
+    };
+    setTimeout(() => {
+        const activeSlide = document.querySelector('.slide.active .slide-content');
+        if (activeSlide) { activeSlide.style.opacity = '1'; activeSlide.style.transform = 'translateY(0)'; }
+    }, 50);
+    startSlideTimer();
+}
 
-        function updateSearchUI() {
-            const libraryFilters = document.getElementById('libraryFilters');
-            if (searchInput.value.trim().length > 0) {
-                searchIcon.classList.remove('fa-search');
-                searchIcon.classList.add('fa-times', 'cursor-pointer');
-                // Hide category filters when searching
-                if (libraryFilters) libraryFilters.style.display = 'none';
-            } else {
-                searchIcon.classList.remove('fa-times', 'cursor-pointer');
-                searchIcon.classList.add('fa-search');
-                // Show category filters when search is empty
-                if (libraryFilters) libraryFilters.style.display = '';
-            }
-        }
+function updateSearchUI() {
+    const libraryFilters = document.getElementById('libraryFilters');
+    if (searchInput.value.trim().length > 0) {
+        searchIcon.classList.remove('fa-search');
+        searchIcon.classList.add('fa-times', 'cursor-pointer');
+        // Hide category filters when searching
+        if (libraryFilters) libraryFilters.style.display = 'none';
+    } else {
+        searchIcon.classList.remove('fa-times', 'cursor-pointer');
+        searchIcon.classList.add('fa-search');
+        // Show category filters when search is empty
+        if (libraryFilters) libraryFilters.style.display = '';
+    }
+}
 
-        function handleSearchIconClick() { 
-            if (searchInput.value.trim().length > 0) {
-                clearSearch(); 
-            } else {
-                searchInput.blur();
-            }
-        }
+function handleSearchIconClick() {
+    if (searchInput.value.trim().length > 0) {
+        clearSearch();
+    } else {
+        searchInput.blur();
+    }
+}
 
-        function clearSearch(preventRestore = false) {
+function clearSearch(preventRestore = false) {
+    searchInput.value = '';
+    updateSearchUI();
+    searchInput.blur(); // Dismiss mobile keyboard on clear
+
+    // If we have a saved state and aren't overriding it, seamlessly restore the user's location
+    if (!preventRestore && preSearchState) {
+        switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
+        preSearchState = null;
+    } else {
+        preSearchState = null;
+        initLibraryRender();
+    }
+}
+
+function updateCanonical(url) {
+    const canonicalLink = document.getElementById('canonicalLink');
+    if (canonicalLink) {
+        // এটি যেকোনো পরিস্থিতিতে Canonical ট্যাগকে মেইন হোমপেজেই ফিক্সড রাখবে
+        canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
+    }
+}
+
+function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
+    if (mode) {
+        const currentScroll = window.scrollY;
+        const currentState = window.history.state || {
+            view: currentView,
+            category: null,
+            displayedCount: libraryDisplayedCount
+        };
+        try { window.history.replaceState({ ...currentState, scrollY: currentScroll }, ''); } catch (e) { }
+    }
+
+    currentView = viewName;
+    homeView.classList.remove('active');
+    libraryView.classList.remove('active');
+
+    if (viewName === 'home') {
+        homeView.classList.add('active');
+        document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
+    } else {
+        libraryView.classList.add('active');
+        if (filterCategory) {
             searchInput.value = '';
             updateSearchUI();
-            searchInput.blur(); // Dismiss mobile keyboard on clear
-
-            // If we have a saved state and aren't overriding it, seamlessly restore the user's location
-            if (!preventRestore && preSearchState) {
-                switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
-                preSearchState = null;
-            } else {
-                preSearchState = null;
-                initLibraryRender();
-            }
+            preSearchState = null; // Reset search tracker when clicking standard categories
         }
 
-        function updateCanonical(url) {
-            const canonicalLink = document.getElementById('canonicalLink');
-            if (canonicalLink) {
-                // এটি যেকোনো পরিস্থিতিতে Canonical ট্যাগকে মেইন হোমপেজেই ফিক্সড রাখবে
-                canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
-            }
-        }
+        document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
 
-        function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
-            if (mode) {
-                const currentScroll = window.scrollY;
-                const currentState = window.history.state || {
-                    view: currentView,
-                    category: null,
-                    displayedCount: libraryDisplayedCount
-                };
-                try { window.history.replaceState({ ...currentState, scrollY: currentScroll }, ''); } catch (e) { }
-            }
+        const catValue = filterCategory || 'all';
+        document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
+        document.querySelector(`#libraryFilters .category-pill[data-category="${catValue}"]`)?.classList.add('active');
 
-            currentView = viewName;
-            homeView.classList.remove('active');
-            libraryView.classList.remove('active');
+        initLibraryRender(catValue, restoredCount);
+    }
 
-            if (viewName === 'home') {
-                homeView.classList.add('active');
-                document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
-            } else {
-                libraryView.classList.add('active');
-                if (filterCategory) {
-                    searchInput.value = '';
-                    updateSearchUI();
-                    preSearchState = null; // Reset search tracker when clicking standard categories
+    if (mode) {
+        try {
+            const isBlob = window.location.protocol === 'blob:';
+            const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: 30 };
+
+            if (!isBlob) {
+                const url = new URL(window.location);
+                url.searchParams.set('view', viewName);
+                if (filterCategory && filterCategory !== 'all' && viewName === 'library') {
+                    url.searchParams.set('category', filterCategory);
+                } else {
+                    url.searchParams.delete('category');
                 }
 
-                document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
-
-                const catValue = filterCategory || 'all';
-                document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
-                document.querySelector(`#libraryFilters .category-pill[data-category="${catValue}"]`)?.classList.add('active');
-
-                initLibraryRender(catValue, restoredCount);
-            }
-
-            if (mode) {
-                try {
-                    const isBlob = window.location.protocol === 'blob:';
-                    const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: 30 };
-
-                    if (!isBlob) {
-                        const url = new URL(window.location);
-                        url.searchParams.set('view', viewName);
-                        if (filterCategory && filterCategory !== 'all' && viewName === 'library') {
-                            url.searchParams.set('category', filterCategory);
-                        } else {
-                            url.searchParams.delete('category');
-                        }
-
-                        if (mode === 'replace') {
-                            window.history.replaceState(stateObj, '', url);
-                        } else {
-                            window.history.pushState(stateObj, '', url);
-                        }
-                        updateCanonical(url.href);
-                    } else {
-                        if (mode === 'replace') {
-                            window.history.replaceState(stateObj, '', window.location.href);
-                        } else {
-                            window.history.pushState(stateObj, '', window.location.href);
-                        }
-                    }
-                    // Force the browser to calculate the layout instantly
-                    void document.documentElement.offsetHeight; 
-                    window.scrollTo({ top: targetScroll, behavior: 'instant' });
-                } catch (e) {
-                    console.warn("Navigation History Error (Silently Ignored):", e.message);
-                    void document.documentElement.offsetHeight;
-                    window.scrollTo({ top: targetScroll, behavior: 'instant' });
+                if (mode === 'replace') {
+                    window.history.replaceState(stateObj, '', url);
+                } else {
+                    window.history.pushState(stateObj, '', url);
+                }
+                updateCanonical(url.href);
+            } else {
+                if (mode === 'replace') {
+                    window.history.replaceState(stateObj, '', window.location.href);
+                } else {
+                    window.history.pushState(stateObj, '', window.location.href);
                 }
             }
+            // Force the browser to calculate the layout instantly
+            void document.documentElement.offsetHeight;
+            window.scrollTo({ top: targetScroll, behavior: 'instant' });
+        } catch (e) {
+            console.warn("Navigation History Error (Silently Ignored):", e.message);
+            void document.documentElement.offsetHeight;
+            window.scrollTo({ top: targetScroll, behavior: 'instant' });
         }
+    }
+}
 
-        function createMovieCard(item) {
-            const card = document.createElement('div');
-            card.className = 'movie-card relative flex flex-col group';
+function createMovieCard(item) {
+    const card = document.createElement('div');
+    card.className = 'movie-card relative flex flex-col group';
 
-            const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
+    const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
 
-            // ================== Reduce Space START ==================
-            // Unified Quality Badge: Flush Top-Left on ALL devices, matching original clean font weight
-            const qualityBadgeHtml = item.quality ?
-                `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">
+    // ================== Reduce Space START ==================
+    // Unified Quality Badge: Flush Top-Left on ALL devices, matching original clean font weight
+    const qualityBadgeHtml = item.quality ?
+        `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">
     ${item.quality}
 </div>` : '';
 
-            // Unified Language Badge: Flush Top-Right on ALL devices, matching original clean font weight
-            const languageBadgeHtml = item.language ?
-                `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">
+    // Unified Language Badge: Flush Top-Right on ALL devices, matching original clean font weight
+    const languageBadgeHtml = item.language ?
+        `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">
     ${item.language}
 </div>` : '';
 
-            card.innerHTML = `
+    card.innerHTML = `
 <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 md:ring-0 transition-all duration-300 group-hover:ring-white/20 md:group-hover:ring-transparent">
 ${qualityBadgeHtml}
 ${languageBadgeHtml}
@@ -5628,633 +5628,636 @@ decoding="async"
 <h4 class="font-black text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
 ${infoText}
 </div>`;
-            card.onclick = () => openModal(item.id);
-            return card;
-        }
+    card.onclick = () => openModal(item.id);
+    return card;
+}
 
-        function renderRecentAdds() {
-            recentAddsGrid.innerHTML = '';
-            const recentItems = contentData.filter(item => item.category === "Recent Adds");
-            const fragment = document.createDocumentFragment();
-            // Show exactly up to 18 movie cards as requested
-            recentItems.slice(0, 18).forEach(item => fragment.appendChild(createMovieCard(item)));
-            recentAddsGrid.appendChild(fragment);
-        }
+function renderRecentAdds() {
+    recentAddsGrid.innerHTML = '';
+    const recentItems = contentData.filter(item => item.category === "Recent Adds");
+    const fragment = document.createDocumentFragment();
+    // Show exactly up to 18 movie cards as requested
+    recentItems.slice(0, 18).forEach(item => fragment.appendChild(createMovieCard(item)));
+    recentAddsGrid.appendChild(fragment);
+}
 
-        function renderCategorySections() {
-            categorySections.innerHTML = '';
-            const fragment = document.createDocumentFragment();
-            categories.filter(c => c !== 'all').forEach(cat => {
-                const filtered = contentData.filter(m => m.category === cat);
-                if (filtered.length === 0) return;
-                let displayName = cat === 'Korean Country' ? 'Korean' : cat;
-                const section = document.createElement('section');
-                section.className = 'mb-16';
-                section.innerHTML = `
+function renderCategorySections() {
+    categorySections.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+    categories.filter(c => c !== 'all').forEach(cat => {
+        const filtered = contentData.filter(m => m.category === cat);
+        if (filtered.length === 0) return;
+        let displayName = cat === 'Korean Country' ? 'Korean' : cat;
+        const section = document.createElement('section');
+        section.className = 'mb-16';
+        section.innerHTML = `
 <div class="flex items-center space-x-3 md:mt-10 md:pt-10 mb-8 justify-center">
 <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
 </div>
 <div class="category-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto"></div>`;
-                const grid = section.querySelector('.category-grid');
-                
-                // Display 11 cards + 1 View All Card to keep the grid perfectly balanced
-                filtered.slice(0, 11).forEach(item => grid.appendChild(createMovieCard(item)));
-                
-                const viewAllCard = document.createElement('div');
-                viewAllCard.className = 'view-all-card relative rounded-lg overflow-hidden group flex flex-col items-center justify-center p-6 cursor-pointer aspect-[2/3]';
-                viewAllCard.innerHTML = `
+        const grid = section.querySelector('.category-grid');
+
+        // Display 11 cards + 1 View All Card to keep the grid perfectly balanced
+        filtered.slice(0, 11).forEach(item => grid.appendChild(createMovieCard(item)));
+
+        const viewAllCard = document.createElement('div');
+        viewAllCard.className = 'view-all-card relative rounded-lg overflow-hidden group flex flex-col items-center justify-center p-6 cursor-pointer aspect-[2/3]';
+        viewAllCard.innerHTML = `
 <div class="flex flex-col items-center justify-center transition-transform duration-300 group-hover:scale-110">
 <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110"><i class="fas fa-arrow-right text-white text-xl"></i></div>
 <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
 <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
 </div>`;
-                viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
-                grid.appendChild(viewAllCard);
+        viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
+        grid.appendChild(viewAllCard);
 
-                fragment.appendChild(section);
-            });
-            categorySections.appendChild(fragment);
-        }
+        fragment.appendChild(section);
+    });
+    categorySections.appendChild(fragment);
+}
 
-        let isLoading = false;
-        let scrollTimeoutId; // Tracking variable for debounced scroll saves
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
-            if (currentView === 'library' && !isLoading) {
-                const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-                if (scrollTop + clientHeight >= scrollHeight - 500) { if (libraryDisplayedCount < libraryData.length) renderLibraryChunk(); }
-            }
+let isLoading = false;
+let scrollTimeoutId; // Tracking variable for debounced scroll saves
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+    if (currentView === 'library' && !isLoading) {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        if (scrollTop + clientHeight >= scrollHeight - 500) { if (libraryDisplayedCount < libraryData.length) renderLibraryChunk(); }
+    }
 
-            // ADDED: Track scroll position and loaded count dynamically for reloads
-            clearTimeout(scrollTimeoutId);
-            scrollTimeoutId = setTimeout(() => {
-                const modal = document.getElementById('movieModal');
-                const catMenu = document.getElementById('categoryMenu');
-                // Only save scroll coordinates if menus/modals are not currently hijacking the view
-                if (modal && !modal.classList.contains('active') && catMenu && !catMenu.classList.contains('active')) {
-                    const currentState = history.state || { view: currentView, category: null };
-                    try {
-                        window.history.replaceState({
-                            ...currentState,
-                            scrollY: window.scrollY,
-                            displayedCount: libraryDisplayedCount
-                        }, '');
-                    } catch (e) { }
-                }
-            }, 150);
-        });
-
-        // Ensure we explicitly catch the final scroll spot immediately before a reload using sessionStorage
-        window.addEventListener('beforeunload', () => {
-            const modal = document.getElementById('movieModal');
-            const catMenu = document.getElementById('categoryMenu');
-            if (modal && !modal.classList.contains('active') && catMenu && !catMenu.classList.contains('active')) {
-                // sessionStorage is synchronous and guaranteed to save right before refresh
-                sessionStorage.setItem('MovieDakhi_ExactScroll', window.scrollY);
-            }
-        });
-
-        function initLibraryRender(filter = "all", initialCount = 0) {
-            const rawQuery = searchInput.value;
-
-            const cleanStr = (str) => {
-                if (!str) return "";
-                return str.toLowerCase().replace(/[^a-z0-9]/g, '');
-            };
-
-            const cleanQuery = cleanStr(rawQuery);
-
-            libraryData = contentData.filter(item => {
-                const matchesCat = filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
-
-                const cleanTitle = cleanStr(item.title);
-                const cleanGenre = cleanStr(item.genre);
-                const cleanCategory = cleanStr(item.category);
-
-                const matchesSearch = cleanTitle.includes(cleanQuery) ||
-                    cleanCategory.includes(cleanQuery) ||
-                    cleanGenre.includes(cleanQuery);
-
-                return matchesCat && matchesSearch;
-            });
-
-            libraryGrid.innerHTML = '';
-            libraryDisplayedCount = initialCount > 0 ? initialCount : ITEMS_PER_PAGE;
-
-            if (libraryData.length === 0) {
-                libraryGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
-            } else {
-                const fragment = document.createDocumentFragment();
-                libraryData.slice(0, libraryDisplayedCount).forEach(item => fragment.appendChild(createMovieCard(item)));
-                libraryGrid.appendChild(fragment);
-            }
-
-            updateLoadMoreVisibility();
-
-            if (rawQuery.trim().length > 0) {
-                const scrollTarget = libraryView.offsetTop - 100;
-                window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
-            }
-        }
-
-        function renderLibraryChunk() {
-            isLoading = true;
-            const nextCount = libraryDisplayedCount + ITEMS_PER_PAGE;
-            const chunk = libraryData.slice(libraryDisplayedCount, nextCount);
-            if (chunk.length > 0) {
-                const fragment = document.createDocumentFragment();
-                chunk.forEach(item => fragment.appendChild(createMovieCard(item)));
-                libraryGrid.appendChild(fragment);
-                libraryDisplayedCount = nextCount;
-                updateLoadMoreVisibility();
-            }
-            isLoading = false;
-        }
-
-        function updateLoadMoreVisibility() {
-            const loading = document.getElementById('loadingIndicator');
-            if (libraryDisplayedCount < libraryData.length) loading.classList.remove('hidden'); else loading.classList.add('hidden');
-        }
-
-        function openModal(id) {
-            // Smoothly hide the FAB button while modal is open
-            document.getElementById('mobileFab').classList.add('fab-hidden');
-
-            // Save precise scroll position before opening
-            savedScrollY = window.scrollY;
-
-            const currentState = history.state || {};
-            // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
-            try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-            try { window.history.pushState({ ...currentState, isModalOpen: true }, ''); } catch (e) { }
-
-            const item = contentData.find(m => m.id === id);
-            currentItem = item;
-            document.getElementById('modalTitle').innerText = item.title;
-            document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
-            document.getElementById('modalLanguage').innerText = item.language;
-            document.getElementById('modalCategory').innerText = item.category;
-
-            // Reset download button state
-            downloadClickCount = 0;
-            const downloadBtn = document.getElementById('mainDownloadBtn');
-            document.getElementById('downloadBtnText').innerText = "Download";
-
-            // Restore vibrant green styles
-            downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-            downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
-
-            // Restore shine wave
-            const wave = downloadBtn.querySelector('.animate-shine-wave');
-            if (wave) wave.classList.remove('hidden');
-            
-            if (item.episodes && item.episodes.length > 0) {
-                currentEpisodeIndex = 0;
-            } else {
-                currentEpisodeIndex = null;
-            }
-            
-            const seriesSec = document.getElementById('seriesSection');
-            const epList = document.getElementById('episodeList');
-            if (item.episodes) {
-                seriesSec.classList.remove('hidden');
-                document.getElementById('seriesInfoText').innerText = item.seriesInfo;
-                epList.innerHTML = '';
-                item.episodes.forEach((ep, idx) => {
-                    const btn = document.createElement('button');
-                    btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
-                    if (idx === 0) btn.classList.add('active'); // Set first episode as active visually
-                    btn.innerText = ep.title;
-                    btn.onclick = () => playEpisode(idx, btn);
-                    epList.appendChild(btn);
-                });
-            } else { seriesSec.classList.add('hidden'); }
-
-            // Directly auto-load the first video or the main movie video
-            let url = item.episodes ? item.episodes[0].embedUrl : item.embedUrl;
-            const actualVideoContainer = document.getElementById('actualVideo');
-            if (actualVideoContainer) {
-                actualVideoContainer.classList.remove('hidden');
-                actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-            }
-
-            const modal = document.getElementById('movieModal');
-            modal.classList.remove('hidden');
-            void modal.offsetWidth;
-            modal.classList.add('active');
-
-            // Bulletproof body lock - stops background scrolling and jumping
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${savedScrollY}px`;
-            document.body.style.width = '100%';
-        }
-
-        // Custom download button logic handling multiple clicks
-        function handleDownloadClick() {
-            if (!currentItem) return;
-
-            if (downloadClickCount >= 3) {
-                // Reset button to the original state
-                downloadClickCount = 0;
-                const downloadBtn = document.getElementById('mainDownloadBtn');
-                document.getElementById('downloadBtnText').innerText = "Download";
-
-                // Restore vibrant green styles
-                downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-                downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
-
-                // Restore shine wave
-                const wave = downloadBtn.querySelector('.animate-shine-wave');
-                if (wave) wave.classList.remove('hidden');
-
-                return;
-            }
-
-            downloadClickCount++;
-
-            if (downloadClickCount === 1) {
-                document.getElementById('downloadBtnText').innerText = "Ready For Download";
-                if (currentItem.downloadUrl1) {
-                    window.open(currentItem.downloadUrl1, '_blank');
-                }
-            } else if (downloadClickCount === 2) {
-                document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
-                if (currentItem.downloadUrl1) {
-                    window.open(currentItem.downloadUrl1, '_blank');
-                }
-            } else if (downloadClickCount === 3) {
-                document.getElementById('downloadBtnText').innerText = "Link Expire";
-
-                // Change button style to look expired/disabled
-                const downloadBtn = document.getElementById('mainDownloadBtn');
-                if (downloadBtn) {
-                    // ================== LINK EXPIRE BUTTON DESIGN START ==================
-                    // Remove vibrant styles
-                    downloadBtn.classList.remove('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
-
-                    // Add solid dark design with white border matching image (no gradient)
-                    downloadBtn.classList.add('!bg-none', '!bg-[#111]', '!border-white', '!text-white', 'cursor-not-allowed', 'opacity-80');
-                    // ================== LINK EXPIRE BUTTON DESIGN END ==================
-
-                    // Remove the continuous shine wave when expired
-                    const wave = downloadBtn.querySelector('.animate-shine-wave');
-                    if (wave) wave.classList.add('hidden');
-                }
-
-                // Check if an episode is selected and it has a specific downloadUrl
-                if (currentEpisodeIndex !== null && currentItem.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl) {
-                    window.open(currentItem.episodes[currentEpisodeIndex].downloadUrl, '_blank');
-                } else if (currentItem.downloadUrl2) {
-                    // Fallback to main downloadUrl2 if no episode selected or no episode download url exists
-                    window.open(currentItem.downloadUrl2, '_blank');
-                }
-            }
-        }
-
-        function playDefault() {
-            if (!currentItem) return;
-            let url = currentItem.episodes ? currentItem.episodes[0].embedUrl : currentItem.embedUrl;
-
-            const actualVideo = document.getElementById('actualVideo');
-            if (actualVideo) {
-                actualVideo.classList.remove('hidden');
-                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-            }
-            
-            // Force iframe reload (Fixes hash-based URL caching issues)
-            const videoIframe = document.getElementById('videoIframe');
-            if (videoIframe) {
-                videoIframe.src = 'about:blank';
-                setTimeout(() => {
-                    videoIframe.src = url;
-                }, 50);
-            }
-        }
-
-        function playEpisode(index, btnElement) {
-            const episode = currentItem.episodes[index];
-            document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
-            btnElement.classList.add('active');
-
-            let url = episode.embedUrl;
-
-            // ================== Immediately Full Modal Box Close START ==================
-            const actualVideo = document.getElementById('actualVideo');
-            if (actualVideo) {
-                actualVideo.classList.remove('hidden');
-                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-            }
-            // ================== Immediately Full Modal Box Close END ==================
-
-            // Force iframe reload (Fixes hash-based URL caching issues)
-            const videoIframe = document.getElementById('videoIframe');
-            if (videoIframe) {
-                videoIframe.src = 'about:blank';
-                setTimeout(() => {
-                    videoIframe.src = url;
-                }, 50);
-            }
-            
-            // Update the selected episode for downloading, and reset the download button process
-            currentEpisodeIndex = index;
-            downloadClickCount = 0;
-            const downloadBtn = document.getElementById('mainDownloadBtn');
-            document.getElementById('downloadBtnText').innerText = "Download";
-
-            // Restore original active styling to download button
-            downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-            downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
-
-            // Restore shine wave if it exists
-            const wave = downloadBtn.querySelector('.animate-shine-wave');
-            if (wave) wave.classList.remove('hidden');
-        }
-
-        function closeModal(triggerBack = true) {
-            const modal = document.getElementById('movieModal');
-            if (modal.classList.contains('hidden')) return;
-
-            // Show FAB button gracefully again
-            document.getElementById('mobileFab').classList.remove('fab-hidden');
-
-            // ================== Immediately Full Modal Box Close START ==================
-            const actualVideo = document.getElementById('actualVideo');
-            if (actualVideo) {
-                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-            }
-
-            if (!triggerBack) {
-                modal.classList.add('hidden');
-                modal.classList.remove('active');
-            } else {
-                modal.classList.remove('active');
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                }, 300);
-            }
-            // ================== Immediately Full Modal Box Close END ==================
-
-            modal.classList.remove('active');
-            setTimeout(() => { 
-                modal.classList.add('hidden'); 
-                const videoIframe = document.getElementById('videoIframe');
-                if(videoIframe) videoIframe.src = ""; 
-            }, 300);
-
-            // Remove body lock and instantly restore the exact scroll position
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.width = '';
-            window.scrollTo(0, savedScrollY);
-
-            if (triggerBack && window.history.state?.isModalOpen) {
-                window.history.back();
-            }
-        }
-
-        // Capture scroll state the exact moment user taps/focuses the search bar
-        searchInput.addEventListener('focus', () => {
-            if (!preSearchState && searchInput.value.trim().length === 0) {
-                const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
-                preSearchState = {
-                    view: currentView,
+    // ADDED: Track scroll position and loaded count dynamically for reloads
+    clearTimeout(scrollTimeoutId);
+    scrollTimeoutId = setTimeout(() => {
+        const modal = document.getElementById('movieModal');
+        const catMenu = document.getElementById('categoryMenu');
+        // Only save scroll coordinates if menus/modals are not currently hijacking the view
+        if (modal && !modal.classList.contains('active') && catMenu && !catMenu.classList.contains('active')) {
+            const currentState = history.state || { view: currentView, category: null };
+            try {
+                window.history.replaceState({
+                    ...currentState,
                     scrollY: window.scrollY,
-                    category: activeCat,
                     displayedCount: libraryDisplayedCount
-                };
-            }
+                }, '');
+            } catch (e) { }
+        }
+    }, 150);
+});
+
+// Ensure we explicitly catch the final scroll spot immediately before a reload using sessionStorage
+window.addEventListener('beforeunload', () => {
+    const modal = document.getElementById('movieModal');
+    const catMenu = document.getElementById('categoryMenu');
+    if (modal && !modal.classList.contains('active') && catMenu && !catMenu.classList.contains('active')) {
+        // sessionStorage is synchronous and guaranteed to save right before refresh
+        sessionStorage.setItem('MovieDakhi_ExactScroll', window.scrollY);
+    }
+});
+
+function initLibraryRender(filter = "all", initialCount = 0) {
+    const rawQuery = searchInput.value;
+
+    const cleanStr = (str) => {
+        if (!str) return "";
+        return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    };
+
+    const cleanQuery = cleanStr(rawQuery);
+
+    libraryData = contentData.filter(item => {
+        const matchesCat = filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
+
+        const cleanTitle = cleanStr(item.title);
+        const cleanGenre = cleanStr(item.genre);
+        const cleanCategory = cleanStr(item.category);
+
+        const matchesSearch = cleanTitle.includes(cleanQuery) ||
+            cleanCategory.includes(cleanQuery) ||
+            cleanGenre.includes(cleanQuery);
+
+        return matchesCat && matchesSearch;
+    });
+
+    libraryGrid.innerHTML = '';
+    libraryDisplayedCount = initialCount > 0 ? initialCount : ITEMS_PER_PAGE;
+
+    if (libraryData.length === 0) {
+        libraryGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
+    } else {
+        const fragment = document.createDocumentFragment();
+        libraryData.slice(0, libraryDisplayedCount).forEach(item => fragment.appendChild(createMovieCard(item)));
+        libraryGrid.appendChild(fragment);
+    }
+
+    updateLoadMoreVisibility();
+
+    if (rawQuery.trim().length > 0) {
+        const scrollTarget = libraryView.offsetTop - 100;
+        window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+    }
+}
+
+function renderLibraryChunk() {
+    isLoading = true;
+    const nextCount = libraryDisplayedCount + ITEMS_PER_PAGE;
+    const chunk = libraryData.slice(libraryDisplayedCount, nextCount);
+    if (chunk.length > 0) {
+        const fragment = document.createDocumentFragment();
+        chunk.forEach(item => fragment.appendChild(createMovieCard(item)));
+        libraryGrid.appendChild(fragment);
+        libraryDisplayedCount = nextCount;
+        updateLoadMoreVisibility();
+    }
+    isLoading = false;
+}
+
+function updateLoadMoreVisibility() {
+    const loading = document.getElementById('loadingIndicator');
+    if (libraryDisplayedCount < libraryData.length) loading.classList.remove('hidden'); else loading.classList.add('hidden');
+}
+
+function openModal(id) {
+    // Smoothly hide the FAB button while modal is open
+    document.getElementById('mobileFab').classList.add('fab-hidden');
+
+    // Save precise scroll position before opening
+    savedScrollY = window.scrollY;
+
+    const currentState = history.state || {};
+    // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
+    try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+    try { window.history.pushState({ ...currentState, isModalOpen: true }, ''); } catch (e) { }
+
+    const item = contentData.find(m => m.id === id);
+    currentItem = item;
+    document.getElementById('modalTitle').innerText = item.title;
+    document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
+    document.getElementById('modalLanguage').innerText = item.language;
+    document.getElementById('modalCategory').innerText = item.category;
+
+    // Reset download button state
+    downloadClickCount = 0;
+    const downloadBtn = document.getElementById('mainDownloadBtn');
+    document.getElementById('downloadBtnText').innerText = "Download";
+
+    // Restore vibrant green styles
+    downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+    downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
+
+    // Restore shine wave
+    const wave = downloadBtn.querySelector('.animate-shine-wave');
+    if (wave) wave.classList.remove('hidden');
+
+    if (item.episodes && item.episodes.length > 0) {
+        currentEpisodeIndex = 0;
+    } else {
+        currentEpisodeIndex = null;
+    }
+
+    const seriesSec = document.getElementById('seriesSection');
+    const epList = document.getElementById('episodeList');
+    if (item.episodes) {
+        seriesSec.classList.remove('hidden');
+        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
+        epList.innerHTML = '';
+        item.episodes.forEach((ep, idx) => {
+            const btn = document.createElement('button');
+            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
+            if (idx === 0) btn.classList.add('active'); // Set first episode as active visually
+            btn.innerText = ep.title;
+            btn.onclick = () => playEpisode(idx, btn);
+            epList.appendChild(btn);
         });
+    } else { seriesSec.classList.add('hidden'); }
 
-        searchInput.addEventListener('input', debounce(() => {
-            const rawQuery = searchInput.value;
-            updateSearchUI();
+    // Directly auto-load the first video or the main movie video
+    let url = item.episodes ? item.episodes[0].embedUrl : item.embedUrl;
+    const actualVideoContainer = document.getElementById('actualVideo');
+    if (actualVideoContainer) {
+        actualVideoContainer.classList.remove('hidden');
+        actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    }
 
-            if (rawQuery.trim().length > 0) {
-                // Save state right before search layout overrides view (fallback)
-                if (!preSearchState) {
-                    const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
-                    preSearchState = {
-                        view: currentView,
-                        scrollY: window.scrollY,
-                        category: activeCat,
-                        displayedCount: libraryDisplayedCount
-                    };
-                }
+    const modal = document.getElementById('movieModal');
+    modal.classList.remove('hidden');
+    void modal.offsetWidth;
+    modal.classList.add('active');
 
-                if (currentView !== 'library') switchView('library');
-                initLibraryRender();
-            } else {
-                // When input becomes empty via backspace, immediately restore to the original location without losing focus
-                if (preSearchState) {
-                    switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
-                    preSearchState = null; // Reset so next type captures fresh state
-                } else {
-                    initLibraryRender();
-                }
-            }
-        }, 300));
+    // Bulletproof body lock - stops background scrolling and jumping
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.width = '100%';
+}
 
-        // When user clicks/touches outside the empty search box, it becomes inactive and restores location
-        searchInput.addEventListener('blur', () => {
-            setTimeout(() => {
-                const modal = document.getElementById('movieModal');
-                const catMenu = document.getElementById('categoryMenu');
-                
-                // Don't auto-restore if user just opened a movie modal or menu
-                if ((modal && modal.classList.contains('active')) || (catMenu && catMenu.classList.contains('active'))) {
-                    return;
-                }
+// Custom download button logic handling multiple clicks
+function handleDownloadClick() {
+    if (!currentItem) return;
 
-                if (searchInput.value.trim().length === 0 && preSearchState) {
-                    clearSearch();
-                }
-            }, 200);
-        });
+    if (downloadClickCount >= 3) {
+        // Reset button to the original state
+        downloadClickCount = 0;
+        const downloadBtn = document.getElementById('mainDownloadBtn');
+        document.getElementById('downloadBtnText').innerText = "Download";
 
-        // Close mobile keyboard when Enter is pressed
-        searchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                searchInput.blur();
-            }
-        });
+        // Restore vibrant green styles
+        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+        downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
+
+        // Restore shine wave
+        const wave = downloadBtn.querySelector('.animate-shine-wave');
+        if (wave) wave.classList.remove('hidden');
+
+        return;
+    }
+
+    downloadClickCount++;
+
+    if (downloadClickCount === 1) {
+        document.getElementById('downloadBtnText').innerText = "Ready For Download";
+        if (currentItem.downloadUrl1) {
+            window.open(currentItem.downloadUrl1, '_blank');
+        }
+    } else if (downloadClickCount === 2) {
+        document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
+        if (currentItem.downloadUrl1) {
+            window.open(currentItem.downloadUrl1, '_blank');
+        }
+    } else if (downloadClickCount === 3) {
+        document.getElementById('downloadBtnText').innerText = "Link Expire";
+
+        // Change button style to look expired/disabled
+        const downloadBtn = document.getElementById('mainDownloadBtn');
+        if (downloadBtn) {
+            // ================== LINK EXPIRE BUTTON DESIGN START ==================
+            // Remove vibrant styles
+            downloadBtn.classList.remove('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
+
+            // Add solid dark design with white border matching image (no gradient)
+            downloadBtn.classList.add('!bg-none', '!bg-[#111]', '!border-white', '!text-white', 'cursor-not-allowed', 'opacity-80');
+            // ================== LINK EXPIRE BUTTON DESIGN END ==================
+
+            // Remove the continuous shine wave when expired
+            const wave = downloadBtn.querySelector('.animate-shine-wave');
+            if (wave) wave.classList.add('hidden');
+        }
+
+        // Check if an episode is selected and it has a specific downloadUrl
+        if (currentEpisodeIndex !== null && currentItem.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl) {
+            window.open(currentItem.episodes[currentEpisodeIndex].downloadUrl, '_blank');
+        } else if (currentItem.downloadUrl2) {
+            // Fallback to main downloadUrl2 if no episode selected or no episode download url exists
+            window.open(currentItem.downloadUrl2, '_blank');
+        }
+    }
+}
+
+function playDefault() {
+    if (!currentItem) return;
+    let url = currentItem.episodes ? currentItem.episodes[0].embedUrl : currentItem.embedUrl;
+
+    const actualVideo = document.getElementById('actualVideo');
+    if (actualVideo) {
+        actualVideo.classList.remove('hidden');
+        actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    }
+
+    // Force iframe reload (Fixes hash-based URL caching issues)
+    const videoIframe = document.getElementById('videoIframe');
+    if (videoIframe) {
+        videoIframe.src = 'about:blank';
+        setTimeout(() => {
+            videoIframe.src = url;
+        }, 50);
+    }
+}
+
+function playEpisode(index, btnElement) {
+    const episode = currentItem.episodes[index];
+    document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
+    btnElement.classList.add('active');
+
+    let url = episode.embedUrl;
+
+    // ================== Immediately Full Modal Box Close START ==================
+    const actualVideo = document.getElementById('actualVideo');
+    if (actualVideo) {
+        actualVideo.classList.remove('hidden');
+        actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    }
+    // ================== Immediately Full Modal Box Close END ==================
+
+    // Force iframe reload (Fixes hash-based URL caching issues)
+    const videoIframe = document.getElementById('videoIframe');
+    if (videoIframe) {
+        videoIframe.src = 'about:blank';
+        setTimeout(() => {
+            videoIframe.src = url;
+        }, 50);
+    }
+
+    // Update the selected episode for downloading, and reset the download button process
+    currentEpisodeIndex = index;
+    downloadClickCount = 0;
+    const downloadBtn = document.getElementById('mainDownloadBtn');
+    document.getElementById('downloadBtnText').innerText = "Download";
+
+    // Restore original active styling to download button
+    downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+    downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
+
+    // Restore shine wave if it exists
+    const wave = downloadBtn.querySelector('.animate-shine-wave');
+    if (wave) wave.classList.remove('hidden');
+}
+
+function closeModal(triggerBack = true) {
+    const modal = document.getElementById('movieModal');
+    if (modal.classList.contains('hidden')) return;
+
+    // Show FAB button gracefully again
+    document.getElementById('mobileFab').classList.remove('fab-hidden');
+
+    // ================== Immediately Full Modal Box Close START ==================
+    const actualVideo = document.getElementById('actualVideo');
+    if (actualVideo) {
+        actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    }
+
+    if (!triggerBack) {
+        modal.classList.add('hidden');
+        modal.classList.remove('active');
+    } else {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+    // ================== Immediately Full Modal Box Close END ==================
+
+    modal.classList.remove('active');
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        const videoIframe = document.getElementById('videoIframe');
+        if (videoIframe) videoIframe.src = "";
+    }, 300);
+
+    // Remove body lock and instantly restore the exact scroll position
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, savedScrollY);
+
+    if (triggerBack && window.history.state?.isModalOpen) {
+        window.history.back();
+    }
+}
+
+// Capture scroll state the exact moment user taps/focuses the search bar
+searchInput.addEventListener('focus', () => {
+    if (!preSearchState && searchInput.value.trim().length === 0) {
+        const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
+        preSearchState = {
+            view: currentView,
+            scrollY: window.scrollY,
+            category: activeCat,
+            displayedCount: libraryDisplayedCount
+        };
+    }
+});
+
+searchInput.addEventListener('input', debounce(() => {
+    const rawQuery = searchInput.value;
+    updateSearchUI();
+
+    if (rawQuery.trim().length > 0) {
+        // Save state right before search layout overrides view (fallback)
+        if (!preSearchState) {
+            const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
+            preSearchState = {
+                view: currentView,
+                scrollY: window.scrollY,
+                category: activeCat,
+                displayedCount: libraryDisplayedCount
+            };
+        }
+
+        if (currentView !== 'library') switchView('library');
+        initLibraryRender();
+    } else {
+        // When input becomes empty via backspace, immediately restore to the original location without losing focus
+        if (preSearchState) {
+            switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
+            preSearchState = null; // Reset so next type captures fresh state
+        } else {
+            initLibraryRender();
+        }
+    }
+}, 300));
+
+// When user clicks/touches outside the empty search box, it becomes inactive and restores location
+searchInput.addEventListener('blur', () => {
+    setTimeout(() => {
+        const modal = document.getElementById('movieModal');
+        const catMenu = document.getElementById('categoryMenu');
+
+        // Don't auto-restore if user just opened a movie modal or menu
+        if ((modal && modal.classList.contains('active')) || (catMenu && catMenu.classList.contains('active'))) {
+            return;
+        }
+
+        if (searchInput.value.trim().length === 0 && preSearchState) {
+            clearSearch();
+        }
+    }, 200);
+});
+
+// Close mobile keyboard when Enter is pressed
+searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.blur();
+    }
+});
 
         // TRIGGER POPUP ON LOAD
+        // New Popup Box Start
         setTimeout(() => {
             if (!sessionStorage.getItem('popupSeen')) {
                 showAnnouncement();
                 sessionStorage.setItem('popupSeen', 'true');
             }
         }, 7500);
+        // New Popup Box End
 
-        // Helper function to show toast messages
-        function showToast(message) {
-            const toast = document.getElementById('toastMessage');
-            const toastText = document.getElementById('toastText');
-            if (!toast || !toastText) return;
+// Helper function to show toast messages
+function showToast(message) {
+    const toast = document.getElementById('toastMessage');
+    const toastText = document.getElementById('toastText');
+    if (!toast || !toastText) return;
 
-            toastText.innerHTML = message; // Using innerHTML to allow bold text/icons
+    toastText.innerHTML = message; // Using innerHTML to allow bold text/icons
 
-            toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
-            toast.classList.add('opacity-100', 'translate-y-0');
+    toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
 
-            setTimeout(() => {
-                toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
-                toast.classList.remove('opacity-100', 'translate-y-0');
-            }, 4000);
-        }
+    setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 4000);
+}
 
-        // Show bookmark popup (called automatically when announcement popup closes)
-        function showBookmarkPopup() {
-            const bookmarkPopup = document.getElementById('bookmarkPopup');
-            const bookmarkDesc = document.getElementById('bookmarkDesc');
-            if (!bookmarkPopup || !bookmarkDesc) return;
+// Show bookmark popup (called automatically when announcement popup closes)
+function showBookmarkPopup() {
+    const bookmarkPopup = document.getElementById('bookmarkPopup');
+    const bookmarkDesc = document.getElementById('bookmarkDesc');
+    if (!bookmarkPopup || !bookmarkDesc) return;
 
-            // Detect device to show appropriate message
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+    // Detect device to show appropriate message
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
 
-            if (isMobile) {
-                // whitespace-nowrap prevents 'Add to Home Screen' from splitting awkwardly on small phones
-                bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px]">Tap menu</span> <i class="fas fa-ellipsis-v mx-1.5 text-gray-400"></i> <span class="font-black text-white text-[11px]">& select</span> <strong class="text-white font-black bg-white/10 px-1.5 py-0.5 rounded ml-1 whitespace-nowrap shadow-inner">Add to Home Screen</strong>`;
-            } else if (isMac) {
-                bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Cmd + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
-            } else {
-                // Explicitly set for standard desktop (Windows/Linux)
-                bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Ctrl + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
-            }
+    if (isMobile) {
+        // whitespace-nowrap prevents 'Add to Home Screen' from splitting awkwardly on small phones
+        bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px]">Tap menu</span> <i class="fas fa-ellipsis-v mx-1.5 text-gray-400"></i> <span class="font-black text-white text-[11px]">& select</span> <strong class="text-white font-black bg-white/10 px-1.5 py-0.5 rounded ml-1 whitespace-nowrap shadow-inner">Add to Home Screen</strong>`;
+    } else if (isMac) {
+        bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Cmd + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
+    } else {
+        // Explicitly set for standard desktop (Windows/Linux)
+        bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Ctrl + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
+    }
 
-            bookmarkPopup.classList.remove('translate-y-32', 'opacity-0');
-            bookmarkPopup.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+    bookmarkPopup.classList.remove('translate-y-32', 'opacity-0');
+    bookmarkPopup.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
 
-            // Auto-hide after 20 seconds if they ignore it
-            setTimeout(() => {
+    // Auto-hide after 20 seconds if they ignore it
+    setTimeout(() => {
+        closeBookmarkPopup();
+    }, 20000);
+}
+
+function triggerBookmark(e) {
+    // Prevent the close button from triggering this event
+    if (e && e.target.closest('button')) return;
+
+    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+    const shortcut = isMac ? 'Cmd + D' : 'Ctrl + D';
+    const kbd = document.getElementById('kbdShortcut');
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        showToast("Tap menu <i class='fas fa-ellipsis-v mx-1 text-gray-500'></i> & select <strong class='text-white font-black'>Add to Home Screen</strong>!");
+    } else {
+        // Try legacy IE approach just in case (rarely works on modern browsers)
+        if (window.external && ('AddFavorite' in window.external)) {
+            try {
+                window.external.AddFavorite(window.location.href, document.title);
                 closeBookmarkPopup();
-            }, 20000);
+                return;
+            } catch (err) { }
         }
 
-        function triggerBookmark(e) {
-            // Prevent the close button from triggering this event
-            if (e && e.target.closest('button')) return;
-
-            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-            const shortcut = isMac ? 'Cmd + D' : 'Ctrl + D';
-            const kbd = document.getElementById('kbdShortcut');
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-            if (isMobile) {
-                showToast("Tap menu <i class='fas fa-ellipsis-v mx-1 text-gray-500'></i> & select <strong class='text-white font-black'>Add to Home Screen</strong>!");
-            } else {
-                // Try legacy IE approach just in case (rarely works on modern browsers)
-                if (window.external && ('AddFavorite' in window.external)) {
-                    try {
-                        window.external.AddFavorite(window.location.href, document.title);
-                        closeBookmarkPopup();
-                        return;
-                    } catch (err) { }
-                }
-
-                // Elegant hover/click flash effect for the keyboard shortcut
-                if (kbd) {
-                    kbd.classList.add('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
-                    setTimeout(() => {
-                        kbd.classList.remove('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
-                    }, 400);
-                }
-                showToast(`Press ${shortcut} on your keyboard to save this site!`);
-            }
+        // Elegant hover/click flash effect for the keyboard shortcut
+        if (kbd) {
+            kbd.classList.add('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
+            setTimeout(() => {
+                kbd.classList.remove('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
+            }, 400);
         }
+        showToast(`Press ${shortcut} on your keyboard to save this site!`);
+    }
+}
 
-        function closeBookmarkPopup(e) {
-            if (e) {
-                e.stopPropagation(); // Prevent triggerBookmark from firing
-            }
-            const bookmarkPopup = document.getElementById('bookmarkPopup');
-            if (bookmarkPopup) {
-                bookmarkPopup.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
-                bookmarkPopup.classList.add('translate-y-32', 'opacity-0');
-            }
-        }
+function closeBookmarkPopup(e) {
+    if (e) {
+        e.stopPropagation(); // Prevent triggerBookmark from firing
+    }
+    const bookmarkPopup = document.getElementById('bookmarkPopup');
+    if (bookmarkPopup) {
+        bookmarkPopup.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        bookmarkPopup.classList.add('translate-y-32', 'opacity-0');
+    }
+}
 
 
-        document.addEventListener('DOMContentLoaded', () => {
-            renderCategories();
-            initHeroSlider();
-            renderRecentAdds();
-            renderCategorySections();
-            initLibraryRender();
-            updateCanonical(window.location.href);
+document.addEventListener('DOMContentLoaded', () => {
+    renderCategories();
+    initHeroSlider();
+    renderRecentAdds();
+    renderCategorySections();
+    initLibraryRender();
+    updateCanonical(window.location.href);
 
-            const isBlob = window.location.protocol === 'blob:';
-            let finalScroll = 0;
+    const isBlob = window.location.protocol === 'blob:';
+    let finalScroll = 0;
 
-            if (history.state) {
-                const state = history.state;
-                switchView(state.view, state.category, false, state.displayedCount);
-                finalScroll = state.scrollY || 0;
-            } else if (!isBlob) {
-                const params = new URLSearchParams(window.location.search);
-                const view = params.get('view') || 'home';
-                const category = params.get('category');
-                try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, ''); } catch (e) { }
-                switchView(view, category, false);
-            } else {
-                switchView('home', null, false);
-            }
+    if (history.state) {
+        const state = history.state;
+        switchView(state.view, state.category, false, state.displayedCount);
+        finalScroll = state.scrollY || 0;
+    } else if (!isBlob) {
+        const params = new URLSearchParams(window.location.search);
+        const view = params.get('view') || 'home';
+        const category = params.get('category');
+        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, ''); } catch (e) { }
+        switchView(view, category, false);
+    } else {
+        switchView('home', null, false);
+    }
 
-            // Check if there is an exact scroll coordinate saved from a direct reload
-            const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
-            if (reloadScroll !== null) {
-                finalScroll = parseInt(reloadScroll, 10);
-                sessionStorage.removeItem('MovieDakhi_ExactScroll'); // Clean up so it only runs once per reload
-            }
+    // Check if there is an exact scroll coordinate saved from a direct reload
+    const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
+    if (reloadScroll !== null) {
+        finalScroll = parseInt(reloadScroll, 10);
+        sessionStorage.removeItem('MovieDakhi_ExactScroll'); // Clean up so it only runs once per reload
+    }
 
-            // Synchronously force DOM to calculate dimensions before first paint
-            void document.documentElement.offsetHeight; 
-            window.scrollTo({ top: finalScroll, behavior: 'instant' });
-            
-            // Double lock: Ensures browsers that defer scrolling comply immediately
-            requestAnimationFrame(() => {
-                window.scrollTo({ top: finalScroll, behavior: 'instant' });
-                setTimeout(() => window.scrollTo({ top: finalScroll, behavior: 'instant' }), 10);
-            });
-        });
+    // Synchronously force DOM to calculate dimensions before first paint
+    void document.documentElement.offsetHeight;
+    window.scrollTo({ top: finalScroll, behavior: 'instant' });
 
-        window.addEventListener('popstate', (event) => {
-            const state = event.state;
-            const modal = document.getElementById('movieModal');
-            if (modal && !modal.classList.contains('hidden') && (!state || !state.isModalOpen)) {
-                closeModal(false);
-            }
-            if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
-                toggleCategoryMenu(false, false);
-            }
-            if (state) {
-                updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
-                switchView(state.view, state.category, false, state.displayedCount);
-                // Synchronously force DOM layout
-                void document.documentElement.offsetHeight;
-                window.scrollTo({ top: state.scrollY || 0, behavior: 'instant' });
-            } else { 
-                switchView('home', null, false); 
-                void document.documentElement.offsetHeight;
-                window.scrollTo({ top: 0, behavior: 'instant' });
-            }
-        });
+    // Double lock: Ensures browsers that defer scrolling comply immediately
+    requestAnimationFrame(() => {
+        window.scrollTo({ top: finalScroll, behavior: 'instant' });
+        setTimeout(() => window.scrollTo({ top: finalScroll, behavior: 'instant' }), 10);
+    });
+});
 
-        window.addEventListener('click', (e) => {
-            if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal();
+window.addEventListener('popstate', (event) => {
+    const state = event.state;
+    const modal = document.getElementById('movieModal');
+    if (modal && !modal.classList.contains('hidden') && (!state || !state.isModalOpen)) {
+        closeModal(false);
+    }
+    if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
+        toggleCategoryMenu(false, false);
+    }
+    if (state) {
+        updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
+        switchView(state.view, state.category, false, state.displayedCount);
+        // Synchronously force DOM layout
+        void document.documentElement.offsetHeight;
+        window.scrollTo({ top: state.scrollY || 0, behavior: 'instant' });
+    } else {
+        switchView('home', null, false);
+        void document.documentElement.offsetHeight;
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+});
 
-            // Re-added click-outside logic for the menu, excluding the FAB
-            if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
-        });
+window.addEventListener('click', (e) => {
+    if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal();
 
-        // ==========================================
-        // ANNOUNCEMENT POPUP LOGIC 
-        // ==========================================
+    // Re-added click-outside logic for the menu, excluding the FAB
+    if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
+});
 
+// ==========================================
+// ANNOUNCEMENT POPUP LOGIC 
+// ==========================================
+
+        // New Popup Box Start
         function showAnnouncement() {
             const popup = document.getElementById('announcementPopup');
             if (!popup) return;
@@ -6286,7 +6289,8 @@ ${infoText}
 
             }, 500);
         }
-        
+        // New Popup Box End
+
 
 // ==========================================
 // SECURITY & ANTI-INSPECT MEASURES
@@ -6305,7 +6309,7 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'F12') {
         e.preventDefault();
     }
-    
+
     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
         e.preventDefault();
@@ -6315,12 +6319,12 @@ document.addEventListener('keydown', (e) => {
     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
         e.preventDefault();
     }
-    
+
     // Block Ctrl+S / Cmd+S (Save Page)
     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
         e.preventDefault();
     }
-    
+
     // Block Ctrl+P / Cmd+P (Print Page)
     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
         e.preventDefault();
