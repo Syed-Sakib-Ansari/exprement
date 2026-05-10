@@ -306,10 +306,10 @@ body {
     display: block;
 }
 
-/* ==================================================== */
-/* ANNOUNCEMENT POPUP STYLING (COMMENTED OUT)           */
-/* ==================================================== */
-
+        /* ==================================================== */
+        /* ANNOUNCEMENT POPUP STYLING                           */
+        /* ==================================================== */
+        
         /* New Popup Box Start */
         #announcementPopup.active #popupBackdrop {
             opacity: 1;
@@ -338,6 +338,14 @@ body {
 
         .popup-bell-icon {
             animation: popupBellPulse 2s infinite;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         }
         /* New Popup Box End */
 
