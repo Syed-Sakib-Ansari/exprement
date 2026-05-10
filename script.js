@@ -6088,7 +6088,7 @@ searchInput.addEventListener('keydown', (e) => {
                 showAnnouncement();
                 sessionStorage.setItem('popupSeen', 'true');
             }
-        }, 7500);
+        }, 3500);
         // New Popup Box End
 
 // Helper function to show toast messages
