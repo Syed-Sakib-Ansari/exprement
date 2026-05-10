@@ -5785,12 +5785,20 @@ ${infoText}
             const currentState = history.state || {};
             // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
             try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+            
+            // ================== Facebook browser problem Start ==================
+            // Double PushState Trap: Push a dummy history state first. 
+            // If the Facebook browser redirects for an ad popup and the user hits back, it consumes this trap
+            // instead of closing the modal. This keeps the iframe completely alive and ad counters working!
+            try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, fbTrap: true }, ''); } catch (e) { }
+            // ================== Facebook browser problem End ==================
+            
             try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id }, ''); } catch (e) { }
 
             const item = contentData.find(m => m.id === id);
             
             // ================== Facebook browser problem Start ==================
-            // We check if the user is reopening the exact same movie they were just on.
+            // Check if the user is reopening the exact same movie they were just on.
             const isSameMovie = currentItem && currentItem.id === id;
             // ================== Facebook browser problem End ==================
 
@@ -5840,11 +5848,8 @@ ${infoText}
             const actualVideoContainer = document.getElementById('actualVideo');
             
             // ================== Facebook browser problem Start ==================
-            // Added strict sandbox attributes. This prevents popup ads inside the video player
-            // from hijacking the main top window (top.location redirect).
-            // By forcing ads into actual popups, the Facebook app browser handles them as separate overlays.
-            // Also, if the user re-opens the exact same movie, we DO NOT destroy the iframe. This protects the 
-            // 3rd party ad click counter from resetting if Facebook accidentally minimizes the modal.
+            // 1. Removed strict sandbox attribute so the video player's ad scripts work normally and do not display "Sandboxed".
+            // 2. If it's the exact same movie, we DO NOT rebuild the iframe innerHTML. This guarantees the ad click counter stays intact.
             if (actualVideoContainer) {
                 actualVideoContainer.classList.remove('hidden');
                 
@@ -5852,8 +5857,7 @@ ${infoText}
                 const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
                 
                 if (needsNewIframe) {
-                    const sandboxAttr = 'sandbox="allow-scripts allow-same-origin allow-forms allow-presentation allow-popups allow-popups-to-escape-sandbox"';
-                    actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ${sandboxAttr}></iframe>`;
+                    actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
                 }
             }
             // ================== Facebook browser problem End ==================
@@ -5929,7 +5933,6 @@ ${infoText}
             }
         }
 
-        // NOTE: playDefault is now deprecated as the video autoloads, but kept for safe measures.
         function playDefault() {
             if (!currentItem) return;
             let url = currentItem.episodes ? currentItem.episodes[0].embedUrl : currentItem.embedUrl;
@@ -5939,18 +5942,9 @@ ${infoText}
                 actualVideo.classList.remove('hidden');
                 
                 // ================== Facebook browser problem Start ==================
-                const sandboxAttr = 'sandbox="allow-scripts allow-same-origin allow-forms allow-presentation allow-popups allow-popups-to-escape-sandbox"';
-                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ${sandboxAttr}></iframe>`;
+                // Sandbox and forced iframe reload to "about:blank" removed so ad counters function perfectly.
+                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
                 // ================== Facebook browser problem End ==================
-            }
-            
-            // Force iframe reload (Fixes hash-based URL caching issues)
-            const videoIframe = document.getElementById('videoIframe');
-            if (videoIframe) {
-                videoIframe.src = 'about:blank';
-                setTimeout(() => {
-                    videoIframe.src = url;
-                }, 50);
             }
         }
 
@@ -5966,18 +5960,9 @@ ${infoText}
                 actualVideo.classList.remove('hidden');
                 
                 // ================== Facebook browser problem Start ==================
-                const sandboxAttr = 'sandbox="allow-scripts allow-same-origin allow-forms allow-presentation allow-popups allow-popups-to-escape-sandbox"';
-                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ${sandboxAttr}></iframe>`;
+                // Sandbox and forced iframe reload to "about:blank" removed so ad counters function perfectly.
+                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
                 // ================== Facebook browser problem End ==================
-            }
-
-            // Force iframe reload (Fixes hash-based URL caching issues)
-            const videoIframe = document.getElementById('videoIframe');
-            if (videoIframe) {
-                videoIframe.src = 'about:blank';
-                setTimeout(() => {
-                    videoIframe.src = url;
-                }, 50);
             }
             
             // Update the selected episode for downloading, and reset the download button process
@@ -6013,10 +5998,8 @@ ${infoText}
             }
 
             // ================== Facebook browser problem Start ==================
-            // We ONLY destroy the iframe and stop the background video IF the user explicitly clicks the Close (X) button.
-            // If the modal was hidden by the browser's Back button (popstate), we DO NOT destroy the iframe!
-            // This ensures their progress on the ad click sequence is perfectly saved if the FB browser accidentally 
-            // triggers a back navigation while they are managing a popup ad.
+            // ONLY destroy the iframe if user explicitly clicked the Close X button or background.
+            // This prevents the player state from resetting during accidental popstate events (hitting back after ads).
             if (explicitClose) {
                 setTimeout(() => { 
                     const videoIframe = document.getElementById('videoIframe');
@@ -6033,6 +6016,17 @@ ${infoText}
 
             if (triggerBack && window.history.state?.isModalOpen) {
                 window.history.back();
+                
+                // ================== Facebook browser problem Start ==================
+                // If it was an explicit close, we need to bypass the back-button trap we set earlier
+                if (explicitClose) {
+                    setTimeout(() => {
+                        if (window.history.state && window.history.state.fbTrap) {
+                            window.history.back();
+                        }
+                    }, 50);
+                }
+                // ================== Facebook browser problem End ==================
             }
         }
 
@@ -6247,6 +6241,13 @@ ${infoText}
         window.addEventListener('popstate', (event) => {
             const state = event.state;
             const modal = document.getElementById('movieModal');
+            
+            // ================== Facebook browser problem Start ==================
+            if (state && state.fbTrap) {
+                // User hit back from an ad, just absorb it and keep the modal perfectly open!
+                return;
+            }
+            // ================== Facebook browser problem End ==================
             
             if (modal && !modal.classList.contains('hidden') && (!state || !state.isModalOpen)) {
                 // Call closeModal via popstate trigger, and FALSE for explicitClose to preserve iframe ad state
