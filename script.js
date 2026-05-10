@@ -6379,65 +6379,63 @@ ${infoText}
         // EXTERNAL BROWSER INTENT LOGIC 
         // ==========================================
         function openInBrowser(browser) {
-            // Hardcoded to ensure it always opens exactly your website link
             const targetDomain = 'moviedakhi.com'; 
-            
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
             const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
             const isAndroid = /android/i.test(userAgent);
             
-            let targetUrl = `https://${targetDomain}`; 
+            let schemeUrl = '';
 
-            if (isAndroid) {
-                // Map of all major browser packages including Beta, Mini, Dev, and Nightly versions
-                const browserPackages = {
-                    chrome: ['com.android.chrome', 'com.chrome.beta', 'com.chrome.dev', 'com.chrome.canary'],
-                    edge: ['com.microsoft.emmx', 'com.microsoft.emmx.beta', 'com.microsoft.emmx.canary'],
-                    opera: ['com.opera.browser', 'com.opera.mini.native', 'com.opera.touch', 'com.opera.browser.beta'],
-                    firefox: ['org.mozilla.firefox', 'org.mozilla.firefox_beta', 'org.mozilla.fenix', 'org.mozilla.focus'],
-                    brave: ['com.brave.browser', 'com.brave.browser_beta', 'com.brave.browser_nightly'],
-                    ucbrowser: ['com.UCMobile.intl', 'com.UCMobile.internet.org', 'com.uc.browser.en', 'com.uc.browser.hd'],
-                    vivaldi: ['com.vivaldi.browser', 'com.vivaldi.browser.snapshot'],
-                    duckduckgo: ['com.duckduckgo.mobile.android'],
-                    safari: [] // Safari doesn't exist on Android
-                };
+            // Custom Schemes: These natively target the apps directly (including Betas) WITHOUT triggering the Play Store.
+            if (browser === 'chrome') schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
+            else if (browser === 'edge') schemeUrl = `microsoft-edge-https://${targetDomain}`;
+            else if (browser === 'opera') schemeUrl = `opera-http://${targetDomain}`;
+            else if (browser === 'firefox') schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
+            else if (browser === 'brave') schemeUrl = `brave://open-url?url=https://${targetDomain}`;
+            else if (browser === 'ucbrowser') schemeUrl = `ucbrowser://${targetDomain}`;
+            else if (browser === 'safari') schemeUrl = `x-safari-https://${targetDomain}`;
+            else if (browser === 'vivaldi') schemeUrl = `vivaldi://${targetDomain}`;
+            else if (browser === 'duckduckgo') schemeUrl = `ddg://${targetDomain}`;
 
-                const packages = browserPackages[browser] || [];
-                
-                if (packages.length > 0) {
-                    // Set up the next fallback iteration
-                    const nextPkg = packages[1] || 'generic';
-                    const nextFallbackUrl = encodeURIComponent(`https://${targetDomain}?fb_fallback=${nextPkg}&fb_next_idx=2&browser=${browser}`);
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=${packages[0]};action=android.intent.action.VIEW;S.browser_fallback_url=${nextFallbackUrl};end;`;
-                } else {
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
+            let appOpened = false;
+
+            // Track if the OS successfully opened the app
+            function handleVisibilityChange() {
+                if (document.visibilityState === 'hidden' || document.hidden) {
+                    appOpened = true;
                 }
+            }
+            document.addEventListener("visibilitychange", handleVisibilityChange);
+            window.addEventListener("pagehide", () => { appOpened = true; });
+            window.addEventListener("blur", () => { appOpened = true; });
 
-            } else if (isIOS) {
-                // iOS Custom URL Schemes (these automatically translate to https://moviedakhi.com inside the app)
-                if (browser === 'chrome') { targetUrl = `googlechrome://${targetDomain}`; } 
-                else if (browser === 'edge') { targetUrl = `microsoft-edge-https://${targetDomain}`; } 
-                else if (browser === 'opera') { targetUrl = `touch-https://${targetDomain}`; } 
-                else if (browser === 'firefox') { targetUrl = `firefox://open-url?url=https://${targetDomain}`; } 
-                else if (browser === 'brave') { targetUrl = `brave://open-url?url=https://${targetDomain}`; } 
-                else if (browser === 'ucbrowser') { targetUrl = `ucbrowser://${targetDomain}`; } 
-                else if (browser === 'safari') { targetUrl = `x-safari-https://${targetDomain}`; } 
-                else if (browser === 'vivaldi') { targetUrl = `vivaldi://${targetDomain}`; } 
-                else if (browser === 'duckduckgo') { targetUrl = `ddg://${targetDomain}`; }
+            if (schemeUrl) {
+                // Try opening the specific browser
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = schemeUrl;
+                document.body.appendChild(iframe);
+                
+                // Fallback Engine: If the app didn't open (meaning it's not installed), use the Universal Safe Intent
+                setTimeout(() => {
+                    document.body.removeChild(iframe);
+                    document.removeEventListener("visibilitychange", handleVisibilityChange);
+                    
+                    if (!appOpened) {
+                        if (isAndroid) {
+                            // Universal Android Intent: Opens the default browser or App Chooser. Never the Play Store.
+                            window.location.href = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
+                        } else if (isIOS) {
+                            // Universal iOS Fallback
+                            window.location.href = `x-safari-https://${targetDomain}`;
+                        } else {
+                            window.location.href = `https://${targetDomain}`;
+                        }
+                    }
+                }, 1000);
             }
 
-            // Aggressive anchor click method to bypass Facebook WebView strict blocking
-            const a = document.createElement('a');
-            a.href = targetUrl;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            
-            // Provide user feedback while the OS attempts to launch the app
-            if (isIOS && browser === 'safari') {
-                // Apple heavily blocks Safari deep links in Facebook, so we MUST tell the user the manual way just in case.
-                showToast(`If Safari doesn't open, tap the 3 dots (•••) at the top right and tap 'Open in System Browser'.`);
-            } else if (!isAndroid && !isIOS) {
+            if (!isAndroid && !isIOS) {
                 showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
             } else {
                 showToast("Redirecting to browser...");
@@ -6488,58 +6486,58 @@ ${infoText}
 // ==========================================
 
 // 1. Disable Right Click entirely to hide 'Inspect' everywhere
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-});
+// document.addEventListener('contextmenu', (e) => {
+//     e.preventDefault();
+// });
 
-document.addEventListener('keydown', (e) => {
-    // Allow normal keyboard behavior inside the search box
-    if (e.target.id === 'searchInput') return;
+// document.addEventListener('keydown', (e) => {
+//     // Allow normal keyboard behavior inside the search box
+//     if (e.target.id === 'searchInput') return;
 
-    // Block F12 (DevTools)
-    if (e.key === 'F12') {
-        e.preventDefault();
-    }
+//     // Block F12 (DevTools)
+//     if (e.key === 'F12') {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
+//     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+U / Cmd+Opt+U (View Source)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+U / Cmd+Opt+U (View Source)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+S / Cmd+S (Save Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+S / Cmd+S (Save Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+P / Cmd+P (Print Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+P / Cmd+P (Print Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+//         e.preventDefault();
+//     }
 
-    // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
-        e.preventDefault();
-    }
-});
+//     // Block Copy/Cut shortcuts (Ctrl+C, Ctrl+X) globally outside search box
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'C' || e.key === 'c' || e.key === 'X' || e.key === 'x')) {
+//         e.preventDefault();
+//     }
+// });
 
-// 3. Prevent Native Copy, Cut, Paste events (except search box)
-['copy', 'cut', 'paste'].forEach(evt => {
-    document.addEventListener(evt, (e) => {
-        if (e.target.id !== 'searchInput') {
-            e.preventDefault();
-        }
-    });
-});
+// // 3. Prevent Native Copy, Cut, Paste events (except search box)
+// ['copy', 'cut', 'paste'].forEach(evt => {
+//     document.addEventListener(evt, (e) => {
+//         if (e.target.id !== 'searchInput') {
+//             e.preventDefault();
+//         }
+//     });
+// });
 
-// 4. Prevent Dragging elements (like ghost-dragging images to save them)
-document.addEventListener('dragstart', (e) => {
-    // Allow FAB pointer dragging, but prevent native HTML element dragging
-    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-        e.preventDefault();
-    }
-});
+// // 4. Prevent Dragging elements (like ghost-dragging images to save them)
+// document.addEventListener('dragstart', (e) => {
+//     // Allow FAB pointer dragging, but prevent native HTML element dragging
+//     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+//         e.preventDefault();
+//     }
+// });
