@@ -5555,6 +5555,7 @@ const contentData = [
                     if (!isBlob) {
                         const url = new URL(window.location);
                         url.searchParams.set('view', viewName);
+                        url.searchParams.delete('m'); // Ensure modal param is cleared when navigating views
                         if (filterCategory && filterCategory !== 'all' && viewName === 'library') {
                             url.searchParams.set('category', filterCategory);
                         } else {
@@ -5778,22 +5779,26 @@ ${infoText}
             if (libraryDisplayedCount < libraryData.length) loading.classList.remove('hidden'); else loading.classList.add('hidden');
         }
 
-        function openModal(id) {
+        function openModal(id, isRestore = false) {
             // Smoothly hide the FAB button while modal is open
             document.getElementById('mobileFab').classList.add('fab-hidden');
 
             // Save precise scroll position before opening
             savedScrollY = window.scrollY;
 
-            // ================== Facebook browser problem Start ==================
-            // Save the open movie ID to restore it if Facebook browser reloads/drops state after ad redirect
-            sessionStorage.setItem('MovieDakhi_OpenModalId', id);
-            // ================== Facebook browser problem End ==================
-
-            const currentState = history.state || {};
-            // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
-            try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-            try { window.history.pushState({ ...currentState, isModalOpen: true }, ''); } catch (e) { }
+            if (!isRestore) {
+                const currentState = history.state || {};
+                // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
+                try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+                
+                // ================== Facebook browser problem Start ==================
+                // We use URL parameters instead of sessionStorage. Facebook's in-app browser handles URL state 
+                // much more reliably than hidden state objects or session storage when redirecting back from ads.
+                const url = new URL(window.location);
+                url.searchParams.set('m', id);
+                try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id }, '', url); } catch (e) { }
+                // ================== Facebook browser problem End ==================
+            }
 
             const item = contentData.find(m => m.id === id);
             currentItem = item;
@@ -5981,11 +5986,6 @@ ${infoText}
             const modal = document.getElementById('movieModal');
             if (modal.classList.contains('hidden')) return;
 
-            // ================== Facebook browser problem Start ==================
-            // Clear the saved modal ID when user intentionally closes the modal
-            sessionStorage.removeItem('MovieDakhi_OpenModalId');
-            // ================== Facebook browser problem End ==================
-
             // Show FAB button gracefully again
             document.getElementById('mobileFab').classList.remove('fab-hidden');
 
@@ -5996,6 +5996,12 @@ ${infoText}
             }
 
             if (!triggerBack) {
+                // ================== Facebook browser problem Start ==================
+                const url = new URL(window.location);
+                url.searchParams.delete('m');
+                try { window.history.replaceState(history.state, '', url); } catch (e) {}
+                // ================== Facebook browser problem End ==================
+
                 modal.classList.add('hidden');
                 modal.classList.remove('active');
             } else {
@@ -6232,41 +6238,52 @@ ${infoText}
             });
 
             // ================== Facebook browser problem Start ==================
-            // Restore modal if it was open before reload/redirect (fixes Facebook webview issue)
-            const savedModalId = sessionStorage.getItem('MovieDakhi_OpenModalId');
-            if (savedModalId !== null) {
-                const modalIdInt = parseInt(savedModalId, 10);
-                if (!isNaN(modalIdInt)) openModal(modalIdInt, true);
+            const urlParams = new URLSearchParams(window.location.search);
+            const mId = urlParams.get('m');
+            if (mId !== null) {
+                const parsedId = parseInt(mId, 10);
+                if (!isNaN(parsedId)) {
+                    openModal(parsedId, true);
+                }
             } else if (history.state && history.state.isModalOpen && history.state.modalId !== undefined) {
                 openModal(history.state.modalId, true);
             }
             // ================== Facebook browser problem End ==================
-
         });
 
         window.addEventListener('popstate', (event) => {
             const state = event.state;
             const modal = document.getElementById('movieModal');
-            if (modal && !modal.classList.contains('hidden') && (!state || !state.isModalOpen)) {
+            
+            // ================== Facebook browser problem Start ==================
+            const urlParams = new URLSearchParams(window.location.search);
+            const mId = urlParams.get('m');
+            const hasModalInUrl = mId !== null;
+
+            if (modal && !modal.classList.contains('hidden') && !hasModalInUrl && (!state || !state.isModalOpen)) {
                 closeModal(false);
             }
+            // ================== Facebook browser problem End ==================
+
             if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
                 toggleCategoryMenu(false, false);
             }
-            if (state) {
+            
+            if (state || window.location.search) {
                 updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
-                switchView(state.view, state.category, false, state.displayedCount);
+                switchView(state?.view || 'home', state?.category || null, false, state?.displayedCount || 30);
                 // Synchronously force DOM layout
                 void document.documentElement.offsetHeight;
-                window.scrollTo({ top: state.scrollY || 0, behavior: 'instant' });
+                window.scrollTo({ top: state?.scrollY || 0, behavior: 'instant' });
 
                 // ================== Facebook browser problem Start ==================
-                // If user navigates back to a state where a modal was open, reopen it natively
-                if (state.isModalOpen && state.modalId !== undefined) {
+                if (hasModalInUrl) {
+                    const parsedId = parseInt(mId, 10);
+                    if (!isNaN(parsedId)) openModal(parsedId, true);
+                } else if (state && state.isModalOpen && state.modalId !== undefined) {
                     openModal(state.modalId, true);
                 }
                 // ================== Facebook browser problem End ==================
-                
             } else { 
                 switchView('home', null, false); 
                 void document.documentElement.offsetHeight;
