@@ -5125,9 +5125,7 @@ const contentData = [
 
         let currentItem = null;
         let downloadClickCount = 0; // Track the clicks for custom download button logic
-        // ================== NEW FUNCTION START ==================
         let currentEpisodeIndex = null;
-        // ================== NEW FUNCTION END ==================
         let preSearchState = null; // Stores user location before search starts
         let currentView = 'home';
         let sliderInterval;
@@ -5140,7 +5138,6 @@ const contentData = [
         const sliderDots = document.getElementById('sliderDots');
         const searchInput = document.getElementById('searchInput');
         const searchIcon = document.getElementById('searchIcon');
-        const videoIframe = document.getElementById('videoIframe');
         const categoryMenu = document.getElementById('categoryMenu');
 
         let libraryData = [];
@@ -5555,7 +5552,6 @@ const contentData = [
                     if (!isBlob) {
                         const url = new URL(window.location);
                         url.searchParams.set('view', viewName);
-                        url.searchParams.delete('m'); // Ensure modal param is cleared when navigating views
                         if (filterCategory && filterCategory !== 'all' && viewName === 'library') {
                             url.searchParams.set('category', filterCategory);
                         } else {
@@ -5779,28 +5775,25 @@ ${infoText}
             if (libraryDisplayedCount < libraryData.length) loading.classList.remove('hidden'); else loading.classList.add('hidden');
         }
 
-        function openModal(id, isRestore = false) {
+        function openModal(id) {
             // Smoothly hide the FAB button while modal is open
             document.getElementById('mobileFab').classList.add('fab-hidden');
 
             // Save precise scroll position before opening
             savedScrollY = window.scrollY;
 
-            if (!isRestore) {
-                const currentState = history.state || {};
-                // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
-                try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-                
-                // ================== Facebook browser problem Start ==================
-                // We use URL parameters instead of sessionStorage. Facebook's in-app browser handles URL state 
-                // much more reliably than hidden state objects or session storage when redirecting back from ads.
-                const url = new URL(window.location);
-                url.searchParams.set('m', id);
-                try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id }, '', url); } catch (e) { }
-                // ================== Facebook browser problem End ==================
-            }
+            const currentState = history.state || {};
+            // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
+            try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+            try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id }, ''); } catch (e) { }
 
             const item = contentData.find(m => m.id === id);
+            
+            // ================== Facebook browser problem Start ==================
+            // We check if the user is reopening the exact same movie they were just on.
+            const isSameMovie = currentItem && currentItem.id === id;
+            // ================== Facebook browser problem End ==================
+
             currentItem = item;
             document.getElementById('modalTitle').innerText = item.title;
             document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
@@ -5821,7 +5814,7 @@ ${infoText}
             if (wave) wave.classList.remove('hidden');
             
             if (item.episodes && item.episodes.length > 0) {
-                currentEpisodeIndex = 0;
+                if(!isSameMovie) currentEpisodeIndex = 0;
             } else {
                 currentEpisodeIndex = null;
             }
@@ -5835,7 +5828,7 @@ ${infoText}
                 item.episodes.forEach((ep, idx) => {
                     const btn = document.createElement('button');
                     btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
-                    if (idx === 0) btn.classList.add('active'); // Set first episode as active visually
+                    if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active'); // Set active visually
                     btn.innerText = ep.title;
                     btn.onclick = () => playEpisode(idx, btn);
                     epList.appendChild(btn);
@@ -5843,12 +5836,27 @@ ${infoText}
             } else { seriesSec.classList.add('hidden'); }
 
             // Directly auto-load the first video or the main movie video
-            let url = item.episodes ? item.episodes[0].embedUrl : item.embedUrl;
+            let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
             const actualVideoContainer = document.getElementById('actualVideo');
+            
+            // ================== Facebook browser problem Start ==================
+            // Added strict sandbox attributes. This prevents popup ads inside the video player
+            // from hijacking the main top window (top.location redirect).
+            // By forcing ads into actual popups, the Facebook app browser handles them as separate overlays.
+            // Also, if the user re-opens the exact same movie, we DO NOT destroy the iframe. This protects the 
+            // 3rd party ad click counter from resetting if Facebook accidentally minimizes the modal.
             if (actualVideoContainer) {
                 actualVideoContainer.classList.remove('hidden');
-                actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                
+                const existingIframe = document.getElementById('videoIframe');
+                const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
+                
+                if (needsNewIframe) {
+                    const sandboxAttr = 'sandbox="allow-scripts allow-same-origin allow-forms allow-presentation allow-popups allow-popups-to-escape-sandbox"';
+                    actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ${sandboxAttr}></iframe>`;
+                }
             }
+            // ================== Facebook browser problem End ==================
 
             const modal = document.getElementById('movieModal');
             modal.classList.remove('hidden');
@@ -5900,13 +5908,11 @@ ${infoText}
                 // Change button style to look expired/disabled
                 const downloadBtn = document.getElementById('mainDownloadBtn');
                 if (downloadBtn) {
-                    // ================== LINK EXPIRE BUTTON DESIGN START ==================
                     // Remove vibrant styles
                     downloadBtn.classList.remove('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
 
                     // Add solid dark design with white border matching image (no gradient)
                     downloadBtn.classList.add('!bg-none', '!bg-[#111]', '!border-white', '!text-white', 'cursor-not-allowed', 'opacity-80');
-                    // ================== LINK EXPIRE BUTTON DESIGN END ==================
 
                     // Remove the continuous shine wave when expired
                     const wave = downloadBtn.querySelector('.animate-shine-wave');
@@ -5923,6 +5929,7 @@ ${infoText}
             }
         }
 
+        // NOTE: playDefault is now deprecated as the video autoloads, but kept for safe measures.
         function playDefault() {
             if (!currentItem) return;
             let url = currentItem.episodes ? currentItem.episodes[0].embedUrl : currentItem.embedUrl;
@@ -5930,7 +5937,11 @@ ${infoText}
             const actualVideo = document.getElementById('actualVideo');
             if (actualVideo) {
                 actualVideo.classList.remove('hidden');
-                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                
+                // ================== Facebook browser problem Start ==================
+                const sandboxAttr = 'sandbox="allow-scripts allow-same-origin allow-forms allow-presentation allow-popups allow-popups-to-escape-sandbox"';
+                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ${sandboxAttr}></iframe>`;
+                // ================== Facebook browser problem End ==================
             }
             
             // Force iframe reload (Fixes hash-based URL caching issues)
@@ -5950,13 +5961,15 @@ ${infoText}
 
             let url = episode.embedUrl;
 
-            // ================== Immediately Full Modal Box Close START ==================
             const actualVideo = document.getElementById('actualVideo');
             if (actualVideo) {
                 actualVideo.classList.remove('hidden');
-                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                
+                // ================== Facebook browser problem Start ==================
+                const sandboxAttr = 'sandbox="allow-scripts allow-same-origin allow-forms allow-presentation allow-popups allow-popups-to-escape-sandbox"';
+                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ${sandboxAttr}></iframe>`;
+                // ================== Facebook browser problem End ==================
             }
-            // ================== Immediately Full Modal Box Close END ==================
 
             // Force iframe reload (Fixes hash-based URL caching issues)
             const videoIframe = document.getElementById('videoIframe');
@@ -5982,26 +5995,14 @@ ${infoText}
             if (wave) wave.classList.remove('hidden');
         }
 
-        function closeModal(triggerBack = true) {
+        function closeModal(triggerBack = true, explicitClose = false) {
             const modal = document.getElementById('movieModal');
             if (modal.classList.contains('hidden')) return;
 
             // Show FAB button gracefully again
             document.getElementById('mobileFab').classList.remove('fab-hidden');
 
-            // ================== Immediately Full Modal Box Close START ==================
-            const actualVideo = document.getElementById('actualVideo');
-            if (actualVideo) {
-                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-            }
-
             if (!triggerBack) {
-                // ================== Facebook browser problem Start ==================
-                const url = new URL(window.location);
-                url.searchParams.delete('m');
-                try { window.history.replaceState(history.state, '', url); } catch (e) {}
-                // ================== Facebook browser problem End ==================
-
                 modal.classList.add('hidden');
                 modal.classList.remove('active');
             } else {
@@ -6010,14 +6011,19 @@ ${infoText}
                     modal.classList.add('hidden');
                 }, 300);
             }
-            // ================== Immediately Full Modal Box Close END ==================
 
-            modal.classList.remove('active');
-            setTimeout(() => { 
-                modal.classList.add('hidden'); 
-                const videoIframe = document.getElementById('videoIframe');
-                if(videoIframe) videoIframe.src = ""; 
-            }, 300);
+            // ================== Facebook browser problem Start ==================
+            // We ONLY destroy the iframe and stop the background video IF the user explicitly clicks the Close (X) button.
+            // If the modal was hidden by the browser's Back button (popstate), we DO NOT destroy the iframe!
+            // This ensures their progress on the ad click sequence is perfectly saved if the FB browser accidentally 
+            // triggers a back navigation while they are managing a popup ad.
+            if (explicitClose) {
+                setTimeout(() => { 
+                    const videoIframe = document.getElementById('videoIframe');
+                    if(videoIframe) videoIframe.src = ""; 
+                }, 300);
+            }
+            // ================== Facebook browser problem End ==================
 
             // Remove body lock and instantly restore the exact scroll position
             document.body.style.position = '';
@@ -6236,35 +6242,17 @@ ${infoText}
                 window.scrollTo({ top: finalScroll, behavior: 'instant' });
                 setTimeout(() => window.scrollTo({ top: finalScroll, behavior: 'instant' }), 10);
             });
-
-            // ================== Facebook browser problem Start ==================
-            const urlParams = new URLSearchParams(window.location.search);
-            const mId = urlParams.get('m');
-            if (mId !== null) {
-                const parsedId = parseInt(mId, 10);
-                if (!isNaN(parsedId)) {
-                    openModal(parsedId, true);
-                }
-            } else if (history.state && history.state.isModalOpen && history.state.modalId !== undefined) {
-                openModal(history.state.modalId, true);
-            }
-            // ================== Facebook browser problem End ==================
         });
 
         window.addEventListener('popstate', (event) => {
             const state = event.state;
             const modal = document.getElementById('movieModal');
             
-            // ================== Facebook browser problem Start ==================
-            const urlParams = new URLSearchParams(window.location.search);
-            const mId = urlParams.get('m');
-            const hasModalInUrl = mId !== null;
-
-            if (modal && !modal.classList.contains('hidden') && !hasModalInUrl && (!state || !state.isModalOpen)) {
-                closeModal(false);
+            if (modal && !modal.classList.contains('hidden') && (!state || !state.isModalOpen)) {
+                // Call closeModal via popstate trigger, and FALSE for explicitClose to preserve iframe ad state
+                closeModal(false, false);
             }
-            // ================== Facebook browser problem End ==================
-
+            
             if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
                 toggleCategoryMenu(false, false);
             }
@@ -6275,15 +6263,6 @@ ${infoText}
                 // Synchronously force DOM layout
                 void document.documentElement.offsetHeight;
                 window.scrollTo({ top: state?.scrollY || 0, behavior: 'instant' });
-
-                // ================== Facebook browser problem Start ==================
-                if (hasModalInUrl) {
-                    const parsedId = parseInt(mId, 10);
-                    if (!isNaN(parsedId)) openModal(parsedId, true);
-                } else if (state && state.isModalOpen && state.modalId !== undefined) {
-                    openModal(state.modalId, true);
-                }
-                // ================== Facebook browser problem End ==================
             } else { 
                 switchView('home', null, false); 
                 void document.documentElement.offsetHeight;
@@ -6292,7 +6271,8 @@ ${infoText}
         });
 
         window.addEventListener('click', (e) => {
-            if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal();
+            // Passing (true, true) flags that this was an EXPLICIT user close (they clicked X or background), so the iframe CAN safely be destroyed.
+            if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal(true, true);
 
             // Re-added click-outside logic for the menu, excluding the FAB
             if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
