@@ -6374,47 +6374,43 @@ ${infoText}
             let targetUrl = `https://${targetDomain}`; 
 
             if (isAndroid) {
-                // Proper Android Intent URIs that force the OS to open the specific package with your link
-                if (browser === 'chrome') {
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;end;`;
-                } else if (browser === 'edge') {
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=com.microsoft.emmx;action=android.intent.action.VIEW;end;`;
-                } else if (browser === 'opera') {
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=com.opera.browser;action=android.intent.action.VIEW;end;`;
-                } else if (browser === 'firefox') {
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=org.mozilla.firefox;action=android.intent.action.VIEW;end;`;
-                } else if (browser === 'brave') {
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=com.brave.browser;action=android.intent.action.VIEW;end;`;
-                } else if (browser === 'ucbrowser') {
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=com.UCMobile.intl;action=android.intent.action.VIEW;end;`;
-                } else if (browser === 'safari') {
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`; // Safari doesn't exist on Android, just fallback
-                } else if (browser === 'vivaldi') {
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=com.vivaldi.browser;action=android.intent.action.VIEW;end;`;
-                } else if (browser === 'duckduckgo') {
-                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=com.duckduckgo.mobile.android;action=android.intent.action.VIEW;end;`;
+                // Map of all major browser packages including Beta, Mini, Dev, and Nightly versions
+                const browserPackages = {
+                    chrome: ['com.android.chrome', 'com.chrome.beta', 'com.chrome.dev', 'com.chrome.canary'],
+                    edge: ['com.microsoft.emmx', 'com.microsoft.emmx.beta', 'com.microsoft.emmx.canary'],
+                    opera: ['com.opera.browser', 'com.opera.mini.native', 'com.opera.touch', 'com.opera.browser.beta'],
+                    firefox: ['org.mozilla.firefox', 'org.mozilla.firefox_beta', 'org.mozilla.fenix', 'org.mozilla.focus'],
+                    brave: ['com.brave.browser', 'com.brave.browser_beta', 'com.brave.browser_nightly'],
+                    ucbrowser: ['com.UCMobile.intl', 'com.UCMobile.internet.org', 'com.uc.browser.en', 'com.uc.browser.hd'],
+                    vivaldi: ['com.vivaldi.browser', 'com.vivaldi.browser.snapshot'],
+                    duckduckgo: ['com.duckduckgo.mobile.android'],
+                    safari: [] // Safari doesn't exist on Android
+                };
+
+                const packages = browserPackages[browser] || [];
+                
+                // The ultimate fallback: A generic Intent that prompts the Android OS "App Chooser".
+                // This guarantees an escape from Facebook even if NO exact matching browser version is found!
+                let intentStr = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
+                
+                // Build a fallback chain: tries Stable -> Beta -> Dev -> Generic OS Chooser
+                for (let i = packages.length - 1; i >= 0; i--) {
+                    intentStr = `intent://${targetDomain}#Intent;scheme=https;package=${packages[i]};action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(intentStr)};end;`;
                 }
+                
+                targetUrl = intentStr;
+
             } else if (isIOS) {
                 // iOS Custom URL Schemes (these automatically translate to https://moviedakhi.com inside the app)
-                if (browser === 'chrome') {
-                    targetUrl = `googlechrome://${targetDomain}`;
-                } else if (browser === 'edge') {
-                    targetUrl = `microsoft-edge-https://${targetDomain}`;
-                } else if (browser === 'opera') {
-                    targetUrl = `touch-https://${targetDomain}`; 
-                } else if (browser === 'firefox') {
-                    targetUrl = `firefox://${targetDomain}`;
-                } else if (browser === 'brave') {
-                    targetUrl = `brave://${targetDomain}`;
-                } else if (browser === 'ucbrowser') {
-                    targetUrl = `ucbrowser://${targetDomain}`;
-                } else if (browser === 'safari') {
-                    targetUrl = `x-safari-https://${targetDomain}`; 
-                } else if (browser === 'vivaldi') {
-                    targetUrl = `vivaldi://${targetDomain}`;
-                } else if (browser === 'duckduckgo') {
-                    targetUrl = `ddg://${targetDomain}`;
-                }
+                if (browser === 'chrome') { targetUrl = `googlechrome://${targetDomain}`; } 
+                else if (browser === 'edge') { targetUrl = `microsoft-edge-https://${targetDomain}`; } 
+                else if (browser === 'opera') { targetUrl = `touch-https://${targetDomain}`; } 
+                else if (browser === 'firefox') { targetUrl = `firefox://open-url?url=https://${targetDomain}`; } 
+                else if (browser === 'brave') { targetUrl = `brave://open-url?url=https://${targetDomain}`; } 
+                else if (browser === 'ucbrowser') { targetUrl = `ucbrowser://${targetDomain}`; } 
+                else if (browser === 'safari') { targetUrl = `x-safari-https://${targetDomain}`; } 
+                else if (browser === 'vivaldi') { targetUrl = `vivaldi://${targetDomain}`; } 
+                else if (browser === 'duckduckgo') { targetUrl = `ddg://${targetDomain}`; }
             }
 
             // Direct assignment is required to escape Facebook/Instagram WebViews.
@@ -6426,6 +6422,45 @@ ${infoText}
             } else {
                 showToast("Redirecting to browser...");
             }
+        }
+
+        // ==========================================
+        // MANUAL LINK COPY LOGIC
+        // ==========================================
+        function copyWebsiteLink(btn) {
+            const link = "https://moviedakhi.com";
+            
+            // Fallback for older browsers / webviews
+            const textArea = document.createElement("textarea");
+            textArea.value = link;
+            // Avoid scrolling to bottom
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast("Link copied! Open your browser and paste it.");
+                
+                // Visual feedback on button
+                const originalHtml = `<i class="fas fa-copy"></i> Copy`;
+                btn.innerHTML = `<i class="fas fa-check"></i> Copied`;
+                btn.classList.remove('bg-[#E50914]', 'hover:bg-red-600');
+                btn.classList.add('bg-green-600', 'hover:bg-green-500');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.classList.add('bg-[#E50914]', 'hover:bg-red-600');
+                    btn.classList.remove('bg-green-600', 'hover:bg-green-500');
+                }, 2000);
+            } catch (err) {
+                showToast("Failed to copy link. Please manually select the text.");
+            }
+            
+            document.body.removeChild(textArea);
         }
 
 // ==========================================
