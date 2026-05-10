@@ -6292,6 +6292,50 @@ window.addEventListener('click', (e) => {
         // New Popup Box End
 
 
+        // ==========================================
+        // EXTERNAL BROWSER INTENT LOGIC 
+        // ==========================================
+        function openInBrowser(browser) {
+            // Hardcoded to ensure it always opens exactly your website link
+            const targetDomain = 'moviedakhi.com'; 
+            
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+            const isAndroid = /android/i.test(userAgent);
+            
+            let targetUrl = `https://${targetDomain}`; 
+
+            if (isAndroid) {
+                // Proper Android Intent URIs that force the OS to open the specific package with your link
+                if (browser === 'chrome') {
+                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;end;`;
+                } else if (browser === 'edge') {
+                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=com.microsoft.emmx;action=android.intent.action.VIEW;end;`;
+                } else if (browser === 'opera') {
+                    targetUrl = `intent://${targetDomain}#Intent;scheme=https;package=com.opera.browser;action=android.intent.action.VIEW;end;`;
+                }
+            } else if (isIOS) {
+                // iOS Custom URL Schemes (these automatically translate to https://moviedakhi.com inside the app)
+                if (browser === 'chrome') {
+                    targetUrl = `googlechrome://${targetDomain}`;
+                } else if (browser === 'edge') {
+                    targetUrl = `microsoft-edge-https://${targetDomain}`;
+                } else if (browser === 'opera') {
+                    targetUrl = `touch-https://${targetDomain}`; 
+                }
+            }
+
+            // Direct assignment is required to escape Facebook/Instagram WebViews.
+            window.location.href = targetUrl;
+            
+            // Provide user feedback while the OS attempts to launch the app
+            if (!isAndroid && !isIOS) {
+                showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
+            } else {
+                showToast("Redirecting to browser...");
+            }
+        }
+
 // ==========================================
 // SECURITY & ANTI-INSPECT MEASURES
 // ==========================================
