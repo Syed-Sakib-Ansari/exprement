@@ -6082,13 +6082,20 @@ searchInput.addEventListener('keydown', (e) => {
 });
 
         // TRIGGER POPUP ON LOAD
-        // New Popup Box Start
+
+        // After Every Reload Start
         setTimeout(() => {
-            if (!sessionStorage.getItem('popupSeen')) {
-                showAnnouncement();
-                sessionStorage.setItem('popupSeen', 'true');
-            }
-        }, 3500);
+            showAnnouncement();
+        }, 2500);
+        // After Every Reload End
+
+        // New Popup Box Start
+        // setTimeout(() => {
+        //     if (!sessionStorage.getItem('popupSeen')) {
+        //         showAnnouncement();
+        //         sessionStorage.setItem('popupSeen', 'true');
+        //     }
+        // }, 3500);
         // New Popup Box End
 
 // Helper function to show toast messages
