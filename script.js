@@ -5515,7 +5515,8 @@ const contentData = [
                 const currentState = window.history.state || {
                     view: currentView,
                     category: null,
-                    displayedCount: libraryDisplayedCount
+                    displayedCount: libraryDisplayedCount,
+                    validDakhiState: true
                 };
                 try { window.history.replaceState({ ...currentState, scrollY: currentScroll }, ''); } catch (e) { }
             }
@@ -5547,7 +5548,7 @@ const contentData = [
             if (mode) {
                 try {
                     const isBlob = window.location.protocol === 'blob:';
-                    const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: 30 };
+                    const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: 30, validDakhiState: true };
 
                     if (!isBlob) {
                         const url = new URL(window.location);
@@ -5691,7 +5692,7 @@ ${infoText}
                 const catMenu = document.getElementById('categoryMenu');
                 // Only save scroll coordinates if menus/modals are not currently hijacking the view
                 if (modal && !modal.classList.contains('active') && catMenu && !catMenu.classList.contains('active')) {
-                    const currentState = history.state || { view: currentView, category: null };
+                    const currentState = history.state || { view: currentView, category: null, validDakhiState: true };
                     try {
                         window.history.replaceState({
                             ...currentState,
@@ -5782,24 +5783,21 @@ ${infoText}
             // Save precise scroll position before opening
             savedScrollY = window.scrollY;
 
-            const currentState = history.state || {};
+            const currentState = history.state || { view: currentView, validDakhiState: true };
             // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
             try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
             
             // ================== Facebook browser problem Start ==================
-            // Double PushState Trap: Push a dummy history state first. 
-            // If the Facebook browser redirects for an ad popup and the user hits back, it consumes this trap
-            // instead of closing the modal. This keeps the iframe completely alive and ad counters working!
-            try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, fbTrap: true }, ''); } catch (e) { }
+            // Clean pushState. We strictly mark this state as ours using validDakhiState.
+            // When Facebook browser popstate fires (after user closes an ad), we will check this!
+            try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, ''); } catch (e) { }
             // ================== Facebook browser problem End ==================
-            
-            try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id }, ''); } catch (e) { }
 
             const item = contentData.find(m => m.id === id);
             
             // ================== Facebook browser problem Start ==================
             // Check if the user is reopening the exact same movie they were just on.
-            const isSameMovie = currentItem && currentItem.id === id;
+            const isSameMovie = document.getElementById('modalTitle').innerText === item.title;
             // ================== Facebook browser problem End ==================
 
             currentItem = item;
@@ -5848,8 +5846,9 @@ ${infoText}
             const actualVideoContainer = document.getElementById('actualVideo');
             
             // ================== Facebook browser problem Start ==================
-            // 1. Removed strict sandbox attribute so the video player's ad scripts work normally and do not display "Sandboxed".
-            // 2. If it's the exact same movie, we DO NOT rebuild the iframe innerHTML. This guarantees the ad click counter stays intact.
+            // ONLY rebuild the iframe if we are switching to a new movie or the iframe is entirely empty.
+            // If it is the exact same movie, we LEAVE THE IFRAME ALONE. 
+            // This guarantees the video provider's ad-click counter does not reset!
             if (actualVideoContainer) {
                 actualVideoContainer.classList.remove('hidden');
                 
@@ -5933,6 +5932,7 @@ ${infoText}
             }
         }
 
+        // NOTE: playDefault is functionally superseded by auto-load, but kept safe.
         function playDefault() {
             if (!currentItem) return;
             let url = currentItem.episodes ? currentItem.episodes[0].embedUrl : currentItem.embedUrl;
@@ -5940,11 +5940,10 @@ ${infoText}
             const actualVideo = document.getElementById('actualVideo');
             if (actualVideo) {
                 actualVideo.classList.remove('hidden');
-                
-                // ================== Facebook browser problem Start ==================
-                // Sandbox and forced iframe reload to "about:blank" removed so ad counters function perfectly.
-                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-                // ================== Facebook browser problem End ==================
+                const existingIframe = document.getElementById('videoIframe');
+                if (!existingIframe || existingIframe.src !== url) {
+                    actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                }
             }
         }
 
@@ -5960,8 +5959,11 @@ ${infoText}
                 actualVideo.classList.remove('hidden');
                 
                 // ================== Facebook browser problem Start ==================
-                // Sandbox and forced iframe reload to "about:blank" removed so ad counters function perfectly.
-                actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                // We only rebuild if they are actually changing episodes, otherwise ad counters reset!
+                const existingIframe = document.getElementById('videoIframe');
+                if (!existingIframe || existingIframe.src !== url) {
+                    actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                }
                 // ================== Facebook browser problem End ==================
             }
             
@@ -6016,17 +6018,6 @@ ${infoText}
 
             if (triggerBack && window.history.state?.isModalOpen) {
                 window.history.back();
-                
-                // ================== Facebook browser problem Start ==================
-                // If it was an explicit close, we need to bypass the back-button trap we set earlier
-                if (explicitClose) {
-                    setTimeout(() => {
-                        if (window.history.state && window.history.state.fbTrap) {
-                            window.history.back();
-                        }
-                    }, 50);
-                }
-                // ================== Facebook browser problem End ==================
             }
         }
 
@@ -6214,7 +6205,7 @@ ${infoText}
                 const params = new URLSearchParams(window.location.search);
                 const view = params.get('view') || 'home';
                 const category = params.get('category');
-                try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE }, ''); } catch (e) { }
+                try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE, validDakhiState: true }, ''); } catch (e) { }
                 switchView(view, category, false);
             } else {
                 switchView('home', null, false);
@@ -6243,16 +6234,21 @@ ${infoText}
             const modal = document.getElementById('movieModal');
             
             // ================== Facebook browser problem Start ==================
-            if (state && state.fbTrap) {
-                // User hit back from an ad, just absorb it and keep the modal perfectly open!
-                return;
+            // STRICT POPSTATE VALIDATION:
+            // Ads often inject garbage history states. If the user hits "Back" to close an ad, 
+            // we MUST NOT close our video modal or reset the iframe.
+            if (modal && !modal.classList.contains('hidden')) {
+                // We only natively close the modal if the history explicitly tells us we navigated back to a valid MovieDakhi view (like home/library) AND explicitly says the modal should not be open.
+                if (state && state.validDakhiState && !state.isModalOpen) {
+                    // Safe to close modal natively (pass FALSE for explicitClose to protect iframe, just in case)
+                    closeModal(false, false);
+                } else {
+                    // It's a garbage state from an ad or we are returning TO the modal state from a forward nav.
+                    // IGNORE IT completely. Do not touch the DOM. This protects the iframe's ad-click counter!
+                    return;
+                }
             }
             // ================== Facebook browser problem End ==================
-            
-            if (modal && !modal.classList.contains('hidden') && (!state || !state.isModalOpen)) {
-                // Call closeModal via popstate trigger, and FALSE for explicitClose to preserve iframe ad state
-                closeModal(false, false);
-            }
             
             if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
                 toggleCategoryMenu(false, false);
