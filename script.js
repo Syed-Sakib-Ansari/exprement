@@ -5,6 +5,10 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Krishnavataram - Part 1: The Heart (Hridayam) (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qdk8p", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWIyNmZjNjgtYmIwYy00MzI5LTk4MTUtMTBlOGU4NzE3ZjgyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Romance", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qdk8p&dl=1"
+    }, {
+        title: "Ten Hours (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#8jcfb", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzQ1YmVjNjAtZDRhYi00MDk0LThjYjEtNWM0Y2ZmZWEwNzUxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jcfb&dl=1",
+    }, {
         title: "Daadi Ki Shaadi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8j15h", posterUrl: "https://m.media-amazon.com/images/M/MV5BODdhNDZkOGItMjI5NC00NzVkLWE0YTUtNWNiOGNmYjZiZjFmXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Family, Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8j15h&dl=1"
     }, {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jx53", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jx53&dl=1"
@@ -68,24 +72,6 @@ const contentData = [
             { number: 5, title: "Episode 5", embedUrl: "https://short.icu/nUNdKyYOi" },
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/_eMPtyuKY" },
         ]
-    }, {
-        title: "The Chestnut Man (2021)", posterUrl: "https://resizing.flixster.com/S-_suHEBiz0nqEps5cDuabn-zjM=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p20563698_b_v11_aa.jpg", genre: "Drama, Mystery & Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1Nq3xicizb-I_XgixurIRMqDrEZY35Ojf", seriesInfo: "Season 2 Episode 1-6", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/k3vlzSl4-" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/M3i4QsWzE" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/woiP2BC66" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/gVEc_zGWl" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/G6EbEbPxx" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/cec0Ss732" },
-        ]
-    }, {
-        title: "The Chestnut Man (2021)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGM4MjBlMmYtMTYxMi00ZTkxLTk0ZGUtZWM1ODM5ZTg2NTlmXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery & Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1Ce6GvF-Atir17AxbUi-R7g7PZsjHp5fV", seriesInfo: "Season 1 Episode 1-6", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://short.icu/RF1fxMNQ0" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/5rejxVwNW" },
-            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/znyE36g-w" },
-            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/7CyGUv8DD" },
-            { number: 5, title: "Episode 5", embedUrl: "https://short.icu/q1ePnrufP" },
-            { number: 6, title: "Episode 6", embedUrl: "https://short.icu/fcFAF5k6g" },
-        ]
     },
 
     // =======================================================================
@@ -94,6 +80,8 @@ const contentData = [
 
 
     {
+        title: "Krishnavataram - Part 1: The Heart (Hridayam) (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qdk8p", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWIyNmZjNjgtYmIwYy00MzI5LTk4MTUtMTBlOGU4NzE3ZjgyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Romance", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qdk8p&dl=1"
+    }, {
         title: "Daadi Ki Shaadi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8j15h", posterUrl: "https://m.media-amazon.com/images/M/MV5BODdhNDZkOGItMjI5NC00NzVkLWE0YTUtNWNiOGNmYjZiZjFmXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Family, Drama, Romance", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8j15h&dl=1"
     }, {
         title: "Ek Din (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hayg5", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzVhNmVhYzUtYjhhYy00ZGY0LTlmMTQtNjA2ZDk2OGFiNzllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Romance", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hayg5&dl=1"
@@ -2434,6 +2422,8 @@ const contentData = [
 
 
     {
+        title: "Ten Hours (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#8jcfb", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzQ1YmVjNjAtZDRhYi00MDk0LThjYjEtNWM0Y2ZmZWEwNzUxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jcfb&dl=1",
+    }, {
         title: "Bharathanatyam 2 Mohiniyattam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yxzza", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzZkN2FlMTQtZTI1MC00OGE4LTgxNDktOTdjNTlhYzVkN2MwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yxzza&dl=1",
     }, {
         title: "Bharathanatyam (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#yxzda", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDlhY2VlNmEtYmJkYi00ZDE3LTgwZmEtNzljNGQ4YmZhMjU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Thriller", category: "South", language: "Malayalam", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yxzda&dl=1",
@@ -4144,6 +4134,13 @@ const contentData = [
 
 
     {
+        title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-2", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h", downloadUrl:"https://hubcloud.foo/drive/aopj1yzzjfaa1hh" },
+            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/842vHmS4E", downloadUrl:"https://hubcloud.foo/drive/s7olsk4w5guin7l" },
+            { number: 3, title: "Episode 3", embedUrl: "https://short.icu/3Vi5Gn5cX", downloadUrl:"https://hubcloud.foo/drive/jey7ysyj6pdyajl" },
+            { number: 4, title: "Episode 4", embedUrl: "https://short.icu/PYf7Uy7PtQ", downloadUrl:"https://hubcloud.foo/drive/p5noqbuqcgtlba3" },
+        ]
+    }, {
         title: "Thank You, Next (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmI5YzA0MGQtMDBlZS00ZTJmLWI0ODYtYzZmMzNlNWFhNDUyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/4A4nTegzkbaZ", seriesInfo: "Season 3 Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/aqsjKGnW3" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/uTg6K_lb4" },
@@ -4254,11 +4251,6 @@ const contentData = [
             { number: 5, title: "Episode 5", embedUrl: "https://short.icu/sl59t7aYx" },
             { number: 6, title: "Episode 6", embedUrl: "https://short.icu/uapcCofJJ" },
             { number: 7, title: "Episode 7", embedUrl: "https://short.icu/Rfvm-KCN_" },
-        ]
-    }, {
-        title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-2", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h" },
-            { number: 2, title: "Episode 2", embedUrl: "https://short.icu/842vHmS4E" },
         ]
     }, {
         title: "Flunked (2020)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzUwYjNjMTItOWM1Mi00NDJlLTk5ZTgtM2U4NzRiY2RiNTlkXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
