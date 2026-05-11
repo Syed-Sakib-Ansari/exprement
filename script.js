@@ -5837,10 +5837,7 @@ function openModal(id) {
     let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
     const actualVideoContainer = document.getElementById('actualVideo');
 
-    // ================== Facebook browser problem Start ==================
-    // ONLY rebuild the iframe if we are switching to a new movie or the iframe is entirely empty.
-    // If it is the exact same movie, we LEAVE THE IFRAME ALONE. 
-    // This guarantees the video provider's ad-click counter does not reset!
+    // Video Play Problem Start
     if (actualVideoContainer) {
         actualVideoContainer.classList.remove('hidden');
 
@@ -5848,10 +5845,10 @@ function openModal(id) {
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
 
         if (needsNewIframe) {
-            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
     }
-    // ================== Facebook browser problem End ==================
+    // Video Play Problem End
 
     const modal = document.getElementById('movieModal');
     modal.classList.remove('hidden');
@@ -5932,10 +5929,12 @@ function playDefault() {
     const actualVideo = document.getElementById('actualVideo');
     if (actualVideo) {
         actualVideo.classList.remove('hidden');
+        // Video Play Problem Start
         const existingIframe = document.getElementById('videoIframe');
         if (!existingIframe || existingIframe.src !== url) {
-            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
+        // Video Play Problem End
     }
 }
 
@@ -5950,13 +5949,12 @@ function playEpisode(index, btnElement) {
     if (actualVideo) {
         actualVideo.classList.remove('hidden');
 
-        // ================== Facebook browser problem Start ==================
-        // We only rebuild if they are actually changing episodes, otherwise ad counters reset!
+        // Video Play Problem Start
         const existingIframe = document.getElementById('videoIframe');
         if (!existingIframe || existingIframe.src !== url) {
-            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
-        // ================== Facebook browser problem End ==================
+        // Video Play Problem End
     }
 
     // Update the selected episode for downloading, and reset the download button process
@@ -5991,16 +5989,16 @@ function closeModal(triggerBack = true, explicitClose = false) {
         }, 300);
     }
 
-    // ================== Facebook browser problem Start ==================
-    // ONLY destroy the iframe if user explicitly clicked the Close X button or background.
-    // This prevents the player state from resetting during accidental popstate events (hitting back after ads).
-    if (explicitClose) {
-        setTimeout(() => {
-            const videoIframe = document.getElementById('videoIframe');
-            if (videoIframe) videoIframe.src = "";
-        }, 300);
-    }
-    // ================== Facebook browser problem End ==================
+    // Video Play Problem Start
+    // ALWAYS destroy the iframe when the modal closes, whether by 'X' or the back button.
+    // This ensures background audio strictly stops.
+    setTimeout(() => {
+        const actualVideoContainer = document.getElementById('actualVideo');
+        if (actualVideoContainer) {
+            actualVideoContainer.innerHTML = ''; // Completely destroy the iframe
+        }
+    }, 300);
+    // Video Play Problem End
 
     // Remove body lock and instantly restore the exact scroll position
     document.body.style.position = '';
@@ -6232,14 +6230,14 @@ window.addEventListener('popstate', (event) => {
     const state = event.state;
     const modal = document.getElementById('movieModal');
 
-    // ================== Facebook browser problem Start ==================
+    // Video Play Problem Start
     // STRICT POPSTATE VALIDATION:
     // Ads often inject garbage history states. If the user hits "Back" to close an ad, 
     // we MUST NOT close our video modal or reset the iframe.
     if (modal && !modal.classList.contains('hidden')) {
         // We only natively close the modal if the history explicitly tells us we navigated back to a valid MovieDakhi view (like home/library) AND explicitly says the modal should not be open.
         if (state && state.validDakhiState && !state.isModalOpen) {
-            // Safe to close modal natively (pass FALSE for explicitClose to protect iframe, just in case)
+            // Safe to close modal natively (the iframe will be destroyed inside closeModal)
             closeModal(false, false);
         } else {
             // It's a garbage state from an ad or we are returning TO the modal state from a forward nav.
@@ -6247,7 +6245,7 @@ window.addEventListener('popstate', (event) => {
             return;
         }
     }
-    // ================== Facebook browser problem End ==================
+    // Video Play Problem End
 
     if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
         toggleCategoryMenu(false, false);
