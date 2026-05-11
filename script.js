@@ -4133,7 +4133,7 @@ const contentData = [
             { number: 4, title: "Episode 4", embedUrl: "https://short.icu/PYf7Uy7PtQ", downloadUrl:"https://hubcloud.foo/drive/p5noqbuqcgtlba3" },
         ]
     }, {
-        title: "Euphoria (2026)", posterUrl: "https://pbs.twimg.com/media/HE9qMvUaUAAScjn.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-3", episodes: [
+        title: "Euphoria (2026)", posterUrl: "https://pbs.twimg.com/media/HE9qMvUaUAAScjn.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-5", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://short.icu/IasDw3x8x" },
             { number: 2, title: "Episode 2", embedUrl: "https://short.icu/v_l0Mz0F_" },
             { number: 3, title: "Episode 3", embedUrl: "https://short.icu/nyAhhnADN" },
