@@ -6094,7 +6094,7 @@ ${infoText}
         
         // For Telegram Browser Start
         const isTelegramUA = /Telegram|org\.telegram/i.test(uaCheck) || /\bwv\b/i.test(uaCheck) || (/iPhone|iPod|iPad/i.test(uaCheck) && !/Safari/i.test(uaCheck));
-        const isTelegramRef = /telegram/i.test(document.referrer || '');
+        const isTelegramRef = /telegram/i.test(document.referrer || '') || /android-app:\/\/org\.telegram/i.test(document.referrer || '');
         const isTGCheck = isTelegramUA || isTelegramRef;
         const isTrappedCheck = isFBCheck || isTGCheck;
         // For Telegram Browser End
@@ -6301,7 +6301,7 @@ ${infoText}
             
             // For Telegram Browser Start
             const isTelegramUA = /Telegram|org\.telegram/i.test(ua) || /\bwv\b/i.test(ua) || (/iPhone|iPod|iPad/i.test(ua) && !/Safari/i.test(ua));
-            const isTelegramRef = /telegram/i.test(document.referrer || '');
+            const isTelegramRef = /telegram/i.test(document.referrer || '') || /android-app:\/\/org\.telegram/i.test(document.referrer || '');
             const isTelegramApp = isTelegramUA || isTelegramRef;
             const isTrappedApp = isFacebookApp || isTelegramApp;
             
@@ -6311,6 +6311,8 @@ ${infoText}
                     warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
                 } else if (isTelegramApp) {
                     warningText.innerHTML = `Telegram browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                } else {
+                    warningText.innerHTML = `This App's browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
                 }
             }
             // For Telegram Browser End
