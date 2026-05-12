@@ -6089,23 +6089,29 @@ ${infoText}
 
         // TRIGGER POPUP ON LOAD
         // After Every Reload Start
+        
+        // For Telegram Browser Start
         const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
         const refCheck = document.referrer || '';
         
-        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(uaCheck);
-        const isFBCheck = isMobile && (/FBAN|FBAV/i.test(uaCheck));
+        const isFBCheck = /FBAN|FBAV/i.test(uaCheck);
         
-        // For Telegram Browser Start
-        const isTG_UA = /Telegram|org\.telegram/i.test(uaCheck) || 
-                        /\b(wv|WebView)\b/i.test(uaCheck) || 
-                        (/Android/i.test(uaCheck) && /Version\/[0-9]\.[0-9]/i.test(uaCheck)) || 
-                        (/(iPhone|iPod|iPad).*AppleWebKit/i.test(uaCheck) && !/Safari/i.test(uaCheck));
-        const isTG_Ref = /telegram|t\.me|org\.telegram/i.test(refCheck) || /android-app:\/\//i.test(refCheck);
-        const isTGCheck = isMobile && (isTG_UA || isTG_Ref);
+        // Deep research Telegram & Generic WebView detection
+        const isTGCheck = 
+            /Telegram/i.test(uaCheck) || 
+            /android-app:\/\/org\.telegram/i.test(refCheck) || 
+            /t\.me/i.test(refCheck) || 
+            (typeof window.TelegramWebviewProxy !== 'undefined') ||
+            // Universal WebView trap
+            /\bwv\b/i.test(uaCheck) || 
+            /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(uaCheck) || 
+            /Android.*Version\/[\d\.]+.*Chrome/i.test(uaCheck) ||
+            /Instagram|WhatsApp|Snapchat|Twitter|Line|Viber/i.test(uaCheck);
+            
         const isTrappedCheck = isFBCheck || isTGCheck;
         // For Telegram Browser End
         
-        // If they are in Facebook or Telegram, show the popup almost instantly (500ms) 
+        // If they are in Facebook, Telegram, or any trapped App, show the popup almost instantly (500ms) 
         // Otherwise, wait the normal 7.5 seconds for the welcome popup.
         setTimeout(() => {
             const urlParams2 = new URLSearchParams(window.location.search);
@@ -6302,20 +6308,24 @@ ${infoText}
             const popup = document.getElementById('announcementPopup');
             if (!popup) return;
 
+            // For Telegram Browser Start
             const ua = navigator.userAgent || navigator.vendor || window.opera;
             const ref = document.referrer || '';
-            const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
             
-            const isFacebookApp = isMobile && (/FBAN|FBAV/i.test(ua));
+            const isFacebookApp = /FBAN|FBAV/i.test(ua);
             
-            // For Telegram Browser Start
-            const isTelegramUA = /Telegram|org\.telegram/i.test(ua) || 
-                                 /\b(wv|WebView)\b/i.test(ua) || 
-                                 (/Android/i.test(ua) && /Version\/[0-9]\.[0-9]/i.test(ua)) || 
-                                 (/(iPhone|iPod|iPad).*AppleWebKit/i.test(ua) && !/Safari/i.test(ua));
-            const isTelegramRef = /telegram|t\.me|org\.telegram/i.test(ref) || /android-app:\/\//i.test(ref);
-            const isTelegramApp = isMobile && (isTelegramUA || isTelegramRef);
-            
+            // Deep research Telegram & Generic WebView detection
+            const isTelegramApp = 
+                /Telegram/i.test(ua) || 
+                /android-app:\/\/org\.telegram/i.test(ref) || 
+                /t\.me/i.test(ref) || 
+                (typeof window.TelegramWebviewProxy !== 'undefined') ||
+                // Universal WebView trap (catches hidden Telegram browsers)
+                /\bwv\b/i.test(ua) || 
+                /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua) || 
+                /Android.*Version\/[\d\.]+.*Chrome/i.test(ua) ||
+                /Instagram|WhatsApp|Snapchat|Twitter|Line|Viber/i.test(ua);
+
             const isTrappedApp = isFacebookApp || isTelegramApp;
             
             const warningText = document.getElementById('browserWarningText');
