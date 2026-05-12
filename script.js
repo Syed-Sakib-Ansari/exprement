@@ -6093,7 +6093,9 @@ ${infoText}
         const isFBCheck = (uaCheck.indexOf("FBAN") > -1) || (uaCheck.indexOf("FBAV") > -1);
         
         // For Telegram Browser Start
-        const isTGCheck = /Telegram/i.test(uaCheck);
+        const isTelegramUA = /Telegram|org\.telegram/i.test(uaCheck) || /\bwv\b/i.test(uaCheck) || (/iPhone|iPod|iPad/i.test(uaCheck) && !/Safari/i.test(uaCheck));
+        const isTelegramRef = /telegram/i.test(document.referrer || '');
+        const isTGCheck = isTelegramUA || isTelegramRef;
         const isTrappedCheck = isFBCheck || isTGCheck;
         // For Telegram Browser End
         
@@ -6298,15 +6300,17 @@ ${infoText}
             const isFacebookApp = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
             
             // For Telegram Browser Start
-            const isTelegramApp = /Telegram/i.test(ua);
+            const isTelegramUA = /Telegram|org\.telegram/i.test(ua) || /\bwv\b/i.test(ua) || (/iPhone|iPod|iPad/i.test(ua) && !/Safari/i.test(ua));
+            const isTelegramRef = /telegram/i.test(document.referrer || '');
+            const isTelegramApp = isTelegramUA || isTelegramRef;
             const isTrappedApp = isFacebookApp || isTelegramApp;
             
             const warningText = document.getElementById('browserWarningText');
             if (warningText) {
-                if (isTelegramApp) {
-                    warningText.innerHTML = `Telegram browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
-                } else {
+                if (isFacebookApp) {
                     warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                } else if (isTelegramApp) {
+                    warningText.innerHTML = `Telegram browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
                 }
             }
             // For Telegram Browser End
