@@ -6092,6 +6092,11 @@ searchInput.addEventListener('keydown', (e) => {
 const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
 const isFBCheck = (uaCheck.indexOf("FBAN") > -1) || (uaCheck.indexOf("FBAV") > -1);
 
+        // For Telegram Browser Start
+        const isTGCheck = (uaCheck.indexOf("Telegram") > -1);
+        const isTrappedCheck = isFBCheck || isTGCheck;
+        // For Telegram Browser End
+
 // If they are in Facebook, show the popup almost instantly (500ms) as a fallback in case 
 // the auto-escape above was blocked by FB. Otherwise, wait the normal 7.5 seconds.
 setTimeout(() => {
@@ -6292,8 +6297,22 @@ function showAnnouncement() {
     // Detect Facebook In-App Browser
     const ua = navigator.userAgent || navigator.vendor || window.opera;
     const isFacebookApp = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
-    const suggestionBox = document.getElementById('browserSuggestionBox');
 
+            // For Telegram Browser Start
+            const isTelegramApp = (ua.indexOf("Telegram") > -1);
+            const isTrappedApp = isFacebookApp || isTelegramApp;
+            
+            const warningText = document.getElementById('browserWarningText');
+            if (warningText) {
+                if (isTelegramApp) {
+                    warningText.innerHTML = `Telegram browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                } else {
+                    warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                }
+            }
+            // For Telegram Browser End
+
+    const suggestionBox = document.getElementById('browserSuggestionBox');
     const topCloseBtn = document.getElementById('announcementCloseBtnTop');
     const bottomCloseBtn = document.getElementById('announcementCloseBtnBottom');
     const backdrop = document.getElementById('popupBackdrop');
