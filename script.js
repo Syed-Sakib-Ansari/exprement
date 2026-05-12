@@ -6090,12 +6090,18 @@ ${infoText}
         // TRIGGER POPUP ON LOAD
         // After Every Reload Start
         const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
-        const isFBCheck = (uaCheck.indexOf("FBAN") > -1) || (uaCheck.indexOf("FBAV") > -1);
+        const refCheck = document.referrer || '';
+        
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(uaCheck);
+        const isFBCheck = isMobile && (/FBAN|FBAV/i.test(uaCheck));
         
         // For Telegram Browser Start
-        const isTelegramUA = /Telegram|org\.telegram/i.test(uaCheck) || /\bwv\b/i.test(uaCheck) || (/iPhone|iPod|iPad/i.test(uaCheck) && !/Safari/i.test(uaCheck));
-        const isTelegramRef = /telegram/i.test(document.referrer || '') || /android-app:\/\/org\.telegram/i.test(document.referrer || '');
-        const isTGCheck = isTelegramUA || isTelegramRef;
+        const isTG_UA = /Telegram|org\.telegram/i.test(uaCheck) || 
+                        /\b(wv|WebView)\b/i.test(uaCheck) || 
+                        (/Android/i.test(uaCheck) && /Version\/[0-9]\.[0-9]/i.test(uaCheck)) || 
+                        (/(iPhone|iPod|iPad).*AppleWebKit/i.test(uaCheck) && !/Safari/i.test(uaCheck));
+        const isTG_Ref = /telegram|t\.me|org\.telegram/i.test(refCheck) || /android-app:\/\//i.test(refCheck);
+        const isTGCheck = isMobile && (isTG_UA || isTG_Ref);
         const isTrappedCheck = isFBCheck || isTGCheck;
         // For Telegram Browser End
         
@@ -6297,12 +6303,19 @@ ${infoText}
             if (!popup) return;
 
             const ua = navigator.userAgent || navigator.vendor || window.opera;
-            const isFacebookApp = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+            const ref = document.referrer || '';
+            const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
+            
+            const isFacebookApp = isMobile && (/FBAN|FBAV/i.test(ua));
             
             // For Telegram Browser Start
-            const isTelegramUA = /Telegram|org\.telegram/i.test(ua) || /\bwv\b/i.test(ua) || (/iPhone|iPod|iPad/i.test(ua) && !/Safari/i.test(ua));
-            const isTelegramRef = /telegram/i.test(document.referrer || '') || /android-app:\/\/org\.telegram/i.test(document.referrer || '');
-            const isTelegramApp = isTelegramUA || isTelegramRef;
+            const isTelegramUA = /Telegram|org\.telegram/i.test(ua) || 
+                                 /\b(wv|WebView)\b/i.test(ua) || 
+                                 (/Android/i.test(ua) && /Version\/[0-9]\.[0-9]/i.test(ua)) || 
+                                 (/(iPhone|iPod|iPad).*AppleWebKit/i.test(ua) && !/Safari/i.test(ua));
+            const isTelegramRef = /telegram|t\.me|org\.telegram/i.test(ref) || /android-app:\/\//i.test(ref);
+            const isTelegramApp = isMobile && (isTelegramUA || isTelegramRef);
+            
             const isTrappedApp = isFacebookApp || isTelegramApp;
             
             const warningText = document.getElementById('browserWarningText');
@@ -6310,9 +6323,7 @@ ${infoText}
                 if (isFacebookApp) {
                     warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
                 } else if (isTelegramApp) {
-                    warningText.innerHTML = `Telegram browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
-                } else {
-                    warningText.innerHTML = `This App's browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                    warningText.innerHTML = `Telegram / In-App browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
                 }
             }
             // For Telegram Browser End
