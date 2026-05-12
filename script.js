@@ -6093,7 +6093,7 @@ const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
 const isFBCheck = (uaCheck.indexOf("FBAN") > -1) || (uaCheck.indexOf("FBAV") > -1);
 
         // For Telegram Browser Start
-        const isTGCheck = (uaCheck.indexOf("Telegram") > -1);
+        const isTGCheck = /Telegram/i.test(uaCheck);
         const isTrappedCheck = isFBCheck || isTGCheck;
         // For Telegram Browser End
 
@@ -6298,8 +6298,8 @@ function showAnnouncement() {
     const ua = navigator.userAgent || navigator.vendor || window.opera;
     const isFacebookApp = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
 
-            // For Telegram Browser Start
-            const isTelegramApp = (ua.indexOf("Telegram") > -1);
+                // For Telegram Browser Start
+            const isTelegramApp = /Telegram/i.test(ua);
             const isTrappedApp = isFacebookApp || isTelegramApp;
             
             const warningText = document.getElementById('browserWarningText');
