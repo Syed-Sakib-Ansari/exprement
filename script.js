@@ -4091,7 +4091,36 @@ const contentData = [
 
 
     {
-        title: "Good Omens (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1qxke", posterUrl: "https://m.media-amazon.com/images/I/713iWz9qGEL._AC_UF894,1000_QL80_.jpg", genre: "Drama, Sci-Fi, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1qxke&dl=1", seriesInfo: "Season 3, Episode 1" /* NEW SERIES INFO */
+        title: "Off Campus (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDA0NzAzNDktYjBiOS00ZjFjLThhZTYtNzlkMDMzOTgxZTk5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Romance, Sport", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/qRcF3SoFnZoR", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/klcpZ81R_i" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/2LwqXmPaj" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/7uZ_rxqTF" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/lTaEH1vRO" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/kiPpy_DiU" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/9qLMZ7GFo" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/9RgRdSr2T" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/bseOilRcf" },
+        ]
+    }, {
+        title: "Good Omens (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1qxke", posterUrl: "https://m.media-amazon.com/images/I/713iWz9qGEL._AC_UF894,1000_QL80_.jpg", genre: "Fantasy, Comedy, Action, Adventure", category: "Hollywood Series", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1qxke&dl=1", seriesInfo: "Season 3, Episode 1" /* NEW SERIES INFO */
+    }, {
+        title: "Good Omens (2023)", posterUrl: "https://m.media-amazon.com/images/I/61LqFcLVFiL.jpg", genre: "Fantasy, Comedy, Action, Adventure", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/erTfGahFibQJ", seriesInfo: "Season 2, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/LoWgTTwRu" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/G7nO11139" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/jCzq_qQe4" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/uGNMDAp02" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/Y-3eLNS-f" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/PuUoMAqzz" },
+        ]
+    }, {
+        title: "Good Omens (2019)", posterUrl: "https://assets.gadgets360cdn.com/pricee/assets/product/202202/Good-Omens-S1-Poster_1646070817.jpg", genre: "Fantasy, Comedy, Action, Adventure", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/Svd33K4RCBAC", seriesInfo: "Season 1, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/iMAc1_Rsd" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/zoJrWlEen" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/rG2J2EsW8" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/n-IqloFLr" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/epSb175fo" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/_yWrl0Ni0" },
+        ]
     }, {
         title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
