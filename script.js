@@ -5,6 +5,10 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Hokum (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v9xqv", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjA1ZjFlZGItNTVjZC00NTFhLTg2YTEtODMzODRmNGFiNTdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9xqv&dl=1",
+    }, {
+        title: "Main Actor Nahin Hoon (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hawak", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGE1OWM5NTItZmZmNC00Zjk3LWI2ZGEtNDdiMTM4OGIwYTgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hawak&dl=1"
+    }, {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jx53", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jx53&dl=1"
     }, {
         title: "Blue Whale (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#61bsf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTA2ZjhhY2EtN2RhMS00ZTM3LWFhMTUtZWY5YjNmODgwY2M4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#61bsf&dl=1",
@@ -50,18 +54,6 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/eK9TJxaBY" },
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/WPnxUvk9c" },
         ]
-    }, {
-        title: "Citadel (2026)", posterUrl: "https://resizing.flixster.com/8cklBvy_xVLKNLa4t7qtFcxq4nA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32999894_b_v12_aa.jpg", genre: "Mystery & Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1aFSanQ3sz9v_b9Kjglm5ScTGry9tDJ1c", seriesInfo: "Season 2 Episode 1-7", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/lEFbCrvvt" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/WeGyvc6PK" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/iKog7MnFB" },
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/wWi4UpRMe-" },
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/EnyUy8bru" },
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/bFGfjfo1Q" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/NfrQaa8b5" },
-        ]
-    }, {
-        title: "Jana Nayagan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v9mqa", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc0NTEzMjYtOWExZS00M2EwLTk5MzgtOTMxYTg3NmMxZmMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", quality:"Web-dl", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9mqa&dl=1",
     },
 
 
@@ -71,6 +63,14 @@ const contentData = [
 
 
     {
+        title: "Hokum (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v9xqv", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjA1ZjFlZGItNTVjZC00NTFhLTg2YTEtODMzODRmNGFiNTdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Mystery, Thriller", category: "Hollywood", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9xqv&dl=1",
+    }, {
+        title: "I.T. (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#qdugu", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkzMzY3MzYzNF5BMl5BanBnXkFtZTgwNzgzMTA3OTE@._V1_.jpg", genre: "Crime, Drama, Mystery, Thriller", category: "Hollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qdugu&dl=1",
+    }, {
+        title: "Afraid (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#dwflk", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjk2YjRhMGUtOGVjOC00ZTA0LTlhYzUtY2Y5OWZhYzQ0NmJkXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dwflk&dl=1",
+    }, {
+        title: "The Bone Collector (1999)", embedUrl: "https://moviedakhi.4meplayer.com/#khdpl", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWY0NjY0M2ItYmNjYy00YWZiLWE3ZjktM2Q3YmU2NWY0YmVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Drama, Mystery, Thriller", category: "Hollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#khdpl&dl=1",
+    }, {
         title: "Bone Keeper (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9elts", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzcyZDA5MzAtNDkzOS00MDY1LTk2MDUtMTQ4YzI1ODQ4NjFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Hollywood", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9elts&dl=1",
     }, {
         title: "Nightwatch: Demons Are Forever (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#9ebgo", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTM5ODNjYjItNzM3YS00NWJmLWFmNWUtMmYxMDlmMjg0ZGM0XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Mystery, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ebgo&dl=1",
@@ -2005,6 +2005,8 @@ const contentData = [
 
 
     {
+        title: "Main Actor Nahin Hoon (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hawak", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGE1OWM5NTItZmZmNC00Zjk3LWI2ZGEtNDdiMTM4OGIwYTgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hawak&dl=1"
+    }, {
         title: "Krishnavataram - Part 1: The Heart (Hridayam) (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qdk8p", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWIyNmZjNjgtYmIwYy00MzI5LTk4MTUtMTBlOGU4NzE3ZjgyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Romance", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qdk8p&dl=1"
     }, {
         title: "Daadi Ki Shaadi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8j15h", posterUrl: "https://m.media-amazon.com/images/M/MV5BODdhNDZkOGItMjI5NC00NzVkLWE0YTUtNWNiOGNmYjZiZjFmXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Family, Drama, Romance", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8j15h&dl=1"
