@@ -5,6 +5,17 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Off Campus (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDA0NzAzNDktYjBiOS00ZjFjLThhZTYtNzlkMDMzOTgxZTk5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Romance, Sport", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/qRcF3SoFnZoR", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/klcpZ81R_i" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/2LwqXmPaj" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/7uZ_rxqTF" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/lTaEH1vRO" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/kiPpy_DiU" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/9qLMZ7GFo" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/9RgRdSr2T" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/bseOilRcf" },
+        ]
+    }, {
         title: "Good Omens (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1qxke", posterUrl: "https://m.media-amazon.com/images/I/713iWz9qGEL._AC_UF894,1000_QL80_.jpg", genre: "Drama, Sci-Fi, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1qxke&dl=1", seriesInfo: "Season 3, Episode 1" /* NEW SERIES INFO */
     }, {
         title: "Dridam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hauh8", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTUwZDkyZmMtMDdlYy00MmZmLTg0NzMtZWYzMzA2ODg0MDE1XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Malayalam", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hauh8&dl=1",
@@ -51,8 +62,6 @@ const contentData = [
         ]
     }, {
         title: "Krishnavataram - Part 1: The Heart (Hridayam) (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qdk8p", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWIyNmZjNjgtYmIwYy00MzI5LTk4MTUtMTBlOGU4NzE3ZjgyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Romance", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qdk8p&dl=1"
-    }, {
-        title: "Ten Hours (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#8jcfb", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzQ1YmVjNjAtZDRhYi00MDk0LThjYjEtNWM0Y2ZmZWEwNzUxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jcfb&dl=1",
     },
 
 
