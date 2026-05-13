@@ -5,6 +5,10 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Good Omens (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1qxke", posterUrl: "https://m.media-amazon.com/images/I/713iWz9qGEL._AC_UF894,1000_QL80_.jpg", genre: "Drama, Sci-Fi, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1qxke&dl=1", seriesInfo: "Season 3, Episode 1" /* NEW SERIES INFO */
+    }, {
+        title: "Dridam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hauh8", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTUwZDkyZmMtMDdlYy00MmZmLTg0NzMtZWYzMzA2ODg0MDE1XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Malayalam", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hauh8&dl=1",
+    }, {
         title: "The Punisher: One Last Kill (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jqz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcwOTZiZjYtMjk1ZC00MDA3LWEwYjItNWRiZTZhZjEwODA2XkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Crime, Drama, Thriller", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jqz5&dl=1",
     }, {
         title: "Hokum (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v9xqv", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjA1ZjFlZGItNTVjZC00NTFhLTg2YTEtODMzODRmNGFiNTdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9xqv&dl=1",
@@ -49,10 +53,6 @@ const contentData = [
         title: "Krishnavataram - Part 1: The Heart (Hridayam) (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qdk8p", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWIyNmZjNjgtYmIwYy00MzI5LTk4MTUtMTBlOGU4NzE3ZjgyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Romance", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qdk8p&dl=1"
     }, {
         title: "Ten Hours (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#8jcfb", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzQ1YmVjNjAtZDRhYi00MDk0LThjYjEtNWM0Y2ZmZWEwNzUxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jcfb&dl=1",
-    }, {
-        title: "Daadi Ki Shaadi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8j15h", posterUrl: "https://m.media-amazon.com/images/M/MV5BODdhNDZkOGItMjI5NC00NzVkLWE0YTUtNWNiOGNmYjZiZjFmXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Family, Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8j15h&dl=1"
-    }, {
-        title: "Fantasy Life (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#rpugw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjRkYTU5NGItY2Y0Yi00ZDgyLWExYjMtY2Y5YzUxZmQ4ZWQ1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rpugw&dl=1"
     },
 
 
@@ -2426,6 +2426,8 @@ const contentData = [
 
 
     {
+        title: "Dridam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hauh8", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTUwZDkyZmMtMDdlYy00MmZmLTg0NzMtZWYzMzA2ODg0MDE1XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Malayalam", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hauh8&dl=1",
+    }, {
         title: "Kaalidas 2 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jp1t", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzVmZmQ2N2ItMTI1Yi00ZDcyLTk1ODUtNmZlN2U1ZWY4Y2NiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Mystery, Thriller", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jp1t&dl=1",
     }, {
         title: "Kaalidas (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#8jpkn", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDU2Nzk1NjAtMjczYi00NzNmLWIzYTEtZWIzMGUwZjE4Mzk4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Mystery, Thriller", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jpkn&dl=1",
@@ -3311,65 +3313,6 @@ const contentData = [
 
 
     // =======================================================================
-    // 1. BANGLA / BANGLA / BANGLA/ BANGLA / BANGLA / BANGLA
-    // =======================================================================
-
-
-    // {
-    //     title: "Toofan (2024)",//     embedUrl: "https://abyssplayer.com/dcPf0VGHy",//     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/Toofan_%282024_film%29.jpeg/250px-Toofan_%282024_film%29.jpeg",//     genre: "Action, Thriller",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Taandob (2025)",//     embedUrl: "https://abyssplayer.com/-kzRj69dW",//     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Taandob_movie.jpg/250px-Taandob_movie.jpg",//     genre: "Action, Thriller",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Borbaad (2025)",//     embedUrl: "https://abyssplayer.com/gHJC0kqWtT",//     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Borbaad_2025_film.jpg/250px-Borbaad_2025_film.jpg",//     genre: "Action, Thriller",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Priyotoma (2023)",//     embedUrl: "https://abyssplayer.com/Gmz2E07Y5",//     posterUrl: "https://asset.bioscopelive.com/uploads/images/2025/03/10/images_70003a375f5ca7ad7e9eb6de07c4ad7d_goplay_priyotoma_port.jpg",//     genre: "Action, Thriller",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Rajkumar (2024)",//     embedUrl: "https://abyssplayer.com/SX4znNLWf",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BZDg4ZTUxNDMtNTdmYS00YjQ4LWI5ZGQtMTY0ZmM2NTZmNGU4XkEyXkFqcGc@._V1_.jpg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Nabab (2017)",//     embedUrl: "https://abyssplayer.com/tlnh40L86",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BNDQwNjBhZmQtZWI4Yy00NmI4LTkzYTgtNmI5MWU1NTgwNGU4XkEyXkFqcGc@._V1_.jpg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Leader: Amie Bangladesh (2023)",//     embedUrl: "https://abyssplayer.com/Y7hy9FTOu",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BODY4NTVmNTgtNDEyOC00NzY3LWE5MDctMjZjNzJkZTgyYWIxXkEyXkFqcGc@._V1_.jpg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Poran (2022)",//     embedUrl: "https://abyssplayer.com/ksbDn6ilf",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BZjdkMTkyOGMtN2VkOC00MzllLWExYjgtZGM1Mzc0YTVkNTE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Pett Kata Shaw (2022)",//     embedUrl: "https://abyssplayer.com/fVnTNGxvV",//     posterUrl: "https://resizing.flixster.com/pqD8fMUa-1UuKTgrGhZf625mNx8=/fit-in/705x460/v2/https://resizing.flixster.com/eQvWTUfi27Ub2G1P-fjkMaQe2bs=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMTU0OTY4ZWItZDA2Ni00YzFkLTkwNTAtZDEyOGNkNjAwMjNiLmpwZw==",//     genre: "Horror, Mystery & Thriller",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     seriesInfo: "Season 1, Episode All"
-    // },// {
-    //     title: " Dorod (2024)",//     embedUrl: "https://abyssplayer.com/gs2CORd_D",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BM2NlMjQzYTktMzQ2OC00MDAwLTkxMWMtY2I2MjEyNWIzNTRhXkEyXkFqcGc@._V1_.jpg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Janowar (2021)",//     embedUrl: "https://abyssplayer.com/LE0LAJukVT",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BZjI1ZDI4OWEtMDViZS00M2M3LWJmNDEtZDgyYTU1NGViMDNlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Bir (2020)",//     embedUrl: "https://abyssplayer.com/IZE9lANg9",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BYjQyOWU2ZTktZjc2Mi00YTg2LWJlZGYtNjVjYzUyMDc4OWNmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Daagi (2025)",//     embedUrl: "https://abyssplayer.com/cYF45pTPT",//     posterUrl: "https://resizing.flixster.com/TgmcBnTeKWewmvOf2zbgqbxPSes=/fit-in/705x460/v2/https://resizing.flixster.com/XJv9lAGyRTEsfRuF1RZHXq4cH90=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzEyNjE2OTZhLTFkZjAtNDgyMi05OGRjLWE2MjAwMjdjMzMxZC5qcGc=",//     genre: "Thriller, Action, Romance",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Khalid (2025)",//     embedUrl: "https://abyssplayer.com/LPo9DJgDb",//     posterUrl: "https://www.themoviedb.org/t/p/w600_and_h900_face/i7qImccjCXMr1FLL0UdTo97y01Y.jpg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Din The Day (2021)",//     embedUrl: "https://abyssplayer.com/w3vQB3act",//     posterUrl: "https://cdn.bongo-solutions.com/abfea462-f64d-491e-9cd9-75ee001f45b0/content/195425c0-587a-41d7-9481-82638c928c81/f7193c1d-6035-41ec-b243-5f09461d68a9.jpg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Nabab LLB (2020)",//     embedUrl: "https://abyssplayer.com/ZyUy6xra7",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BMDg4ZTAxNWEtOGNjNC00NGM1LWJhYzUtZmFlYTI4MDliYmYyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Karagar (2022)",//     embedUrl: "https://abyssplayer.com/0dTjxoFlk",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BNWVhNzNjMWUtNTRmZi00ODMyLTljOWUtY2UwNmRlOGFlMmQ5XkEyXkFqcGc@._V1_.jpg",//     genre: "Action & Thriller",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     seriesInfo: "Season 1, Episode All"
-    // },// {
-    //     title: "Karagar (2022)",//     embedUrl: "https://abyssplayer.com/SXZm9S_FX",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BYjFhNTQ3YjktMzExYy00YjIzLWFhOTctZTBhYWNhOTZmMTYzXkEyXkFqcGc@._V1_.jpg",//     genre: "Action & Thriller",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     seriesInfo: "Season 2, Episode All"
-    // },// {
-    //     title: "Chokkor 302 (2025)",//     embedUrl: "https://abyssplayer.com/i1RJ3D0C_",//     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Chokkor_302_official_logo.jpg/250px-Chokkor_302_official_logo.jpg",//     genre: "Thriller, Suspense",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Saheb Bibi Golaam (2016)",//     embedUrl: "https://abyssplayer.com/4iCvJzaoU",//     posterUrl: "https://resizing.flixster.com/Rsa_LglMkAHMY6TYP44ozLjqzZE=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13678059_v_v8_aa.jpg",//     genre: "Action, Drama",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Noor (2025)",//     embedUrl: "https://abyssplayer.com/gLbXFhmD1",//     posterUrl: "https://www.themoviedb.org/t/p/w600_and_h900_face/oE15FoMUhJF7mbMeDQykFcFN6Kr.jpg",//     genre: "Romance, Drama",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Raavan (2022)",//     embedUrl: "https://abyssplayer.com/BXBSCc8h5",//     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Raavan_2022_film_poster.jpeg/250px-Raavan_2022_film_poster.jpeg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Bagha Jatin (2023)",//     embedUrl: "https://abyssplayer.com/IV5XcKF2x",//     posterUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Bagha_Jatin_%282023_film%29_movie_poster.jpeg/250px-Bagha_Jatin_%282023_film%29_movie_poster.jpeg",//     genre: "Thriller, Action",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Jinn (2023)",//     embedUrl: "https://abyssplayer.com/StOSx_I-7",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BOWMyNGM1ZDUtZjk3My00MjM3LWFjOGItOGYwNjUyMzliNDQxXkEyXkFqcGc@._V1_.jpg",//     genre: "Horror",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },// {
-    //     title: "Dispassionate Love (2018)",//     embedUrl: "https://abyssplayer.com/sNknqHd1i",//     posterUrl: "https://m.media-amazon.com/images/M/MV5BMmU4ZTBlNWQtYTg3MC00MDk1LTliZTQtODY4NGVkNTZhNmE2XkEyXkFqcGc@._V1_.jpg",//     genre: "Drama, Adult",//     category: "Bangla",//     language: "Bangla",//     downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263",//     downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    // },
-    // 
-
-
-    // =======================================================================
     // 1. KOREAN / KOREAN / KOREAN/ KOREAN / KOREAN / KOREAN
     // =======================================================================
 
@@ -4148,6 +4091,8 @@ const contentData = [
 
 
     {
+        title: "Good Omens (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1qxke", posterUrl: "https://m.media-amazon.com/images/I/713iWz9qGEL._AC_UF894,1000_QL80_.jpg", genre: "Drama, Sci-Fi, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1qxke&dl=1", seriesInfo: "Season 3, Episode 1" /* NEW SERIES INFO */
+    }, {
         title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
