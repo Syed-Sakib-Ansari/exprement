@@ -5,15 +5,27 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
-        title: "Hokum (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v9xqv", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjA1ZjFlZGItNTVjZC00NTFhLTg2YTEtODMzODRmNGFiNTdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9xqv&dl=1",
+        title: "The Punisher: One Last Kill (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jqz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcwOTZiZjYtMjk1ZC00MDA3LWEwYjItNWRiZTZhZjEwODA2XkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Crime, Drama, Thriller", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jqz5&dl=1",
     }, {
-        title: "Main Actor Nahin Hoon (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hawak", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGE1OWM5NTItZmZmNC00Zjk3LWI2ZGEtNDdiMTM4OGIwYTgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hawak&dl=1"
+        title: "Hokum (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v9xqv", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjA1ZjFlZGItNTVjZC00NTFhLTg2YTEtODMzODRmNGFiNTdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9xqv&dl=1",
     }, {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jx53", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jx53&dl=1"
     }, {
         title: "Blue Whale (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#61bsf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTA2ZjhhY2EtN2RhMS00ZTM3LWFhMTUtZWY5YjNmODgwY2M4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#61bsf&dl=1",
     }, {
         title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3rsjf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3rsjf&dl=1",
+    }, {
+        title: "Main Actor Nahin Hoon (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hawak", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGE1OWM5NTItZmZmNC00Zjk3LWI2ZGEtNDdiMTM4OGIwYTgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hawak&dl=1"
+    }, {
+        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/H2mRGyi_8" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rdgm10RA6" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/H-kl3Tx9S" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS" },
+        ]
     }, {
         title: "Peep Show (1986)", embedUrl: "https://moviedakhi.4meplayer.com/#61pxp", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2Fcw9HtAhMNseE9oRvXKa00mNCqFC.jpg", genre: "Adult, Erotic, Romance", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#61pxp&dl=1"
     }, {
@@ -41,19 +53,6 @@ const contentData = [
         title: "Daadi Ki Shaadi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8j15h", posterUrl: "https://m.media-amazon.com/images/M/MV5BODdhNDZkOGItMjI5NC00NzVkLWE0YTUtNWNiOGNmYjZiZjFmXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Family, Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8j15h&dl=1"
     }, {
         title: "Fantasy Life (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#rpugw", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjRkYTU5NGItY2Y0Yi00ZDgyLWExYjMtY2Y5YzUxZmQ4ZWQ1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rpugw&dl=1"
-    }, {
-        title: "No Place to Be Single (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c3h6c", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWJmNjFiMDQtNjU1MS00MjJjLWFlOWMtYjljYmMxMjA4ZWNkXkEyXkFqcGc@._V1_.jpg", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c3h6c&dl=1"
-    }, {
-        title: "Thank You, Next (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmI5YzA0MGQtMDBlZS00ZTJmLWI0ODYtYzZmMzNlNWFhNDUyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/4A4nTegzkbaZ", seriesInfo: "Season 3 Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/aqsjKGnW3" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/uTg6K_lb4" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/dck_SKMFf" },
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/SHTorXzZ4" },
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/nMnS8P2vh" },
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/yqO5JUoem" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/eK9TJxaBY" },
-            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/WPnxUvk9c" },
-        ]
     },
 
 
@@ -63,6 +62,12 @@ const contentData = [
 
 
     {
+        title: "The Punisher: One Last Kill (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jqz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcwOTZiZjYtMjk1ZC00MDA3LWEwYjItNWRiZTZhZjEwODA2XkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Crime, Drama, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jqz5&dl=1",
+    }, {
+        title: "Dog 51 (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#8jh51", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGY2MzdjNmItMjdmNi00MGYwLWExZjgtODdjNmE1ODNmNmE1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Sci-Fi, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jh51&dl=1",
+    }, {
+        title: "Faces of Death (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v9xd9", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGJlZjY2ZGMtYjY0Ny00MTFmLTg0YTItM2MzYTQ4ZGNjMzkxXkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9xd9&dl=1",
+    }, {
         title: "Hokum (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v9xqv", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjA1ZjFlZGItNTVjZC00NTFhLTg2YTEtODMzODRmNGFiNTdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Mystery, Thriller", category: "Hollywood", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9xqv&dl=1",
     }, {
         title: "I.T. (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#qdugu", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkzMzY3MzYzNF5BMl5BanBnXkFtZTgwNzgzMTA3OTE@._V1_.jpg", genre: "Crime, Drama, Mystery, Thriller", category: "Hollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qdugu&dl=1",
@@ -4143,6 +4148,16 @@ const contentData = [
 
 
     {
+        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/H2mRGyi_8" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rdgm10RA6" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/H-kl3Tx9S" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS" },
+        ]
+    }, {
         title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-2", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h", downloadUrl:"https://hubcloud.foo/drive/aopj1yzzjfaa1hh" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/842vHmS4E", downloadUrl:"https://hubcloud.foo/drive/s7olsk4w5guin7l" },
@@ -4237,15 +4252,6 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/ryDWSHaUB" },
             { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/JICrcPUCtT" },
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/fvQef0zPm" },
-        ]
-    }, {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 5, Episode 1-6", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI" },
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/H2mRGyi_8" },
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rdgm10RA6" },
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/H-kl3Tx9S" },
         ]
     }, {
         title: "Monarch: Legacy of Monsters (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjZjNGFmYmItMzVjYy00Yzc3LWFhN2EtOGU1ZTc2MWEwODUzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Sci-Fi", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1qbhS-SvjUivhE8rIknNR5_Ia6rqoeS8S", seriesInfo: "Season 2, Episode 1-10", episodes: [
