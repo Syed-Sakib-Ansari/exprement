@@ -5622,9 +5622,11 @@ class="w-full h-full object-cover transition-transform duration-500 md:duration-
 loading="lazy" 
 decoding="async"
 >
+<!-- Mobile Play Overlay -->
 <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center items-center p-5 transition-all duration-300">
 <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)] group-hover:scale-110 transition-transform duration-300"><i class="fas fa-play text-white text-lg ml-1"></i></div>
 </div>
+<!-- Desktop Play Overlay -->
 <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300">
 <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
 </div>
@@ -5684,22 +5686,7 @@ function renderCategorySections() {
 
 let isLoading = false;
 let scrollTimeoutId; // Tracking variable for debounced scroll saves
-
-// Throttle Function
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    }
-}
-
-window.addEventListener('scroll', throttle(() => {
+window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
     if (currentView === 'library' && !isLoading) {
@@ -5724,7 +5711,7 @@ window.addEventListener('scroll', throttle(() => {
             } catch (e) { }
         }
     }, 150);
-}, 100)); // প্রতি ১০০ মিলি-সেকেন্ডে মাত্র একবার ফায়ার হবে
+});
 
 // Ensure we explicitly catch the final scroll spot immediately before a reload using sessionStorage
 window.addEventListener('beforeunload', () => {
@@ -6231,17 +6218,14 @@ function closeBookmarkPopup(e) {
     }
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
     initHeroSlider();
-    renderRecentAdds(); // শুধু প্রথম স্ক্রিনের কন্টেন্ট আগে লোড হবে
-
-    // ব্রাউজারকে একটু শ্বাস নেওয়ার সময় দিয়ে (১০০ms পর) বাকি ভারী কাজগুলো করান
-    setTimeout(() => {
-        renderCategorySections();
-        initLibraryRender();
-        updateCanonical(window.location.href);
-    }, 100);
+    renderRecentAdds();
+    renderCategorySections();
+    initLibraryRender();
+    updateCanonical(window.location.href);
 
     const isBlob = window.location.protocol === 'blob:';
     let finalScroll = 0;
