@@ -5,6 +5,21 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8btv", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "Recent Adds", language: "Tamil", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8btv&dl=1",
+    }, {
+        title: "Second Case of Seetharam (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#yr86x", posterUrl: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/second-case-of-seetharam-et00487094-1770977697.jpg", genre: "Crime, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yr86x&dl=1",
+    }, {
+        title: "Nemesis (2026)", posterUrl: "https://resizing.flixster.com/hVdQ8jtNR5bs1wsGz1ic9Nf7xgA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p33049487_b_v8_aa.jpg", genre: "Mystery & Thriller, Action, Crime, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1KV_fvok22MPKTIzxeBFVES-4nNNY8nrp", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/1WS0XweGI" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/jS-WiC2vW" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/g9eNElY3b" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/0QQldn11I" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/9dqAtJPSt" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/tkNChhAsk1" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/EYWvjnfV9" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/Wa6A03GAl" },
+        ]
+    }, {
         title: "Off Campus (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDA0NzAzNDktYjBiOS00ZjFjLThhZTYtNzlkMDMzOTgxZTk5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Romance, Sport", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/qRcF3SoFnZoR", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/klcpZ81R_i" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/2LwqXmPaj" },
@@ -51,17 +66,6 @@ const contentData = [
         title: "Mark (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#xtimo", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTk2ZWI4NmUtNjg1ZC00MjAzLWE0ZjAtN2I1OTRjOTNhN2M0XkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xtimo&dl=1",
     }, {
         title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gb3jo", posterUrl: "https://images.fandango.com/ImageRenderer/500/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243815/Dacoit-Hindi.jpg", genre: "Drama, Action, Thriller, Romance", category: "Recent Adds", language: "Hindi", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gb3jo&dl=1",
-    }, {
-        title: "Mangalavaaram (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#sya5v", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmFlZGI1ZjQtZWVmMi00NzQ2LWFmOTMtMDhkMDlmYTEzMDM1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Horror, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#sya5v&dl=1",
-    }, {
-        title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Recent Adds", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-2", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h", downloadUrl:"https://hubcloud.foo/drive/aopj1yzzjfaa1hh" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/842vHmS4E", downloadUrl:"https://hubcloud.foo/drive/s7olsk4w5guin7l" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/3Vi5Gn5cX", downloadUrl:"https://hubcloud.foo/drive/jey7ysyj6pdyajl" },
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/PYf7Uy7PtQ", downloadUrl:"https://hubcloud.foo/drive/p5noqbuqcgtlba3" },
-        ]
-    }, {
-        title: "Krishnavataram - Part 1: The Heart (Hridayam) (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qdk8p", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWIyNmZjNjgtYmIwYy00MzI5LTk4MTUtMTBlOGU4NzE3ZjgyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Romance", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qdk8p&dl=1"
     },
 
 
@@ -71,6 +75,10 @@ const contentData = [
 
 
     {
+        title: "Stargate (1994)", embedUrl: "https://moviedakhi.4meplayer.com/#nmgja", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGRmZmNhMTctZTBiMy00ZmJhLWE3MmMtMDNmZWRkZjczMGVkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Sci-Fi", category: "Hollywood", language: "English", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nmgja&dl=1",
+    }, {
+        title: "The Losers (2010)", embedUrl: "https://moviedakhi.4meplayer.com/#s3mb8", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjU3MTU0NDI4Nl5BMl5BanBnXkFtZTcwMTE0NDMyMw@@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Crime, Drama, Thriller, Mystery, Comedy", category: "Hollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3mb8&dl=1",
+    }, {
         title: "The Punisher: One Last Kill (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jqz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcwOTZiZjYtMjk1ZC00MDA3LWEwYjItNWRiZTZhZjEwODA2XkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Crime, Drama, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jqz5&dl=1",
     }, {
         title: "Dog 51 (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#8jh51", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGY2MzdjNmItMjdmNi00MGYwLWExZjgtODdjNmE1ODNmNmE1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Sci-Fi, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jh51&dl=1",
@@ -2435,6 +2443,10 @@ const contentData = [
 
 
     {
+        title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8btv", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "South", language: "Tamil", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8btv&dl=1",
+    }, {
+        title: "Second Case of Seetharam (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#yr86x", posterUrl: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/second-case-of-seetharam-et00487094-1770977697.jpg", genre: "Crime, Thriller", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yr86x&dl=1",
+    }, {
         title: "Dridam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hauh8", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTUwZDkyZmMtMDdlYy00MmZmLTg0NzMtZWYzMzA2ODg0MDE1XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "South", language: "Malayalam", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hauh8&dl=1",
     }, {
         title: "Kaalidas 2 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jp1t", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzVmZmQ2N2ItMTI1Yi00ZDcyLTk1ODUtNmZlN2U1ZWY4Y2NiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Mystery, Thriller", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jp1t&dl=1",
@@ -2490,8 +2502,6 @@ const contentData = [
         title: "Athiran (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#dbbrm", posterUrl: "https://m.media-amazon.com/images/M/MV5BZGRiOTZkNjEtNzJkNy00YTQ0LWE4MDYtNDM2MzcyM2I0NWJhXkEyXkFqcGc@._V1_.jpg", genre: "Mystery, Romance, Drama, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dbbrm&dl=1",
     }, {
         title: "Pallichattambi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qz5ac", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGM3YWEzOTktYzM3Yy00YzFkLTg0OGItMGY1OGYwMzUzY2RkXkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "South", language: "Dual Audio", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qz5ac&dl=1",
-    }, {
-        title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#xlzhi", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "South", language: "Tamil", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xlzhi&dl=1",
     }, {
         title: "Suyodhana (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oxltw", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjYzZmJiMDktZTJiYy00NDg1LTljNzQtYjYzYTY0MGRlZDJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller, Mystery", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#oxltw&dl=1",
     }, {
@@ -2611,8 +2621,6 @@ const contentData = [
         title: "Devagudi (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#klx6w", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzcxNzA5ZTAtZWEwOS00YmZlLWI3MTItMWE3MTUyZjE0ZTg4XkEyXkFqcGc@._V1_.jpg", genre: "Adventure, Drama, Action", category: "South", language: "Hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#klx6w&dl=1",
     }, {
         title: "Rakkasapuradhol (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#5olkv", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjg0OTllYzItNTUyZS00MmYyLTk3MGYtMWY5Y2NlY2NjNDI2XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5olkv&dl=1",
-    }, {
-        title: "Second Case of Seetharam (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#ynpjm", posterUrl: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/second-case-of-seetharam-et00487094-1770977697.jpg", genre: "Crime, Thriller", category: "South", language: "Hindi", quality:"cam-rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ynpjm&dl=1",
     }, {
         title: "Ramyaa (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#ynpas", posterUrl: "https://stat5.bollywoodhungama.in/wp-content/uploads/2026/02/Ramyaa-poster.jpeg", genre: "Drama, Action, Thriller", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ynpas&dl=1",
     }, {
@@ -4100,6 +4108,17 @@ const contentData = [
 
 
     {
+        title: "Nemesis (2026)", posterUrl: "https://resizing.flixster.com/hVdQ8jtNR5bs1wsGz1ic9Nf7xgA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p33049487_b_v8_aa.jpg", genre: "Mystery & Thriller, Action, Crime, Drama", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1KV_fvok22MPKTIzxeBFVES-4nNNY8nrp", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/1WS0XweGI" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/jS-WiC2vW" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/g9eNElY3b" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/0QQldn11I" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/9dqAtJPSt" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/tkNChhAsk1" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/EYWvjnfV9" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/Wa6A03GAl" },
+        ]
+    }, {
         title: "Off Campus (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDA0NzAzNDktYjBiOS00ZjFjLThhZTYtNzlkMDMzOTgxZTk5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Romance, Sport", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/qRcF3SoFnZoR", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/klcpZ81R_i" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/2LwqXmPaj" },
