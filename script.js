@@ -5,6 +5,8 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#19sqm", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzdkNjAxNWMtNWY3My00NTI1LTg2YWQtOGI3MDA0NzdhMjEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#19sqm&dl=1",
+    }, {
         title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8btv", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "Recent Adds", language: "Tamil", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8btv&dl=1",
     }, {
         title: "Second Case of Seetharam (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#yr86x", posterUrl: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/second-case-of-seetharam-et00487094-1770977697.jpg", genre: "Crime, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yr86x&dl=1",
@@ -64,10 +66,7 @@ const contentData = [
         title: "Bone Keeper (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9elts", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzcyZDA5MzAtNDkzOS00MDY1LTk2MDUtMTQ4YzI1ODQ4NjFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9elts&dl=1",
     }, {
         title: "Mark (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#xtimo", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTk2ZWI4NmUtNjg1ZC00MjAzLWE0ZjAtN2I1OTRjOTNhN2M0XkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#xtimo&dl=1",
-    }, {
-        title: "Dacoit: A Love Story (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#gb3jo", posterUrl: "https://images.fandango.com/ImageRenderer/500/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/243815/Dacoit-Hindi.jpg", genre: "Drama, Action, Thriller, Romance", category: "Recent Adds", language: "Hindi", quality:"1080p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gb3jo&dl=1",
     },
-
 
     // =======================================================================
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
@@ -2027,6 +2026,8 @@ const contentData = [
 
 
     {
+        title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#19sqm", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzdkNjAxNWMtNWY3My00NTI1LTg2YWQtOGI3MDA0NzdhMjEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#19sqm&dl=1",
+    }, {
         title: "Main Actor Nahin Hoon (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hawak", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGE1OWM5NTItZmZmNC00Zjk3LWI2ZGEtNDdiMTM4OGIwYTgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hawak&dl=1"
     }, {
         title: "Krishnavataram - Part 1: The Heart (Hridayam) (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qdk8p", posterUrl: "https://m.media-amazon.com/images/M/MV5BZWIyNmZjNjgtYmIwYy00MzI5LTk4MTUtMTBlOGU4NzE3ZjgyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Romance", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qdk8p&dl=1"
@@ -2050,8 +2051,6 @@ const contentData = [
         title: "Agra (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#6rlwc", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWVhYWEzOWEtZTdiOC00N2RhLWI1YTQtZThlMzJlMzQ3YjQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Adult", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6rlwc&dl=1",
     }, {
         title: "Toaster (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#juop3", posterUrl: "https://resizing.flixster.com/B9SBadqf-7FZ7MxcRkx-zt4VUf8=/fit-in/705x460/v2/https://resizing.flixster.com/ltuhDjJZ8F1iNYw4IagAHMgO-Bs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E2YTdkNmJlLTdiNGEtNDBjNC1iNzhkLWExYTYxNzUxODUyNC5qcGc=", genre: "Mystery & Thriller, Comedy", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#juop3&dl=1",
-    }, {
-        title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9ndfc", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9ndfc&dl=1",
     }, {
         title: "Dhurandhar (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#k5yak", posterUrl: "https://resizing.flixster.com/e9BwbefXTLrSGZl_SyKa5WEYtq4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p30946914_p_v8_aa.jpg", genre: "Action, Adventure, Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#k5yak&dl=1"
     }, {
