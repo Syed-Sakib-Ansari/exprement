@@ -6341,7 +6341,6 @@ function showAnnouncement() {
     const backdrop = document.getElementById('popupBackdrop');
     const popupWelcomeText = document.getElementById('popupWelcomeText');
     const popupTelegramBtn = document.getElementById('popupTelegramBtn');
-    const popupGamesBtn = document.getElementById('popupGamesBtn');
     const popupBoxContainer = document.getElementById('popupBoxContainer');
 
     if (isTrappedApp) {
@@ -6353,7 +6352,6 @@ function showAnnouncement() {
         // Hide extraneous elements to save massive vertical space
         if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
         if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
-        if (popupGamesBtn) popupGamesBtn.classList.add('hidden');
 
         // Make container even more compact
         if (popupBoxContainer) {
@@ -6369,7 +6367,6 @@ function showAnnouncement() {
         // Ensure extraneous elements are visible
         if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
         if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
-        if (popupGamesBtn) popupGamesBtn.classList.remove('hidden');
 
         // Restore regular padding
         if (popupBoxContainer) {
