@@ -4249,7 +4249,7 @@ const contentData = [
             { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/r1LJuVvck" },
             { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/BBaEZR6GA" }]
     }, {
-        title: "Man on Fire (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjFlMTMyZTAtY2NiZS00NzdjLWEwZTUtNDJjYjI4ZmU4NTBiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/x5lrdmtXgJoa", seriesInfo: "Season 1 Episode 1-7", episodes: [
+        title: "Man on Fire (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjFlMTMyZTAtY2NiZS00NzdjLWEwZTUtNDJjYjI4ZmU4NTBiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/x5lrdmtXgJoa", seriesInfo: "Season 1 Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/LzN-cNxgS" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/1RtCTsSJk" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/0S-0ho5_B" },
@@ -4257,6 +4257,71 @@ const contentData = [
             { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/sl59t7aYx" },
             { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/uapcCofJJ" },
             { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/Rfvm-KCN_" },
+        ]
+    }, {
+        title: "You (2025)", posterUrl: "https://resizing.flixster.com/M1Fk2PAHeva2Xs-PXIS_XDZRujQ=/fit-in/705x460/v2/https://resizing.flixster.com/OFGRybZ1RY8J0K74dVwfGbzT908=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNGZlNmViZjktOWZiOS00Y2NiLTkyMjctM2NjNzI0M2FjNWIxLmpwZw==", genre: "Drama, Mystery & Thriller, Crime", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/vc7uDXpRzL4K", seriesInfo: "Season 5 Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/Z4Vb9JnSh" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/kvx-7AHDz" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/WOzsSORzh" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/fdOIsMoxc" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/ZbOy2LSQpQ" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/Au7D9nvTr" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/9wI1k2JhO" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/_0A3jQwA_" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/7XqPj0Z_x" },
+            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/PYArlzTpr" },
+        ]
+    }, {
+        title: "You (2023)", posterUrl: "https://universalextras.co.uk/files/2023/01/You-Series-4-2023-TV-Series-Poster-Uni-versal-Extras.png", genre: "Drama, Mystery & Thriller, Crime", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/tUk8fH5nVb7A", seriesInfo: "Season 4 Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/ZtNrMNrrb" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/5MkyS25fW" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/Q3chVQKBG" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/bGmZK8VCF" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/uYVa_EewK" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/MSK7Qnz8o" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/EFVwNt5eP" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/KbX9eSdEO" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/NRHd0Q8pC" },
+            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/7RgDj1204" },
+        ]
+    }, {
+        title: "You (2021)", posterUrl: "https://resizing.flixster.com/g4iHPAcxiOpWaJ3q3r-gVTZaBDg=/fit-in/705x460/v2/https://resizing.flixster.com/FJuMwZpay5FUwItDiuY88DCpyqA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNGNmOGM4ZmUtZmI5My00ZDU2LTk4MzAtZGFiMDQ2YTc2N2EwLmpwZw==", genre: "Drama, Mystery & Thriller, Crime", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/1NCLiPxFBRZI", seriesInfo: "Season 3 Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/sGC6oTNj3" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/nzza-Wz4Y" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/RBVYqH1iO" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/rYx26waLOX" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/QkpDnjsos" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/-DuyHsOpX" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/NVlgnHlBY" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/YKSAhKyxU" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/i7soPogph" },
+            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/X89toE-_3" },
+        ]
+    }, {
+        title: "You (2019)", posterUrl: "https://resizing.flixster.com/LkoyKd1PVzfj1JUqN66GZeBQwcA=/fit-in/705x460/v2/https://resizing.flixster.com/5WmsQH-azLOCeFVzyaHFvadXHh8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjYwMTE0Mi53ZWJw", genre: "Drama, Mystery & Thriller, Crime", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/x5lrdmtXgJoa", seriesInfo: "Season 2 Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.seekplays.com/#bzjlh", downloadBtn:"https://moviedakhi.seekplays.com/#bzjlh&dl=1" },
+            { number: 2, title: "Episode 2", embedUrl: "https://moviedakhi.seekplays.com/#86lm8", downloadBtn:"https://moviedakhi.seekplays.com/#86lm8&dl=1" },
+            { number: 3, title: "Episode 3", embedUrl: "https://moviedakhi.seekplays.com/#av9xe", downloadBtn:"https://moviedakhi.seekplays.com/#av9xe&dl=1" },
+            { number: 4, title: "Episode 4", embedUrl: "https://moviedakhi.seekplays.com/#86lwb", downloadBtn:"https://moviedakhi.seekplays.com/#86lwb&dl=1" },
+            { number: 5, title: "Episode 5", embedUrl: "https://moviedakhi.seekplays.com/#kb5nq", downloadBtn:"https://moviedakhi.seekplays.com/#kb5nq&dl=1" },
+            { number: 6, title: "Episode 6", embedUrl: "https://moviedakhi.seekplays.com/#5j3yc", downloadBtn:"https://moviedakhi.seekplays.com/#5j3yc&dl=1" },
+            { number: 7, title: "Episode 7", embedUrl: "https://moviedakhi.seekplays.com/#av98m", downloadBtn:"https://moviedakhi.seekplays.com/#av98m&dl=1" },
+            { number: 8, title: "Episode 8", embedUrl: "https://moviedakhi.seekplays.com/#86lnp", downloadBtn:"https://moviedakhi.seekplays.com/#86lnp&dl=1" },
+            { number: 9, title: "Episode 9", embedUrl: "https://moviedakhi.seekplays.com/#odech", downloadBtn:"https://moviedakhi.seekplays.com/#odech&dl=1" },
+            { number: 10, title: "Episode 10", embedUrl: "https://moviedakhi.seekplays.com/#kb5vq", downloadBtn:"https://moviedakhi.seekplays.com/#kb5vq&dl=1" },
+        ]
+    }, {
+        title: "You (2018)", posterUrl: "https://resizing.flixster.com/UJl1J0HnKhubEjAwZT13GQyoCdQ=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15725175_b_v9_aa.jpg", genre: "Drama, Mystery & Thriller, Crime", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/l2rDKKwHUR7J", seriesInfo: "Season 1 Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/Q5QlZUtgU" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/EKlCUD5V0Q" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/xzrgWohGG" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/gpmeLsQ9O" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/4z9V4Jtv1" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/G0KOT26fg" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/Ya7SClj1f" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/OISvzw6UA9" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/KMiFIBEqk" },
+            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/qaxC_dwOO" },
         ]
     }, {
         title: "Flunked (2020)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzUwYjNjMTItOWM1Mi00NDJlLTk5ZTgtM2U4NzRiY2RiNTlkXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama", category: "Hollywood Series", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 1, Episode 1-8", episodes: [
