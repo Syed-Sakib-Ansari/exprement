@@ -5,7 +5,7 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
-        title: "Jetlee (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8lx6", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjdkMWE2MTYtZDZmNC00MTEzLWI1MTItNWExODQ4MzBiZWMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8lx6&dl=1",
+        title: "Jetlee (2026).", embedUrl: "https://moviedakhi.4meplayer.com/#c8lx6", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjdkMWE2MTYtZDZmNC00MTEzLWI1MTItNWExODQ4MzBiZWMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8lx6&dl=1",
     }, {
         title: "Inspector Avinash (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhOTY3YWItODJmOC00Njg3LTk1MTktOTExODQ4NDA2NTE3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/1us1u2ccvcdnduu", seriesInfo: "Season 2, Episode 1-10", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/2O6iAF2JRg" },
