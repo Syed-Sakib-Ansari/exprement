@@ -5,6 +5,36 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Inspector Avinash (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhOTY3YWItODJmOC00Njg3LTk1MTktOTExODQ4NDA2NTE3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 2, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/2O6iAF2JRg" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/ngLqUSgvM" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/RGBPW1h7s" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/rlvY0ZAnV" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/ddgKdSF_b" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/6WGqZ0Q_0" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/Ecx-JLucg" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/OfnczpZd3" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/DZu5zmKcw" },
+            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/aZTSR7c4En" },]
+    }, {
+        title: "Inspector Avinash (2023)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmFkMDllYzItMTcxYi00ZDU1LTk1ZjUtZDg0ZjdjNWQ0MWY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Action", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 1, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/wV9XLSaGI" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/K9Jj4EACv" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/cQzbNUUQ3" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/BqMDekWXM" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/LrGHELEnj" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/RgF9GgyxM" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/gI-XtdpGY" },]
+    }, {
+        title: "Exam (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGJkNTJjZWUtMGFlMi00OGY0LThjYmYtYmU5ZjE0OTRhZmQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 1, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/YbwS0NMyo" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/upG_qavHW" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/Y-iRmEUQN" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/TKWu8ZeIF" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/Rloc5q-Gb" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/rxqlbGzpb" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/DMcDyfjJE" },]
+    }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#19sqm", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzdkNjAxNWMtNWY3My00NTI1LTg2YWQtOGI3MDA0NzdhMjEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#19sqm&dl=1",
     }, {
         title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8btv", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "Recent Adds", language: "Tamil", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8btv&dl=1",
@@ -60,12 +90,6 @@ const contentData = [
         ]
     }, {
         title: "Peep Show (1986)", embedUrl: "https://moviedakhi.4meplayer.com/#61pxp", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2Fcw9HtAhMNseE9oRvXKa00mNCqFC.jpg", genre: "Adult, Erotic, Romance", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#61pxp&dl=1"
-    }, {
-        title: "Kaalidas 2 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jp1t", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzVmZmQ2N2ItMTI1Yi00ZDcyLTk1ODUtNmZlN2U1ZWY4Y2NiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jp1t&dl=1",
-    }, {
-        title: "Bone Keeper (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9elts", posterUrl: "https://m.media-amazon.com/images/M/MV5BYzcyZDA5MzAtNDkzOS00MDY1LTk2MDUtMTQ4YzI1ODQ4NjFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#9elts&dl=1",
-    }, {
-        title: "Mark (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#xtimo", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTk2ZWI4NmUtNjg1ZC00MjAzLWE0ZjAtN2I1OTRjOTNhN2M0XkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#xtimo&dl=1",
     },
 
     // =======================================================================
@@ -2442,6 +2466,15 @@ const contentData = [
 
 
     {
+        title: "Exam (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGJkNTJjZWUtMGFlMi00OGY0LThjYmYtYmU5ZjE0OTRhZmQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 1, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/YbwS0NMyo" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/upG_qavHW" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/Y-iRmEUQN" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/TKWu8ZeIF" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/Rloc5q-Gb" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/rxqlbGzpb" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/DMcDyfjJE" },]
+    }, {
         title: "Mr. X (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8btv", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWUxZDM4N2EtNGJlYS00OWNjLThmOTktZTdmM2E5YmVlMjA2XkEyXkFqcGc@._V1_.jpg", genre: "Spy, Action, Drama, Thriller", category: "South", language: "Tamil", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8btv&dl=1",
     }, {
         title: "Second Case of Seetharam (2026)",embedUrl: "https://moviedakhi.4meplayer.com/#yr86x", posterUrl: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/second-case-of-seetharam-et00487094-1770977697.jpg", genre: "Crime, Thriller", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#yr86x&dl=1",
@@ -3911,6 +3944,27 @@ const contentData = [
 
 
     {
+        title: "Inspector Avinash (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhOTY3YWItODJmOC00Njg3LTk1MTktOTExODQ4NDA2NTE3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 2, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/2O6iAF2JRg" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/ngLqUSgvM" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/RGBPW1h7s" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/rlvY0ZAnV" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/ddgKdSF_b" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/6WGqZ0Q_0" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/Ecx-JLucg" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/OfnczpZd3" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/DZu5zmKcw" },
+            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/aZTSR7c4En" },]
+    }, {
+        title: "Inspector Avinash (2023)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmFkMDllYzItMTcxYi00ZDU1LTk1ZjUtZDg0ZjdjNWQ0MWY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Action", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 1, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/wV9XLSaGI" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/K9Jj4EACv" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/cQzbNUUQ3" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/BqMDekWXM" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/LrGHELEnj" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/RgF9GgyxM" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/gI-XtdpGY" },]
+    }, {
         title: "Lukkhe (2026)", posterUrl: "https://i.imgbd.org/poster_oo741778180945.jpg", genre: "Mystery, Thriller, Action, Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/EMjmb2TKz" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/voJ4JusYI" },
@@ -4993,7 +5047,7 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/5NYTXzhYv" },
         ]
     }, {
-        title: "Mr. Robot (2015)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11710290_b_v8_aa.jpg", genre: "Drama, Crime, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 1, Episode 1-10", episodes: [
+        title: "Mr. Robot (2015)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11710290_b_v8_aa.jpg", genre: "Drama, Crime, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/969hdh4r8hddbah", seriesInfo: "Season 1, Episode 1-10", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/XIs_Fa_fK" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/KdK4XjpE2" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/uZBdsniAn" },
@@ -5006,7 +5060,7 @@ const contentData = [
             { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/5RU6EoBSO" },
         ]
     }, {
-        title: "Mr. Robot (2016)", posterUrl: "https://resizing.flixster.com/L95XRpXmvp8-QjUv7Ro2ShR-Tuw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12922738_b_v9_aa.jpg", genre: "Drama, Crime, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 2, Episode 1-12", episodes: [
+        title: "Mr. Robot (2016)", posterUrl: "https://resizing.flixster.com/L95XRpXmvp8-QjUv7Ro2ShR-Tuw=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12922738_b_v9_aa.jpg", genre: "Drama, Crime, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/pmvsbcsrc_ipar0", seriesInfo: "Season 2, Episode 1-12", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/_cF_-5c2y" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/022ohOmdB" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PZe-yGygW" },
@@ -5021,7 +5075,7 @@ const contentData = [
             { number: 12, title: "Episode 12", embedUrl: "https://abyssplayer.com/uay-M6lxO" },
         ]
     }, {
-        title: "Mr. Robot (2017)", posterUrl: "https://resizing.flixster.com/Pt4zdWK1ON9vLlD2GUwguZo68w4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p14461667_b_v9_aa.jpg", genre: "Drama, Crime, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 3, Episode 1-10", episodes: [
+        title: "Mr. Robot (2017)", posterUrl: "https://resizing.flixster.com/Pt4zdWK1ON9vLlD2GUwguZo68w4=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p14461667_b_v9_aa.jpg", genre: "Drama, Crime, Mystery & Thriller", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/rfmr49lafujtmal", seriesInfo: "Season 3, Episode 1-10", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/9t2ByB7qm" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/Wq-fOzhHM" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/FN0nNCrb5" },
@@ -5034,7 +5088,7 @@ const contentData = [
             { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/BB9pwSkHb" },
         ]
     }, {
-        title: "Severance (2022)", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTg4NTBiZDAtZTc0YS00NzZlLTg4Y2ItNGQ3M2ZlMDM5MWQzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Crime, Mystery & Thriller, Sci-Fi", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 4, Episode 1-13", episodes: [
+        title: "Mr. Robot (2019)", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTg4NTBiZDAtZTc0YS00NzZlLTg4Y2ItNGQ3M2ZlMDM5MWQzXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Crime, Mystery & Thriller, Sci-Fi", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/osrqvhajwh6qqeq", seriesInfo: "Season 4, Episode 1-13", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/FTwB5Dy6u" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/wCrRoPVCB" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/6H-8b2yiZ" },
@@ -5050,7 +5104,7 @@ const contentData = [
             { number: 13, title: "Episode 13", embedUrl: "https://abyssplayer.com/U2858620d" },
         ]
     }, {
-        title: "Pluribus (2025)", posterUrl: "https://resizing.flixster.com/U97uBdc-OSUWpJ7b7n9e_eSbg0g=/fit-in/705x460/v2/https://resizing.flixster.com/TnmWs-1kvQZQfNrzQmZYsu4NJPw=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vN2NmMTAxNWQtMDZlOS00ZDY5LWI3OTItZDM4ODBlMDIxOGYyLnBuZw==", genre: "Drama", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 1, Episode 1-9", episodes: [
+        title: "Pluribus (2025)", posterUrl: "https://resizing.flixster.com/U97uBdc-OSUWpJ7b7n9e_eSbg0g=/fit-in/705x460/v2/https://resizing.flixster.com/TnmWs-1kvQZQfNrzQmZYsu4NJPw=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vN2NmMTAxNWQtMDZlOS00ZDY5LWI3OTItZDM4ODBlMDIxOGYyLnBuZw==", genre: "Drama", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/x65t6tqimourgnr", seriesInfo: "Season 1, Episode 1-9", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/Z-N_g4TaM" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/V2kHrH2K3" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/23v7ht111" },
@@ -5062,7 +5116,7 @@ const contentData = [
             { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/PI5e_Z-8I" },
         ]
     }, {
-        title: "Severance (2022)", posterUrl: "https://m.media-amazon.com/images/I/713HILcikjL._AC_UF894,1000_QL80_.jpg", genre: "Drama, Mystery & Thriller, Sci-Fi", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 1, Episode 1-9", episodes: [
+        title: "Severance (2022)", posterUrl: "https://m.media-amazon.com/images/I/713HILcikjL._AC_UF894,1000_QL80_.jpg", genre: "Drama, Mystery & Thriller, Sci-Fi", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/thsx8h0tmm3fy1f", seriesInfo: "Season 1, Episode 1-9", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/V9oCFUO-u" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/5rJqylNaoC" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/Sm60dgonS" },
