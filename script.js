@@ -5,6 +5,19 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Berlin: The Lady with an Ermine (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BODAwOGFiZDItNGZkNy00ZjdkLThkMjktZGY4ZDE3MDMyZWRhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Mystery & Thriller ,Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/m177gggy5q06byi", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/XoLRDxA_T" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/CnloFHX2-" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/f6ffYfPjv" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/FcrbkWErQ" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/J53zXIeCL" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/PT2-x6WQb" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/fLp6FSRQd" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/KNidko6E_" },
+        ]
+    }, {
+        title: "Kartavya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8uqs", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmNiZTM0MmYtY2U2Yi00N2E5LWE1NWUtMDg2NTU4Mjg5Y2IzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8uqs&dl=1",
+    }, {
         title: "Jetlee (2026).", embedUrl: "https://moviedakhi.4meplayer.com/#c8lx6", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjdkMWE2MTYtZDZmNC00MTEzLWI1MTItNWExODQ4MzBiZWMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8lx6&dl=1",
     }, {
         title: "Inspector Avinash (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhOTY3YWItODJmOC00Njg3LTk1MTktOTExODQ4NDA2NTE3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/1us1u2ccvcdnduu", seriesInfo: "Season 2, Episode 1-10", episodes: [
@@ -79,18 +92,6 @@ const contentData = [
         title: "Blue Whale (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#61bsf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTA2ZjhhY2EtN2RhMS00ZTM3LWFhMTUtZWY5YjNmODgwY2M4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#61bsf&dl=1",
     }, {
         title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3rsjf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#3rsjf&dl=1",
-    }, {
-        title: "Main Actor Nahin Hoon (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hawak", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGE1OWM5NTItZmZmNC00Zjk3LWI2ZGEtNDdiMTM4OGIwYTgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#hawak&dl=1"
-    }, {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 5, Episode 1-7", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI" },
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/H2mRGyi_8" },
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rdgm10RA6" },
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/H-kl3Tx9S" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS" },
-        ]
     },
 
     // =======================================================================
@@ -2051,6 +2052,8 @@ const contentData = [
 
 
     {
+        title: "Kartavya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8uqs", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmNiZTM0MmYtY2U2Yi00N2E5LWE1NWUtMDg2NTU4Mjg5Y2IzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller, Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8uqs&dl=1",
+    }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#19sqm", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzdkNjAxNWMtNWY3My00NTI1LTg2YWQtOGI3MDA0NzdhMjEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#19sqm&dl=1",
     }, {
         title: "Main Actor Nahin Hoon (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hawak", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGE1OWM5NTItZmZmNC00Zjk3LWI2ZGEtNDdiMTM4OGIwYTgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#hawak&dl=1"
@@ -4165,6 +4168,17 @@ const contentData = [
 
 
     {
+        title: "Berlin: The Lady with an Ermine (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BODAwOGFiZDItNGZkNy00ZjdkLThkMjktZGY4ZDE3MDMyZWRhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Mystery & Thriller ,Drama", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/m177gggy5q06byi", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/XoLRDxA_T" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/CnloFHX2-" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/f6ffYfPjv" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/FcrbkWErQ" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/J53zXIeCL" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/PT2-x6WQb" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/fLp6FSRQd" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/KNidko6E_" },
+        ]
+    }, {
         title: "Nemesis (2026)", posterUrl: "https://resizing.flixster.com/hVdQ8jtNR5bs1wsGz1ic9Nf7xgA=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p33049487_b_v8_aa.jpg", genre: "Mystery & Thriller, Action, Crime, Drama", category: "Hollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1KV_fvok22MPKTIzxeBFVES-4nNNY8nrp", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/1WS0XweGI" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/jS-WiC2vW" },
@@ -5014,11 +5028,33 @@ const contentData = [
     }, {
         title: "Fake Profile (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qzj6p", posterUrl: "https://resizing.flixster.com/B4tNRf4vM5p0Qm-_xPRiMtNaeqQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vN2I3M2FmMjgtMmY5My00OGZmLWI5NmYtYWIyNTQxMmViZTY3LmpwZw==", genre: "Drama, Mystery & Thriller, Romance", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#qzj6p&dl=1", seriesInfo: "Season 3 Episode ALL",
     }, {
-        title: "Willow (2022)", posterUrl: "https://resizing.flixster.com/PcrmLLfLDdiisITDEmF0a1ebEYk=/fit-in/705x460/v2/https://resizing.flixster.com/QpE5wfUv6p8Id6PCs7tF3tHwMqI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzMxZGQ3MjQtMzI1Ny00MjM1LTk1MGQtM2RlNTNiN2MyMGY0LmpwZw==", genre: "Fantasy, Adventure", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season  Episode 1-2", episodes: [
+        title: "Willow (2022)", posterUrl: "https://resizing.flixster.com/PcrmLLfLDdiisITDEmF0a1ebEYk=/fit-in/705x460/v2/https://resizing.flixster.com/QpE5wfUv6p8Id6PCs7tF3tHwMqI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzMxZGQ3MjQtMzI1Ny00MjM1LTk1MGQtM2RlNTNiN2MyMGY0LmpwZw==", genre: "Fantasy, Adventure", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1uBNW2M4ToCBCAHLWZX9QCSPUAxeYQIwn", seriesInfo: "Season 1 Episode 1-8", episodes: [
             { number: 1, title: "Episode 1-4", embedUrl: "https://abyssplayer.com/TI5sc5GzM6" },
             { number: 2, title: "Episode 5-8", embedUrl: "https://abyssplayer.com/qhV_qs8p-" },]
     }, {
-        title: "Sky Rojo (2023)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23587545_b_v13_aa.jpg", genre: "Crime, Drama, Action, Adventure", category: "Hollywood Series", language: "Hindi", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 2 Episode 1-8", episodes: [
+        title: "Sky rojo (2021)", posterUrl: "https://static.wikia.nocookie.net/skyrojo/images/8/8c/Sky_Rojo_S1_Poster_SPA.jpg/revision/latest?cb=20210307051133", genre: "Crime, Drama, Action, Adventure", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/fdr8lufdlb2ocjp", seriesInfo: "Season 1 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/ZFcKSOPaB" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/FHAHPt4nPC" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/Lzirq6Vn6" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/Ai47C8GUV" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/Ev_HYx2cU" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/bG5QANQ-x" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/eF3dIPew9" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/YZHTOcfuF" },
+        ]
+    }, {
+        title: "Sky rojo (2021)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18503960_b_v8_aa.jpg", genre: "Crime, Drama, Action, Adventure", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/zyadrpfs__cnntl", seriesInfo: "Season 2 Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/HX6yqRIv5" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/2l8hGcg56" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/aobn4vC4E" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/xWMAXH1c3" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/e7e7GpHYW" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/Rsj1Xfjin" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/hy6vZL-lw" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/x73GTbGDw" },
+        ]
+    }, {
+        title: "Sky Rojo (2023)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23587545_b_v13_aa.jpg", genre: "Crime, Drama, Action, Adventure", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/4qjj75jq9afw719", seriesInfo: "Season 3 Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/p6JVVpRte" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/aKwiLnMbf" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/4yLyvRT2n" },
@@ -5029,7 +5065,7 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/oeUaWN4ka" },
         ]
     }, {
-        title: "Euphoria (2022)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18988683_b_v13_ab.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 2 Episode 1-8", episodes: [
+        title: "Euphoria (2022)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p18988683_b_v13_ab.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/tjgmgmsbrmedmbt", seriesInfo: "Season 2 Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/7L6Pt-cxl" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/lLwc5tbXJ" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/Uw2GsZoJo" },
