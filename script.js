@@ -5,7 +5,7 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
-        title: "Inspector Avinash (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhOTY3YWItODJmOC00Njg3LTk1MTktOTExODQ4NDA2NTE3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 2, Episode 1-7", episodes: [
+        title: "Inspector Avinash (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhOTY3YWItODJmOC00Njg3LTk1MTktOTExODQ4NDA2NTE3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/1us1u2ccvcdnduu", seriesInfo: "Season 2, Episode 1-10", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/2O6iAF2JRg" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/ngLqUSgvM" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/RGBPW1h7s" }, 
@@ -17,16 +17,17 @@ const contentData = [
             { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/DZu5zmKcw" },
             { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/aZTSR7c4En" },]
     }, {
-        title: "Inspector Avinash (2023)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmFkMDllYzItMTcxYi00ZDU1LTk1ZjUtZDg0ZjdjNWQ0MWY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Action", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 1, Episode 1-7", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/wV9XLSaGI" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/K9Jj4EACv" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/cQzbNUUQ3" }, 
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/BqMDekWXM" }, 
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/LrGHELEnj" }, 
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/RgF9GgyxM" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/gI-XtdpGY" },]
+        title: "Inspector Avinash (2023)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmFkMDllYzItMTcxYi00ZDU1LTk1ZjUtZDg0ZjdjNWQ0MWY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Action", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/wV9XLSaGI", downloadUrl:"https://hubcloud.foo/drive/gonv1bjwpjdpisj" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/K9Jj4EACv", downloadUrl:"https://hubcloud.foo/drive/63q3jwy8yiiqw6n" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/cQzbNUUQ3", downloadUrl:"https://hubcloud.foo/drive/vwm8j391ojw887t" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/BqMDekWXM", downloadUrl:"https://hubcloud.foo/drive/6f6h9x6lh1vpvhl" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/LrGHELEnj", downloadUrl:"https://hubcloud.foo/drive/2osdwt8y3rypyiy" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/RgF9GgyxM", downloadUrl:"https://hubcloud.foo/drive/nq1nutamnoyfnty" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/gI-XtdpGY", downloadUrl:"https://hubcloud.foo/drive/ohi2pcd2ttyldzp" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/n3k3mTFv5", downloadUrl:"https://hubcloud.foo/drive/gm2tddhgt1lo_bh" }]
     }, {
-        title: "Exam (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGJkNTJjZWUtMGFlMi00OGY0LThjYmYtYmU5ZjE0OTRhZmQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 1, Episode 1-7", episodes: [
+        title: "Exam (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGJkNTJjZWUtMGFlMi00OGY0LThjYmYtYmU5ZjE0OTRhZmQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/rccfnh81zqdcf70", seriesInfo: "Season 1, Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/YbwS0NMyo" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/upG_qavHW" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/Y-iRmEUQN" }, 
@@ -2466,7 +2467,7 @@ const contentData = [
 
 
     {
-        title: "Exam (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGJkNTJjZWUtMGFlMi00OGY0LThjYmYtYmU5ZjE0OTRhZmQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 1, Episode 1-7", episodes: [
+        title: "Exam (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGJkNTJjZWUtMGFlMi00OGY0LThjYmYtYmU5ZjE0OTRhZmQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/rccfnh81zqdcf70", seriesInfo: "Season 1, Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/YbwS0NMyo" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/upG_qavHW" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/Y-iRmEUQN" }, 
@@ -3944,7 +3945,7 @@ const contentData = [
 
 
     {
-        title: "Inspector Avinash (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhOTY3YWItODJmOC00Njg3LTk1MTktOTExODQ4NDA2NTE3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 2, Episode 1-7", episodes: [
+        title: "Inspector Avinash (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhOTY3YWItODJmOC00Njg3LTk1MTktOTExODQ4NDA2NTE3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/1us1u2ccvcdnduu", seriesInfo: "Season 2, Episode 1-10", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/2O6iAF2JRg" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/ngLqUSgvM" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/RGBPW1h7s" }, 
@@ -3956,14 +3957,15 @@ const contentData = [
             { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/DZu5zmKcw" },
             { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/aZTSR7c4En" },]
     }, {
-        title: "Inspector Avinash (2023)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmFkMDllYzItMTcxYi00ZDU1LTk1ZjUtZDg0ZjdjNWQ0MWY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Action", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 1, Episode 1-7", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/wV9XLSaGI" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/K9Jj4EACv" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/cQzbNUUQ3" }, 
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/BqMDekWXM" }, 
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/LrGHELEnj" }, 
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/RgF9GgyxM" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/gI-XtdpGY" },]
+        title: "Inspector Avinash (2023)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmFkMDllYzItMTcxYi00ZDU1LTk1ZjUtZDg0ZjdjNWQ0MWY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Action", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/wV9XLSaGI", downloadUrl:"https://hubcloud.foo/drive/gonv1bjwpjdpisj" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/K9Jj4EACv", downloadUrl:"https://hubcloud.foo/drive/63q3jwy8yiiqw6n" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/cQzbNUUQ3", downloadUrl:"https://hubcloud.foo/drive/vwm8j391ojw887t" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/BqMDekWXM", downloadUrl:"https://hubcloud.foo/drive/6f6h9x6lh1vpvhl" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/LrGHELEnj", downloadUrl:"https://hubcloud.foo/drive/2osdwt8y3rypyiy" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/RgF9GgyxM", downloadUrl:"https://hubcloud.foo/drive/nq1nutamnoyfnty" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/gI-XtdpGY", downloadUrl:"https://hubcloud.foo/drive/ohi2pcd2ttyldzp" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/n3k3mTFv5", downloadUrl:"https://hubcloud.foo/drive/gm2tddhgt1lo_bh" }]
     }, {
         title: "Lukkhe (2026)", posterUrl: "https://i.imgbd.org/poster_oo741778180945.jpg", genre: "Mystery, Thriller, Action, Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1a4jivYrtfzTXLYojRRyyga8TYvUS-yiV", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/EMjmb2TKz" },
