@@ -6328,26 +6328,31 @@ searchInput.addEventListener('keydown', (e) => {
 // TRIGGER POPUP ON LOAD
 // After Every Reload Start
 
-// For Telegram Browser Start
-const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
-const refCheck = document.referrer || '';
-
-const isFBCheck = /FBAN|FBAV/i.test(uaCheck);
-
-// Deep research Telegram & Generic WebView detection
-const isTGCheck =
-    /Telegram/i.test(uaCheck) ||
-    /android-app:\/\/org\.telegram/i.test(refCheck) ||
-    /t\.me/i.test(refCheck) ||
-    (typeof window.TelegramWebviewProxy !== 'undefined') ||
-    // Universal WebView trap
-    /\bwv\b/i.test(uaCheck) ||
-    /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(uaCheck) ||
-    /Android.*Version\/[\d\.]+.*Chrome/i.test(uaCheck) ||
-    /Instagram|WhatsApp|Snapchat|Twitter|Line|Viber/i.test(uaCheck);
-
-const isTrappedCheck = isFBCheck || isTGCheck;
-// For Telegram Browser End
+        // Ucbrowser Problem Fixed Start
+        const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
+        const refCheck = document.referrer || '';
+        
+        const isFBCheck = /FBAN|FBAV/i.test(uaCheck);
+        
+        // Explicitly identify UC Browser to exclude it from the "Trapped WebView" list
+        const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
+        
+        // Deep research Telegram & Generic WebView detection
+        const isTGCheck = 
+            /Telegram|org\.telegram/i.test(uaCheck) || 
+            /android-app:\/\/org\.telegram/i.test(refCheck) || 
+            /t\.me/i.test(refCheck) || 
+            (typeof window.TelegramWebviewProxy !== 'undefined') ||
+            // Universal WebView trap (Make sure it's NOT UC Browser!)
+            (!isUCCheck && (
+                /\b(wv|WebView)\b/i.test(uaCheck) || 
+                /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(uaCheck) || 
+                /Android.*Version\/[\d\.]+.*Chrome/i.test(uaCheck)
+            )) ||
+            /Instagram|WhatsApp|Snapchat|Twitter|Line|Viber/i.test(uaCheck);
+            
+        const isTrappedCheck = isFBCheck || isTGCheck;
+        // Ucbrowser Problem Fixed End
 
 // If they are in Facebook, Telegram, or any trapped App, show the popup almost instantly (500ms) 
 // Otherwise, wait the normal 7.5 seconds for the welcome popup.
@@ -6541,95 +6546,100 @@ window.addEventListener('click', (e) => {
 // ==========================================
 // ANNOUNCEMENT POPUP LOGIC 
 // ==========================================
-// New Popup Box Start
-function showAnnouncement() {
-    const popup = document.getElementById('announcementPopup');
-    if (!popup) return;
+        // Ucbrowser Problem Fixed Start
+        function showAnnouncement() {
+            const popup = document.getElementById('announcementPopup');
+            if (!popup) return;
 
-    // For Telegram Browser Start
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
-    const ref = document.referrer || '';
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            const ref = document.referrer || '';
+            const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
+            
+            const isFacebookApp = /FBAN|FBAV/i.test(ua);
+            
+            // Explicitly identify UC Browser so we can safely exclude it from the generic WebView trap
+            const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
+            
+            const isTelegramUA = /Telegram|org\.telegram/i.test(ua) || 
+                                 (!isUCBrowser && (
+                                     /\b(wv|WebView)\b/i.test(ua) || 
+                                     (/Android/i.test(ua) && /Version\/[\d\.]+.*Chrome/i.test(ua)) || 
+                                     (/(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua))
+                                 )) ||
+                                 /Instagram|WhatsApp|Snapchat|Twitter|Line|Viber/i.test(ua);
+                                 
+            const isTelegramRef = /telegram|t\.me|org\.telegram/i.test(ref) || /android-app:\/\//i.test(ref);
+            const isTelegramApp = isTelegramUA || isTelegramRef;
+            
+            const isTrappedApp = isFacebookApp || isTelegramApp;
+            
+            const warningText = document.getElementById('browserWarningText');
+            if (warningText) {
+                if (isFacebookApp) {
+                    warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                } else if (isTelegramApp) {
+                    warningText.innerHTML = `Telegram / In-App browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                }
+            }
+            
+            const suggestionBox = document.getElementById('browserSuggestionBox');
+            const topCloseBtn = document.getElementById('announcementCloseBtnTop');
+            const bottomCloseBtn = document.getElementById('announcementCloseBtnBottom');
+            const backdrop = document.getElementById('popupBackdrop');
+            const popupWelcomeText = document.getElementById('popupWelcomeText');
+            const popupTelegramBtn = document.getElementById('popupTelegramBtn');
+            const popupGamesBtn = document.getElementById('popupGamesBtn');
+            const popupBoxContainer = document.getElementById('popupBoxContainer');
+            
+            if (isTrappedApp) { 
+                if(suggestionBox) suggestionBox.classList.remove('hidden'); // Show if on Facebook/Telegram
+                if(topCloseBtn) topCloseBtn.classList.add('hidden'); // Hide Top X
+                if(bottomCloseBtn) bottomCloseBtn.classList.add('hidden'); // Hide Bottom Close
+                if(backdrop) backdrop.onclick = null; // Disable clicking background to close
+                
+                // Hide extraneous elements to save massive vertical space
+                if(popupWelcomeText) popupWelcomeText.classList.add('hidden');
+                if(popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
+                if(popupGamesBtn) popupGamesBtn.classList.add('hidden');
+                
+                // Make container even more compact
+                if(popupBoxContainer) {
+                    popupBoxContainer.classList.remove('p-5', 'md:p-8');
+                    popupBoxContainer.classList.add('p-4');
+                }
+            } else {
+                if(suggestionBox) suggestionBox.classList.add('hidden'); // Keep hidden otherwise
+                if(topCloseBtn) topCloseBtn.classList.remove('hidden'); // Ensure Top X is visible
+                if(bottomCloseBtn) bottomCloseBtn.classList.remove('hidden'); // Ensure Bottom Close is visible
+                if(backdrop) backdrop.onclick = closeAnnouncement; // Re-enable background close
+                
+                // Ensure extraneous elements are visible
+                if(popupWelcomeText) popupWelcomeText.classList.remove('hidden');
+                if(popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
+                if(popupGamesBtn) popupGamesBtn.classList.remove('hidden');
+                
+                // Restore regular padding
+                if(popupBoxContainer) {
+                    popupBoxContainer.classList.add('p-5', 'md:p-8');
+                    popupBoxContainer.classList.remove('p-4');
+                }
+            }
 
-    const isFacebookApp = /FBAN|FBAV/i.test(ua);
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
 
-    // Deep research Telegram & Generic WebView detection
-    const isTelegramApp =
-        /Telegram/i.test(ua) ||
-        /android-app:\/\/org\.telegram/i.test(ref) ||
-        /t\.me/i.test(ref) ||
-        (typeof window.TelegramWebviewProxy !== 'undefined') ||
-        // Universal WebView trap (catches hidden Telegram browsers)
-        /\bwv\b/i.test(ua) ||
-        /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua) ||
-        /Android.*Version\/[\d\.]+.*Chrome/i.test(ua) ||
-        /Instagram|WhatsApp|Snapchat|Twitter|Line|Viber/i.test(ua);
+            // Save isolated scroll position just for this popup to prevent jumping
+            announcementScrollY = window.scrollY || document.documentElement.scrollTop;
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${announcementScrollY}px`;
+            document.body.style.width = '100%';
 
-    const isTrappedApp = isFacebookApp || isTelegramApp;
-
-    const warningText = document.getElementById('browserWarningText');
-    if (warningText) {
-        if (isFacebookApp) {
-            warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
-        } else if (isTelegramApp) {
-            warningText.innerHTML = `Telegram / In-App browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+            // Small timeout to allow display:flex to apply before animating opacity/transform
+            setTimeout(() => {
+                popup.classList.add('active');
+            }, 50);
         }
-    }
-    // For Telegram Browser End
-
-    const suggestionBox = document.getElementById('browserSuggestionBox');
-    const topCloseBtn = document.getElementById('announcementCloseBtnTop');
-    const bottomCloseBtn = document.getElementById('announcementCloseBtnBottom');
-    const backdrop = document.getElementById('popupBackdrop');
-    const popupWelcomeText = document.getElementById('popupWelcomeText');
-    const popupTelegramBtn = document.getElementById('popupTelegramBtn');
-    const popupBoxContainer = document.getElementById('popupBoxContainer');
-
-    if (isTrappedApp) {
-        if (suggestionBox) suggestionBox.classList.remove('hidden'); // Show if on Facebook/Telegram
-        if (topCloseBtn) topCloseBtn.classList.add('hidden'); // Hide Top X
-        if (bottomCloseBtn) bottomCloseBtn.classList.add('hidden'); // Hide Bottom Close
-        if (backdrop) backdrop.onclick = null; // Disable clicking background to close
-
-        // Hide extraneous elements to save massive vertical space
-        if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
-        if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
-
-        // Make container even more compact
-        if (popupBoxContainer) {
-            popupBoxContainer.classList.remove('p-5', 'md:p-8');
-            popupBoxContainer.classList.add('p-4');
-        }
-    } else {
-        if (suggestionBox) suggestionBox.classList.add('hidden'); // Keep hidden otherwise
-        if (topCloseBtn) topCloseBtn.classList.remove('hidden'); // Ensure Top X is visible
-        if (bottomCloseBtn) bottomCloseBtn.classList.remove('hidden'); // Ensure Bottom Close is visible
-        if (backdrop) backdrop.onclick = closeAnnouncement; // Re-enable background close
-
-        // Ensure extraneous elements are visible
-        if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
-        if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
-
-        // Restore regular padding
-        if (popupBoxContainer) {
-            popupBoxContainer.classList.add('p-5', 'md:p-8');
-            popupBoxContainer.classList.remove('p-4');
-        }
-    }
-
-    popup.classList.remove('hidden');
-    popup.classList.add('flex');
-
-    // Bulletproof body lock - stops background scrolling and jumping
-    savedScrollY = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${savedScrollY}px`;
-    document.body.style.width = '100%';
-
-    // Small timeout to allow display:flex to apply before animating opacity/transform
-    setTimeout(() => {
-        popup.classList.add('active');
-    }, 50);
-}
+        // Ucbrowser Problem Fixed End
 
 function closeAnnouncement() {
     const popup = document.getElementById('announcementPopup');
