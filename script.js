@@ -5,6 +5,8 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Pati Patni Aur Woh Do (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hd669", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmE0ZTA5MTgtNTE4NC00NThmLWFiM2EtZTI2MTc2Y2FmZjkwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#hd669&dl=1",
+    }, {
         title: "Berlin: The Lady with an Ermine (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BODAwOGFiZDItNGZkNy00ZjdkLThkMjktZGY4ZDE3MDMyZWRhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Mystery & Thriller ,Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/m177gggy5q06byi", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/XoLRDxA_T" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/CnloFHX2-" },
@@ -15,6 +17,31 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/fLp6FSRQd" },
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/KNidko6E_" },
         ]
+    }, {
+        title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jx53", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jx53&dl=1"
+    }, {
+        title: "Agent Zero (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#c8ptx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGUwMjcxNjUtMWQ0Zi00YmRhLWI2ZGUtZTIyZDg1MDUwYWFlXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8ptx&dl=1",
+    }, {
+        title: "The Wonderfools (2026)", posterUrl: "https://i.mydramalist.com/l0m8bJ_4f.jpg", genre: "Drama, Comedy, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/76nfgvvvbubh7bn", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/xogqPq3mu" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/ICc1eRRtu" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/bWjht0t7P" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/eF_eIz6fm" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/31ef_mZWA" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/NAPA8Q2g5" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/eBppumcja" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/bUJE4CURv" },]
+    }, {
+        title: "Vimal Khanna (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTMyNmVmN2YtMTU4MC00NzIyLTg2N2UtZWNhMzQ5NGQ5OTgzXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Mystery", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1At9oqkhfGKB4V8zjk9DuCuUmmnCCpk_U", seriesInfo: "Season 1, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/Q7d9ZL8oY" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/lY2JoJb90" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/O0Nuk0TYi" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/mieH0ffqJ" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/l3-bE1vFy" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/hH9jvqMBh" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/6Tg3lB3II" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/shOeVkAQn" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/jlGD1ptXB" },]
     }, {
         title: "Kartavya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8uqs", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmNiZTM0MmYtY2U2Yi00N2E5LWE1NWUtMDg2NTU4Mjg5Y2IzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8uqs&dl=1",
     }, {
@@ -82,16 +109,6 @@ const contentData = [
         title: "Good Omens (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1qxke", posterUrl: "https://m.media-amazon.com/images/I/713iWz9qGEL._AC_UF894,1000_QL80_.jpg", genre: "Drama, Sci-Fi, Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#1qxke&dl=1", seriesInfo: "Season 3, Episode 1" /* NEW SERIES INFO */
     }, {
         title: "Dridam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hauh8", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTUwZDkyZmMtMDdlYy00MmZmLTg0NzMtZWYzMzA2ODg0MDE1XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Malayalam", quality:"HDTC", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#hauh8&dl=1",
-    }, {
-        title: "The Punisher: One Last Kill (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jqz5", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjcwOTZiZjYtMjk1ZC00MDA3LWEwYjItNWRiZTZhZjEwODA2XkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Crime, Drama, Thriller", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jqz5&dl=1",
-    }, {
-        title: "Hokum (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#v9xqv", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjA1ZjFlZGItNTVjZC00NTFhLTg2YTEtODMzODRmNGFiNTdmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Mystery, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#v9xqv&dl=1",
-    }, {
-        title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8jx53", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#8jx53&dl=1"
-    }, {
-        title: "Blue Whale (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#61bsf", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTA2ZjhhY2EtN2RhMS00ZTM3LWFhMTUtZWY5YjNmODgwY2M4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#61bsf&dl=1",
-    }, {
-        title: "Project Hail Mary (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3rsjf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#3rsjf&dl=1",
     },
 
     // =======================================================================
@@ -100,6 +117,20 @@ const contentData = [
 
 
     {
+        title: "Agent Zero (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#c8ptx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGUwMjcxNjUtMWQ0Zi00YmRhLWI2ZGUtZTIyZDg1MDUwYWFlXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8ptx&dl=1",
+    }, {
+        title: "The Colony (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#yrnig", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTdjYTFjZGYtY2MxNS00N2JiLThjNmMtMDkzMWM4YzAxNzJmXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Sci-Fi, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#yrnig&dl=1",
+    }, {
+        title: "No Exit (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#xpc11", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGZiMzU4MmMtMzJhMS00ZWU0LWE1MzktZTVkY2MyYWYwNTBkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Mystery, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#xpc11&dl=1",
+    }, {
+        title: "The Guilty (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#8kzb3", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmVjNzM0YmItZGQwYy00MzA4LTkwYjAtMmJkNWVmOTRkZGRkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Crime, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#8kzb3&dl=1",
+    }, {
+        title: "The Colony (2013)", embedUrl: "https://moviedakhi.4meplayer.com/#awkqe", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzAzNzEzNDA4OF5BMl5BanBnXkFtZTcwOTUwODA3OQ@@._V1_FMjpg_UX1000_.jpg", genre: "Action, Horror, Sci-Fi, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#awkqe&dl=1",
+    }, {
+        title: "Inside (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#glj5o", posterUrl: "https://m.media-amazon.com/images/M/MV5BYWJkY2I3NWQtYWZiMC00MjFjLWIyOGItMjZlNWJkYmRiODdkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#glj5o&dl=1",
+    }, {
+        title: "Oxygen (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#5a8jx", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2IyZTFkZGEtM2JiOC00NDMyLThmOTktZDEzYzFlZTc4YzJkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Sci-Fi, Thriller", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#5a8jx&dl=1",
+    }, {
         title: "Stargate (1994)", embedUrl: "https://moviedakhi.4meplayer.com/#nmgja", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGRmZmNhMTctZTBiMy00ZmJhLWE3MmMtMDNmZWRkZjczMGVkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Sci-Fi", category: "Hollywood", language: "English", quality:"720p", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#nmgja&dl=1",
     }, {
         title: "The Losers (2010)", embedUrl: "https://moviedakhi.4meplayer.com/#s3mb8", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjU3MTU0NDI4Nl5BMl5BanBnXkFtZTcwMTE0NDMyMw@@._V1_FMjpg_UX1000_.jpg", genre: "Action, Adventure, Crime, Drama, Thriller, Mystery, Comedy", category: "Hollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3mb8&dl=1",
@@ -2052,6 +2083,8 @@ const contentData = [
 
 
     {
+        title: "Pati Patni Aur Woh Do (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hd669", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmE0ZTA5MTgtNTE4NC00NThmLWFiM2EtZTI2MTc2Y2FmZjkwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller, Drama", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#hd669&dl=1",
+    }, {
         title: "Kartavya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8uqs", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmNiZTM0MmYtY2U2Yi00N2E5LWE1NWUtMDg2NTU4Mjg5Y2IzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller, Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8uqs&dl=1",
     }, {
         title: "Dhurandhar: The Revenge (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#19sqm", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzdkNjAxNWMtNWY3My00NTI1LTg2YWQtOGI3MDA0NzdhMjEyXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#19sqm&dl=1",
@@ -2470,6 +2503,10 @@ const contentData = [
 
 
     {
+        title: "Demonte Colony (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#r5mvf", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTA5NzVhNmQtOTg3MC00N2I1LWEwZTQtNjQ1NTA4MGY2YTNhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#r5mvf&dl=1",
+    }, {
+        title: "Demonte Colony 2 (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#o1g9j", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDg2ZmI1YmMtZjU4Ni00ZmI4LWI3ZGMtZjYwOGFmZmMyMGU0XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#o1g9j&dl=1",
+    }, {
         title: "Jetlee (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8lx6", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjdkMWE2MTYtZDZmNC00MTEzLWI1MTItNWExODQ4MzBiZWMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Thriller", category: "South", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8lx6&dl=1",
     }, {
         title: "Exam (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGJkNTJjZWUtMGFlMi00OGY0LThjYmYtYmU5ZjE0OTRhZmQxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/rccfnh81zqdcf70", seriesInfo: "Season 1, Episode 1-7", episodes: [
@@ -3004,6 +3041,8 @@ const contentData = [
 
 
     {
+        title: "New Gods: Yang Jian (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#jhbcd", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE5N2QzNzktZjBhZS00NmJlLTlhMzgtOWQ2OTAwOThlM2NiXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#jhbcd&dl=1"
+    }, {
         title: "Swapped (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#i1vl1", posterUrl: "https://m.media-amazon.com/images/M/MV5BNWFlNWM2Y2YtY2VhOC00MWFiLWExNWYtYWViYzJhMDQyMTJiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#i1vl1&dl=1"
     }, {
         title: "Onward (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#hzemt", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTMyZDM4NjAtMWI5NC00NTAxLWIxMmQtNmNjODRlNGM3NDdhXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#hzemt&dl=1"
@@ -3373,6 +3412,8 @@ const contentData = [
 
 
     {
+        title: "Exit (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#8kz3q", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmI5ZGUzN2EtZDBjZi00NmM2LTkyNDUtNzgxMDZhYTgzZWJjXkEyXkFqcGc@._V1_.jpg", genre: "Disaster, Action, Comedy", category: "Korean Country", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#8kz3q&dl=1"
+    }, {
         title: "Project Y (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9da96", posterUrl: "https://cityonfire.com/wp-content/uploads/2026/03/Project-Y.jpg", genre: "Action, Adventure, Crime, Thriller", category: "Korean Country", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#9da96&dl=1"
     }, {
         title: "Mission Possible (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#8xkzt", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjgyZDhmZDEtZTEwMy00ZDYwLWIzMDgtMTY0YjVjYTBmMzRkXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Crime", category: "Korean Country", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#8xkzt&dl=1"
@@ -3445,6 +3486,8 @@ const contentData = [
 
 
     {
+        title: "Demon Hunters (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#isedx", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2NlNmQ4OTItZGE1Yi00MTA1LWJhNGMtZDk1ZTQ0MGVlNzI4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Drama, Horror, Sci-Fi", category: "Chinese", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#isedx&dl=1"
+    }, {
         title: "Cloudy Mountain (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#8j1tp", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjNhNTA1Y2UtZDc5MC00MmViLWIwOTktZjQ0N2I1NmY4NDBiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Drama", category: "Chinese", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#8j1tp&dl=1"
     }, {
         title: "Restart the Earth (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#hfcho", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmIzNGYwMGQtYWQzZC00YjljLWEyY2QtNTY4ODY1NzIyNzgyXkEyXkFqcGc@._V1_.jpg", genre: "Action, Sci-Fi, Thriller", category: "Chinese", language: "Hindi", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#hfcho&dl=1"
@@ -3950,6 +3993,17 @@ const contentData = [
 
 
     {
+        title: "Vimal Khanna (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTMyNmVmN2YtMTU4MC00NzIyLTg2N2UtZWNhMzQ5NGQ5OTgzXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Mystery", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://docs.google.com/uc?export=download&id=1At9oqkhfGKB4V8zjk9DuCuUmmnCCpk_U", seriesInfo: "Season 1, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/Q7d9ZL8oY" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/lY2JoJb90" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/O0Nuk0TYi" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/mieH0ffqJ" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/l3-bE1vFy" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/hH9jvqMBh" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/6Tg3lB3II" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/shOeVkAQn" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/jlGD1ptXB" },]
+    }, {
         title: "Inspector Avinash (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhOTY3YWItODJmOC00Njg3LTk1MTktOTExODQ4NDA2NTE3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/1us1u2ccvcdnduu", seriesInfo: "Season 2, Episode 1-10", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/2O6iAF2JRg" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/ngLqUSgvM" },
@@ -5177,6 +5231,16 @@ const contentData = [
 
 
     {
+        title: "The Wonderfools (2026)", posterUrl: "https://i.mydramalist.com/l0m8bJ_4f.jpg", genre: "Drama, Comedy, Horror, Thriller", category: "Korean Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/76nfgvvvbubh7bn", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/xogqPq3mu" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/ICc1eRRtu" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/bWjht0t7P" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/eF_eIz6fm" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/31ef_mZWA" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/NAPA8Q2g5" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/eBppumcja" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/bUJE4CURv" },]
+    }, {
         title: "S Line (2025)", posterUrl: "https://m.media-amazon.com/images/M/MV5BODVlYjY0YjUtZmVlYS00Y2RiLWIyZmUtODRjNjI3ZmQzMzlkXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy, Mystery, Sci-Fi, Thriller", category: "Korean Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://transfer.it/t/8VAloy4hkLCY", seriesInfo: "Season 1, Episode 1-6", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/zmc9ZANNt" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/UFou-99Nb" },
