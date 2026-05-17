@@ -5852,9 +5852,11 @@ class="w-full h-full object-cover transition-transform duration-500 md:duration-
 loading="lazy" 
 decoding="async"
 >
+<!-- Mobile Play Overlay -->
 <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center items-center p-5 transition-all duration-300">
 <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)] group-hover:scale-110 transition-transform duration-300"><i class="fas fa-play text-white text-lg ml-1"></i></div>
 </div>
+<!-- Desktop Play Overlay -->
 <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300">
 <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
 </div>
@@ -6328,19 +6330,29 @@ ${infoText}
         // ==========================================
         let announcementScrollY = 0; // Isolated variable just for the popup
 
+        // Ucbrowser Problem Fixed Start
         function showAnnouncement() {
             const popup = document.getElementById('announcementPopup');
             if (!popup) return;
 
             const ua = navigator.userAgent || navigator.vendor || window.opera;
+            
             const isFacebookApp = /FBAN|FBAV/i.test(ua);
-            const isTrappedApp = isFacebookApp; // Only check for Facebook now
-
+            
+            // Explicitly identify UC Browser
+            const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
+            
+            const isTrappedApp = isFacebookApp || isUCBrowser;
+            
             const warningText = document.getElementById('browserWarningText');
             if (warningText && isTrappedApp) {
-                warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                if (isFacebookApp) {
+                    warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                } else if (isUCBrowser) {
+                    warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                }
             }
-
+            
             const suggestionBox = document.getElementById('browserSuggestionBox');
             const topCloseBtn = document.getElementById('announcementCloseBtnTop');
             const bottomCloseBtn = document.getElementById('announcementCloseBtnBottom');
@@ -6349,36 +6361,36 @@ ${infoText}
             const popupTelegramBtn = document.getElementById('popupTelegramBtn');
             const popupGamesBtn = document.getElementById('popupGamesBtn');
             const popupBoxContainer = document.getElementById('popupBoxContainer');
-
-            if (isTrappedApp) {
-                if (suggestionBox) suggestionBox.classList.remove('hidden'); // Show if on Facebook
-                if (topCloseBtn) topCloseBtn.classList.add('hidden'); // Hide Top X
-                if (bottomCloseBtn) bottomCloseBtn.classList.add('hidden'); // Hide Bottom Close
-                if (backdrop) backdrop.onclick = null; // Disable clicking background to close
-
+            
+            if (isTrappedApp) { 
+                if(suggestionBox) suggestionBox.classList.remove('hidden'); // Show if on Facebook/UC Browser
+                if(topCloseBtn) topCloseBtn.classList.add('hidden'); // Hide Top X
+                if(bottomCloseBtn) bottomCloseBtn.classList.add('hidden'); // Hide Bottom Close
+                if(backdrop) backdrop.onclick = null; // Disable clicking background to close
+                
                 // Hide extraneous elements to save massive vertical space
-                if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
-                if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
-                if (popupGamesBtn) popupGamesBtn.classList.add('hidden');
-
+                if(popupWelcomeText) popupWelcomeText.classList.add('hidden');
+                if(popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
+                if(popupGamesBtn) popupGamesBtn.classList.add('hidden');
+                
                 // Make container even more compact
-                if (popupBoxContainer) {
+                if(popupBoxContainer) {
                     popupBoxContainer.classList.remove('p-5', 'md:p-8');
                     popupBoxContainer.classList.add('p-4');
                 }
             } else {
-                if (suggestionBox) suggestionBox.classList.add('hidden'); // Keep hidden otherwise
-                if (topCloseBtn) topCloseBtn.classList.remove('hidden'); // Ensure Top X is visible
-                if (bottomCloseBtn) bottomCloseBtn.classList.remove('hidden'); // Ensure Bottom Close is visible
-                if (backdrop) backdrop.onclick = closeAnnouncement; // Re-enable background close
-
+                if(suggestionBox) suggestionBox.classList.add('hidden'); // Keep hidden otherwise
+                if(topCloseBtn) topCloseBtn.classList.remove('hidden'); // Ensure Top X is visible
+                if(bottomCloseBtn) bottomCloseBtn.classList.remove('hidden'); // Ensure Bottom Close is visible
+                if(backdrop) backdrop.onclick = closeAnnouncement; // Re-enable background close
+                
                 // Ensure extraneous elements are visible
-                if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
-                if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
-                if (popupGamesBtn) popupGamesBtn.classList.remove('hidden');
-
+                if(popupWelcomeText) popupWelcomeText.classList.remove('hidden');
+                if(popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
+                if(popupGamesBtn) popupGamesBtn.classList.remove('hidden');
+                
                 // Restore regular padding
-                if (popupBoxContainer) {
+                if(popupBoxContainer) {
                     popupBoxContainer.classList.add('p-5', 'md:p-8');
                     popupBoxContainer.classList.remove('p-4');
                 }
@@ -6398,6 +6410,7 @@ ${infoText}
                 popup.classList.add('active');
             }, 50);
         }
+        // Ucbrowser Problem Fixed End
 
         function closeAnnouncement() {
             const popup = document.getElementById('announcementPopup');
@@ -6423,9 +6436,16 @@ ${infoText}
 
         // TRIGGER POPUP ON LOAD
         // After Every Reload Start
+        
+        // Ucbrowser Problem Fixed Start
         const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
-        const isTrappedCheck = /FBAN|FBAV/i.test(uaCheck); // Only check for Facebook now
-
+        
+        const isFBCheck = /FBAN|FBAV/i.test(uaCheck);
+        const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
+        
+        const isTrappedCheck = isFBCheck || isUCCheck;
+        // Ucbrowser Problem Fixed End
+        
         // Not Per Reload Popup Box Start
         const sessionKey = 'MovieDakhi_Welcome_Session_Final';
         const localKey = 'MovieDakhi_Welcome_Time_Final';
@@ -6649,7 +6669,6 @@ ${infoText}
             else if (browser === 'opera') schemeUrl = `opera-http://${targetDomain}`;
             else if (browser === 'firefox') schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
             else if (browser === 'brave') schemeUrl = `brave://open-url?url=https://${targetDomain}`;
-            else if (browser === 'ucbrowser') schemeUrl = `ucbrowser://${targetDomain}`;
             else if (browser === 'safari') schemeUrl = `x-safari-https://${targetDomain}`;
             else if (browser === 'vivaldi') schemeUrl = `vivaldi://${targetDomain}`;
             else if (browser === 'duckduckgo') schemeUrl = `ddg://${targetDomain}`;

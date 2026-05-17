@@ -365,18 +365,11 @@
                             </span>
                         </div>
 
-                        <!-- Fix: Made text larger -->
-                        <!-- <p class="text-gray-200 text-[14px] md:text-[17px] font-medium mt-3 md:mt-4 mb-4 md:mb-6 text-center leading-relaxed">
-                            Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!
-                        </p> -->
-
-                        <!-- For Telegram Browser Start -->
                         <p id="browserWarningText" class="text-gray-200 text-[14px] md:text-[17px] font-medium mt-3 md:mt-4 mb-4 md:mb-6 text-center leading-relaxed">
                             Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!
                         </p>
-                        <!-- For Telegram Browser End -->
 
-                        <!-- All 9 Browsers Grid - Fix: Pure grid system prevents squishing and overlap -->
+                        <!-- All Browsers Grid - 8 Browsers total (UC Browser Removed) -->
                         <div class="grid grid-cols-3 sm:grid-cols-3 gap-2.5 md:gap-4 w-full">
                             <!-- Chrome -->
                             <button onclick="openInBrowser('chrome')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#34A853] shadow-md hover:shadow-[0_0_20px_rgba(52,168,83,0.4)] transition-all duration-300 group/btn overflow-hidden">
@@ -416,14 +409,6 @@
                                 <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/brave/brave_128x128.png" alt="Brave" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
                                 <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Brave</span>
                                 <div class="w-full bg-[#FF2000] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF2000] transition-colors mt-0.5">Open</div>
-                            </button>
-
-                            <!-- UC Browser -->
-                            <button onclick="openInBrowser('ucbrowser')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF8C00] shadow-md hover:shadow-[0_0_20px_rgba(255,140,0,0.4)] transition-all duration-300 group/btn overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-b from-[#FF8C00]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/uc/uc_128x128.png" alt="UC Browser" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">UC</span>
-                                <div class="w-full bg-[#FF8C00] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF8C00] transition-colors mt-0.5">Open</div>
                             </button>
 
                             <!-- Safari -->
