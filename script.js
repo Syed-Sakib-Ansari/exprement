@@ -5,6 +5,8 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Parthenope (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vyqq8", posterUrl: "https://m.media-amazon.com/images/M/MV5BODUyM2M2MDctMzI4YS00ZDA0LWJjMzQtOWEwNTRmNTU0NjkzXkEyXkFqcGc@._V1_.jpg", genre: "Fantasy, Drama, Adult", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#vyqq8&dl=1",
+    }, {
         title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 4 Episode 1-5", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h", downloadUrl:"https://hubcloud.foo/drive/aopj1yzzjfaa1hh" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/842vHmS4E", downloadUrl:"https://hubcloud.foo/drive/s7olsk4w5guin7l" },
@@ -70,18 +72,6 @@ const contentData = [
         title: "Kartavya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8uqs", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmNiZTM0MmYtY2U2Yi00N2E5LWE1NWUtMDg2NTU4Mjg5Y2IzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8uqs&dl=1",
     }, {
         title: "Jetlee (2026).", embedUrl: "https://moviedakhi.4meplayer.com/#c8lx6", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjdkMWE2MTYtZDZmNC00MTEzLWI1MTItNWExODQ4MzBiZWMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8lx6&dl=1",
-    }, {
-        title: "Inspector Avinash (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBhOTY3YWItODJmOC00Njg3LTk1MTktOTExODQ4NDA2NTE3XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Action", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://hubcloud.foo/drive/1us1u2ccvcdnduu", seriesInfo: "Season 2, Episode 1-10", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/2O6iAF2JRg" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/ngLqUSgvM" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/RGBPW1h7s" }, 
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/rlvY0ZAnV" }, 
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/ddgKdSF_b" }, 
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/6WGqZ0Q_0" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/Ecx-JLucg" },
-            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/OfnczpZd3" },
-            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/DZu5zmKcw" },
-            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/aZTSR7c4En" },]
     },
 
 
@@ -91,6 +81,8 @@ const contentData = [
 
 
     {
+        title: "Parthenope (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vyqq8", posterUrl: "https://m.media-amazon.com/images/M/MV5BODUyM2M2MDctMzI4YS00ZDA0LWJjMzQtOWEwNTRmNTU0NjkzXkEyXkFqcGc@._V1_.jpg", genre: "Fantasy, Drama, Adult", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#vyqq8&dl=1",
+    }, {
         title: "Marty Supreme (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qencl", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTRhYjI1MTItMWYwMi00MjY5LWI1OTktMzQwNzA3MWJlN2QyXkEyXkFqcGc@._V1_.jpg", genre: "Sport, Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#qencl&dl=1",
     }, {
         title: "Believe Me: The Abduction of Lisa McVey (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#hdfvd", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/89b97d10d2c8b03c6f6d35f6b7921866091b9b2fa372cd223a450ca104cc4e69.jpg", genre: "Crime, Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdfvd&dl=1",
@@ -4440,16 +4432,16 @@ const contentData = [
         ]
     }, {
         title: "You (2019)", posterUrl: "https://resizing.flixster.com/LkoyKd1PVzfj1JUqN66GZeBQwcA=/fit-in/705x460/v2/https://resizing.flixster.com/5WmsQH-azLOCeFVzyaHFvadXHh8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjYwMTE0Mi53ZWJw", genre: "Drama, Mystery & Thriller, Crime", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://transfer.it/t/x5lrdmtXgJoa", seriesInfo: "Season 2 Episode 1-10", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.seekplays.com/#bzjlh", downloadBtn:"https://moviedakhi.seekplays.com/#bzjlh&dl=1" },
-            { number: 2, title: "Episode 2", embedUrl: "https://moviedakhi.seekplays.com/#86lm8", downloadBtn:"https://moviedakhi.seekplays.com/#86lm8&dl=1" },
-            { number: 3, title: "Episode 3", embedUrl: "https://moviedakhi.seekplays.com/#av9xe", downloadBtn:"https://moviedakhi.seekplays.com/#av9xe&dl=1" },
-            { number: 4, title: "Episode 4", embedUrl: "https://moviedakhi.seekplays.com/#86lwb", downloadBtn:"https://moviedakhi.seekplays.com/#86lwb&dl=1" },
-            { number: 5, title: "Episode 5", embedUrl: "https://moviedakhi.seekplays.com/#kb5nq", downloadBtn:"https://moviedakhi.seekplays.com/#kb5nq&dl=1" },
-            { number: 6, title: "Episode 6", embedUrl: "https://moviedakhi.seekplays.com/#5j3yc", downloadBtn:"https://moviedakhi.seekplays.com/#5j3yc&dl=1" },
-            { number: 7, title: "Episode 7", embedUrl: "https://moviedakhi.seekplays.com/#av98m", downloadBtn:"https://moviedakhi.seekplays.com/#av98m&dl=1" },
-            { number: 8, title: "Episode 8", embedUrl: "https://moviedakhi.seekplays.com/#86lnp", downloadBtn:"https://moviedakhi.seekplays.com/#86lnp&dl=1" },
-            { number: 9, title: "Episode 9", embedUrl: "https://moviedakhi.seekplays.com/#odech", downloadBtn:"https://moviedakhi.seekplays.com/#odech&dl=1" },
-            { number: 10, title: "Episode 10", embedUrl: "https://moviedakhi.seekplays.com/#kb5vq", downloadBtn:"https://moviedakhi.seekplays.com/#kb5vq&dl=1" },
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/8iQChkAtZ", downloadBtn:"https://moviedakhi.seekplays.com/#bzjlh&dl=1" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/rVX_BNm1d", downloadBtn:"https://moviedakhi.seekplays.com/#86lm8&dl=1" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/M8mn3Kd7v", downloadBtn:"https://moviedakhi.seekplays.com/#av9xe&dl=1" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/-brkHFd2u", downloadBtn:"https://moviedakhi.seekplays.com/#86lwb&dl=1" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/ZMb-pzJ1m", downloadBtn:"https://moviedakhi.seekplays.com/#kb5nq&dl=1" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/PVFznWDiO", downloadBtn:"https://moviedakhi.seekplays.com/#5j3yc&dl=1" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/TqI_eRo3B", downloadBtn:"https://moviedakhi.seekplays.com/#av98m&dl=1" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/AJxnjEBLt", downloadBtn:"https://moviedakhi.seekplays.com/#86lnp&dl=1" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/pLBkWPKAY", downloadBtn:"https://moviedakhi.seekplays.com/#odech&dl=1" },
+            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/-T6WJOLCM", downloadBtn:"https://moviedakhi.seekplays.com/#kb5vq&dl=1" },
         ]
     }, {
         title: "You (2018)", posterUrl: "https://resizing.flixster.com/UJl1J0HnKhubEjAwZT13GQyoCdQ=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15725175_b_v9_aa.jpg", genre: "Drama, Mystery & Thriller, Crime", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://transfer.it/t/l2rDKKwHUR7J", seriesInfo: "Season 1 Episode 1-10", episodes: [
