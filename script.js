@@ -5,6 +5,8 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Lee Cronin's the Mummy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6v1ty", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhlNTAyYTgtOGRmZS00ZmE0LTk4ZTUtMjk3ZjZhMWE4YWY0XkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#6v1ty&dl=1",
+    }, {
         title: "Parthenope (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vyqq8", posterUrl: "https://m.media-amazon.com/images/M/MV5BODUyM2M2MDctMzI4YS00ZDA0LWJjMzQtOWEwNTRmNTU0NjkzXkEyXkFqcGc@._V1_.jpg", genre: "Fantasy, Drama, Adult", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#vyqq8&dl=1",
     }, {
         title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", seriesInfo: "Season 4 Episode 1-5", episodes: [
@@ -70,8 +72,6 @@ const contentData = [
             { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/jlGD1ptXB" },]
     }, {
         title: "Kartavya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8uqs", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmNiZTM0MmYtY2U2Yi00N2E5LWE1NWUtMDg2NTU4Mjg5Y2IzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8uqs&dl=1",
-    }, {
-        title: "Jetlee (2026).", embedUrl: "https://moviedakhi.4meplayer.com/#c8lx6", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjdkMWE2MTYtZDZmNC00MTEzLWI1MTItNWExODQ4MzBiZWMzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Thriller", category: "Recent Adds", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8lx6&dl=1",
     },
 
 
@@ -81,6 +81,8 @@ const contentData = [
 
 
     {
+        title: "Lee Cronin's the Mummy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6v1ty", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhlNTAyYTgtOGRmZS00ZmE0LTk4ZTUtMjk3ZjZhMWE4YWY0XkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#6v1ty&dl=1",
+    }, {
         title: "Parthenope (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vyqq8", posterUrl: "https://m.media-amazon.com/images/M/MV5BODUyM2M2MDctMzI4YS00ZDA0LWJjMzQtOWEwNTRmNTU0NjkzXkEyXkFqcGc@._V1_.jpg", genre: "Fantasy, Drama, Adult", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#vyqq8&dl=1",
     }, {
         title: "Marty Supreme (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qencl", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTRhYjI1MTItMWYwMi00MjY5LWI1OTktMzQwNzA3MWJlN2QyXkEyXkFqcGc@._V1_.jpg", genre: "Sport, Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#qencl&dl=1",
@@ -204,8 +206,6 @@ const contentData = [
         title: "Kidnap (2017)", embedUrl: "https://moviedakhi.4meplayer.com/#8rmtb", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTcyNDgyODEzOV5BMl5BanBnXkFtZTgwMTI4MTA2MjI@._V1_.jpg", genre: "Action, Crime, Thriller", category: "Hollywood", language: "Hindi", quality:"WEB-DL", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#8rmtb&dl=1",
     }, {
         title: "Silent Night, Deadly Night (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#ornnb", posterUrl: "https://revuecinema.ca/wp-content/uploads/2025/10/silent_night,_deadly_night_tmdb-xv3cjedmqzkmahznoni86izd370-683x1024.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#ornnb&dl=1",
-    }, {
-        title: "Lee Cronin's the Mummy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ktkvf", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhlNTAyYTgtOGRmZS00ZmE0LTk4ZTUtMjk3ZjZhMWE4YWY0XkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "Hindi", quality:"Cam-HD", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#ktkvf&dl=1",
     }, {
         title: "The Yeti (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#oxqot", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDA4OGU1ZjQtNDI3ZS00NGE5LThjOWQtODQ1ZWRkNTY2NDcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Hollywood", language: "Hindi", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/asfbreug4p?key=60a382a6a557abfcda3f654bd7d4f5a7", downloadUrl2: "https://moviedakhi.4meplayer.com/#oxqot&dl=1",
     }, {
@@ -5346,7 +5346,7 @@ const contentData = [
 contentData.forEach((item, index) => { item.id = index; });
 
 const categories = [
-    "all", "Bollywood", "Hollywood", "South", "Animation",
+    "all", "Hollywood", "Bollywood", "South", "Animation",
     "Korean Country", "Chinese", "Bollywood Series", "Hollywood Series",
     "Korean Series", "Adult Comedy", "Others"
 ];
