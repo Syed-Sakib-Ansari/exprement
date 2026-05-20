@@ -5,6 +5,8 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Lechindi Mahila Lokam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#etqbo", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjhkOWY2NTAtODg5Zi00N2JjLTk2YjYtMmFkYmZmYzlhOGMzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#etqbo&dl=1",
+    }, {
         title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#kqypo", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDg5MjRkNWEtYmU1Mi00MTExLTk5MDQtY2RiMWVkZWNiOThjXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#kqypo&dl=1"
     }, {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s38fi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s38fi&dl=1"
@@ -53,8 +55,6 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/fLp6FSRQd" },
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/KNidko6E_" },
         ]
-    }, {
-        title: "Push (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#nsj3c", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTM2NjE5NTYzMl5BMl5BanBnXkFtZTcwNzc3OTMyMg@@._V1_.jpg", genre: "Action, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nsj3c&dl=1"
     }, 
 
     // =======================================================================
@@ -2469,6 +2469,8 @@ const contentData = [
 
 
     {
+        title: "Lechindi Mahila Lokam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#etqbo", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjhkOWY2NTAtODg5Zi00N2JjLTk2YjYtMmFkYmZmYzlhOGMzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#etqbo&dl=1",
+    }, {
         title: "Karuppu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6vxw8", posterUrl: "https://m.media-amazon.com/images/M/MV5BZThhMDA0MjctYzdmYS00YmMxLWE0NmUtMDFiZTIzMTA5MWNiXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Action, Drama, Fantasy, Thriller", category: "South", language: "Tamil", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6vxw8&dl=1",
     }, {
         title: "Karaa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#zb1ho", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Karaaa-app-58615560-4e9a-11f1-a819-ad9fe44da38d.jpg?im=Resize,width=400", genre: "Drama, Thriller", category: "South", language: "Tamil", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zb1ho&dl=1",
