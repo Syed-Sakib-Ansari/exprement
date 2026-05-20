@@ -7,7 +7,7 @@ const contentData = [
     {
         title: "Tom Clancy's Jack Ryan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ajv6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGYxNzgzNTQtY2U0OC00NzU2LTgxZmYtNmZkMmVlMjgyMzM3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ajv6&dl=1"
     }, {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 5, Episode 1-7", episodes: [
+        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 5, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG", downloadUrl:"https://hubcloud.foo/drive/bbujjalucb56klj" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05", downloadUrl:"https://hubcloud.foo/drive/1u2ih1i7ubbwu7c" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI", downloadUrl:"https://hubcloud.foo/drive/8hsjppm8pui88mo" },
@@ -4202,7 +4202,7 @@ const contentData = [
 
 
     {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 5, Episode 1-7", episodes: [
+        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 5, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG", downloadUrl:"https://hubcloud.foo/drive/bbujjalucb56klj" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05", downloadUrl:"https://hubcloud.foo/drive/1u2ih1i7ubbwu7c" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI", downloadUrl:"https://hubcloud.foo/drive/8hsjppm8pui88mo" },
