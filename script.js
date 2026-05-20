@@ -54,7 +54,7 @@ const contentData = [
     }, {
         title: "Karaa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#zb1ho", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Karaaa-app-58615560-4e9a-11f1-a819-ad9fe44da38d.jpg?im=Resize,width=400", genre: "Drama, Thriller", category: "Recent Adds", language: "Tamil", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zb1ho&dl=1",
     }, {
-        title: "Choo Mantar (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#hdfse", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmRjMjYzZjQtMTA4OS00NWU3LWJhZjMtZTQ1MjI2YWE3NGVjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HEVC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdfse&dl=1",
+        title: "Choo Mantar (2025).", embedUrl: "https://moviedakhi.4meplayer.com/#hdfse", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmRjMjYzZjQtMTA4OS00NWU3LWJhZjMtZTQ1MjI2YWE3NGVjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HEVC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdfse&dl=1",
     }, 
 
     // =======================================================================
