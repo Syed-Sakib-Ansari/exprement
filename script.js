@@ -4283,8 +4283,6 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/_yWrl0Ni0" },
         ]
     }, {
-<<<<<<< HEAD
-=======
         title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 5, Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG", downloadUrl:"https://hubcloud.foo/drive/bbujjalucb56klj" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05", downloadUrl:"https://hubcloud.foo/drive/1u2ih1i7ubbwu7c" },
@@ -4293,10 +4291,9 @@ const contentData = [
             { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rdgm10RA6", downloadUrl:"https://hubcloud.foo/drive/jksrvht0sjgvvgj" },
             { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/H-kl3Tx9S", downloadUrl:"https://hubcloud.foo/drive/myenl5a4anq415u" },
             { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS", downloadUrl:"https://hubcloud.foo/drive/hhfzozdn5zffd4o" },
-            { number: 8, title: "Episode 8 (Coming Soon)", embedUrl: "", downloadUrl:"" },
+            { number: 8, title: "Episode 8", embedUrl: "https://moviedakhi.4meplayer.com/#iswp1", downloadUrl:"https://moviedakhi.4meplayer.com/#iswp1&dl=1" },
         ]
     }, {
->>>>>>> 80967867dc2d6e586df877791f96d9fefe9c1a46
         title: "Thank You, Next (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmI5YzA0MGQtMDBlZS00ZTJmLWI0ODYtYzZmMzNlNWFhNDUyXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/4A4nTegzkbaZ", seriesInfo: "Season 3 Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/aqsjKGnW3" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/uTg6K_lb4" },
