@@ -7,15 +7,15 @@ const contentData = [
     {
         title: "Tom Clancy's Jack Ryan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ajv6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGYxNzgzNTQtY2U0OC00NzU2LTgxZmYtNmZkMmVlMjgyMzM3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ajv6&dl=1"
     }, {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 5, Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG", downloadUrl:"https://hubcloud.foo/drive/bbujjalucb56klj" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05", downloadUrl:"https://hubcloud.foo/drive/1u2ih1i7ubbwu7c" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI", downloadUrl:"https://hubcloud.foo/drive/8hsjppm8pui88mo" },
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/H2mRGyi_8", downloadUrl:"https://hubcloud.foo/drive/990zqevaoov1wwe" },
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rdgm10RA6", downloadUrl:"https://hubcloud.foo/drive/jksrvht0sjgvvgj" },
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/H-kl3Tx9S", downloadUrl:"https://hubcloud.foo/drive/myenl5a4anq415u" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS", downloadUrl:"https://hubcloud.foo/drive/hhfzozdn5zffd4o" },
-            { number: 8, title: "Episode 8", embedUrl: "https://moviedakhi.4meplayer.com/#iswp1", downloadUrl:"https://moviedakhi.4meplayer.com/#iswp1&dl=1" },
+        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/fa1d6xsfsjp8ao6", seriesInfo: "Season 5, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/H2mRGyi_8" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rdgm10RA6" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/H-kl3Tx9S" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/hxIdrrTyn" },
         ]
     }, {
         title: "Lechindi Mahila Lokam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#etqbo", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjhkOWY2NTAtODg5Zi00N2JjLTk2YjYtMmFkYmZmYzlhOGMzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#etqbo&dl=1",
@@ -4202,15 +4202,15 @@ const contentData = [
 
 
     {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 5, Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG", downloadUrl:"https://hubcloud.foo/drive/bbujjalucb56klj" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05", downloadUrl:"https://hubcloud.foo/drive/1u2ih1i7ubbwu7c" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI", downloadUrl:"https://hubcloud.foo/drive/8hsjppm8pui88mo" },
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/H2mRGyi_8", downloadUrl:"https://hubcloud.foo/drive/990zqevaoov1wwe" },
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rdgm10RA6", downloadUrl:"https://hubcloud.foo/drive/jksrvht0sjgvvgj" },
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/H-kl3Tx9S", downloadUrl:"https://hubcloud.foo/drive/myenl5a4anq415u" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS", downloadUrl:"https://hubcloud.foo/drive/hhfzozdn5zffd4o" },
-            { number: 8, title: "Episode 8", embedUrl: "https://moviedakhi.4meplayer.com/#iswp1", downloadUrl:"https://moviedakhi.4meplayer.com/#iswp1&dl=1" },
+        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/fa1d6xsfsjp8ao6", seriesInfo: "Season 5, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/H2mRGyi_8" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rdgm10RA6" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/H-kl3Tx9S" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/hxIdrrTyn" },
         ]
     }, {
         title: "Euphoria (2026)", posterUrl: "https://pbs.twimg.com/media/HE9qMvUaUAAScjn.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-6", episodes: [
