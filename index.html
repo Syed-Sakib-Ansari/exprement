@@ -440,9 +440,12 @@
                             <button onclick="openInBrowser('via')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#1E88E5] shadow-md hover:shadow-[0_0_20px_rgba(30,136,229,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#1E88E5]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                                 
-                                <div class="relative w-7 h-7 md:w-11 md:h-11 z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md rounded-full bg-white flex items-center justify-center overflow-hidden">
-                                    <img src="https://wsrv.nl/?url=play-lh.googleusercontent.com/MwD3jJ88ZtXwG8kO-T1Q2Lh-k_e-E84G_A68-v8BfL-XpA67B1_L5q_r9h1w&w=128&output=png" alt="Via Browser" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                    <span class="hidden text-[#1E88E5] font-black text-lg md:text-2xl italic leading-none" style="font-family: serif;">V</span>
+                                <div class="relative w-7 h-7 md:w-11 md:h-11 z-10 group-hover/btn:scale-110 transition-transform duration-300 flex items-center justify-center overflow-visible">
+                                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-md">
+                                        <path d="M 69 20 L 85 25 L 58 82 L 40 45 Z" fill="#FFB300"/>
+                                        <path d="M 26 54 L 44 47 L 59 83 L 42 87 Z" fill="#FF3D00"/>
+                                        <path d="M 15 25 L 31 20 L 44 47 L 26 54 Z" fill="#00B0FF"/>
+                                    </svg>
                                 </div>
 
                                 <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Via</span>
