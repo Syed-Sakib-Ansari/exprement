@@ -439,16 +439,14 @@
                             <!-- Via Browser Add Code Start -->
                             <button onclick="openInBrowser('via')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#00A5FF] shadow-md hover:shadow-[0_0_20px_rgba(0,165,255,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#00A5FF]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <div class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md flex items-center justify-center bg-white rounded-full shadow-inner p-1.5 md:p-2">
-                                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-sm">
-                                        <!-- Blue Flap (Back Left) -->
-                                        <path d="M 30 30 L 50 25 L 50 65 L 20 60 Z" fill="#00A5FF" stroke="#00A5FF" stroke-width="8" stroke-linejoin="round"/>
-                                        <!-- Yellow Flap (Back Right) -->
-                                        <path d="M 80 25 L 100 30 L 70 95 L 50 95 Z" fill="#FFC107" stroke="#FFC107" stroke-width="8" stroke-linejoin="round"/>
-                                        <!-- Red Flap (Front Center) -->
-                                        <path d="M 30 30 L 50 25 L 70 95 L 50 95 Z" fill="#FF3B00" stroke="#FF3B00" stroke-width="8" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
+                                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                    <!-- Yellow Flap (Back Right) -->
+                                    <path d="M 60 25 L 85 10 L 110 95 L 80 105 Z" fill="#FFC107" stroke="#FFC107" stroke-width="5" stroke-linejoin="round"/>
+                                    <!-- Blue Flap (Back Left) -->
+                                    <path d="M 20 35 L 45 25 L 35 95 L 10 80 Z" fill="#00A5FF" stroke="#00A5FF" stroke-width="5" stroke-linejoin="round"/>
+                                    <!-- Red Flap (Front Center) -->
+                                    <path d="M 10 80 L 35 95 L 85 10 L 60 25 Z" fill="#FF3B00" stroke="#FF3B00" stroke-width="5" stroke-linejoin="round"/>
+                                </svg>
                                 <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Via</span>
                                 <div class="w-full bg-[#00A5FF] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#00A5FF] transition-colors mt-0.5">Open</div>
                             </button>
