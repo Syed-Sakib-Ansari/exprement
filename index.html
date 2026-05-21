@@ -439,15 +439,16 @@
                             <!-- Via Browser Add Code Start -->
                             <button onclick="openInBrowser('via')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#1E88E5] shadow-md hover:shadow-[0_0_20px_rgba(30,136,229,0.4)] transition-all duration-300 group/btn overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#1E88E5]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                
-                                <div class="relative w-7 h-7 md:w-11 md:h-11 z-10 group-hover/btn:scale-110 transition-transform duration-300 flex items-center justify-center overflow-visible">
-                                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-md">
-                                        <path d="M 69 20 L 85 25 L 58 82 L 40 45 Z" fill="#FFB300"/>
-                                        <path d="M 26 54 L 44 47 L 59 83 L 42 87 Z" fill="#FF3D00"/>
-                                        <path d="M 15 25 L 31 20 L 44 47 L 26 54 Z" fill="#00B0FF"/>
-                                    </svg>
-                                </div>
-
+                                <svg viewBox="0 0 512 512" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md rounded-full">
+                                    <defs>
+                                        <linearGradient id="viaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#4FB0FF" />
+                                            <stop offset="100%" stop-color="#0066FF" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="256" cy="256" r="256" fill="url(#viaGrad)"></circle>
+                                    <path d="M160 160 L256 352 L352 160" fill="none" stroke="#FFFFFF" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
                                 <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Via</span>
                                 <div class="w-full bg-[#1E88E5] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#1E88E5] transition-colors mt-0.5">Open</div>
                             </button>
