@@ -5,8 +5,6 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
-        title: "Tom Clancy's Jack Ryan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ajv6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGYxNzgzNTQtY2U0OC00NzU2LTgxZmYtNmZkMmVlMjgyMzM3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ajv6&dl=1"
-    }, {
         title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/fa1d6xsfsjp8ao6", seriesInfo: "Season 5, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
@@ -17,6 +15,40 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS" },
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/hxIdrrTyn" },
         ]
+    }, {
+        title: "Satrangi - Badle Ka Khel (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDI1YTUxZTUtNzEyMC00Y2EyLTk0NjItYTQ3Y2NhOTkzNmYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/wnIdjj4DAJZI", seriesInfo: "Season 1, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/EVEinQ-Bx" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/DECbnKuGo" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/rMAE7P9R2" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/KVXed911v" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/z0wLYYmdF" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/iErsEJVJR" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/CQOw4dJtc" },]
+    }, {
+        title: "The Boroughs (2026)", posterUrl: "https://resizing.flixster.com/wAO3QMG4H8tbJnlN4sSwiO6VT7c=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32903519_b_v8_aa.jpg", genre: "Drama, Adventure, Mystery & Thriller, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/lbrrbyi7djvoy4j", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/i6n12BmSV" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/4TEzGdQuA" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/uqMOjhaNV" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/--YTvuYdD7" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/YqNN8lqejl" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/CXpInH_BB" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/y3OBKC4D_" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/9qylOufdh" },
+        ]
+    }, {
+        title: "Panda Plan 2: The Magical Tribe (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9xw6d", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTJhZTE0MTctMWVmNS00NjJiLThhOTMtMDcyY2QzYTg5NjcxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Family", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9xw6d&dl=1"
+    }, {
+        title: "System (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du61x", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGEyMzAxZTEtNTMzZi00NTU5LTg2OTktNzM2YTYxMzdkODE3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du61x&dl=1",
+    }, {
+        title: "Madhuvidhu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du6sj", posterUrl: "https://msidb.org/moviepics/3931.jpg", genre: "Comedy, Drama, Family, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du6sj&dl=1",
+    }, {
+        title: "Gaayapadda Simham (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8xp5", posterUrl: "https://images.filmibeat.com/img/280x383/popcorn/movie_posters/gaayapaddasimham-20260323153147-5426.jpg", genre: "Comedy, Drama, Crime", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8xp5&dl=1",
+    }, {
+        title: "TN (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s3ele", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3d/TN_2026_poster.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3ele&dl=1",
+    }, {
+        title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hdbir", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Recent Adds", language: "English", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdbir&dl=1"
+    }, {
+        title: "Tom Clancy's Jack Ryan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ajv6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGYxNzgzNTQtY2U0OC00NzU2LTgxZmYtNmZkMmVlMjgyMzM3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ajv6&dl=1"
     }, {
         title: "Lechindi Mahila Lokam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#etqbo", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjhkOWY2NTAtODg5Zi00N2JjLTk2YjYtMmFkYmZmYzlhOGMzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#etqbo&dl=1",
     }, {
@@ -39,22 +71,6 @@ const contentData = [
             { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/PYf7Uy7PtQ", downloadUrl:"https://hubcloud.foo/drive/p5noqbuqcgtlba3" },
             { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/eQ6jTYX-7z", downloadUrl:"https://hubcloud.foo/drive/hlhc2d2nfn8yfod" },
         ]
-    }, {
-        title: "IIZ: Indian Institute of Zombies (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8kdmh", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGM5M2I0YWEtMjNlOS00ZmIwLThiYjYtODA5ODAzYTc3ZDU5XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror, Thriller", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8kdmh&dl=1",
-    }, {
-        title: "Aakhri Sawal (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#o1euf", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDAyMGJlYzAtMzIzNS00MmYxLThlYTAtMzRhYTk5OTQxZTk2XkEyXkFqcGc@._V1_.jpg", genre: "Drama, History, Thriller", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#o1euf&dl=1",
-    }, {
-        title: "Marty Supreme (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qencl", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTRhYjI1MTItMWYwMi00MjY5LWI1OTktMzQwNzA3MWJlN2QyXkEyXkFqcGc@._V1_.jpg", genre: "Sport, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qencl&dl=1",
-    }, {
-        title: "Believe Me: The Abduction of Lisa McVey (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#hdfvd", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/89b97d10d2c8b03c6f6d35f6b7921866091b9b2fa372cd223a450ca104cc4e69.jpg", genre: "Crime, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdfvd&dl=1",
-    }, {
-        title: "The Pizzagate Massacre (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#r5lom", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTg5YzFjY2MtMTc0Ny00ZGE3LWI5OGEtOGVlZTAxMzEzMTkyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Thriller, Adventure, Comedy, Crime", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#r5lom&dl=1",
-    }, {
-        title: "Karuppu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6vxw8", posterUrl: "https://m.media-amazon.com/images/M/MV5BZThhMDA0MjctYzdmYS00YmMxLWE0NmUtMDFiZTIzMTA5MWNiXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Action, Drama, Fantasy, Thriller", category: "Recent Adds", language: "Tamil", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6vxw8&dl=1",
-    }, {
-        title: "Karaa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#zb1ho", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Karaaa-app-58615560-4e9a-11f1-a819-ad9fe44da38d.jpg?im=Resize,width=400", genre: "Drama, Thriller", category: "Recent Adds", language: "Tamil", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zb1ho&dl=1",
-    }, {
-        title: "Choo Mantar (2025).", embedUrl: "https://moviedakhi.4meplayer.com/#hdfse", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmRjMjYzZjQtMTA4OS00NWU3LWJhZjMtZTQ1MjI2YWE3NGVjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Recent Adds", language: "Dual Audio", quality:"HEVC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdfse&dl=1",
     }, 
 
     // =======================================================================
@@ -63,6 +79,8 @@ const contentData = [
 
 
     {
+        title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hdbir", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Hollywood", language: "English", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdbir&dl=1"
+    }, {
         title: "Tom Clancy's Jack Ryan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ajv6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGYxNzgzNTQtY2U0OC00NzU2LTgxZmYtNmZkMmVlMjgyMzM3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ajv6&dl=1"
     }, {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s38fi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s38fi&dl=1"
@@ -2047,6 +2065,8 @@ const contentData = [
 
 
     {
+        title: "System (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du61x", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGEyMzAxZTEtNTMzZi00NTU5LTg2OTktNzM2YTYxMzdkODE3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du61x&dl=1",
+    }, {
         title: "IIZ: Indian Institute of Zombies (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8kdmh", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGM5M2I0YWEtMjNlOS00ZmIwLThiYjYtODA5ODAzYTc3ZDU5XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror, Thriller", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8kdmh&dl=1",
     }, {
         title: "Aakhri Sawal (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#o1euf", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDAyMGJlYzAtMzIzNS00MmYxLThlYTAtMzRhYTk5OTQxZTk2XkEyXkFqcGc@._V1_.jpg", genre: "Drama, History, Thriller", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#o1euf&dl=1",
@@ -2471,6 +2491,12 @@ const contentData = [
 
 
     {
+        title: "Madhuvidhu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du6sj", posterUrl: "https://msidb.org/moviepics/3931.jpg", genre: "Comedy, Drama, Family, Romance", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du6sj&dl=1",
+    }, {
+        title: "Gaayapadda Simham (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8xp5", posterUrl: "https://images.filmibeat.com/img/280x383/popcorn/movie_posters/gaayapaddasimham-20260323153147-5426.jpg", genre: "Comedy, Drama, Crime", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8xp5&dl=1",
+    }, {
+        title: "TN (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s3ele", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3d/TN_2026_poster.jpg", genre: "Comedy, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3ele&dl=1",
+    }, {
         title: "Lechindi Mahila Lokam (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#etqbo", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjhkOWY2NTAtODg5Zi00N2JjLTk2YjYtMmFkYmZmYzlhOGMzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#etqbo&dl=1",
     }, {
         title: "Karuppu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6vxw8", posterUrl: "https://m.media-amazon.com/images/M/MV5BZThhMDA0MjctYzdmYS00YmMxLWE0NmUtMDFiZTIzMTA5MWNiXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Action, Drama, Fantasy, Thriller", category: "South", language: "Tamil", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6vxw8&dl=1",
@@ -2539,8 +2565,6 @@ const contentData = [
         title: "Biker (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#dlbav", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDRjOGQ1MGQtZjAzNS00NzliLWIxZGUtY2U1ODgzYTQ3MmU0XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Family, Sport", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dlbav&dl=1",
     }, {
         title: "Raakaasa (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qagqh", posterUrl: "https://m.media-amazon.com/images/M/MV5BNzQ1NDY0N2EtOGQxZi00NTRjLTliNzUtNDgzZGNmYTNhZDNlXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Fantasy", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qagqh&dl=1",
-    }, {
-        title: "TN (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#nsxtj", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3d/TN_2026_poster.jpg", genre: "Comedy, Drama", category: "South", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nsxtj&dl=1",
     }, {
         title: "Psycho (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#1hlqj", posterUrl: "https://images.fandango.com/ImageRenderer/820/0/redesign/static/img/default_poster.png/0/images/masterrepository/fandango/222239/Psycho-posterart.jpg", genre: "Thriller, Crime", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1hlqj&dl=1",
     }, {
@@ -3464,6 +3488,8 @@ const contentData = [
 
 
     {
+        title: "Panda Plan 2: The Magical Tribe (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9xw6d", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTJhZTE0MTctMWVmNS00NjJiLThhOTMtMDcyY2QzYTg5NjcxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Family", category: "Chinese", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9xw6d&dl=1"
+    }, {
         title: "Demon Hunters (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#isedx", posterUrl: "https://m.media-amazon.com/images/M/MV5BY2NlNmQ4OTItZGE1Yi00MTA1LWJhNGMtZDk1ZTQ0MGVlNzI4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Drama, Horror, Sci-Fi", category: "Chinese", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#isedx&dl=1"
     }, {
         title: "Cloudy Mountain (2021)", embedUrl: "https://moviedakhi.4meplayer.com/#8j1tp", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjNhNTA1Y2UtZDc5MC00MmViLWIwOTktZjQ0N2I1NmY4NDBiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Drama", category: "Chinese", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8j1tp&dl=1"
@@ -3973,6 +3999,15 @@ const contentData = [
 
 
     {
+        title: "Satrangi - Badle Ka Khel (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDI1YTUxZTUtNzEyMC00Y2EyLTk0NjItYTQ3Y2NhOTkzNmYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/wnIdjj4DAJZI", seriesInfo: "Season 1, Episode 1-7", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/EVEinQ-Bx" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/DECbnKuGo" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/rMAE7P9R2" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/KVXed911v" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/z0wLYYmdF" }, 
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/iErsEJVJR" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/CQOw4dJtc" },]
+    }, {
         title: "Vimal Khanna (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTMyNmVmN2YtMTU4MC00NzIyLTg2N2UtZWNhMzQ5NGQ5OTgzXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Thriller, Mystery", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1At9oqkhfGKB4V8zjk9DuCuUmmnCCpk_U", seriesInfo: "Season 1, Episode 1-9", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/Q7d9ZL8oY" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/lY2JoJb90" },
@@ -4202,6 +4237,17 @@ const contentData = [
 
 
     {
+        title: "The Boroughs (2026)", posterUrl: "https://resizing.flixster.com/wAO3QMG4H8tbJnlN4sSwiO6VT7c=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32903519_b_v8_aa.jpg", genre: "Drama, Adventure, Mystery & Thriller, Sci-Fi", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/lbrrbyi7djvoy4j", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/i6n12BmSV" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/4TEzGdQuA" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/uqMOjhaNV" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/--YTvuYdD7" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/YqNN8lqejl" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/CXpInH_BB" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/y3OBKC4D_" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/9qylOufdh" },
+        ]
+    }, {
         title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/fa1d6xsfsjp8ao6", seriesInfo: "Season 5, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
