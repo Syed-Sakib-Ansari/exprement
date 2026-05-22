@@ -5,6 +5,12 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Little Amélie or the Character of Rain (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s3rnt", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjMxMDU3ZGEtMzMyMi00OGZiLWFlZTAtMTAyMmYwOWYxZmIxXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3rnt&dl=1"
+    }, {
+        title: "Chand Mera Dil (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yrp1q", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTVlYmVjMTItOGMxYS00NmQyLWJlZTYtNWVkZGZhZmFiYTJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Music, Romance", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yrp1q&dl=1",
+    }, {
+        title: "Ladies First (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#zbopj", posterUrl: "https://resizing.flixster.com/zu2Hiq2j56EjcJx5RJ49sm1ZMeQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2M1MjhjNTMzLTM5ZDUtNDIxYi05ODcxLTlmZDkxMjQ1ZTRjYi5qcGc=", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zbopj&dl=1"
+    }, {
         title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/fa1d6xsfsjp8ao6", seriesInfo: "Season 5, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
@@ -46,6 +52,8 @@ const contentData = [
     }, {
         title: "TN (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s3ele", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3d/TN_2026_poster.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3ele&dl=1",
     }, {
+        title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8khbq", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Recent Adds", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8khbq&dl=1"
+    }, {
         title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hdbir", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Recent Adds", language: "English", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdbir&dl=1"
     }, {
         title: "Tom Clancy's Jack Ryan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ajv6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGYxNzgzNTQtY2U0OC00NzU2LTgxZmYtNmZkMmVlMjgyMzM3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ajv6&dl=1"
@@ -57,20 +65,6 @@ const contentData = [
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s38fi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s38fi&dl=1"
     }, {
         title: "The Magic Faraway Tree (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vy3if", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGUzNzQzNWQtZTI2My00YmE2LTkyYzItNzFhMTM3OTVkYmNlXkEyXkFqcGc@._V1_.jpg", genre: "Adventure, Fantasy, Family", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vy3if&dl=1"
-    }, {
-        title: "Tucker and Dale vs Evil (2010)", embedUrl: "https://moviedakhi.4meplayer.com/#hdd9z", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjYxNWNhNTktZDQxMS00YTkyLThkMzEtNmMyZmFlNDRlMDIzXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Comedy", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdd9z&dl=1",
-    }, {
-        title: "Lee Cronin's the Mummy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6v1ty", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhlNTAyYTgtOGRmZS00ZmE0LTk4ZTUtMjk3ZjZhMWE4YWY0XkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6v1ty&dl=1",
-    }, {
-        title: "Parthenope (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vyqq8", posterUrl: "https://m.media-amazon.com/images/M/MV5BODUyM2M2MDctMzI4YS00ZDA0LWJjMzQtOWEwNTRmNTU0NjkzXkEyXkFqcGc@._V1_.jpg", genre: "Fantasy, Drama, Adult", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vyqq8&dl=1",
-    }, {
-        title: "From (2026).", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-5", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h", downloadUrl:"https://hubcloud.foo/drive/aopj1yzzjfaa1hh" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/842vHmS4E", downloadUrl:"https://hubcloud.foo/drive/s7olsk4w5guin7l" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/3Vi5Gn5cX", downloadUrl:"https://hubcloud.foo/drive/jey7ysyj6pdyajl" },
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/PYf7Uy7PtQ", downloadUrl:"https://hubcloud.foo/drive/p5noqbuqcgtlba3" },
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/eQ6jTYX-7z", downloadUrl:"https://hubcloud.foo/drive/hlhc2d2nfn8yfod" },
-        ]
     }, 
 
     // =======================================================================
@@ -79,6 +73,10 @@ const contentData = [
 
 
     {
+        title: "Ladies First (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#zbopj", posterUrl: "https://resizing.flixster.com/zu2Hiq2j56EjcJx5RJ49sm1ZMeQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2M1MjhjNTMzLTM5ZDUtNDIxYi05ODcxLTlmZDkxMjQ1ZTRjYi5qcGc=", genre: "Comedy", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zbopj&dl=1"
+    }, {
+        title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8khbq", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Hollywood", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8khbq&dl=1"
+    }, {
         title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hdbir", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Hollywood", language: "English", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdbir&dl=1"
     }, {
         title: "Tom Clancy's Jack Ryan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ajv6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGYxNzgzNTQtY2U0OC00NzU2LTgxZmYtNmZkMmVlMjgyMzM3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ajv6&dl=1"
@@ -2065,6 +2063,8 @@ const contentData = [
 
 
     {
+        title: "Chand Mera Dil (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yrp1q", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTVlYmVjMTItOGMxYS00NmQyLWJlZTYtNWVkZGZhZmFiYTJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Music, Romance", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yrp1q&dl=1",
+    }, {
         title: "System (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du61x", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGEyMzAxZTEtNTMzZi00NTU5LTg2OTktNzM2YTYxMzdkODE3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du61x&dl=1",
     }, {
         title: "IIZ: Indian Institute of Zombies (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8kdmh", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGM5M2I0YWEtMjNlOS00ZmIwLThiYjYtODA5ODAzYTc3ZDU5XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Horror, Thriller", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8kdmh&dl=1",
@@ -3043,6 +3043,8 @@ const contentData = [
 
 
     {
+        title: "Little Amélie or the Character of Rain (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s3rnt", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjMxMDU3ZGEtMzMyMi00OGZiLWFlZTAtMTAyMmYwOWYxZmIxXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3rnt&dl=1"
+    }, {
         title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#kqypo", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDg5MjRkNWEtYmU1Mi00MTExLTk5MDQtY2RiMWVkZWNiOThjXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#kqypo&dl=1"
     }, {
         title: "New Gods: Yang Jian (2022)", embedUrl: "https://moviedakhi.4meplayer.com/#jhbcd", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGE5N2QzNzktZjBhZS00NmJlLTlhMzgtOWQ2OTAwOThlM2NiXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Animation", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jhbcd&dl=1"
