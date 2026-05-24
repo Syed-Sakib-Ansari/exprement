@@ -5,6 +5,8 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Drishyam 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#eprni", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Drishyam-3_Poster-0d2290e0-4469-11f1-9e72-b3859bd2479f%20(1)-6495a2d0-5360-11f1-8c65-299184906c19.jpg?im=Resize,width=400", genre: "Drama, Family, Crime, Thriller", category: "Recent Adds", language: "Multi Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#eprni&dl=1",
+    }, {
         title: "Little Amélie or the Character of Rain (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s3rnt", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjMxMDU3ZGEtMzMyMi00OGZiLWFlZTAtMTAyMmYwOWYxZmIxXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3rnt&dl=1"
     }, {
         title: "Chand Mera Dil (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yrp1q", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTVlYmVjMTItOGMxYS00NmQyLWJlZTYtNWVkZGZhZmFiYTJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Music, Romance", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yrp1q&dl=1",
@@ -63,8 +65,6 @@ const contentData = [
         title: "The Super Mario Galaxy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#kqypo", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDg5MjRkNWEtYmU1Mi00MTExLTk5MDQtY2RiMWVkZWNiOThjXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#kqypo&dl=1"
     }, {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s38fi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s38fi&dl=1"
-    }, {
-        title: "The Magic Faraway Tree (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vy3if", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGUzNzQzNWQtZTI2My00YmE2LTkyYzItNzFhMTM3OTVkYmNlXkEyXkFqcGc@._V1_.jpg", genre: "Adventure, Fantasy, Family", category: "Recent Adds", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vy3if&dl=1"
     }, 
 
     // =======================================================================
@@ -2491,6 +2491,8 @@ const contentData = [
 
 
     {
+        title: "Drishyam 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#eprni", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Drishyam-3_Poster-0d2290e0-4469-11f1-9e72-b3859bd2479f%20(1)-6495a2d0-5360-11f1-8c65-299184906c19.jpg?im=Resize,width=400", genre: "Drama, Family, Crime, Thriller", category: "South", language: "Multi Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#eprni&dl=1",
+    }, {
         title: "Madhuvidhu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du6sj", posterUrl: "https://msidb.org/moviepics/3931.jpg", genre: "Comedy, Drama, Family, Romance", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du6sj&dl=1",
     }, {
         title: "Gaayapadda Simham (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8xp5", posterUrl: "https://images.filmibeat.com/img/280x383/popcorn/movie_posters/gaayapaddasimham-20260323153147-5426.jpg", genre: "Comedy, Drama, Crime", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8xp5&dl=1",
