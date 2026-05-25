@@ -5,6 +5,10 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Gangor (2011)", embedUrl: "https://moviedakhi.4meplayer.com/#gwvqo", posterUrl: "http://www.impawards.com/intl/misc/2011/posters/gangor_ver2_xlg.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gwvqo",
+    }, {
+        title: "Matrubhoomi: A Nation Without Women (2003)", embedUrl: "https://moviedakhi.4meplayer.com/#5divr", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmFkYjA2NTYtMjZmOS00MzM4LWIyYmEtODMxOWNhYjc4MzdiXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5divr&dl=1",
+    }, {
         title: "Colony (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3kg36", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDgwNzhmMjItMDhlYi00ODdlLWI1NjUtZDgxZGMzMGU5MmM4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Sci-Fi, Mystery, Thriller, Horror", category: "Recent Adds", language: "Korean", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3kg36&dl=1"
     }, {
         title: "Drishyam 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#eprni", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Drishyam-3_Poster-0d2290e0-4469-11f1-9e72-b3859bd2479f%20(1)-6495a2d0-5360-11f1-8c65-299184906c19.jpg?im=Resize,width=400", genre: "Drama, Family, Crime, Thriller", category: "Recent Adds", language: "Multi Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#eprni&dl=1",
@@ -61,10 +65,6 @@ const contentData = [
         title: "Madhuvidhu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du6sj", posterUrl: "https://msidb.org/moviepics/3931.jpg", genre: "Comedy, Drama, Family, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du6sj&dl=1",
     }, {
         title: "Gaayapadda Simham (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8xp5", posterUrl: "https://images.filmibeat.com/img/280x383/popcorn/movie_posters/gaayapaddasimham-20260323153147-5426.jpg", genre: "Comedy, Drama, Crime", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8xp5&dl=1",
-    }, {
-        title: "TN (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s3ele", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3d/TN_2026_poster.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3ele&dl=1",
-    }, {
-        title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8khbq", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Recent Adds", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8khbq&dl=1"
     },
 
     // =======================================================================
@@ -2075,6 +2075,10 @@ const contentData = [
 
 
     {
+        title: "Gangor (2011)", embedUrl: "https://moviedakhi.4meplayer.com/#gwvqo", posterUrl: "http://www.impawards.com/intl/misc/2011/posters/gangor_ver2_xlg.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gwvqo",
+    }, {
+        title: "Matrubhoomi: A Nation Without Women (2003)", embedUrl: "https://moviedakhi.4meplayer.com/#5divr", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmFkYjA2NTYtMjZmOS00MzM4LWIyYmEtODMxOWNhYjc4MzdiXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5divr&dl=1",
+    }, {
         title: "Chand Mera Dil (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yrp1q", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTVlYmVjMTItOGMxYS00NmQyLWJlZTYtNWVkZGZhZmFiYTJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Music, Romance", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yrp1q&dl=1",
     }, {
         title: "System (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du61x", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGEyMzAxZTEtNTMzZi00NTU5LTg2OTktNzM2YTYxMzdkODE3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du61x&dl=1",
