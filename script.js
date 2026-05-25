@@ -5,6 +5,8 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Colony (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3kg36", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDgwNzhmMjItMDhlYi00ODdlLWI1NjUtZDgxZGMzMGU5MmM4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Sci-Fi, Mystery, Thriller, Horror", category: "Recent Adds", language: "Korean", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3kg36&dl=1"
+    }, {
         title: "Drishyam 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#eprni", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Drishyam-3_Poster-0d2290e0-4469-11f1-9e72-b3859bd2479f%20(1)-6495a2d0-5360-11f1-8c65-299184906c19.jpg?im=Resize,width=400", genre: "Drama, Family, Crime, Thriller", category: "Recent Adds", language: "Multi Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#eprni&dl=1",
     }, {
         title: "Sathi Leelavathi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#he6no", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBiYWQyMWQtYTQwMC00NmZiLWFkOWYtNmNlNjM4NDlkNjQ4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#he6no&dl=1",
@@ -63,8 +65,6 @@ const contentData = [
         title: "TN (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s3ele", posterUrl: "https://upload.wikimedia.org/wikipedia/en/3/3d/TN_2026_poster.jpg", genre: "Comedy, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3ele&dl=1",
     }, {
         title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8khbq", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Recent Adds", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8khbq&dl=1"
-    }, {
-        title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hdbir", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Recent Adds", language: "English", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdbir&dl=1"
     },
 
     // =======================================================================
@@ -108,6 +108,8 @@ const contentData = [
         title: "The Pizzagate Massacre (2020)", embedUrl: "https://moviedakhi.4meplayer.com/#r5lom", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTg5YzFjY2MtMTc0Ny00ZGE3LWI5OGEtOGVlZTAxMzEzMTkyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Thriller, Adventure, Comedy, Crime", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#r5lom&dl=1",
     }, {
         title: "Affection (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#nmk5k", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDY3MGI2Y2ItNGMwNS00MjgyLWI3M2UtMjcwNmUzY2NkMjQ2XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Sci-Fi", category: "Hollywood", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nmk5k&dl=1",
+    }, {
+        title: "The Well (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#nbjnh", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDViZTYyMjgtOWMwNC00ZGNhLTlhZTEtMTYyMzljNjhkNjUyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nbjnh&dl=1",
     }, {
         title: "Agent Zero (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#c8ptx", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGUwMjcxNjUtMWQ0Zi00YmRhLWI2ZGUtZTIyZDg1MDUwYWFlXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8ptx&dl=1",
     }, {
@@ -3430,6 +3432,8 @@ const contentData = [
 
 
     {
+        title: "Colony (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3kg36", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDgwNzhmMjItMDhlYi00ODdlLWI1NjUtZDgxZGMzMGU5MmM4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Sci-Fi, Mystery, Thriller, Horror", category: "Korean Country", language: "Korean", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3kg36&dl=1"
+    }, {
         title: "Exit (2019)", embedUrl: "https://moviedakhi.4meplayer.com/#8kz3q", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmI5ZGUzN2EtZDBjZi00NmM2LTkyNDUtNzgxMDZhYTgzZWJjXkEyXkFqcGc@._V1_.jpg", genre: "Disaster, Action, Comedy", category: "Korean Country", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8kz3q&dl=1"
     }, {
         title: "Project Y (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9da96", posterUrl: "https://cityonfire.com/wp-content/uploads/2026/03/Project-Y.jpg", genre: "Action, Adventure, Crime, Thriller", category: "Korean Country", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9da96&dl=1"
