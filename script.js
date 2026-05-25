@@ -73,29 +73,33 @@ const contentData = [
 
 
     {
+        title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s38fi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s38fi&dl=1"
+    }, {
         title: "Tuner (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6sdxx", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTZkOGQ5ZmYtNWNjMy00MWU4LWI4MWUtYzI0YzVmNDhkNDdkXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Drama, Thriller", category: "Hollywood", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6sdxx&dl=1"
     }, {
         title: "Corporate Retreat (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6sg3o", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTZkZmU4OWEtMDcwNi00MGQ5LTlkZTQtODY5YzFiMThjZWM3XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Hollywood", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6sg3o&dl=1"
     }, {
         title: "Ladies First (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#zbopj", posterUrl: "https://resizing.flixster.com/zu2Hiq2j56EjcJx5RJ49sm1ZMeQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2M1MjhjNTMzLTM5ZDUtNDIxYi05ODcxLTlmZDkxMjQ1ZTRjYi5qcGc=", genre: "Comedy", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zbopj&dl=1"
     }, {
-        title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8khbq", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Hollywood", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8khbq&dl=1"
-    }, {
-        title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hdbir", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Hollywood", language: "English", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdbir&dl=1"
-    }, {
-        title: "Tom Clancy's Jack Ryan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ajv6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGYxNzgzNTQtY2U0OC00NzU2LTgxZmYtNmZkMmVlMjgyMzM3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ajv6&dl=1"
-    }, {
-        title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s38fi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s38fi&dl=1"
-    }, {
-        title: "The Magic Faraway Tree (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vy3if", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGUzNzQzNWQtZTI2My00YmE2LTkyYzItNzFhMTM3OTVkYmNlXkEyXkFqcGc@._V1_.jpg", genre: "Adventure, Fantasy, Family", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vy3if&dl=1"
-    }, {
         title: "Tucker and Dale vs Evil (2010)", embedUrl: "https://moviedakhi.4meplayer.com/#hdd9z", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjYxNWNhNTktZDQxMS00YTkyLThkMzEtNmMyZmFlNDRlMDIzXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Comedy", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdd9z&dl=1",
     }, {
         title: "Lee Cronin's the Mummy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6v1ty", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhlNTAyYTgtOGRmZS00ZmE0LTk4ZTUtMjk3ZjZhMWE4YWY0XkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6v1ty&dl=1",
     }, {
+        title: "The Thirteenth Floor (1999)", embedUrl: "https://moviedakhi.4meplayer.com/#5dowb", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGY0NjNiMGQtNGQwNy00YmMwLThhZmQtNzQ1OWUwOTE3NzhjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Mystery, Thriller, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5dowb&dl=1",
+    }, {
+        title: "10x10 (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#9rnc9", posterUrl: "https://m.media-amazon.com/images/M/MV5BODRlZDRjMDctYzhjNy00ZDRhLThjNmQtYTI2YmE4YmQ2ZjU4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Mystery, Thriller, Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9rnc9&dl=1",
+    }, {
+        title: "The Magic Faraway Tree (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#vy3if", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGUzNzQzNWQtZTI2My00YmE2LTkyYzItNzFhMTM3OTVkYmNlXkEyXkFqcGc@._V1_.jpg", genre: "Adventure, Fantasy, Family", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vy3if&dl=1"
+    }, {
+        title: "Tom Clancy's Jack Ryan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5ajv6", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGYxNzgzNTQtY2U0OC00NzU2LTgxZmYtNmZkMmVlMjgyMzM3XkEyXkFqcGc@._V1_.jpg", genre: "Mystery & Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5ajv6&dl=1"
+    }, {
         title: "Defendor (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#yjngr", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDBkNDg1MzctOTQwNy00YjlmLThhNmYtOWZjY2M1YWQzYjIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Crime, Drama", category: "Hollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yjngr&dl=1",
     }, {
         title: "Parthenope (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#vyqq8", posterUrl: "https://m.media-amazon.com/images/M/MV5BODUyM2M2MDctMzI4YS00ZDA0LWJjMzQtOWEwNTRmNTU0NjkzXkEyXkFqcGc@._V1_.jpg", genre: "Fantasy, Drama, Adult", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#vyqq8&dl=1",
+    }, {
+        title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#8khbq", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Hollywood", language: "Hindi", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#8khbq&dl=1"
+    }, {
+        title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hdbir", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Hollywood", language: "English", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdbir&dl=1"
     }, {
         title: "Marty Supreme (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qencl", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTRhYjI1MTItMWYwMi00MjY5LWI1OTktMzQwNzA3MWJlN2QyXkEyXkFqcGc@._V1_.jpg", genre: "Sport, Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qencl&dl=1",
     }, {
@@ -5381,6 +5385,68 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/vSVsFvsDt" },
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/hxRb9Dj3S" },
             { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/in2pbHg1M" },
+        ]
+    }, {
+        title: "Mr. Mercedes (2017)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTJhODZmMjgtYzJmOS00YWE1LWE1OTUtM2UzZTE0NTczZWJlXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/SXYo73gx1bTA", seriesInfo: "Season 1, Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/RR45Wd6_Z" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/tHktibT0h" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/CSpXvRLBw" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/dlPsrFx9b" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/qdfN6rsI8" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/6AK6AnWUq" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/AuLZCwgU9" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/7Vu83KG5R" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/3-N6uAk57" },
+            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/Uyumkfh3C" },
+        ]
+    }, {
+        title: "Bates Motel (2013)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzk4OTU5NTE2M15BMl5BanBnXkFtZTcwNTIxMDIyOQ@@._V1_.jpg", genre: "Drama, Mystery & Thriller, Horror", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/ggQHLr5TjJgK", seriesInfo: "Season 1, Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/NT4dtHQHp" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/YgdlCXOnV" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/RzrJPefFT" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/Hg704uIIC7" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rcgVqq0EC" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/WAQ1-CIa3" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/XQUEBZByg" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/y7fRV-JP2" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/Js76BSkM0" },
+            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/8gQUvS1u6" },
+        ]
+    }, {
+        title: "Sharp Objects (2018)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTY4OTQ0N2EtMDExMC00NTYzLTk0NmItYTRjNDYxOWU5ZDY3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Crime, Mystery, Thriller", category: "Hollywood Series", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/zivQ2v4HxTzJ", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/w6PQdooju" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/YSNiLeLZQ" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/vnwI9pSFI" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/k0qDFpUMY" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/5Xd67IpFy" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/w55ydXPA_" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/XgVTb-X6q" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/xDoyKx9Fw" },
+        ]
+    }, {
+        title: "Mindhunter (2017)", posterUrl: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p14414009_b_v8_aa.jpg", genre: "Crime, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/cpgyo11pso9s_76", seriesInfo: "Season 1, Episode 1-10", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/yxP6shUt6" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/QPx3JaJL0" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/a4mXfHJ9Ri" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/UUamHH3gT" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/CLOEXJ_05" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/VrjlRxaTc" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/reourIvmQ" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/b4t1yfHtJ" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/qV4UyAKuN" },
+            { number: 10, title: "Episode 10", embedUrl: "https://abyssplayer.com/6tKlqHe2T" },
+        ]
+    }, {
+        title: "Mindhunter (2019)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTk4NDA4MGMtNjliOC00MjExLWI1YzctOTc4NWIxM2I1YjM5XkEyXkFqcGc@._V1_.jpg", genre: "Crime, Drama, Mystery & Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/0u0t4umx4he0mgj", seriesInfo: "Season 2, Episode 1-9", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/udpud8W3J" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/KKEz1Mg7H" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/x9Rtwl0uP" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/iDLIrYxOh" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/geIK3vcon" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/IIxWxO2X9" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/dNrV4-8MO" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/9x2dDOa7F" },
+            { number: 9, title: "Episode 9", embedUrl: "https://abyssplayer.com/44Msq-9AP" },
         ]
     },
 
