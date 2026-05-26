@@ -5,6 +5,15 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Mermaid (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5dajf", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/245055/mermaid_2026.jpg", genre: "Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5dajf&dl=1"
+    }, {
+        title: "Who's Your Gynac? (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTliMTE3YWQtZTc3Zi00NWI2LWE0ZTgtZDYyMjgwZDIzZWI4XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/xCNRGu5ByBDD", seriesInfo: "Season 2, Episode 1-5", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/b1CMN1KMD" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/Ez3pmtP8h" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/1jHX557Lgk" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/3RVmLX9r4" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/Hv4uBWZ3w" },]
+    }, {
         title: "Gangor (2011)", embedUrl: "https://moviedakhi.4meplayer.com/#gwvqo", posterUrl: "http://www.impawards.com/intl/misc/2011/posters/gangor_ver2_xlg.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gwvqo",
     }, {
         title: "Matrubhoomi: A Nation Without Women (2003)", embedUrl: "https://moviedakhi.4meplayer.com/#5divr", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmFkYjA2NTYtMjZmOS00MzM4LWIyYmEtODMxOWNhYjc4MzdiXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5divr&dl=1",
@@ -61,10 +70,6 @@ const contentData = [
         title: "Panda Plan 2: The Magical Tribe (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9xw6d", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTJhZTE0MTctMWVmNS00NjJiLThhOTMtMDcyY2QzYTg5NjcxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Family", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9xw6d&dl=1"
     }, {
         title: "System (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du61x", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGEyMzAxZTEtNTMzZi00NTU5LTg2OTktNzM2YTYxMzdkODE3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du61x&dl=1",
-    }, {
-        title: "Madhuvidhu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du6sj", posterUrl: "https://msidb.org/moviepics/3931.jpg", genre: "Comedy, Drama, Family, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du6sj&dl=1",
-    }, {
-        title: "Gaayapadda Simham (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8xp5", posterUrl: "https://images.filmibeat.com/img/280x383/popcorn/movie_posters/gaayapaddasimham-20260323153147-5426.jpg", genre: "Comedy, Drama, Crime", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8xp5&dl=1",
     },
 
     // =======================================================================
@@ -73,6 +78,8 @@ const contentData = [
 
 
     {
+        title: "Mermaid (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5dajf", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/245055/mermaid_2026.jpg", genre: "Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5dajf&dl=1"
+    }, {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s38fi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s38fi&dl=1"
     }, {
         title: "Tuner (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6sdxx", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTZkOGQ5ZmYtNWNjMy00MWU4LWI4MWUtYzI0YzVmNDhkNDdkXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Drama, Thriller", category: "Hollywood", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6sdxx&dl=1"
@@ -4025,6 +4032,20 @@ const contentData = [
 
 
     {
+        title: "Who's Your Gynac? (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTliMTE3YWQtZTc3Zi00NWI2LWE0ZTgtZDYyMjgwZDIzZWI4XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/xCNRGu5ByBDD", seriesInfo: "Season 2, Episode 1-5", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/b1CMN1KMD" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/Ez3pmtP8h" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/1jHX557Lgk" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/3RVmLX9r4" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/Hv4uBWZ3w" },]
+    }, {
+        title: "Who's Your Gynac? (2023)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTliMTE3YWQtZTc3Zi00NWI2LWE0ZTgtZDYyMjgwZDIzZWI4XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/4ppsPmh3VLYS", seriesInfo: "Season 1, Episode 1-5", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/8CQH9CdD_" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/l0VjbLEyg" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/v54zKj9_N" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/LcMENUnIO" }, 
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/XMVvt-3Q3" },]
+    }, {
         title: "Satrangi - Badle Ka Khel (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDI1YTUxZTUtNzEyMC00Y2EyLTk0NjItYTQ3Y2NhOTkzNmYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "Bollywood Series", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/wnIdjj4DAJZI", seriesInfo: "Season 1, Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/EVEinQ-Bx" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/DECbnKuGo" },
@@ -4285,7 +4306,7 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/hxIdrrTyn" },
         ]
     }, {
-        title: "Euphoria (2026)", posterUrl: "https://pbs.twimg.com/media/HE9qMvUaUAAScjn.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-6", episodes: [
+        title: "Euphoria (2026)", posterUrl: "https://assets.teenvogue.com/photos/69caae168ee958ac9270d5fb/2:3/w_556,h_835,c_limit/key-art_3.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-6", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/IasDw3x8x" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/v_l0Mz0F_" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/nyAhhnADN" },
