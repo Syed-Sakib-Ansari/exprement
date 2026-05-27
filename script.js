@@ -5,6 +5,30 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Spider-Noir (Color) (2026)", posterUrl: "https://resizing.flixster.com/NtzPo7EpWcdq2oLvvVIEVLuJq98=/fit-in/705x460/v2/https://resizing.flixster.com/A1561EqA71SKfAzkmJiJ7bogp0w=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZjVlYTg4YjYtNjU1ZC00YjY0LWJkYTktZmJjNWE3NTIyNzk5LmpwZw==", genre: "Action, Adventure, Crime, Drama, Fantasy, Mystery & Thriller, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/8f1difny0yycmby", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/hJqXEBZ27" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/o3f3Rxr8U" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/c4lsujE_g" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/N7yvoC1mn" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/tn65n3zhig" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/lS5rau_PY" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/OJtWPh68z" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/QRvrSaSPK" },
+        ]
+    }, {
+        title: "A Good Girl's Guide to Murder (2026)", posterUrl: "https://m.media-amazon.com/images/I/71O7AA1eiJL._AC_UF894,1000_QL80_.jpg", genre: "Mystery & Thriller, Crime", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=15A4IC6ZO4wY7aaoGvfS4p2jRfw3wsKrc", seriesInfo: "Season 2, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/Is6mZ5ZEo" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/zhKNBKKkq" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/bFFKeQkEt" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/Do-5bxVPX" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/v8RYVvnJG" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/zP-I19-bJ" },
+        ]
+    }, {
+        title: "Qorin 2 (2025)", embedUrl: "https://abyssplayer.com/FlR4shiC9", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmZkNjUwZGEtYzE2Yy00MThiLTg3NGMtYTBhZGJlYWJjNWI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Recent Adds", language: "Indonesian", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Kara (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qxkws", posterUrl: "https://resizing.flixster.com/pLvKdFBMznRA7Qm9WRAKyiRhgEE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzhiNGVjODg4LTA2YzYtNDA2NC05M2FhLWI3YTUxZDg3NDNiMi5qcGc=", genre: "Action, Mystery & Thriller, Crime, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qxkws&dl=1",
+    }, {
         title: "Mermaid (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5dajf", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/245055/mermaid_2026.jpg", genre: "Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5dajf&dl=1"
     }, {
         title: "Who's Your Gynac? (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTliMTE3YWQtZTc3Zi00NWI2LWE0ZTgtZDYyMjgwZDIzZWI4XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/xCNRGu5ByBDD", seriesInfo: "Season 2, Episode 1-5", episodes: [
@@ -46,30 +70,6 @@ const contentData = [
             { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS" },
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/hxIdrrTyn" },
         ]
-    }, {
-        title: "Satrangi - Badle Ka Khel (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDI1YTUxZTUtNzEyMC00Y2EyLTk0NjItYTQ3Y2NhOTkzNmYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Crime, Thriller, Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/wnIdjj4DAJZI", seriesInfo: "Season 1, Episode 1-7", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/EVEinQ-Bx" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/DECbnKuGo" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/rMAE7P9R2" }, 
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/KVXed911v" }, 
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/z0wLYYmdF" }, 
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/iErsEJVJR" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/CQOw4dJtc" },]
-    }, {
-        title: "The Boroughs (2026)", posterUrl: "https://resizing.flixster.com/wAO3QMG4H8tbJnlN4sSwiO6VT7c=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32903519_b_v8_aa.jpg", genre: "Drama, Adventure, Mystery & Thriller, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/lbrrbyi7djvoy4j", seriesInfo: "Season 1, Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/i6n12BmSV" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/4TEzGdQuA" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/uqMOjhaNV" },
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/--YTvuYdD7" },
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/YqNN8lqejl" },
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/CXpInH_BB" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/y3OBKC4D_" },
-            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/9qylOufdh" },
-        ]
-    }, {
-        title: "Panda Plan 2: The Magical Tribe (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#9xw6d", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTJhZTE0MTctMWVmNS00NjJiLThhOTMtMDcyY2QzYTg5NjcxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Comedy, Family", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9xw6d&dl=1"
-    }, {
-        title: "System (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#du61x", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGEyMzAxZTEtNTMzZi00NTU5LTg2OTktNzM2YTYxMzdkODE3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Thriller", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#du61x&dl=1",
     },
 
     // =======================================================================
@@ -2514,6 +2514,8 @@ const contentData = [
 
 
     {
+        title: "Kara (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qxkws", posterUrl: "https://resizing.flixster.com/pLvKdFBMznRA7Qm9WRAKyiRhgEE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzhiNGVjODg4LTA2YzYtNDA2NC05M2FhLWI3YTUxZDg3NDNiMi5qcGc=", genre: "Action, Mystery & Thriller, Crime, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qxkws&dl=1",
+    }, {
         title: "Sathi Leelavathi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#he6no", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBiYWQyMWQtYTQwMC00NmZiLWFkOWYtNmNlNjM4NDlkNjQ4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Romance", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#he6no&dl=1",
     }, {
         title: "Drishyam 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#eprni", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Drishyam-3_Poster-0d2290e0-4469-11f1-9e72-b3859bd2479f%20(1)-6495a2d0-5360-11f1-8c65-299184906c19.jpg?im=Resize,width=400", genre: "Drama, Family, Crime, Thriller", category: "South", language: "Multi Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#eprni&dl=1",
@@ -2584,8 +2586,6 @@ const contentData = [
         title: "Patriot (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#haygn", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTkyOTUyNjctNmU5MC00ZjYwLTlkODktNTRjNWY5OTk2YTc4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Drama, Thriller", category: "South", language: "Malayalam", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#haygn&dl=1",
     }, {
         title: "LIK: Love Insurance Kompany (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#fsgsk", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTQzMzNmYjYtMThmNC00NGJkLThkMDEtN2U3MjVkYThkY2I1XkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Romance, Sci-Fi", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#fsgsk&dl=1",
-    }, {
-        title: "Kara (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ew98e", posterUrl: "https://m.media-amazon.com/images/M/MV5BM2QzYWRjYWItYjJiMS00ZTY4LTgyOTEtMTRkOTUzNmFlMjIxXkEyXkFqcGc@._V1_.jpg", genre: "Action, Mystery & Thriller, Crime, Drama", category: "South", language: "Tamil", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ew98e&dl=1",
     }, {
         title: "Aadu 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qajz3", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWFlOThhOTEtZTg4Ny00NWUxLTk2Y2ItMWM1MDc5NDU2OWFlXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Comedy, Fantasy", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qajz3&dl=1",
     }, {
@@ -4022,6 +4022,8 @@ const contentData = [
         title: "The Machine Girl (2008)", embedUrl: "https://abyssplayer.com/qGy6UA6_S", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTYzNTQ4NTQwMl5BMl5BanBnXkFtZTgwODc2NjcwMzE@._V1_.jpg", genre: "Adult, Action, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Rise of the Machine Girls (2019)", embedUrl: "https://abyssplayer.com/FlR4shiC9", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTEzYTYzNzUtNjUyYS00MzRhLTk4NjUtZTQ1MmNjZTU0YWQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adult, Action, Comedy", category: "Others", language: "English", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
+    }, {
+        title: "Qorin 2 (2025)", embedUrl: "https://abyssplayer.com/FlR4shiC9", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmZkNjUwZGEtYzE2Yy00MThiLTg3NGMtYTBhZGJlYWJjNWI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror", category: "Others", language: "Indonesian", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     },
 
 
@@ -4284,6 +4286,35 @@ const contentData = [
 
 
     {
+        title: "Spider-Noir (Color) (2026)", posterUrl: "https://resizing.flixster.com/NtzPo7EpWcdq2oLvvVIEVLuJq98=/fit-in/705x460/v2/https://resizing.flixster.com/A1561EqA71SKfAzkmJiJ7bogp0w=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZjVlYTg4YjYtNjU1ZC00YjY0LWJkYTktZmJjNWE3NTIyNzk5LmpwZw==", genre: "Action, Adventure, Crime, Drama, Fantasy, Mystery & Thriller, Sci-Fi", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/8f1difny0yycmby", seriesInfo: "Season 1, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/hJqXEBZ27" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/o3f3Rxr8U" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/c4lsujE_g" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/N7yvoC1mn" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/tn65n3zhig" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/lS5rau_PY" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/OJtWPh68z" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/QRvrSaSPK" },
+        ]
+    }, {
+        title: "A Good Girl's Guide to Murder (2026)", posterUrl: "https://m.media-amazon.com/images/I/71O7AA1eiJL._AC_UF894,1000_QL80_.jpg", genre: "Mystery & Thriller, Crime", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=15A4IC6ZO4wY7aaoGvfS4p2jRfw3wsKrc", seriesInfo: "Season 2, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/Is6mZ5ZEo" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/zhKNBKKkq" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/bFFKeQkEt" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/Do-5bxVPX" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/v8RYVvnJG" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/zP-I19-bJ" },
+        ]
+    }, {
+        title: "A Good Girl's Guide to Murder (2024)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTEzODM2NzYtMzU5NC00OWFlLWFkZTktNzEzODVjOTI3YWJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Mystery & Thriller, Crime", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1dmUqmnZ35Zc20nuWuKIiB1qiKMbvdBtv", seriesInfo: "Season 1, Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/CR4imrdzl" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/MViri1AV2" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/UudNKmf1_" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/R2iz0e0Ub" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/ypfWrC_g2" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/7g1p4B9Qh" },
+        ]
+    }, {
         title: "The Boroughs (2026)", posterUrl: "https://resizing.flixster.com/wAO3QMG4H8tbJnlN4sSwiO6VT7c=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32903519_b_v8_aa.jpg", genre: "Drama, Adventure, Mystery & Thriller, Sci-Fi", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/lbrrbyi7djvoy4j", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/i6n12BmSV" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/4TEzGdQuA" },
