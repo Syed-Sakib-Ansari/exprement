@@ -31,7 +31,7 @@ const contentData = [
     }, {
         title: "Mermaid (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5dajf", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/245055/mermaid_2026.jpg", genre: "Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5dajf&dl=1"
     }, {
-        title: "Who's Your Gynac? (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTliMTE3YWQtZTc3Zi00NWI2LWE0ZTgtZDYyMjgwZDIzZWI4XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/xCNRGu5ByBDD", seriesInfo: "Season 2, Episode 1-5", episodes: [
+        title: "Who's Your Gynac? (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWNmY2RiMGUtZWZiZS00OTNlLTgzOTAtMmQ0YmE3MDhkMGVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://transfer.it/t/xCNRGu5ByBDD", seriesInfo: "Season 2, Episode 1-5", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/b1CMN1KMD" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/Ez3pmtP8h" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/1jHX557Lgk" }, 
