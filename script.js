@@ -78,6 +78,10 @@ const contentData = [
 
 
     {
+        title: "The Botanist (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#x59g9", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDIwYjVkNTMtZTRiYy00MTUyLThkMGQtYjZlNzc3OTMwZTg3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#x59g9&dl=1"
+    }, {
+        title: "Marshmallow (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#dthfa", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmJjYWU0ZDctNDk4Ny00ZjIzLWI5NDUtMTBiYjI5OTBhOTQyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dthfa&dl=1"
+    }, {
         title: "Mermaid (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#5dajf", posterUrl: "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster--dark-mode.png/0/images/masterrepository/Fandango/245055/mermaid_2026.jpg", genre: "Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5dajf&dl=1"
     }, {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s38fi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s38fi&dl=1"
@@ -2094,6 +2098,8 @@ const contentData = [
     }, {
         title: "Aakhri Sawal (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#o1euf", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDAyMGJlYzAtMzIzNS00MmYxLThlYTAtMzRhYTk5OTQxZTk2XkEyXkFqcGc@._V1_.jpg", genre: "Drama, History, Thriller", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#o1euf&dl=1",
     }, {
+        title: "Bhavesh Joshi Superhero (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#zlto3", posterUrl: "https://m.media-amazon.com/images/M/MV5BYjRkNjZkZTUtZTk2NS00MGExLWE2OTEtOGEwN2M1NmFkNDQ1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Superhero, Action", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zlto3&dl=1",
+    }, {
         title: "Pati Patni Aur Woh Do (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hd669", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmE0ZTA5MTgtNTE4NC00NThmLWFiM2EtZTI2MTc2Y2FmZjkwXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller, Drama", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hd669&dl=1",
     }, {
         title: "Kartavya (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#c8uqs", posterUrl: "https://m.media-amazon.com/images/M/MV5BNmNiZTM0MmYtY2U2Yi00N2E5LWE1NWUtMDg2NTU4Mjg5Y2IzXkEyXkFqcGc@._V1_.jpg", genre: "Action, Crime, Thriller, Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#c8uqs&dl=1",
@@ -2514,6 +2520,9 @@ const contentData = [
 
 
     {
+        title: "Brothers and Sisters (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjliZGI2MzItYzYxOS00YTQ1LWI0NGQtZDNhMDRjZWY0NTE2XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 1, Episode 1-4", episodes: [
+            { number: 1, title: "Episode 1-4", embedUrl: "https://moviedakhi.4meplayer.com/#k98es", downloadUrl:"https://moviedakhi.4meplayer.com/#k98es&dl=1" },]
+    }, {
         title: "Kara (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#qxkws", posterUrl: "https://resizing.flixster.com/pLvKdFBMznRA7Qm9WRAKyiRhgEE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzhiNGVjODg4LTA2YzYtNDA2NC05M2FhLWI3YTUxZDg3NDNiMi5qcGc=", genre: "Action, Mystery & Thriller, Crime, Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qxkws&dl=1",
     }, {
         title: "Sathi Leelavathi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#he6no", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBiYWQyMWQtYTQwMC00NmZiLWFkOWYtNmNlNjM4NDlkNjQ4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Romance", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#he6no&dl=1",
@@ -7050,54 +7059,54 @@ function copyWebsiteLink(btn) {
 // ==========================================
 
 // 1. Disable Right Click entirely to hide 'Inspect' everywhere
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-});
+// document.addEventListener('contextmenu', (e) => {
+//     e.preventDefault();
+// });
 
-document.addEventListener('keydown', (e) => {
-    // Allow normal keyboard behavior inside the search box
-    if (e.target.id === 'searchInput') return;
+// document.addEventListener('keydown', (e) => {
+//     // Allow normal keyboard behavior inside the search box
+//     if (e.target.id === 'searchInput') return;
 
-    // Block F12 (DevTools)
-    if (e.key === 'F12') {
-        e.preventDefault();
-    }
+//     // Block F12 (DevTools)
+//     if (e.key === 'F12') {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
+//     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+U / Cmd+Opt+U (View Source)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+U / Cmd+Opt+U (View Source)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+S / Cmd+S (Save Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+S / Cmd+S (Save Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
+//         e.preventDefault();
+//     }
 
-    // Block Ctrl+P / Cmd+P (Print Page)
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
-        e.preventDefault();
-    }
+//     // Block Ctrl+P / Cmd+P (Print Page)
+//     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+//         e.preventDefault();
+//     }
 
-});
+// });
 
-// 3. Prevent Native Copy, Cut, Paste events (except search box)
-['copy', 'cut', 'paste'].forEach(evt => {
-    document.addEventListener(evt, (e) => {
-        if (e.target.id !== 'searchInput') {
-            e.preventDefault();
-        }
-    });
-});
+// // 3. Prevent Native Copy, Cut, Paste events (except search box)
+// ['copy', 'cut', 'paste'].forEach(evt => {
+//     document.addEventListener(evt, (e) => {
+//         if (e.target.id !== 'searchInput') {
+//             e.preventDefault();
+//         }
+//     });
+// });
 
-// 4. Prevent Dragging elements (like ghost-dragging images to save them)
-document.addEventListener('dragstart', (e) => {
-    // Allow FAB pointer dragging, but prevent native HTML element dragging
-    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-        e.preventDefault();
-    }
-});
+// // 4. Prevent Dragging elements (like ghost-dragging images to save them)
+// document.addEventListener('dragstart', (e) => {
+//     // Allow FAB pointer dragging, but prevent native HTML element dragging
+//     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+//         e.preventDefault();
+//     }
+// });
