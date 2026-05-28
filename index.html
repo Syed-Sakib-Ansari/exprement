@@ -546,15 +546,27 @@
 
     <!-- ADCash Ads -->
     <script type="text/javascript">
-        aclib.runAutoTag({
-            zoneId: '1yybsjr970',
-        });
+        // BS Box Ads Problem Fixed Start
+        if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
+            if (typeof aclib !== 'undefined' && typeof aclib.runAutoTag === 'function') {
+                aclib.runAutoTag({
+                    zoneId: '1yybsjr970',
+                });
+            }
+        }
+        // BS Box Ads Problem Fixed End
     </script>
 
     <script type="text/javascript">
-        aclib.runPop({
-            zoneId: '11366506',
-        });
+        // BS Box Ads Problem Fixed Start
+        if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
+            if (typeof aclib !== 'undefined' && typeof aclib.runPop === 'function') {
+                aclib.runPop({
+                    zoneId: '11366506',
+                });
+            }
+        }
+        // BS Box Ads Problem Fixed End
     </script>
 
 
