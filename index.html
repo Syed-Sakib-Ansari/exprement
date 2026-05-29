@@ -546,9 +546,15 @@
 
     <!-- ADCash Ads -->
     <script type="text/javascript">
-        aclib.runAutoTag({
-            zoneId: 'vgt6rfbeat',
-        });
+        // BS Box Ads Problem Fixed Start
+        if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
+            if (typeof aclib !== 'undefined' && typeof aclib.runAutoTag === 'function') {
+                aclib.runAutoTag({
+                    zoneId: 'vgt6rfbeat',
+                });
+            }
+        }
+        // BS Box Ads Problem Fixed End
     </script>
 
 
