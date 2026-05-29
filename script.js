@@ -6833,7 +6833,7 @@ setTimeout(() => {
             showAnnouncement();
         }
     }
-}, isTrappedCheck ? 500 : 7500);
+}, isTrappedCheck ? 500 : 13000);
 // Not Per Reload Popup Box End
 
 // Helper function to show toast messages
