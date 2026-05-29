@@ -6453,6 +6453,13 @@ ${infoText}
             }
             // Video Play Problem End
 
+            // Modal Banner Ads Start
+            document.getElementById('modal-ad-desktop').innerHTML = '';
+            document.getElementById('modal-ad-mobile').innerHTML = '';
+            loadDynamicAd('modal-ad-desktop', '11369222');
+            loadDynamicAd('modal-ad-mobile', '11369238');
+            // Modal Banner Ads End
+
             const modal = document.getElementById('movieModal');
             modal.classList.remove('hidden');
             void modal.offsetWidth;
