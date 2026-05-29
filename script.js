@@ -5,6 +5,8 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Succubus (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#jqoru", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzg0N2M4YmYtNzJlNi00MzkyLWJlMDQtNTczODZkMjg5ZTY5XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jqoru&dl=1"
+    }, {
         title: "Spider-Noir (Color) (2026)", posterUrl: "https://resizing.flixster.com/NtzPo7EpWcdq2oLvvVIEVLuJq98=/fit-in/705x460/v2/https://resizing.flixster.com/A1561EqA71SKfAzkmJiJ7bogp0w=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZjVlYTg4YjYtNjU1ZC00YjY0LWJkYTktZmJjNWE3NTIyNzk5LmpwZw==", genre: "Action, Adventure, Crime, Drama, Fantasy, Mystery & Thriller, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/8f1difny0yycmby", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/hJqXEBZ27" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/o3f3Rxr8U" },
@@ -14,6 +16,17 @@ const contentData = [
             { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/lS5rau_PY" },
             { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/OJtWPh68z" },
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/QRvrSaSPK" },
+        ]
+    }, {
+        title: "Murder Mindfully (2026)", posterUrl: "https://bingeddata.s3.amazonaws.com/uploads/2025/09/3snsd7KLau14equwCz9YLZu9lTO-768x1152.jpg", genre: "Comedy, Crime, Mystery, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1iz5vgWSii3R7n4cCUvuSIl3gcfqhw4Op", seriesInfo: "Season 2, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/YsOmFEXYB" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/HSK7ZvHFF" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/VniXwzWH7" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/G5zfml_Um" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/8iFegBT4W" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/ZLR1-e8G3" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/3HymiaDS4" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/iFIql8CYC" },
         ]
     }, {
         title: "A Good Girl's Guide to Murder (2026)", posterUrl: "https://m.media-amazon.com/images/I/71O7AA1eiJL._AC_UF894,1000_QL80_.jpg", genre: "Mystery & Thriller, Crime", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=15A4IC6ZO4wY7aaoGvfS4p2jRfw3wsKrc", seriesInfo: "Season 2, Episode 1-6", episodes: [
@@ -57,19 +70,6 @@ const contentData = [
         title: "Little Amélie or the Character of Rain (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s3rnt", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjMxMDU3ZGEtMzMyMi00OGZiLWFlZTAtMTAyMmYwOWYxZmIxXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3rnt&dl=1"
     }, {
         title: "Chand Mera Dil (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yrp1q", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTVlYmVjMTItOGMxYS00NmQyLWJlZTYtNWVkZGZhZmFiYTJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Music, Romance", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yrp1q&dl=1",
-    }, {
-        title: "Ladies First (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#zbopj", posterUrl: "https://resizing.flixster.com/zu2Hiq2j56EjcJx5RJ49sm1ZMeQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2M1MjhjNTMzLTM5ZDUtNDIxYi05ODcxLTlmZDkxMjQ1ZTRjYi5qcGc=", genre: "Comedy", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zbopj&dl=1"
-    }, {
-        title: "The Boys (2026)", posterUrl: "https://preview.redd.it/new-posters-for-the-boys-final-season-v0-fdqaidzn72ng1.jpg?width=1080&crop=smart&auto=webp&s=047b7a981ca86c5791f9aae0e7f6087efe989c1d", genre: "Comedy, Drama, Action, Adventure, Fantasy, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/fa1d6xsfsjp8ao6", seriesInfo: "Season 5, Episode 1-8", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/UdO-mt0vG" },
-            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/6NBG4Xl05" },
-            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/PyNsruhwI" },
-            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/H2mRGyi_8" },
-            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/rdgm10RA6" },
-            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/H-kl3Tx9S" },
-            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/UE2u8wGTS" },
-            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/hxIdrrTyn" },
-        ]
     },
 
     // =======================================================================
@@ -78,6 +78,8 @@ const contentData = [
 
 
     {
+        title: "Succubus (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#jqoru", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzg0N2M4YmYtNzJlNi00MzkyLWJlMDQtNTczODZkMjg5ZTY5XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jqoru&dl=1"
+    }, {
         title: "The Botanist (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#x59g9", posterUrl: "https://m.media-amazon.com/images/M/MV5BZDIwYjVkNTMtZTRiYy00MTUyLThkMGQtYjZlNzc3OTMwZTg3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Fantasy", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#x59g9&dl=1"
     }, {
         title: "Marshmallow (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#dthfa", posterUrl: "https://m.media-amazon.com/images/M/MV5BZmJjYWU0ZDctNDk4Ny00ZjIzLWI5NDUtMTBiYjI5OTBhOTQyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Horror, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dthfa&dl=1"
@@ -2520,6 +2522,8 @@ const contentData = [
 
 
     {
+        title: "Karikaada (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#k96jc", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGZiOTJmZTgtM2UwNi00OGMzLWExN2MtZWViMDlhMjliZDE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#k96jc&dl=1"
+    }, {
         title: "Brothers and Sisters (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjliZGI2MzItYzYxOS00YTQ1LWI0NGQtZDNhMDRjZWY0NTE2XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 1, Episode 1-4", episodes: [
             { number: 1, title: "Episode 1-4", embedUrl: "https://moviedakhi.4meplayer.com/#k98es", downloadUrl:"https://moviedakhi.4meplayer.com/#k98es&dl=1" },]
     }, {
@@ -2788,8 +2792,6 @@ const contentData = [
         title: "Maayabimbum (2019)", embedUrl: "https://abyssplayer.com/gIaBcFS9Rk", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjc5OGNmZjctODIyNy00OWYyLWExOTAtNzNiMzczY2UzNjU4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Romance", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Kaa: The Forest (2026)", embedUrl: "https://abyssplayer.com/YGhDxtvzX", posterUrl: "https://m.media-amazon.com/images/M/MV5BMWVmNGVmNDYtOGU0NC00MTY1LThlOWUtNTg1ZjhkYjJlODM5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Adventure, Thriller", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
-    }, {
-        title: "Karikaada (2026)", embedUrl: "https://abyssplayer.com/imGGvj--g", posterUrl: "https://m.media-amazon.com/images/M/MV5BMGZiOTJmZTgtM2UwNi00OGMzLWExN2MtZWViMDlhMjliZDE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
         title: "Bara Badhu (2026)", embedUrl: "https://abyssplayer.com/IJoAQn_XP", posterUrl: "https://m.media-amazon.com/images/M/MV5BOGNhNTBjMTUtY2ZhZi00YzIzLThkMWMtMGVhYjVlNGFlMDUwXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy", category: "South", language: "Hindi", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263"
     }, {
@@ -4295,6 +4297,17 @@ const contentData = [
 
 
     {
+        title: "Murder Mindfully (2026)", posterUrl: "https://bingeddata.s3.amazonaws.com/uploads/2025/09/3snsd7KLau14equwCz9YLZu9lTO-768x1152.jpg", genre: "Comedy, Crime, Mystery, Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1iz5vgWSii3R7n4cCUvuSIl3gcfqhw4Op", seriesInfo: "Season 2, Episode 1-8", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/YsOmFEXYB" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/HSK7ZvHFF" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/VniXwzWH7" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/G5zfml_Um" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/8iFegBT4W" },
+            { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/ZLR1-e8G3" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/3HymiaDS4" },
+            { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/iFIql8CYC" },
+        ]
+    }, {
         title: "Spider-Noir (Color) (2026)", posterUrl: "https://resizing.flixster.com/NtzPo7EpWcdq2oLvvVIEVLuJq98=/fit-in/705x460/v2/https://resizing.flixster.com/A1561EqA71SKfAzkmJiJ7bogp0w=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZjVlYTg4YjYtNjU1ZC00YjY0LWJkYTktZmJjNWE3NTIyNzk5LmpwZw==", genre: "Action, Adventure, Crime, Drama, Fantasy, Mystery & Thriller, Sci-Fi", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/8f1difny0yycmby", seriesInfo: "Season 1, Episode 1-8", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/hJqXEBZ27" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/o3f3Rxr8U" },
@@ -6833,7 +6846,7 @@ setTimeout(() => {
             showAnnouncement();
         }
     }
-}, isTrappedCheck ? 500 : 13000);
+}, isTrappedCheck ? 500 : 20000);
 // Not Per Reload Popup Box End
 
 // Helper function to show toast messages
