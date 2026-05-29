@@ -546,7 +546,6 @@
 
     <!-- ADCash Ads -->
     <script type="text/javascript">
-        // BS Box Ads Problem Fixed Start
         if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
             if (typeof aclib !== 'undefined' && typeof aclib.runAutoTag === 'function') {
                 aclib.runAutoTag({
@@ -554,30 +553,18 @@
                 });
             }
         }
-        // BS Box Ads Problem Fixed End
     </script>
 
     <script type="text/javascript">
-        // === Adcash 5-Click Pop-Under Logic ===
-        let popClickCounter = 0;
-        const clicksRequired = 5; // প্রতি ৫ নম্বর ক্লিকে অ্যাড ট্রিগার হবে
-
-        document.addEventListener('click', function (event) {
-            popClickCounter++;
-
-            // ক্লিক সংখ্যা ৫, ১০, ১৫ ইত্যাদি হলে অ্যাড ফায়ার করবে
-            if (popClickCounter % clicksRequired === 0) {
-
-                // aclib ঠিকমতো লোড হয়েছে কি না তা চেক করে পপ-আন্ডার রান করানো
-                if (typeof aclib !== 'undefined' && typeof aclib.runPop === 'function') {
-                    aclib.runPop({
-                        zoneId: '11368726',
-                    });
-                    console.log("Pop-under triggered at click: " + popClickCounter); // টেস্টিংয়ের সুবিধার্থে
-                }
+        if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
+            if (typeof aclib !== 'undefined' && typeof aclib.runPop === 'function') {
+                aclib.runPop({
+                    zoneId: '11368726',
+                });
             }
-        });
+        }
     </script>
+
 
 
 
