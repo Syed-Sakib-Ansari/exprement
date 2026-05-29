@@ -88,6 +88,10 @@ const contentData = [
     }, {
         title: "Mortal Kombat II (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#s38fi", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTg2YWNkN2EtMzc1Ny00ZTBhLWFmYTItMmMyNzhjNjhhNmVhXkEyXkFqcGc@._V1_.jpg", genre: "Action, Adventure, Fantasy, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s38fi&dl=1"
     }, {
+        title: "Lee Cronin's the Mummy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#1yzks", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhlNTAyYTgtOGRmZS00ZmE0LTk4ZTUtMjk3ZjZhMWE4YWY0XkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#1yzks&dl=1",
+    }, {
+        title: "Cursa (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s8ava", posterUrl: "https://m.media-amazon.com/images/M/MV5BMmE4MGFiYWItYWY0My00MGY4LWIyZjItMjAwZTZiODZjYTllXkEyXkFqcGc@._V1_.jpg", genre: "Action", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s8ava&dl=1",
+    }, {
         title: "Tuner (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6sdxx", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTZkOGQ5ZmYtNWNjMy00MWU4LWI4MWUtYzI0YzVmNDhkNDdkXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Drama, Thriller", category: "Hollywood", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6sdxx&dl=1"
     }, {
         title: "Corporate Retreat (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6sg3o", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTZkZmU4OWEtMDcwNi00MGQ5LTlkZTQtODY5YzFiMThjZWM3XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Hollywood", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6sg3o&dl=1"
@@ -95,8 +99,6 @@ const contentData = [
         title: "Ladies First (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#zbopj", posterUrl: "https://resizing.flixster.com/zu2Hiq2j56EjcJx5RJ49sm1ZMeQ=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2M1MjhjNTMzLTM5ZDUtNDIxYi05ODcxLTlmZDkxMjQ1ZTRjYi5qcGc=", genre: "Comedy", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zbopj&dl=1"
     }, {
         title: "Tucker and Dale vs Evil (2010)", embedUrl: "https://moviedakhi.4meplayer.com/#hdd9z", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjYxNWNhNTktZDQxMS00YTkyLThkMzEtNmMyZmFlNDRlMDIzXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Comedy", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdd9z&dl=1",
-    }, {
-        title: "Lee Cronin's the Mummy (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6v1ty", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDhlNTAyYTgtOGRmZS00ZmE0LTk4ZTUtMjk3ZjZhMWE4YWY0XkEyXkFqcGc@._V1_.jpg", genre: "Horror", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6v1ty&dl=1",
     }, {
         title: "The Thirteenth Floor (1999)", embedUrl: "https://moviedakhi.4meplayer.com/#5dowb", posterUrl: "https://m.media-amazon.com/images/M/MV5BNGY0NjNiMGQtNGQwNy00YmMwLThhZmQtNzQ1OWUwOTE3NzhjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Mystery, Thriller, Sci-Fi", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5dowb&dl=1",
     }, {
@@ -4359,13 +4361,14 @@ const contentData = [
             { number: 8, title: "Episode 8", embedUrl: "https://abyssplayer.com/hxIdrrTyn" },
         ]
     }, {
-        title: "Euphoria (2026)", posterUrl: "https://assets.teenvogue.com/photos/69caae168ee958ac9270d5fb/2:3/w_556,h_835,c_limit/key-art_3.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-6", episodes: [
+        title: "Euphoria (2026)", posterUrl: "https://assets.teenvogue.com/photos/69caae168ee958ac9270d5fb/2:3/w_556,h_835,c_limit/key-art_3.jpg", genre: "Drama", category: "Hollywood Series", language: "English", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 3 Episode 1-7", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/IasDw3x8x" },
             { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/v_l0Mz0F_" },
             { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/nyAhhnADN" },
             { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/N0cFey9hP" },
             { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/HZP4-4-zH" },
             { number: 6, title: "Episode 6", embedUrl: "https://abyssplayer.com/ikC_Yjqyv" },
+            { number: 7, title: "Episode 7", embedUrl: "https://abyssplayer.com/nfe-HMQDW" },
         ]
     }, {
         title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-5", episodes: [
