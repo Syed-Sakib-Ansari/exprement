@@ -5650,310 +5650,311 @@ const contentData = [
 
 ];
 
-contentData.forEach((item, index) => { item.id = index; });
+        contentData.forEach((item, index) => { item.id = index; });
 
-const categories = [
-    "all", "Hollywood", "Bollywood", "South", "Animation",
-    "Korean Country", "Chinese", "Bollywood Series", "Hollywood Series",
-    "Korean Series", "Adult Comedy", "Others"
-];
+        const categories = [
+            "all", "Hollywood", "Bollywood", "South", "Animation",
+            "Korean Country", "Chinese", "Bollywood Series", "Hollywood Series",
+            "Korean Series", "Adult Comedy", "Others"
+        ];
 
-let currentItem = null;
-let downloadClickCount = 0; // Track the clicks for custom download button logic
-let currentEpisodeIndex = null;
-let preSearchState = null; // Stores user location before search starts
-let currentView = 'home';
-let sliderInterval;
-const homeView = document.getElementById('homeView');
-const libraryView = document.getElementById('libraryView');
-const recentAddsGrid = document.getElementById('recentAddsGrid');
-const libraryGrid = document.getElementById('libraryGrid');
-const categorySections = document.getElementById('categorySections');
-const sliderWrapper = document.getElementById('sliderWrapper');
-const sliderDots = document.getElementById('sliderDots');
-const searchInput = document.getElementById('searchInput');
-const searchIcon = document.getElementById('searchIcon');
-const categoryMenu = document.getElementById('categoryMenu');
+        let currentItem = null;
+        let downloadClickCount = 0; // Track the clicks for custom download button logic
+        let currentEpisodeIndex = null;
+        let preSearchState = null; // Stores user location before search starts
+        let currentView = 'home';
+        let sliderInterval;
+        const homeView = document.getElementById('homeView');
+        const libraryView = document.getElementById('libraryView');
+        const recentAddsGrid = document.getElementById('recentAddsGrid');
+        const libraryGrid = document.getElementById('libraryGrid');
+        const categorySections = document.getElementById('categorySections');
+        const sliderWrapper = document.getElementById('sliderWrapper');
+        const sliderDots = document.getElementById('sliderDots');
+        const searchInput = document.getElementById('searchInput');
+        const searchIcon = document.getElementById('searchIcon');
+        const categoryMenu = document.getElementById('categoryMenu');
 
-let libraryData = [];
-let libraryDisplayedCount = 0;
-const ITEMS_PER_PAGE = 30;
+        let libraryData = [];
+        let libraryDisplayedCount = 0;
+        const ITEMS_PER_PAGE = 30;
 
-function getOptimizedImageUrl(url, width = 300) {
-    if (!url) return "";
-    if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
-        return url;
-    }
-    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=80`;
-}
+        function getOptimizedImageUrl(url, width = 300) {
+            if (!url) return "";
+            if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
+                return url;
+            }
+            return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=80`;
+        }
 
-function debounce(func, wait) {
-    let timeout;
-    return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-}
-
-function renderCategories() {
-    const mobileGrid = document.getElementById('mobileCategoryGrid');
-    const desktopNav = document.getElementById('desktopCategoryPills');
-    const libraryFilters = document.getElementById('libraryFilters');
-
-    mobileGrid.innerHTML = ''; desktopNav.innerHTML = ''; libraryFilters.innerHTML = '';
-
-    categories.forEach(cat => {
-        const label = cat === 'Korean Country' ? 'Korean' : cat;
-
-        // If the category is 'all', handle it differently
-        if (cat === 'all') {
-            // Mobile FAB Menu: Replace 'All' with 'Home'
-            const mobileItem = document.createElement('a');
-            mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
-            mobileItem.innerText = 'Home';
-            mobileItem.href = '#';
-            mobileItem.onclick = (e) => {
-                e.preventDefault();
-                toggleCategoryMenu(false, false);
-                clearSearch(true); // Reset search state
-                switchView('home', null, 'replace'); // Go back to main page
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
             };
-            mobileGrid.appendChild(mobileItem);
-
-            // Return early so 'All' is NOT added to Desktop Nav or Library Filters
-            return;
         }
 
-        const realLink = `?view=library&category=${encodeURIComponent(cat)}`;
+        function renderCategories() {
+            const mobileGrid = document.getElementById('mobileCategoryGrid');
+            const desktopNav = document.getElementById('desktopCategoryPills');
+            const libraryFilters = document.getElementById('libraryFilters');
 
-        const mobileItem = document.createElement('a');
-        mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
-        mobileItem.innerText = label;
-        mobileItem.href = realLink;
-        mobileItem.onclick = (e) => {
-            e.preventDefault();
-            toggleCategoryMenu(false, false);
-            switchView('library', cat, 'replace');
-        };
-        mobileGrid.appendChild(mobileItem);
+            mobileGrid.innerHTML = ''; desktopNav.innerHTML = ''; libraryFilters.innerHTML = '';
 
-        const desktopItem = document.createElement('a');
-        desktopItem.href = realLink;
-        desktopItem.className = 'category-pill border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 transition';
-        desktopItem.innerText = label;
-        desktopItem.onclick = (e) => {
-            e.preventDefault();
-            switchView('library', cat);
-        };
-        desktopNav.appendChild(desktopItem);
+            categories.forEach(cat => {
+                const label = cat === 'Korean Country' ? 'Korean' : cat;
 
-        const filterItem = desktopItem.cloneNode(true);
-        filterItem.setAttribute('data-category', cat);
-        filterItem.onclick = (e) => {
-            e.preventDefault();
-            switchView('library', cat);
-        };
-        libraryFilters.appendChild(filterItem);
-    });
-}
+                // If the category is 'all', handle it differently
+                if (cat === 'all') {
+                    // Mobile FAB Menu: Replace 'All' with 'Home'
+                    const mobileItem = document.createElement('a');
+                    mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
+                    mobileItem.innerText = 'Home';
+                    mobileItem.href = '#';
+                    mobileItem.onclick = (e) => {
+                        e.preventDefault();
+                        toggleCategoryMenu(false, false);
+                        clearSearch(true); // Reset search state
+                        switchView('home', null, 'replace'); // Go back to main page
+                    };
+                    mobileGrid.appendChild(mobileItem);
 
-// ==========================================
-// FAB OPEN / CLOSE ANIMATIONS & SCROLL FIX
-// ==========================================
-let savedScrollY = 0;
+                    // Return early so 'All' is NOT added to Desktop Nav or Library Filters
+                    return;
+                }
 
-function toggleCategoryMenu(show, triggerBack = true) {
-    const fab = document.getElementById('mobileFab');
+                const realLink = `?view=library&category=${encodeURIComponent(cat)}`;
 
-    if (show) {
-        // Save precise scroll position before opening
-        savedScrollY = window.scrollY;
+                const mobileItem = document.createElement('a');
+                mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
+                mobileItem.innerText = label;
+                mobileItem.href = realLink;
+                mobileItem.onclick = (e) => {
+                    e.preventDefault();
+                    toggleCategoryMenu(false, false);
+                    switchView('library', cat, 'replace');
+                };
+                mobileGrid.appendChild(mobileItem);
 
-        const currentState = history.state || {};
-        try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-        try { window.history.pushState({ ...currentState, isMenuOpen: true }, ''); } catch (e) { }
+                const desktopItem = document.createElement('a');
+                desktopItem.href = realLink;
+                desktopItem.className = 'category-pill border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 transition';
+                desktopItem.innerText = label;
+                desktopItem.onclick = (e) => {
+                    e.preventDefault();
+                    switchView('library', cat);
+                };
+                desktopNav.appendChild(desktopItem);
 
-        categoryMenu.classList.remove('hidden');
-        void categoryMenu.offsetWidth; // Trigger reflow
-        categoryMenu.classList.add('active');
-
-        // Bulletproof body lock - stops background scrolling and jumping
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${savedScrollY}px`;
-        document.body.style.width = '100%';
-
-        fab.classList.add('menu-open'); // Triggers CSS transitions on icons
-
-    } else {
-        categoryMenu.classList.remove('active');
-        setTimeout(() => categoryMenu.classList.add('hidden'), 400); // Matches the 0.4s CSS transition
-
-        // Remove body lock and instantly restore the exact scroll position
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        window.scrollTo(0, savedScrollY);
-
-        if (triggerBack && window.history.state?.isMenuOpen) {
-            window.history.back();
+                const filterItem = desktopItem.cloneNode(true);
+                filterItem.setAttribute('data-category', cat);
+                filterItem.onclick = (e) => {
+                    e.preventDefault();
+                    switchView('library', cat);
+                };
+                libraryFilters.appendChild(filterItem);
+            });
         }
 
-        fab.classList.remove('menu-open'); // Reverts CSS transitions on icons
-    }
-}
+        // ==========================================
+        // FAB OPEN / CLOSE ANIMATIONS & SCROLL FIX
+        // ==========================================
+        let savedScrollY = 0;
 
-// ==========================================
-// 60FPS SMOOTH FREELY DRAGGABLE FAB LOGIC
-// ==========================================
-const fab = document.getElementById('mobileFab');
-let isDragging = false;
-let startX, startY, initialX, initialY;
-let translateX = 0, translateY = 0;
-let moved = false;
+        function toggleCategoryMenu(show, triggerBack = true) {
+            const fab = document.getElementById('mobileFab');
 
-function dragStart(e) {
-    moved = false;
-    isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
+            if (show) {
+                // Save precise scroll position before opening
+                savedScrollY = window.scrollY;
 
-    // Get exact current position relative to viewport
-    const rect = fab.getBoundingClientRect();
-    initialX = rect.left;
-    initialY = rect.top;
+                const currentState = history.state || {};
+                try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+                try { window.history.pushState({ ...currentState, isMenuOpen: true }, ''); } catch (e) { }
 
-    // Lock it to left/top instantly before dragging to prevent jumps
-    fab.style.left = `${initialX}px`;
-    fab.style.top = `${initialY}px`;
-    fab.style.bottom = 'auto';
-    fab.style.right = 'auto';
+                categoryMenu.classList.remove('hidden');
+                void categoryMenu.offsetWidth; // Trigger reflow
+                categoryMenu.classList.add('active');
 
-    fab.style.transition = 'none';
-    // Capture pointer to track dragging seamlessly even if mouse/finger leaves the element
-    fab.setPointerCapture(e.pointerId);
-}
+                // Bulletproof body lock - stops background scrolling and jumping
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${savedScrollY}px`;
+                document.body.style.width = '100%';
 
-function drag(e) {
-    if (!isDragging) return;
+                fab.classList.add('menu-open'); // Triggers CSS transitions on icons
 
-    const dx = e.clientX - startX;
-    const dy = e.clientY - startY;
+            } else {
+                categoryMenu.classList.remove('active');
+                setTimeout(() => categoryMenu.classList.add('hidden'), 400); // Matches the 0.4s CSS transition
 
-    // Increased threshold to 8px to prevent "accidental drags" when attempting to just tap
-    if (Math.abs(dx) > 8 || Math.abs(dy) > 8) {
-        moved = true;
-    }
+                // Remove body lock and instantly restore the exact scroll position
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                window.scrollTo(0, savedScrollY);
 
-    if (moved) {
-        // Calculate prospective coordinates
-        let nextX = initialX + dx;
-        let nextY = initialY + dy;
+                if (triggerBack && window.history.state?.isMenuOpen) {
+                    window.history.back();
+                }
 
-        // Use clientWidth/clientHeight instead of innerWidth/innerHeight to exclude scrollbars and prevent clipping!
-        const maxX = document.documentElement.clientWidth - fab.offsetWidth;
-        const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+                fab.classList.remove('menu-open'); // Reverts CSS transitions on icons
+            }
+        }
 
-        // No bleeding allowed, constrained strictly between 0 and Max
-        nextX = Math.max(0, Math.min(nextX, maxX));
-        nextY = Math.max(0, Math.min(nextY, maxY));
+        // ==========================================
+        // 60FPS SMOOTH FREELY DRAGGABLE FAB LOGIC
+        // ==========================================
+        const fab = document.getElementById('mobileFab');
+        let isDragging = false;
+        let startX, startY, initialX, initialY;
+        let translateX = 0, translateY = 0;
+        let moved = false;
 
-        // Calculate the actual translation to the bounded coordinate
-        translateX = nextX - initialX;
-        translateY = nextY - initialY;
+        function dragStart(e) {
+            moved = false;
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
 
-        // Use Hardware-Accelerated transform for buttery smooth 60fps drag
-        fab.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
-    }
-}
+            // Get exact current position relative to viewport
+            const rect = fab.getBoundingClientRect();
+            initialX = rect.left;
+            initialY = rect.top;
 
-function dragEnd(e) {
-    if (!isDragging) return;
-    isDragging = false;
-    fab.releasePointerCapture(e.pointerId);
+            // Lock it to left/top instantly before dragging to prevent jumps
+            fab.style.left = `${initialX}px`;
+            fab.style.top = `${initialY}px`;
+            fab.style.bottom = 'auto';
+            fab.style.right = 'auto';
 
-    if (moved) {
-        // Calculate final dropped coordinates
-        let newX = initialX + translateX;
-        let newY = initialY + translateY;
+            fab.style.transition = 'none';
+            // Capture pointer to track dragging seamlessly even if mouse/finger leaves the element
+            fab.setPointerCapture(e.pointerId);
+        }
 
-        // Viewport boundaries
-        const maxX = document.documentElement.clientWidth - fab.offsetWidth;
-        const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+        // Adaptive support for drag interactions
+        function drag(e) {
+            if (!isDragging) return;
 
-        // Clamp coordinates to ensure it stays strictly within the screen bounds
-        newX = Math.max(0, Math.min(newX, maxX));
-        newY = Math.max(0, Math.min(newY, maxY));
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
 
-        // Remove the GPU transform and bake the final dropped coordinates into left/top
-        fab.style.transform = 'none';
-        fab.style.left = `${newX}px`;
-        fab.style.top = `${newY}px`;
+            // Increased threshold to 8px to prevent "accidental drags" when attempting to just tap
+            if (Math.abs(dx) > 8 || Math.abs(dy) > 8) {
+                moved = true;
+            }
 
-        // Reset translation values for the next drag
-        translateX = 0;
-        translateY = 0;
-    }
+            if (moved) {
+                // Calculate prospective coordinates
+                let nextX = initialX + dx;
+                let nextY = initialY + dy;
 
-    // Flush the DOM changes so transitions don't fight the layout coordinates
-    void fab.offsetWidth;
+                // Use clientWidth/clientHeight instead of innerWidth/innerHeight to exclude scrollbars and prevent clipping!
+                const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+                const maxY = document.documentElement.clientHeight - fab.offsetHeight;
 
-    // Restore standard visual transitions for both drag drops and taps
-    fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-}
+                // No bleeding allowed, constrained strictly between 0 and Max
+                nextX = Math.max(0, Math.min(nextX, maxX));
+                nextY = Math.max(0, Math.min(nextY, maxY));
 
-// Using Pointer Events covers both mouse and touch flawlessly
-fab.addEventListener('pointerdown', dragStart);
-fab.addEventListener('pointermove', drag);
-fab.addEventListener('pointerup', dragEnd);
-fab.addEventListener('pointercancel', dragEnd);
+                // Calculate the actual translation to the bounded coordinate
+                translateX = nextX - initialX;
+                translateY = nextY - initialY;
 
-// A Dedicated click event guarantees taps trigger reliably after tracking ends
-fab.addEventListener('click', (e) => {
-    if (moved) {
-        // If it was dragged, don't execute a tap action
-        e.preventDefault();
-        e.stopPropagation();
-        return;
-    }
+                // Use Hardware-Accelerated transform for buttery smooth 60fps drag
+                fab.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+            }
+        }
 
-    // Stop the animation permanently once the user has noticed and clicked it
-    fab.classList.add('animation-stopped');
+        function dragEnd(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            fab.releasePointerCapture(e.pointerId);
 
-    const isMenuOpen = categoryMenu.classList.contains('active');
-    toggleCategoryMenu(!isMenuOpen);
-});
+            if (moved) {
+                // Calculate final dropped coordinates
+                let newX = initialX + translateX;
+                let newY = initialY + translateY;
 
-// Ensure FAB stays inside bounds if window resizes/rotates
-window.addEventListener('resize', () => {
+                // Viewport boundaries
+                const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+                const maxY = document.documentElement.clientHeight - fab.offsetHeight;
 
-    const maxX = document.documentElement.clientWidth - fab.offsetWidth;
-    const maxY = document.documentElement.clientHeight - fab.offsetHeight;
-    const currentX = fab.offsetLeft;
-    const currentY = fab.offsetTop;
+                // Clamp coordinates to ensure it stays strictly within the screen bounds
+                newX = Math.max(0, Math.min(newX, maxX));
+                newY = Math.max(0, Math.min(newY, maxY));
 
-    // Just clamp it to keep it inside the screen if resizing makes it go out of bounds
-    if (currentX > maxX) fab.style.left = `${maxX}px`;
-    if (currentY > maxY) fab.style.top = `${maxY}px`;
-    if (currentX < 0) fab.style.left = `0px`;
-    if (currentY < 0) fab.style.top = `0px`;
-});
-// ==========================================
+                // Remove the GPU transform and bake the final dropped coordinates into left/top
+                fab.style.transform = 'none';
+                fab.style.left = `${newX}px`;
+                fab.style.top = `${newY}px`;
 
-function initHeroSlider() {
-    if (!sliderWrapper || !sliderDots) return;
-    const slides = contentData.filter(item => item.category === "Recent Adds").slice(0, 6);
-    if (slides.length === 0) return;
+                // Reset translation values for the next drag
+                translateX = 0;
+                translateY = 0;
+            }
 
-    let currentSlide = 0;
-    sliderWrapper.innerHTML = '';
-    sliderDots.innerHTML = '';
+            // Flush the DOM changes so transitions don't fight the layout coordinates
+            void fab.offsetWidth;
 
-    slides.forEach((movie, index) => {
-        const slide = document.createElement('div');
-        slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
-        const loadingAttr = index === 0 ? 'eager' : 'lazy';
+            // Restore standard visual transitions for both drag drops and taps
+            fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        }
 
-        slide.innerHTML = `
+        // Using Pointer Events covers both mouse and touch flawlessly
+        fab.addEventListener('pointerdown', dragStart);
+        fab.addEventListener('pointermove', drag);
+        fab.addEventListener('pointerup', dragEnd);
+        fab.addEventListener('pointercancel', dragEnd);
+
+        // A Dedicated click event guarantees taps trigger reliably after tracking ends
+        fab.addEventListener('click', (e) => {
+            if (moved) {
+                // If it was dragged, don't execute a tap action
+                e.preventDefault();
+                e.stopPropagation();
+                return;
+            }
+
+            // Stop the animation permanently once the user has noticed and clicked it
+            fab.classList.add('animation-stopped');
+
+            const isMenuOpen = categoryMenu.classList.contains('active');
+            toggleCategoryMenu(!isMenuOpen);
+        });
+
+        // Ensure FAB stays inside bounds if window resizes/rotates
+        window.addEventListener('resize', () => {
+
+            const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+            const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+            const currentX = fab.offsetLeft;
+            const currentY = fab.offsetTop;
+
+            // Just clamp it to keep it inside the screen if resizing makes it go out of bounds
+            if (currentX > maxX) fab.style.left = `${maxX}px`;
+            if (currentY > maxY) fab.style.top = `${maxY}px`;
+            if (currentX < 0) fab.style.left = `0px`;
+            if (currentY < 0) fab.style.top = `0px`;
+        });
+        // ==========================================
+
+        function initHeroSlider() {
+            if (!sliderWrapper || !sliderDots) return;
+            const slides = contentData.filter(item => item.category === "Recent Adds").slice(0, 6);
+            if (slides.length === 0) return;
+
+            let currentSlide = 0;
+            sliderWrapper.innerHTML = '';
+            sliderDots.innerHTML = '';
+
+            slides.forEach((movie, index) => {
+                const slide = document.createElement('div');
+                slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
+                const loadingAttr = index === 0 ? 'eager' : 'lazy';
+
+                slide.innerHTML = `
 <img src="${getOptimizedImageUrl(movie.posterUrl, 1000)}" class="w-full h-full object-cover object-center" alt="${movie.title}" loading="${loadingAttr}">
 <div class="absolute inset-0 bg-black/40"></div>
 <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
@@ -5966,178 +5967,179 @@ function initHeroSlider() {
 </button>
 </div>
 </div>`;
-        sliderWrapper.appendChild(slide);
+                sliderWrapper.appendChild(slide);
 
-        const dot = document.createElement('button');
-        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
-        dot.onclick = () => goToSlide(index);
-        sliderDots.appendChild(dot);
-    });
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
+                dot.onclick = () => goToSlide(index);
+                sliderDots.appendChild(dot);
+            });
 
-    function startSlideTimer() {
-        clearInterval(sliderInterval);
-        sliderInterval = setInterval(() => { goToSlide((currentSlide + 1) % slides.length); }, 3000);
-    }
+            // Standard slider interval logic
+            function startSlideTimer() {
+                clearInterval(sliderInterval);
+                sliderInterval = setInterval(() => { goToSlide((currentSlide + 1) % slides.length); }, 3000);
+            }
 
-    window.goToSlide = (index) => {
-        const allSlides = document.querySelectorAll('.slide');
-        const allDots = sliderDots.children;
-        if (allSlides.length > 0) {
-            allSlides[currentSlide].classList.remove('active');
-            allDots[currentSlide].className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300';
-            currentSlide = index;
-            allSlides[currentSlide].classList.add('active');
-            allDots[currentSlide].className = 'w-6 h-2 rounded-full bg-white transition-all duration-300';
+            window.goToSlide = (index) => {
+                const allSlides = document.querySelectorAll('.slide');
+                const allDots = sliderDots.children;
+                if (allSlides.length > 0) {
+                    allSlides[currentSlide].classList.remove('active');
+                    allDots[currentSlide].className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300';
+                    currentSlide = index;
+                    allSlides[currentSlide].classList.add('active');
+                    allDots[currentSlide].className = 'w-6 h-2 rounded-full bg-white transition-all duration-300';
+                    startSlideTimer();
+                }
+            };
+            setTimeout(() => {
+                const activeSlide = document.querySelector('.slide.active .slide-content');
+                if (activeSlide) { activeSlide.style.opacity = '1'; activeSlide.style.transform = 'translateY(0)'; }
+            }, 50);
             startSlideTimer();
         }
-    };
-    setTimeout(() => {
-        const activeSlide = document.querySelector('.slide.active .slide-content');
-        if (activeSlide) { activeSlide.style.opacity = '1'; activeSlide.style.transform = 'translateY(0)'; }
-    }, 50);
-    startSlideTimer();
-}
 
-function updateSearchUI() {
-    const libraryFilters = document.getElementById('libraryFilters');
-    if (searchInput.value.trim().length > 0) {
-        searchIcon.classList.remove('fa-search');
-        searchIcon.classList.add('fa-times', 'cursor-pointer');
-        // Hide category filters when searching
-        if (libraryFilters) libraryFilters.style.display = 'none';
-    } else {
-        searchIcon.classList.remove('fa-times', 'cursor-pointer');
-        searchIcon.classList.add('fa-search');
-        // Show category filters when search is empty
-        if (libraryFilters) libraryFilters.style.display = '';
-    }
-}
+        function updateSearchUI() {
+            const libraryFilters = document.getElementById('libraryFilters');
+            if (searchInput.value.trim().length > 0) {
+                searchIcon.classList.remove('fa-search');
+                searchIcon.classList.add('fa-times', 'cursor-pointer');
+                // Hide category filters when searching
+                if (libraryFilters) libraryFilters.style.display = 'none';
+            } else {
+                searchIcon.classList.remove('fa-times', 'cursor-pointer');
+                searchIcon.classList.add('fa-search');
+                // Show category filters when search is empty
+                if (libraryFilters) libraryFilters.style.display = '';
+            }
+        }
 
-function handleSearchIconClick() {
-    if (searchInput.value.trim().length > 0) {
-        clearSearch();
-    } else {
-        searchInput.blur();
-    }
-}
+        function handleSearchIconClick() {
+            if (searchInput.value.trim().length > 0) {
+                clearSearch();
+            } else {
+                searchInput.blur();
+            }
+        }
 
-function clearSearch(preventRestore = false) {
-    searchInput.value = '';
-    updateSearchUI();
-    searchInput.blur(); // Dismiss mobile keyboard on clear
-
-    // If we have a saved state and aren't overriding it, seamlessly restore the user's location
-    if (!preventRestore && preSearchState) {
-        switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
-        preSearchState = null;
-    } else {
-        preSearchState = null;
-        initLibraryRender();
-    }
-}
-
-function updateCanonical(url) {
-    const canonicalLink = document.getElementById('canonicalLink');
-    if (canonicalLink) {
-        // এটি যেকোনো পরিস্থিতিতে Canonical ট্যাগকে মেইন হোমপেজেই ফিক্সড রাখবে
-        canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
-    }
-}
-
-function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
-    if (mode) {
-        const currentScroll = window.scrollY;
-        const currentState = window.history.state || {
-            view: currentView,
-            category: null,
-            displayedCount: libraryDisplayedCount,
-            validDakhiState: true
-        };
-        try { window.history.replaceState({ ...currentState, scrollY: currentScroll }, ''); } catch (e) { }
-    }
-
-    currentView = viewName;
-    homeView.classList.remove('active');
-    libraryView.classList.remove('active');
-
-    if (viewName === 'home') {
-        homeView.classList.add('active');
-        document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
-    } else {
-        libraryView.classList.add('active');
-        if (filterCategory) {
+        function clearSearch(preventRestore = false) {
             searchInput.value = '';
             updateSearchUI();
-            preSearchState = null; // Reset search tracker when clicking standard categories
+            searchInput.blur(); // Dismiss mobile keyboard on clear
+
+            // If we have a saved state and aren't overriding it, seamlessly restore the user's location
+            if (!preventRestore && preSearchState) {
+                switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
+                preSearchState = null;
+            } else {
+                preSearchState = null;
+                initLibraryRender();
+            }
         }
 
-        document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
+        function updateCanonical(url) {
+            const canonicalLink = document.getElementById('canonicalLink');
+            if (canonicalLink) {
+                // এটি যেকোনো পরিস্থিতিতে Canonical ট্যাগকে মেইন হোমপেজেই ফিক্সড রাখবে
+                canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
+            }
+        }
 
-        const catValue = filterCategory || 'all';
-        document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
-        document.querySelector(`#libraryFilters .category-pill[data-category="${catValue}"]`)?.classList.add('active');
+        function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
+            if (mode) {
+                const currentScroll = window.scrollY;
+                const currentState = window.history.state || {
+                    view: currentView,
+                    category: null,
+                    displayedCount: libraryDisplayedCount,
+                    validDakhiState: true
+                };
+                try { window.history.replaceState({ ...currentState, scrollY: currentScroll }, ''); } catch (e) { }
+            }
 
-        initLibraryRender(catValue, restoredCount);
-    }
+            currentView = viewName;
+            homeView.classList.remove('active');
+            libraryView.classList.remove('active');
 
-    if (mode) {
-        try {
-            const isBlob = window.location.protocol === 'blob:';
-            const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: 30, validDakhiState: true };
-
-            if (!isBlob) {
-                const url = new URL(window.location);
-                url.searchParams.set('view', viewName);
-                if (filterCategory && filterCategory !== 'all' && viewName === 'library') {
-                    url.searchParams.set('category', filterCategory);
-                } else {
-                    url.searchParams.delete('category');
-                }
-
-                if (mode === 'replace') {
-                    window.history.replaceState(stateObj, '', url);
-                } else {
-                    window.history.pushState(stateObj, '', url);
-                }
-                updateCanonical(url.href);
+            if (viewName === 'home') {
+                homeView.classList.add('active');
+                document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
             } else {
-                if (mode === 'replace') {
-                    window.history.replaceState(stateObj, '', window.location.href);
-                } else {
-                    window.history.pushState(stateObj, '', window.location.href);
+                libraryView.classList.add('active');
+                if (filterCategory) {
+                    searchInput.value = '';
+                    updateSearchUI();
+                    preSearchState = null; // Reset search tracker when clicking standard categories
+                }
+
+                document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
+
+                const catValue = filterCategory || 'all';
+                document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
+                document.querySelector(`#libraryFilters .category-pill[data-category="${catValue}"]`)?.classList.add('active');
+
+                initLibraryRender(catValue, restoredCount);
+            }
+
+            if (mode) {
+                try {
+                    const isBlob = window.location.protocol === 'blob:';
+                    const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: 30, validDakhiState: true };
+
+                    if (!isBlob) {
+                        const url = new URL(window.location);
+                        url.searchParams.set('view', viewName);
+                        if (filterCategory && filterCategory !== 'all' && viewName === 'library') {
+                            url.searchParams.set('category', filterCategory);
+                        } else {
+                            url.searchParams.delete('category');
+                        }
+
+                        if (mode === 'replace') {
+                            window.history.replaceState(stateObj, '', url);
+                        } else {
+                            window.history.pushState(stateObj, '', url);
+                        }
+                        updateCanonical(url.href);
+                    } else {
+                        if (mode === 'replace') {
+                            window.history.replaceState(stateObj, '', window.location.href);
+                        } else {
+                            window.history.pushState(stateObj, '', window.location.href);
+                        }
+                    }
+                    // Force the browser to calculate the layout instantly
+                    void document.documentElement.offsetHeight;
+                    window.scrollTo({ top: targetScroll, behavior: 'instant' });
+                } catch (e) {
+                    console.warn("Navigation History Error (Silently Ignored):", e.message);
+                    void document.documentElement.offsetHeight;
+                    window.scrollTo({ top: targetScroll, behavior: 'instant' });
                 }
             }
-            // Force the browser to calculate the layout instantly
-            void document.documentElement.offsetHeight;
-            window.scrollTo({ top: targetScroll, behavior: 'instant' });
-        } catch (e) {
-            console.warn("Navigation History Error (Silently Ignored):", e.message);
-            void document.documentElement.offsetHeight;
-            window.scrollTo({ top: targetScroll, behavior: 'instant' });
         }
-    }
-}
 
-function createMovieCard(item) {
-    const card = document.createElement('div');
-    card.className = 'movie-card relative flex flex-col group';
+        function createMovieCard(item) {
+            const card = document.createElement('div');
+            card.className = 'movie-card relative flex flex-col group';
 
-    const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
+            const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
 
-    // ================== Reduce Space START ==================
-    // Unified Quality Badge: Flush Top-Left on ALL devices, matching original clean font weight
-    const qualityBadgeHtml = item.quality ?
-        `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">
+            // ================== Reduce Space START ==================
+            // Unified Quality Badge: Flush Top-Left on ALL devices, matching original clean font weight
+            const qualityBadgeHtml = item.quality ?
+                `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">
     ${item.quality}
 </div>` : '';
 
-    // Unified Language Badge: Flush Top-Right on ALL devices, matching original clean font weight
-    const languageBadgeHtml = item.language ?
-        `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">
+            // Unified Language Badge: Flush Top-Right on ALL devices, matching original clean font weight
+            const languageBadgeHtml = item.language ?
+                `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">
     ${item.language}
 </div>` : '';
 
-    card.innerHTML = `
+            card.innerHTML = `
 <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 md:ring-0 transition-all duration-300 group-hover:ring-white/20 md:group-hover:ring-transparent">
 ${qualityBadgeHtml}
 ${languageBadgeHtml}
@@ -6161,952 +6163,953 @@ decoding="async"
 <h4 class="font-black text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
 ${infoText}
 </div>`;
-    card.onclick = () => openModal(item.id);
-    return card;
-}
+            card.onclick = () => openModal(item.id);
+            return card;
+        }
 
-function renderRecentAdds() {
-    recentAddsGrid.innerHTML = '';
-    const recentItems = contentData.filter(item => item.category === "Recent Adds");
-    const fragment = document.createDocumentFragment();
-    // Show exactly up to 18 movie cards as requested
-    recentItems.slice(0, 18).forEach(item => fragment.appendChild(createMovieCard(item)));
-    recentAddsGrid.appendChild(fragment);
-}
+        function renderRecentAdds() {
+            recentAddsGrid.innerHTML = '';
+            const recentItems = contentData.filter(item => item.category === "Recent Adds");
+            const fragment = document.createDocumentFragment();
+            // Show exactly up to 18 movie cards as requested
+            recentItems.slice(0, 18).forEach(item => fragment.appendChild(createMovieCard(item)));
+            recentAddsGrid.appendChild(fragment);
+        }
 
-function renderCategorySections() {
-    categorySections.innerHTML = '';
-    const fragment = document.createDocumentFragment();
-    categories.filter(c => c !== 'all').forEach(cat => {
-        const filtered = contentData.filter(m => m.category === cat);
-        if (filtered.length === 0) return;
-        let displayName = cat === 'Korean Country' ? 'Korean' : cat;
-        const section = document.createElement('section');
-        section.className = 'mb-16';
-        section.innerHTML = `
+        // Display banner ad cleanly after insertion on DOM
+        function loadDynamicAd(containerId, zoneId) {
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'blob:') {
+                const container = document.getElementById(containerId);
+                if (container) {
+                    container.innerHTML = `<span class="text-gray-700 text-xs font-mono">[Ad Zone: ${zoneId}]</span>`;
+                }
+                return;
+            }
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            // Verify trapped browsers to comply with safe experience
+            if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
+                if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
+                    const scriptEl = document.createElement('script');
+                    scriptEl.type = 'text/javascript';
+                    scriptEl.text = `
+                        aclib.runBanner({
+                            zoneId: '${zoneId}',
+                        });
+                    `;
+                    container.appendChild(scriptEl);
+                }
+            }
+        }
+
+        function renderCategorySections() {
+            categorySections.innerHTML = '';
+            const fragment = document.createDocumentFragment();
+            categories.filter(c => c !== 'all').forEach(cat => {
+                const filtered = contentData.filter(m => m.category === cat);
+                if (filtered.length === 0) return;
+                let displayName = cat === 'Korean Country' ? 'Korean' : cat;
+                const section = document.createElement('section');
+                section.className = 'mb-16';
+
+                const cleanCatId = cat.replace(/[^a-zA-Z0-9]/g, '-');
+                const desktopAdId = `ad-desktop-${cleanCatId}`;
+                const mobileAdId = `ad-mobile-${cleanCatId}`;
+
+                section.innerHTML = `
+<!-- Display Ads Section Start -->
+<div class="w-[90%] max-w-[728px] mx-auto mb-12 shadow-lg">
+    <!-- Desktop Ad (728x90) -->
+    <div class="hidden md:flex w-full h-[90px] bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
+        <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
+        <div id="${desktopAdId}" class="relative z-10"></div>
+    </div>
+    <!-- Mobile Ad (300x100) -->
+    <div class="flex md:hidden w-full h-[100px] max-w-[300px] mx-auto bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
+        <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
+        <div id="${mobileAdId}" class="relative z-10"></div>
+    </div>
+</div>
+<!-- Display Ads Section End -->
 <div class="flex items-center space-x-3 md:mt-10 md:pt-10 mb-8 justify-center">
 <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
 </div>
 <div class="category-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto"></div>`;
-        const grid = section.querySelector('.category-grid');
+                const grid = section.querySelector('.category-grid');
 
-        // Display 11 cards + 1 View All Card to keep the grid perfectly balanced
-        filtered.slice(0, 11).forEach(item => grid.appendChild(createMovieCard(item)));
+                // Display 11 cards + 1 View All Card to keep the grid perfectly balanced
+                filtered.slice(0, 11).forEach(item => grid.appendChild(createMovieCard(item)));
 
-        const viewAllCard = document.createElement('div');
-        viewAllCard.className = 'view-all-card relative rounded-lg overflow-hidden group flex flex-col items-center justify-center p-6 cursor-pointer aspect-[2/3]';
-        viewAllCard.innerHTML = `
+                const viewAllCard = document.createElement('div');
+                viewAllCard.className = 'view-all-card relative rounded-lg overflow-hidden group flex flex-col items-center justify-center p-6 cursor-pointer aspect-[2/3]';
+                viewAllCard.innerHTML = `
 <div class="flex flex-col items-center justify-center transition-transform duration-300 group-hover:scale-110">
 <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110"><i class="fas fa-arrow-right text-white text-xl"></i></div>
 <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
 <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
 </div>`;
-        viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
-        grid.appendChild(viewAllCard);
+                viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
+                grid.appendChild(viewAllCard);
 
-        fragment.appendChild(section);
-    });
-    categorySections.appendChild(fragment);
-}
+                fragment.appendChild(section);
+            });
+            categorySections.appendChild(fragment);
 
-let isLoading = false;
-let scrollTimeoutId; // Tracking variable for debounced scroll saves
-window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
-    if (currentView === 'library' && !isLoading) {
-        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-        if (scrollTop + clientHeight >= scrollHeight - 500) { if (libraryDisplayedCount < libraryData.length) renderLibraryChunk(); }
-    }
+            // Dynamically inject dynamic banner ad elements post append
+            categories.filter(c => c !== 'all').forEach(cat => {
+                const filtered = contentData.filter(m => m.category === cat);
+                if (filtered.length === 0) return;
+                const cleanCatId = cat.replace(/[^a-zA-Z0-9]/g, '-');
+                const desktopAdId = `ad-desktop-${cleanCatId}`;
+                const mobileAdId = `ad-mobile-${cleanCatId}`;
 
-    // ADDED: Track scroll position and loaded count dynamically for reloads
-    clearTimeout(scrollTimeoutId);
-    scrollTimeoutId = setTimeout(() => {
-        const modal = document.getElementById('movieModal');
-        const catMenu = document.getElementById('categoryMenu');
-        // Only save scroll coordinates if menus/modals are not currently hijacking the view
-        if (modal && !modal.classList.contains('active') && catMenu && !catMenu.classList.contains('active')) {
-            const currentState = history.state || { view: currentView, category: null, validDakhiState: true };
-            try {
-                window.history.replaceState({
-                    ...currentState,
-                    scrollY: window.scrollY,
-                    displayedCount: libraryDisplayedCount
-                }, '');
-            } catch (e) { }
+                loadDynamicAd(desktopAdId, '11369222');
+                loadDynamicAd(mobileAdId, '11369238');
+            });
         }
-    }, 150);
-});
 
-// Ensure we explicitly catch the final scroll spot immediately before a reload using sessionStorage
-window.addEventListener('beforeunload', () => {
-    const modal = document.getElementById('movieModal');
-    const catMenu = document.getElementById('categoryMenu');
-    if (modal && !modal.classList.contains('active') && catMenu && !catMenu.classList.contains('active')) {
-        // sessionStorage is synchronous and guaranteed to save right before refresh
-        sessionStorage.setItem('MovieDakhi_ExactScroll', window.scrollY);
-    }
-});
+        let isLoading = false;
+        let scrollTimeoutId; // Tracking variable for debounced scroll saves
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+            if (currentView === 'library' && !isLoading) {
+                const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+                if (scrollTop + clientHeight >= scrollHeight - 500) { if (libraryDisplayedCount < libraryData.length) renderLibraryChunk(); }
+            }
 
-function initLibraryRender(filter = "all", initialCount = 0) {
-    const rawQuery = searchInput.value;
-
-    const cleanStr = (str) => {
-        if (!str) return "";
-        return str.toLowerCase().replace(/[^a-z0-9]/g, '');
-    };
-
-    const cleanQuery = cleanStr(rawQuery);
-
-    libraryData = contentData.filter(item => {
-        const matchesCat = filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
-
-        const cleanTitle = cleanStr(item.title);
-        const cleanGenre = cleanStr(item.genre);
-        const cleanCategory = cleanStr(item.category);
-
-        const matchesSearch = cleanTitle.includes(cleanQuery) ||
-            cleanCategory.includes(cleanQuery) ||
-            cleanGenre.includes(cleanQuery);
-
-        return matchesCat && matchesSearch;
-    });
-
-    libraryGrid.innerHTML = '';
-    libraryDisplayedCount = initialCount > 0 ? initialCount : ITEMS_PER_PAGE;
-
-    if (libraryData.length === 0) {
-        libraryGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
-    } else {
-        const fragment = document.createDocumentFragment();
-        libraryData.slice(0, libraryDisplayedCount).forEach(item => fragment.appendChild(createMovieCard(item)));
-        libraryGrid.appendChild(fragment);
-    }
-
-    updateLoadMoreVisibility();
-
-    if (rawQuery.trim().length > 0) {
-        const scrollTarget = libraryView.offsetTop - 100;
-        window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
-    }
-}
-
-function renderLibraryChunk() {
-    isLoading = true;
-    const nextCount = libraryDisplayedCount + ITEMS_PER_PAGE;
-    const chunk = libraryData.slice(libraryDisplayedCount, nextCount);
-    if (chunk.length > 0) {
-        const fragment = document.createDocumentFragment();
-        chunk.forEach(item => fragment.appendChild(createMovieCard(item)));
-        libraryGrid.appendChild(fragment);
-        libraryDisplayedCount = nextCount;
-        updateLoadMoreVisibility();
-    }
-    isLoading = false;
-}
-
-function updateLoadMoreVisibility() {
-    const loading = document.getElementById('loadingIndicator');
-    if (libraryDisplayedCount < libraryData.length) loading.classList.remove('hidden'); else loading.classList.add('hidden');
-}
-
-function openModal(id) {
-    // Smoothly hide the FAB button while modal is open
-    document.getElementById('mobileFab').classList.add('fab-hidden');
-
-    // Save precise scroll position before opening
-    savedScrollY = window.scrollY;
-
-    const currentState = history.state || { view: currentView, validDakhiState: true };
-    // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
-    try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-
-    // ================== Facebook browser problem Start ==================
-    // Clean pushState. We strictly mark this state as ours using validDakhiState.
-    // When Facebook browser popstate fires (after user closes an ad), we will check this!
-    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, ''); } catch (e) { }
-    // ================== Facebook browser problem End ==================
-
-    const item = contentData.find(m => m.id === id);
-
-    // ================== Facebook browser problem Start ==================
-    // Check if the user is reopening the exact same movie they were just on.
-    const isSameMovie = document.getElementById('modalTitle').innerText === item.title;
-    // ================== Facebook browser problem End ==================
-
-    currentItem = item;
-    document.getElementById('modalTitle').innerText = item.title;
-    document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
-    document.getElementById('modalLanguage').innerText = item.language;
-    document.getElementById('modalCategory').innerText = item.category;
-
-    // Reset download button state
-    downloadClickCount = 0;
-    const downloadBtn = document.getElementById('mainDownloadBtn');
-    document.getElementById('downloadBtnText').innerText = "Download";
-
-    // Restore vibrant green styles
-    downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-    downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
-
-    // Restore shine wave
-    const wave = downloadBtn.querySelector('.animate-shine-wave');
-    if (wave) wave.classList.remove('hidden');
-
-    if (item.episodes && item.episodes.length > 0) {
-        if (!isSameMovie) currentEpisodeIndex = 0;
-    } else {
-        currentEpisodeIndex = null;
-    }
-
-    const seriesSec = document.getElementById('seriesSection');
-    const epList = document.getElementById('episodeList');
-    if (item.episodes) {
-        seriesSec.classList.remove('hidden');
-        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
-        epList.innerHTML = '';
-        item.episodes.forEach((ep, idx) => {
-            const btn = document.createElement('button');
-            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
-            if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active'); // Set active visually
-            btn.innerText = ep.title;
-            btn.onclick = () => playEpisode(idx, btn);
-            epList.appendChild(btn);
+            // ADDED: Track scroll position and loaded count dynamically for reloads
+            clearTimeout(scrollTimeoutId);
+            scrollTimeoutId = setTimeout(() => {
+                const modal = document.getElementById('movieModal');
+                const catMenu = document.getElementById('categoryMenu');
+                // Only save scroll coordinates if menus/modals are not currently hijacking the view
+                if (modal && !modal.classList.contains('active') && catMenu && !catMenu.classList.contains('active')) {
+                    const currentState = history.state || { view: currentView, category: null, validDakhiState: true };
+                    try {
+                        window.history.replaceState({
+                            ...currentState,
+                            scrollY: window.scrollY,
+                            displayedCount: libraryDisplayedCount
+                        }, '');
+                    } catch (e) { }
+                }
+            }, 150);
         });
-    } else { seriesSec.classList.add('hidden'); }
 
-    // Directly auto-load the first video or the main movie video
-    let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
-    const actualVideoContainer = document.getElementById('actualVideo');
+        // Ensure we explicitly catch the final scroll spot immediately before a reload using sessionStorage
+        window.addEventListener('beforeunload', () => {
+            const modal = document.getElementById('movieModal');
+            const catMenu = document.getElementById('categoryMenu');
+            if (modal && !modal.classList.contains('active') && catMenu && !catMenu.classList.contains('active')) {
+                // sessionStorage is synchronous and guaranteed to save right before refresh
+                sessionStorage.setItem('MovieDakhi_ExactScroll', window.scrollY);
+            }
+        });
 
-    // Video Play Problem Start
-    if (actualVideoContainer) {
-        actualVideoContainer.classList.remove('hidden');
+        function initLibraryRender(filter = "all", initialCount = 0) {
+            const rawQuery = searchInput.value;
 
-        const existingIframe = document.getElementById('videoIframe');
-        const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
-
-        if (needsNewIframe) {
-            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe>`;
-        }
-    }
-    // Video Play Problem End
-
-    const modal = document.getElementById('movieModal');
-    modal.classList.remove('hidden');
-    void modal.offsetWidth;
-    modal.classList.add('active');
-
-    // Bulletproof body lock - stops background scrolling and jumping
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${savedScrollY}px`;
-    document.body.style.width = '100%';
-}
-
-// Custom download button logic handling multiple clicks
-function handleDownloadClick() {
-    if (!currentItem) return;
-
-    if (downloadClickCount >= 3) {
-        // Reset button to the original state
-        downloadClickCount = 0;
-        const downloadBtn = document.getElementById('mainDownloadBtn');
-        document.getElementById('downloadBtnText').innerText = "Download";
-
-        // Restore vibrant green styles
-        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-        downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
-
-        // Restore shine wave
-        const wave = downloadBtn.querySelector('.animate-shine-wave');
-        if (wave) wave.classList.remove('hidden');
-
-        return;
-    }
-
-    downloadClickCount++;
-
-    if (downloadClickCount === 1) {
-        document.getElementById('downloadBtnText').innerText = "Ready For Download";
-        if (currentItem.downloadUrl1) {
-            window.open(currentItem.downloadUrl1, '_blank');
-        }
-    } else if (downloadClickCount === 2) {
-        document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
-        if (currentItem.downloadUrl1) {
-            window.open(currentItem.downloadUrl1, '_blank');
-        }
-    } else if (downloadClickCount === 3) {
-        document.getElementById('downloadBtnText').innerText = "Link Expire";
-
-        // Change button style to look expired/disabled
-        const downloadBtn = document.getElementById('mainDownloadBtn');
-        if (downloadBtn) {
-            // Remove vibrant styles
-            downloadBtn.classList.remove('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
-
-            // Add solid dark design with white border matching image (no gradient)
-            downloadBtn.classList.add('!bg-none', '!bg-[#111]', '!border-white', '!text-white', 'cursor-not-allowed', 'opacity-80');
-
-            // Remove the continuous shine wave when expired
-            const wave = downloadBtn.querySelector('.animate-shine-wave');
-            if (wave) wave.classList.add('hidden');
-        }
-
-        // Check if an episode is selected and it has a specific downloadUrl
-        if (currentEpisodeIndex !== null && currentItem.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl) {
-            window.open(currentItem.episodes[currentEpisodeIndex].downloadUrl, '_blank');
-        } else if (currentItem.downloadUrl2) {
-            // Fallback to main downloadUrl2 if no episode selected or no episode download url exists
-            window.open(currentItem.downloadUrl2, '_blank');
-        }
-    }
-}
-
-// NOTE: playDefault is functionally superseded by auto-load, but kept safe.
-function playDefault() {
-    if (!currentItem) return;
-    let url = currentItem.episodes ? currentItem.episodes[0].embedUrl : currentItem.embedUrl;
-
-    const actualVideo = document.getElementById('actualVideo');
-    if (actualVideo) {
-        actualVideo.classList.remove('hidden');
-        // Video Play Problem Start
-        const existingIframe = document.getElementById('videoIframe');
-        if (!existingIframe || existingIframe.src !== url) {
-            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe>`;
-        }
-        // Video Play Problem End
-    }
-}
-
-function playEpisode(index, btnElement) {
-    const episode = currentItem.episodes[index];
-    document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
-    btnElement.classList.add('active');
-
-    let url = episode.embedUrl;
-
-    const actualVideo = document.getElementById('actualVideo');
-    if (actualVideo) {
-        actualVideo.classList.remove('hidden');
-
-        // Video Play Problem Start
-        const existingIframe = document.getElementById('videoIframe');
-        if (!existingIframe || existingIframe.src !== url) {
-            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe>`;
-        }
-        // Video Play Problem End
-    }
-
-    // Update the selected episode for downloading, and reset the download button process
-    currentEpisodeIndex = index;
-    downloadClickCount = 0;
-    const downloadBtn = document.getElementById('mainDownloadBtn');
-    document.getElementById('downloadBtnText').innerText = "Download";
-
-    // Restore original active styling to download button
-    downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-    downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
-
-    // Restore shine wave if it exists
-    const wave = downloadBtn.querySelector('.animate-shine-wave');
-    if (wave) wave.classList.remove('hidden');
-}
-
-function closeModal(triggerBack = true, explicitClose = false) {
-    const modal = document.getElementById('movieModal');
-    if (modal.classList.contains('hidden')) return;
-
-    // Show FAB button gracefully again
-    document.getElementById('mobileFab').classList.remove('fab-hidden');
-
-    if (!triggerBack) {
-        modal.classList.add('hidden');
-        modal.classList.remove('active');
-    } else {
-        modal.classList.remove('active');
-        setTimeout(() => {
-            modal.classList.add('hidden');
-        }, 300);
-    }
-
-    // Video Play Problem Start
-    // ALWAYS destroy the iframe when the modal closes, whether by 'X' or the back button.
-    // This ensures background audio strictly stops.
-    setTimeout(() => {
-        const actualVideoContainer = document.getElementById('actualVideo');
-        if (actualVideoContainer) {
-            actualVideoContainer.innerHTML = ''; // Completely destroy the iframe
-        }
-    }, 300);
-    // Video Play Problem End
-
-    // Remove body lock and instantly restore the exact scroll position
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    window.scrollTo(0, savedScrollY);
-
-    if (triggerBack && window.history.state?.isModalOpen) {
-        window.history.back();
-    }
-}
-
-// Capture scroll state the exact moment user taps/focuses the search bar
-searchInput.addEventListener('focus', () => {
-    if (!preSearchState && searchInput.value.trim().length === 0) {
-        const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
-        preSearchState = {
-            view: currentView,
-            scrollY: window.scrollY,
-            category: activeCat,
-            displayedCount: libraryDisplayedCount
-        };
-    }
-});
-
-searchInput.addEventListener('input', debounce(() => {
-    const rawQuery = searchInput.value;
-    updateSearchUI();
-
-    if (rawQuery.trim().length > 0) {
-        // Save state right before search layout overrides view (fallback)
-        if (!preSearchState) {
-            const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
-            preSearchState = {
-                view: currentView,
-                scrollY: window.scrollY,
-                category: activeCat,
-                displayedCount: libraryDisplayedCount
+            const cleanStr = (str) => {
+                if (!str) return "";
+                return str.toLowerCase().replace(/[^a-z0-9]/g, '');
             };
+
+            const cleanQuery = cleanStr(rawQuery);
+
+            libraryData = contentData.filter(item => {
+                const matchesCat = filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
+
+                const cleanTitle = cleanStr(item.title);
+                const cleanGenre = cleanStr(item.genre);
+                const cleanCategory = cleanStr(item.category);
+
+                const matchesSearch = cleanTitle.includes(cleanQuery) ||
+                    cleanCategory.includes(cleanQuery) ||
+                    cleanGenre.includes(cleanQuery);
+
+                return matchesCat && matchesSearch;
+            });
+
+            libraryGrid.innerHTML = '';
+            libraryDisplayedCount = initialCount > 0 ? initialCount : ITEMS_PER_PAGE;
+
+            if (libraryData.length === 0) {
+                libraryGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
+            } else {
+                const fragment = document.createDocumentFragment();
+                libraryData.slice(0, libraryDisplayedCount).forEach(item => fragment.appendChild(createMovieCard(item)));
+                libraryGrid.appendChild(fragment);
+            }
+
+            updateLoadMoreVisibility();
+
+            if (rawQuery.trim().length > 0) {
+                const scrollTarget = libraryView.offsetTop - 100;
+                window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+            }
         }
 
-        if (currentView !== 'library') switchView('library');
-        initLibraryRender();
-    } else {
-        // When input becomes empty via backspace, immediately restore to the original location without losing focus
-        if (preSearchState) {
-            switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
-            preSearchState = null; // Reset so next type captures fresh state
-        } else {
-            initLibraryRender();
-        }
-    }
-}, 300));
-
-// When user clicks/touches outside the empty search box, it becomes inactive and restores location
-searchInput.addEventListener('blur', () => {
-    setTimeout(() => {
-        const modal = document.getElementById('movieModal');
-        const catMenu = document.getElementById('categoryMenu');
-
-        // Don't auto-restore if user just opened a movie modal or menu
-        if ((modal && modal.classList.contains('active')) || (catMenu && catMenu.classList.contains('active'))) {
-            return;
+        function renderLibraryChunk() {
+            isLoading = true;
+            const nextCount = libraryDisplayedCount + ITEMS_PER_PAGE;
+            const chunk = libraryData.slice(libraryDisplayedCount, nextCount);
+            if (chunk.length > 0) {
+                const fragment = document.createDocumentFragment();
+                chunk.forEach(item => fragment.appendChild(createMovieCard(item)));
+                libraryGrid.appendChild(fragment);
+                libraryDisplayedCount = nextCount;
+                updateLoadMoreVisibility();
+            }
+            isLoading = false;
         }
 
-        if (searchInput.value.trim().length === 0 && preSearchState) {
-            clearSearch();
-        }
-    }, 200);
-});
-
-// Close mobile keyboard when Enter is pressed
-searchInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        searchInput.blur();
-    }
-});
-
-// ==========================================
-// ANNOUNCEMENT POPUP LOGIC
-// ==========================================
-let announcementScrollY = 0; // Isolated variable just for the popup
-
-// Ucbrowser Problem Fixed Start
-function showAnnouncement() {
-    const popup = document.getElementById('announcementPopup');
-    if (!popup) return;
-
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
-
-    const isFacebookApp = /FBAN|FBAV/i.test(ua);
-
-    // Explicitly identify UC Browser
-    const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
-
-    const isTrappedApp = isFacebookApp || isUCBrowser;
-
-    const warningText = document.getElementById('browserWarningText');
-    if (warningText && isTrappedApp) {
-        if (isFacebookApp) {
-            warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
-        } else if (isUCBrowser) {
-            warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
-        }
-    }
-
-    const suggestionBox = document.getElementById('browserSuggestionBox');
-    const topCloseBtn = document.getElementById('announcementCloseBtnTop');
-    const bottomCloseBtn = document.getElementById('announcementCloseBtnBottom');
-    const backdrop = document.getElementById('popupBackdrop');
-    const popupWelcomeText = document.getElementById('popupWelcomeText');
-    const popupTelegramBtn = document.getElementById('popupTelegramBtn');
-    const popupGamesBtn = document.getElementById('popupGamesBtn');
-    const popupBoxContainer = document.getElementById('popupBoxContainer');
-
-    if (isTrappedApp) {
-        if (suggestionBox) suggestionBox.classList.remove('hidden'); // Show if on Facebook/UC Browser
-        if (topCloseBtn) topCloseBtn.classList.add('hidden'); // Hide Top X
-        if (bottomCloseBtn) bottomCloseBtn.classList.add('hidden'); // Hide Bottom Close
-        if (backdrop) backdrop.onclick = null; // Disable clicking background to close
-
-        // Hide extraneous elements to save massive vertical space
-        if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
-        if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
-        if (popupGamesBtn) popupGamesBtn.classList.add('hidden');
-
-        // Make container even more compact
-        if (popupBoxContainer) {
-            popupBoxContainer.classList.remove('p-5', 'md:p-8');
-            popupBoxContainer.classList.add('p-4');
-        }
-    } else {
-        if (suggestionBox) suggestionBox.classList.add('hidden'); // Keep hidden otherwise
-        if (topCloseBtn) topCloseBtn.classList.remove('hidden'); // Ensure Top X is visible
-        if (bottomCloseBtn) bottomCloseBtn.classList.remove('hidden'); // Ensure Bottom Close is visible
-        if (backdrop) backdrop.onclick = closeAnnouncement; // Re-enable background close
-
-        // Ensure extraneous elements are visible
-        if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
-        if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
-        if (popupGamesBtn) popupGamesBtn.classList.remove('hidden');
-
-        // Restore regular padding
-        if (popupBoxContainer) {
-            popupBoxContainer.classList.add('p-5', 'md:p-8');
-            popupBoxContainer.classList.remove('p-4');
-        }
-    }
-
-    popup.classList.remove('hidden');
-    popup.classList.add('flex');
-
-    // Save isolated scroll position just for this popup to prevent jumping
-    announcementScrollY = window.scrollY || document.documentElement.scrollTop;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${announcementScrollY}px`;
-    document.body.style.width = '100%';
-
-    // Small timeout to allow display:flex to apply before animating opacity/transform
-    setTimeout(() => {
-        popup.classList.add('active');
-    }, 50);
-}
-// Ucbrowser Problem Fixed End
-
-function closeAnnouncement() {
-    const popup = document.getElementById('announcementPopup');
-    popup.classList.remove('active');
-
-    // Wait for transition to finish before hiding display
-    setTimeout(() => {
-        popup.classList.add('hidden');
-        popup.classList.remove('flex');
-
-        // Remove body lock and instantly restore the exact scroll position smoothly
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
-
-        setTimeout(() => {
-            showBookmarkPopup();
-        }, 500);
-
-    }, 500);
-}
-
-// TRIGGER POPUP ON LOAD
-// After Every Reload Start
-
-// Ucbrowser Problem Fixed Start
-const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
-
-const isFBCheck = /FBAN|FBAV/i.test(uaCheck);
-const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
-
-const isTrappedCheck = isFBCheck || isUCCheck;
-// Ucbrowser Problem Fixed End
-
-// Not Per Reload Popup Box Start
-const sessionKey = 'MovieDakhi_Welcome_Session_Final';
-const localKey = 'MovieDakhi_Welcome_Time_Final';
-const nowTime = new Date().getTime();
-const lastShown = localStorage.getItem(localKey);
-
-const hasSession = sessionStorage.getItem(sessionKey);
-const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000; // 30 minutes in milliseconds
-
-setTimeout(() => {
-    const urlParams2 = new URLSearchParams(window.location.search);
-    if (urlParams2.get('fb_fallback')) return; // Skip if in fallback loop
-
-    if (isTrappedCheck) {
-        // ALWAYS show Browser Suggestion Box on every reload so they can escape
-        showAnnouncement();
-    } else {
-        // NORMAL BROWSER: Show Welcome Popup ONLY once per session / 30 mins
-        if (!hasSession && !hasRecentLocal) {
-            sessionStorage.setItem(sessionKey, 'true');
-            localStorage.setItem(localKey, nowTime.toString());
-            showAnnouncement();
-        }
-    }
-}, isTrappedCheck ? 500 : 7500);
-// Not Per Reload Popup Box End
-
-// Helper function to show toast messages
-function showToast(message) {
-    const toast = document.getElementById('toastMessage');
-    const toastText = document.getElementById('toastText');
-    if (!toast || !toastText) return;
-
-    toastText.innerHTML = message; // Using innerHTML to allow bold text/icons
-
-    toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
-    toast.classList.add('opacity-100', 'translate-y-0');
-
-    setTimeout(() => {
-        toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
-        toast.classList.remove('opacity-100', 'translate-y-0');
-    }, 4000);
-}
-
-// Show bookmark popup (called automatically when announcement popup closes)
-function showBookmarkPopup() {
-    const bookmarkPopup = document.getElementById('bookmarkPopup');
-    const bookmarkDesc = document.getElementById('bookmarkDesc');
-    if (!bookmarkPopup || !bookmarkDesc) return;
-
-    // Detect device to show appropriate message
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-
-    if (isMobile) {
-        // whitespace-nowrap prevents 'Add to Home Screen' from splitting awkwardly on small phones
-        bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px]">Tap menu</span> <i class="fas fa-ellipsis-v mx-1.5 text-gray-400"></i> <span class="font-black text-white text-[11px]">& select</span> <strong class="text-white font-black bg-white/10 px-1.5 py-0.5 rounded ml-1 whitespace-nowrap shadow-inner">Add to Home Screen</strong>`;
-    } else if (isMac) {
-        bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Cmd + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
-    } else {
-        // Explicitly set for standard desktop (Windows/Linux)
-        bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Ctrl + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
-    }
-
-    bookmarkPopup.classList.remove('translate-y-32', 'opacity-0');
-    bookmarkPopup.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
-
-    // Auto-hide after 20 seconds if they ignore it
-    setTimeout(() => {
-        closeBookmarkPopup();
-    }, 20000);
-}
-
-function triggerBookmark(e) {
-    // Prevent the close button from triggering this event
-    if (e && e.target.closest('button')) return;
-
-    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-    const shortcut = isMac ? 'Cmd + D' : 'Ctrl + D';
-    const kbd = document.getElementById('kbdShortcut');
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    if (isMobile) {
-        showToast("Tap menu <i class='fas fa-ellipsis-v mx-1 text-gray-500'></i> & select <strong class='text-white font-black'>Add to Home Screen</strong>!");
-    } else {
-        // Try legacy IE approach just in case (rarely works on modern browsers)
-        if (window.external && ('AddFavorite' in window.external)) {
-            try {
-                window.external.AddFavorite(window.location.href, document.title);
-                closeBookmarkPopup();
-                return;
-            } catch (err) { }
+        function updateLoadMoreVisibility() {
+            const loading = document.getElementById('loadingIndicator');
+            if (libraryDisplayedCount < libraryData.length) loading.classList.remove('hidden'); else loading.classList.add('hidden');
         }
 
-        // Elegant hover/click flash effect for the keyboard shortcut
-        if (kbd) {
-            kbd.classList.add('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
-            setTimeout(() => {
-                kbd.classList.remove('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
-            }, 400);
-        }
-        showToast(`Press ${shortcut} on your keyboard to save this site!`);
-    }
-}
+        function openModal(id) {
+            // Smoothly hide the FAB button while modal is open
+            document.getElementById('mobileFab').classList.add('fab-hidden');
 
-function closeBookmarkPopup(e) {
-    if (e) {
-        e.stopPropagation(); // Prevent triggerBookmark from firing
-    }
-    const bookmarkPopup = document.getElementById('bookmarkPopup');
-    if (bookmarkPopup) {
-        bookmarkPopup.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
-        bookmarkPopup.classList.add('translate-y-32', 'opacity-0');
-    }
-}
+            // Save precise scroll position before opening
+            savedScrollY = window.scrollY;
 
+            const currentState = history.state || { view: currentView, validDakhiState: true };
+            // CRITICAL FIX: Replace the exact scroll depth in browser history right before opening the modal
+            try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderCategories();
-    initHeroSlider();
-    renderRecentAdds();
-    renderCategorySections();
-    initLibraryRender();
-    updateCanonical(window.location.href);
+            // ================== Facebook browser problem Start ==================
+            // Clean pushState. We strictly mark this state as ours using validDakhiState.
+            // When Facebook browser popstate fires (after user closes an ad), we will check this!
+            try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, ''); } catch (e) { }
+            // ================== Facebook browser problem End ==================
 
-    const isBlob = window.location.protocol === 'blob:';
-    let finalScroll = 0;
+            const item = contentData.find(m => m.id === id);
 
-    if (history.state) {
-        const state = history.state;
-        switchView(state.view, state.category, false, state.displayedCount);
-        finalScroll = state.scrollY || 0;
-    } else if (!isBlob) {
-        const params = new URLSearchParams(window.location.search);
-        const view = params.get('view') || 'home';
-        const category = params.get('category');
-        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE, validDakhiState: true }, ''); } catch (e) { }
-        switchView(view, category, false);
-    } else {
-        switchView('home', null, false);
-    }
+            // ================== Facebook browser problem Start ==================
+            // Check if the user is reopening the exact same movie they were just on.
+            const isSameMovie = document.getElementById('modalTitle').innerText === item.title;
+            // ================== Facebook browser problem End ==================
 
-    // Check if there is an exact scroll coordinate saved from a direct reload
-    const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
-    if (reloadScroll !== null) {
-        finalScroll = parseInt(reloadScroll, 10);
-        sessionStorage.removeItem('MovieDakhi_ExactScroll'); // Clean up so it only runs once per reload
-    }
+            currentItem = item;
+            document.getElementById('modalTitle').innerText = item.title;
+            document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
+            document.getElementById('modalLanguage').innerText = item.language;
+            document.getElementById('modalCategory').innerText = item.category;
 
-    // Synchronously force DOM to calculate dimensions before first paint
-    void document.documentElement.offsetHeight;
-    window.scrollTo({ top: finalScroll, behavior: 'instant' });
+            // Reset download button state
+            downloadClickCount = 0;
+            const downloadBtn = document.getElementById('mainDownloadBtn');
+            document.getElementById('downloadBtnText').innerText = "Download";
 
-    // Double lock: Ensures browsers that defer scrolling comply immediately
-    requestAnimationFrame(() => {
-        window.scrollTo({ top: finalScroll, behavior: 'instant' });
-        setTimeout(() => window.scrollTo({ top: finalScroll, behavior: 'instant' }), 10);
-    });
-});
+            // Restore vibrant green styles
+            downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+            downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
 
-window.addEventListener('popstate', (event) => {
-    const state = event.state;
-    const modal = document.getElementById('movieModal');
+            // Restore shine wave
+            const wave = downloadBtn.querySelector('.animate-shine-wave');
+            if (wave) wave.classList.remove('hidden');
 
-    // Video Play Problem Start
-    // STRICT POPSTATE VALIDATION:
-    // Ads often inject garbage history states. If the user hits "Back" to close an ad, 
-    // we MUST NOT close our video modal or reset the iframe.
-    if (modal && !modal.classList.contains('hidden')) {
-        // We only natively close the modal if the history explicitly tells us we navigated back to a valid MovieDakhi view (like home/library) AND explicitly says the modal should not be open.
-        if (state && state.validDakhiState && !state.isModalOpen) {
-            // Safe to close modal natively (the iframe will be destroyed inside closeModal)
-            closeModal(false, false);
-        } else {
-            // It's a garbage state from an ad or we are returning TO the modal state from a forward nav.
-            // IGNORE IT completely. Do not touch the DOM. This protects the iframe's ad-click counter!
-            return;
-        }
-    }
-    // Video Play Problem End
+            if (item.episodes && item.episodes.length > 0) {
+                if (!isSameMovie) currentEpisodeIndex = 0;
+            } else {
+                currentEpisodeIndex = null;
+            }
 
-    if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
-        toggleCategoryMenu(false, false);
-    }
+            const seriesSec = document.getElementById('seriesSection');
+            const epList = document.getElementById('episodeList');
+            if (item.episodes) {
+                seriesSec.classList.remove('hidden');
+                document.getElementById('seriesInfoText').innerText = item.seriesInfo;
+                epList.innerHTML = '';
+                item.episodes.forEach((ep, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
+                    if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active'); // Set active visually
+                    btn.innerText = ep.title;
+                    btn.onclick = () => playEpisode(idx, btn);
+                    epList.appendChild(btn);
+                });
+            } else { seriesSec.classList.add('hidden'); }
 
-    if (state || window.location.search) {
-        updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
-        switchView(state?.view || 'home', state?.category || null, false, state?.displayedCount || 30);
-        // Synchronously force DOM layout
-        void document.documentElement.offsetHeight;
-        window.scrollTo({ top: state?.scrollY || 0, behavior: 'instant' });
-    } else {
-        switchView('home', null, false);
-        void document.documentElement.offsetHeight;
-        window.scrollTo({ top: 0, behavior: 'instant' });
-    }
-});
+            // Directly auto-load the first video or the main movie video
+            let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
+            const actualVideoContainer = document.getElementById('actualVideo');
 
-window.addEventListener('click', (e) => {
-    // Passing (true, true) flags that this was an EXPLICIT user close (they clicked X or background), so the iframe CAN safely be destroyed.
-    if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal(true, true);
+            // Video Play Problem Start
+            if (actualVideoContainer) {
+                actualVideoContainer.classList.remove('hidden');
 
-    // Re-added click-outside logic for the menu, excluding the FAB
-    if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
-});
+                const existingIframe = document.getElementById('videoIframe');
+                const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
 
-// ==========================================
-// EXTERNAL BROWSER INTENT LOGIC 
-// ==========================================
-function openInBrowser(browser) {
-    const targetDomain = 'moviedakhi.com';
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-    const isAndroid = /android/i.test(userAgent);
-
-    let schemeUrl = '';
-
-    // Custom Schemes: These natively target the apps directly (including Betas) WITHOUT triggering the Play Store.
-    if (browser === 'chrome') schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
-    else if (browser === 'edge') schemeUrl = `microsoft-edge-https://${targetDomain}`;
-    else if (browser === 'opera') schemeUrl = `opera-http://${targetDomain}`;
-    else if (browser === 'firefox') schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
-    else if (browser === 'brave') schemeUrl = `brave://open-url?url=https://${targetDomain}`;
-    else if (browser === 'safari') schemeUrl = `x-safari-https://${targetDomain}`;
-    else if (browser === 'vivaldi') schemeUrl = `vivaldi://${targetDomain}`;
-    else if (browser === 'duckduckgo') schemeUrl = `ddg://${targetDomain}`;
-    else if (browser === 'via') schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
-
-    let appOpened = false;
-
-    // Track if the OS successfully opened the app
-    function handleVisibilityChange() {
-        if (document.visibilityState === 'hidden' || document.hidden) {
-            appOpened = true;
-        }
-    }
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    window.addEventListener("pagehide", () => { appOpened = true; });
-    window.addEventListener("blur", () => { appOpened = true; });
-
-    if (schemeUrl) {
-        // Try opening the specific browser
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = schemeUrl;
-        document.body.appendChild(iframe);
-
-        // Fallback Engine: If the app didn't open (meaning it's not installed), use the Universal Safe Intent
-        setTimeout(() => {
-            document.body.removeChild(iframe);
-            document.removeEventListener("visibilitychange", handleVisibilityChange);
-
-            if (!appOpened) {
-                if (isAndroid) {
-                    // Universal Android Intent: Opens the default browser or App Chooser. Never the Play Store.
-                    window.location.href = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
-                } else if (isIOS) {
-                    // Universal iOS Fallback
-                    window.location.href = `x-safari-https://${targetDomain}`;
-                } else {
-                    window.location.href = `https://${targetDomain}`;
+                if (needsNewIframe) {
+                    actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe>`;
                 }
             }
-        }, 1000);
-    }
+            // Video Play Problem End
 
-    if (!isAndroid && !isIOS) {
-        showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
-    } else {
-        showToast("Redirecting to browser...");
-    }
-}
+            const modal = document.getElementById('movieModal');
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.add('active');
 
-// ==========================================
-// MANUAL LINK COPY LOGIC
-// ==========================================
-function copyWebsiteLink(btn) {
-    const link = "https://moviedakhi.com";
+            // Bulletproof body lock - stops background scrolling and jumping
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${savedScrollY}px`;
+            document.body.style.width = '100%';
+        }
 
-    // Fallback for older browsers / webviews
-    const textArea = document.createElement("textarea");
-    textArea.value = link;
-    // Avoid scrolling to bottom
-    textArea.style.top = "0";
-    textArea.style.left = "0";
-    textArea.style.position = "fixed";
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
+        // Custom download button logic handling multiple clicks
+        function handleDownloadClick() {
+            if (!currentItem) return;
 
-    try {
-        document.execCommand('copy');
-        showToast("Link copied! Open your browser and paste it.");
+            if (downloadClickCount >= 3) {
+                // Reset button to the original state
+                downloadClickCount = 0;
+                const downloadBtn = document.getElementById('mainDownloadBtn');
+                document.getElementById('downloadBtnText').innerText = "Download";
 
-        // Visual feedback on button
-        const originalHtml = `<i class="fas fa-copy"></i> Copy`;
-        btn.innerHTML = `<i class="fas fa-check"></i> Copied`;
-        btn.classList.remove('bg-[#E50914]', 'hover:bg-red-600');
-        btn.classList.add('bg-green-600', 'hover:bg-green-500');
+                // Restore vibrant green styles
+                downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+                downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
+
+                // Restore shine wave
+                const wave = downloadBtn.querySelector('.animate-shine-wave');
+                if (wave) wave.classList.remove('hidden');
+
+                return;
+            }
+
+            downloadClickCount++;
+
+            if (downloadClickCount === 1) {
+                document.getElementById('downloadBtnText').innerText = "Ready For Download";
+                if (currentItem.downloadUrl1) {
+                    window.open(currentItem.downloadUrl1, '_blank');
+                }
+            } else if (downloadClickCount === 2) {
+                document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
+                if (currentItem.downloadUrl1) {
+                    window.open(currentItem.downloadUrl1, '_blank');
+                }
+            } else if (downloadClickCount === 3) {
+                document.getElementById('downloadBtnText').innerText = "Link Expire";
+
+                // Change button style to look expired/disabled
+                const downloadBtn = document.getElementById('mainDownloadBtn');
+                if (downloadBtn) {
+                    // Remove vibrant styles
+                    downloadBtn.classList.remove('from-[#00E676]', 'to-[#00C853]', 'border-[#69F0AE]', 'hover:scale-105');
+
+                    // Add solid dark design with white border matching image (no gradient)
+                    downloadBtn.classList.add('!bg-none', '!bg-[#111]', '!border-white', '!text-white', 'cursor-not-allowed', 'opacity-80');
+
+                    // Remove the continuous shine wave when expired
+                    const wave = downloadBtn.querySelector('.animate-shine-wave');
+                    if (wave) wave.classList.add('hidden');
+                }
+
+                // Check if an episode is selected and it has a specific downloadUrl
+                if (currentEpisodeIndex !== null && currentItem.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl) {
+                    window.open(currentItem.episodes[currentEpisodeIndex].downloadUrl, '_blank');
+                } else if (currentItem.downloadUrl2) {
+                    // Fallback to main downloadUrl2 if no episode selected or no episode download url exists
+                    window.open(currentItem.downloadUrl2, '_blank');
+                }
+            }
+        }
+
+        // NOTE: playDefault is functionally superseded by auto-load, but kept safe.
+        function playDefault() {
+            if (!currentItem) return;
+            let url = currentItem.episodes ? currentItem.episodes[0].embedUrl : currentItem.embedUrl;
+
+            const actualVideo = document.getElementById('actualVideo');
+            if (actualVideo) {
+                actualVideo.classList.remove('hidden');
+                // Video Play Problem Start
+                const existingIframe = document.getElementById('videoIframe');
+                if (!existingIframe || existingIframe.src !== url) {
+                    actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe>`;
+                }
+                // Video Play Problem End
+            }
+        }
+
+        function playEpisode(index, btnElement) {
+            const episode = currentItem.episodes[index];
+            document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            let url = episode.embedUrl;
+
+            const actualVideo = document.getElementById('actualVideo');
+            if (actualVideo) {
+                actualVideo.classList.remove('hidden');
+
+                // Video Play Problem Start
+                const existingIframe = document.getElementById('videoIframe');
+                if (!existingIframe || existingIframe.src !== url) {
+                    actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe>`;
+                }
+                // Video Play Problem End
+            }
+
+            // Update the selected episode for downloading, and reset the download button process
+            currentEpisodeIndex = index;
+            downloadClickCount = 0;
+            const downloadBtn = document.getElementById('mainDownloadBtn');
+            document.getElementById('downloadBtnText').innerText = "Download";
+
+            // Restore original active styling to download button
+            downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+            downloadBtn.classList.add('from-[#00E676]', 'to-[]', 'border-[##FFFFFF]', 'hover:scale-105');
+
+            // Restore shine wave if it exists
+            const wave = downloadBtn.querySelector('.animate-shine-wave');
+            if (wave) wave.classList.remove('hidden');
+        }
+
+        function closeModal(triggerBack = true, explicitClose = false) {
+            const modal = document.getElementById('movieModal');
+            if (modal.classList.contains('hidden')) return;
+
+            // Show FAB button gracefully again
+            document.getElementById('mobileFab').classList.remove('fab-hidden');
+
+            if (!triggerBack) {
+                modal.classList.add('hidden');
+                modal.classList.remove('active');
+            } else {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+
+            // Video Play Problem Start
+            // ALWAYS destroy the iframe when the modal closes, whether by 'X' or the back button.
+            // This ensures background audio strictly stops.
+            setTimeout(() => {
+                const actualVideoContainer = document.getElementById('actualVideo');
+                if (actualVideoContainer) {
+                    actualVideoContainer.innerHTML = ''; // Completely destroy the iframe
+                }
+            }, 300);
+            // Video Play Problem End
+
+            // Remove body lock and instantly restore the exact scroll position
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, savedScrollY);
+
+            if (triggerBack && window.history.state?.isModalOpen) {
+                window.history.back();
+            }
+        }
+
+        // Capture scroll state the exact moment user taps/focuses the search bar
+        searchInput.addEventListener('focus', () => {
+            if (!preSearchState && searchInput.value.trim().length === 0) {
+                const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
+                preSearchState = {
+                    view: currentView,
+                    scrollY: window.scrollY,
+                    category: activeCat,
+                    displayedCount: libraryDisplayedCount
+                };
+            }
+        });
+
+        searchInput.addEventListener('input', debounce(() => {
+            const rawQuery = searchInput.value;
+            updateSearchUI();
+
+            if (rawQuery.trim().length > 0) {
+                // Save state right before search layout overrides view (fallback)
+                if (!preSearchState) {
+                    const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
+                    preSearchState = {
+                        view: currentView,
+                        scrollY: window.scrollY,
+                        category: activeCat,
+                        displayedCount: libraryDisplayedCount
+                    };
+                }
+
+                if (currentView !== 'library') switchView('library');
+                initLibraryRender();
+            } else {
+                // When input becomes empty via backspace, immediately restore to the original location without losing focus
+                if (preSearchState) {
+                    switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
+                    preSearchState = null; // Reset so next type captures fresh state
+                } else {
+                    initLibraryRender();
+                }
+            }
+        }, 300));
+
+        // When user clicks/touches outside the empty search box, it becomes inactive and restores location
+        searchInput.addEventListener('blur', () => {
+            setTimeout(() => {
+                const modal = document.getElementById('movieModal');
+                const catMenu = document.getElementById('categoryMenu');
+
+                // Don't auto-restore if user just opened a movie modal or menu
+                if ((modal && modal.classList.contains('active')) || (catMenu && catMenu.classList.contains('active'))) {
+                    return;
+                }
+
+                if (searchInput.value.trim().length === 0 && preSearchState) {
+                    clearSearch();
+                }
+            }, 200);
+        });
+
+        // Close mobile keyboard when Enter is pressed
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                searchInput.blur();
+            }
+        });
+
+        // ==========================================
+        // ANNOUNCEMENT POPUP LOGIC
+        // ==========================================
+        let announcementScrollY = 0; // Isolated variable just for the popup
+
+        // Ucbrowser Problem Fixed Start
+        function showAnnouncement() {
+            const popup = document.getElementById('announcementPopup');
+            if (!popup) return;
+
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+            const isFacebookApp = /FBAN|FBAV/i.test(ua);
+
+            // Explicitly identify UC Browser
+            const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
+
+            const isTrappedApp = isFacebookApp || isUCBrowser;
+
+            const warningText = document.getElementById('browserWarningText');
+            if (warningText && isTrappedApp) {
+                if (isFacebookApp) {
+                    warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                } else if (isUCBrowser) {
+                    warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!`;
+                }
+            }
+
+            const suggestionBox = document.getElementById('browserSuggestionBox');
+            const topCloseBtn = document.getElementById('announcementCloseBtnTop');
+            const bottomCloseBtn = document.getElementById('announcementCloseBtnBottom');
+            const backdrop = document.getElementById('popupBackdrop');
+            const popupWelcomeText = document.getElementById('popupWelcomeText');
+            const popupTelegramBtn = document.getElementById('popupTelegramBtn');
+            const popupGamesBtn = document.getElementById('popupGamesBtn');
+            const popupBoxContainer = document.getElementById('popupBoxContainer');
+
+            if (isTrappedApp) {
+                if (suggestionBox) suggestionBox.classList.remove('hidden'); // Show if on Facebook/UC Browser
+                if (topCloseBtn) topCloseBtn.classList.add('hidden'); // Hide Top X
+                if (bottomCloseBtn) bottomCloseBtn.classList.add('hidden'); // Hide Bottom Close
+                if (backdrop) backdrop.onclick = null; // Disable clicking background to close
+
+                // Hide extraneous elements to save massive vertical space
+                if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
+                if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
+                if (popupGamesBtn) popupGamesBtn.classList.add('hidden');
+
+                // Make container even more compact
+                if (popupBoxContainer) {
+                    popupBoxContainer.classList.remove('p-5', 'md:p-8');
+                    popupBoxContainer.classList.add('p-4');
+                }
+            } else {
+                if (suggestionBox) suggestionBox.classList.add('hidden'); // Keep hidden otherwise
+                if (topCloseBtn) topCloseBtn.classList.remove('hidden'); // Ensure Top X is visible
+                if (bottomCloseBtn) bottomCloseBtn.classList.remove('hidden'); // Ensure Bottom Close is visible
+                if (backdrop) backdrop.onclick = closeAnnouncement; // Re-enable background close
+
+                // Ensure extraneous elements are visible
+                if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
+                if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
+                if (popupGamesBtn) popupGamesBtn.classList.remove('hidden');
+
+                // Restore regular padding
+                if (popupBoxContainer) {
+                    popupBoxContainer.classList.add('p-5', 'md:p-8');
+                    popupBoxContainer.classList.remove('p-4');
+                }
+            }
+
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+
+            // Save isolated scroll position just for this popup to prevent jumping
+            announcementScrollY = window.scrollY || document.documentElement.scrollTop;
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${announcementScrollY}px`;
+            document.body.style.width = '100%';
+
+            // Small timeout to allow display:flex to apply before animating opacity/transform
+            setTimeout(() => {
+                popup.classList.add('active');
+            }, 50);
+        }
+        // Ucbrowser Problem Fixed End
+
+        function closeAnnouncement() {
+            const popup = document.getElementById('announcementPopup');
+            popup.classList.remove('active');
+
+            // Wait for transition to finish before hiding display
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+
+                // Remove body lock and instantly restore the exact scroll position smoothly
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
+
+                setTimeout(() => {
+                    showBookmarkPopup();
+                }, 500);
+
+            }, 500);
+        }
+
+        // TRIGGER POPUP ON LOAD
+        // After Every Reload Start
+
+        // Ucbrowser Problem Fixed Start
+        const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
+
+        const isFBCheck = /FBAN|FBAV|Ios/i.test(uaCheck);
+        const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
+
+        const isTrappedCheck = isFBCheck || isUCCheck;
+        // Ucbrowser Problem Fixed End
+
+        // Not Per Reload Popup Box Start
+        const sessionKey = 'MovieDakhi_Welcome_Session_Final';
+        const localKey = 'MovieDakhi_Welcome_Time_Final';
+        const nowTime = new Date().getTime();
+        const lastShown = localStorage.getItem(localKey);
+
+        const hasSession = sessionStorage.getItem(sessionKey);
+        const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000; // 30 minutes in milliseconds
 
         setTimeout(() => {
-            btn.innerHTML = originalHtml;
-            btn.classList.add('bg-[#E50914]', 'hover:bg-red-600');
-            btn.classList.remove('bg-green-600', 'hover:bg-green-500');
-        }, 2000);
-    } catch (err) {
-        showToast("Failed to copy link. Please manually select the text.");
-    }
+            const urlParams2 = new URLSearchParams(window.location.search);
+            if (urlParams2.get('fb_fallback')) return; // Skip if in fallback loop
 
-    document.body.removeChild(textArea);
-}
+            if (isTrappedCheck) {
+                // ALWAYS show Browser Suggestion Box on every reload so they can escape
+                showAnnouncement();
+            } else {
+                // NORMAL BROWSER: Show Welcome Popup ONLY once per session / 30 mins
+                if (!hasSession && !hasRecentLocal) {
+                    sessionStorage.setItem(sessionKey, 'true');
+                    localStorage.setItem(localKey, nowTime.toString());
+                    showAnnouncement();
+                }
+            }
+        }, isTrappedCheck ? 500 : 7500);
+        // Not Per Reload Popup Box End
 
-// ==========================================
-// SECURITY & ANTI-INSPECT MEASURES
-// ==========================================
+        // Helper function to show toast messages
+        function showToast(message) {
+            const toast = document.getElementById('toastMessage');
+            const toastText = document.getElementById('toastText');
+            if (!toast || !toastText) return;
 
-// 1. Disable Right Click entirely to hide 'Inspect' everywhere
-// document.addEventListener('contextmenu', (e) => {
-//     e.preventDefault();
-// });
+            toastText.innerHTML = message; // Using innerHTML to allow bold text/icons
 
-// document.addEventListener('keydown', (e) => {
-//     // Allow normal keyboard behavior inside the search box
-//     if (e.target.id === 'searchInput') return;
+            toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
+            toast.classList.add('opacity-100', 'translate-y-0');
 
-//     // Block F12 (DevTools)
-//     if (e.key === 'F12') {
-//         e.preventDefault();
-//     }
+            setTimeout(() => {
+                toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }, 4000);
+        }
 
-//     // Block Ctrl+Shift+I / Cmd+Opt+I (Inspect) & Ctrl+Shift+C (Element Inspect) & Ctrl+Shift+J (Console)
-//     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c' || e.key === 'J' || e.key === 'j')) {
-//         e.preventDefault();
-//     }
+        // Show bookmark popup (called automatically when announcement popup closes)
+        function showBookmarkPopup() {
+            const bookmarkPopup = document.getElementById('bookmarkPopup');
+            const bookmarkDesc = document.getElementById('bookmarkDesc');
+            if (!bookmarkPopup || !bookmarkDesc) return;
 
-//     // Block Ctrl+U / Cmd+Opt+U (View Source)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-//         e.preventDefault();
-//     }
+            // Detect device to show appropriate message
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
 
-//     // Block Ctrl+S / Cmd+S (Save Page)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's')) {
-//         e.preventDefault();
-//     }
+            if (isMobile) {
+                // whitespace-nowrap prevents 'Add to Home Screen' from splitting awkwardly on small phones
+                bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px]">Tap menu</span> <i class="fas fa-ellipsis-v mx-1.5 text-gray-400"></i> <span class="font-black text-white text-[11px]">& select</span> <strong class="text-white font-black bg-white/10 px-1.5 py-0.5 rounded ml-1 whitespace-nowrap shadow-inner">Add to Home Screen</strong>`;
+            } else if (isMac) {
+                bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Cmd + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
+            } else {
+                // Explicitly set for standard desktop (Windows/Linux)
+                bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Ctrl + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
+            }
 
-//     // Block Ctrl+P / Cmd+P (Print Page)
-//     if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
-//         e.preventDefault();
-//     }
+            bookmarkPopup.classList.remove('translate-y-32', 'opacity-0');
+            bookmarkPopup.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
 
-// });
+            // Auto-hide after 20 seconds if they ignore it
+            setTimeout(() => {
+                closeBookmarkPopup();
+            }, 20000);
+        }
 
-// // 3. Prevent Native Copy, Cut, Paste events (except search box)
-// ['copy', 'cut', 'paste'].forEach(evt => {
-//     document.addEventListener(evt, (e) => {
-//         if (e.target.id !== 'searchInput') {
-//             e.preventDefault();
-//         }
-//     });
-// });
+        function triggerBookmark(e) {
+            // Prevent the close button from triggering this event
+            if (e && e.target.closest('button')) return;
 
-// // 4. Prevent Dragging elements (like ghost-dragging images to save them)
-// document.addEventListener('dragstart', (e) => {
-//     // Allow FAB pointer dragging, but prevent native HTML element dragging
-//     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-//         e.preventDefault();
-//     }
-// });
+            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+            const shortcut = isMac ? 'Cmd + D' : 'Ctrl + D';
+            const kbd = document.getElementById('kbdShortcut');
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+            if (isMobile) {
+                showToast("Tap menu <i class='fas fa-ellipsis-v mx-1 text-gray-500'></i> & select <strong class='text-white font-black'>Add to Home Screen</strong>!");
+            } else {
+                // Try legacy IE approach just in case (rarely works on modern browsers)
+                if (window.external && ('AddFavorite' in window.external)) {
+                    try {
+                        window.external.AddFavorite(window.location.href, document.title);
+                        closeBookmarkPopup();
+                        return;
+                    } catch (err) { }
+                }
+
+                // Elegant hover/click flash effect for the keyboard shortcut
+                if (kbd) {
+                    kbd.classList.add('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
+                    setTimeout(() => {
+                        kbd.classList.remove('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
+                    }, 400);
+                }
+                showToast(`Press ${shortcut} on your keyboard to save this site!`);
+            }
+        }
+
+        function closeBookmarkPopup(e) {
+            if (e) {
+                e.stopPropagation(); // Prevent triggerBookmark from firing
+            }
+            const bookmarkPopup = document.getElementById('bookmarkPopup');
+            if (bookmarkPopup) {
+                bookmarkPopup.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                bookmarkPopup.classList.add('translate-y-32', 'opacity-0');
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCategories();
+            initHeroSlider();
+            renderRecentAdds();
+            renderCategorySections();
+            initLibraryRender();
+            updateCanonical(window.location.href);
+
+            const isBlob = window.location.protocol === 'blob:';
+            let finalScroll = 0;
+
+            if (history.state) {
+                const state = history.state;
+                switchView(state.view, state.category, false, state.displayedCount);
+                finalScroll = state.scrollY || 0;
+            } else if (!isBlob) {
+                const params = new URLSearchParams(window.location.search);
+                const view = params.get('view') || 'home';
+                const category = params.get('category');
+                try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: ITEMS_PER_PAGE, validDakhiState: true }, ''); } catch (e) { }
+                switchView(view, category, false);
+            } else {
+                switchView('home', null, false);
+            }
+
+            // Check if there is an exact scroll coordinate saved from a direct reload
+            const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
+            if (reloadScroll !== null) {
+                finalScroll = parseInt(reloadScroll, 10);
+                sessionStorage.removeItem('MovieDakhi_ExactScroll'); // Clean up so it only runs once per reload
+            }
+
+            // Synchronously force DOM to calculate dimensions before first paint
+            void document.documentElement.offsetHeight;
+            window.scrollTo({ top: finalScroll, behavior: 'instant' });
+
+            // Double lock: Ensures browsers that defer scrolling comply immediately
+            requestAnimationFrame(() => {
+                window.scrollTo({ top: finalScroll, behavior: 'instant' });
+                setTimeout(() => window.scrollTo({ top: finalScroll, behavior: 'instant' }), 10);
+            });
+        });
+
+        window.addEventListener('popstate', (event) => {
+            const state = event.state;
+            const modal = document.getElementById('movieModal');
+
+            // Video Play Problem Start
+            // STRICT POPSTATE VALIDATION:
+            // Ads often inject garbage history states. If the user hits "Back" to close an ad, 
+            // we MUST NOT close our video modal or reset the iframe.
+            if (modal && !modal.classList.contains('hidden')) {
+                // We only natively close the modal if the history explicitly tells us we navigated back to a valid MovieDakhi view (like home/library) AND explicitly says the modal should not be open.
+                if (state && state.validDakhiState && !state.isModalOpen) {
+                    // Safe to close modal natively (the iframe will be destroyed inside closeModal)
+                    closeModal(false, false);
+                } else {
+                    // It's a garbage state from an ad or we are returning TO the modal state from a forward nav.
+                    // IGNORE IT completely. Do not touch the DOM. This protects the iframe's ad-click counter!
+                    return;
+                }
+            }
+            // Video Play Problem End
+
+            if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
+                toggleCategoryMenu(false, false);
+            }
+
+            if (state || window.location.search) {
+                updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
+                switchView(state?.view || 'home', state?.category || null, false, state?.displayedCount || 30);
+                // Synchronously force DOM layout
+                void document.documentElement.offsetHeight;
+                window.scrollTo({ top: state?.scrollY || 0, behavior: 'instant' });
+            } else {
+                switchView('home', null, false);
+                void document.documentElement.offsetHeight;
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            }
+        });
+
+        window.addEventListener('click', (e) => {
+            // Passing (true, true) flags that this was an EXPLICIT user close (they clicked X or background), so the iframe CAN safely be destroyed.
+            if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal(true, true);
+
+            // Re-added click-outside logic for the menu, excluding the FAB
+            if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
+        });
+
+        // ==========================================
+        // EXTERNAL BROWSER INTENT LOGIC 
+        // ==========================================
+        function openInBrowser(browser) {
+            const targetDomain = 'moviedakhi.com';
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+            const isAndroid = /android/i.test(userAgent);
+
+            let schemeUrl = '';
+
+            // Custom Schemes: These natively target the apps directly (including Betas) WITHOUT triggering the Play Store.
+            if (browser === 'chrome') schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
+            else if (browser === 'edge') schemeUrl = `microsoft-edge-https://${targetDomain}`;
+            else if (browser === 'opera') schemeUrl = `opera-http://${targetDomain}`;
+            else if (browser === 'firefox') schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
+            else if (browser === 'brave') schemeUrl = `brave://open-url?url=https://${targetDomain}`;
+            else if (browser === 'safari') schemeUrl = `x-safari-https://${targetDomain}`;
+            else if (browser === 'vivaldi') schemeUrl = `vivaldi://${targetDomain}`;
+            else if (browser === 'duckduckgo') schemeUrl = `ddg://${targetDomain}`;
+            else if (browser === 'via') schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
+
+            let appOpened = false;
+
+            // Track if the OS successfully opened the app
+            function handleVisibilityChange() {
+                if (document.visibilityState === 'hidden' || document.hidden) {
+                    appOpened = true;
+                }
+            }
+            document.addEventListener("visibilitychange", handleVisibilityChange);
+            window.addEventListener("pagehide", () => { appOpened = true; });
+            window.addEventListener("blur", () => { appOpened = true; });
+
+            if (schemeUrl) {
+                // Try opening the specific browser
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = schemeUrl;
+                document.body.appendChild(iframe);
+
+                // Fallback Engine: If the app didn't open (meaning it's not installed), use the Universal Safe Intent
+                setTimeout(() => {
+                    document.body.removeChild(iframe);
+                    document.removeEventListener("visibilitychange", handleVisibilityChange);
+
+                    if (!appOpened) {
+                        if (isAndroid) {
+                            // Universal Android Intent: Opens the default browser or App Chooser. Never the Play Store.
+                            window.location.href = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
+                        } else if (isIOS) {
+                            // Universal iOS Fallback
+                            window.location.href = `x-safari-https://${targetDomain}`;
+                        } else {
+                            window.location.href = `https://${targetDomain}`;
+                        }
+                    }
+                }, 1000);
+            }
+
+            if (!isAndroid && !isIOS) {
+                showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
+            } else {
+                showToast("Redirecting to browser...");
+            }
+        }
+
+        // ==========================================
+        // MANUAL LINK COPY LOGIC
+        // ==========================================
+        function copyWebsiteLink(btn) {
+            const link = "https://moviedakhi.com";
+
+            // Fallback for older browsers / webviews
+            const textArea = document.createElement("textarea");
+            textArea.value = link;
+            // Avoid scrolling to bottom
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                document.execCommand('copy');
+                showToast("Link copied! Open your browser and paste it.");
+
+                // Visual feedback on button
+                const originalHtml = `<i class="fas fa-copy"></i> Copy`;
+                btn.innerHTML = `<i class="fas fa-check"></i> Copied`;
+                btn.classList.remove('bg-[#E50914]', 'hover:bg-red-600');
+                btn.classList.add('bg-green-600', 'hover:bg-green-500');
+
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.classList.add('bg-[#E50914]', 'hover:bg-red-600');
+                    btn.classList.remove('bg-green-600', 'hover:bg-green-500');
+                }, 2000);
+            } catch (err) {
+                showToast("Failed to copy link. Please manually select the text.");
+            }
+
+            document.body.removeChild(textArea);
+        }

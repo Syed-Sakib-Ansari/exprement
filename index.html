@@ -9,7 +9,10 @@
     <meta name="google-site-verification" content="Vwnd_U_eF3RMPHLgAMaIYmZwkfRCRIUY4yb-H7LnPuU" />
 
     <!-- ADCash Ads -->
-    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+    <!-- Display Ads Section Start -->
+    <!-- Added async defer to prevent render blocking of the main website thread -->
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async defer></script>
+    <!-- Display Ads Section End -->
 
     <!--MonetagAds-->
     <!-- <meta name="monetag" content="0e76f19a65a0557c516afe5bb3aaf86b"> -->
@@ -33,7 +36,7 @@
     <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
     <link rel="preconnect" href="https://resizing.flixster.com" crossorigin>
     <link rel="preconnect" href="https://wsrv.nl" crossorigin>
-    <link rel="preconnect" href="https://m.media-amazon.com" crossorigin>
+    <link class="streaming-chunk-marker" rel="preconnect" href="https://m.media-amazon.com" crossorigin>
     <link rel="dns-prefetch" href="https://upload.wikimedia.org">
     <link rel="dns-prefetch" href="https://resizing.flixster.com">
     <link rel="dns-prefetch" href="https://wsrv.nl">
@@ -229,6 +232,45 @@
                 </nav>
             </section>
 
+            <!-- Display Ads Section Start -->
+            <div class="w-[90%] max-w-[728px] mx-auto mb-12 shadow-lg">
+                <!-- Desktop Ad (728x90) -->
+                <div class="hidden md:flex w-full h-[90px] bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
+                    <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
+                    <div class="relative z-10">
+                        <script type="text/javascript">
+                            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'blob:') {
+                                if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
+                                    aclib.runBanner({
+                                        zoneId: '11369222',
+                                    });
+                                }
+                            } else {
+                                document.write('<span class="text-gray-700 text-xs font-mono">[Ad Zone: 11369222]</span>');
+                            }
+                        </script>
+                    </div>
+                </div>
+                <!-- Mobile Ad (300x100) -->
+                <div class="flex md:hidden w-full h-[100px] max-w-[300px] mx-auto bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
+                    <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
+                    <div class="relative z-10">
+                        <script type="text/javascript">
+                            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'blob:') {
+                                if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
+                                    aclib.runBanner({
+                                        zoneId: '11369238',
+                                    });
+                                }
+                            } else {
+                                document.write('<span class="text-gray-700 text-xs font-mono">[Ad Zone: 11369238]</span>');
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <!-- Display Ads Section End -->
+
             <!-- Recent Adds Section -->
             <section id="recentAddsSection" class="mb-16">
                 <div class="flex items-center space-x-3 mb-10 justify-center">
@@ -254,6 +296,45 @@
                 <!-- Injected via script -->
             </div>
 
+            <!-- Display Ads Section Start -->
+            <div class="w-[90%] max-w-[728px] mx-auto mb-12 shadow-lg">
+                <!-- Desktop Ad (728x90) -->
+                <div class="hidden md:flex w-full h-[90px] bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
+                    <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
+                    <div class="relative z-10">
+                        <script type="text/javascript">
+                            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'blob:') {
+                                if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
+                                    aclib.runBanner({
+                                        zoneId: '11369222',
+                                    });
+                                }
+                            } else {
+                                document.write('<span class="text-gray-700 text-xs font-mono">[Ad Zone: 11369222]</span>');
+                            }
+                        </script>
+                    </div>
+                </div>
+                <!-- Mobile Ad (300x100) -->
+                <div class="flex md:hidden w-full h-[100px] max-w-[300px] mx-auto bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
+                    <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
+                    <div class="relative z-10">
+                        <script type="text/javascript">
+                            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'blob:') {
+                                if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
+                                    aclib.runBanner({
+                                        zoneId: '11369238',
+                                    });
+                                }
+                            } else {
+                                document.write('<span class="text-gray-700 text-xs font-mono">[Ad Zone: 11369238]</span>');
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <!-- Display Ads Section End -->
+
             <div id="libraryGrid"
                 class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center pb-24">
             </div>
@@ -269,22 +350,32 @@
 
     <!-- Modal: Video Modal Box -->
     <div id="movieModal" class="fixed inset-0 z-[130] hidden" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 bg-black/95 backdrop-blur-md transition-opacity" onclick="closeModal(true, true)"></div>
+        <div class="fixed inset-0 bg-black/95 backdrop-blur-md transition-opacity" onclick="closeModal(true, true)">
+        </div>
         <div class="fixed inset-0 z-[140] overflow-y-auto" id="modalScrollContainer">
             <div class="flex min-h-full items-center justify-center p-4" id="modalFlexContainer">
                 <div class="relative w-full max-w-5xl rounded-2xl bg-[#111] shadow-2xl my-8 overflow-hidden">
-<div class="aspect-video w-full bg-black relative flex items-center justify-center overflow-hidden">
-                        
+                    <div class="aspect-video w-full bg-black relative flex items-center justify-center overflow-hidden">
+
                         <div id="actualVideo" class="absolute inset-0 bg-black w-full h-full z-10 hidden">
-                            </div>
+                        </div>
                     </div>
 
                     <div class="w-full flex justify-center mt-6 max-w-full overflow-x-hidden">
                         <div>
                             <script type="text/javascript">
-                                aclib.runBanner({
-                                    zoneId: '11368682',
-                                });
+                                // BS Box Ads Problem Fixed Start
+                                // Strictly block ad loading on localhost, loopback, or blob protocols for high speed during design testing.
+                                if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'blob:') {
+                                    if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
+                                        if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
+                                            aclib.runBanner({
+                                                zoneId: '11366466',
+                                            });
+                                        }
+                                    }
+                                }
+                                // BS Box Ads Problem Fixed End
                             </script>
                         </div>
                     </div>
@@ -329,7 +420,8 @@
 
     <!-- Announcement/Warning Popup Box -->
     <!-- New Popup Box Start -->
-    <div id="announcementPopup" class="fixed inset-0 z-[200] hidden items-center justify-center pointer-events-none px-4">
+    <div id="announcementPopup"
+        class="fixed inset-0 z-[200] hidden items-center justify-center pointer-events-none px-4">
 
         <div class="absolute inset-0 bg-[#050505]/80 backdrop-blur-md transition-opacity duration-500 opacity-0 pointer-events-none"
             id="popupBackdrop" onclick="closeAnnouncement()"></div>
@@ -364,111 +456,198 @@
                 <!-- Browser Suggestion Box -->
                 <div id="browserSuggestionBox" class="relative z-10 w-full mt-2 mb-4 md:mt-4 md:mb-6 group hidden">
                     <!-- Modern Glowing Border Effect -->
-                    <div class="absolute -inset-[1px] bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 rounded-xl md:rounded-2xl opacity-50 blur-md group-hover:opacity-80 transition duration-700"></div>
-                    
+                    <div
+                        class="absolute -inset-[1px] bg-gradient-to-r from-red-600 via-purple-600 to-blue-600 rounded-xl md:rounded-2xl opacity-50 blur-md group-hover:opacity-80 transition duration-700">
+                    </div>
+
                     <!-- Fix: Added top padding to push content safely below absolute badge -->
-                    <div class="relative bg-[#0f0f0f] rounded-xl md:rounded-2xl px-3 pb-4 pt-6 md:px-6 md:pb-6 md:pt-8 border border-white/10 flex flex-col items-center">
-                        
+                    <div
+                        class="relative bg-[#0f0f0f] rounded-xl md:rounded-2xl px-3 pb-4 pt-6 md:px-6 md:pb-6 md:pt-8 border border-white/10 flex flex-col items-center">
+
                         <!-- Eye-catching Top Badge - Fix: Made text explicitly larger -->
-                        <div class="absolute -top-4 md:-top-5 px-4 md:px-6 py-1.5 md:py-2 bg-gradient-to-r from-[#E50914] to-red-800 rounded-full border border-red-400/50 shadow-[0_0_20px_rgba(229,9,20,0.6)]">
-                            <span class="text-[12px] md:text-[16px] font-black text-white uppercase tracking-[0.1em] md:tracking-[0.15em] flex items-center gap-1.5 md:gap-2 whitespace-nowrap">
+                        <div
+                            class="absolute -top-4 md:-top-5 px-4 md:px-6 py-1.5 md:py-2 bg-gradient-to-r from-[#E50914] to-red-800 rounded-full border border-red-400/50 shadow-[0_0_20px_rgba(229,9,20,0.6)]">
+                            <span
+                                class="text-[12px] md:text-[16px] font-black text-white uppercase tracking-[0.1em] md:tracking-[0.15em] flex items-center gap-1.5 md:gap-2 whitespace-nowrap">
                                 <i class="fas fa-bolt text-yellow-400 animate-pulse"></i> Always Use These Browsers
                             </span>
                         </div>
 
-                        <p id="browserWarningText" class="text-gray-200 text-[14px] md:text-[17px] font-medium mt-3 md:mt-4 mb-4 md:mb-6 text-center leading-relaxed">
-                            Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser Which one you have!
+                        <p id="browserWarningText"
+                            class="text-gray-200 text-[14px] md:text-[17px] font-medium mt-3 md:mt-4 mb-4 md:mb-6 text-center leading-relaxed">
+                            Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+                            Tap below to use a real browser Which one you have!
                         </p>
 
                         <!-- All Browsers Grid - 8 Browsers total (UC Browser Removed) -->
                         <div class="grid grid-cols-3 sm:grid-cols-3 gap-2.5 md:gap-4 w-full">
                             <!-- Chrome -->
-                            <button onclick="openInBrowser('chrome')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#34A853] shadow-md hover:shadow-[0_0_20px_rgba(52,168,83,0.4)] transition-all duration-300 group/btn overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-b from-[#34A853]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/chrome/chrome_128x128.png" alt="Chrome" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Chrome</span>
-                                <div class="w-full bg-[#34A853] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#34A853] transition-colors mt-0.5">Open</div>
+                            <button onclick="openInBrowser('chrome')"
+                                class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#34A853] shadow-md hover:shadow-[0_0_20px_rgba(52,168,83,0.4)] transition-all duration-300 group/btn overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-[#34A853]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/chrome/chrome_128x128.png"
+                                    alt="Chrome"
+                                    class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span
+                                    class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Chrome</span>
+                                <div
+                                    class="w-full bg-[#34A853] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#34A853] transition-colors mt-0.5">
+                                    Open</div>
                             </button>
 
                             <!-- Edge -->
-                            <button onclick="openInBrowser('edge')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#0078D7] shadow-md hover:shadow-[0_0_20px_rgba(0,120,215,0.4)] transition-all duration-300 group/btn overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-b from-[#0078D7]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/edge/edge_128x128.png" alt="Edge" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Edge</span>
-                                <div class="w-full bg-[#0078D7] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#0078D7] transition-colors mt-0.5">Open</div>
+                            <button onclick="openInBrowser('edge')"
+                                class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#0078D7] shadow-md hover:shadow-[0_0_20px_rgba(0,120,215,0.4)] transition-all duration-300 group/btn overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-[#0078D7]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/edge/edge_128x128.png"
+                                    alt="Edge"
+                                    class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span
+                                    class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Edge</span>
+                                <div
+                                    class="w-full bg-[#0078D7] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#0078D7] transition-colors mt-0.5">
+                                    Open</div>
                             </button>
 
                             <!-- Opera -->
-                            <button onclick="openInBrowser('opera')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF1B2D] shadow-md hover:shadow-[0_0_20px_rgba(255,27,45,0.4)] transition-all duration-300 group/btn overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-b from-[#FF1B2D]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/opera/opera_128x128.png" alt="Opera" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Opera</span>
-                                <div class="w-full bg-[#FF1B2D] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF1B2D] transition-colors mt-0.5">Open</div>
+                            <button onclick="openInBrowser('opera')"
+                                class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF1B2D] shadow-md hover:shadow-[0_0_20px_rgba(255,27,45,0.4)] transition-all duration-300 group/btn overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-[#FF1B2D]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/opera/opera_128x128.png"
+                                    alt="Opera"
+                                    class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span
+                                    class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Opera</span>
+                                <div
+                                    class="w-full bg-[#FF1B2D] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF1B2D] transition-colors mt-0.5">
+                                    Open</div>
                             </button>
-                            
+
                             <!-- Firefox -->
-                            <button onclick="openInBrowser('firefox')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF7139] shadow-md hover:shadow-[0_0_20px_rgba(255,113,57,0.4)] transition-all duration-300 group/btn overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-b from-[#FF7139]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/firefox/firefox_128x128.png" alt="Firefox" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Firefox</span>
-                                <div class="w-full bg-[#FF7139] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF7139] transition-colors mt-0.5">Open</div>
+                            <button onclick="openInBrowser('firefox')"
+                                class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF7139] shadow-md hover:shadow-[0_0_20px_rgba(255,113,57,0.4)] transition-all duration-300 group/btn overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-[#FF7139]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/firefox/firefox_128x128.png"
+                                    alt="Firefox"
+                                    class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span
+                                    class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Firefox</span>
+                                <div
+                                    class="w-full bg-[#FF7139] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF7139] transition-colors mt-0.5">
+                                    Open</div>
                             </button>
-                            
+
                             <!-- Brave -->
-                            <button onclick="openInBrowser('brave')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF2000] shadow-md hover:shadow-[0_0_20px_rgba(255,32,0,0.4)] transition-all duration-300 group/btn overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-b from-[#FF2000]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/brave/brave_128x128.png" alt="Brave" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Brave</span>
-                                <div class="w-full bg-[#FF2000] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF2000] transition-colors mt-0.5">Open</div>
+                            <button onclick="openInBrowser('brave')"
+                                class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#FF2000] shadow-md hover:shadow-[0_0_20px_rgba(255,32,0,0.4)] transition-all duration-300 group/btn overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-[#FF2000]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/brave/brave_128x128.png"
+                                    alt="Brave"
+                                    class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span
+                                    class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Brave</span>
+                                <div
+                                    class="w-full bg-[#FF2000] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#FF2000] transition-colors mt-0.5">
+                                    Open</div>
                             </button>
 
                             <!-- Safari -->
-                            <button onclick="openInBrowser('safari')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#007AFF] shadow-md hover:shadow-[0_0_20px_rgba(0,122,255,0.4)] transition-all duration-300 group/btn overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-b from-[#007AFF]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/safari/safari_128x128.png" alt="Safari" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Safari</span>
-                                <div class="w-full bg-[#007AFF] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#007AFF] transition-colors mt-0.5">Open</div>
+                            <button onclick="openInBrowser('safari')"
+                                class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#007AFF] shadow-md hover:shadow-[0_0_20px_rgba(0,122,255,0.4)] transition-all duration-300 group/btn overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-[#007AFF]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/safari/safari_128x128.png"
+                                    alt="Safari"
+                                    class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span
+                                    class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Safari</span>
+                                <div
+                                    class="w-full bg-[#007AFF] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#007AFF] transition-colors mt-0.5">
+                                    Open</div>
                             </button>
 
                             <!-- Vivaldi -->
-                            <button onclick="openInBrowser('vivaldi')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#EF3939] shadow-md hover:shadow-[0_0_20px_rgba(239,57,57,0.4)] transition-all duration-300 group/btn overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-b from-[#EF3939]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/vivaldi/vivaldi_128x128.png" alt="Vivaldi" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Vivaldi</span>
-                                <div class="w-full bg-[#EF3939] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#EF3939] transition-colors mt-0.5">Open</div>
+                            <button onclick="openInBrowser('vivaldi')"
+                                class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#EF3939] shadow-md hover:shadow-[0_0_20px_rgba(239,57,57,0.4)] transition-all duration-300 group/btn overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-[#EF3939]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@main/src/vivaldi/vivaldi_128x128.png"
+                                    alt="Vivaldi"
+                                    class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span
+                                    class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Vivaldi</span>
+                                <div
+                                    class="w-full bg-[#EF3939] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#EF3939] transition-colors mt-0.5">
+                                    Open</div>
                             </button>
 
                             <!-- DuckDuckGo -->
-                            <button onclick="openInBrowser('duckduckgo')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#DE5833] shadow-md hover:shadow-[0_0_20px_rgba(222,88,51,0.4)] transition-all duration-300 group/btn overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-b from-[#DE5833]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <img src="https://duckduckgo.com/assets/icons/meta/DDG-icon_256x256.png" alt="DuckDuckGo" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
-                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Duck</span>
-                                <div class="w-full bg-[#DE5833] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#DE5833] transition-colors mt-0.5">Open</div>
+                            <button onclick="openInBrowser('duckduckgo')"
+                                class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#DE5833] shadow-md hover:shadow-[0_0_20px_rgba(222,88,51,0.4)] transition-all duration-300 group/btn overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-[#DE5833]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <img src="https://duckduckgo.com/assets/icons/meta/DDG-icon_256x256.png"
+                                    alt="DuckDuckGo"
+                                    class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                                <span
+                                    class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Duck</span>
+                                <div
+                                    class="w-full bg-[#DE5833] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#DE5833] transition-colors mt-0.5">
+                                    Open</div>
                             </button>
 
                             <!-- Via Browser Add Code Start -->
-                            <button onclick="openInBrowser('via')" class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#00A5FF] shadow-md hover:shadow-[0_0_20px_rgba(0,165,255,0.4)] transition-all duration-300 group/btn overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-b from-[#00A5FF]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
+                            <button onclick="openInBrowser('via')"
+                                class="relative w-full flex flex-col items-center justify-center gap-1.5 p-2 md:p-3.5 rounded-[12px] md:rounded-[16px] bg-gradient-to-b from-[#222] to-[#111] border border-gray-700 hover:border-[#00A5FF] shadow-md hover:shadow-[0_0_20px_rgba(0,165,255,0.4)] transition-all duration-300 group/btn overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-b from-[#00A5FF]/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"
+                                    class="w-7 h-7 md:w-11 md:h-11 relative z-10 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-md">
                                     <!-- Yellow Flap (Back Right) -->
-                                    <path d="M 60 25 L 85 10 L 110 95 L 80 105 Z" fill="#FFC107" stroke="#FFC107" stroke-width="5" stroke-linejoin="round"/>
+                                    <path d="M 60 25 L 85 10 L 110 95 L 80 105 Z" fill="#FFC107" stroke="#FFC107"
+                                        stroke-width="5" stroke-linejoin="round" />
                                     <!-- Blue Flap (Back Left) -->
-                                    <path d="M 20 35 L 45 25 L 35 95 L 10 80 Z" fill="#00A5FF" stroke="#00A5FF" stroke-width="5" stroke-linejoin="round"/>
+                                    <path d="M 20 35 L 45 25 L 35 95 L 10 80 Z" fill="#00A5FF" stroke="#00A5FF"
+                                        stroke-width="5" stroke-linejoin="round" />
                                     <!-- Red Flap (Front Center) -->
-                                    <path d="M 10 80 L 35 95 L 85 10 L 60 25 Z" fill="#FF3B00" stroke="#FF3B00" stroke-width="5" stroke-linejoin="round"/>
+                                    <path d="M 10 80 L 35 95 L 85 10 L 60 25 Z" fill="#FF3B00" stroke="#FF3B00"
+                                        stroke-width="5" stroke-linejoin="round" />
                                 </svg>
-                                <span class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Via</span>
-                                <div class="w-full bg-[#00A5FF] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#00A5FF] transition-colors mt-0.5">Open</div>
+                                <span
+                                    class="text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest relative z-10">Via</span>
+                                <div
+                                    class="w-full bg-[#00A5FF] text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider py-1 rounded-lg shadow-sm relative z-10 group-hover/btn:bg-white group-hover/btn:text-[#00A5FF] transition-colors mt-0.5">
+                                    Open</div>
                             </button>
                             <!-- Via Browser Add Code End -->
                         </div>
-                        
+
                         <!-- Quick Copy Link Box -->
-                        <div class="w-full mt-4 md:mt-5 pt-4 md:pt-5 border-t border-white/10 flex flex-col gap-2 items-center">
-                            <p class="text-gray-400 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.2em]">Or Copy Link Manually</p>
-                            <div class="flex items-center w-full max-w-[280px] md:max-w-[320px] bg-[#141414] rounded-lg border border-gray-700 overflow-hidden shadow-inner">
-                                <div class="flex-1 px-3 py-2 text-[10px] md:text-[12px] text-gray-300 font-mono truncate text-left select-all">https://moviedakhi.com</div>
-                                <button onclick="copyWebsiteLink(this)" class="bg-[#E50914] hover:bg-red-600 text-white px-3 md:px-4 py-2 md:py-2.5 text-[9px] md:text-[11px] font-black uppercase tracking-widest transition-all duration-300 border-l border-gray-700 flex items-center gap-1.5 focus:outline-none w-[75px] md:w-[85px] justify-center">
+                        <div
+                            class="w-full mt-4 md:mt-5 pt-4 md:pt-5 border-t border-white/10 flex flex-col gap-2 items-center">
+                            <p class="text-gray-400 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.2em]">Or
+                                Copy Link Manually</p>
+                            <div
+                                class="flex items-center w-full max-w-[280px] md:max-w-[320px] bg-[#141414] rounded-lg border border-gray-700 overflow-hidden shadow-inner">
+                                <div
+                                    class="flex-1 px-3 py-2 text-[10px] md:text-[12px] text-gray-300 font-mono truncate text-left select-all">
+                                    https://moviedakhi.com</div>
+                                <button onclick="copyWebsiteLink(this)"
+                                    class="bg-[#E50914] hover:bg-red-600 text-white px-3 md:px-4 py-2 md:py-2.5 text-[9px] md:text-[11px] font-black uppercase tracking-widest transition-all duration-300 border-l border-gray-700 flex items-center gap-1.5 focus:outline-none w-[75px] md:w-[85px] justify-center">
                                     <i class="fas fa-copy"></i> Copy
                                 </button>
                             </div>
@@ -478,20 +657,27 @@
                 </div>
 
                 <!-- New Main PopupBox Start -->
-                <p id="popupWelcomeText" class="text-gray-300 text-[13px] md:text-[18px] font-medium leading-relaxed mb-4 md:mb-5 px-1 md:px-6 mt-3 flex flex-col gap-2 md:gap-3">
-                    <span class="text-lg md:text-2xl font-bold text-white tracking-wide">How to Watch & Download 🎬</span>
-                    <span class="text-[12px] md:text-[16px] text-gray-300 bg-white/5 p-4 md:p-6 rounded-xl border border-white/10 mt-1 shadow-inner text-left leading-relaxed flex flex-col gap-2.5 md:gap-4">
+                <p id="popupWelcomeText"
+                    class="text-gray-300 text-[13px] md:text-[18px] font-medium leading-relaxed mb-4 md:mb-5 px-1 md:px-6 mt-3 flex flex-col gap-2 md:gap-3">
+                    <span class="text-lg md:text-2xl font-bold text-white tracking-wide">How to Watch & Download
+                        🎬</span>
+                    <span
+                        class="text-[12px] md:text-[16px] text-gray-300 bg-white/5 p-4 md:p-6 rounded-xl border border-white/10 mt-1 shadow-inner text-left leading-relaxed flex flex-col gap-2.5 md:gap-4">
                         <span class="flex items-start gap-2 md:gap-3">
                             <i class="fas fa-info-circle text-[#E50914] mt-1 flex-shrink-0 md:text-[20px]"></i>
-                            <span class="md:leading-snug text-white"><strong>When you click Play or Download, The first 2 clicks will open ads . Please close those ads and return. </strong> </span>
+                            <span class="md:leading-snug text-white"><strong>When you click Play or Download, The first
+                                    2 clicks will open ads . Please close those ads and return. </strong> </span>
                         </span>
                         <span class="flex items-start gap-2 md:gap-3">
                             <i class="fas fa-check-circle text-green-500 mt-1 flex-shrink-0 md:text-[20px]"></i>
-                            <span class="text-white md:leading-snug"><strong>On your 3rd click, the video will play or download smoothly!</strong></span>
+                            <span class="text-white md:leading-snug"><strong>On your 3rd click, the video will play or
+                                    download smoothly!</strong></span>
                         </span>
                         <span class="flex items-start gap-2 md:gap-3 border-t border-white/10 pt-2.5 md:pt-4 mt-1">
                             <i class="fas fa-shield-alt text-gray-400 mt-1 flex-shrink-0 md:text-[18px]"></i>
-                            <span class="text-[11px] md:text-[15px] text-gray-400 md:leading-snug text-white">If any other random ads appear while browsing, simply close them and continue what you were doing. Enjoy!</span>
+                            <span class="text-[11px] md:text-[15px] text-gray-400 md:leading-snug text-white">If any
+                                other random ads appear while browsing, simply close them and continue what you were
+                                doing. Enjoy!</span>
                         </span>
                     </span>
                 </p>
