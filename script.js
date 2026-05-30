@@ -5,7 +5,7 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
-        title: "Bikini Nurses (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rhauu", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTc0MDJjZWMtZmJmZi00ZGU4LWFhMTMtZDA1M2JiYmE3MDM0XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rhauu&dl=1"
+        title: "Bikini Nurses (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rhauu", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTc0MDJjZWMtZmJmZi00ZGU4LWFhMTMtZDA1M2JiYmE3MDM0XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rhauu&dl=1"
     }, {
         title: "Brazil '70: The Third Star", posterUrl: "https://resizing.flixster.com/4YFrnAkHkKQRZdjuQPKYd8hidCI=/fit-in/705x460/v2/https://resizing.flixster.com/WTZ5qmfmrRr95KmkhMIhN1yVAEI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMzYwOTRmMGMtNzI5ZC00OGIzLWFlYWMtNTE1ZmMzZmIyZDZiLmpwZw==", genre: "Drama, Sports", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1_MqLrqGcpJztAXLYjvUw3x_6ZcKExEMm", seriesInfo: "Season 1, Episode 1-5", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://play.moviedakhi.com/7TLgcEc_N" },
@@ -3764,7 +3764,7 @@ const contentData = [
 
 
     {
-        title: "Bikini Nurses (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rhauu", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTc0MDJjZWMtZmJmZi00ZGU4LWFhMTMtZDA1M2JiYmE3MDM0XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Others", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rhauu&dl=1"
+        title: "Bikini Nurses (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rhauu", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTc0MDJjZWMtZmJmZi00ZGU4LWFhMTMtZDA1M2JiYmE3MDM0XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Others", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rhauu&dl=1"
     }, {
         title: "Peep Show (1986)", embedUrl: "https://moviedakhi.4meplayer.com/#61pxp", posterUrl: "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2Fcw9HtAhMNseE9oRvXKa00mNCqFC.jpg", genre: "Adult, Erotic, Romance", category: "Others", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#61pxp&dl=1"
     }, {
