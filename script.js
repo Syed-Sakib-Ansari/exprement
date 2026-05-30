@@ -5,6 +5,16 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Brazil '70: The Third Star", posterUrl: "https://resizing.flixster.com/4YFrnAkHkKQRZdjuQPKYd8hidCI=/fit-in/705x460/v2/https://resizing.flixster.com/WTZ5qmfmrRr95KmkhMIhN1yVAEI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMzYwOTRmMGMtNzI5ZC00OGIzLWFlYWMtNTE1ZmMzZmIyZDZiLmpwZw==", genre: "Drama, Sports", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1_MqLrqGcpJztAXLYjvUw3x_6ZcKExEMm", seriesInfo: "Season 1, Episode 1-5", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://abyssplayer.com/7TLgcEc_N" },
+            { number: 2, title: "Episode 2", embedUrl: "https://abyssplayer.com/JNyXiTEfx" },
+            { number: 3, title: "Episode 3", embedUrl: "https://abyssplayer.com/_oYWRT1OT" },
+            { number: 4, title: "Episode 4", embedUrl: "https://abyssplayer.com/JuUHZvUTR" },
+            { number: 5, title: "Episode 5", embedUrl: "https://abyssplayer.com/T983t9Dwi" },
+        ]
+    }, {
+        title: "Kattalan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ovhsk", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTFjYzIxNDUtMGJjNy00OTdmLWExNGUtM2FkNzhlYmUzYzk0XkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller, Crime, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ovhsk&dl=1"
+    }, {
         title: "Succubus (2024)", embedUrl: "https://moviedakhi.4meplayer.com/#jqoru", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzg0N2M4YmYtNzJlNi00MzkyLWJlMDQtNTczODZkMjg5ZTY5XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#jqoru&dl=1"
     }, {
         title: "Spider-Noir (Color) (2026)", posterUrl: "https://resizing.flixster.com/NtzPo7EpWcdq2oLvvVIEVLuJq98=/fit-in/705x460/v2/https://resizing.flixster.com/A1561EqA71SKfAzkmJiJ7bogp0w=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZjVlYTg4YjYtNjU1ZC00YjY0LWJkYTktZmJjNWE3NTIyNzk5LmpwZw==", genre: "Action, Adventure, Crime, Drama, Fantasy, Mystery & Thriller, Sci-Fi", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/8f1difny0yycmby", seriesInfo: "Season 1, Episode 1-8", episodes: [
@@ -66,10 +76,6 @@ const contentData = [
         title: "Shaolin (2011)", embedUrl: "https://moviedakhi.4meplayer.com/#9r6dn", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTBkYTI1NGEtNDJiOS00OTJhLTk1OTctMWRhY2Y1NGUxN2EzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Drama", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9r6dn&dl=1"
     }, {
         title: "Corporate Retreat (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#6sg3o", posterUrl: "https://m.media-amazon.com/images/M/MV5BNTZkZmU4OWEtMDcwNi00MGQ5LTlkZTQtODY5YzFiMThjZWM3XkEyXkFqcGc@._V1_.jpg", genre: "Horror, Thriller", category: "Recent Adds", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6sg3o&dl=1"
-    }, {
-        title: "Little Amélie or the Character of Rain (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#s3rnt", posterUrl: "https://m.media-amazon.com/images/M/MV5BNjMxMDU3ZGEtMzMyMi00OGZiLWFlZTAtMTAyMmYwOWYxZmIxXkEyXkFqcGc@._V1_.jpg", genre: "Kids & Family, Comedy, Adventure, Animation", category: "Recent Adds", language: "Dual-Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s3rnt&dl=1"
-    }, {
-        title: "Chand Mera Dil (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#yrp1q", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTVlYmVjMTItOGMxYS00NmQyLWJlZTYtNWVkZGZhZmFiYTJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Drama, Music, Romance", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yrp1q&dl=1",
     },
 
     // =======================================================================
@@ -5786,29 +5792,6 @@ function renderCategories() {
         libraryFilters.appendChild(filterItem);
     });
 }
-
-// ==========================================
-// ABYSS.TO PLAYER VAST ADS FUNCTION
-// ==========================================
-
-document.addEventListener("DOMContentLoaded", function() {
-    // ওয়েবসাইটের সব iframe ট্যাগ খুঁজে বের করা
-    const iframes = document.querySelectorAll('iframe');
-
-    iframes.forEach(iframe => {
-        let currentSrc = iframe.getAttribute('src');
-
-        // যদি লিংকের ভেতরে abyssplayer.com বা abyss.to থাকে
-        if (currentSrc && (currentSrc.includes('abyssplayer.com') || currentSrc.includes('abyss.to'))) {
-            
-            // পুরনো ডোমেইন সরিয়ে আপনার কাস্টম ডোমেইন বসিয়ে দেওয়া
-            let newSrc = currentSrc.replace(/abyssplayer\.com|abyss\.to/g, 'play.moviedakhi.com');
-            
-            // নতুন লিংকটি iframe-এ সেট করে দেওয়া
-            iframe.setAttribute('src', newSrc);
-        }
-    });
-});
 
 // ==========================================
 // FAB OPEN / CLOSE ANIMATIONS & SCROLL FIX
