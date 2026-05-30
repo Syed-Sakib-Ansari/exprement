@@ -772,29 +772,6 @@
             }
         }
     </script>
-    
-    <script>
-
-        document.addEventListener("DOMContentLoaded", function () {
-            // ওয়েবসাইটের সব iframe ট্যাগ খুঁজে বের করা
-            const iframes = document.querySelectorAll('iframe');
-
-            iframes.forEach(iframe => {
-                let currentSrc = iframe.getAttribute('src');
-
-                // যদি লিংকের ভেতরে abyssplayer.com বা abyss.to থাকে
-                if (currentSrc && (currentSrc.includes('abyssplayer.com') || currentSrc.includes('abyss.to'))) {
-
-                    // পুরনো ডোমেইন সরিয়ে আপনার কাস্টম ডোমেইন বসিয়ে দেওয়া
-                    let newSrc = currentSrc.replace(/abyssplayer\.com|abyss\.to/g, 'play.moviedakhi.com');
-
-                    // নতুন লিংকটি iframe-এ সেট করে দেওয়া
-                    iframe.setAttribute('src', newSrc);
-                }
-            });
-        });
-
-    </script>
 
     <!-- Adsterra Popunder Ads -->
     <!-- <script src="https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js"></script> -->
