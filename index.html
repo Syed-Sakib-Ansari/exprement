@@ -8,11 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="Vwnd_U_eF3RMPHLgAMaIYmZwkfRCRIUY4yb-H7LnPuU" />
 
-    <meta name="clckd" content="b276c218122e568b15fb26df2614256a" />
-
     <!-- ADCash Ads -->
     <!-- Display Ads Section Start -->
-    <!-- Added async defer to prevent render blocking of the main website thread -->
     <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async defer></script>
     <!-- Display Ads Section End -->
 
@@ -40,7 +37,7 @@
     <link rel="preconnect" href="https://wsrv.nl" crossorigin>
     <link class="streaming-chunk-marker" rel="preconnect" href="https://m.media-amazon.com" crossorigin>
     <link rel="dns-prefetch" href="https://upload.wikimedia.org">
-    <link rel="dns-prefetch" href="https://resizing.flixster.com">
+    <link class="streaming-chunk-marker" rel="dns-prefetch" href="https://resizing.flixster.com">
     <link rel="dns-prefetch" href="https://wsrv.nl">
 
     <!-- Fonts -->
@@ -76,24 +73,6 @@
         })(window, document, "clarity", "script", "wntwu4r831");
     </script>
 
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '991438836953638');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=991438836953638&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
     <!-- Schema.org -->
     <script type="application/ld+json">
         {
@@ -115,7 +94,7 @@
         ]
         }
     </script>
-    
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
 </head>
@@ -257,36 +236,12 @@
                 <!-- Desktop Ad (728x90) -->
                 <div class="hidden md:flex w-full h-[90px] bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
                     <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-                    <div class="relative z-10">
-                        <script type="text/javascript">
-                            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'blob:') {
-                                if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
-                                    aclib.runBanner({
-                                        zoneId: '11369222',
-                                    });
-                                }
-                            } else {
-                                document.write('<span class="text-gray-700 text-xs font-mono">[Ad Zone: 11369222]</span>');
-                            }
-                        </script>
-                    </div>
+                    <div id="home-top-ad-desktop" class="relative z-10"></div>
                 </div>
                 <!-- Mobile Ad (300x100) -->
                 <div class="flex md:hidden w-full h-[100px] max-w-[300px] mx-auto bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
                     <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-                    <div class="relative z-10">
-                        <script type="text/javascript">
-                            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'blob:') {
-                                if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
-                                    aclib.runBanner({
-                                        zoneId: '11369238',
-                                    });
-                                }
-                            } else {
-                                document.write('<span class="text-gray-700 text-xs font-mono">[Ad Zone: 11369238]</span>');
-                            }
-                        </script>
-                    </div>
+                    <div id="home-top-ad-mobile" class="relative z-10"></div>
                 </div>
             </div>
             <!-- Display Ads Section End -->
@@ -321,36 +276,12 @@
                 <!-- Desktop Ad (728x90) -->
                 <div class="hidden md:flex w-full h-[90px] bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
                     <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-                    <div class="relative z-10">
-                        <script type="text/javascript">
-                            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'blob:') {
-                                if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
-                                    aclib.runBanner({
-                                        zoneId: '11369222',
-                                    });
-                                }
-                            } else {
-                                document.write('<span class="text-gray-700 text-xs font-mono">[Ad Zone: 11369222]</span>');
-                            }
-                        </script>
-                    </div>
+                    <div id="library-top-ad-desktop" class="relative z-10"></div>
                 </div>
                 <!-- Mobile Ad (300x100) -->
                 <div class="flex md:hidden w-full h-[100px] max-w-[300px] mx-auto bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
                     <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-                    <div class="relative z-10">
-                        <script type="text/javascript">
-                            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'blob:') {
-                                if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
-                                    aclib.runBanner({
-                                        zoneId: '11369238',
-                                    });
-                                }
-                            } else {
-                                document.write('<span class="text-gray-700 text-xs font-mono">[Ad Zone: 11369238]</span>');
-                            }
-                        </script>
-                    </div>
+                    <div id="library-top-ad-mobile" class="relative z-10"></div>
                 </div>
             </div>
             <!-- Display Ads Section End -->
@@ -763,17 +694,30 @@
             Digital
             Entertainment Excellence.</p>
     </footer>
+
     <script src="script.js" defer></script>
 
     <!-- ADCash Ads -->
     <script type="text/javascript">
-        if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
-            if (typeof aclib !== 'undefined' && typeof aclib.runAutoTag === 'function') {
-                aclib.runAutoTag({
-                    zoneId: 'vgt6rfbeat',
-                });
+        // BS Box Ads Problem Fixed Start
+        // Added global event listener to safely defer loading ads only after everything is ready.
+        // Also disabled on local development ports/hosts to avoid browser freeze due to unreachable networks.
+        window.addEventListener('load', () => {
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'blob:') {
+                console.log('Ads disabled on localhost environment to optimize rendering speed.');
+                return;
             }
-        }
+            setTimeout(() => {
+                if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
+                    if (typeof aclib !== 'undefined' && typeof aclib.runAutoTag === 'function') {
+                        aclib.runAutoTag({
+                            zoneId: 'vgt6rfbeat',
+                        });
+                    }
+                }
+            }, 2000); // Loads 2 seconds after page interactive state is completed
+        });
+        // BS Box Ads Problem Fixed End
     </script>
 
     <!-- Adsterra Popunder Ads -->
