@@ -89,6 +89,8 @@ const contentData = [
 
 
     {
+        title: "The Exorcism of Emily Rose (2005)", embedUrl: "https://moviedakhi.4meplayer.com/#9rhfg", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDc4Mjk2MjA0NF5BMl5BanBnXkFtZTcwMzMyNjQ3Mw@@._V1_.jpg", genre: "Horror, Drama, Thriller", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9rhfg&dl=1"
+    }, {
         title: "Saccharine (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hepoz", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTFhMGYwY2EtYjQ2ZS00OTE3LTg3OGMtNzJmYTM0NmE4ODRkXkEyXkFqcGc@._V1_.jpg", genre: "Horror, Sci-FI", category: "Hollywood", language: "Hindi", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hepoz&dl=1"
     }, {
         title: "Trainwreck (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#k9rmk", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTQ4MjgwNTMyOV5BMl5BanBnXkFtZTgwMTc1MjI0NDE@._V1_.jpg", genre: "Comedy, Drama, Romance", category: "Hollywood", language: "Hindi", quality:"720p", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#k9rmk&dl=1"
