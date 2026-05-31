@@ -5,6 +5,12 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "Cousins and Kalyanams (2026)", posterUrl: "https://images.filmibeat.com/img/popcorn/ws_images/cousins%20and%20kalyanams-4474/cousins%20and%20kalyanams-4474.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 1, Episode 1-4", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://play.moviedakhi.com/w_S6lT8WV" },
+            { number: 2, title: "Episode 2", embedUrl: "https://play.moviedakhi.com/IDCsBO2W1" },
+            { number: 3, title: "Episode 3", embedUrl: "https://play.moviedakhi.com/nSFOEwjHK" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://play.moviedakhi.com/r2frq_5E2" },]
+    }, {
         title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1",
     }, {
         title: "Bikini Nurses (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rhauu", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTc0MDJjZWMtZmJmZi00ZGU4LWFhMTMtZDA1M2JiYmE3MDM0XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rhauu&dl=1"
@@ -74,10 +80,7 @@ const contentData = [
         title: "Drishyam 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#eprni", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Drishyam-3_Poster-0d2290e0-4469-11f1-9e72-b3859bd2479f%20(1)-6495a2d0-5360-11f1-8c65-299184906c19.jpg?im=Resize,width=400", genre: "Drama, Family, Crime, Thriller", category: "Recent Adds", language: "Multi Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#eprni&dl=1",
     }, {
         title: "Sathi Leelavathi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#he6no", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBiYWQyMWQtYTQwMC00NmZiLWFkOWYtNmNlNjM4NDlkNjQ4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#he6no&dl=1",
-    }, {
-        title: "Tuner (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#6sdxx", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTZkOGQ5ZmYtNWNjMy00MWU4LWI4MWUtYzI0YzVmNDhkNDdkXkEyXkFqcGc@._V1_.jpg", genre: "Crime, Drama, Thriller", category: "Recent Adds", language: "English", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#6sdxx&dl=1"
     },
-
     // =======================================================================
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
@@ -2542,6 +2545,12 @@ const contentData = [
 
 
     {
+        title: "Cousins and Kalyanams (2026)", posterUrl: "https://images.filmibeat.com/img/popcorn/ws_images/cousins%20and%20kalyanams-4474/cousins%20and%20kalyanams-4474.jpg", genre: "Drama", category: "South", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 1, Episode 1-4", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://play.moviedakhi.com/w_S6lT8WV" },
+            { number: 2, title: "Episode 2", embedUrl: "https://play.moviedakhi.com/IDCsBO2W1" },
+            { number: 3, title: "Episode 3", embedUrl: "https://play.moviedakhi.com/nSFOEwjHK" }, 
+            { number: 4, title: "Episode 4", embedUrl: "https://play.moviedakhi.com/r2frq_5E2" },]
+    }, {
         title: "Kattalan (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ovhsk", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTFjYzIxNDUtMGJjNy00OTdmLWExNGUtM2FkNzhlYmUzYzk0XkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller, Crime, Drama", category: "South", language: "Dual Audio", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ovhsk&dl=1"
     }, {
         title: "Mahasenha (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#x5n5a", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTI3MmVkNmUtOWMxNC00NTZiLThmMzQtZDE4NzlkNGRkNDJiXkEyXkFqcGc@._V1_.jpg", genre: "Action, Thriller", category: "South", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#x5n5a&dl=1"
