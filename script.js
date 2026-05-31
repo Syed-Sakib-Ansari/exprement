@@ -5716,7 +5716,7 @@ contentData.forEach((item, index) => { item.id = index; });
 
 const categories = [
     "all", "Hollywood", "Bollywood", "South", "Animation",
-    "Korean Country", "Chinese", "Bollywood Series", "Hollywood Series",
+    "Korean Country", "Chinese", "Hollywood Series", "Bollywood Series",
     "Korean Series", "Adult Comedy", "Others"
 ];
 
@@ -6025,7 +6025,7 @@ function initHeroSlider() {
 <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
 <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
 <button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
-    <i class="fas fa-play"></i> Watch Now
+<i class="fas fa-play"></i> Watch Now
 </button>
 </div>
 </div>`;
@@ -6192,13 +6192,13 @@ function createMovieCard(item) {
     // Unified Quality Badge: Flush Top-Left on ALL devices, matching original clean font weight
     const qualityBadgeHtml = item.quality ?
         `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">
-    ${item.quality}
+${item.quality}
 </div>` : '';
 
     // Unified Language Badge: Flush Top-Right on ALL devices, matching original clean font weight
     const languageBadgeHtml = item.language ?
         `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">
-    ${item.language}
+${item.language}
 </div>` : '';
 
     card.innerHTML = `
@@ -6239,35 +6239,6 @@ function renderRecentAdds() {
     recentAddsGrid.appendChild(fragment);
 }
 
-// Display banner ad cleanly after insertion on DOM
-function loadDynamicAd(containerId, zoneId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'blob:') {
-        container.innerHTML = `<span class="text-gray-700 text-[10px] md:text-xs font-mono">[Ad Zone: ${zoneId}]</span>`;
-        return;
-    }
-
-    // Verify trapped browsers to comply with safe experience
-    if (/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera)) {
-        return;
-    }
-
-    // Polling mechanism guarantees the banner renders perfectly the moment the library script is ready
-    const tryLoad = () => {
-        if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
-            aclib.runBanner({
-                zoneId: zoneId,
-                renderIn: '#' + containerId
-            });
-        } else {
-            setTimeout(tryLoad, 200); // Poll again in 200ms
-        }
-    };
-    tryLoad();
-}
-
 function renderCategorySections() {
     categorySections.innerHTML = '';
     const fragment = document.createDocumentFragment();
@@ -6278,25 +6249,7 @@ function renderCategorySections() {
         const section = document.createElement('section');
         section.className = 'mb-16';
 
-        const cleanCatId = cat.replace(/[^a-zA-Z0-9]/g, '-');
-        const desktopAdId = `ad-desktop-${cleanCatId}`;
-        const mobileAdId = `ad-mobile-${cleanCatId}`;
-
         section.innerHTML = `
-<!-- Display Ads Section Start -->
-<div class="w-[90%] max-w-[728px] mx-auto mb-12 shadow-lg">
-    <!-- Desktop Ad (728x90) -->
-    <div class="hidden md:flex w-full h-[90px] bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
-        <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-        <div id="${desktopAdId}" class="relative z-10 w-full flex justify-center"></div>
-    </div>
-    <!-- Mobile Ad (300x100) -->
-    <div class="flex md:hidden w-full h-[100px] max-w-[300px] mx-auto bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
-        <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-        <div id="${mobileAdId}" class="relative z-10 w-full flex justify-center"></div>
-    </div>
-</div>
-<!-- Display Ads Section End -->
 <div class="flex items-center space-x-3 md:mt-10 md:pt-10 mb-8 justify-center">
 <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
@@ -6321,18 +6274,6 @@ function renderCategorySections() {
         fragment.appendChild(section);
     });
     categorySections.appendChild(fragment);
-
-    // Dynamically inject dynamic banner ad elements post append
-    categories.filter(c => c !== 'all').forEach(cat => {
-        const filtered = contentData.filter(m => m.category === cat);
-        if (filtered.length === 0) return;
-        const cleanCatId = cat.replace(/[^a-zA-Z0-9]/g, '-');
-        const desktopAdId = `ad-desktop-${cleanCatId}`;
-        const mobileAdId = `ad-mobile-${cleanCatId}`;
-
-        loadDynamicAd(desktopAdId, '11369222');
-        loadDynamicAd(mobileAdId, '11369238');
-    });
 }
 
 let isLoading = false;
@@ -6517,13 +6458,6 @@ function openModal(id) {
         }
     }
     // Video Play Problem End
-
-    // Modal Banner Ads Start
-    document.getElementById('modal-ad-desktop').innerHTML = '';
-    document.getElementById('modal-ad-mobile').innerHTML = '';
-    loadDynamicAd('modal-ad-desktop', '11369222');
-    loadDynamicAd('modal-ad-mobile', '11369238');
-    // Modal Banner Ads End
 
     const modal = document.getElementById('movieModal');
     modal.classList.remove('hidden');
@@ -6765,7 +6699,7 @@ function showAnnouncement() {
 
     const ua = navigator.userAgent || navigator.vendor || window.opera;
 
-    const isFacebookApp = /FBAN|FBAV/i.test(ua);
+    const isFacebookApp = /FBAN|FBAV|Ios/i.test(ua);
 
     // Explicitly identify UC Browser
     const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
@@ -6973,7 +6907,7 @@ function triggerBookmark(e) {
 
         // Elegant hover/click flash effect for the keyboard shortcut
         if (kbd) {
-            kbd.classList.add('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
+            kbd.classList.add('scale-12 class bg-red-600', 'text-white', 'border-red-800');
             setTimeout(() => {
                 kbd.classList.remove('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
             }, 400);
@@ -7000,12 +6934,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCategorySections();
     initLibraryRender();
     updateCanonical(window.location.href);
-
-    // Fetch and inject banner ads cleanly inside placeholders on page init
-    loadDynamicAd('home-top-ad-desktop', '11369222');
-    loadDynamicAd('home-top-ad-mobile', '11369238');
-    loadDynamicAd('library-top-ad-desktop', '11369222');
-    loadDynamicAd('library-top-ad-mobile', '11369238');
 
     const isBlob = window.location.protocol === 'blob:';
     let finalScroll = 0;

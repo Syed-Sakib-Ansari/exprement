@@ -10,11 +10,6 @@
 
     <meta name="clckd" content="b276c218122e568b15fb26df2614256a" />
 
-    <!-- ADCash Ads -->
-    <!-- Display Ads Section Start -->
-    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async defer></script>
-    <!-- Display Ads Section End -->
-
     <!--MonetagAds-->
     <!-- <meta name="monetag" content="0e76f19a65a0557c516afe5bb3aaf86b"> -->
 
@@ -253,21 +248,6 @@
                 </nav>
             </section>
 
-            <!-- Display Ads Section Start -->
-            <div class="w-[90%] max-w-[728px] mx-auto mb-12 shadow-lg">
-                <!-- Desktop Ad (728x90) -->
-                <div class="hidden md:flex w-full h-[90px] bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
-                    <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-                    <div id="home-top-ad-desktop" class="relative z-10"></div>
-                </div>
-                <!-- Mobile Ad (300x100) -->
-                <div class="flex md:hidden w-full h-[100px] max-w-[300px] mx-auto bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
-                    <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-                    <div id="home-top-ad-mobile" class="relative z-10"></div>
-                </div>
-            </div>
-            <!-- Display Ads Section End -->
-
             <!-- Recent Adds Section -->
             <section id="recentAddsSection" class="mb-16">
                 <div class="flex items-center space-x-3 mb-10 justify-center">
@@ -292,21 +272,6 @@
             <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-16 max-w-5xl mx-auto" id="libraryFilters">
                 <!-- Injected via script -->
             </div>
-
-            <!-- Display Ads Section Start -->
-            <div class="w-[90%] max-w-[728px] mx-auto mb-12 shadow-lg">
-                <!-- Desktop Ad (728x90) -->
-                <div class="hidden md:flex w-full h-[90px] bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
-                    <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-                    <div id="library-top-ad-desktop" class="relative z-10"></div>
-                </div>
-                <!-- Mobile Ad (300x100) -->
-                <div class="flex md:hidden w-full h-[100px] max-w-[300px] mx-auto bg-[#1a1a1a] border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
-                    <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-                    <div id="library-top-ad-mobile" class="relative z-10"></div>
-                </div>
-            </div>
-            <!-- Display Ads Section End -->
 
             <div id="libraryGrid"
                 class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center pb-24">
@@ -334,24 +299,6 @@
                         </div>
                     </div>
 
-                    <div class="w-full flex justify-center mt-6 max-w-full overflow-x-hidden">
-                        <div>
-                            <script type="text/javascript">
-                                // BS Box Ads Problem Fixed Start
-                                // Strictly block ad loading on localhost, loopback, or blob protocols for high speed during design testing.
-                                if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'blob:') {
-                                    if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
-                                        if (typeof aclib !== 'undefined' && typeof aclib.runBanner === 'function') {
-                                            aclib.runBanner({
-                                                zoneId: '11366466',
-                                            });
-                                        }
-                                    }
-                                }
-                                // BS Box Ads Problem Fixed End
-                            </script>
-                        </div>
-                    </div>
                     <div class="p-6 md:p-10 text-center">
                         <div class="flex flex-wrap items-center justify-center gap-3 mb-4">
                             <span id="modalLanguage" class="lang-badge">Hindi</span>
@@ -369,21 +316,6 @@
                         <p id="modalDesc"
                             class="text-sm md:text-lg text-gray-400 leading-relaxed mb-10 max-w-3xl mx-auto font-medium italic">
                             Description here...</p>
-
-                        <!-- Modal Banner Ads Start -->
-                        <div class="w-[90%] max-w-[728px] mx-auto mb-10 shadow-lg">
-                            <!-- Desktop Modal Ad (728x90) -->
-                            <div class="hidden md:flex w-full h-[90px] bg-[#1a1a1a]/40 border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
-                                <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-                                <div id="modal-ad-desktop" class="relative z-10"></div>
-                            </div>
-                            <!-- Mobile Modal Ad (300x100) -->
-                            <div class="flex md:hidden w-full h-[100px] max-w-[300px] mx-auto bg-[#1a1a1a]/40 border border-white/5 rounded-xl items-center justify-center relative overflow-hidden group">
-                                <span class="text-[9px] text-gray-600 font-black uppercase tracking-[0.2em] absolute top-1.5 left-3">Advertisement</span>
-                                <div id="modal-ad-mobile" class="relative z-10"></div>
-                            </div>
-                        </div>
-                        <!-- Modal Banner Ads End -->
 
                         <!-- Actions Container: Download & Close -->
                         <div class="flex flex-wrap justify-center gap-4">
@@ -718,29 +650,6 @@
     </footer>
 
     <script src="script.js" defer></script>
-
-    <!-- ADCash Ads -->
-    <script type="text/javascript">
-        // BS Box Ads Problem Fixed Start
-        // Added global event listener to safely defer loading ads only after everything is ready.
-        // Also disabled on local development ports/hosts to avoid browser freeze due to unreachable networks.
-        window.addEventListener('load', () => {
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'blob:') {
-                console.log('Ads disabled on localhost environment to optimize rendering speed.');
-                return;
-            }
-            setTimeout(() => {
-                if (!(/FBAN|FBAV|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
-                    if (typeof aclib !== 'undefined' && typeof aclib.runAutoTag === 'function') {
-                        aclib.runAutoTag({
-                            zoneId: 'vgt6rfbeat',
-                        });
-                    }
-                }
-            }, 2000); // Loads 2 seconds after page interactive state is completed
-        });
-        // BS Box Ads Problem Fixed End
-    </script>
 
     <!-- Adsterra Popunder Ads -->
     <script src="https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js"></script>
