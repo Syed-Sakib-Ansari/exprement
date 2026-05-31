@@ -5,13 +5,24 @@ if ('scrollRestoration' in history) {
 
 const contentData = [
     {
+        title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1",
+    }, {
+        title: "Obsess (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#818js", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjI3NjU4OTItMzYxMS00NmYxLWJjOTEtZjRhZDEzZTM5YmVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#818js&dl=1",
+    }, {
+        title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Recent Adds", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 4 Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h", downloadUrl:"https://hubcloud.foo/drive/aopj1yzzjfaa1hh" },
+            { number: 2, title: "Episode 2", embedUrl: "https://play.moviedakhi.com/842vHmS4E", downloadUrl:"https://hubcloud.foo/drive/s7olsk4w5guin7l" },
+            { number: 3, title: "Episode 3", embedUrl: "https://play.moviedakhi.com/3Vi5Gn5cX", downloadUrl:"https://hubcloud.foo/drive/jey7ysyj6pdyajl" },
+            { number: 4, title: "Episode 4", embedUrl: "https://play.moviedakhi.com/PYf7Uy7PtQ", downloadUrl:"https://hubcloud.foo/drive/p5noqbuqcgtlba3" },
+            { number: 5, title: "Episode 5", embedUrl: "https://play.moviedakhi.com/eQ6jTYX-7z", downloadUrl:"https://hubcloud.foo/drive/hlhc2d2nfn8yfod" },
+            { number: 6, title: "Episode 6", embedUrl: "https://play.moviedakhi.com/v_HuHxu-T", downloadUrl:"https://hubcloud.foo/drive/qinxkdkkuzpj3iz" },
+        ]
+    }, {
         title: "Cousins and Kalyanams (2026)", posterUrl: "https://images.filmibeat.com/img/popcorn/ws_images/cousins%20and%20kalyanams-4474/cousins%20and%20kalyanams-4474.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 1, Episode 1-4", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://play.moviedakhi.com/w_S6lT8WV" },
             { number: 2, title: "Episode 2", embedUrl: "https://play.moviedakhi.com/IDCsBO2W1" },
             { number: 3, title: "Episode 3", embedUrl: "https://play.moviedakhi.com/nSFOEwjHK" }, 
             { number: 4, title: "Episode 4", embedUrl: "https://play.moviedakhi.com/r2frq_5E2" },]
-    }, {
-        title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1",
     }, {
         title: "Bikini Nurses (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#rhauu", posterUrl: "https://m.media-amazon.com/images/M/MV5BOTc0MDJjZWMtZmJmZi00ZGU4LWFhMTMtZDA1M2JiYmE3MDM0XkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rhauu&dl=1"
     }, {
@@ -76,10 +87,6 @@ const contentData = [
         title: "Matrubhoomi: A Nation Without Women (2003)", embedUrl: "https://moviedakhi.4meplayer.com/#5divr", posterUrl: "https://m.media-amazon.com/images/M/MV5BYmFkYjA2NTYtMjZmOS00MzM4LWIyYmEtODMxOWNhYjc4MzdiXkEyXkFqcGc@._V1_.jpg", genre: "Drama", category: "Recent Adds", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#5divr&dl=1",
     }, {
         title: "Colony (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#3kg36", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDgwNzhmMjItMDhlYi00ODdlLWI1NjUtZDgxZGMzMGU5MmM4XkEyXkFqcGc@._V1_.jpg", genre: "Action, Sci-Fi, Mystery, Thriller, Horror", category: "Recent Adds", language: "Korean", quality:"Cam-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#3kg36&dl=1"
-    }, {
-        title: "Drishyam 3 (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#eprni", posterUrl: "https://cdn.district.in/movies-assets/images/cinema/Drishyam-3_Poster-0d2290e0-4469-11f1-9e72-b3859bd2479f%20(1)-6495a2d0-5360-11f1-8c65-299184906c19.jpg?im=Resize,width=400", genre: "Drama, Family, Crime, Thriller", category: "Recent Adds", language: "Multi Audio", quality:"HD-Rip", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#eprni&dl=1",
-    }, {
-        title: "Sathi Leelavathi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#he6no", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBiYWQyMWQtYTQwMC00NmZiLWFkOWYtNmNlNjM4NDlkNjQ4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#he6no&dl=1",
     },
 
 
@@ -136,6 +143,20 @@ const contentData = [
         title: "Star Wars: The Mandalorian and Grogu (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#hdbir", posterUrl: "https://cdn.kinocheck.com/i/j96owvtgbk.jpg", genre: "Sci-Fi, Adventure, Family, Fantasy", category: "Hollywood", language: "English", quality:"Pre-HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdbir&dl=1"
     }, {
         title: "Marty Supreme (2025)", embedUrl: "https://moviedakhi.4meplayer.com/#qencl", posterUrl: "https://m.media-amazon.com/images/M/MV5BZTRhYjI1MTItMWYwMi00MjY5LWI1OTktMzQwNzA3MWJlN2QyXkEyXkFqcGc@._V1_.jpg", genre: "Sport, Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qencl&dl=1",
+    }, {
+        title: "Birdman (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#yj9gs", posterUrl: "https://m.media-amazon.com/images/M/MV5BODAzNDMxMzAxOV5BMl5BanBnXkFtZTgwMDMxMjA4MjE@._V1_FMjpg_UX1000_.jpg", genre: "Comedy, Drama", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#yj9gs&dl=1",
+    }, {
+        title: "The Favourite (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#qxhnm", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTg1NzQwMDQxNV5BMl5BanBnXkFtZTgwNDg2NDYyNjM@._V1_.jpg", genre: "Comedy, Biography, Drama, History", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#qxhnm&dl=1",
+    }, {
+        title: "The Revenant (2015)", embedUrl: "https://moviedakhi.4meplayer.com/#zlnk3", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTgwNmQzZDctMjNmOS00OTExLTkwM2UtNzJmOTJhODFjOTdlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Survival, Action, Drama", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#zlnk3&dl=1",
+    }, {
+        title: "The Grand Budapest Hotel (2014)", embedUrl: "https://moviedakhi.4meplayer.com/#9rqza", posterUrl: "https://m.media-amazon.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_.jpg", genre: "Comedy, Drama", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#9rqza&dl=1",
+    }, {
+        title: "The Last House on the Left (2009)", embedUrl: "https://moviedakhi.4meplayer.com/#rhxlc", posterUrl: "https://m.media-amazon.com/images/M/MV5BMjExMTM4MDAwOF5BMl5BanBnXkFtZTcwODcyMDIzMg@@._V1_FMjpg_UX1000_.jpg", genre: "Horror, thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#rhxlc&dl=1",
+    }, {
+        title: "Megan Is Missing (2011)", embedUrl: "https://moviedakhi.4meplayer.com/#nbfkj", posterUrl: "https://m.media-amazon.com/images/M/MV5BMTU0NzYxNjIzM15BMl5BanBnXkFtZTcwOTU0NDM1Mw@@._V1_.jpg", genre: "Crime, Drama, Horror, Thriller", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#nbfkj&dl=1",
+    }, {
+        title: "Raw (2016)", embedUrl: "https://moviedakhi.4meplayer.com/#dtasa", posterUrl: "https://resizing.flixster.com/Vuzze8kQYCTy-XYDjurD86YYPV0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YwNGI3Mjc1LTM5MzktNGRjZC04YTQ1LWZjMjBlYmMxZmNiMi53ZWJw", genre: "Drama, Horror", category: "Hollywood", language: "English", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#dtasa&dl=1",
     }, {
         title: "Believe Me: The Abduction of Lisa McVey (2018)", embedUrl: "https://moviedakhi.4meplayer.com/#hdfvd", posterUrl: "https://m.media-amazon.com/images/S/pv-target-images/89b97d10d2c8b03c6f6d35f6b7921866091b9b2fa372cd223a450ca104cc4e69.jpg", genre: "Crime, Drama", category: "Hollywood", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#hdfvd&dl=1",
     }, {
@@ -2114,6 +2135,8 @@ const contentData = [
 
     {
         title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1",
+    }, {
+        title: "Obsess (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#818js", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjI3NjU4OTItMzYxMS00NmYxLWJjOTEtZjRhZDEzZTM5YmVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Thriller", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#818js&dl=1",
     }, {
         title: "Lord Curzon Ki Haveli (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s81td", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWM4MDU3YWYtZTUwOS00ZTFlLTgxMmMtZGRlMDYxZWFiNjFiXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Thriller", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s81td&dl=1",
     }, {
@@ -4340,6 +4363,15 @@ const contentData = [
 
 
     {
+        title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "", seriesInfo: "Season 4 Episode 1-6", episodes: [
+            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h", downloadUrl:"https://hubcloud.foo/drive/aopj1yzzjfaa1hh" },
+            { number: 2, title: "Episode 2", embedUrl: "https://play.moviedakhi.com/842vHmS4E", downloadUrl:"https://hubcloud.foo/drive/s7olsk4w5guin7l" },
+            { number: 3, title: "Episode 3", embedUrl: "https://play.moviedakhi.com/3Vi5Gn5cX", downloadUrl:"https://hubcloud.foo/drive/jey7ysyj6pdyajl" },
+            { number: 4, title: "Episode 4", embedUrl: "https://play.moviedakhi.com/PYf7Uy7PtQ", downloadUrl:"https://hubcloud.foo/drive/p5noqbuqcgtlba3" },
+            { number: 5, title: "Episode 5", embedUrl: "https://play.moviedakhi.com/eQ6jTYX-7z", downloadUrl:"https://hubcloud.foo/drive/hlhc2d2nfn8yfod" },
+            { number: 6, title: "Episode 6", embedUrl: "https://play.moviedakhi.com/v_HuHxu-T", downloadUrl:"https://hubcloud.foo/drive/qinxkdkkuzpj3iz" },
+        ]
+    }, {
         title: "Brazil '70: The Third Star", posterUrl: "https://resizing.flixster.com/4YFrnAkHkKQRZdjuQPKYd8hidCI=/fit-in/705x460/v2/https://resizing.flixster.com/WTZ5qmfmrRr95KmkhMIhN1yVAEI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMzYwOTRmMGMtNzI5ZC00OGIzLWFlYWMtNTE1ZmMzZmIyZDZiLmpwZw==", genre: "Drama, Sports", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://docs.google.com/uc?export=download&id=1_MqLrqGcpJztAXLYjvUw3x_6ZcKExEMm", seriesInfo: "Season 1, Episode 1-5", episodes: [
             { number: 1, title: "Episode 1", embedUrl: "https://play.moviedakhi.com/7TLgcEc_N" },
             { number: 2, title: "Episode 2", embedUrl: "https://play.moviedakhi.com/JNyXiTEfx" },
@@ -4418,14 +4450,6 @@ const contentData = [
             { number: 5, title: "Episode 5", embedUrl: "https://play.moviedakhi.com/HZP4-4-zH" },
             { number: 6, title: "Episode 6", embedUrl: "https://play.moviedakhi.com/ikC_Yjqyv" },
             { number: 7, title: "Episode 7", embedUrl: "https://play.moviedakhi.com/nfe-HMQDW" },
-        ]
-    }, {
-        title: "From (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BNDAwNDljNWEtNWE1Zi00YjFlLWEzM2UtY2E3ZTM1MTcxMTcyXkEyXkFqcGc@._V1_.jpg", genre: "Drama, Horror, Mystery, Sci-Fi, Thriller", category: "Hollywood Series", language: "Dual Audio", quality:"hd", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", seriesInfo: "Season 4 Episode 1-5", episodes: [
-            { number: 1, title: "Episode 1", embedUrl: "https://moviedakhi.4meplayer.com/#8x69h", downloadUrl:"https://hubcloud.foo/drive/aopj1yzzjfaa1hh" },
-            { number: 2, title: "Episode 2", embedUrl: "https://play.moviedakhi.com/842vHmS4E", downloadUrl:"https://hubcloud.foo/drive/s7olsk4w5guin7l" },
-            { number: 3, title: "Episode 3", embedUrl: "https://play.moviedakhi.com/3Vi5Gn5cX", downloadUrl:"https://hubcloud.foo/drive/jey7ysyj6pdyajl" },
-            { number: 4, title: "Episode 4", embedUrl: "https://play.moviedakhi.com/PYf7Uy7PtQ", downloadUrl:"https://hubcloud.foo/drive/p5noqbuqcgtlba3" },
-            { number: 5, title: "Episode 5", embedUrl: "https://play.moviedakhi.com/eQ6jTYX-7z", downloadUrl:"https://hubcloud.foo/drive/hlhc2d2nfn8yfod" },
         ]
     }, {
         title: "Berlin: The Lady with an Ermine (2026)", posterUrl: "https://m.media-amazon.com/images/M/MV5BODAwOGFiZDItNGZkNy00ZjdkLThkMjktZGY4ZDE3MDMyZWRhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Mystery & Thriller ,Drama", category: "Hollywood Series", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://hubcloud.foo/drive/m177gggy5q06byi", seriesInfo: "Season 1, Episode 1-8", episodes: [
