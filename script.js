@@ -81,6 +81,8 @@ const contentData = [
     }, {
         title: "Sathi Leelavathi (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#he6no", posterUrl: "https://m.media-amazon.com/images/M/MV5BYTBiYWQyMWQtYTQwMC00NmZiLWFkOWYtNmNlNjM4NDlkNjQ4XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Comedy, Romance", category: "Recent Adds", language: "Dual Audio", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#he6no&dl=1",
     },
+
+
     // =======================================================================
     // 1. HOLLYWOOD / HOLLYWOOD / HOLLYWOOD/ HOLLYWOOD /
     // =======================================================================
@@ -2110,6 +2112,8 @@ const contentData = [
 
     {
         title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Bollywood", language: "Hindi", quality:"HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1",
+    }, {
+        title: "Lord Curzon Ki Haveli (2023)", embedUrl: "https://moviedakhi.4meplayer.com/#s81td", posterUrl: "https://m.media-amazon.com/images/M/MV5BOWM4MDU3YWYtZTUwOS00ZTFlLTgxMmMtZGRlMDYxZWFiNjFiXkEyXkFqcGc@._V1_.jpg", genre: "Comedy, Thriller", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#s81td&dl=1",
     }, {
         title: "Gangor (2011)", embedUrl: "https://moviedakhi.4meplayer.com/#gwvqo", posterUrl: "http://www.impawards.com/intl/misc/2011/posters/gangor_ver2_xlg.jpg", genre: "Drama", category: "Bollywood", language: "Hindi", quality:"HD", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#gwvqo",
     }, {
