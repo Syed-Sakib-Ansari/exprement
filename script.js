@@ -2,7 +2,7 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
-// ১. লোকাল ব্যাকআপ মুভির ডাটাবেজ (যদি নেটওয়ার্কের কারণে movies.json লোড না হয়)
+// ১. লোকাল ব্যাকআপ মুভির ডাটাবেজ
 const contentData = [
     {
         title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Recent Adds", language: "Hindi", quality: "HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1"
@@ -29,6 +29,9 @@ async function loadContentDatabase() {
         contentData.forEach((item, index) => { item.id = index; });
     }
 }
+
+// 🚀 FIX 1: Start fetching IMMEDIATELY! HTML লোড হওয়ার জন্য অপেক্ষা করবে না
+const databaseLoadPromise = loadContentDatabase();
 
 const categories = [
     "all", "Hollywood", "Bollywood", "South", "Animation",
@@ -57,14 +60,15 @@ const categoryMenu = document.getElementById('categoryMenu');
 let libraryData = [];
 let libraryDisplayedCount = 0;
 const ITEMS_PER_PAGE = 30;
-let isLoading = false; 
+let isLoading = false;
 
+// 🚀 FIX 2: Slightly lowered quality (q=75) for much faster image loading
 function getOptimizedImageUrl(url, width = 300) {
     if (!url) return "";
     if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
         return url;
     }
-    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=80`;
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=75`;
 }
 
 function debounce(func, wait) {
@@ -291,13 +295,20 @@ function initHeroSlider() {
     sliderWrapper.innerHTML = '';
     sliderDots.innerHTML = '';
 
+    // 🚀 FIX 3: Detect mobile and load smaller images for slider
+    const isMobile = window.innerWidth <= 768;
+    const sliderImageWidth = isMobile ? 600 : 1200;
+
     slides.forEach((movie, index) => {
         const slide = document.createElement('div');
         slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
+        
+        // 🚀 FIX 4: Add fetchpriority="high" to the FIRST LCP image only
         const loadingAttr = index === 0 ? 'eager' : 'lazy';
+        const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
 
         slide.innerHTML = `
-            <img src="${getOptimizedImageUrl(movie.posterUrl, 1000)}" class="w-full h-full object-cover object-center" alt="${movie.title}" loading="${loadingAttr}">
+            <img src="${getOptimizedImageUrl(movie.posterUrl, sliderImageWidth)}" class="w-full h-full object-cover object-center" alt="${movie.title}" loading="${loadingAttr}" ${priorityAttr}>
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
                 <div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
@@ -561,21 +572,15 @@ function renderCategorySections(forceRenderAll = false) {
         section.setAttribute('data-category-lazy', cat);
 
         section.innerHTML = `
-            <!-- ========================================== -->
-            <!-- DYNAMIC ADVERTISEMENT SECTION -->
-            <!-- ========================================== -->
             <div class="w-full flex justify-center items-center mb-8 mt-4">
-                <!-- Desktop Ad (728x90) -->
                 <div class="desktop-ad-container hidden md:flex w-[728px] h-[90px] bg-[#111111] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center">
                     <span class="absolute top-1 left-2 text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0">Advertisement</span>
                 </div>
-                <!-- Mobile Ad (300x100) -->
                 <div class="mobile-ad-container flex md:hidden w-[300px] h-[100px] bg-[#111111] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center">
                     <span class="absolute top-1 left-2 text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0">Advertisement</span>
                 </div>
             </div>
 
-            <!-- CATEGORY HEADER -->
             <div class="flex items-center space-x-3 md:mt-10 md:pt-10 mb-8 justify-center">
                 <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
                 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
@@ -600,7 +605,6 @@ function renderCategorySections(forceRenderAll = false) {
         scriptMobile.innerHTML = "try { aclib.runBanner({ zoneId: '11369238' }); } catch(e) {}";
         mobileAdContainer.appendChild(scriptMobile);
 
-        // যদি ব্রাউজার রিলোড করা হয়, তবে কোনো অ্যানিমেশন ছাড়াই পেজের আসল সাইজ বুঝতে সাহায্য করবে
         if (forceRenderAll) {
             loadCategorySection(section);
         } else {
@@ -1134,23 +1138,17 @@ function closeBookmarkPopup(e) {
     }
 }
 
-// ---- ANTI-SHAKE SCROLL SAVER (NEW) ----
 let scrollTimeoutId;
 window.addEventListener('scroll', () => {
-    // Only load more if we are currently in the library view
     if (currentView === 'library') {
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-        
-        // If the user has scrolled to within 500px of the bottom of the page
         if (scrollTop + clientHeight >= scrollHeight - 500) {
-            // Check if there are more items to load
             if (!isLoading && libraryDisplayedCount < libraryData.length) {
                 renderLibraryChunk();
             }
         }
     }
 
-    // Save scroll position
     clearTimeout(scrollTimeoutId);
     scrollTimeoutId = setTimeout(() => {
         const modal = document.getElementById('movieModal');
@@ -1168,7 +1166,6 @@ window.addEventListener('scroll', () => {
     }, 150);
 });
 
-// রিলোড দেওয়ার ঠিক আগের পিক্সেল এবং ডাটা সেভ করার সুপার ফাস্ট ট্রিক
 window.addEventListener('beforeunload', () => {
     const modal = document.getElementById('movieModal');
     const catMenu = document.getElementById('categoryMenu');
@@ -1178,13 +1175,11 @@ window.addEventListener('beforeunload', () => {
     }
 });
 
-
-// DOM Setup pipeline
+// 🚀 FIX 1 (Part 2): Wait for the parallel fetch to finish
 document.addEventListener('DOMContentLoaded', async () => {
-    // ব্যাকগ্রাউন্ডে মুভি লোড শুরু করবে
-    await loadContentDatabase();
+    // এখানে ব্রাউজার আর HTML এর জন্য বসে না থেকে আগের ফেচ করা ডাটা রিসিভ করবে
+    await databaseLoadPromise; 
 
-    // ১. রিলোডের আগের ডাটাগুলো রিড করা
     const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
     const reloadCount = sessionStorage.getItem('MovieDakhi_Count');
     let finalScroll = 0;
@@ -1204,11 +1199,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderCategories();
     initHeroSlider();
     renderRecentAdds();
-    
-    // ব্রাউজারকে বুঝতে সাহায্য করার জন্য isRestoring ভ্যালু পাঠানো হচ্ছে
     renderCategorySections(isRestoring);
     
-    // ৩. ভিউ সেটআপ করা
     const isBlob = window.location.protocol === 'blob:';
     if (history.state) {
         const state = history.state;
@@ -1227,7 +1219,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     updateCanonical(window.location.href);
 
-    // ৪. ব্রাউজারের স্মুথ স্ক্রল অফ করে সরাসরি পজিশন ফিক্স করা (Scroll jumping fixed perfectly)
     if (isRestoring) {
         requestAnimationFrame(() => {
             window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' });
@@ -1237,7 +1228,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 });
-
 
 window.addEventListener('popstate', (event) => {
     const state = event.state;
