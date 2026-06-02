@@ -2,6 +2,114 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
+// ==========================================
+// 🚀 SMART RESPONSIVE AD INJECTOR (100% FIXED)
+// ==========================================
+function injectAdsterra(container, key, w, h) {
+    if(!container) return;
+    container.innerHTML = '';
+    container.className = "flex bg-[#0a0a0a] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center shrink-0 mx-auto shadow-lg";
+    container.style.width = '100%';
+    container.style.maxWidth = w + 'px';
+    container.style.minHeight = h + 'px';
+    
+    const label = document.createElement('span');
+    label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
+    label.innerText = "Advertisement";
+    container.appendChild(label);
+    
+    const iframeWrapper = document.createElement('div');
+    iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
+    
+    const iframe = document.createElement('iframe');
+    iframe.width = w;
+    iframe.height = h;
+    iframe.frameBorder = "0";
+    iframe.scrolling = "no";
+    iframe.style.border = "none";
+    iframe.style.overflow = "hidden";
+    iframe.style.backgroundColor = "transparent";
+    iframe.style.display = "block";
+    
+    iframeWrapper.appendChild(iframe);
+    container.appendChild(iframeWrapper);
+    
+    // Slight delay to ensure element is properly rendered before writing to it
+    setTimeout(() => {
+        try {
+            const doc = iframe.contentWindow.document;
+            doc.open();
+            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script>atOptions={key:'${key}',format:'iframe',height:${h},width:${w},params:{}};</script><script src="https://onsetcab.com/${key}/invoke.js"></script></body></html>`);
+            doc.close();
+        } catch(e) { }
+    }, 50);
+}
+
+function injectAdcash(container, zoneId, w, h) {
+    if(!container) return;
+    container.innerHTML = '';
+    container.className = "flex bg-[#0a0a0a] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center shrink-0 mx-auto shadow-lg";
+    container.style.width = '100%';
+    container.style.maxWidth = w + 'px';
+    container.style.minHeight = h + 'px';
+    
+    const label = document.createElement('span');
+    label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
+    label.innerText = "Advertisement";
+    container.appendChild(label);
+    
+    const iframeWrapper = document.createElement('div');
+    iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
+    
+    const iframe = document.createElement('iframe');
+    iframe.width = w;
+    iframe.height = h;
+    iframe.frameBorder = "0";
+    iframe.scrolling = "no";
+    iframe.style.border = "none";
+    iframe.style.overflow = "hidden";
+    iframe.style.backgroundColor = "transparent";
+    iframe.style.display = "block";
+    
+    iframeWrapper.appendChild(iframe);
+    container.appendChild(iframeWrapper);
+    
+    setTimeout(() => {
+        try {
+            const doc = iframe.contentWindow.document;
+            doc.open();
+            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script><script type="text/javascript">aclib.runBanner({zoneId: '${zoneId}'});</script></body></html>`);
+            doc.close();
+        } catch(e) { }
+    }, 50);
+}
+
+// এই ফাংশনটি স্ক্রিন সাইজ বুঝে অটোমেটিক সঠিক অ্যাড বসিয়ে দেবে
+function injectResponsiveAdNode(container, type) {
+    if(!container) return;
+    const isMobile = window.innerWidth <= 768;
+    
+    if (type === 'adsterra') {
+        const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
+        const w = isMobile ? 320 : 728;
+        const h = isMobile ? 50 : 90;
+        injectAdsterra(container, key, w, h);
+    } else {
+        const zone = isMobile ? '11369238' : '11369222';
+        const w = isMobile ? 300 : 728;
+        const h = isMobile ? 100 : 90;
+        injectAdcash(container, zone, w, h);
+    }
+}
+
+// 초기 স্ট্যাটিক অ্যাডগুলো লোড করার জন্য
+function initStaticAds() {
+    injectResponsiveAdNode(document.getElementById('homeAdTopAdsterra'), 'adsterra');
+    injectResponsiveAdNode(document.getElementById('homeAdTopAdcash'), 'adcash');
+    injectResponsiveAdNode(document.getElementById('libAdTopAdsterra'), 'adsterra');
+    injectResponsiveAdNode(document.getElementById('libAdTopAdcash'), 'adcash');
+}
+
 // ১. লোকাল ব্যাকআপ মুভির ডাটাবেজ
 const contentData = [
     {
@@ -12,15 +120,15 @@ const contentData = [
     }
 ];
 
-// ২. ASYNC FETCH SYSTEM ( movies.json থেকে মুভিগুলো ব্যাকগ্রাউন্ডে লোড করবে )
+// ২. ASYNC FETCH SYSTEM
 async function loadContentDatabase() {
     try {
         const response = await fetch('movies.json');
         if (response.ok) {
             const db = await response.json();
             if (Array.isArray(db) && db.length > 0) {
-                contentData.length = 0; // লোকাল ব্যাকআপ ডেটা মুছে ফেলে
-                contentData.push(...db); // ফাইল থেকে সব ডেটা অ্যারেতে পুশ করে
+                contentData.length = 0; 
+                contentData.push(...db); 
             }
         }
     } catch (err) {
@@ -30,7 +138,6 @@ async function loadContentDatabase() {
     }
 }
 
-// 🚀 FIX 1: Start fetching IMMEDIATELY! HTML লোড হওয়ার জন্য অপেক্ষা করবে না
 const databaseLoadPromise = loadContentDatabase();
 
 const categories = [
@@ -62,7 +169,6 @@ let libraryDisplayedCount = 0;
 const ITEMS_PER_PAGE = 30;
 let isLoading = false;
 
-// 🚀 FIX 2: Slightly lowered quality (q=75) for much faster image loading
 function getOptimizedImageUrl(url, width = 300) {
     if (!url) return "";
     if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
@@ -295,7 +401,6 @@ function initHeroSlider() {
     sliderWrapper.innerHTML = '';
     sliderDots.innerHTML = '';
 
-    // 🚀 FIX 3: Detect mobile and load smaller images for slider
     const isMobile = window.innerWidth <= 768;
     const sliderImageWidth = isMobile ? 600 : 1200;
 
@@ -303,7 +408,6 @@ function initHeroSlider() {
         const slide = document.createElement('div');
         slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
         
-        // 🚀 FIX 4: Add fetchpriority="high" to the FIRST LCP image only
         const loadingAttr = index === 0 ? 'eager' : 'lazy';
         const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
 
@@ -511,7 +615,7 @@ function renderRecentAdds() {
 }
 
 // =========================================================
-// Category Rendering & Ad Injection Logic
+// Category Rendering & PRO Ad Injection Logic
 // =========================================================
 function renderCategorySections(forceRenderAll = false) {
     if (!categorySections) return;
@@ -571,17 +675,14 @@ function renderCategorySections(forceRenderAll = false) {
         section.className = 'mb-16 lazy-section opacity-0 min-h-[350px]';
         section.setAttribute('data-category-lazy', cat);
 
+        // JS দিয়ে প্রতিটি ক্যাটাগরির ওপরে ২টি অ্যাড বক্স বসানো হলো
         section.innerHTML = `
-            <div class="w-full flex justify-center items-center mb-8 mt-4">
-                <div class="desktop-ad-container hidden md:flex w-[728px] h-[90px] bg-[#111111] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center">
-                    <span class="absolute top-1 left-2 text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0">Advertisement</span>
-                </div>
-                <div class="mobile-ad-container flex md:hidden w-[300px] h-[100px] bg-[#111111] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center">
-                    <span class="absolute top-1 left-2 text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0">Advertisement</span>
-                </div>
+            <div class="w-full flex flex-col items-center gap-4 mb-8 mt-4">
+                <div class="cat-ad-adsterra w-full"></div>
+                <div class="cat-ad-adcash w-full"></div>
             </div>
 
-            <div class="flex items-center space-x-3 md:mt-10 md:pt-10 mb-8 justify-center">
+            <div class="flex items-center space-x-3 mb-8 justify-center">
                 <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
                 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
             </div>
@@ -592,18 +693,11 @@ function renderCategorySections(forceRenderAll = false) {
                 </div>
             </div>`;
 
-        // === INJECT ADS DYNAMICALLY ===
-        const desktopAdContainer = section.querySelector('.desktop-ad-container');
-        const scriptDesktop = document.createElement('script');
-        scriptDesktop.type = 'text/javascript';
-        scriptDesktop.innerHTML = "try { aclib.runBanner({ zoneId: '11369222' }); } catch(e) {}";
-        desktopAdContainer.appendChild(scriptDesktop);
-
-        const mobileAdContainer = section.querySelector('.mobile-ad-container');
-        const scriptMobile = document.createElement('script');
-        scriptMobile.type = 'text/javascript';
-        scriptMobile.innerHTML = "try { aclib.runBanner({ zoneId: '11369238' }); } catch(e) {}";
-        mobileAdContainer.appendChild(scriptMobile);
+        // === INJECT ADS IMMEDIATELY ===
+        const astContainer = section.querySelector('.cat-ad-adsterra');
+        const acContainer = section.querySelector('.cat-ad-adcash');
+        injectResponsiveAdNode(astContainer, 'adsterra');
+        injectResponsiveAdNode(acContainer, 'adcash');
 
         if (forceRenderAll) {
             loadCategorySection(section);
@@ -761,6 +855,10 @@ function openModal(id) {
         modal.classList.remove('hidden');
         void modal.offsetWidth;
         modal.classList.add('active');
+        
+        // 🚀 INJECT MODAL ADS ONLY AFTER MODAL IS VISIBLE
+        injectResponsiveAdNode(document.getElementById('modalAdTop'), 'adsterra');
+        injectResponsiveAdNode(document.getElementById('modalAdBottom'), 'adcash');
     }
 
     document.body.style.position = 'fixed';
@@ -1175,9 +1273,11 @@ window.addEventListener('beforeunload', () => {
     }
 });
 
-// 🚀 FIX 1 (Part 2): Wait for the parallel fetch to finish
 document.addEventListener('DOMContentLoaded', async () => {
-    // এখানে ব্রাউজার আর HTML এর জন্য বসে না থেকে আগের ফেচ করা ডাটা রিসিভ করবে
+    
+    // 🚀 INITIALIZE STATIC ADS (Recent Adds & Library Top)
+    initStaticAds();
+
     await databaseLoadPromise; 
 
     const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
