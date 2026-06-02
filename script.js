@@ -3,7 +3,7 @@ if ('scrollRestoration' in history) {
 }
 
 // ==========================================
-// 🚀 SMART RESPONSIVE AD INJECTOR (100% FIXED)
+// 🚀 SMART RESPONSIVE AD INJECTOR
 // ==========================================
 function injectAdsterra(container, key, w, h) {
     if(!container) return;
@@ -34,7 +34,6 @@ function injectAdsterra(container, key, w, h) {
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
     
-    // Slight delay to ensure element is properly rendered before writing to it
     setTimeout(() => {
         try {
             const doc = iframe.contentWindow.document;
@@ -84,7 +83,6 @@ function injectAdcash(container, zoneId, w, h) {
     }, 50);
 }
 
-// এই ফাংশনটি স্ক্রিন সাইজ বুঝে অটোমেটিক সঠিক অ্যাড বসিয়ে দেবে
 function injectResponsiveAdNode(container, type) {
     if(!container) return;
     const isMobile = window.innerWidth <= 768;
@@ -102,7 +100,6 @@ function injectResponsiveAdNode(container, type) {
     }
 }
 
-// 초기 স্ট্যাটিক অ্যাডগুলো লোড করার জন্য
 function initStaticAds() {
     injectResponsiveAdNode(document.getElementById('homeAdTopAdsterra'), 'adsterra');
     injectResponsiveAdNode(document.getElementById('homeAdTopAdcash'), 'adcash');
@@ -112,7 +109,12 @@ function initStaticAds() {
 
 // ১. লোকাল ব্যাকআপ মুভির ডাটাবেজ
 const contentData = [
-
+    {
+        title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Recent Adds", language: "Hindi", quality: "HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1"
+    },
+    {
+        title: "Obsess (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#818js", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjI3NjU4OTItMzYxMS00NmYxLWJjOTEtZjRhZDEzZTM5YmVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", quality: "HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#818js&dl=1"
+    }
 ];
 
 // ২. ASYNC FETCH SYSTEM
@@ -276,7 +278,6 @@ function toggleCategoryMenu(show, triggerBack = true) {
     }
 }
 
-// Draggable mobile FAB Button logic
 const fab = document.getElementById('mobileFab');
 let isDragging = false;
 let startX, startY, initialX, initialY;
@@ -567,7 +568,6 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     }
 }
 
-// Smooth movie card DOM renderer
 function createMovieCard(item) {
     const card = document.createElement('div');
     card.className = 'movie-card relative flex flex-col group cursor-pointer';
@@ -610,7 +610,7 @@ function renderRecentAdds() {
 }
 
 // =========================================================
-// Category Rendering & PRO Ad Injection Logic
+// Category Rendering & 🚀 LAZY AD INJECTION LOGIC (FIXED!)
 // =========================================================
 function renderCategorySections(forceRenderAll = false) {
     if (!categorySections) return;
@@ -657,6 +657,20 @@ function renderCategorySections(forceRenderAll = false) {
         viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
         lazyGrid.appendChild(viewAllCard);
 
+        // 🚀 THE FIX: LAZY LOAD ADS! 
+        // স্ক্রল করে ইউজার যখনই এই ক্যাটাগরির কাছে আসবে, ঠিক তখনই শুধু এই ক্যাটাগরির অ্যাডগুলো লোড হবে।
+        const astContainer = targetSection.querySelector('.cat-ad-adsterra');
+        const acContainer = targetSection.querySelector('.cat-ad-adcash');
+        
+        if (astContainer && !astContainer.dataset.loaded) {
+            injectResponsiveAdNode(astContainer, 'adsterra');
+            astContainer.dataset.loaded = 'true';
+        }
+        if (acContainer && !acContainer.dataset.loaded) {
+            injectResponsiveAdNode(acContainer, 'adcash');
+            acContainer.dataset.loaded = 'true';
+        }
+
         targetSection.classList.remove('opacity-0');
         targetSection.classList.add('opacity-100');
     }
@@ -667,12 +681,11 @@ function renderCategorySections(forceRenderAll = false) {
 
         const displayName = cat === 'Korean Country' ? 'Korean' : cat;
         const section = document.createElement('section');
-        section.className = 'mb-16 lazy-section opacity-0 min-h-[350px]';
+        section.className = 'mb-16 lazy-section opacity-0 min-h-[350px] transition-opacity duration-500';
         section.setAttribute('data-category-lazy', cat);
 
-        // JS দিয়ে প্রতিটি ক্যাটাগরির ওপরে ২টি অ্যাড বক্স বসানো হলো
         section.innerHTML = `
-            <div class="w-full flex flex-col items-center gap-4 mb-8 mt-4">
+            <div class="w-full flex flex-col items-center gap-4 mb-8 mt-4 min-h-[150px]">
                 <div class="cat-ad-adsterra w-full"></div>
                 <div class="cat-ad-adcash w-full"></div>
             </div>
@@ -687,12 +700,6 @@ function renderCategorySections(forceRenderAll = false) {
                     <div class="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin opacity-45"></div>
                 </div>
             </div>`;
-
-        // === INJECT ADS IMMEDIATELY ===
-        const astContainer = section.querySelector('.cat-ad-adsterra');
-        const acContainer = section.querySelector('.cat-ad-adcash');
-        injectResponsiveAdNode(astContainer, 'adsterra');
-        injectResponsiveAdNode(acContainer, 'adcash');
 
         if (forceRenderAll) {
             loadCategorySection(section);
@@ -749,7 +756,6 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     }
 }
 
-// Function to inject next batch of movies
 function renderLibraryChunk() {
     if (isLoading) return;
     isLoading = true;
@@ -851,7 +857,6 @@ function openModal(id) {
         void modal.offsetWidth;
         modal.classList.add('active');
         
-        // 🚀 INJECT MODAL ADS ONLY AFTER MODAL IS VISIBLE
         injectResponsiveAdNode(document.getElementById('modalAdTop'), 'adsterra');
         injectResponsiveAdNode(document.getElementById('modalAdBottom'), 'adcash');
     }
