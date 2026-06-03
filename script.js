@@ -706,8 +706,8 @@ function renderRecentAdds() {
         fragment.appendChild(createMovieCard(item));
         let currentIdx = index + 1;
         
-        // Mobile: after every 4 cards
-        if (currentIdx % 4 === 0) fragment.appendChild(createMobileNativeAdBlock());
+        // Mobile: after every 8 cards
+        if (currentIdx % 8 === 0) fragment.appendChild(createMobileNativeAdBlock());
         // Desktop: after every 6 cards
         if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
     });
@@ -748,8 +748,8 @@ function renderCategorySections(forceRenderAll = false) {
             cardsFragment.appendChild(createMovieCard(item));
             let currentIdx = index + 1;
             
-            // Mobile: after every 4 cards
-            if (currentIdx % 4 === 0) cardsFragment.appendChild(createMobileNativeAdBlock());
+            // Mobile: after every 8 cards
+            if (currentIdx % 8 === 0) cardsFragment.appendChild(createMobileNativeAdBlock());
             // Desktop: after every 6 cards
             if (currentIdx % 6 === 0) cardsFragment.appendChild(createDesktopNativeAdBlock());
         });
@@ -859,8 +859,8 @@ function initLibraryRender(filter = "all", initialCount = 0) {
             fragment.appendChild(createMovieCard(item));
             let currentIdx = index + 1;
             
-            // Mobile: after every 4 cards
-            if (currentIdx % 4 === 0) fragment.appendChild(createMobileNativeAdBlock());
+            // Mobile: after every 8 cards
+            if (currentIdx % 8 === 0) fragment.appendChild(createMobileNativeAdBlock());
             // Desktop: after every 6 cards
             if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
         });
@@ -889,7 +889,7 @@ function renderLibraryChunk() {
             fragment.appendChild(createMovieCard(item));
             let currentIdx = libraryDisplayedCount + index + 1;
             
-            // Mobile: after every 4 cards
+            // Mobile: after every 8 cards
             if (currentIdx % 4 === 0) fragment.appendChild(createMobileNativeAdBlock());
             // Desktop: after every 6 cards
             if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
