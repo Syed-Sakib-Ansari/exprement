@@ -124,10 +124,10 @@ function injectPopAds() {
     document.body.appendChild(socialBar);
     
     // Popunder
-    const popunder = document.createElement('script');
-    popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
-    popunder.async = true;
-    document.body.appendChild(popunder);
+    // const popunder = document.createElement('script');
+    // popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
+    // popunder.async = true;
+    // document.body.appendChild(popunder);
 }
 
 // ==========================================
