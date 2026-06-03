@@ -3,7 +3,7 @@ if ('scrollRestoration' in history) {
 }
 
 // ==========================================
-// 🚀 SMART RESPONSIVE AD INJECTOR
+// 🚀 SMART RESPONSIVE AD INJECTOR (Fixed & Native Banner Added)
 // ==========================================
 function injectAdsterra(container, key, w, h) {
     if(!container) return;
@@ -22,6 +22,7 @@ function injectAdsterra(container, key, w, h) {
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
     
     const iframe = document.createElement('iframe');
+    iframe.setAttribute('loading', 'lazy');
     iframe.width = w;
     iframe.height = h;
     iframe.frameBorder = "0";
@@ -38,7 +39,7 @@ function injectAdsterra(container, key, w, h) {
         try {
             const doc = iframe.contentWindow.document;
             doc.open();
-            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script>atOptions={key:'${key}',format:'iframe',height:${h},width:${w},params:{}};</script><script src="https://onsetcab.com/${key}/invoke.js"></script></body></html>`);
+            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script>atOptions={key:'${key}',format:'iframe',height:${h},width:${w},params:{}};</script><script src="https://onsetcab.com/${key}/invoke.js"></scr`+`ipt></body></html>`);
             doc.close();
         } catch(e) { }
     }, 50);
@@ -61,6 +62,7 @@ function injectAdcash(container, zoneId, w, h) {
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
     
     const iframe = document.createElement('iframe');
+    iframe.setAttribute('loading', 'lazy');
     iframe.width = w;
     iframe.height = h;
     iframe.frameBorder = "0";
@@ -77,7 +79,7 @@ function injectAdcash(container, zoneId, w, h) {
         try {
             const doc = iframe.contentWindow.document;
             doc.open();
-            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script><script type="text/javascript">aclib.runBanner({zoneId: '${zoneId}'});</script></body></html>`);
+            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></scr`+`ipt><script type="text/javascript">aclib.runBanner({zoneId: '${zoneId}'});</scr`+`ipt></body></html>`);
             doc.close();
         } catch(e) { }
     }, 50);
@@ -106,6 +108,99 @@ function initStaticAds() {
     injectResponsiveAdNode(document.getElementById('libAdTopAdsterra'), 'adsterra');
     injectResponsiveAdNode(document.getElementById('libAdTopAdcash'), 'adcash');
 }
+
+// ==========================================
+// 🚀 DYNAMIC SOCIALBAR & POPUNDER INJECTOR
+// ==========================================
+let popAdsInjected = false;
+function injectPopAds() {
+    if (popAdsInjected) return;
+    popAdsInjected = true;
+    
+    // SocialBar
+    const socialBar = document.createElement('script');
+    socialBar.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
+    socialBar.async = true;
+    document.body.appendChild(socialBar);
+    
+    // Popunder
+    const popunder = document.createElement('script');
+    popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
+    popunder.async = true;
+    document.body.appendChild(popunder);
+}
+
+// ==========================================
+// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
+// ==========================================
+function injectNativeBanner(container, h = 260) {
+    if(!container) return;
+    container.innerHTML = '';
+    
+    const iframeWrapper = document.createElement('div');
+    iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
+    
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('loading', 'lazy'); 
+    iframe.width = "100%";
+    iframe.height = h;
+    iframe.frameBorder = "0";
+    iframe.scrolling = "no";
+    iframe.style.border = "none";
+    iframe.style.overflow = "hidden";
+    iframe.style.backgroundColor = "transparent";
+    iframe.style.display = "block";
+    
+    iframeWrapper.appendChild(iframe);
+    container.appendChild(iframeWrapper);
+    
+    setTimeout(() => {
+        try {
+            const doc = iframe.contentWindow.document;
+            doc.open();
+            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style></head><body><script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></scr`+`ipt><div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div></body></html>`);
+            doc.close();
+        } catch(e) { }
+    }, 50);
+}
+
+// Mobile: 1 Native Banner
+function createMobileNativeAdBlock() {
+    const block = document.createElement('div');
+    block.className = 'flex md:hidden col-span-full w-full justify-center my-4';
+    const container = document.createElement('div');
+    container.className = 'w-full bg-[#111] rounded-xl overflow-hidden border border-white/5 shadow-lg relative min-h-[250px] flex items-center justify-center';
+    
+    const label = document.createElement('span');
+    label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
+    label.innerText = "Advertisement";
+    container.appendChild(label);
+    
+    injectNativeBanner(container, 260);
+    block.appendChild(container);
+    return block;
+}
+
+// Desktop: 3 Native Banners Horizontally
+function createDesktopNativeAdBlock() {
+    const block = document.createElement('div');
+    block.className = 'hidden md:flex col-span-full w-full justify-between gap-4 my-6';
+    
+    for(let i=0; i<3; i++) {
+        const container = document.createElement('div');
+        container.className = 'flex-1 w-full bg-[#111] rounded-xl overflow-hidden border border-white/5 shadow-lg relative min-h-[250px] flex items-center justify-center';
+        
+        const label = document.createElement('span');
+        label.className = "absolute top-1 left-2 text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
+        label.innerText = "Advertisement";
+        container.appendChild(label);
+
+        injectNativeBanner(container, 260);
+        block.appendChild(container);
+    }
+    return block;
+}
+
 
 // ১. লোকাল ব্যাকআপ মুভির ডাটাবেজ
 const contentData = [
@@ -600,18 +695,27 @@ function createMovieCard(item) {
     return card;
 }
 
+// 🚀 RECENT ADDS RENDER (With Native Banners)
 function renderRecentAdds() {
     if (!recentAddsGrid) return;
     recentAddsGrid.innerHTML = '';
     const recentItems = contentData.filter(item => item.category === "Recent Adds");
     const fragment = document.createDocumentFragment();
-    recentItems.slice(0, 18).forEach(item => fragment.appendChild(createMovieCard(item)));
+    
+    recentItems.slice(0, 18).forEach((item, index) => {
+        fragment.appendChild(createMovieCard(item));
+        let currentIdx = index + 1;
+        
+        // Mobile: after every 4 cards
+        if (currentIdx % 4 === 0) fragment.appendChild(createMobileNativeAdBlock());
+        // Desktop: after every 6 cards
+        if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
+    });
+    
     recentAddsGrid.appendChild(fragment);
 }
 
-// =========================================================
-// Category Rendering & 🚀 LAZY AD INJECTION LOGIC (FIXED!)
-// =========================================================
+// 🚀 CATEGORY SECTIONS RENDER (With Native Banners)
 function renderCategorySections(forceRenderAll = false) {
     if (!categorySections) return;
     categorySections.innerHTML = '';
@@ -638,9 +742,18 @@ function renderCategorySections(forceRenderAll = false) {
         const filtered = contentData.filter(m => m.category === cat);
 
         lazyGrid.innerHTML = '';
-
         const cardsFragment = document.createDocumentFragment();
-        filtered.slice(0, 11).forEach(item => cardsFragment.appendChild(createMovieCard(item)));
+        
+        filtered.slice(0, 11).forEach((item, index) => {
+            cardsFragment.appendChild(createMovieCard(item));
+            let currentIdx = index + 1;
+            
+            // Mobile: after every 4 cards
+            if (currentIdx % 4 === 0) cardsFragment.appendChild(createMobileNativeAdBlock());
+            // Desktop: after every 6 cards
+            if (currentIdx % 6 === 0) cardsFragment.appendChild(createDesktopNativeAdBlock());
+        });
+        
         lazyGrid.appendChild(cardsFragment);
 
         const displayName = cat === 'Korean Country' ? 'Korean' : cat;
@@ -657,11 +770,8 @@ function renderCategorySections(forceRenderAll = false) {
         viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
         lazyGrid.appendChild(viewAllCard);
 
-        // 🚀 THE FIX: LAZY LOAD ADS! 
-        // স্ক্রল করে ইউজার যখনই এই ক্যাটাগরির কাছে আসবে, ঠিক তখনই শুধু এই ক্যাটাগরির অ্যাডগুলো লোড হবে।
         const astContainer = targetSection.querySelector('.cat-ad-adsterra');
         const acContainer = targetSection.querySelector('.cat-ad-adcash');
-        
         if (astContainer && !astContainer.dataset.loaded) {
             injectResponsiveAdNode(astContainer, 'adsterra');
             astContainer.dataset.loaded = 'true';
@@ -712,6 +822,7 @@ function renderCategorySections(forceRenderAll = false) {
     categorySections.appendChild(fragment);
 }
 
+// 🚀 LIBRARY RENDER (With Native Banners)
 function initLibraryRender(filter = "all", initialCount = 0) {
     if (!libraryGrid) return;
     const rawQuery = searchInput ? searchInput.value : '';
@@ -744,7 +855,15 @@ function initLibraryRender(filter = "all", initialCount = 0) {
         libraryGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
     } else {
         const fragment = document.createDocumentFragment();
-        libraryData.slice(0, libraryDisplayedCount).forEach(item => fragment.appendChild(createMovieCard(item)));
+        libraryData.slice(0, libraryDisplayedCount).forEach((item, index) => {
+            fragment.appendChild(createMovieCard(item));
+            let currentIdx = index + 1;
+            
+            // Mobile: after every 4 cards
+            if (currentIdx % 4 === 0) fragment.appendChild(createMobileNativeAdBlock());
+            // Desktop: after every 6 cards
+            if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
+        });
         libraryGrid.appendChild(fragment);
     }
 
@@ -756,6 +875,7 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     }
 }
 
+// 🚀 LIBRARY SCROLL CHUNK (With Native Banners)
 function renderLibraryChunk() {
     if (isLoading) return;
     isLoading = true;
@@ -765,7 +885,15 @@ function renderLibraryChunk() {
     
     if (chunk.length > 0 && libraryGrid) {
         const fragment = document.createDocumentFragment();
-        chunk.forEach(item => fragment.appendChild(createMovieCard(item)));
+        chunk.forEach((item, index) => {
+            fragment.appendChild(createMovieCard(item));
+            let currentIdx = libraryDisplayedCount + index + 1;
+            
+            // Mobile: after every 4 cards
+            if (currentIdx % 4 === 0) fragment.appendChild(createMobileNativeAdBlock());
+            // Desktop: after every 6 cards
+            if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
+        });
         libraryGrid.appendChild(fragment);
         libraryDisplayedCount = nextCount;
         updateLoadMoreVisibility();
@@ -1106,6 +1234,7 @@ function showAnnouncement() {
     }, 50);
 }
 
+// 🚀 FIXED POPUP CLOSE LOGIC (Injects Ads AFTER popup is closed!)
 function closeAnnouncement() {
     const popup = document.getElementById('announcementPopup');
     if(!popup) return;
@@ -1123,6 +1252,7 @@ function closeAnnouncement() {
 
         setTimeout(() => {
             showBookmarkPopup();
+            injectPopAds(); // 🚀 THIS IS THE MAGIC! Ads load only AFTER popup is closed.
         }, 500);
 
     }, 500);
@@ -1141,20 +1271,24 @@ const lastShown = localStorage.getItem(localKey);
 const hasSession = sessionStorage.getItem(sessionKey);
 const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000;
 
-setTimeout(() => {
-    const urlParams2 = new URLSearchParams(window.location.search);
-    if (urlParams2.get('fb_fallback')) return;
+// 🚀 FIXED: GATEKEEPER LOGIC FOR SOCIALBAR & POPUNDER
+const urlParams2 = new URLSearchParams(window.location.search);
+const isFallback = urlParams2.get('fb_fallback');
+const shouldShowPopup = !isFallback && (isTrappedCheck || (!hasSession && !hasRecentLocal));
 
-    if (isTrappedCheck) {
+if (shouldShowPopup) {
+    // 🛑 If popup is scheduled to show, DO NOT LOAD SocialBar/Popunder here!
+    setTimeout(() => {
+        sessionStorage.setItem(sessionKey, 'true');
+        localStorage.setItem(localKey, nowTime.toString());
         showAnnouncement();
-    } else {
-        if (!hasSession && !hasRecentLocal) {
-            sessionStorage.setItem(sessionKey, 'true');
-            localStorage.setItem(localKey, nowTime.toString());
-            showAnnouncement();
-        }
-    }
-}, isTrappedCheck ? 500 : 20000);
+    }, isTrappedCheck ? 500 : 20000);
+} else {
+    // ✅ If no popup will show, safe to load SocialBar in the background!
+    setTimeout(() => {
+        injectPopAds();
+    }, 3500); 
+}
 
 function showToast(message) {
     const toast = document.getElementById('toastMessage');
@@ -1275,9 +1409,6 @@ window.addEventListener('beforeunload', () => {
 
 document.addEventListener('DOMContentLoaded', async () => {
     
-    // 🚀 INITIALIZE STATIC ADS (Recent Adds & Library Top)
-    initStaticAds();
-
     await databaseLoadPromise; 
 
     const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
@@ -1327,6 +1458,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             }, 50);
         });
     }
+
+    setTimeout(() => {
+        initStaticAds();
+    }, 2500); 
+
 });
 
 window.addEventListener('popstate', (event) => {
