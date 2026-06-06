@@ -1187,7 +1187,6 @@ function showAnnouncement() {
     const isFacebookApp = /FBAN|FBAV/i.test(ua);
     const isInstagramApp = /Instagram/i.test(ua); 
     const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
-    const isAndroidDefault = /SamsungBrowser|MiuiBrowser|VivoBrowser|OppoBrowser|HeyTapBrowser|HuaweiBrowser/i.test(ua);
     
     // 🚀 NEW: Generic Android Browser & WebView Detection added here
     const isGenericOrWebView = /wv|WebView|Android.*Version\/[\d.]+/i.test(ua); 
@@ -1282,7 +1281,6 @@ const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
 const isFBCheck = /FBAN|FBAV/i.test(uaCheck);
 const isInstaCheck = /Instagram/i.test(uaCheck);
 const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
-const isAndroidDefaultCheck = /SamsungBrowser|MiuiBrowser|VivoBrowser|OppoBrowser|HeyTapBrowser|HuaweiBrowser/i.test(uaCheck);
 
 // 🚀 NEW: Generic Android Browser & WebView Check Globally
 const isGenericWebViewCheck = /wv|WebView|Android.*Version\/[\d.]+/i.test(uaCheck); 
