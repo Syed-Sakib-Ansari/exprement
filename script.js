@@ -1173,11 +1173,26 @@ let announcementScrollY = 0;
 function showAnnouncement() {
     const popup = document.getElementById('announcementPopup');
     if (!popup) return;
+    
+    // 🛡️ ANTI-POPUNDER CLICK SHIELD 🛡️
+    // Prevents any click inside the popup from triggering popunders hidden in the document
+    if (!popup.dataset.shieldAdded) {
+        popup.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+        });
+        popup.dataset.shieldAdded = 'true';
+    }
+
     const ua = navigator.userAgent || navigator.vendor || window.opera;
-    const isFacebookApp = /FBAN|FBAV/i.test(ua); // Fixed 'Ios' bug
-    const isInstagramApp = /Instagram/i.test(ua); // Added Instagram check
+    const isFacebookApp = /FBAN|FBAV/i.test(ua);
+    const isInstagramApp = /Instagram/i.test(ua); 
     const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
-    const isTrappedApp = isFacebookApp || isInstagramApp || isUCBrowser; // Added Instagram check
+    const isAndroidDefault = /SamsungBrowser|MiuiBrowser|VivoBrowser|OppoBrowser|HeyTapBrowser|HuaweiBrowser/i.test(ua);
+    
+    // 🚀 NEW: Generic Android Browser & WebView Detection added here
+    const isGenericOrWebView = /wv|WebView|Android.*Version\/[\d.]+/i.test(ua); 
+
+    const isTrappedApp = isFacebookApp || isInstagramApp || isUCBrowser || isAndroidDefault || isGenericOrWebView;
 
     const warningText = document.getElementById('browserWarningText');
     if (warningText && isTrappedApp) {
@@ -1187,6 +1202,10 @@ function showAnnouncement() {
             warningText.innerHTML = `Instagram browser <span class="text-white font-black">Cannot Play or Download</span> movies.<br>Tap below to use a real browser which you have!`;
         } else if (isUCBrowser) {
             warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies.<br>Tap below to use a real browser which you have!`;
+        } else if (isAndroidDefault) {
+            warningText.innerHTML = `This Default browser <span class="text-white font-black">Cannot Play or Download</span> movies.<br>Tap below to use a real browser which you have!`;
+        } else if (isGenericOrWebView) {
+            warningText.innerHTML = `This Basic Web Browser <span class="text-white font-black">Cannot Play or Download</span> movies.<br>Tap below to use a real browser which you have!`;
         }
     }
     const suggestionBox = document.getElementById('browserSuggestionBox');
@@ -1260,10 +1279,15 @@ function closeAnnouncement() {
 }
 
 const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
-const isFBCheck = /FBAN|FBAV/i.test(uaCheck); // Fixed 'Ios' bug globally
-const isInstaCheck = /Instagram/i.test(uaCheck); // Added Instagram globally
+const isFBCheck = /FBAN|FBAV/i.test(uaCheck);
+const isInstaCheck = /Instagram/i.test(uaCheck);
 const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
-const isTrappedCheck = isFBCheck || isInstaCheck || isUCCheck; // Combined all checks
+const isAndroidDefaultCheck = /SamsungBrowser|MiuiBrowser|VivoBrowser|OppoBrowser|HeyTapBrowser|HuaweiBrowser/i.test(uaCheck);
+
+// 🚀 NEW: Generic Android Browser & WebView Check Globally
+const isGenericWebViewCheck = /wv|WebView|Android.*Version\/[\d.]+/i.test(uaCheck); 
+
+const isTrappedCheck = isFBCheck || isInstaCheck || isUCCheck || isAndroidDefaultCheck || isGenericWebViewCheck; 
 
 const sessionKey = 'MovieDakhi_Welcome_Session_Final';
 const localKey = 'MovieDakhi_Welcome_Time_Final';
