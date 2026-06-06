@@ -365,8 +365,9 @@
 
     <script src="script.js" defer></script>
 
-    <script type="text/javascript" async>
-        if (!(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
+<script type="text/javascript" async>
+        // Added WebView and Generic Basic Browsers to prevent AutoTag popunders
+        if (!(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|SamsungBrowser|MiuiBrowser|VivoBrowser|OppoBrowser|HeyTapBrowser|HuaweiBrowser|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
             if (typeof aclib !== 'undefined' && typeof aclib.runAutoTag === 'function') {
                 aclib.runAutoTag({
                     zoneId: 'vgt6rfbeat',
