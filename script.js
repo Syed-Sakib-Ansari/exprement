@@ -17,6 +17,7 @@ function injectAdsterra(container, key, w, h) {
     label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
     label.innerText = "Advertisement";
     container.appendChild(label);
+    
     const iframeWrapper = document.createElement('div');
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
     
@@ -56,6 +57,7 @@ function injectAdcash(container, zoneId, w, h) {
     label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
     label.innerText = "Advertisement";
     container.appendChild(label);
+    
     const iframeWrapper = document.createElement('div');
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
     
@@ -86,6 +88,7 @@ function injectAdcash(container, zoneId, w, h) {
 function injectResponsiveAdNode(container, type) {
     if(!container) return;
     const isMobile = window.innerWidth <= 768;
+    
     if (type === 'adsterra') {
         const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
         const w = isMobile ? 320 : 728;
@@ -113,11 +116,13 @@ let popAdsInjected = false;
 function injectPopAds() {
     if (popAdsInjected) return;
     popAdsInjected = true;
+    
     // SocialBar
     const socialBar = document.createElement('script');
     socialBar.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
     socialBar.async = true;
     document.body.appendChild(socialBar);
+    
     // Popunder
     const popunder = document.createElement('script');
     popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
@@ -156,7 +161,6 @@ function injectNativeBanner(container, h = 260) {
             doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style></head><body><script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></scr`+`ipt><div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div></body></html>`);
             doc.close();
         } catch(e) { }
-  
     }, 50);
 }
 
@@ -207,6 +211,7 @@ const contentData = [
         title: "Obsess (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#818js", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjI3NjU4OTItMzYxMS00NmYxLWJjOTEtZjRhZDEzZTM5YmVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", quality: "HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#818js&dl=1"
     }
 ];
+
 // ২. ASYNC FETCH SYSTEM
 async function loadContentDatabase() {
     try {
@@ -214,7 +219,7 @@ async function loadContentDatabase() {
         if (response.ok) {
             const db = await response.json();
             if (Array.isArray(db) && db.length > 0) {
-                contentData.length = 0;
+                contentData.length = 0; 
                 contentData.push(...db); 
             }
         }
@@ -232,6 +237,7 @@ const categories = [
     "Korean Country", "Chinese", "Hollywood Series", "Bollywood Series",
     "Korean Series", "Adult Comedy", "Others"
 ];
+
 let currentItem = null;
 let downloadClickCount = 0;
 let currentEpisodeIndex = null;
@@ -254,6 +260,7 @@ let libraryData = [];
 let libraryDisplayedCount = 0;
 const ITEMS_PER_PAGE = 30;
 let isLoading = false;
+
 function getOptimizedImageUrl(url, width = 300) {
     if (!url) return "";
     if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
@@ -276,6 +283,7 @@ function renderCategories() {
     const libraryFilters = document.getElementById('libraryFilters');
 
     mobileGrid.innerHTML = ''; desktopNav.innerHTML = ''; libraryFilters.innerHTML = '';
+
     categories.forEach(cat => {
         const label = cat === 'Korean Country' ? 'Korean' : cat;
 
@@ -284,14 +292,12 @@ function renderCategories() {
             mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
             mobileItem.innerText = 'Home';
             mobileItem.href = '#';
-    
             mobileItem.onclick = (e) => {
                 e.preventDefault();
                 toggleCategoryMenu(false, false);
                 clearSearch(true);
                 switchView('home', null, 'replace');
             };
-         
             mobileGrid.appendChild(mobileItem);
             return;
         }
@@ -333,13 +339,13 @@ let savedScrollY = 0;
 
 function toggleCategoryMenu(show, triggerBack = true) {
     const fab = document.getElementById('mobileFab');
+
     if (show) {
         savedScrollY = window.scrollY;
 
         const currentState = history.state || {};
         try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-        try { window.history.pushState({ ...currentState, isMenuOpen: true }, '');
-        } catch (e) { }
+        try { window.history.pushState({ ...currentState, isMenuOpen: true }, ''); } catch (e) { }
 
         categoryMenu.classList.remove('hidden');
         void categoryMenu.offsetWidth; 
@@ -358,6 +364,7 @@ function toggleCategoryMenu(show, triggerBack = true) {
         document.body.style.top = '';
         document.body.style.width = '';
         window.scrollTo(0, savedScrollY);
+
         if (triggerBack && window.history.state?.isMenuOpen) {
             window.history.back();
         }
@@ -371,11 +378,13 @@ let isDragging = false;
 let startX, startY, initialX, initialY;
 let translateX = 0, translateY = 0;
 let moved = false;
+
 function dragStart(e) {
     moved = false;
     isDragging = true;
     startX = e.clientX;
     startY = e.clientY;
+
     const rect = fab.getBoundingClientRect();
     initialX = rect.left;
     initialY = rect.top;
@@ -391,8 +400,10 @@ function dragStart(e) {
 
 function drag(e) {
     if (!isDragging) return;
+
     const dx = e.clientX - startX;
     const dy = e.clientY - startY;
+
     if (Math.abs(dx) > 8 || Math.abs(dy) > 8) {
         moved = true;
     }
@@ -403,11 +414,13 @@ function drag(e) {
 
         const maxX = document.documentElement.clientWidth - fab.offsetWidth;
         const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+
         nextX = Math.max(0, Math.min(nextX, maxX));
         nextY = Math.max(0, Math.min(nextY, maxY));
 
         translateX = nextX - initialX;
         translateY = nextY - initialY;
+
         fab.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
     }
 }
@@ -416,18 +429,21 @@ function dragEnd(e) {
     if (!isDragging) return;
     isDragging = false;
     fab.releasePointerCapture(e.pointerId);
+
     if (moved) {
         let newX = initialX + translateX;
         let newY = initialY + translateY;
 
         const maxX = document.documentElement.clientWidth - fab.offsetWidth;
         const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+
         newX = Math.max(0, Math.min(newX, maxX));
         newY = Math.max(0, Math.min(newY, maxY));
 
         fab.style.transform = 'none';
         fab.style.left = `${newX}px`;
         fab.style.top = `${newY}px`;
+
         translateX = 0;
         translateY = 0;
     }
@@ -441,6 +457,7 @@ if (fab) {
     fab.addEventListener('pointermove', drag);
     fab.addEventListener('pointerup', dragEnd);
     fab.addEventListener('pointercancel', dragEnd);
+
     fab.addEventListener('click', (e) => {
         if (moved) {
             e.preventDefault();
@@ -465,6 +482,7 @@ window.addEventListener('resize', () => {
     if (currentX < 0) fab.style.left = `0px`;
     if (currentY < 0) fab.style.top = `0px`;
 });
+
 function initHeroSlider() {
     if (!sliderWrapper || !sliderDots) return;
     const slides = contentData.filter(item => item.category === "Recent Adds" || item.category === "Bollywood" || item.category === "Hollywood").slice(0, 6);
@@ -473,8 +491,10 @@ function initHeroSlider() {
     let currentSlide = 0;
     sliderWrapper.innerHTML = '';
     sliderDots.innerHTML = '';
+
     const isMobile = window.innerWidth <= 768;
     const sliderImageWidth = isMobile ? 600 : 1200;
+
     slides.forEach((movie, index) => {
         const slide = document.createElement('div');
         slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
@@ -483,17 +503,14 @@ function initHeroSlider() {
         const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
 
         slide.innerHTML = `
-           
             <img src="${getOptimizedImageUrl(movie.posterUrl, sliderImageWidth)}" class="w-full h-full object-cover object-center" alt="${movie.title}" loading="${loadingAttr}" ${priorityAttr}>
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
                 <div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
-                    <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 
-rounded-full shadow-lg shadow-red-600/40">New Release</span>
+                    <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
                     <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
                     <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
-                    <button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 
-mx-auto">
+                    <button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
                         <i class="fas fa-play"></i> Watch Now
                     </button>
                 </div>
@@ -501,11 +518,11 @@ mx-auto">
         sliderWrapper.appendChild(slide);
 
         const dot = document.createElement('button');
-        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ?
-'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
+        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
         dot.onclick = () => goToSlide(index);
         sliderDots.appendChild(dot);
     });
+
     function startSlideTimer() {
         clearInterval(sliderInterval);
         sliderInterval = setInterval(() => { goToSlide((currentSlide + 1) % slides.length); }, 3500);
@@ -523,6 +540,7 @@ mx-auto">
             startSlideTimer();
         }
     };
+    
     setTimeout(() => {
         const activeSlide = document.querySelector('.slide.active .slide-content');
         if (activeSlide) { activeSlide.style.opacity = '1'; activeSlide.style.transform = 'translateY(0)'; }
@@ -555,6 +573,7 @@ function clearSearch(preventRestore = false) {
     searchInput.value = '';
     updateSearchUI();
     searchInput.blur();
+
     if (!preventRestore && preSearchState) {
         switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
         preSearchState = null;
@@ -598,8 +617,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
             preSearchState = null;
         }
 
-        document.title = filterCategory && filterCategory !== 'all' ?
-`${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
+        document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
 
         const catValue = filterCategory || 'all';
         document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
@@ -612,6 +630,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
         try {
             const isBlob = window.location.protocol === 'blob:';
             const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: 30, validDakhiState: true };
+
             if (!isBlob) {
                 const url = new URL(window.location);
                 url.searchParams.set('view', viewName);
@@ -648,25 +667,24 @@ function createMovieCard(item) {
     const card = document.createElement('div');
     card.className = 'movie-card relative flex flex-col group cursor-pointer';
 
-    const infoText = item.seriesInfo ?
-        `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
+    const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
 
     const qualityBadgeHtml = item.quality ?
         `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">${item.quality}</div>` : '';
+
     const languageBadgeHtml = item.language ?
         `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">${item.language}</div>` : '';
+
     card.innerHTML = `
-        <div class="orbit-wrapper">
-            <div class="inner-card">
-                ${qualityBadgeHtml}
-                ${languageBadgeHtml}
-                <img src="${getOptimizedImageUrl(item.posterUrl)}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 md:duration-300 group-hover:scale-110" loading="lazy" decoding="async">
-                <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center items-center p-5 transition-all duration-300 z-30">
-                    <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]"><i class="fas fa-play text-white text-lg ml-1"></i></div>
-                </div>
-                <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300 z-30">
-                    <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
-                </div>
+        <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 md:ring-0 transition-all duration-300 group-hover:ring-white/20 md:group-hover:ring-transparent">
+            ${qualityBadgeHtml}
+            ${languageBadgeHtml}
+            <img src="${getOptimizedImageUrl(item.posterUrl)}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 md:duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+            <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center items-center p-5 transition-all duration-300">
+                <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]"><i class="fas fa-play text-white text-lg ml-1"></i></div>
+            </div>
+            <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300">
+                <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
             </div>
         </div>
         <div class="mt-4 text-center flex flex-col items-center md:block">
@@ -683,6 +701,7 @@ function renderRecentAdds() {
     recentAddsGrid.innerHTML = '';
     const recentItems = contentData.filter(item => item.category === "Recent Adds");
     const fragment = document.createDocumentFragment();
+    
     recentItems.slice(0, 18).forEach((item, index) => {
         fragment.appendChild(createMovieCard(item));
         let currentIdx = index + 1;
@@ -692,6 +711,7 @@ function renderRecentAdds() {
         // Desktop: after every 6 cards
         if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
     });
+    
     recentAddsGrid.appendChild(fragment);
 }
 
@@ -706,6 +726,7 @@ function renderCategorySections(forceRenderAll = false) {
         rootMargin: '250px 0px',
         threshold: 0.01
     };
+
     const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -714,6 +735,7 @@ function renderCategorySections(forceRenderAll = false) {
             }
         });
     }, observerOptions);
+
     function loadCategorySection(targetSection) {
         const cat = targetSection.getAttribute('data-category-lazy');
         const lazyGrid = targetSection.querySelector('.lazy-grid');
@@ -721,6 +743,7 @@ function renderCategorySections(forceRenderAll = false) {
 
         lazyGrid.innerHTML = '';
         const cardsFragment = document.createDocumentFragment();
+        
         filtered.slice(0, 11).forEach((item, index) => {
             cardsFragment.appendChild(createMovieCard(item));
             let currentIdx = index + 1;
@@ -728,34 +751,22 @@ function renderCategorySections(forceRenderAll = false) {
             // Mobile: after every 8 cards
             if (currentIdx % 8 === 0) cardsFragment.appendChild(createMobileNativeAdBlock());
             // Desktop: after every 6 cards
-   
-         if (currentIdx % 6 === 0) cardsFragment.appendChild(createDesktopNativeAdBlock());
+            if (currentIdx % 6 === 0) cardsFragment.appendChild(createDesktopNativeAdBlock());
         });
+        
         lazyGrid.appendChild(cardsFragment);
 
         const displayName = cat === 'Korean Country' ? 'Korean' : cat;
         const viewAllCard = document.createElement('div');
-        viewAllCard.className = 'prestige-card anim-reel w-full h-full'; 
-        
+        viewAllCard.className = 'view-all-card relative rounded-lg overflow-hidden group flex flex-col items-center justify-center p-6 cursor-pointer aspect-[2/3]';
         viewAllCard.innerHTML = `
-            <div class="reel-track">
-                <div class="reel-frame"></div>
-                <div class="reel-frame"></div>
-                <div class="reel-frame"></div>
-                <div class="reel-frame"></div>
-                <div class="reel-frame"></div>
-                <div class="reel-frame"></div>
-                <div class="reel-frame"></div>
-                <div class="reel-frame"></div>
-            </div>
-            
-            <div class="icon-wrapper">
-                <i class="fas fa-arrow-right text-white text-xl"></i>
-            </div>
-            <h3 class="card-title">VIEW ALL</h3>
-            <span class="card-subtitle">${displayName}</span>
-        `;
-        
+            <div class="flex flex-col items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110">
+                    <i class="fas fa-arrow-right text-white text-xl"></i>
+                </div>
+                <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
+                <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
+            </div>`;
         viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
         lazyGrid.appendChild(viewAllCard);
 
@@ -783,25 +794,23 @@ function renderCategorySections(forceRenderAll = false) {
         section.className = 'mb-16 lazy-section opacity-0 min-h-[350px] transition-opacity duration-500';
         section.setAttribute('data-category-lazy', cat);
 
-        section.innerHTML = 
-`
+        section.innerHTML = `
             <div class="w-full flex flex-col items-center gap-4 mb-8 mt-4 min-h-[150px]">
                 <div class="cat-ad-adsterra w-full"></div>
                 <div class="cat-ad-adcash w-full"></div>
             </div>
 
             <div class="flex items-center space-x-3 mb-8 justify-center">
-               
- <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
+                <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
                 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
             </div>
             
             <div class="lazy-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto">
                 <div class="col-span-full py-16 flex justify-center items-center">
-    
-                <div class="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin opacity-45"></div>
+                    <div class="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin opacity-45"></div>
                 </div>
             </div>`;
+
         if (forceRenderAll) {
             loadCategorySection(section);
         } else {
@@ -834,13 +843,14 @@ function initLibraryRender(filter = "all", initialCount = 0) {
 
         const matchesSearch = cleanTitle.includes(cleanQuery) ||
             cleanCategory.includes(cleanQuery) ||
-    
-        cleanGenre.includes(cleanQuery);
+            cleanGenre.includes(cleanQuery);
 
         return matchesCat && matchesSearch;
     });
+
     libraryGrid.innerHTML = '';
     libraryDisplayedCount = initialCount > 0 ? initialCount : ITEMS_PER_PAGE;
+
     if (libraryData.length === 0) {
         libraryGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
     } else {
@@ -852,8 +862,7 @@ function initLibraryRender(filter = "all", initialCount = 0) {
             // Mobile: after every 8 cards
             if (currentIdx % 8 === 0) fragment.appendChild(createMobileNativeAdBlock());
             // Desktop: after every 6 cards
-   
-         if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
+            if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
         });
         libraryGrid.appendChild(fragment);
     }
@@ -873,6 +882,7 @@ function renderLibraryChunk() {
     
     const nextCount = libraryDisplayedCount + ITEMS_PER_PAGE;
     const chunk = libraryData.slice(libraryDisplayedCount, nextCount);
+    
     if (chunk.length > 0 && libraryGrid) {
         const fragment = document.createDocumentFragment();
         chunk.forEach((item, index) => {
@@ -882,8 +892,7 @@ function renderLibraryChunk() {
             // Mobile: after every 8 cards
             if (currentIdx % 4 === 0) fragment.appendChild(createMobileNativeAdBlock());
             // Desktop: after every 6 cards
-  
-          if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
+            if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
         });
         libraryGrid.appendChild(fragment);
         libraryDisplayedCount = nextCount;
@@ -896,6 +905,7 @@ function renderLibraryChunk() {
 function updateLoadMoreVisibility() {
     const loading = document.getElementById('loadingIndicator');
     if (!loading) return;
+    
     if (libraryDisplayedCount < libraryData.length) {
         loading.classList.remove('hidden');
     } else {
@@ -909,8 +919,7 @@ function openModal(id) {
 
     const currentState = history.state || { view: currentView, validDakhiState: true };
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '');
-    } catch (e) { }
+    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, ''); } catch (e) { }
 
     const item = contentData.find(m => m.id === id);
     const modalTitleElem = document.getElementById('modalTitle');
@@ -918,8 +927,7 @@ function openModal(id) {
 
     currentItem = item;
     if(modalTitleElem) modalTitleElem.innerText = item.title;
-    if(document.getElementById('modalDesc')) document.getElementById('modalDesc').innerText = item.genre ||
-"The cinematic experience of a lifetime.";
+    if(document.getElementById('modalDesc')) document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
     if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
     if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
 
@@ -951,11 +959,10 @@ function openModal(id) {
             if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active');
             btn.innerText = ep.title;
             btn.onclick = () => playEpisode(idx, btn);
-    
-        epList.appendChild(btn);
+            epList.appendChild(btn);
         });
     } else if (seriesSec) { 
-        seriesSec.classList.add('hidden');
+        seriesSec.classList.add('hidden'); 
     }
 
     let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
@@ -966,6 +973,7 @@ function openModal(id) {
 
         const existingIframe = document.getElementById('videoIframe');
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
+
         if (needsNewIframe) {
             actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe>`;
         }
@@ -1017,6 +1025,7 @@ function handleDownloadClick() {
         }
     } else if (downloadClickCount === 3) {
         document.getElementById('downloadBtnText').innerText = "Link Expire";
+
         const downloadBtn = document.getElementById('mainDownloadBtn');
         if (downloadBtn) {
             downloadBtn.classList.remove('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
@@ -1038,11 +1047,13 @@ function playEpisode(index, btnElement) {
     const episode = currentItem.episodes[index];
     document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
     btnElement.classList.add('active');
+
     let url = episode.embedUrl;
 
     const actualVideo = document.getElementById('actualVideo');
     if (actualVideo) {
         actualVideo.classList.remove('hidden');
+
         const existingIframe = document.getElementById('videoIframe');
         if (!existingIframe || existingIframe.src !== url) {
             actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe>`;
@@ -1064,6 +1075,7 @@ function playEpisode(index, btnElement) {
 function closeModal(triggerBack = true, explicitClose = false) {
     const modal = document.getElementById('movieModal');
     if (!modal || modal.classList.contains('hidden')) return;
+
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
 
     if (!triggerBack) {
@@ -1082,10 +1094,12 @@ function closeModal(triggerBack = true, explicitClose = false) {
             actualVideoContainer.innerHTML = ''; 
         }
     }, 300);
+
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
     window.scrollTo(0, savedScrollY);
+
     if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
     }
@@ -1098,12 +1112,12 @@ if (searchInput) {
             preSearchState = {
                 view: currentView,
                 scrollY: window.scrollY,
-           
-     category: activeCat,
+                category: activeCat,
                 displayedCount: libraryDisplayedCount
             };
         }
     });
+
     searchInput.addEventListener('input', debounce(() => {
         const rawQuery = searchInput.value;
         updateSearchUI();
@@ -1112,14 +1126,12 @@ if (searchInput) {
             if (!preSearchState) {
                 const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
                 preSearchState = {
-            
-        view: currentView,
+                    view: currentView,
                     scrollY: window.scrollY,
                     category: activeCat,
                     displayedCount: libraryDisplayedCount
                 };
-            
-}
+            }
 
             if (currentView !== 'library') switchView('library');
             initLibraryRender();
@@ -1127,12 +1139,12 @@ if (searchInput) {
             if (preSearchState) {
                 switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
                 preSearchState = null; 
-         
-   } else {
+            } else {
                 initLibraryRender();
-}
+            }
         }
     }, 300));
+
     searchInput.addEventListener('blur', () => {
         setTimeout(() => {
             const modal = document.getElementById('movieModal');
@@ -1142,12 +1154,12 @@ if (searchInput) {
                 return;
             }
 
-         
-   if (searchInput.value.trim().length === 0 && preSearchState) {
+            if (searchInput.value.trim().length === 0 && preSearchState) {
                 clearSearch();
             }
         }, 200);
     });
+
     searchInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -1177,13 +1189,13 @@ function showAnnouncement() {
             warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies.<br>Tap below to use a real browser which you have!`;
         }
     }
-
     const suggestionBox = document.getElementById('browserSuggestionBox');
     const topCloseBtn = document.getElementById('announcementCloseBtnTop');
     const backdrop = document.getElementById('popupBackdrop');
     const popupWelcomeText = document.getElementById('popupWelcomeText');
     const popupTelegramBtn = document.getElementById('popupTelegramBtn');
     const popupBoxContainer = document.getElementById('popupBoxContainer');
+
     if (isTrappedApp) {
         if (suggestionBox) suggestionBox.classList.remove('hidden');
         if (topCloseBtn) topCloseBtn.classList.add('hidden');
@@ -1191,6 +1203,7 @@ function showAnnouncement() {
 
         if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
         if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
+
         if (popupBoxContainer) {
             popupBoxContainer.classList.remove('p-5', 'md:p-8');
             popupBoxContainer.classList.add('p-4');
@@ -1202,6 +1215,7 @@ function showAnnouncement() {
 
         if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
         if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
+
         if (popupBoxContainer) {
             popupBoxContainer.classList.add('p-5', 'md:p-8');
             popupBoxContainer.classList.remove('p-4');
@@ -1258,10 +1272,12 @@ const lastShown = localStorage.getItem(localKey);
 
 const hasSession = sessionStorage.getItem(sessionKey);
 const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000;
+
 // 🚀 FIXED: GATEKEEPER LOGIC FOR SOCIALBAR & POPUNDER
 const urlParams2 = new URLSearchParams(window.location.search);
 const isFallback = urlParams2.get('fb_fallback');
 const shouldShowPopup = !isFallback && (isTrappedCheck || (!hasSession && !hasRecentLocal));
+
 if (shouldShowPopup) {
     // 🛑 If popup is scheduled to show, DO NOT LOAD SocialBar/Popunder here!
     setTimeout(() => {
@@ -1273,13 +1289,14 @@ if (shouldShowPopup) {
     // ✅ If no popup will show, safe to load SocialBar in the background!
     setTimeout(() => {
         injectPopAds();
-    }, 3500);
+    }, 3500); 
 }
 
 function showToast(message) {
     const toast = document.getElementById('toastMessage');
     const toastText = document.getElementById('toastText');
     if (!toast || !toastText) return;
+
     toastText.innerHTML = message;
 
     toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
@@ -1295,8 +1312,10 @@ function showBookmarkPopup() {
     const bookmarkPopup = document.getElementById('bookmarkPopup');
     const bookmarkDesc = document.getElementById('bookmarkDesc');
     if (!bookmarkPopup || !bookmarkDesc) return;
+
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+
     if (isMobile) {
         bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px]">Tap menu</span> <i class="fas fa-ellipsis-v mx-1.5 text-gray-400"></i> <span class="font-black text-white text-[11px]">& select</span> <strong class="text-white font-black bg-white/10 px-1.5 py-0.5 rounded ml-1 whitespace-nowrap shadow-inner">Add to Home Screen</strong>`;
     } else if (isMac) {
@@ -1361,7 +1380,6 @@ window.addEventListener('scroll', () => {
             if (!isLoading && libraryDisplayedCount < libraryData.length) {
                 renderLibraryChunk();
             }
-        
         }
     }
 
@@ -1372,8 +1390,7 @@ window.addEventListener('scroll', () => {
         if ((!modal || !modal.classList.contains('active')) && (!catMenu || !catMenu.classList.contains('active'))) {
             const currentState = history.state || { view: currentView, category: null, validDakhiState: true };
             try {
-         
-               window.history.replaceState({
+                window.history.replaceState({
                     ...currentState,
                     scrollY: window.scrollY,
                     displayedCount: libraryDisplayedCount
@@ -1382,6 +1399,7 @@ window.addEventListener('scroll', () => {
         }
     }, 150);
 });
+
 window.addEventListener('beforeunload', () => {
     const modal = document.getElementById('movieModal');
     const catMenu = document.getElementById('categoryMenu');
@@ -1390,6 +1408,7 @@ window.addEventListener('beforeunload', () => {
         sessionStorage.setItem('MovieDakhi_Count', libraryDisplayedCount);
     }
 });
+
 document.addEventListener('DOMContentLoaded', async () => {
     
     await databaseLoadPromise; 
@@ -1405,8 +1424,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         sessionStorage.removeItem('MovieDakhi_ExactScroll');
         if (finalScroll > 0) isRestoring = true;
     }
-    if (reloadCount 
-!== null) {
+    if (reloadCount !== null) {
         finalCount = parseInt(reloadCount, 10);
         sessionStorage.removeItem('MovieDakhi_Count');
     }
@@ -1419,34 +1437,34 @@ document.addEventListener('DOMContentLoaded', async () => {
     const isBlob = window.location.protocol === 'blob:';
     if (history.state) {
         const state = history.state;
-        finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY ||
-0);
+        finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY || 0);
         finalCount = finalCount > ITEMS_PER_PAGE ? finalCount : (state.displayedCount || ITEMS_PER_PAGE);
         switchView(state.view, state.category, false, finalCount);
-} else if (!isBlob) {
+    } else if (!isBlob) {
         const params = new URLSearchParams(window.location.search);
         const view = params.get('view') || 'home';
         const category = params.get('category');
-        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: finalCount, validDakhiState: true }, '');
-        } catch (e) { }
+        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: finalCount, validDakhiState: true }, ''); } catch (e) { }
         switchView(view, category, false, finalCount);
-} else {
+    } else {
         switchView('home', null, false, finalCount);
     }
 
     updateCanonical(window.location.href);
-if (isRestoring) {
+
+    if (isRestoring) {
         requestAnimationFrame(() => {
             window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' });
             setTimeout(() => {
                 window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' });
             }, 50);
         });
-}
+    }
 
     setTimeout(() => {
         initStaticAds();
-    }, 2500);
+    }, 2500); 
+
 });
 
 window.addEventListener('popstate', (event) => {
@@ -1462,8 +1480,7 @@ window.addEventListener('popstate', (event) => {
     }
 
     if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
- 
-       toggleCategoryMenu(false, false);
+        toggleCategoryMenu(false, false);
     }
 
     if (state || window.location.search) {
@@ -1473,8 +1490,7 @@ window.addEventListener('popstate', (event) => {
         window.scrollTo({ top: state?.scrollY || 0, behavior: 'instant' });
     } else {
         switchView('home', null, false);
-        
-void document.documentElement.offsetHeight;
+        void document.documentElement.offsetHeight;
         window.scrollTo({ top: 0, behavior: 'instant' });
     }
 });
@@ -1483,6 +1499,7 @@ window.addEventListener('click', (e) => {
     if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal(true, true);
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
+
 function openInBrowser(browser) {
     const targetDomain = 'moviedakhi.com';
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -1490,6 +1507,7 @@ function openInBrowser(browser) {
     const isAndroid = /android/i.test(userAgent);
 
     let schemeUrl = '';
+
     if (browser === 'chrome') schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
     else if (browser === 'edge') schemeUrl = `microsoft-edge-https://${targetDomain}`;
     else if (browser === 'opera') schemeUrl = `opera-http://${targetDomain}`;
@@ -1501,10 +1519,11 @@ function openInBrowser(browser) {
     else if (browser === 'via') schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
 
     let appOpened = false;
+
     function handleVisibilityChange() {
         if (document.visibilityState === 'hidden' || document.hidden) {
             appOpened = true;
-}
+        }
     }
     document.addEventListener("visibilitychange", handleVisibilityChange);
     window.addEventListener("pagehide", () => { appOpened = true; });
@@ -1523,22 +1542,20 @@ function openInBrowser(browser) {
             if (!appOpened) {
                 if (isAndroid) {
                     window.location.href = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
-            
-    } else if (isIOS) {
+                } else if (isIOS) {
                     window.location.href = `x-safari-https://${targetDomain}`;
                 } else {
                     window.location.href = `https://${targetDomain}`;
                 }
             }
-  
-      }, 1000);
+        }, 1000);
     }
 
     if (!isAndroid && !isIOS) {
         showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
-} else {
+    } else {
         showToast("Redirecting to browser...");
-}
+    }
 }
 
 function copyWebsiteLink(btn) {
@@ -1560,14 +1577,15 @@ function copyWebsiteLink(btn) {
         btn.innerHTML = `<i class="fas fa-check"></i> Copied`;
         btn.classList.remove('bg-[#E50914]', 'hover:bg-red-600');
         btn.classList.add('bg-green-600', 'hover:bg-green-500');
+
         setTimeout(() => {
             btn.innerHTML = originalHtml;
             btn.classList.add('bg-[#E50914]', 'hover:bg-red-600');
             btn.classList.remove('bg-green-600', 'hover:bg-green-500');
         }, 2000);
-} catch (err) {
+    } catch (err) {
         showToast("Failed to copy link. Please manually select the text.");
-}
+    }
 
     document.body.removeChild(textArea);
-}
+} 1111111111111111111111111111111111111111111111111111111111
