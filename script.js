@@ -2,11 +2,13 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
+let isPopupAdBlocking = false;
+
 // ==========================================
 // 🚀 SMART RESPONSIVE AD INJECTOR (Fixed & Native Banner Added)
 // ==========================================
 function injectAdsterra(container, key, w, h) {
-    if(!container) return;
+    if(!container || isPopupAdBlocking) return;
     container.innerHTML = '';
     container.className = "flex bg-[#0a0a0a] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center shrink-0 mx-auto shadow-lg";
     container.style.width = '100%';
@@ -46,7 +48,7 @@ function injectAdsterra(container, key, w, h) {
 }
 
 function injectAdcash(container, zoneId, w, h) {
-    if(!container) return;
+    if(!container || isPopupAdBlocking) return;
     container.innerHTML = '';
     container.className = "flex bg-[#0a0a0a] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center shrink-0 mx-auto shadow-lg";
     container.style.width = '100%';
@@ -134,7 +136,7 @@ function injectPopAds() {
 // 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
 // ==========================================
 function injectNativeBanner(container, h = 260) {
-    if(!container) return;
+    if(!container || isPopupAdBlocking) return;
     container.innerHTML = '';
     
     const iframeWrapper = document.createElement('div');
@@ -305,7 +307,7 @@ function renderCategories() {
         const realLink = `?view=library&category=${encodeURIComponent(cat)}`;
 
         const mobileItem = document.createElement('a');
-        mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
+            mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
         mobileItem.innerText = label;
         mobileItem.href = realLink;
         mobileItem.onclick = (e) => {
@@ -1173,41 +1175,27 @@ let announcementScrollY = 0;
 function showAnnouncement() {
     const popup = document.getElementById('announcementPopup');
     if (!popup) return;
-    
-    // 🛡️ ANTI-POPUNDER CLICK SHIELD 🛡️
-    // Prevents any click inside the popup from triggering popunders hidden in the document
-    if (!popup.dataset.shieldAdded) {
-        popup.addEventListener('click', (e) => {
-            e.stopPropagation(); 
-        });
-        popup.dataset.shieldAdded = 'true';
-    }
 
     const ua = navigator.userAgent || navigator.vendor || window.opera;
-    const isFacebookApp = /FBAN|FBAV/i.test(ua);
-    const isInstagramApp = /Instagram/i.test(ua); 
+    const isFacebookApp = /FBAN|FBAV|Ios/i.test(ua);
     const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
-    const isAndroidDefault = /SamsungBrowser|MiuiBrowser|VivoBrowser|OppoBrowser|HeyTapBrowser|HuaweiBrowser/i.test(ua);
-    
-    // 🚀 NEW: Generic Android Browser & WebView Detection added here
-    const isGenericOrWebView = /wv|WebView|Android.*Version\/[\d.]+/i.test(ua); 
-
-    const isTrappedApp = isFacebookApp || isInstagramApp || isUCBrowser || isAndroidDefault || isGenericOrWebView;
+    const isInstaApp = /Instagram/i.test(ua);
+    const isAndroidWebviewApp = /wv|android.*version\/[0-9]/i.test(ua);
+    const isTrappedApp = isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp;
 
     const warningText = document.getElementById('browserWarningText');
     if (warningText && isTrappedApp) {
         if (isFacebookApp) {
-            warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies.<br>Tap below to use a real browser which you have!`;
-        } else if (isInstagramApp) {
-            warningText.innerHTML = `Instagram browser <span class="text-white font-black">Cannot Play or Download</span> movies.<br>Tap below to use a real browser which you have!`;
+            warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
         } else if (isUCBrowser) {
-            warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies.<br>Tap below to use a real browser which you have!`;
-        } else if (isAndroidDefault) {
-            warningText.innerHTML = `This Default browser <span class="text-white font-black">Cannot Play or Download</span> movies.<br>Tap below to use a real browser which you have!`;
-        } else if (isGenericOrWebView) {
-            warningText.innerHTML = `This Basic Web Browser <span class="text-white font-black">Cannot Play or Download</span> movies.<br>Tap below to use a real browser which you have!`;
+            warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
+        } else if (isInstaApp) {
+            warningText.innerHTML = `Instagram browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
+        } else if (isAndroidWebviewApp) {
+            warningText.innerHTML = `This built-in browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
         }
     }
+
     const suggestionBox = document.getElementById('browserSuggestionBox');
     const topCloseBtn = document.getElementById('announcementCloseBtnTop');
     const backdrop = document.getElementById('popupBackdrop');
@@ -1270,6 +1258,21 @@ function closeAnnouncement() {
         document.body.style.width = '';
         window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
 
+        // 🚀 Ad Unblocking Logic - Fills out previously empty spaces
+        isPopupAdBlocking = false;
+        initStaticAds();
+        
+        document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
+            if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
+        });
+        
+        document.querySelectorAll('.cat-ad-adsterra, .cat-ad-adcash').forEach(container => {
+            if (!container.querySelector('iframe') && container.dataset.loaded === 'true') {
+                if (container.classList.contains('cat-ad-adsterra')) injectResponsiveAdNode(container, 'adsterra');
+                if (container.classList.contains('cat-ad-adcash')) injectResponsiveAdNode(container, 'adcash');
+            }
+        });
+
         setTimeout(() => {
             showBookmarkPopup();
             injectPopAds(); // 🚀 THIS IS THE MAGIC! Ads load only AFTER popup is closed.
@@ -1279,15 +1282,11 @@ function closeAnnouncement() {
 }
 
 const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
-const isFBCheck = /FBAN|FBAV/i.test(uaCheck);
-const isInstaCheck = /Instagram/i.test(uaCheck);
+const isFBCheck = /FBAN|FBAV|Ios/i.test(uaCheck);
 const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
-const isAndroidDefaultCheck = /SamsungBrowser|MiuiBrowser|VivoBrowser|OppoBrowser|HeyTapBrowser|HuaweiBrowser/i.test(uaCheck);
-
-// 🚀 NEW: Generic Android Browser & WebView Check Globally
-const isGenericWebViewCheck = /wv|WebView|Android.*Version\/[\d.]+/i.test(uaCheck); 
-
-const isTrappedCheck = isFBCheck || isInstaCheck || isUCCheck || isAndroidDefaultCheck || isGenericWebViewCheck; 
+const isInstaCheck = /Instagram/i.test(uaCheck);
+const isAndroidWebviewCheck = /wv|android.*version\/[0-9]/i.test(uaCheck);
+const isTrappedCheck = isFBCheck || isUCCheck || isInstaCheck || isAndroidWebviewCheck;
 
 const sessionKey = 'MovieDakhi_Welcome_Session_Final';
 const localKey = 'MovieDakhi_Welcome_Time_Final';
@@ -1303,6 +1302,7 @@ const isFallback = urlParams2.get('fb_fallback');
 const shouldShowPopup = !isFallback && (isTrappedCheck || (!hasSession && !hasRecentLocal));
 
 if (shouldShowPopup) {
+    isPopupAdBlocking = true; // 🔴 Block ads right away
     // 🛑 If popup is scheduled to show, DO NOT LOAD SocialBar/Popunder here!
     setTimeout(() => {
         sessionStorage.setItem(sessionKey, 'true');
@@ -1486,7 +1486,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     setTimeout(() => {
-        initStaticAds();
+        if (!isPopupAdBlocking) {
+            initStaticAds();
+        }
     }, 2500); 
 
 });
@@ -1531,16 +1533,66 @@ function openInBrowser(browser) {
     const isAndroid = /android/i.test(userAgent);
 
     let schemeUrl = '';
+    let androidIntents = [];
 
-    if (browser === 'chrome') schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
-    else if (browser === 'edge') schemeUrl = `microsoft-edge-https://${targetDomain}`;
-    else if (browser === 'opera') schemeUrl = `opera-http://${targetDomain}`;
-    else if (browser === 'firefox') schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
-    else if (browser === 'brave') schemeUrl = `brave://open-url?url=https://${targetDomain}`;
-    else if (browser === 'safari') schemeUrl = `x-safari-https://${targetDomain}`;
-    else if (browser === 'vivaldi') schemeUrl = `vivaldi://${targetDomain}`;
-    else if (browser === 'duckduckgo') schemeUrl = `ddg://${targetDomain}`;
-    else if (browser === 'via') schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
+    const genericIntent = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;`;
+
+    if (browser === 'chrome') {
+        schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.android.chrome;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.chrome.beta;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'edge') {
+        schemeUrl = `microsoft-edge-https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx.beta;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'opera') {
+        schemeUrl = `opera-http://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.browser;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.mini.native;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'firefox') {
+        schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox_beta;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'brave') {
+        schemeUrl = `brave://open-url?url=https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.brave.browser;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'safari') {
+        schemeUrl = `x-safari-https://${targetDomain}`;
+        androidIntents = [genericIntent];
+    } else if (browser === 'vivaldi') {
+        schemeUrl = `vivaldi://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.vivaldi.browser;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'duckduckgo') {
+        schemeUrl = `ddg://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.duckduckgo.mobile.android;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'via') {
+        schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=mark.via.gp;end;`,
+            genericIntent
+        ];
+    }
 
     let appOpened = false;
 
@@ -1553,32 +1605,58 @@ function openInBrowser(browser) {
     window.addEventListener("pagehide", () => { appOpened = true; });
     window.addEventListener("blur", () => { appOpened = true; });
 
-    if (schemeUrl) {
+    if (isAndroid && androidIntents.length > 0) {
+        let currentIntentIndex = 0;
+        
+        function tryNextIntent() {
+            if (appOpened || currentIntentIndex >= androidIntents.length) {
+                document.removeEventListener("visibilitychange", handleVisibilityChange);
+                return;
+            }
+            
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = androidIntents[currentIntentIndex];
+            document.body.appendChild(iframe);
+            
+            setTimeout(() => {
+                if (document.body.contains(iframe)) {
+                    document.body.removeChild(iframe);
+                }
+                if (!appOpened) {
+                    currentIntentIndex++;
+                    tryNextIntent();
+                }
+            }, 800);
+        }
+        
+        tryNextIntent();
+        showToast("Redirecting to browser...");
+        
+    } else if (schemeUrl) {
         const iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         iframe.src = schemeUrl;
         document.body.appendChild(iframe);
 
         setTimeout(() => {
-            document.body.removeChild(iframe);
+            if(document.body.contains(iframe)) document.body.removeChild(iframe);
             document.removeEventListener("visibilitychange", handleVisibilityChange);
 
             if (!appOpened) {
-                if (isAndroid) {
-                    window.location.href = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;end;`;
-                } else if (isIOS) {
+                if (isIOS) {
                     window.location.href = `x-safari-https://${targetDomain}`;
                 } else {
                     window.location.href = `https://${targetDomain}`;
                 }
             }
         }, 1000);
-    }
-
-    if (!isAndroid && !isIOS) {
-        showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
-    } else {
-        showToast("Redirecting to browser...");
+        
+        if (!isAndroid && !isIOS) {
+            showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
+        } else {
+            showToast("Redirecting to browser...");
+        }
     }
 }
 
@@ -1612,4 +1690,4 @@ function copyWebsiteLink(btn) {
     }
 
     document.body.removeChild(textArea);
-} 1111111111111111111111111111111111111111111111111111111111
+}
