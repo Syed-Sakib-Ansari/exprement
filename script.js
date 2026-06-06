@@ -1181,7 +1181,12 @@ function showAnnouncement() {
     const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
     const isInstaApp = /Instagram/i.test(ua);
     const isAndroidWebviewApp = /wv|android.*version\/[0-9]/i.test(ua);
-    const isTrappedApp = isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp;
+    
+    // 🚀 NEW LOGIC: We detect Opera Mini to EXEMPT it from being considered a trapped app
+    const isOperaMini = ua.includes('Opera Mini') || ua.includes('OPR/');
+    
+    // Opera Mini will NOT be trapped. It bypassed the restriction entirely.
+    const isTrappedApp = !isOperaMini && (isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp);
 
     const warningText = document.getElementById('browserWarningText');
     if (warningText && isTrappedApp) {
@@ -1286,7 +1291,10 @@ const isFBCheck = /FBAN|FBAV|Ios/i.test(uaCheck);
 const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
 const isInstaCheck = /Instagram/i.test(uaCheck);
 const isAndroidWebviewCheck = /wv|android.*version\/[0-9]/i.test(uaCheck);
-const isTrappedCheck = isFBCheck || isUCCheck || isInstaCheck || isAndroidWebviewCheck;
+
+// 🚀 Opera Mini Exemption for the Gateway Logic as well
+const isOperaMiniCheck = uaCheck.includes('Opera Mini') || uaCheck.includes('OPR/');
+const isTrappedCheck = !isOperaMiniCheck && (isFBCheck || isUCCheck || isInstaCheck || isAndroidWebviewCheck);
 
 const sessionKey = 'MovieDakhi_Welcome_Session_Final';
 const localKey = 'MovieDakhi_Welcome_Time_Final';
@@ -1302,7 +1310,12 @@ const isFallback = urlParams2.get('fb_fallback');
 const shouldShowPopup = !isFallback && (isTrappedCheck || (!hasSession && !hasRecentLocal));
 
 if (shouldShowPopup) {
-    isPopupAdBlocking = true; // 🔴 Block ads right away
+    // Only block ads aggressively if we are explicitly trapping a bad browser.
+    // If it's just a normal browser showing a generic welcome popup, we can let ads load.
+    if (isTrappedCheck) {
+         isPopupAdBlocking = true; 
+    }
+    
     // 🛑 If popup is scheduled to show, DO NOT LOAD SocialBar/Popunder here!
     setTimeout(() => {
         sessionStorage.setItem(sessionKey, 'true');
