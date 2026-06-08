@@ -87,28 +87,20 @@ function injectAdcash(container, zoneId, w, h) {
     }, 50);
 }
 
-function injectResponsiveAdNode(container, type) {
+function injectResponsiveAdNode(container) {
     if(!container) return;
     const isMobile = window.innerWidth <= 768;
-    
-    if (type === 'adsterra') {
-        const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
-        const w = isMobile ? 320 : 728;
-        const h = isMobile ? 50 : 90;
-        injectAdsterra(container, key, w, h);
-    } else {
-        const zone = isMobile ? '11369238' : '11369222';
-        const w = isMobile ? 300 : 728;
-        const h = isMobile ? 100 : 90;
-        injectAdcash(container, zone, w, h);
-    }
+    const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
+    const w = isMobile ? 320 : 728;
+    const h = isMobile ? 50 : 90;
+    injectAdsterra(container, key, w, h);
 }
 
 function initStaticAds() {
-    injectResponsiveAdNode(document.getElementById('homeAdTopAdsterra'), 'adsterra');
-    injectResponsiveAdNode(document.getElementById('homeAdTopAdcash'), 'adcash');
-    injectResponsiveAdNode(document.getElementById('libAdTopAdsterra'), 'adsterra');
-    injectResponsiveAdNode(document.getElementById('libAdTopAdcash'), 'adcash');
+    injectResponsiveAdNode(document.getElementById('homeAdTopAdsterra'));
+    injectResponsiveAdNode(document.getElementById('homeAdTopAdsterra2'));
+    injectResponsiveAdNode(document.getElementById('libAdTopAdsterra'));
+    injectResponsiveAdNode(document.getElementById('libAdTopAdsterra2'));
 }
 
 // ==========================================
