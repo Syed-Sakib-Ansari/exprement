@@ -15,9 +15,8 @@
     <meta name="monetag" content="0e76f19a65a0557c516afe5bb3aaf86b">
 
     <!--MonetagAds Multitag (all-in-one)-->
-    <!-- <script src="https://quge5.com/88/tag.min.js" data-zone="233255" async data-cfasync="false"></script> -->
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         // Restricted browsers check (same as your previous logic)
         if (!(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
             
@@ -30,6 +29,31 @@
             
             // Append the script to the document to execute it
             document.head.appendChild(monetagScript);
+        }
+    </script> -->
+
+    <script type="text/javascript">
+        // Restricted browsers check (Stops ads if suggestion box is showing)
+        if (!(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera))) {
+
+            // 1. Vignette Banner (Zone: 11121262)
+            (function (s) {
+                s.dataset.zone = '11121262';
+                s.src = 'https://n6wxm.com/vignette.min.js';
+            })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+
+            // 2. In-Page Push (Zone: 11121270)
+            (function (s) {
+                s.dataset.zone = '11121270';
+                s.src = 'https://nap5k.com/tag.min.js';
+            })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+
+            // 3. Push Notifications (Zone: 11121272) - Dynamically loaded
+            var pushScript = document.createElement('script');
+            pushScript.src = "https://5gvci.com/act/files/tag.min.js?z=11121272";
+            pushScript.async = true;
+            pushScript.setAttribute('data-cfasync', 'false');
+            document.head.appendChild(pushScript);
         }
     </script>
 
