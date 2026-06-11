@@ -47,46 +47,6 @@ function injectAdsterra(container, key, w, h) {
     }, 50);
 }
 
-function injectAdcash(container, zoneId, w, h) {
-    if(!container || isPopupAdBlocking) return;
-    container.innerHTML = '';
-    container.className = "flex bg-[#0a0a0a] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center shrink-0 mx-auto shadow-lg";
-    container.style.width = '100%';
-    container.style.maxWidth = w + 'px';
-    container.style.minHeight = h + 'px';
-    
-    const label = document.createElement('span');
-    label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
-    label.innerText = "Advertisement";
-    container.appendChild(label);
-    
-    const iframeWrapper = document.createElement('div');
-    iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
-    
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('loading', 'lazy');
-    iframe.width = w;
-    iframe.height = h;
-    iframe.frameBorder = "0";
-    iframe.scrolling = "no";
-    iframe.style.border = "none";
-    iframe.style.overflow = "hidden";
-    iframe.style.backgroundColor = "transparent";
-    iframe.style.display = "block";
-    
-    iframeWrapper.appendChild(iframe);
-    container.appendChild(iframeWrapper);
-    
-    setTimeout(() => {
-        try {
-            const doc = iframe.contentWindow.document;
-            doc.open();
-            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></scr`+`ipt><script type="text/javascript">aclib.runBanner({zoneId: '${zoneId}'});</scr`+`ipt></body></html>`);
-            doc.close();
-        } catch(e) { }
-    }, 50);
-}
-
 function injectResponsiveAdNode(container) {
     if(!container) return;
     const isMobile = window.innerWidth <= 768;
@@ -709,7 +669,7 @@ function renderRecentAdds() {
     recentAddsGrid.appendChild(fragment);
 }
 
-// 🚀 CATEGORY SECTIONS RENDER (With Native Banners)
+// 🚀 CATEGORY SECTIONS RENDER (With Adsterra Banners)
 function renderCategorySections(forceRenderAll = false) {
     if (!categorySections) return;
     categorySections.innerHTML = '';
@@ -764,16 +724,12 @@ function renderCategorySections(forceRenderAll = false) {
         viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
         lazyGrid.appendChild(viewAllCard);
 
-        const astContainer = targetSection.querySelector('.cat-ad-adsterra');
-        const acContainer = targetSection.querySelector('.cat-ad-adcash');
-        if (astContainer && !astContainer.dataset.loaded) {
-            injectResponsiveAdNode(astContainer, 'adsterra');
-            astContainer.dataset.loaded = 'true';
-        }
-        if (acContainer && !acContainer.dataset.loaded) {
-            injectResponsiveAdNode(acContainer, 'adcash');
-            acContainer.dataset.loaded = 'true';
-        }
+        targetSection.querySelectorAll('.cat-ad-adsterra').forEach(container => {
+            if (!container.dataset.loaded) {
+                injectResponsiveAdNode(container);
+                container.dataset.loaded = 'true';
+            }
+        });
 
         targetSection.classList.remove('opacity-0');
         targetSection.classList.add('opacity-100');
@@ -788,10 +744,11 @@ function renderCategorySections(forceRenderAll = false) {
         section.className = 'mb-16 lazy-section opacity-0 min-h-[350px] transition-opacity duration-500';
         section.setAttribute('data-category-lazy', cat);
 
+        // 🚀 Added 2 Adsterra banners here for categories!
         section.innerHTML = `
             <div class="w-full flex flex-col items-center gap-4 mb-8 mt-4 min-h-[150px]">
                 <div class="cat-ad-adsterra w-full"></div>
-                <div class="cat-ad-adcash w-full"></div>
+                <div class="cat-ad-adsterra w-full"></div>
             </div>
 
             <div class="flex items-center space-x-3 mb-8 justify-center">
@@ -979,8 +936,9 @@ function openModal(id) {
         void modal.offsetWidth;
         modal.classList.add('active');
         
-        injectResponsiveAdNode(document.getElementById('modalAdTop'), 'adsterra');
-        injectResponsiveAdNode(document.getElementById('modalAdBottom'), 'adcash');
+        // 🚀 Added 2 Adsterra banners here for Modal Top & Bottom!
+        injectResponsiveAdNode(document.getElementById('modalAdTop'));
+        injectResponsiveAdNode(document.getElementById('modalAdBottom'));
     }
 
     document.body.style.position = 'fixed';
@@ -1239,16 +1197,11 @@ function showAnnouncement() {
     }, 50);
 }
 
-// ==========================================
-// 🚀 FIXED POPUP CLOSE LOGIC
-// ==========================================
+// 🚀 FIXED POPUP CLOSE LOGIC (Injects Ads AFTER popup is closed!)
 function closeAnnouncement() {
     const popup = document.getElementById('announcementPopup');
     if(!popup) return;
     
-    // 🚀 Open Facebook Page in a new tab when close button is clicked
-    window.open('https://www.facebook.com/profile.php?id=61586944455346', '_blank');
-
     popup.classList.remove('active');
 
     setTimeout(() => {
@@ -1262,14 +1215,12 @@ function closeAnnouncement() {
 
         // 🚀 Ad Unblocking Logic - Fills out previously empty spaces
         isPopupAdBlocking = false;
-        
         initStaticAds();
         
         document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
             if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
         });
         
-        // 🔥 Adcash Removed - Only Adsterra kept clean and simple
         document.querySelectorAll('.cat-ad-adsterra').forEach(container => {
             if (!container.querySelector('iframe') && container.dataset.loaded === 'true') {
                 injectResponsiveAdNode(container);
@@ -1278,8 +1229,9 @@ function closeAnnouncement() {
 
         setTimeout(() => {
             showBookmarkPopup();
-            injectPopAds(); // 🚀 THIS IS THE MAGIC! All Popunders load ONLY after popup is safely closed.
+            injectPopAds(); // 🚀 THIS IS THE MAGIC! Ads load only AFTER popup is closed.
         }, 500);
+
     }, 500);
 }
 
