@@ -1244,6 +1244,9 @@ function closeAnnouncement() {
     const popup = document.getElementById('announcementPopup');
     if(!popup) return;
     
+    // 🚀 NEW LOGIC: Open Facebook Page in a new tab when close button is clicked
+    window.open('https://www.facebook.com/profile.php?id=61586944455346', '_blank');
+
     popup.classList.remove('active');
 
     setTimeout(() => {
@@ -1257,6 +1260,7 @@ function closeAnnouncement() {
 
         // 🚀 Ad Unblocking Logic - Fills out previously empty spaces
         isPopupAdBlocking = false;
+        
         initStaticAds();
         
         document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
@@ -1274,7 +1278,6 @@ function closeAnnouncement() {
             showBookmarkPopup();
             injectPopAds(); // 🚀 THIS IS THE MAGIC! Ads load only AFTER popup is closed.
         }, 500);
-
     }, 500);
 }
 
