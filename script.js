@@ -1239,12 +1239,14 @@ function showAnnouncement() {
     }, 50);
 }
 
-// 🚀 FIXED POPUP CLOSE LOGIC (Injects Ads AFTER popup is closed!)
+// ==========================================
+// 🚀 FIXED POPUP CLOSE LOGIC
+// ==========================================
 function closeAnnouncement() {
     const popup = document.getElementById('announcementPopup');
     if(!popup) return;
     
-    // 🚀 NEW LOGIC: Open Facebook Page in a new tab when close button is clicked
+    // 🚀 Open Facebook Page in a new tab when close button is clicked
     window.open('https://www.facebook.com/profile.php?id=61586944455346', '_blank');
 
     popup.classList.remove('active');
@@ -1267,16 +1269,16 @@ function closeAnnouncement() {
             if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
         });
         
-        document.querySelectorAll('.cat-ad-adsterra, .cat-ad-adcash').forEach(container => {
+        // 🔥 Adcash Removed - Only Adsterra kept clean and simple
+        document.querySelectorAll('.cat-ad-adsterra').forEach(container => {
             if (!container.querySelector('iframe') && container.dataset.loaded === 'true') {
-                if (container.classList.contains('cat-ad-adsterra')) injectResponsiveAdNode(container, 'adsterra');
-                if (container.classList.contains('cat-ad-adcash')) injectResponsiveAdNode(container, 'adcash');
+                injectResponsiveAdNode(container);
             }
         });
 
         setTimeout(() => {
             showBookmarkPopup();
-            injectPopAds(); // 🚀 THIS IS THE MAGIC! Ads load only AFTER popup is closed.
+            injectPopAds(); // 🚀 THIS IS THE MAGIC! All Popunders load ONLY after popup is safely closed.
         }, 500);
     }, 500);
 }
