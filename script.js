@@ -2,10 +2,22 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
+// 🚀 NETWORK SPEED OPTIMIZATION FOR ADS (Preconnect to Adsterra)
+if (!document.querySelector('link[href="https://onsetcab.com"]')) {
+    const preconnect1 = document.createElement('link');
+    preconnect1.rel = 'preconnect'; 
+    preconnect1.href = 'https://onsetcab.com';
+    const preconnect2 = document.createElement('link');
+    preconnect2.rel = 'dns-prefetch'; 
+    preconnect2.href = 'https://onsetcab.com';
+    document.head.appendChild(preconnect1); 
+    document.head.appendChild(preconnect2);
+}
+
 let isPopupAdBlocking = false;
 
 // ==========================================
-// 🚀 SMART RESPONSIVE AD INJECTOR (Fixed & Native Banner Added)
+// 🚀 SMART RESPONSIVE AD INJECTOR (Fixed with HTML5 srcdoc for Ultimate Speed)
 // ==========================================
 function injectAdsterra(container, key, w, h) {
     if(!container || isPopupAdBlocking) return;
@@ -24,7 +36,6 @@ function injectAdsterra(container, key, w, h) {
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
     
     const iframe = document.createElement('iframe');
-    iframe.setAttribute('loading', 'lazy');
     iframe.width = w;
     iframe.height = h;
     iframe.frameBorder = "0";
@@ -34,17 +45,11 @@ function injectAdsterra(container, key, w, h) {
     iframe.style.backgroundColor = "transparent";
     iframe.style.display = "block";
     
+    // 🔥 THE MAGIC FIX: Using 'srcdoc' directly instantiates the ad without JS delay
+    iframe.srcdoc = `<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script>atOptions={key:'${key}',format:'iframe',height:${h},width:${w},params:{}};</script><script src="https://onsetcab.com/${key}/invoke.js"></scr`+`ipt></body></html>`;
+    
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
-    
-    setTimeout(() => {
-        try {
-            const doc = iframe.contentWindow.document;
-            doc.open();
-            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script>atOptions={key:'${key}',format:'iframe',height:${h},width:${w},params:{}};</script><script src="https://onsetcab.com/${key}/invoke.js"></scr`+`ipt></body></html>`);
-            doc.close();
-        } catch(e) { }
-    }, 50);
 }
 
 function injectResponsiveAdNode(container) {
@@ -71,13 +76,11 @@ function injectPopAds() {
     if (popAdsInjected) return;
     popAdsInjected = true;
     
-    // SocialBar
     const socialBar = document.createElement('script');
     socialBar.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
     socialBar.async = true;
     document.body.appendChild(socialBar);
     
-    // Popunder
     const popunder = document.createElement('script');
     popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
     popunder.async = true;
@@ -85,7 +88,7 @@ function injectPopAds() {
 }
 
 // ==========================================
-// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
+// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR (Fixed with HTML5 srcdoc)
 // ==========================================
 function injectNativeBanner(container, h = 260) {
     if(!container || isPopupAdBlocking) return;
@@ -95,7 +98,6 @@ function injectNativeBanner(container, h = 260) {
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
     
     const iframe = document.createElement('iframe');
-    iframe.setAttribute('loading', 'lazy'); 
     iframe.width = "100%";
     iframe.height = h;
     iframe.frameBorder = "0";
@@ -105,20 +107,13 @@ function injectNativeBanner(container, h = 260) {
     iframe.style.backgroundColor = "transparent";
     iframe.style.display = "block";
     
+    // 🔥 THE MAGIC FIX: Using 'srcdoc' prevents browser from freezing ads on fast scroll
+    iframe.srcdoc = `<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style></head><body><script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></scr`+`ipt><div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div></body></html>`;
+    
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
-    
-    setTimeout(() => {
-        try {
-            const doc = iframe.contentWindow.document;
-            doc.open();
-            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style></head><body><script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></scr`+`ipt><div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div></body></html>`);
-            doc.close();
-        } catch(e) { }
-    }, 50);
 }
 
-// Mobile: 1 Native Banner
 function createMobileNativeAdBlock() {
     const block = document.createElement('div');
     block.className = 'flex md:hidden col-span-full w-full justify-center my-4';
@@ -135,7 +130,6 @@ function createMobileNativeAdBlock() {
     return block;
 }
 
-// Desktop: 3 Native Banners Horizontally
 function createDesktopNativeAdBlock() {
     const block = document.createElement('div');
     block.className = 'hidden md:flex col-span-full w-full justify-between gap-4 my-6';
@@ -154,7 +148,6 @@ function createDesktopNativeAdBlock() {
     }
     return block;
 }
-
 
 // ১. লোকাল ব্যাকআপ মুভির ডাটাবেজ
 const contentData = [
@@ -649,7 +642,7 @@ function createMovieCard(item) {
     return card;
 }
 
-// 🚀 RECENT ADDS RENDER (With Native Banners)
+// 🚀 RECENT ADDS RENDER
 function renderRecentAdds() {
     if (!recentAddsGrid) return;
     recentAddsGrid.innerHTML = '';
@@ -660,16 +653,14 @@ function renderRecentAdds() {
         fragment.appendChild(createMovieCard(item));
         let currentIdx = index + 1;
         
-        // Mobile: after every 8 cards
         if (currentIdx % 8 === 0) fragment.appendChild(createMobileNativeAdBlock());
-        // Desktop: after every 6 cards
         if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
     });
     
     recentAddsGrid.appendChild(fragment);
 }
 
-// 🚀 CATEGORY SECTIONS RENDER (With Adsterra Banners)
+// 🚀 CATEGORY SECTIONS RENDER
 function renderCategorySections(forceRenderAll = false) {
     if (!categorySections) return;
     categorySections.innerHTML = '';
@@ -677,7 +668,7 @@ function renderCategorySections(forceRenderAll = false) {
 
     const observerOptions = {
         root: null,
-        rootMargin: '250px 0px',
+        rootMargin: '2500px 0px',
         threshold: 0.01
     };
 
@@ -702,9 +693,7 @@ function renderCategorySections(forceRenderAll = false) {
             cardsFragment.appendChild(createMovieCard(item));
             let currentIdx = index + 1;
             
-            // Mobile: after every 8 cards
             if (currentIdx % 8 === 0) cardsFragment.appendChild(createMobileNativeAdBlock());
-            // Desktop: after every 6 cards
             if (currentIdx % 6 === 0) cardsFragment.appendChild(createDesktopNativeAdBlock());
         });
         
@@ -744,7 +733,6 @@ function renderCategorySections(forceRenderAll = false) {
         section.className = 'mb-16 lazy-section opacity-0 min-h-[350px] transition-opacity duration-500';
         section.setAttribute('data-category-lazy', cat);
 
-        // 🚀 Added 2 Adsterra banners here for categories!
         section.innerHTML = `
             <div class="w-full flex flex-col items-center gap-4 mb-8 mt-4 min-h-[150px]">
                 <div class="cat-ad-adsterra w-full"></div>
@@ -773,7 +761,7 @@ function renderCategorySections(forceRenderAll = false) {
     categorySections.appendChild(fragment);
 }
 
-// 🚀 LIBRARY RENDER (With Native Banners)
+// 🚀 LIBRARY RENDER
 function initLibraryRender(filter = "all", initialCount = 0) {
     if (!libraryGrid) return;
     const rawQuery = searchInput ? searchInput.value : '';
@@ -810,9 +798,7 @@ function initLibraryRender(filter = "all", initialCount = 0) {
             fragment.appendChild(createMovieCard(item));
             let currentIdx = index + 1;
             
-            // Mobile: after every 8 cards
             if (currentIdx % 8 === 0) fragment.appendChild(createMobileNativeAdBlock());
-            // Desktop: after every 6 cards
             if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
         });
         libraryGrid.appendChild(fragment);
@@ -826,7 +812,7 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     }
 }
 
-// 🚀 LIBRARY SCROLL CHUNK (With Native Banners)
+// 🚀 LIBRARY SCROLL CHUNK
 function renderLibraryChunk() {
     if (isLoading) return;
     isLoading = true;
@@ -840,9 +826,7 @@ function renderLibraryChunk() {
             fragment.appendChild(createMovieCard(item));
             let currentIdx = libraryDisplayedCount + index + 1;
             
-            // Mobile: after every 8 cards
             if (currentIdx % 4 === 0) fragment.appendChild(createMobileNativeAdBlock());
-            // Desktop: after every 6 cards
             if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
         });
         libraryGrid.appendChild(fragment);
@@ -936,7 +920,6 @@ function openModal(id) {
         void modal.offsetWidth;
         modal.classList.add('active');
         
-        // 🚀 Added 2 Adsterra banners here for Modal Top & Bottom!
         injectResponsiveAdNode(document.getElementById('modalAdTop'));
         injectResponsiveAdNode(document.getElementById('modalAdBottom'));
     }
@@ -1132,10 +1115,7 @@ function showAnnouncement() {
     const isInstaApp = /Instagram/i.test(ua);
     const isAndroidWebviewApp = /wv|android.*version\/[0-9]/i.test(ua);
     
-    // 🚀 NEW LOGIC: We detect Opera Mini to EXEMPT it from being considered a trapped app
     const isOperaMini = ua.includes('Opera Mini') || ua.includes('OPR/');
-    
-    // Opera Mini will NOT be trapped. It bypassed the restriction entirely.
     const isTrappedApp = !isOperaMini && (isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp);
 
     const warningText = document.getElementById('browserWarningText');
@@ -1197,7 +1177,6 @@ function showAnnouncement() {
     }, 50);
 }
 
-// 🚀 FIXED POPUP CLOSE LOGIC (Injects Ads AFTER popup is closed!)
 function closeAnnouncement() {
     const popup = document.getElementById('announcementPopup');
     if(!popup) return;
@@ -1213,7 +1192,6 @@ function closeAnnouncement() {
         document.body.style.width = '';
         window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
 
-        // 🚀 Ad Unblocking Logic - Fills out previously empty spaces
         isPopupAdBlocking = false;
         initStaticAds();
         
@@ -1229,7 +1207,7 @@ function closeAnnouncement() {
 
         setTimeout(() => {
             showBookmarkPopup();
-            injectPopAds(); // 🚀 THIS IS THE MAGIC! Ads load only AFTER popup is closed.
+            injectPopAds(); 
         }, 500);
 
     }, 500);
@@ -1241,7 +1219,6 @@ const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
 const isInstaCheck = /Instagram/i.test(uaCheck);
 const isAndroidWebviewCheck = /wv|android.*version\/[0-9]/i.test(uaCheck);
 
-// 🚀 Opera Mini Exemption for the Gateway Logic as well
 const isOperaMiniCheck = uaCheck.includes('Opera Mini') || uaCheck.includes('OPR/');
 const isTrappedCheck = !isOperaMiniCheck && (isFBCheck || isUCCheck || isInstaCheck || isAndroidWebviewCheck);
 
@@ -1253,26 +1230,20 @@ const lastShown = localStorage.getItem(localKey);
 const hasSession = sessionStorage.getItem(sessionKey);
 const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000;
 
-// 🚀 FIXED: GATEKEEPER LOGIC FOR SOCIALBAR & POPUNDER
 const urlParams2 = new URLSearchParams(window.location.search);
 const isFallback = urlParams2.get('fb_fallback');
 const shouldShowPopup = !isFallback && (isTrappedCheck || (!hasSession && !hasRecentLocal));
 
 if (shouldShowPopup) {
-    // Only block ads aggressively if we are explicitly trapping a bad browser.
-    // If it's just a normal browser showing a generic welcome popup, we can let ads load.
     if (isTrappedCheck) {
          isPopupAdBlocking = true; 
     }
-    
-    // 🛑 If popup is scheduled to show, DO NOT LOAD SocialBar/Popunder here!
     setTimeout(() => {
         sessionStorage.setItem(sessionKey, 'true');
         localStorage.setItem(localKey, nowTime.toString());
         showAnnouncement();
     }, isTrappedCheck ? 500 : 20000);
 } else {
-    // ✅ If no popup will show, safe to load SocialBar in the background!
     setTimeout(() => {
         injectPopAds();
     }, 3500); 
@@ -1447,11 +1418,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    // 🔥 SPEED FIX: Ad injection is now perfectly fast
     setTimeout(() => {
         if (!isPopupAdBlocking) {
             initStaticAds();
         }
-    }, 2500); 
+    }, 100); 
 
 });
 
