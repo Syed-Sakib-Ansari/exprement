@@ -17,7 +17,7 @@ if (!document.querySelector('link[href="https://onsetcab.com"]')) {
 let isPopupAdBlocking = false;
 
 // ==========================================
-// 🚀 SMART RESPONSIVE AD INJECTOR (Fixed with HTML5 srcdoc for Ultimate Speed)
+// 🚀 SMART RESPONSIVE AD INJECTOR (Maximum Speed)
 // ==========================================
 function injectAdsterra(container, key, w, h) {
     if(!container || isPopupAdBlocking) return;
@@ -45,11 +45,18 @@ function injectAdsterra(container, key, w, h) {
     iframe.style.backgroundColor = "transparent";
     iframe.style.display = "block";
     
-    // 🔥 THE MAGIC FIX: Using 'srcdoc' directly instantiates the ad without JS delay
-    iframe.srcdoc = `<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script>atOptions={key:'${key}',format:'iframe',height:${h},width:${w},params:{}};</script><script src="https://onsetcab.com/${key}/invoke.js"></scr`+`ipt></body></html>`;
-    
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
+    
+    // 🔥 10ms delay is the absolute minimum to prevent browser rendering crash
+    setTimeout(() => {
+        try {
+            const doc = iframe.contentWindow.document;
+            doc.open();
+            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script>atOptions={key:'${key}',format:'iframe',height:${h},width:${w},params:{}};</script><script src="https://onsetcab.com/${key}/invoke.js"></scr`+`ipt></body></html>`);
+            doc.close();
+        } catch(e) { }
+    }, 10);
 }
 
 function injectResponsiveAdNode(container) {
@@ -88,7 +95,7 @@ function injectPopAds() {
 }
 
 // ==========================================
-// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR (Fixed with HTML5 srcdoc)
+// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR 
 // ==========================================
 function injectNativeBanner(container, h = 260) {
     if(!container || isPopupAdBlocking) return;
@@ -107,11 +114,17 @@ function injectNativeBanner(container, h = 260) {
     iframe.style.backgroundColor = "transparent";
     iframe.style.display = "block";
     
-    // 🔥 THE MAGIC FIX: Using 'srcdoc' prevents browser from freezing ads on fast scroll
-    iframe.srcdoc = `<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style></head><body><script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></scr`+`ipt><div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div></body></html>`;
-    
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
+    
+    setTimeout(() => {
+        try {
+            const doc = iframe.contentWindow.document;
+            doc.open();
+            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style></head><body><script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></scr`+`ipt><div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div></body></html>`);
+            doc.close();
+        } catch(e) { }
+    }, 10);
 }
 
 function createMobileNativeAdBlock() {
@@ -608,6 +621,10 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
             window.scrollTo({ top: targetScroll, behavior: 'instant' });
         }
     }
+
+    if (!isPopupAdBlocking) {
+        initStaticAds();
+    }
 }
 
 function createMovieCard(item) {
@@ -917,11 +934,13 @@ function openModal(id) {
     const modal = document.getElementById('movieModal');
     if (modal) {
         modal.classList.remove('hidden');
-        void modal.offsetWidth;
+        void modal.offsetWidth; 
         modal.classList.add('active');
         
-        injectResponsiveAdNode(document.getElementById('modalAdTop'));
-        injectResponsiveAdNode(document.getElementById('modalAdBottom'));
+        setTimeout(() => {
+            injectResponsiveAdNode(document.getElementById('modalAdTop'));
+            injectResponsiveAdNode(document.getElementById('modalAdBottom'));
+        }, 150);
     }
 
     document.body.style.position = 'fixed';
@@ -1007,19 +1026,25 @@ function playEpisode(index, btnElement) {
     if (wave) wave.classList.remove('hidden');
 }
 
+let isModalClosing = false;
+
 function closeModal(triggerBack = true, explicitClose = false) {
     const modal = document.getElementById('movieModal');
     if (!modal || modal.classList.contains('hidden')) return;
 
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
 
+    isModalClosing = true;
+
     if (!triggerBack) {
         modal.classList.add('hidden');
         modal.classList.remove('active');
+        isModalClosing = false;
     } else {
         modal.classList.remove('active');
         setTimeout(() => {
             modal.classList.add('hidden');
+            isModalClosing = false;
         }, 300);
     }
 
@@ -1193,7 +1218,9 @@ function closeAnnouncement() {
         window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
 
         isPopupAdBlocking = false;
-        initStaticAds();
+        if (!isPopupAdBlocking) {
+            initStaticAds();
+        }
         
         document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
             if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
@@ -1418,22 +1445,25 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // 🔥 SPEED FIX: Ad injection is now perfectly fast
-    setTimeout(() => {
-        if (!isPopupAdBlocking) {
-            initStaticAds();
-        }
-    }, 100); 
-
+    if (!isPopupAdBlocking) {
+        initStaticAds();
+    }
 });
 
 window.addEventListener('popstate', (event) => {
     const state = event.state;
     const modal = document.getElementById('movieModal');
 
-    if (modal && !modal.classList.contains('hidden')) {
+    let handledOverlayClose = false;
+
+    if (modal && (!modal.classList.contains('hidden') || isModalClosing)) {
         if (state && state.validDakhiState && !state.isModalOpen) {
-            closeModal(false, false);
+            if (!isModalClosing) {
+                closeModal(false, false);
+            }
+            handledOverlayClose = true;
+        } else if (state && state.isModalOpen) {
+            return;
         } else {
             return;
         }
@@ -1441,6 +1471,11 @@ window.addEventListener('popstate', (event) => {
 
     if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
         toggleCategoryMenu(false, false);
+        handledOverlayClose = true;
+    }
+
+    if (handledOverlayClose) {
+        return;
     }
 
     if (state || window.location.search) {
