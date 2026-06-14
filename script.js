@@ -81,10 +81,10 @@ function injectPopAds() {
     socialBar.async = true;
     document.body.appendChild(socialBar);
     
-    const popunder = document.createElement('script');
-    popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
-    popunder.async = true;
-    document.body.appendChild(popunder);
+    // const popunder = document.createElement('script');
+    // popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
+    // popunder.async = true;
+    // document.body.appendChild(popunder);
 }
 
 // ==========================================
