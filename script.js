@@ -1629,57 +1629,6 @@ function openInBrowser(browser) {
     }
 }
 
-// ==========================================
-// 🚀 MONETAG EXTRA ADS (5 FREE CLICKS + IN-APP BROWSER BLOCKER)
-// ==========================================
-let monetagExtraAdsInjected = false;
-let monetagFreeClickCount = 0;
-
-function setupMonetagExtraAds() {
-    // 🔥 আপনার দেওয়া User-Agent চেকিং: ইউজার যদি ট্র্যাপড ব্রাউজারে থাকে, তবে অ্যাড অফ থাকবে
-    const isSafeBrowser = !(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera));
-
-    // যদি নিরাপদ (Real) ব্রাউজার হয়, শুধুমাত্র তখনই ক্লিক গোনা শুরু হবে
-    if (isSafeBrowser) {
-        document.body.addEventListener('click', (e) => {
-            // পপআপ ব্লকার চালু থাকলে বা ওয়েলকাম পপআপের ক্লোজ বাটনে ক্লিক করলে কাউন্ট হবে না
-            if (typeof isPopupAdBlocking !== 'undefined' && isPopupAdBlocking) return;
-            if (e.target.closest('#announcementCloseBtnTop')) return;
-
-            if (!monetagExtraAdsInjected) {
-                monetagFreeClickCount++;
-                
-                // প্রথম ৫টি ক্লিক একদম ফ্রি। ঠিক ৬ নম্বর ক্লিকে অ্যাডগুলোর স্ক্রিপ্ট পুশ হবে।
-                if (monetagFreeClickCount === 6) {
-                    
-                    // 1. Vignette Banner
-                    const vignette = document.createElement('script');
-                    vignette.dataset.zone = '11121262';
-                    vignette.src = 'https://n6wxm.com/vignette.min.js';
-                    document.body.appendChild(vignette);
-
-                    // 2. In-Page Push
-                    const inPagePush = document.createElement('script');
-                    inPagePush.dataset.zone = '11121270';
-                    inPagePush.src = 'https://nap5k.com/tag.min.js';
-                    document.body.appendChild(inPagePush);
-
-                    // 3. Push Notifications
-                    const pushNotif = document.createElement('script');
-                    pushNotif.dataset.zone = '11121272';
-                    pushNotif.src = 'https://5gvci.com/act/files/tag.min.js?z=11121272';
-                    pushNotif.async = true;
-                    pushNotif.dataset.cfasync = 'false';
-                    document.body.appendChild(pushNotif);
-
-                    // লক করে দেওয়া হলো, যাতে স্ক্রিপ্টগুলো আর দ্বিতীয়বার লোড না হয়
-                    monetagExtraAdsInjected = true; 
-                }
-            }
-        });
-    }
-}
-
 // ফাংশনটি চালু করা হলো
 setupMonetagExtraAds();
 
