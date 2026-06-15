@@ -88,7 +88,6 @@ function injectAdsterra(container, key, w, h) {
 
 function injectResponsiveAdNode(container) {
     if(!container) return;
-    // 🔥 MAGIC FIX: যদি এই কন্টেইনারে আগে থেকেই অ্যাড থাকে, তবে নতুন করে লোড করবে না!
     if(container.querySelector('iframe')) return; 
     
     const isMobile = window.innerWidth <= 768;
@@ -125,54 +124,10 @@ function injectPopAds() {
 }
 
 // ==========================================
-// 🚀 MONETAG EXTRA ADS (5 FREE CLICKS)
-// ==========================================
-let monetagExtraAdsInjected = false;
-let monetagFreeClickCount = 0;
-
-function setupMonetagExtraAds() {
-    const isSafeBrowser = !(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera));
-
-    if (isSafeBrowser) {
-        document.body.addEventListener('click', (e) => {
-            if (typeof isPopupAdBlocking !== 'undefined' && isPopupAdBlocking) return;
-            if (e.target.closest('#announcementCloseBtnTop')) return;
-
-            if (!monetagExtraAdsInjected) {
-                monetagFreeClickCount++;
-                if (monetagFreeClickCount === 6) {
-                    
-                    const vignette = document.createElement('script');
-                    vignette.dataset.zone = '11121262';
-                    vignette.src = 'https://n6wxm.com/vignette.min.js';
-                    document.body.appendChild(vignette);
-
-                    const inPagePush = document.createElement('script');
-                    inPagePush.dataset.zone = '11121270';
-                    inPagePush.src = 'https://nap5k.com/tag.min.js';
-                    document.body.appendChild(inPagePush);
-
-                    const pushNotif = document.createElement('script');
-                    pushNotif.dataset.zone = '11121272';
-                    pushNotif.src = 'https://5gvci.com/act/files/tag.min.js?z=11121272';
-                    pushNotif.async = true;
-                    pushNotif.dataset.cfasync = 'false';
-                    document.body.appendChild(pushNotif);
-
-                    monetagExtraAdsInjected = true; 
-                }
-            }
-        });
-    }
-}
-setupMonetagExtraAds();
-
-// ==========================================
 // 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
 // ==========================================
 function injectNativeBanner(container, h = 260) {
     if(!container || isPopupAdBlocking) return;
-    // 🔥 MAGIC FIX: Prevent existing native ads from reloading
     if(container.querySelector('iframe')) return;
     
     container.innerHTML = '';
@@ -311,7 +266,7 @@ let libraryData = [];
 let libraryDisplayedCount = 0;
 const ITEMS_PER_PAGE = 30;
 let isLoading = false;
-let activeSubGridId = null; // 🔥 NEW: Track active category sub-grid
+let activeSubGridId = null;
 
 function getOptimizedImageUrl(url, width = 300) {
     if (!url) return "";
@@ -723,7 +678,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     }, 100);
 }
 
-// 🚀 CREATE MOVIE CARD (SEO <a> TAG)
+// 🚀 CREATE MOVIE CARD
 function createMovieCard(item) {
     const card = document.createElement('a'); 
     const movieSlug = item.slug || generateMovieSlug(item.title);
@@ -891,31 +846,26 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     const cleanQuery = cleanStr(rawQuery);
     const isSearch = rawQuery.trim().length > 0;
 
-    // ১. প্রথমবার libraryGrid কে একটি Wrapper এ রূপান্তর করা
     if (!libraryGrid.dataset.initialized) {
         libraryGrid.dataset.originalClasses = libraryGrid.className;
         libraryGrid.className = 'relative w-full'; 
         libraryGrid.dataset.initialized = 'true';
     }
 
-    // ২. সব চলমান ক্যাটাগরির সাব-গ্রিডগুলো লুকিয়ে (Hide) রাখা
     Array.from(libraryGrid.children).forEach(child => {
         child.classList.add('hidden');
     });
 
-    // ৩. বর্তমান ক্যাটাগরির জন্য একটি ইউনিক ID তৈরি করা
     const gridId = isSearch ? 'subgrid-search' : `subgrid-${filter.replace(/\s+/g, '-')}`;
     activeSubGridId = gridId;
 
     let subGrid = document.getElementById(gridId);
 
-    // সার্চ হলে সব সময় নতুন করে তৈরি হবে
     if (isSearch && subGrid) {
         subGrid.remove();
         subGrid = null;
     }
 
-    // 🔥 MAGIC FIX: যদি ক্যাটাগরি আগে থেকেই তৈরি থাকে, তবে সেটি রি-লোডের বদলে শুধু Unhide হবে!
     if (subGrid) {
         subGrid.classList.remove('hidden');
         libraryDisplayedCount = parseInt(subGrid.dataset.displayedCount || ITEMS_PER_PAGE, 10);
@@ -928,7 +878,6 @@ function initLibraryRender(filter = "all", initialCount = 0) {
         return; 
     }
 
-    // ৪. যদি আগে তৈরি না থাকে, তবে নতুন SubGrid তৈরি করে মুভি ও অ্যাড বসানো
     subGrid = document.createElement('div');
     subGrid.id = gridId;
     subGrid.className = libraryGrid.dataset.originalClasses;
@@ -1299,6 +1248,291 @@ if (searchInput) {
     });
 }
 
+// ==========================================
+// 🚀 IN-APP BROWSER DETECTOR & SUGGESTION BOX
+// ==========================================
+let announcementScrollY = 0;
+
+function showAnnouncement() {
+    const popup = document.getElementById('announcementPopup');
+    if (!popup) return;
+
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isFacebookApp = /FBAN|FBAV|Ios/i.test(ua);
+    const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
+    const isInstaApp = /Instagram/i.test(ua);
+    const isAndroidWebviewApp = /wv|android.*version\/[0-9]/i.test(ua);
+    
+    const isOperaMini = ua.includes('Opera Mini') || ua.includes('OPR/');
+    const isTrappedApp = !isOperaMini && (isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp);
+
+    const warningText = document.getElementById('browserWarningText');
+    if (warningText && isTrappedApp) {
+        if (isFacebookApp) {
+            warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
+        } else if (isUCBrowser) {
+            warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
+        } else if (isInstaApp) {
+            warningText.innerHTML = `Instagram browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
+        } else if (isAndroidWebviewApp) {
+            warningText.innerHTML = `This built-in browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
+        }
+    }
+
+    const suggestionBox = document.getElementById('browserSuggestionBox');
+    const topCloseBtn = document.getElementById('announcementCloseBtnTop');
+    const backdrop = document.getElementById('popupBackdrop');
+    const popupWelcomeText = document.getElementById('popupWelcomeText');
+    const popupTelegramBtn = document.getElementById('popupTelegramBtn');
+    const popupBoxContainer = document.getElementById('popupBoxContainer');
+
+    if (isTrappedApp) {
+        if (suggestionBox) suggestionBox.classList.remove('hidden');
+        if (topCloseBtn) topCloseBtn.classList.add('hidden');
+        if (backdrop) backdrop.onclick = null;
+
+        if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
+        if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
+
+        if (popupBoxContainer) {
+            popupBoxContainer.classList.remove('p-5', 'md:p-8');
+            popupBoxContainer.classList.add('p-4');
+        }
+    } else {
+        if (suggestionBox) suggestionBox.classList.add('hidden');
+        if (topCloseBtn) topCloseBtn.classList.remove('hidden');
+        if (backdrop) backdrop.onclick = closeAnnouncement;
+
+        if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
+        if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
+
+        if (popupBoxContainer) {
+            popupBoxContainer.classList.add('p-5', 'md:p-8');
+            popupBoxContainer.classList.remove('p-4');
+        }
+    }
+
+    popup.classList.remove('hidden');
+    popup.classList.add('flex');
+
+    announcementScrollY = window.scrollY || document.documentElement.scrollTop;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${announcementScrollY}px`;
+    document.body.style.width = '100%';
+
+    setTimeout(() => {
+        popup.classList.add('active');
+    }, 50);
+}
+
+function closeAnnouncement() {
+    const popup = document.getElementById('announcementPopup');
+    if(!popup) return;
+    
+    popup.classList.remove('active');
+
+    setTimeout(() => {
+        popup.classList.add('hidden');
+        popup.classList.remove('flex');
+
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
+
+        isPopupAdBlocking = false;
+        if (!isPopupAdBlocking) {
+            initStaticAds();
+        }
+        
+        document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
+            if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
+        });
+        
+        document.querySelectorAll('.cat-ad-adsterra').forEach(container => {
+            if (!container.querySelector('iframe') && container.dataset.loaded === 'true') {
+                injectResponsiveAdNode(container);
+            }
+        });
+
+        setTimeout(() => {
+            injectPopAds(); 
+        }, 500);
+
+    }, 500);
+}
+
+// 🚀 🔥 RESTORED: OPEN IN REAL BROWSER LOGIC 🔥
+function openInBrowser(browser) {
+    const targetDomain = 'moviedakhi.com';
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+    const isAndroid = /android/i.test(userAgent);
+
+    let schemeUrl = '';
+    let androidIntents = [];
+
+    const genericIntent = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;`;
+
+    if (browser === 'chrome') {
+        schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.android.chrome;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.chrome.beta;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'edge') {
+        schemeUrl = `microsoft-edge-https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx.beta;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'opera') {
+        schemeUrl = `opera-http://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.browser;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.mini.native;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'firefox') {
+        schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox_beta;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'brave') {
+        schemeUrl = `brave://open-url?url=https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.brave.browser;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'safari') {
+        schemeUrl = `x-safari-https://${targetDomain}`;
+        androidIntents = [genericIntent];
+    } else if (browser === 'vivaldi') {
+        schemeUrl = `vivaldi://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.vivaldi.browser;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'duckduckgo') {
+        schemeUrl = `ddg://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.duckduckgo.mobile.android;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'via') {
+        schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=mark.via.gp;end;`,
+            genericIntent
+        ];
+    }
+
+    let appOpened = false;
+
+    function handleVisibilityChange() {
+        if (document.visibilityState === 'hidden' || document.hidden) {
+            appOpened = true;
+        }
+    }
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("pagehide", () => { appOpened = true; });
+    window.addEventListener("blur", () => { appOpened = true; });
+
+    if (isAndroid && androidIntents.length > 0) {
+        let currentIntentIndex = 0;
+        
+        function tryNextIntent() {
+            if (appOpened || currentIntentIndex >= androidIntents.length) {
+                document.removeEventListener("visibilitychange", handleVisibilityChange);
+                return;
+            }
+            
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = androidIntents[currentIntentIndex];
+            document.body.appendChild(iframe);
+            
+            setTimeout(() => {
+                if (document.body.contains(iframe)) {
+                    document.body.removeChild(iframe);
+                }
+                if (!appOpened) {
+                    currentIntentIndex++;
+                    tryNextIntent();
+                }
+            }, 800);
+        }
+        
+        tryNextIntent();
+        showToast("Redirecting to browser...");
+        
+    } else if (schemeUrl) {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = schemeUrl;
+        document.body.appendChild(iframe);
+
+        setTimeout(() => {
+            if(document.body.contains(iframe)) document.body.removeChild(iframe);
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
+
+            if (!appOpened) {
+                if (isIOS) {
+                    window.location.href = `x-safari-https://${targetDomain}`;
+                } else {
+                    window.location.href = `https://${targetDomain}`;
+                }
+            }
+        }, 1000);
+        
+        if (!isAndroid && !isIOS) {
+            showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
+        } else {
+            showToast("Redirecting to browser...");
+        }
+    }
+}
+
+const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
+const isFBCheck = /FBAN|FBAV|Ios/i.test(uaCheck);
+const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
+const isInstaCheck = /Instagram/i.test(uaCheck);
+const isAndroidWebviewCheck = /wv|android.*version\/[0-9]/i.test(uaCheck);
+
+const isOperaMiniCheck = uaCheck.includes('Opera Mini') || uaCheck.includes('OPR/');
+const isTrappedCheck = !isOperaMiniCheck && (isFBCheck || isUCCheck || isInstaCheck || isAndroidWebviewCheck);
+
+const sessionKey = 'MovieDakhi_Welcome_Session_Final';
+const localKey = 'MovieDakhi_Welcome_Time_Final';
+const nowTime = new Date().getTime();
+const lastShown = localStorage.getItem(localKey);
+
+const hasSession = sessionStorage.getItem(sessionKey);
+const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000;
+
+const urlParams2 = new URLSearchParams(window.location.search);
+const isFallback = urlParams2.get('fb_fallback');
+const shouldShowPopup = !isFallback && (isTrappedCheck || (!hasSession && !hasRecentLocal));
+
+if (shouldShowPopup) {
+    if (isTrappedCheck) {
+         isPopupAdBlocking = true; 
+    }
+    setTimeout(() => {
+        sessionStorage.setItem(sessionKey, 'true');
+        localStorage.setItem(localKey, nowTime.toString());
+        showAnnouncement();
+    }, isTrappedCheck ? 500 : 20000);
+} else {
+    setTimeout(() => {
+        injectPopAds();
+    }, 3500); 
+}
+
 let scrollTimeoutId;
 window.addEventListener('scroll', () => {
     if (currentView === 'library') {
@@ -1451,3 +1685,50 @@ window.addEventListener('click', (e) => {
     if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal(true, true);
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
+
+function showToast(message) {
+    const toast = document.getElementById('toastMessage');
+    const toastText = document.getElementById('toastText');
+    if (!toast || !toastText) return;
+
+    toastText.innerHTML = message;
+    toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 4000);
+}
+
+function copyWebsiteLink(btn) {
+    const link = "https://moviedakhi.com";
+    const textArea = document.createElement("textarea");
+    textArea.value = link;
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        document.execCommand('copy');
+        showToast("Link copied! Open your browser and paste it.");
+
+        const originalHtml = `<i class="fas fa-copy"></i> Copy`;
+        btn.innerHTML = `<i class="fas fa-check"></i> Copied`;
+        btn.classList.remove('bg-[#E50914]', 'hover:bg-red-600');
+        btn.classList.add('bg-green-600', 'hover:bg-green-500');
+
+        setTimeout(() => {
+            btn.innerHTML = originalHtml;
+            btn.classList.add('bg-[#E50914]', 'hover:bg-red-600');
+            btn.classList.remove('bg-green-600', 'hover:bg-green-500');
+        }, 2000);
+    } catch (err) {
+        showToast("Failed to copy link. Please manually select the text.");
+    }
+
+    document.body.removeChild(textArea);
+}
