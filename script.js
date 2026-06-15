@@ -2,7 +2,7 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
-// 🚀 NETWORK SPEED OPTIMIZATION FOR ADS (Preconnect to Adsterra)
+// 🚀 NETWORK SPEED OPTIMIZATION FOR ADS
 if (!document.querySelector('link[href="https://onsetcab.com"]')) {
     const preconnect1 = document.createElement('link');
     preconnect1.rel = 'preconnect'; 
@@ -17,7 +17,15 @@ if (!document.querySelector('link[href="https://onsetcab.com"]')) {
 let isPopupAdBlocking = false;
 
 // ==========================================
-// 🚀 SMART RESPONSIVE AD INJECTOR (Optimized for All Geos & Devices)
+// 🚀 SEO URL SLUG GENERATOR
+// ==========================================
+function generateMovieSlug(title) {
+    if (!title) return "movie";
+    return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+}
+
+// ==========================================
+// 🚀 SMART RESPONSIVE AD INJECTOR
 // ==========================================
 function injectAdsterra(container, key, w, h) {
     if(!container || isPopupAdBlocking) return;
@@ -49,7 +57,6 @@ function injectAdsterra(container, key, w, h) {
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
     
-    // 🔥 Standard HTML5 structure inside iframe for universal device support
     setTimeout(() => {
         try {
             const doc = iframe.contentWindow.document || iframe.contentDocument;
@@ -96,7 +103,7 @@ function initStaticAds() {
 }
 
 // ==========================================
-// 🚀 DYNAMIC SOCIALBAR & POPUNDER INJECTOR
+// 🚀 DYNAMIC POPUNDER INJECTOR
 // ==========================================
 let popAdsInjected = false;
 function injectPopAds() {
@@ -115,7 +122,7 @@ function injectPopAds() {
 }
 
 // ==========================================
-// 🚀 MONETAG EXTRA ADS (5 FREE CLICKS + IN-APP BROWSER BLOCKER)
+// 🚀 MONETAG EXTRA ADS (5 FREE CLICKS)
 // ==========================================
 let monetagExtraAdsInjected = false;
 let monetagFreeClickCount = 0;
@@ -158,7 +165,7 @@ function setupMonetagExtraAds() {
 setupMonetagExtraAds();
 
 // ==========================================
-// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR (Optimized)
+// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
 // ==========================================
 function injectNativeBanner(container, h = 260) {
     if(!container || isPopupAdBlocking) return;
@@ -261,7 +268,10 @@ async function loadContentDatabase() {
     } catch (err) {
         console.warn("External JSON database failed to load. Using fallback array.", err);
     } finally {
-        contentData.forEach((item, index) => { item.id = index; });
+        contentData.forEach((item, index) => { 
+            item.id = index; 
+            item.slug = generateMovieSlug(item.title); 
+        });
     }
 }
 
@@ -674,6 +684,8 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
                 } else {
                     url.searchParams.delete('category');
                 }
+                
+                url.searchParams.delete('movie');
 
                 if (mode === 'replace') {
                     window.history.replaceState(stateObj, '', url);
@@ -697,14 +709,19 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
         }
     }
 
-    if (!isPopupAdBlocking) {
-        initStaticAds();
-    }
+    setTimeout(() => {
+        if (!isPopupAdBlocking) {
+            initStaticAds();
+        }
+    }, 100);
 }
 
+// 🚀 CREATE MOVIE CARD (SEO <a> TAG)
 function createMovieCard(item) {
-    const card = document.createElement('div');
-    card.className = 'movie-card relative flex flex-col group cursor-pointer';
+    const card = document.createElement('a'); 
+    const movieSlug = item.slug || generateMovieSlug(item.title);
+    card.href = `?movie=${movieSlug}`; 
+    card.className = 'movie-card relative flex flex-col group cursor-pointer no-underline';
 
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
 
@@ -718,7 +735,7 @@ function createMovieCard(item) {
         <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 md:ring-0 transition-all duration-300 group-hover:ring-white/20 md:group-hover:ring-transparent">
             ${qualityBadgeHtml}
             ${languageBadgeHtml}
-            <img src="${getOptimizedImageUrl(item.posterUrl)}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 md:duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+            <img src="${getOptimizedImageUrl(item.posterUrl)}" alt="Watch ${item.title} Full Movie Online Free" class="w-full h-full object-cover transition-transform duration-500 md:duration-300 group-hover:scale-110" loading="lazy" decoding="async">
             <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center items-center p-5 transition-all duration-300">
                 <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]"><i class="fas fa-play text-white text-lg ml-1"></i></div>
             </div>
@@ -727,10 +744,14 @@ function createMovieCard(item) {
             </div>
         </div>
         <div class="mt-4 text-center flex flex-col items-center md:block">
-            <h4 class="font-black text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
+            <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
             ${infoText}
         </div>`;
-    card.onclick = () => openModal(item.id);
+        
+    card.onclick = (e) => {
+        e.preventDefault(); 
+        openModal(item.id);
+    };
     return card;
 }
 
@@ -944,19 +965,47 @@ function openModal(id) {
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
     savedScrollY = window.scrollY;
 
+    const item = contentData.find(m => m.id === id);
+    if (!item) return;
+
+    // 🔥 URL AND HISTORY SEO UPDATE
+    const movieSlug = item.slug || generateMovieSlug(item.title);
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.set('movie', movieSlug);
+    
     const currentState = history.state || { view: currentView, validDakhiState: true };
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, ''); } catch (e) { }
+    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl); } catch (e) { }
 
-    const item = contentData.find(m => m.id === id);
+    // 🔥 HIGH-VOLUME DYNAMIC SEO GENERATOR (Enhanced)
+    document.title = `Watch ${item.title} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = "description";
+        document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = `Watch ${item.title} full movie online for free in HD quality. Download ${item.title} complete web series 1080p, 720p. Stream ${item.genre} movies seamlessly on MovieDakhi.`;
+
     const modalTitleElem = document.getElementById('modalTitle');
     const isSameMovie = modalTitleElem && modalTitleElem.innerText === item.title;
 
     currentItem = item;
     if(modalTitleElem) modalTitleElem.innerText = item.title;
-    if(document.getElementById('modalDesc')) document.getElementById('modalDesc').innerText = item.genre || "The cinematic experience of a lifetime.";
+    
     if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
     if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
+
+    // 🔥 DYNAMIC MODAL SEO TEXT (Enhanced)
+    if(document.getElementById('modalDesc')) {
+        document.getElementById('modalDesc').innerHTML = `
+            <span class="font-bold text-gray-300">${item.genre || "Entertainment"}</span>
+            <div class="mt-3 text-[10px] md:text-xs text-gray-500 leading-relaxed font-medium">
+                ▶ Watch <strong class="text-gray-300">${item.title}</strong> full movie online free in HD. You can also download the complete movie / web series in 1080p directly to your device. Enjoy high-quality streaming without buffering on MovieDakhi.
+            </div>
+        `;
+    }
 
     downloadClickCount = 0;
     const downloadBtn = document.getElementById('mainDownloadBtn');
@@ -1002,7 +1051,8 @@ function openModal(id) {
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
 
         if (needsNewIframe) {
-            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe>`;
+            // 🔥 Clean direct iframe injection with styled container
+            actualVideoContainer.innerHTML = `<div class="relative w-full h-full bg-[#050505] rounded-lg overflow-hidden"><iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe></div>`;
         }
     }
 
@@ -1084,8 +1134,10 @@ function playEpisode(index, btnElement) {
         actualVideo.classList.remove('hidden');
 
         const existingIframe = document.getElementById('videoIframe');
+        
         if (!existingIframe || existingIframe.src !== url) {
-            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe>`;
+            // 🔥 Clean direct iframe injection with styled container
+            actualVideo.innerHTML = `<div class="relative w-full h-full bg-[#050505] rounded-lg overflow-hidden"><iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe></div>`;
         }
     }
 
@@ -1110,6 +1162,9 @@ function closeModal(triggerBack = true, explicitClose = false) {
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
 
     isModalClosing = true;
+
+    // 🔥 SEO: Restore Default Page Title
+    document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
 
     if (!triggerBack) {
         modal.classList.add('hidden');
@@ -1350,22 +1405,6 @@ if (shouldShowPopup) {
     }, 3500); 
 }
 
-function showToast(message) {
-    const toast = document.getElementById('toastMessage');
-    const toastText = document.getElementById('toastText');
-    if (!toast || !toastText) return;
-
-    toastText.innerHTML = message;
-
-    toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
-    toast.classList.add('opacity-100', 'translate-y-0');
-
-    setTimeout(() => {
-        toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
-        toast.classList.remove('opacity-100', 'translate-y-0');
-    }, 4000);
-}
-
 let scrollTimeoutId;
 window.addEventListener('scroll', () => {
     if (currentView === 'library') {
@@ -1403,6 +1442,7 @@ window.addEventListener('beforeunload', () => {
     }
 });
 
+// 🔥 DOM CONTENT LOADED - INIT & SEO AUTO-OPEN
 document.addEventListener('DOMContentLoaded', async () => {
     
     await databaseLoadPromise; 
@@ -1428,31 +1468,40 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderRecentAdds();
     renderCategorySections(isRestoring);
     
+    const params = new URLSearchParams(window.location.search);
+    const view = params.get('view') || 'home';
+    const category = params.get('category');
+    const movieSlug = params.get('movie');
+
     const isBlob = window.location.protocol === 'blob:';
-    if (history.state) {
+    if (history.state && !movieSlug) {
         const state = history.state;
         finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY || 0);
         finalCount = finalCount > ITEMS_PER_PAGE ? finalCount : (state.displayedCount || ITEMS_PER_PAGE);
         switchView(state.view, state.category, false, finalCount);
-    } else if (!isBlob) {
-        const params = new URLSearchParams(window.location.search);
-        const view = params.get('view') || 'home';
-        const category = params.get('category');
+    } else if (!isBlob && !movieSlug) {
         try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: finalCount, validDakhiState: true }, ''); } catch (e) { }
         switchView(view, category, false, finalCount);
-    } else {
+    } else if (!movieSlug) {
         switchView('home', null, false, finalCount);
     }
 
     updateCanonical(window.location.href);
 
-    if (isRestoring) {
+    if (isRestoring && !movieSlug) {
         requestAnimationFrame(() => {
             window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' });
-            setTimeout(() => {
-                window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' });
-            }, 50);
+            setTimeout(() => window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' }), 50);
         });
+    }
+
+    if (movieSlug) {
+        const targetMovie = contentData.find(m => m.slug === movieSlug);
+        if (targetMovie) {
+            setTimeout(() => {
+                openModal(targetMovie.id);
+            }, 300); 
+        }
     }
 
     setTimeout(() => {
@@ -1508,138 +1557,19 @@ window.addEventListener('click', (e) => {
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
 
-function openInBrowser(browser) {
-    const targetDomain = 'moviedakhi.com';
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-    const isAndroid = /android/i.test(userAgent);
+function showToast(message) {
+    const toast = document.getElementById('toastMessage');
+    const toastText = document.getElementById('toastText');
+    if (!toast || !toastText) return;
 
-    let schemeUrl = '';
-    let androidIntents = [];
+    toastText.innerHTML = message;
+    toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
 
-    const genericIntent = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;`;
-
-    if (browser === 'chrome') {
-        schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.android.chrome;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.chrome.beta;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'edge') {
-        schemeUrl = `microsoft-edge-https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx.beta;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'opera') {
-        schemeUrl = `opera-http://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.browser;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.mini.native;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'firefox') {
-        schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox_beta;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'brave') {
-        schemeUrl = `brave://open-url?url=https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.brave.browser;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'safari') {
-        schemeUrl = `x-safari-https://${targetDomain}`;
-        androidIntents = [genericIntent];
-    } else if (browser === 'vivaldi') {
-        schemeUrl = `vivaldi://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.vivaldi.browser;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'duckduckgo') {
-        schemeUrl = `ddg://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.duckduckgo.mobile.android;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'via') {
-        schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=mark.via.gp;end;`,
-            genericIntent
-        ];
-    }
-
-    let appOpened = false;
-
-    function handleVisibilityChange() {
-        if (document.visibilityState === 'hidden' || document.hidden) {
-            appOpened = true;
-        }
-    }
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    window.addEventListener("pagehide", () => { appOpened = true; });
-    window.addEventListener("blur", () => { appOpened = true; });
-
-    if (isAndroid && androidIntents.length > 0) {
-        let currentIntentIndex = 0;
-        
-        function tryNextIntent() {
-            if (appOpened || currentIntentIndex >= androidIntents.length) {
-                document.removeEventListener("visibilitychange", handleVisibilityChange);
-                return;
-            }
-            
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = androidIntents[currentIntentIndex];
-            document.body.appendChild(iframe);
-            
-            setTimeout(() => {
-                if (document.body.contains(iframe)) {
-                    document.body.removeChild(iframe);
-                }
-                if (!appOpened) {
-                    currentIntentIndex++;
-                    tryNextIntent();
-                }
-            }, 800);
-        }
-        
-        tryNextIntent();
-        showToast("Redirecting to browser...");
-        
-    } else if (schemeUrl) {
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = schemeUrl;
-        document.body.appendChild(iframe);
-
-        setTimeout(() => {
-            if(document.body.contains(iframe)) document.body.removeChild(iframe);
-            document.removeEventListener("visibilitychange", handleVisibilityChange);
-
-            if (!appOpened) {
-                if (isIOS) {
-                    window.location.href = `x-safari-https://${targetDomain}`;
-                } else {
-                    window.location.href = `https://${targetDomain}`;
-                }
-            }
-        }, 1000);
-        
-        if (!isAndroid && !isIOS) {
-            showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
-        } else {
-            showToast("Redirecting to browser...");
-        }
-    }
+    setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 4000);
 }
 
 function copyWebsiteLink(btn) {
