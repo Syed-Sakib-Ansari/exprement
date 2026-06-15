@@ -124,6 +124,49 @@ function injectPopAds() {
 }
 
 // ==========================================
+// 🚀 MONETAG EXTRA ADS (5 FREE CLICKS)
+// ==========================================
+let monetagExtraAdsInjected = false;
+let monetagFreeClickCount = 0;
+
+function setupMonetagExtraAds() {
+    const isSafeBrowser = !(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera));
+
+    if (isSafeBrowser) {
+        document.body.addEventListener('click', (e) => {
+            if (typeof isPopupAdBlocking !== 'undefined' && isPopupAdBlocking) return;
+            if (e.target.closest('#announcementCloseBtnTop')) return;
+
+            if (!monetagExtraAdsInjected) {
+                monetagFreeClickCount++;
+                if (monetagFreeClickCount === 6) {
+                    
+                    const vignette = document.createElement('script');
+                    vignette.dataset.zone = '11121262';
+                    vignette.src = 'https://n6wxm.com/vignette.min.js';
+                    document.body.appendChild(vignette);
+
+                    const inPagePush = document.createElement('script');
+                    inPagePush.dataset.zone = '11121270';
+                    inPagePush.src = 'https://nap5k.com/tag.min.js';
+                    document.body.appendChild(inPagePush);
+
+                    const pushNotif = document.createElement('script');
+                    pushNotif.dataset.zone = '11121272';
+                    pushNotif.src = 'https://5gvci.com/act/files/tag.min.js?z=11121272';
+                    pushNotif.async = true;
+                    pushNotif.dataset.cfasync = 'false';
+                    document.body.appendChild(pushNotif);
+
+                    monetagExtraAdsInjected = true; 
+                }
+            }
+        });
+    }
+}
+setupMonetagExtraAds();
+
+// ==========================================
 // 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
 // ==========================================
 function injectNativeBanner(container, h = 260) {
@@ -1042,8 +1085,9 @@ function openModal(id) {
         const existingIframe = document.getElementById('videoIframe');
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
 
+        // 🔥 FIXED: Direct iframe injection without layout-breaking wrapper divs
         if (needsNewIframe) {
-            actualVideoContainer.innerHTML = `<div class="relative w-full h-full bg-[#050505] rounded-lg overflow-hidden"><iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe></div>`;
+            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
     }
 
@@ -1126,8 +1170,9 @@ function playEpisode(index, btnElement) {
 
         const existingIframe = document.getElementById('videoIframe');
         
+        // 🔥 FIXED: Direct iframe injection without layout-breaking wrapper divs
         if (!existingIframe || existingIframe.src !== url) {
-            actualVideo.innerHTML = `<div class="relative w-full h-full bg-[#050505] rounded-lg overflow-hidden"><iframe id="videoIframe" class="w-full h-full border-0 outline-none" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" referrerpolicy="origin"></iframe></div>`;
+            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
     }
 
@@ -1362,7 +1407,7 @@ function closeAnnouncement() {
     }, 500);
 }
 
-// 🚀 🔥 RESTORED: OPEN IN REAL BROWSER LOGIC 🔥
+// 🚀 OPEN IN REAL BROWSER LOGIC
 function openInBrowser(browser) {
     const targetDomain = 'moviedakhi.com';
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
