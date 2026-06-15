@@ -17,7 +17,7 @@ if (!document.querySelector('link[href="https://onsetcab.com"]')) {
 let isPopupAdBlocking = false;
 
 // ==========================================
-// 🚀 SMART RESPONSIVE AD INJECTOR (Maximum Speed)
+// 🚀 SMART RESPONSIVE AD INJECTOR (Optimized for All Geos & Devices)
 // ==========================================
 function injectAdsterra(container, key, w, h) {
     if(!container || isPopupAdBlocking) return;
@@ -44,16 +44,36 @@ function injectAdsterra(container, key, w, h) {
     iframe.style.overflow = "hidden";
     iframe.style.backgroundColor = "transparent";
     iframe.style.display = "block";
+    iframe.setAttribute('allowtransparency', 'true');
     
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
     
-    // 🔥 10ms delay is the absolute minimum to prevent browser rendering crash
+    // 🔥 Standard HTML5 structure inside iframe for universal device support
     setTimeout(() => {
         try {
-            const doc = iframe.contentWindow.document;
+            const doc = iframe.contentWindow.document || iframe.contentDocument;
             doc.open();
-            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;"><script>atOptions={key:'${key}',format:'iframe',height:${h},width:${w},params:{}};</script><script src="https://onsetcab.com/${key}/invoke.js"></scr`+`ipt></body></html>`);
+            doc.write(`<!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;}</style>
+            </head>
+            <body>
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '${key}',
+                        'format' : 'iframe',
+                        'height' : ${h},
+                        'width' : ${w},
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="https://onsetcab.com/${key}/invoke.js"></script>
+            </body>
+            </html>`);
             doc.close();
         } catch(e) { }
     }, 10);
@@ -95,7 +115,50 @@ function injectPopAds() {
 }
 
 // ==========================================
-// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR 
+// 🚀 MONETAG EXTRA ADS (5 FREE CLICKS + IN-APP BROWSER BLOCKER)
+// ==========================================
+let monetagExtraAdsInjected = false;
+let monetagFreeClickCount = 0;
+
+function setupMonetagExtraAds() {
+    const isSafeBrowser = !(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera));
+
+    if (isSafeBrowser) {
+        document.body.addEventListener('click', (e) => {
+            if (typeof isPopupAdBlocking !== 'undefined' && isPopupAdBlocking) return;
+            if (e.target.closest('#announcementCloseBtnTop')) return;
+
+            if (!monetagExtraAdsInjected) {
+                monetagFreeClickCount++;
+                if (monetagFreeClickCount === 6) {
+                    
+                    const vignette = document.createElement('script');
+                    vignette.dataset.zone = '11121262';
+                    vignette.src = 'https://n6wxm.com/vignette.min.js';
+                    document.body.appendChild(vignette);
+
+                    const inPagePush = document.createElement('script');
+                    inPagePush.dataset.zone = '11121270';
+                    inPagePush.src = 'https://nap5k.com/tag.min.js';
+                    document.body.appendChild(inPagePush);
+
+                    const pushNotif = document.createElement('script');
+                    pushNotif.dataset.zone = '11121272';
+                    pushNotif.src = 'https://5gvci.com/act/files/tag.min.js?z=11121272';
+                    pushNotif.async = true;
+                    pushNotif.dataset.cfasync = 'false';
+                    document.body.appendChild(pushNotif);
+
+                    monetagExtraAdsInjected = true; 
+                }
+            }
+        });
+    }
+}
+setupMonetagExtraAds();
+
+// ==========================================
+// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR (Optimized)
 // ==========================================
 function injectNativeBanner(container, h = 260) {
     if(!container || isPopupAdBlocking) return;
@@ -105,23 +168,35 @@ function injectNativeBanner(container, h = 260) {
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
     
     const iframe = document.createElement('iframe');
-    iframe.width = "100%";
-    iframe.height = h;
+    iframe.style.width = "100%";
+    iframe.style.height = h + "px";
     iframe.frameBorder = "0";
     iframe.scrolling = "no";
     iframe.style.border = "none";
     iframe.style.overflow = "hidden";
     iframe.style.backgroundColor = "transparent";
     iframe.style.display = "block";
+    iframe.setAttribute('allowtransparency', 'true');
     
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
     
     setTimeout(() => {
         try {
-            const doc = iframe.contentWindow.document;
+            const doc = iframe.contentWindow.document || iframe.contentDocument;
             doc.open();
-            doc.write(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style></head><body><script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></scr`+`ipt><div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div></body></html>`);
+            doc.write(`<!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style>
+            </head>
+            <body>
+                <script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></script>
+                <div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div>
+            </body>
+            </html>`);
             doc.close();
         } catch(e) { }
     }, 10);
@@ -1233,7 +1308,6 @@ function closeAnnouncement() {
         });
 
         setTimeout(() => {
-            showBookmarkPopup();
             injectPopAds(); 
         }, 500);
 
@@ -1290,70 +1364,6 @@ function showToast(message) {
         toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
         toast.classList.remove('opacity-100', 'translate-y-0');
     }, 4000);
-}
-
-function showBookmarkPopup() {
-    const bookmarkPopup = document.getElementById('bookmarkPopup');
-    const bookmarkDesc = document.getElementById('bookmarkDesc');
-    if (!bookmarkPopup || !bookmarkDesc) return;
-
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-
-    if (isMobile) {
-        bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px]">Tap menu</span> <i class="fas fa-ellipsis-v mx-1.5 text-gray-400"></i> <span class="font-black text-white text-[11px]">& select</span> <strong class="text-white font-black bg-white/10 px-1.5 py-0.5 rounded ml-1 whitespace-nowrap shadow-inner">Add to Home Screen</strong>`;
-    } else if (isMac) {
-        bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Cmd + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
-    } else {
-        bookmarkDesc.innerHTML = `<span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">Press</span> <kbd id="kbdShortcut" class="inline-block bg-white text-red-600 border-b-2 border-red-800 px-2.5 py-0.5 rounded-md font-mono font-black shadow-md mx-2.5 transition-all duration-300 transform scale-110 -translate-y-0.5 text-xs md:text-sm">Ctrl + D</kbd> <span class="font-black text-white text-[11px] md:text-sm uppercase tracking-wide">to bookmark us!</span>`;
-    }
-
-    bookmarkPopup.classList.remove('translate-y-32', 'opacity-0');
-    bookmarkPopup.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
-
-    setTimeout(() => {
-        closeBookmarkPopup();
-    }, 20000);
-}
-
-function triggerBookmark(e) {
-    if (e && e.target.closest('button')) return;
-
-    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-    const shortcut = isMac ? 'Cmd + D' : 'Ctrl + D';
-    const kbd = document.getElementById('kbdShortcut');
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    if (isMobile) {
-        showToast("Tap menu <i class='fas fa-ellipsis-v mx-1 text-gray-500'></i> & select <strong class='text-white font-black'>Add to Home Screen</strong>!");
-    } else {
-        if (window.external && ('AddFavorite' in window.external)) {
-            try {
-                window.external.AddFavorite(window.location.href, document.title);
-                closeBookmarkPopup();
-                return;
-            } catch (err) { }
-        }
-
-        if (kbd) {
-            kbd.classList.add('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
-            setTimeout(() => {
-                kbd.classList.remove('scale-125', 'bg-red-600', 'text-white', 'border-red-800');
-            }, 400);
-        }
-        showToast(`Press ${shortcut} on your keyboard to save this site!`);
-    }
-}
-
-function closeBookmarkPopup(e) {
-    if (e) {
-        e.stopPropagation();
-    }
-    const bookmarkPopup = document.getElementById('bookmarkPopup');
-    if (bookmarkPopup) {
-        bookmarkPopup.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
-        bookmarkPopup.classList.add('translate-y-32', 'opacity-0');
-    }
 }
 
 let scrollTimeoutId;
@@ -1445,9 +1455,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    if (!isPopupAdBlocking) {
-        initStaticAds();
-    }
+    setTimeout(() => {
+        if (!isPopupAdBlocking) {
+            initStaticAds();
+        }
+    }, 100); 
+
 });
 
 window.addEventListener('popstate', (event) => {
@@ -1628,9 +1641,6 @@ function openInBrowser(browser) {
         }
     }
 }
-
-// ফাংশনটি চালু করা হলো
-setupMonetagExtraAds();
 
 function copyWebsiteLink(btn) {
     const link = "https://moviedakhi.com";
