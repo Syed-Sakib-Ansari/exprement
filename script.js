@@ -126,77 +126,77 @@ function injectPopAds() {
 // ==========================================
 // 🚀 3-MINUTE AD-FREE ZONE LOGIC (MONETAG ADS)
 // ==========================================
-let monetagAdsInjected = false;
+// let monetagAdsInjected = false;
 
-function injectMonetagAds() {
-    if (monetagAdsInjected) return;
+// function injectMonetagAds() {
+//     if (monetagAdsInjected) return;
     
-    // চেক করবে ইউজার নিরাপদ ব্রাউজারে আছে কি না
-    const isSafeBrowser = !(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera));
+//     // চেক করবে ইউজার নিরাপদ ব্রাউজারে আছে কি না
+//     const isSafeBrowser = !(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera));
     
-    // যদি ব্রাউজার ওয়ার্নিং পপআপ ওপেন থাকে, তবে অ্যাড লোড পেছাবে
-    if (typeof isPopupAdBlocking !== 'undefined' && isPopupAdBlocking) {
-        setTimeout(injectMonetagAds, 2000);
-        return;
-    }
+//     // যদি ব্রাউজার ওয়ার্নিং পপআপ ওপেন থাকে, তবে অ্যাড লোড পেছাবে
+//     if (typeof isPopupAdBlocking !== 'undefined' && isPopupAdBlocking) {
+//         setTimeout(injectMonetagAds, 2000);
+//         return;
+//     }
 
-    if (isSafeBrowser) {
-        monetagAdsInjected = true;
+//     if (isSafeBrowser) {
+//         monetagAdsInjected = true;
 
-        // 1. Vignette Banner (Zone: 11121262)
-        const vignette = document.createElement('script');
-        vignette.dataset.zone = '11121262';
-        vignette.src = 'https://n6wxm.com/vignette.min.js';
-        document.body.appendChild(vignette);
+//         // 1. Vignette Banner (Zone: 11121262)
+//         const vignette = document.createElement('script');
+//         vignette.dataset.zone = '11121262';
+//         vignette.src = 'https://n6wxm.com/vignette.min.js';
+//         document.body.appendChild(vignette);
 
-        // 2. In-Page Push (Zone: 11121270)
-        const inPagePush = document.createElement('script');
-        inPagePush.dataset.zone = '11121270';
-        inPagePush.src = 'https://nap5k.com/tag.min.js';
-        document.body.appendChild(inPagePush);
+//         // 2. In-Page Push (Zone: 11121270)
+//         const inPagePush = document.createElement('script');
+//         inPagePush.dataset.zone = '11121270';
+//         inPagePush.src = 'https://nap5k.com/tag.min.js';
+//         document.body.appendChild(inPagePush);
 
-        // 3. Push Notifications (Zone: 11121272)
-        const pushNotif = document.createElement('script');
-        pushNotif.dataset.zone = '11121272';
-        pushNotif.src = 'https://5gvci.com/act/files/tag.min.js?z=11121272';
-        pushNotif.async = true;
-        pushNotif.dataset.cfasync = 'false';
-        document.head.appendChild(pushNotif);
+//         // 3. Push Notifications (Zone: 11121272)
+//         const pushNotif = document.createElement('script');
+//         pushNotif.dataset.zone = '11121272';
+//         pushNotif.src = 'https://5gvci.com/act/files/tag.min.js?z=11121272';
+//         pushNotif.async = true;
+//         pushNotif.dataset.cfasync = 'false';
+//         document.head.appendChild(pushNotif);
 
-        // 4. Popunder (Zone: 11121310)
-        const popunder = document.createElement('script');
-        popunder.dataset.zone = '11121310';
-        popunder.src = 'https://al5sm.com/tag.min.js';
-        document.body.appendChild(popunder);
+//         // 4. Popunder (Zone: 11121310)
+//         const popunder = document.createElement('script');
+//         popunder.dataset.zone = '11121310';
+//         popunder.src = 'https://al5sm.com/tag.min.js';
+//         document.body.appendChild(popunder);
         
-        console.log("🚀 Monetag Ads Activated After 3 Minutes");
-    }
-}
+//         console.log("🚀 Monetag Ads Activated After 3 Minutes");
+//     }
+// }
 
-function setupAdFreeTimer() {
-    const adFreeSessionKey = 'MovieDakhi_AdFree_Start_Time';
-    let startTime = sessionStorage.getItem(adFreeSessionKey); 
+// function setupAdFreeTimer() {
+//     const adFreeSessionKey = 'MovieDakhi_AdFree_Start_Time';
+//     let startTime = sessionStorage.getItem(adFreeSessionKey); 
 
-    if (!startTime) {
-        startTime = new Date().getTime();
-        sessionStorage.setItem(adFreeSessionKey, startTime.toString());
-    }
+//     if (!startTime) {
+//         startTime = new Date().getTime();
+//         sessionStorage.setItem(adFreeSessionKey, startTime.toString());
+//     }
 
-    const elapsed = new Date().getTime() - parseInt(startTime);
-    const waitTime = 180000; // ৩ মিনিট = ১,৮০,০০০ মিলি-সেকেন্ড
+//     const elapsed = new Date().getTime() - parseInt(startTime);
+//     const waitTime = 180000; // ৩ মিনিট = ১,৮০,০০০ মিলি-সেকেন্ড
 
-    if (elapsed >= waitTime) {
-        // যদি ৩ মিনিট আগেই পার হয়ে থাকে, তবে সাথে সাথে অ্যাড দিয়ে দেবে
-        injectMonetagAds();
-    } else {
-        // ৩ মিনিট হতে যতটুকু সময় বাকি, ততটুকু অপেক্ষা করে অ্যাড দেবে
-        const remainingTime = waitTime - elapsed;
-        setTimeout(injectMonetagAds, remainingTime);
-    }
-}
+//     if (elapsed >= waitTime) {
+//         // যদি ৩ মিনিট আগেই পার হয়ে থাকে, তবে সাথে সাথে অ্যাড দিয়ে দেবে
+//         injectMonetagAds();
+//     } else {
+//         // ৩ মিনিট হতে যতটুকু সময় বাকি, ততটুকু অপেক্ষা করে অ্যাড দেবে
+//         const remainingTime = waitTime - elapsed;
+//         setTimeout(injectMonetagAds, remainingTime);
+//     }
+// }
 
-// 🔥 টাইমারটি চালু করার কল (এটি আপনার কোডের বাইরের দিকে থাকবে)
-setupAdFreeTimer();
+// // 🔥 টাইমারটি চালু করার কল (এটি আপনার কোডের বাইরের দিকে থাকবে)
+// setupAdFreeTimer();
 
 // ==========================================
 // 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
