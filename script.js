@@ -39,7 +39,7 @@ function injectAdsterra(container, key, w, h) {
     label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
     label.innerText = "Advertisement";
     container.appendChild(label);
-    
+
     const iframeWrapper = document.createElement('div');
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
     
@@ -124,81 +124,6 @@ function injectPopAds() {
 }
 
 // ==========================================
-// 🚀 3-MINUTE AD-FREE ZONE LOGIC (MONETAG ADS)
-// ==========================================
-// let monetagAdsInjected = false;
-
-// function injectMonetagAds() {
-//     if (monetagAdsInjected) return;
-    
-//     // চেক করবে ইউজার নিরাপদ ব্রাউজারে আছে কি না
-//     const isSafeBrowser = !(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera));
-    
-//     // যদি ব্রাউজার ওয়ার্নিং পপআপ ওপেন থাকে, তবে অ্যাড লোড পেছাবে
-//     if (typeof isPopupAdBlocking !== 'undefined' && isPopupAdBlocking) {
-//         setTimeout(injectMonetagAds, 2000);
-//         return;
-//     }
-
-//     if (isSafeBrowser) {
-//         monetagAdsInjected = true;
-
-//         // 1. Vignette Banner (Zone: 11121262)
-//         const vignette = document.createElement('script');
-//         vignette.dataset.zone = '11121262';
-//         vignette.src = 'https://n6wxm.com/vignette.min.js';
-//         document.body.appendChild(vignette);
-
-//         // 2. In-Page Push (Zone: 11121270)
-//         const inPagePush = document.createElement('script');
-//         inPagePush.dataset.zone = '11121270';
-//         inPagePush.src = 'https://nap5k.com/tag.min.js';
-//         document.body.appendChild(inPagePush);
-
-//         // 3. Push Notifications (Zone: 11121272)
-//         const pushNotif = document.createElement('script');
-//         pushNotif.dataset.zone = '11121272';
-//         pushNotif.src = 'https://5gvci.com/act/files/tag.min.js?z=11121272';
-//         pushNotif.async = true;
-//         pushNotif.dataset.cfasync = 'false';
-//         document.head.appendChild(pushNotif);
-
-//         // 4. Popunder (Zone: 11121310)
-//         const popunder = document.createElement('script');
-//         popunder.dataset.zone = '11121310';
-//         popunder.src = 'https://al5sm.com/tag.min.js';
-//         document.body.appendChild(popunder);
-        
-//         console.log("🚀 Monetag Ads Activated After 3 Minutes");
-//     }
-// }
-
-// function setupAdFreeTimer() {
-//     const adFreeSessionKey = 'MovieDakhi_AdFree_Start_Time';
-//     let startTime = sessionStorage.getItem(adFreeSessionKey); 
-
-//     if (!startTime) {
-//         startTime = new Date().getTime();
-//         sessionStorage.setItem(adFreeSessionKey, startTime.toString());
-//     }
-
-//     const elapsed = new Date().getTime() - parseInt(startTime);
-//     const waitTime = 180000; // ৩ মিনিট = ১,৮০,০০০ মিলি-সেকেন্ড
-
-//     if (elapsed >= waitTime) {
-//         // যদি ৩ মিনিট আগেই পার হয়ে থাকে, তবে সাথে সাথে অ্যাড দিয়ে দেবে
-//         injectMonetagAds();
-//     } else {
-//         // ৩ মিনিট হতে যতটুকু সময় বাকি, ততটুকু অপেক্ষা করে অ্যাড দেবে
-//         const remainingTime = waitTime - elapsed;
-//         setTimeout(injectMonetagAds, remainingTime);
-//     }
-// }
-
-// // 🔥 টাইমারটি চালু করার কল (এটি আপনার কোডের বাইরের দিকে থাকবে)
-// setupAdFreeTimer();
-
-// ==========================================
 // 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
 // ==========================================
 function injectNativeBanner(container, h = 260) {
@@ -209,7 +134,6 @@ function injectNativeBanner(container, h = 260) {
     
     const iframeWrapper = document.createElement('div');
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
-    
     const iframe = document.createElement('iframe');
     iframe.style.width = "100%";
     iframe.style.height = h + "px";
@@ -223,7 +147,6 @@ function injectNativeBanner(container, h = 260) {
     
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
-    
     setTimeout(() => {
         try {
             const doc = iframe.contentWindow.document || iframe.contentDocument;
@@ -250,7 +173,6 @@ function createMobileNativeAdBlock() {
     block.className = 'flex md:hidden col-span-full w-full justify-center my-4';
     const container = document.createElement('div');
     container.className = 'w-full bg-[#111] rounded-xl overflow-hidden border border-white/5 shadow-lg relative min-h-[250px] flex items-center justify-center';
-    
     const label = document.createElement('span');
     label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
     label.innerText = "Advertisement";
@@ -281,14 +203,7 @@ function createDesktopNativeAdBlock() {
 }
 
 // ১. লোকাল ব্যাকআপ মুভির ডাটাবেজ
-const contentData = [
-    {
-        title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Recent Adds", language: "Hindi", quality: "HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1"
-    },
-    {
-        title: "Obsess (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#818js", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjI3NjU4OTItMzYxMS00NmYxLWJjOTEtZjRhZDEzZTM5YmVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", quality: "HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#818js&dl=1"
-    }
-];
+const contentData = [];
 
 // ২. ASYNC FETCH SYSTEM
 async function loadContentDatabase() {
@@ -297,7 +212,7 @@ async function loadContentDatabase() {
         if (response.ok) {
             const db = await response.json();
             if (Array.isArray(db) && db.length > 0) {
-                contentData.length = 0; 
+                contentData.length = 0;
                 contentData.push(...db); 
             }
         }
@@ -365,7 +280,6 @@ function renderCategories() {
     const libraryFilters = document.getElementById('libraryFilters');
 
     mobileGrid.innerHTML = ''; desktopNav.innerHTML = ''; libraryFilters.innerHTML = '';
-
     categories.forEach(cat => {
         const label = cat === 'Korean Country' ? 'Korean' : cat;
 
@@ -374,12 +288,14 @@ function renderCategories() {
             mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
             mobileItem.innerText = 'Home';
             mobileItem.href = '#';
+    
             mobileItem.onclick = (e) => {
                 e.preventDefault();
                 toggleCategoryMenu(false, false);
                 clearSearch(true);
                 switchView('home', null, 'replace');
             };
+         
             mobileGrid.appendChild(mobileItem);
             return;
         }
@@ -387,7 +303,7 @@ function renderCategories() {
         const realLink = `?view=library&category=${encodeURIComponent(cat)}`;
 
         const mobileItem = document.createElement('a');
-            mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
+        mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
         mobileItem.innerText = label;
         mobileItem.href = realLink;
         mobileItem.onclick = (e) => {
@@ -421,13 +337,13 @@ let savedScrollY = 0;
 
 function toggleCategoryMenu(show, triggerBack = true) {
     const fab = document.getElementById('mobileFab');
-
     if (show) {
         savedScrollY = window.scrollY;
 
         const currentState = history.state || {};
         try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-        try { window.history.pushState({ ...currentState, isMenuOpen: true }, ''); } catch (e) { }
+        try { window.history.pushState({ ...currentState, isMenuOpen: true }, '');
+        } catch (e) { }
 
         categoryMenu.classList.remove('hidden');
         void categoryMenu.offsetWidth; 
@@ -446,7 +362,6 @@ function toggleCategoryMenu(show, triggerBack = true) {
         document.body.style.top = '';
         document.body.style.width = '';
         window.scrollTo(0, savedScrollY);
-
         if (triggerBack && window.history.state?.isMenuOpen) {
             window.history.back();
         }
@@ -466,7 +381,6 @@ function dragStart(e) {
     isDragging = true;
     startX = e.clientX;
     startY = e.clientY;
-
     const rect = fab.getBoundingClientRect();
     initialX = rect.left;
     initialY = rect.top;
@@ -482,10 +396,8 @@ function dragStart(e) {
 
 function drag(e) {
     if (!isDragging) return;
-
     const dx = e.clientX - startX;
     const dy = e.clientY - startY;
-
     if (Math.abs(dx) > 8 || Math.abs(dy) > 8) {
         moved = true;
     }
@@ -496,13 +408,11 @@ function drag(e) {
 
         const maxX = document.documentElement.clientWidth - fab.offsetWidth;
         const maxY = document.documentElement.clientHeight - fab.offsetHeight;
-
         nextX = Math.max(0, Math.min(nextX, maxX));
         nextY = Math.max(0, Math.min(nextY, maxY));
 
         translateX = nextX - initialX;
         translateY = nextY - initialY;
-
         fab.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
     }
 }
@@ -511,21 +421,18 @@ function dragEnd(e) {
     if (!isDragging) return;
     isDragging = false;
     fab.releasePointerCapture(e.pointerId);
-
     if (moved) {
         let newX = initialX + translateX;
         let newY = initialY + translateY;
 
         const maxX = document.documentElement.clientWidth - fab.offsetWidth;
         const maxY = document.documentElement.clientHeight - fab.offsetHeight;
-
         newX = Math.max(0, Math.min(newX, maxX));
         newY = Math.max(0, Math.min(newY, maxY));
 
         fab.style.transform = 'none';
         fab.style.left = `${newX}px`;
         fab.style.top = `${newY}px`;
-
         translateX = 0;
         translateY = 0;
     }
@@ -539,7 +446,6 @@ if (fab) {
     fab.addEventListener('pointermove', drag);
     fab.addEventListener('pointerup', dragEnd);
     fab.addEventListener('pointercancel', dragEnd);
-
     fab.addEventListener('click', (e) => {
         if (moved) {
             e.preventDefault();
@@ -573,7 +479,6 @@ function initHeroSlider() {
     let currentSlide = 0;
     sliderWrapper.innerHTML = '';
     sliderDots.innerHTML = '';
-
     const isMobile = window.innerWidth <= 768;
     const sliderImageWidth = isMobile ? 600 : 1200;
 
@@ -589,10 +494,12 @@ function initHeroSlider() {
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
                 <div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
-                    <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
+                    <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 
+rounded-full shadow-lg shadow-red-600/40">New Release</span>
                     <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
                     <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
-                    <button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
+                    <button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 
+mx-auto">
                         <i class="fas fa-play"></i> Watch Now
                     </button>
                 </div>
@@ -622,7 +529,6 @@ function initHeroSlider() {
             startSlideTimer();
         }
     };
-    
     setTimeout(() => {
         const activeSlide = document.querySelector('.slide.active .slide-content');
         if (activeSlide) { activeSlide.style.opacity = '1'; activeSlide.style.transform = 'translateY(0)'; }
@@ -655,7 +561,6 @@ function clearSearch(preventRestore = false) {
     searchInput.value = '';
     updateSearchUI();
     searchInput.blur();
-
     if (!preventRestore && preSearchState) {
         switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
         preSearchState = null;
@@ -699,7 +604,8 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
             preSearchState = null;
         }
 
-        document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
+        document.title = filterCategory && filterCategory !== 'all' ?
+        `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
 
         const catValue = filterCategory || 'all';
         document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
@@ -712,7 +618,6 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
         try {
             const isBlob = window.location.protocol === 'blob:';
             const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: 30, validDakhiState: true };
-
             if (!isBlob) {
                 const url = new URL(window.location);
                 url.searchParams.set('view', viewName);
@@ -723,7 +628,6 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
                 }
                 
                 url.searchParams.delete('movie');
-
                 if (mode === 'replace') {
                     window.history.replaceState(stateObj, '', url);
                 } else {
@@ -757,34 +661,34 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 function createMovieCard(item) {
     const card = document.createElement('a'); 
     const movieSlug = item.slug || generateMovieSlug(item.title);
-    card.href = `?movie=${movieSlug}`;
+    card.href = `${movieSlug}.html`; // 🔥 CF UPDATE
     card.className = 'movie-card relative flex flex-col group cursor-pointer no-underline';
 
-    const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
+    const infoText = item.seriesInfo ?
+        `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
 
     const qualityBadgeHtml = item.quality ?
         `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">${item.quality}</div>` : '';
-
     const languageBadgeHtml = item.language ?
         `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">${item.language}</div>` : '';
-
     card.innerHTML = `
         <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 md:ring-0 transition-all duration-300 group-hover:ring-white/20 md:group-hover:ring-transparent">
             ${qualityBadgeHtml}
             ${languageBadgeHtml}
             <img src="${getOptimizedImageUrl(item.posterUrl)}" alt="Watch ${item.title} Full Movie Online Free" class="w-full h-full object-cover transition-transform duration-500 md:duration-300 group-hover:scale-110" loading="lazy" decoding="async">
-            <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center items-center p-5 transition-all duration-300">
+            <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center 
+items-center p-5 transition-all duration-300">
                 <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]"><i class="fas fa-play text-white text-lg ml-1"></i></div>
             </div>
             <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300">
                 <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
-            </div>
+  
+          </div>
         </div>
         <div class="mt-4 text-center flex flex-col items-center md:block">
             <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
             ${infoText}
         </div>`;
-        
     card.onclick = (e) => {
         e.preventDefault(); 
         openModal(item.id);
@@ -798,7 +702,6 @@ function renderRecentAdds() {
     recentAddsGrid.innerHTML = '';
     const recentItems = contentData.filter(item => item.category === "Recent Adds");
     const fragment = document.createDocumentFragment();
-    
     recentItems.slice(0, 18).forEach((item, index) => {
         fragment.appendChild(createMovieCard(item));
         let currentIdx = index + 1;
@@ -806,7 +709,6 @@ function renderRecentAdds() {
         if (currentIdx % 8 === 0) fragment.appendChild(createMobileNativeAdBlock());
         if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
     });
-    
     recentAddsGrid.appendChild(fragment);
 }
 
@@ -821,7 +723,6 @@ function renderCategorySections(forceRenderAll = false) {
         rootMargin: '2500px 0px',
         threshold: 0.01
     };
-
     const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -830,7 +731,7 @@ function renderCategorySections(forceRenderAll = false) {
             }
         });
     }, observerOptions);
-
+    
     function loadCategorySection(targetSection) {
         const cat = targetSection.getAttribute('data-category-lazy');
         const lazyGrid = targetSection.querySelector('.lazy-grid');
@@ -838,7 +739,6 @@ function renderCategorySections(forceRenderAll = false) {
 
         lazyGrid.innerHTML = '';
         const cardsFragment = document.createDocumentFragment();
-        
         filtered.slice(0, 11).forEach((item, index) => {
             cardsFragment.appendChild(createMovieCard(item));
             let currentIdx = index + 1;
@@ -846,7 +746,6 @@ function renderCategorySections(forceRenderAll = false) {
             if (currentIdx % 8 === 0) cardsFragment.appendChild(createMobileNativeAdBlock());
             if (currentIdx % 6 === 0) cardsFragment.appendChild(createDesktopNativeAdBlock());
         });
-        
         lazyGrid.appendChild(cardsFragment);
 
         const displayName = cat === 'Korean Country' ? 'Korean' : cat;
@@ -857,19 +756,18 @@ function renderCategorySections(forceRenderAll = false) {
                 <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110">
                     <i class="fas fa-arrow-right text-white text-xl"></i>
                 </div>
-                <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
+      
+          <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
                 <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
             </div>`;
         viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
         lazyGrid.appendChild(viewAllCard);
-
         targetSection.querySelectorAll('.cat-ad-adsterra').forEach(container => {
             if (!container.dataset.loaded) {
                 injectResponsiveAdNode(container);
                 container.dataset.loaded = 'true';
             }
         });
-
         targetSection.classList.remove('opacity-0');
         targetSection.classList.add('opacity-100');
     }
@@ -890,16 +788,17 @@ function renderCategorySections(forceRenderAll = false) {
             </div>
 
             <div class="flex items-center space-x-3 mb-8 justify-center">
-                <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
+             
+   <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
                 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
             </div>
             
             <div class="lazy-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto">
                 <div class="col-span-full py-16 flex justify-center items-center">
-                    <div class="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin opacity-45"></div>
+  
+                  <div class="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin opacity-45"></div>
                 </div>
             </div>`;
-
         if (forceRenderAll) {
             loadCategorySection(section);
         } else {
@@ -920,7 +819,7 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     const cleanStr = (str) => str ? str.toLowerCase().replace(/[^a-z0-9]/g, '') : "";
     const cleanQuery = cleanStr(rawQuery);
     const isSearch = rawQuery.trim().length > 0;
-
+    
     if (!libraryGrid.dataset.initialized) {
         libraryGrid.dataset.originalClasses = libraryGrid.className;
         libraryGrid.className = 'relative w-full'; 
@@ -930,12 +829,11 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     Array.from(libraryGrid.children).forEach(child => {
         child.classList.add('hidden');
     });
-
+    
     const gridId = isSearch ? 'subgrid-search' : `subgrid-${filter.replace(/\s+/g, '-')}`;
     activeSubGridId = gridId;
 
     let subGrid = document.getElementById(gridId);
-
     if (isSearch && subGrid) {
         subGrid.remove();
         subGrid = null;
@@ -948,7 +846,6 @@ function initLibraryRender(filter = "all", initialCount = 0) {
         libraryData = contentData.filter(item => {
             return filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
         });
-        
         updateLoadMoreVisibility();
         return; 
     }
@@ -957,16 +854,16 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     subGrid.id = gridId;
     subGrid.className = libraryGrid.dataset.originalClasses;
     libraryGrid.appendChild(subGrid);
-
+    
     libraryData = contentData.filter(item => {
         const matchesCat = filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
         const matchesSearch = isSearch ? (cleanStr(item.title).includes(cleanQuery) || cleanStr(item.category).includes(cleanQuery) || cleanStr(item.genre).includes(cleanQuery)) : true;
         return matchesCat && matchesSearch;
     });
-
+    
     libraryDisplayedCount = initialCount > 0 ? initialCount : ITEMS_PER_PAGE;
     subGrid.dataset.displayedCount = libraryDisplayedCount;
-
+    
     if (libraryData.length === 0) {
         subGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
     } else {
@@ -998,7 +895,6 @@ function renderLibraryChunk() {
     const chunk = libraryData.slice(libraryDisplayedCount, nextCount);
     
     let subGrid = document.getElementById(activeSubGridId);
-    
     if (chunk.length > 0 && subGrid) {
         const fragment = document.createDocumentFragment();
         chunk.forEach((item, index) => {
@@ -1020,7 +916,6 @@ function renderLibraryChunk() {
 function updateLoadMoreVisibility() {
     const loading = document.getElementById('loadingIndicator');
     if (!loading) return;
-    
     if (libraryDisplayedCount < libraryData.length) {
         loading.classList.remove('hidden');
     } else {
@@ -1034,15 +929,15 @@ function openModal(id) {
 
     const item = contentData.find(m => m.id === id);
     if (!item) return;
-
-    // 🔥 URL AND HISTORY SEO UPDATE
+    
+    // 🔥 URL AND HISTORY SEO UPDATE (CF FIX)
     const movieSlug = item.slug || generateMovieSlug(item.title);
-    const newUrl = new URL(window.location.origin + window.location.pathname); 
-    newUrl.searchParams.set('movie', movieSlug); 
+    const newUrl = new URL('/' + movieSlug + '.html', window.location.origin);
     
     const currentState = history.state || { view: currentView, validDakhiState: true };
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl); } catch (e) { }
+    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl);
+    } catch (e) { }
 
     // 🔥 HIGH-VOLUME DYNAMIC SEO GENERATOR
     document.title = `Watch ${item.title} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
@@ -1069,7 +964,9 @@ function openModal(id) {
         document.getElementById('modalDesc').innerHTML = `
             <span class="font-bold text-gray-300">${item.genre || "Entertainment"}</span>
             <div class="mt-3 text-[10px] md:text-xs text-gray-500 leading-relaxed font-medium">
-                ▶ Watch <strong class="text-gray-300">${item.title}</strong> full movie online free in HD. You can also download the complete movie / web series in 1080p directly to your device. Enjoy high-quality streaming without buffering on MovieDakhi.
+                ▶ Watch <strong class="text-gray-300">${item.title}</strong> full movie online free in HD.
+You can also download the complete movie / web series in 1080p directly to your device.
+Enjoy high-quality streaming without buffering on MovieDakhi.
             </div>
         `;
     }
@@ -1102,10 +999,11 @@ function openModal(id) {
             if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active');
             btn.innerText = ep.title;
             btn.onclick = () => playEpisode(idx, btn);
-            epList.appendChild(btn);
+    
+         epList.appendChild(btn);
         });
     } else if (seriesSec) { 
-        seriesSec.classList.add('hidden'); 
+        seriesSec.classList.add('hidden');
     }
 
     let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
@@ -1116,7 +1014,6 @@ function openModal(id) {
 
         const existingIframe = document.getElementById('videoIframe');
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
-
         // 🔥 FIXED: Direct iframe injection without layout-breaking wrapper divs
         if (needsNewIframe) {
             actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
@@ -1128,7 +1025,6 @@ function openModal(id) {
         modal.classList.remove('hidden');
         void modal.offsetWidth; 
         modal.classList.add('active');
-        
         setTimeout(() => {
             injectResponsiveAdNode(document.getElementById('modalAdTop'));
             injectResponsiveAdNode(document.getElementById('modalAdBottom'));
@@ -1171,7 +1067,6 @@ function handleDownloadClick() {
         }
     } else if (downloadClickCount === 3) {
         document.getElementById('downloadBtnText').innerText = "Link Expire";
-
         const downloadBtn = document.getElementById('mainDownloadBtn');
         if (downloadBtn) {
             downloadBtn.classList.remove('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
@@ -1193,13 +1088,11 @@ function playEpisode(index, btnElement) {
     const episode = currentItem.episodes[index];
     document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
     btnElement.classList.add('active');
-
     let url = episode.embedUrl;
 
     const actualVideo = document.getElementById('actualVideo');
     if (actualVideo) {
         actualVideo.classList.remove('hidden');
-
         const existingIframe = document.getElementById('videoIframe');
         
         // 🔥 FIXED: Direct iframe injection without layout-breaking wrapper divs
@@ -1229,10 +1122,8 @@ function closeModal(triggerBack = true, explicitClose = false) {
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
 
     isModalClosing = true;
-
     // 🔥 SEO: Restore Default Page Title
     document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
-
     if (!triggerBack) {
         modal.classList.add('hidden');
         modal.classList.remove('active');
@@ -1251,12 +1142,10 @@ function closeModal(triggerBack = true, explicitClose = false) {
             actualVideoContainer.innerHTML = ''; 
         }
     }, 300);
-
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
     window.scrollTo(0, savedScrollY);
-
     if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
     }
@@ -1269,12 +1158,12 @@ if (searchInput) {
             preSearchState = {
                 view: currentView,
                 scrollY: window.scrollY,
-                category: activeCat,
+           
+     category: activeCat,
                 displayedCount: libraryDisplayedCount
             };
         }
     });
-
     searchInput.addEventListener('input', debounce(() => {
         const rawQuery = searchInput.value;
         updateSearchUI();
@@ -1283,12 +1172,14 @@ if (searchInput) {
             if (!preSearchState) {
                 const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
                 preSearchState = {
-                    view: currentView,
+            
+        view: currentView,
                     scrollY: window.scrollY,
                     category: activeCat,
                     displayedCount: libraryDisplayedCount
                 };
-            }
+            
+}
 
             if (currentView !== 'library') switchView('library');
             initLibraryRender();
@@ -1296,12 +1187,12 @@ if (searchInput) {
             if (preSearchState) {
                 switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
                 preSearchState = null; 
-            } else {
+         
+   } else {
                 initLibraryRender();
-            }
+}
         }
     }, 300));
-
     searchInput.addEventListener('blur', () => {
         setTimeout(() => {
             const modal = document.getElementById('movieModal');
@@ -1311,12 +1202,12 @@ if (searchInput) {
                 return;
             }
 
-            if (searchInput.value.trim().length === 0 && preSearchState) {
+         
+   if (searchInput.value.trim().length === 0 && preSearchState) {
                 clearSearch();
             }
         }, 200);
     });
-
     searchInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -1329,31 +1220,33 @@ if (searchInput) {
 // 🚀 IN-APP BROWSER DETECTOR & SUGGESTION BOX
 // ==========================================
 let announcementScrollY = 0;
-
 function showAnnouncement() {
     const popup = document.getElementById('announcementPopup');
     if (!popup) return;
 
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const ua = navigator.userAgent || navigator.vendor ||
+window.opera;
     const isFacebookApp = /FBAN|FBAV|Ios/i.test(ua);
     const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
     const isInstaApp = /Instagram/i.test(ua);
     const isAndroidWebviewApp = /wv|android.*version\/[0-9]/i.test(ua);
-    
     const isOperaMini = ua.includes('Opera Mini') || ua.includes('OPR/');
     const isTrappedApp = !isOperaMini && (isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp);
-
     const warningText = document.getElementById('browserWarningText');
     if (warningText && isTrappedApp) {
         if (isFacebookApp) {
-            warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
-        } else if (isUCBrowser) {
-            warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
-        } else if (isInstaApp) {
-            warningText.innerHTML = `Instagram browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
-        } else if (isAndroidWebviewApp) {
-            warningText.innerHTML = `This built-in browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
-        }
+            warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+Tap below to use a real browser which you have!`;
+} else if (isUCBrowser) {
+            warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+Tap below to use a real browser which you have!`;
+} else if (isInstaApp) {
+            warningText.innerHTML = `Instagram browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+Tap below to use a real browser which you have!`;
+} else if (isAndroidWebviewApp) {
+            warningText.innerHTML = `This built-in browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+Tap below to use a real browser which you have!`;
+}
     }
 
     const suggestionBox = document.getElementById('browserSuggestionBox');
@@ -1362,31 +1255,28 @@ function showAnnouncement() {
     const popupWelcomeText = document.getElementById('popupWelcomeText');
     const popupTelegramBtn = document.getElementById('popupTelegramBtn');
     const popupBoxContainer = document.getElementById('popupBoxContainer');
-
     if (isTrappedApp) {
         if (suggestionBox) suggestionBox.classList.remove('hidden');
         if (topCloseBtn) topCloseBtn.classList.add('hidden');
-        if (backdrop) backdrop.onclick = null;
+if (backdrop) backdrop.onclick = null;
 
         if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
         if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
-
-        if (popupBoxContainer) {
+if (popupBoxContainer) {
             popupBoxContainer.classList.remove('p-5', 'md:p-8');
             popupBoxContainer.classList.add('p-4');
-        }
+}
     } else {
         if (suggestionBox) suggestionBox.classList.add('hidden');
         if (topCloseBtn) topCloseBtn.classList.remove('hidden');
-        if (backdrop) backdrop.onclick = closeAnnouncement;
+if (backdrop) backdrop.onclick = closeAnnouncement;
 
         if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
         if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
-
-        if (popupBoxContainer) {
+if (popupBoxContainer) {
             popupBoxContainer.classList.add('p-5', 'md:p-8');
             popupBoxContainer.classList.remove('p-4');
-        }
+}
     }
 
     popup.classList.remove('hidden');
@@ -1394,7 +1284,7 @@ function showAnnouncement() {
 
     announcementScrollY = window.scrollY || document.documentElement.scrollTop;
     document.body.style.position = 'fixed';
-    document.body.style.top = `-${announcementScrollY}px`;
+document.body.style.top = `-${announcementScrollY}px`;
     document.body.style.width = '100%';
 
     setTimeout(() => {
@@ -1407,7 +1297,6 @@ function closeAnnouncement() {
     if(!popup) return;
     
     popup.classList.remove('active');
-
     setTimeout(() => {
         popup.classList.add('hidden');
         popup.classList.remove('flex');
@@ -1420,6 +1309,7 @@ function closeAnnouncement() {
         isPopupAdBlocking = false;
         if (!isPopupAdBlocking) {
             initStaticAds();
+       
         }
         
         document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
@@ -1429,7 +1319,8 @@ function closeAnnouncement() {
         document.querySelectorAll('.cat-ad-adsterra').forEach(container => {
             if (!container.querySelector('iframe') && container.dataset.loaded === 'true') {
                 injectResponsiveAdNode(container);
-            }
+      
+             }
         });
 
         setTimeout(() => {
@@ -1445,12 +1336,10 @@ function openInBrowser(browser) {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
     const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
     const isAndroid = /android/i.test(userAgent);
-
     let schemeUrl = '';
     let androidIntents = [];
 
     const genericIntent = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;`;
-
     if (browser === 'chrome') {
         schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
         androidIntents = [
@@ -1458,62 +1347,62 @@ function openInBrowser(browser) {
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.chrome.beta;end;`,
             genericIntent
         ];
-    } else if (browser === 'edge') {
+} else if (browser === 'edge') {
         schemeUrl = `microsoft-edge-https://${targetDomain}`;
         androidIntents = [
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx;end;`,
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx.beta;end;`,
             genericIntent
         ];
-    } else if (browser === 'opera') {
+} else if (browser === 'opera') {
         schemeUrl = `opera-http://${targetDomain}`;
         androidIntents = [
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.browser;end;`,
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.mini.native;end;`,
             genericIntent
         ];
-    } else if (browser === 'firefox') {
+} else if (browser === 'firefox') {
         schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
         androidIntents = [
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox;end;`,
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox_beta;end;`,
             genericIntent
         ];
-    } else if (browser === 'brave') {
+} else if (browser === 'brave') {
         schemeUrl = `brave://open-url?url=https://${targetDomain}`;
         androidIntents = [
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.brave.browser;end;`,
             genericIntent
         ];
-    } else if (browser === 'safari') {
+} else if (browser === 'safari') {
         schemeUrl = `x-safari-https://${targetDomain}`;
         androidIntents = [genericIntent];
-    } else if (browser === 'vivaldi') {
+} else if (browser === 'vivaldi') {
         schemeUrl = `vivaldi://${targetDomain}`;
         androidIntents = [
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.vivaldi.browser;end;`,
             genericIntent
         ];
-    } else if (browser === 'duckduckgo') {
+} else if (browser === 'duckduckgo') {
         schemeUrl = `ddg://${targetDomain}`;
         androidIntents = [
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.duckduckgo.mobile.android;end;`,
             genericIntent
         ];
-    } else if (browser === 'via') {
+} else if (browser === 'via') {
         schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
         androidIntents = [
             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=mark.via.gp;end;`,
             genericIntent
         ];
-    }
+}
 
     let appOpened = false;
 
     function handleVisibilityChange() {
         if (document.visibilityState === 'hidden' || document.hidden) {
             appOpened = true;
-        }
+}
     }
     document.addEventListener("visibilitychange", handleVisibilityChange);
     window.addEventListener("pagehide", () => { appOpened = true; });
@@ -1521,11 +1410,10 @@ function openInBrowser(browser) {
 
     if (isAndroid && androidIntents.length > 0) {
         let currentIntentIndex = 0;
-        
         function tryNextIntent() {
             if (appOpened || currentIntentIndex >= androidIntents.length) {
                 document.removeEventListener("visibilitychange", handleVisibilityChange);
-                return;
+return;
             }
             
             const iframe = document.createElement('iframe');
@@ -1538,16 +1426,16 @@ function openInBrowser(browser) {
                     document.body.removeChild(iframe);
                 }
                 if (!appOpened) {
-                    currentIntentIndex++;
+                   
+ currentIntentIndex++;
                     tryNextIntent();
                 }
             }, 800);
-        }
+}
         
         tryNextIntent();
         showToast("Redirecting to browser...");
-        
-    } else if (schemeUrl) {
+} else if (schemeUrl) {
         const iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         iframe.src = schemeUrl;
@@ -1560,17 +1448,17 @@ function openInBrowser(browser) {
             if (!appOpened) {
                 if (isIOS) {
                     window.location.href = `x-safari-https://${targetDomain}`;
-                } else {
+              
+  } else {
                     window.location.href = `https://${targetDomain}`;
                 }
             }
         }, 1000);
-        
-        if (!isAndroid && !isIOS) {
+if (!isAndroid && !isIOS) {
             showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
-        } else {
+} else {
             showToast("Redirecting to browser...");
-        }
+}
     }
 }
 
@@ -1594,11 +1482,10 @@ const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000;
 const urlParams2 = new URLSearchParams(window.location.search);
 const isFallback = urlParams2.get('fb_fallback');
 const shouldShowPopup = !isFallback && (isTrappedCheck || (!hasSession && !hasRecentLocal));
-
 if (shouldShowPopup) {
     if (isTrappedCheck) {
-         isPopupAdBlocking = true; 
-    }
+         isPopupAdBlocking = true;
+}
     setTimeout(() => {
         sessionStorage.setItem(sessionKey, 'true');
         localStorage.setItem(localKey, nowTime.toString());
@@ -1607,7 +1494,7 @@ if (shouldShowPopup) {
 } else {
     setTimeout(() => {
         injectPopAds();
-    }, 3500); 
+    }, 3500);
 }
 
 let scrollTimeoutId;
@@ -1619,7 +1506,8 @@ window.addEventListener('scroll', () => {
                 renderLibraryChunk();
             }
         }
-    }
+  
+  }
 
     clearTimeout(scrollTimeoutId);
     scrollTimeoutId = setTimeout(() => {
@@ -1628,16 +1516,16 @@ window.addEventListener('scroll', () => {
         if ((!modal || !modal.classList.contains('active')) && (!catMenu || !catMenu.classList.contains('active'))) {
             const currentState = history.state || { view: currentView, category: null, validDakhiState: true };
             try {
-                window.history.replaceState({
+           
+     window.history.replaceState({
                     ...currentState,
                     scrollY: window.scrollY,
                     displayedCount: libraryDisplayedCount
                 }, '');
-            } catch (e) { }
+} catch (e) { }
         }
     }, 150);
 });
-
 window.addEventListener('beforeunload', () => {
     const modal = document.getElementById('movieModal');
     const catMenu = document.getElementById('categoryMenu');
@@ -1646,7 +1534,6 @@ window.addEventListener('beforeunload', () => {
         sessionStorage.setItem('MovieDakhi_Count', libraryDisplayedCount);
     }
 });
-
 // 🔥 DOM CONTENT LOADED - INIT & SEO AUTO-OPEN
 document.addEventListener('DOMContentLoaded', async () => {
     
@@ -1662,7 +1549,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         finalScroll = parseInt(reloadScroll, 10);
         sessionStorage.removeItem('MovieDakhi_ExactScroll');
         if (finalScroll > 0) isRestoring = true;
-    }
+ 
+   }
     if (reloadCount !== null) {
         finalCount = parseInt(reloadCount, 10);
         sessionStorage.removeItem('MovieDakhi_Count');
@@ -1676,20 +1564,31 @@ document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view') || 'home';
     const category = params.get('category');
-    const movieSlug = params.get('movie');
+    
+    // 🔥 CF MODIFIED HERE: Cloudflare & HTML Path Support
+    let movieSlug = window.CF_MOVIE_SLUG || params.get('movie');
+    if (!movieSlug && window.location.pathname.endsWith('.html')) {
+        const filename = window.location.pathname.split('/').pop();
+        const excluded = ['index.html', 'Contact.html', 'DMCA.html', 'Privacy.html', 'Disclaimer.html'];
+        if (!excluded.includes(filename) && filename !== '') {
+            movieSlug = filename.replace('.html', '');
+        }
+    }
 
     const isBlob = window.location.protocol === 'blob:';
-    if (history.state && !movieSlug) {
+if (history.state && !movieSlug) {
         const state = history.state;
-        finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY || 0);
-        finalCount = finalCount > ITEMS_PER_PAGE ? finalCount : (state.displayedCount || ITEMS_PER_PAGE);
+finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY || 0);
+        finalCount = finalCount > ITEMS_PER_PAGE ?
+finalCount : (state.displayedCount || ITEMS_PER_PAGE);
         switchView(state.view, state.category, false, finalCount);
     } else if (!isBlob && !movieSlug) {
-        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: finalCount, validDakhiState: true }, ''); } catch (e) { }
+        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: finalCount, validDakhiState: true }, '');
+} catch (e) { }
         switchView(view, category, false, finalCount);
-    } else if (!movieSlug) {
+} else if (!movieSlug) {
         switchView('home', null, false, finalCount);
-    }
+}
 
     updateCanonical(window.location.href);
 
@@ -1698,24 +1597,23 @@ document.addEventListener('DOMContentLoaded', async () => {
             window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' });
             setTimeout(() => window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' }), 50);
         });
-    }
+}
 
     // 🔥 SEO: AUTO OPEN MODAL IF DIRECT MOVIE URL IS VISITED
     if (movieSlug) {
         const targetMovie = contentData.find(m => m.slug === movieSlug);
-        if (targetMovie) {
+if (targetMovie) {
             setTimeout(() => {
                 openModal(targetMovie.id);
-            }, 300); 
-        }
+            }, 300);
+}
     }
 
     setTimeout(() => {
         if (!isPopupAdBlocking) {
             initStaticAds();
         }
-    }, 100); 
-
+    }, 100);
 });
 
 window.addEventListener('popstate', (event) => {
@@ -1729,7 +1627,8 @@ window.addEventListener('popstate', (event) => {
             if (!isModalClosing) {
                 closeModal(false, false);
             }
-            handledOverlayClose = true;
+        
+    handledOverlayClose = true;
         } else if (state && state.isModalOpen) {
             return;
         } else {
@@ -1740,7 +1639,8 @@ window.addEventListener('popstate', (event) => {
     if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
         toggleCategoryMenu(false, false);
         handledOverlayClose = true;
-    }
+   
+ }
 
     if (handledOverlayClose) {
         return;
@@ -1748,13 +1648,13 @@ window.addEventListener('popstate', (event) => {
 
     if (state || window.location.search) {
         updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
-        switchView(state?.view || 'home', state?.category || null, false, state?.displayedCount || 30);
+switchView(state?.view || 'home', state?.category || null, false, state?.displayedCount || 30);
         void document.documentElement.offsetHeight;
         window.scrollTo({ top: state?.scrollY || 0, behavior: 'instant' });
-    } else {
+} else {
         switchView('home', null, false);
         void document.documentElement.offsetHeight;
-        window.scrollTo({ top: 0, behavior: 'instant' });
+window.scrollTo({ top: 0, behavior: 'instant' });
     }
 });
 
@@ -1762,13 +1662,11 @@ window.addEventListener('click', (e) => {
     if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal(true, true);
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
-
 function showToast(message) {
     const toast = document.getElementById('toastMessage');
     const toastText = document.getElementById('toastText');
     if (!toast || !toastText) return;
-
-    toastText.innerHTML = message;
+toastText.innerHTML = message;
     toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
     toast.classList.add('opacity-100', 'translate-y-0');
 
@@ -1783,7 +1681,7 @@ function copyWebsiteLink(btn) {
     const textArea = document.createElement("textarea");
     textArea.value = link;
     textArea.style.top = "0";
-    textArea.style.left = "0";
+textArea.style.left = "0";
     textArea.style.position = "fixed";
     document.body.appendChild(textArea);
     textArea.focus();
@@ -1791,21 +1689,20 @@ function copyWebsiteLink(btn) {
 
     try {
         document.execCommand('copy');
-        showToast("Link copied! Open your browser and paste it.");
+showToast("Link copied! Open your browser and paste it.");
 
         const originalHtml = `<i class="fas fa-copy"></i> Copy`;
-        btn.innerHTML = `<i class="fas fa-check"></i> Copied`;
+btn.innerHTML = `<i class="fas fa-check"></i> Copied`;
         btn.classList.remove('bg-[#E50914]', 'hover:bg-red-600');
         btn.classList.add('bg-green-600', 'hover:bg-green-500');
-
-        setTimeout(() => {
+setTimeout(() => {
             btn.innerHTML = originalHtml;
             btn.classList.add('bg-[#E50914]', 'hover:bg-red-600');
             btn.classList.remove('bg-green-600', 'hover:bg-green-500');
         }, 2000);
-    } catch (err) {
+} catch (err) {
         showToast("Failed to copy link. Please manually select the text.");
-    }
+}
 
     document.body.removeChild(textArea);
 }
