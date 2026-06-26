@@ -3,53 +3,45 @@ export async function onRequest(context) {
     const url = new URL(request.url);
     const path = url.pathname; 
 
-    // ১. সাধারণ ফাইলগুলো (CSS, JS, JSON, Images) সরাসরি লোড হতে দিন
     if (path.match(/\.(css|js|json|png|jpg|jpeg|gif|ico|xml|txt)$/i)) {
         return env.ASSETS.fetch(request);
     }
 
-    // ২. যদি কোনো মুভির লিংক হয় (যেমন: /mortal-kombat.html)
     const excludedFiles = ['/index.html', '/Contact.html', '/DMCA.html', '/Privacy.html', '/Disclaimer.html'];
     
     if (path.endsWith('.html') && !excludedFiles.includes(path)) {
-        
-        // লিংক থেকে স্লাগ বের করা (decodeURIComponent দেওয়া হলো যেন স্পেস থাকলে সমস্যা না হয়)
         const movieSlug = decodeURIComponent(path.replace('/', '').replace('.html', ''));
         
         try {
-            // movies.json থেকে ডাটা নেওয়া
             const moviesRes = await env.ASSETS.fetch(new URL('/movies.json', request.url));
             if (!moviesRes.ok) throw new Error("JSON load failed");
             const movies = await moviesRes.json();
             
-            // নির্দিষ্ট মুভিটি খোঁজা
             const targetMovie = movies.find(m => {
                 if(!m.title) return false;
                 const slug = m.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
                 return slug === movieSlug;
             });
 
-            // index.html নেওয়া
             const htmlRes = await env.ASSETS.fetch(new URL('/index.html', request.url));
             let html = await htmlRes.text();
 
-            // ৩. এসইও (SEO) ম্যাজিক - HTML এর ভেতরে টাইটেল ও ছবি বসানো
             if (targetMovie) {
                 const safeTitle = targetMovie.title.replace(/"/g, '&quot;');
-                const genre = targetMovie.genre || 'Entertainment';
+                const safeGenre = (targetMovie.genre || 'Action, Entertainment').replace(/"/g, '&quot;');
+                const safeLanguage = (targetMovie.language || 'Dual Audio').replace(/"/g, '&quot;');
+                const safeCategory = (targetMovie.category || 'Recent Adds').replace(/"/g, '&quot;');
                 
-                // Title
+                // ক) মেটা ট্যাগ ও টাইটেল চেঞ্জ
                 html = html.replace(/<title>.*?<\/title>/i, `<title>Watch ${safeTitle} Online Free HD | MovieDakhi</title>`);
                 
-                // Description
-                const descTag = `<meta name="description" content="Watch or download ${safeTitle} full movie. ${genre} | MovieDakhi">`;
+                const descTag = `<meta name="description" content="Watch or download ${safeTitle} full movie. Genre: ${safeGenre} | Language: ${safeLanguage} | MovieDakhi">`;
                 if (html.match(/<meta\s+name=["']description["'].*?>/i)) {
                     html = html.replace(/<meta\s+name=["']description["'].*?>/i, descTag);
                 } else {
                     html = html.replace('</head>', `${descTag}\n</head>`);
                 }
                 
-                // OG Title (ফেসবুক/টেলিগ্রাম)
                 const ogTitle = `<meta property="og:title" content="Watch ${safeTitle} - HD Download | MovieDakhi">`;
                 if (html.match(/<meta\s+property=["']og:title["'].*?>/i)) {
                     html = html.replace(/<meta\s+property=["']og:title["'].*?>/i, ogTitle);
@@ -57,7 +49,6 @@ export async function onRequest(context) {
                     html = html.replace('</head>', `${ogTitle}\n</head>`);
                 }
 
-                // OG Image (লিংক শেয়ার করলে মুভির পোস্টার)
                 if (targetMovie.posterUrl) {
                     const ogImage = `<meta property="og:image" content="${targetMovie.posterUrl}">`;
                     if (html.match(/<meta\s+property=["']og:image["'].*?>/i)) {
@@ -67,8 +58,30 @@ export async function onRequest(context) {
                     }
                 }
                 
-                // 🚀 জাভাস্ক্রিপ্টকে সিগন্যাল দেওয়ার জন্য সিক্রেট ভেরিয়েবল
-                html = html.replace('</head>', `<script>window.CF_MOVIE_SLUG = "${movieSlug}";</script>\n</head>`);
+                // খ) বডি কন্টেন্ট রিপ্লেসমেন্ট ম্যাজিক
+                html = html.replace(/<h2 id="modalTitle"[^>]*>.*?<\/h2>/i, `<h2 id="modalTitle" class="text-3xl md:text-5xl font-black mb-6 leading-tight">${safeTitle}</h2>`);
+                html = html.replace(/(<[a-z0-9]+[^>]*id="modalLanguage"[^>]*>).*?(<\/[a-z0-9]+>)/i, `$1${safeLanguage}$2`);
+                html = html.replace(/(<[a-z0-9]+[^>]*id="modalCategory"[^>]*>).*?(<\/[a-z0-9]+>)/i, `$1${safeCategory}$2`);
+
+                // মেইন ডেসক্রিপশন সেকশনকে ছোট এবং ক্লিন রাখা হলো (UI সুন্দর দেখানোর জন্য)
+                html = html.replace(/<p id="modalDesc"[^>]*>.*?<\/p>/i, `<p id="modalDesc" class="text-sm md:text-base text-gray-400 leading-relaxed mb-8 max-w-3xl mx-auto font-medium italic">▶ Streaming and download links for <strong>${safeTitle}</strong> are ready below. Scroll down to read the full movie story and details.</p>`);
+
+                // 🔥 নতুন ইংলিশ জেসন কী দিয়ে ক্লাউডফ্লেয়ার কন্টেন্ট ইনজেকশন
+                let seoBodyContent = '';
+                if (targetMovie.synopsis) {
+                    seoBodyContent += `<div style="margin-top: 25px; text-align: left; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">📖 Synopsis:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.synopsis}</p></div>`;
+                }
+                if (targetMovie.movieHighlights) {
+                    seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">✨ Movie Highlights:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.movieHighlights}</p></div>`;
+                }
+                if (targetMovie.streamingRecommendation) {
+                    seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">🎯 Streaming Recommendation:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.streamingRecommendation}</p></div>`;
+                }
+                if (targetMovie.detailedPlotSummary) {
+                    seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">🍿 Detailed Plot Summary:</b><p style="color: #999; font-size: 13px; white-space: pre-line; line-height: 1.6; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); font-style: normal;">${targetMovie.detailedPlotSummary}</p></div>`;
+                }
+
+                html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n<div id="modalSeoContent" class="text-sm md:text-base text-gray-400 leading-relaxed mt-6 max-w-3xl mx-auto font-medium text-left" style="display: block; width: 100%;">${seoBodyContent}</div>`);
             }
             
             return new Response(html, { 

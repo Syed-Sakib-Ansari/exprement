@@ -959,16 +959,40 @@ function openModal(id) {
     if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
     if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
 
-    // 🔥 DYNAMIC MODAL SEO TEXT
+// 🔥 CLEAN INTRO TEXT FOR TOP MODAL
     if(document.getElementById('modalDesc')) {
-        document.getElementById('modalDesc').innerHTML = `
-            <span class="font-bold text-gray-300">${item.genre || "Entertainment"}</span>
-            <div class="mt-3 text-[10px] md:text-xs text-gray-500 leading-relaxed font-medium">
-                ▶ Watch <strong class="text-gray-300">${item.title}</strong> full movie online free in HD.
-You can also download the complete movie / web series in 1080p directly to your device.
-Enjoy high-quality streaming without buffering on MovieDakhi.
-            </div>
-        `;
+        document.getElementById('modalDesc').innerHTML = `▶ Streaming and download links for <strong>${item.title}</strong> are ready below. Scroll down to read the full movie synopsis and details.`;
+        document.getElementById('modalDesc').className = "text-sm md:text-base text-gray-400 leading-relaxed mb-8 max-w-3xl mx-auto font-medium italic";
+    }
+
+    // 🔥 DYNAMIC SEOCONTENT GENERATOR WITH NEW ENGLISH JSON KEYS
+    let seoContainer = document.getElementById('modalSeoContent');
+    if (!seoContainer) {
+        seoContainer = document.createElement('div');
+        seoContainer.id = 'modalSeoContent';
+        seoContainer.className = "text-sm md:text-base text-gray-400 leading-relaxed mt-6 max-w-3xl mx-auto font-medium text-left w-full";
+        
+        const adBottomWrapper = document.getElementById('modalAdBottom')?.parentNode;
+        if (adBottomWrapper) {
+            adBottomWrapper.parentNode.insertBefore(seoContainer, adBottomWrapper.nextSibling);
+        }
+    }
+
+    if (seoContainer) {
+        let seoBodyContent = "";
+        if (item.synopsis) {
+            seoBodyContent += `<div class="mt-6 text-left border-t border-white/5 pt-4 select-text"><b class="text-white text-sm md:text-base block mb-1">📖 Synopsis :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.synopsis}</p></div>`;
+        }
+        if (item.movieHighlights) {
+            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">✨ Movie Highlights :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.movieHighlights}</p></div>`;
+        }
+        if (item.streamingRecommendation) {
+            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🎯 Streaming Recommendation :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.streamingRecommendation}</p></div>`;
+        }
+        if (item.detailedPlotSummary) {
+            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🍿 Detailed Plot Summary :</b><p class="text-gray-400 text-[11px] md:text-xs leading-relaxed whitespace-pre-line bg-white/5 p-3 rounded-lg border border-white/10 select-text cursor-text">${item.detailedPlotSummary}</p></div>`;
+        }
+        seoContainer.innerHTML = seoBodyContent;
     }
 
     downloadClickCount = 0;
