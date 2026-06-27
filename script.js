@@ -1247,17 +1247,19 @@ if (searchInput) {
 // ==========================================
 let announcementScrollY = 0;
 function showAnnouncement() {
-    const popup = document.getElementById('announcementPopup');
-    if (!popup) return;
-
-    const ua = navigator.userAgent || navigator.vendor ||
-        window.opera;
-    const isFacebookApp = /FBAN|FBAV|Ios/i.test(ua);
-    const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
-    const isInstaApp = /Instagram/i.test(ua);
+    const popup = document.getElementById('announcementPopup'); if (!popup) return;
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    
+    // ফেসবুক ও ইনস্টাগ্রাম রিমুভ করে শুধু মেসেঞ্জার (Messenger/Orca) যুক্ত করা হয়েছে
+    const isMessengerApp = /Messenger|Orca|FB_IAB\/MESSENGER/i.test(ua);
+    const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua); 
     const isAndroidWebviewApp = /wv|android.*version\/[0-9]/i.test(ua);
-    const isOperaMini = ua.includes('Opera Mini') || ua.includes('OPR/');
-    const isTrappedApp = !isOperaMini && (isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp);
+    const isOperaMini = ua.includes('Opera Mini') || ua.includes('OPR/'); 
+    
+    // এখন ফেসবুক/ইনস্টাগ্রাম সম্পূর্ণ মুক্ত, শুধু মেসেঞ্জার ট্র্যাপে পড়বে
+    const isTrappedApp = !isOperaMini && (isMessengerApp || isUCBrowser || isAndroidWebviewApp);
+    
+    // বাকি ওয়ার্নিং টেক্সট লজিক...
     const warningText = document.getElementById('browserWarningText');
     if (warningText && isTrappedApp) {
         if (isFacebookApp) {
@@ -1489,13 +1491,14 @@ function openInBrowser(browser) {
 }
 
 const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
-const isFBCheck = /FBAN|FBAV|Ios/i.test(uaCheck);
-const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
-const isInstaCheck = /Instagram/i.test(uaCheck);
+// ফেসবুক/ইনস্টাগ্রাম বাদ দিয়ে পিওর মেসেঞ্জার ডিটেক্টর বসানো হয়েছে
+const isMessengerCheck = /Messenger|Orca|FB_IAB\/MESSENGER/i.test(uaCheck);
+const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck); 
 const isAndroidWebviewCheck = /wv|android.*version\/[0-9]/i.test(uaCheck);
-
 const isOperaMiniCheck = uaCheck.includes('Opera Mini') || uaCheck.includes('OPR/');
-const isTrappedCheck = !isOperaMiniCheck && (isFBCheck || isUCCheck || isInstaCheck || isAndroidWebviewCheck);
+
+// এখন ফেসবুক বা ইনস্টাগ্রাম দিয়ে ঢুকলে এটি ফলস (false) থাকবে, ফলে কোনো রেস্ট্রিকশন বা পপআপ আসবে না
+const isTrappedCheck = !isOperaMiniCheck && (isMessengerCheck || isUCCheck || isAndroidWebviewCheck);
 
 const sessionKey = 'MovieDakhi_Welcome_Session_Final';
 const localKey = 'MovieDakhi_Welcome_Time_Final';
