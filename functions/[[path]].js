@@ -31,10 +31,13 @@ export async function onRequest(context) {
                 const safeGenre = (targetMovie.genre || 'Action, Entertainment').replace(/"/g, '&quot;');
                 const safeLanguage = (targetMovie.language || 'Dual Audio').replace(/"/g, '&quot;');
                 const safeCategory = (targetMovie.category || 'Recent Adds').replace(/"/g, '&quot;');
+                const fullMovieUrl = `https://moviedakhi.com/${movieSlug}.html`;
+                const poster = targetMovie.posterUrl || '';
                 
-                // ক) মেটা ট্যাগ ও টাইটেল চেঞ্জ
+                // ক) গুগল সার্চের জন্য মেইন টাইটেল
                 html = html.replace(/<title>.*?<\/title>/i, `<title>Watch ${safeTitle} Online Free HD | MovieDakhi</title>`);
                 
+                // খ) অল-ইন-ওয়ান মেটা ডেসক্রিপশন
                 const descTag = `<meta name="description" content="Watch or download ${safeTitle} full movie. Genre: ${safeGenre} | Language: ${safeLanguage} | MovieDakhi">`;
                 if (html.match(/<meta\s+name=["']description["'].*?>/i)) {
                     html = html.replace(/<meta\s+name=["']description["'].*?>/i, descTag);
@@ -42,31 +45,37 @@ export async function onRequest(context) {
                     html = html.replace('</head>', `${descTag}\n</head>`);
                 }
                 
-                const ogTitle = `<meta property="og:title" content="Watch ${safeTitle} - HD Download | MovieDakhi">`;
-                if (html.match(/<meta\s+property=["']og:title["'].*?>/i)) {
-                    html = html.replace(/<meta\s+property=["']og:title["'].*?>/i, ogTitle);
-                } else {
-                    html = html.replace('</head>', `${ogTitle}\n</head>`);
+                // গ) 🚀 অল-প্ল্যাটফর্ম ওপেন গ্রাফ ট্যাগ (Facebook, WhatsApp, Telegram, Comment Sections-এর জন্য)
+                let ogTags = `
+                    <meta property="og:title" content="Watch ${safeTitle} - HD Download | MovieDakhi">
+                    <meta property="og:description" content="Stream or download ${safeTitle} in high quality 1080p free.">
+                    <meta property="og:url" content="${fullMovieUrl}">
+                    <meta property="og:type" content="video.movie">
+                    <meta property="og:site_name" content="MovieDakhi">
+                `;
+                if(poster) ogTags += `<meta property="og:image" content="${poster}">`;
+
+                // ঘ) 🚀 টুইটার কার্ড ট্যাগ (Twitter/X এবং বিশেষ ব্লগ কমেন্ট সেকশনের জন্য)
+                let twitterTags = `
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:title" content="Watch ${safeTitle} - MovieDakhi">
+                    <meta name="twitter:description" content="Fast streaming and direct download links for ${safeTitle} full movie.">
+                `;
+                if(posterUrl) {
+                    twitterBlock += `<meta name="twitter:image" content="${poster}">`;
                 }
 
-                if (targetMovie.posterUrl) {
-                    const ogImage = `<meta property="og:image" content="${targetMovie.posterUrl}">`;
-                    if (html.match(/<meta\s+property=["']og:image["'].*?>/i)) {
-                        html = html.replace(/<meta\s+property=["']og:image["'].*?>/i, ogImage);
-                    } else {
-                        html = html.replace('</head>', `${ogImage}\n</head>`);
-                    }
-                }
+                // পুরোনো ওজি ট্যাগগুলো পরিষ্কার করে নতুন অল-প্ল্যাটফর্ম ট্যাগ ইনজেক্ট করা
+                html = html.replace(/<meta property="og:title".*?>/i, '');
+                html = html.replace(/<meta property="og:image".*?>/i, '');
+                html = html.replace('</head>', `${ogTags}\n${twitterTags}\n</head>`);
                 
-                // খ) বডি কন্টেন্ট রিপ্লেসমেন্ট ম্যাজিক
+                // ঙ) বডি কন্টেন্ট এবং লেবেল ম্যানেজমেন্ট
                 html = html.replace(/<h2 id="modalTitle"[^>]*>.*?<\/h2>/i, `<h2 id="modalTitle" class="text-3xl md:text-5xl font-black mb-6 leading-tight">${safeTitle}</h2>`);
                 html = html.replace(/(<[a-z0-9]+[^>]*id="modalLanguage"[^>]*>).*?(<\/[a-z0-9]+>)/i, `$1${safeLanguage}$2`);
                 html = html.replace(/(<[a-z0-9]+[^>]*id="modalCategory"[^>]*>).*?(<\/[a-z0-9]+>)/i, `$1${safeCategory}$2`);
+                html = html.replace(/<p id="modalDesc"[^>]*>.*?<\/p>/i, `<p id="modalDesc" class="text-sm md:text-base text-gray-400 leading-relaxed mb-8 max-w-3xl mx-auto font-medium italic">▶ Streaming and download links for <strong>${safeTitle}</strong> are ready below. Scroll down to read the full movie synopsis and details.</p>`);
 
-                // মেইন ডেসক্রিপশন সেকশনকে ছোট এবং ক্লিন রাখা হলো (UI সুন্দর দেখানোর জন্য)
-                html = html.replace(/<p id="modalDesc"[^>]*>.*?<\/p>/i, `<p id="modalDesc" class="text-sm md:text-base text-gray-400 leading-relaxed mb-8 max-w-3xl mx-auto font-medium italic">▶ Streaming and download links for <strong>${safeTitle}</strong> are ready below. Scroll down to read the full movie story and details.</p>`);
-
-                // 🔥 নতুন ইংলিশ জেসন কী দিয়ে ক্লাউডফ্লেয়ার কন্টেন্ট ইনজেকশন
                 let seoBodyContent = '';
                 if (targetMovie.synopsis) {
                     seoBodyContent += `<div style="margin-top: 25px; text-align: left; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">📖 Synopsis:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.synopsis}</p></div>`;
@@ -82,6 +91,7 @@ export async function onRequest(context) {
                 }
 
                 html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n<div id="modalSeoContent" class="text-sm md:text-base text-gray-400 leading-relaxed mt-6 max-w-3xl mx-auto font-medium text-left" style="display: block; width: 100%;">${seoBodyContent}</div>`);
+                html = html.replace('</head>', `<script>window.CF_MOVIE_SLUG = "${movieSlug}";</script>\n</head>`);
             }
             
             return new Response(html, { 
