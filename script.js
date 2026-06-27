@@ -8,15 +8,13 @@ if (!document.querySelector('link[href="https://onsetcab.com"]')) {
     preconnect1.rel = 'preconnect';
     preconnect1.href = 'https://onsetcab.com';
     const preconnect2 = document.createElement('link');
-    preconnect2.rel = 'dns-prefetch';
+    preconnect2.rel = 'dns-prefetch'; 
     preconnect2.href = 'https://onsetcab.com';
-    document.head.appendChild(preconnect1);
+    document.head.appendChild(preconnect1); 
     document.head.appendChild(preconnect2);
 }
 
 let isPopupAdBlocking = false;
-let lastWindowBlurTime = 0; // 🔥 পপআন্ডার অ্যাড ট্র্যাকিং লকিং ফ্ল্যাগ
-
 // ==========================================
 // 🚀 SEO URL SLUG GENERATOR
 // ==========================================
@@ -29,21 +27,20 @@ function generateMovieSlug(title) {
 // 🚀 SMART RESPONSIVE AD INJECTOR (With Anti-Reload Lock)
 // ==========================================
 function injectAdsterra(container, key, w, h) {
-    if (!container || isPopupAdBlocking) return;
+    if(!container || isPopupAdBlocking) return;
     container.innerHTML = '';
     container.className = "flex bg-[#0a0a0a] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center shrink-0 mx-auto shadow-lg";
     container.style.width = '100%';
     container.style.maxWidth = w + 'px';
     container.style.minHeight = h + 'px';
-
+    
     const label = document.createElement('span');
     label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
     label.innerText = "Advertisement";
     container.appendChild(label);
-
     const iframeWrapper = document.createElement('div');
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
-
+    
     const iframe = document.createElement('iframe');
     iframe.width = w;
     iframe.height = h;
@@ -54,10 +51,10 @@ function injectAdsterra(container, key, w, h) {
     iframe.style.backgroundColor = "transparent";
     iframe.style.display = "block";
     iframe.setAttribute('allowtransparency', 'true');
-
+    
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
-
+    
     setTimeout(() => {
         try {
             const doc = iframe.contentWindow.document || iframe.contentDocument;
@@ -83,14 +80,14 @@ function injectAdsterra(container, key, w, h) {
             </body>
             </html>`);
             doc.close();
-        } catch (e) { }
+        } catch(e) { }
     }, 10);
 }
 
 function injectResponsiveAdNode(container) {
-    if (!container) return;
-    if (container.querySelector('iframe')) return;
-
+    if(!container) return;
+    if(container.querySelector('iframe')) return; 
+    
     const isMobile = window.innerWidth <= 768;
     const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
     const w = isMobile ? 320 : 728;
@@ -112,12 +109,12 @@ let popAdsInjected = false;
 function injectPopAds() {
     if (popAdsInjected) return;
     popAdsInjected = true;
-
+    
     const socialBar = document.createElement('script');
     socialBar.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
     socialBar.async = true;
     document.body.appendChild(socialBar);
-
+    
     const popunder = document.createElement('script');
     popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
     popunder.async = true;
@@ -128,11 +125,11 @@ function injectPopAds() {
 // 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
 // ==========================================
 function injectNativeBanner(container, h = 260) {
-    if (!container || isPopupAdBlocking) return;
-    if (container.querySelector('iframe')) return;
-
+    if(!container || isPopupAdBlocking) return;
+    if(container.querySelector('iframe')) return;
+    
     container.innerHTML = '';
-
+    
     const iframeWrapper = document.createElement('div');
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
     const iframe = document.createElement('iframe');
@@ -145,7 +142,7 @@ function injectNativeBanner(container, h = 260) {
     iframe.style.backgroundColor = "transparent";
     iframe.style.display = "block";
     iframe.setAttribute('allowtransparency', 'true');
-
+    
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
     setTimeout(() => {
@@ -165,7 +162,7 @@ function injectNativeBanner(container, h = 260) {
             </body>
             </html>`);
             doc.close();
-        } catch (e) { }
+        } catch(e) { }
     }, 10);
 }
 
@@ -178,7 +175,7 @@ function createMobileNativeAdBlock() {
     label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
     label.innerText = "Advertisement";
     container.appendChild(label);
-
+    
     injectNativeBanner(container, 260);
     block.appendChild(container);
     return block;
@@ -187,11 +184,11 @@ function createMobileNativeAdBlock() {
 function createDesktopNativeAdBlock() {
     const block = document.createElement('div');
     block.className = 'hidden md:flex col-span-full w-full justify-between gap-4 my-6';
-
-    for (let i = 0; i < 3; i++) {
+    
+    for(let i=0; i<3; i++) {
         const container = document.createElement('div');
         container.className = 'flex-1 w-full bg-[#111] rounded-xl overflow-hidden border border-white/5 shadow-lg relative min-h-[250px] flex items-center justify-center';
-
+        
         const label = document.createElement('span');
         label.className = "absolute top-1 left-2 text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
         label.innerText = "Advertisement";
@@ -204,7 +201,14 @@ function createDesktopNativeAdBlock() {
 }
 
 // ১. লোকাল ব্যাকআপ মুভির ডাটাবেজ
-const contentData = [];
+const contentData = [
+    {
+        title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Recent Adds", language: "Hindi", quality: "HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1"
+    },
+    {
+        title: "Obsess (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#818js", posterUrl: "https://m.media-amazon.com/images/M/MV5BZjI3NjU4OTItMzYxMS00NmYxLWJjOTEtZjRhZDEzZTM5YmVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", genre: "Action, Thriller", category: "Recent Adds", language: "Hindi", quality: "HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#818js&dl=1"
+    }
+];
 
 // ২. ASYNC FETCH SYSTEM
 async function loadContentDatabase() {
@@ -214,15 +218,15 @@ async function loadContentDatabase() {
             const db = await response.json();
             if (Array.isArray(db) && db.length > 0) {
                 contentData.length = 0;
-                contentData.push(...db);
+                contentData.push(...db); 
             }
         }
     } catch (err) {
         console.warn("External JSON database failed to load. Using fallback array.", err);
     } finally {
-        contentData.forEach((item, index) => {
-            item.id = index;
-            item.slug = generateMovieSlug(item.title);
+        contentData.forEach((item, index) => { 
+            item.id = index; 
+            item.slug = generateMovieSlug(item.title); 
         });
     }
 }
@@ -289,14 +293,14 @@ function renderCategories() {
             mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
             mobileItem.innerText = 'Home';
             mobileItem.href = '#';
-
+    
             mobileItem.onclick = (e) => {
                 e.preventDefault();
                 toggleCategoryMenu(false, false);
                 clearSearch(true);
                 switchView('home', null, 'replace');
             };
-
+         
             mobileGrid.appendChild(mobileItem);
             return;
         }
@@ -343,12 +347,11 @@ function toggleCategoryMenu(show, triggerBack = true) {
 
         const currentState = history.state || {};
         try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-        try {
-            window.history.pushState({ ...currentState, isMenuOpen: true }, '');
+        try { window.history.pushState({ ...currentState, isMenuOpen: true }, '');
         } catch (e) { }
 
         categoryMenu.classList.remove('hidden');
-        void categoryMenu.offsetWidth;
+        void categoryMenu.offsetWidth; 
         categoryMenu.classList.add('active');
 
         document.body.style.position = 'fixed';
@@ -483,11 +486,10 @@ function initHeroSlider() {
     sliderDots.innerHTML = '';
     const isMobile = window.innerWidth <= 768;
     const sliderImageWidth = isMobile ? 600 : 1200;
-
     slides.forEach((movie, index) => {
         const slide = document.createElement('div');
         slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
-
+        
         const loadingAttr = index === 0 ? 'eager' : 'lazy';
         const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
 
@@ -509,7 +511,8 @@ mx-auto">
         sliderWrapper.appendChild(slide);
 
         const dot = document.createElement('button');
-        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
+        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ?
+'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
         dot.onclick = () => goToSlide(index);
         sliderDots.appendChild(dot);
     });
@@ -628,7 +631,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
                 } else {
                     url.searchParams.delete('category');
                 }
-
+                
                 url.searchParams.delete('movie');
                 if (mode === 'replace') {
                     window.history.replaceState(stateObj, '', url);
@@ -661,9 +664,9 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 
 // 🚀 CREATE MOVIE CARD
 function createMovieCard(item) {
-    const card = document.createElement('a');
+    const card = document.createElement('a'); 
     const movieSlug = item.slug || generateMovieSlug(item.title);
-    card.href = `${movieSlug}.html`; // 🔥 CF UPDATE
+    card.href = `?movie=${movieSlug}`;
     card.className = 'movie-card relative flex flex-col group cursor-pointer no-underline';
 
     const infoText = item.seriesInfo ?
@@ -684,15 +687,14 @@ items-center p-5 transition-all duration-300">
             </div>
             <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300">
                 <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
-  
-          </div>
+            </div>
         </div>
         <div class="mt-4 text-center flex flex-col items-center md:block">
             <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
             ${infoText}
         </div>`;
     card.onclick = (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
         openModal(item.id);
     };
     return card;
@@ -707,7 +709,7 @@ function renderRecentAdds() {
     recentItems.slice(0, 18).forEach((item, index) => {
         fragment.appendChild(createMovieCard(item));
         let currentIdx = index + 1;
-
+        
         if (currentIdx % 8 === 0) fragment.appendChild(createMobileNativeAdBlock());
         if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
     });
@@ -733,7 +735,6 @@ function renderCategorySections(forceRenderAll = false) {
             }
         });
     }, observerOptions);
-
     function loadCategorySection(targetSection) {
         const cat = targetSection.getAttribute('data-category-lazy');
         const lazyGrid = targetSection.querySelector('.lazy-grid');
@@ -744,7 +745,7 @@ function renderCategorySections(forceRenderAll = false) {
         filtered.slice(0, 11).forEach((item, index) => {
             cardsFragment.appendChild(createMovieCard(item));
             let currentIdx = index + 1;
-
+            
             if (currentIdx % 8 === 0) cardsFragment.appendChild(createMobileNativeAdBlock());
             if (currentIdx % 6 === 0) cardsFragment.appendChild(createDesktopNativeAdBlock());
         });
@@ -759,7 +760,7 @@ function renderCategorySections(forceRenderAll = false) {
                     <i class="fas fa-arrow-right text-white text-xl"></i>
                 </div>
       
-          <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
+                <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
                 <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
             </div>`;
         viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
@@ -791,14 +792,14 @@ function renderCategorySections(forceRenderAll = false) {
 
             <div class="flex items-center space-x-3 mb-8 justify-center">
              
-   <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
+    <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
                 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
             </div>
             
             <div class="lazy-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto">
                 <div class="col-span-full py-16 flex justify-center items-center">
   
-                  <div class="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin opacity-45"></div>
+                   <div class="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin opacity-45"></div>
                 </div>
             </div>`;
         if (forceRenderAll) {
@@ -821,17 +822,15 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     const cleanStr = (str) => str ? str.toLowerCase().replace(/[^a-z0-9]/g, '') : "";
     const cleanQuery = cleanStr(rawQuery);
     const isSearch = rawQuery.trim().length > 0;
-
     if (!libraryGrid.dataset.initialized) {
         libraryGrid.dataset.originalClasses = libraryGrid.className;
-        libraryGrid.className = 'relative w-full';
+        libraryGrid.className = 'relative w-full'; 
         libraryGrid.dataset.initialized = 'true';
     }
 
     Array.from(libraryGrid.children).forEach(child => {
         child.classList.add('hidden');
     });
-
     const gridId = isSearch ? 'subgrid-search' : `subgrid-${filter.replace(/\s+/g, '-')}`;
     activeSubGridId = gridId;
 
@@ -844,101 +843,138 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     if (subGrid) {
         subGrid.classList.remove('hidden');
         libraryDisplayedCount = parseInt(subGrid.dataset.displayedCount || ITEMS_PER_PAGE, 10);
-
+        
         libraryData = contentData.filter(item => {
             return filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
         });
         updateLoadMoreVisibility();
-        return;
+        return; 
     }
 
     subGrid = document.createElement('div');
     subGrid.id = gridId;
     subGrid.className = libraryGrid.dataset.originalClasses;
     libraryGrid.appendChild(subGrid);
-
     libraryData = contentData.filter(item => {
         const matchesCat = filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
         const matchesSearch = isSearch ? (cleanStr(item.title).includes(cleanQuery) || cleanStr(item.category).includes(cleanQuery) || cleanStr(item.genre).includes(cleanQuery)) : true;
         return matchesCat && matchesSearch;
     });
-
     libraryDisplayedCount = initialCount > 0 ? initialCount : ITEMS_PER_PAGE;
     subGrid.dataset.displayedCount = libraryDisplayedCount;
-
     if (libraryData.length === 0) {
         subGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
     } else {
         const fragment = document.createDocumentFragment();
         libraryData.slice(0, libraryDisplayedCount).forEach((item, index) => {
-            fragment.appendChild(createMovieCard(item)); let currentIdx = index + 1;
+            fragment.appendChild(createMovieCard(item));
+            let currentIdx = index + 1;
+            
             if (currentIdx % 8 === 0) fragment.appendChild(createMobileNativeAdBlock());
             if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
         });
         subGrid.appendChild(fragment);
     }
+
     updateLoadMoreVisibility();
-    if (isSearch && libraryView) window.scrollTo({ top: libraryView.offsetTop - 100, behavior: 'smooth' });
+
+    if (isSearch && libraryView) {
+        const scrollTarget = libraryView.offsetTop - 100;
+        window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+    }
 }
 
+// 🚀 LIBRARY SCROLL CHUNK
 function renderLibraryChunk() {
-    if (isLoading) return; isLoading = true; const nextCount = libraryDisplayedCount + ITEMS_PER_PAGE; const chunk = libraryData.slice(libraryDisplayedCount, nextCount);
+    if (isLoading) return;
+    isLoading = true;
+    
+    const nextCount = libraryDisplayedCount + ITEMS_PER_PAGE;
+    const chunk = libraryData.slice(libraryDisplayedCount, nextCount);
+    
     let subGrid = document.getElementById(activeSubGridId);
     if (chunk.length > 0 && subGrid) {
         const fragment = document.createDocumentFragment();
         chunk.forEach((item, index) => {
-            fragment.appendChild(createMovieCard(item)); let currentIdx = libraryDisplayedCount + index + 1;
+            fragment.appendChild(createMovieCard(item));
+            let currentIdx = libraryDisplayedCount + index + 1;
+            
             if (currentIdx % 4 === 0) fragment.appendChild(createMobileNativeAdBlock());
             if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
         });
-        subGrid.appendChild(fragment); libraryDisplayedCount = nextCount; subGrid.dataset.displayedCount = libraryDisplayedCount; updateLoadMoreVisibility();
+        subGrid.appendChild(fragment);
+        libraryDisplayedCount = nextCount;
+        subGrid.dataset.displayedCount = libraryDisplayedCount;
+        updateLoadMoreVisibility();
     }
+    
     isLoading = false;
 }
-function updateLoadMoreVisibility() { if (!document.getElementById('loadingIndicator')) return; if (libraryDisplayedCount < libraryData.length) document.getElementById('loadingIndicator').classList.remove('hidden'); else document.getElementById('loadingIndicator').classList.add('hidden'); }
+
+function updateLoadMoreVisibility() {
+    const loading = document.getElementById('loadingIndicator');
+    if (!loading) return;
+    if (libraryDisplayedCount < libraryData.length) {
+        loading.classList.remove('hidden');
+    } else {
+        loading.classList.add('hidden');
+    }
+}
 
 function openModal(id) {
-    if (document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
-    savedScrollY = window.scrollY; const item = contentData.find(m => m.id === id); if (!item) return;
+    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
+    savedScrollY = window.scrollY;
 
-    const movieSlug = item.slug || generateMovieSlug(item.title); const newUrl = new URL('/' + movieSlug + '.html', window.location.origin);
+    const item = contentData.find(m => m.id === id);
+    if (!item) return;
+
+    // 🔥 AD-LOOP FIX: বিজ্ঞাপনের কারণে রিডাইরেক্ট হলেও মেমোরিতে মোডালের আইডি সেভ থাকবে
+    sessionStorage.setItem('MovieDakhi_ActiveModalId', id);
+
+    // 🔥 URL AND HISTORY SEO UPDATE
+    const movieSlug = item.slug || generateMovieSlug(item.title);
+    const newUrl = new URL(window.location.origin + window.location.pathname); 
+    newUrl.searchParams.set('movie', movieSlug); 
+    
     const currentState = history.state || { view: currentView, validDakhiState: true };
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl); } catch (e) { }
+    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl);
+    } catch (e) { }
 
+    // 🔥 HIGH-VOLUME DYNAMIC SEO GENERATOR
     document.title = `Watch ${item.title} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
+    
     let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) { metaDescription = document.createElement('meta'); metaDescription.name = "description"; document.head.appendChild(metaDescription); }
+    if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = "description";
+        document.head.appendChild(metaDescription);
+    }
     metaDescription.content = `Watch ${item.title} full movie online for free in HD quality. Download ${item.title} complete web series 1080p, 720p. Stream ${item.genre} movies seamlessly on MovieDakhi.`;
 
-    const modalTitleElem = document.getElementById('modalTitle'); const isSameMovie = modalTitleElem && modalTitleElem.innerText === item.title;
-    currentItem = item; if (modalTitleElem) modalTitleElem.innerText = item.title;
-    if (document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
-    if (document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
+    const modalTitleElem = document.getElementById('modalTitle');
+    const isSameMovie = modalTitleElem && modalTitleElem.innerText === item.title;
 
-    if (document.getElementById('modalDesc')) {
-        document.getElementById('modalDesc').innerHTML = `▶ Streaming and download links for <strong>${item.title}</strong> are ready below. Scroll down to read the full movie synopsis and details.`;
-        document.getElementById('modalDesc').className = "text-sm md:text-base text-gray-400 leading-relaxed mb-8 max-w-3xl mx-auto font-medium italic";
+    currentItem = item;
+    if(modalTitleElem) modalTitleElem.innerText = item.title;
+    
+    if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
+    if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
+
+    // 🔥 DYNAMIC MODAL SEO TEXT
+    if(document.getElementById('modalDesc')) {
+        document.getElementById('modalDesc').innerHTML = `
+            <span class="font-bold text-gray-300">${item.genre || "Entertainment"}</span>
+            <div class="mt-3 text-[10px] md:text-xs text-gray-500 leading-relaxed font-medium">
+                ▶ Watch <strong class="text-gray-300">${item.title}</strong> full movie online free in HD.
+                You can also download the complete movie / web series in 1080p directly to your device.
+                Enjoy high-quality streaming without buffering on MovieDakhi.
+            </div>
+        `;
     }
 
-    let seoContainer = document.getElementById('modalSeoContent');
-    if (!seoContainer) {
-        seoContainer = document.createElement('div'); seoContainer.id = 'modalSeoContent';
-        seoContainer.className = "text-sm md:text-base text-gray-400 leading-relaxed mt-6 max-w-3xl mx-auto font-medium text-left w-full";
-        const adBottomWrapper = document.getElementById('modalAdBottom')?.parentNode;
-        if (adBottomWrapper) adBottomWrapper.parentNode.insertBefore(seoContainer, adBottomWrapper.nextSibling);
-    }
-
-    if (seoContainer) {
-        let seoBodyContent = "";
-        if (item.synopsis) seoBodyContent += `<div class="mt-6 text-left border-t border-white/5 pt-4 select-text"><b class="text-white text-sm md:text-base block mb-1">📖 Synopsis :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.synopsis}</p></div>`;
-        if (item.movieHighlights) seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">✨ Movie Highlights :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.movieHighlights}</p></div>`;
-        if (item.streamingRecommendation) seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🎯 Streaming Recommendation :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.streamingRecommendation}</p></div>`;
-        if (item.detailedPlotSummary) seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🍿 Detailed Plot Summary :</b><p class="text-gray-400 text-[11px] md:text-xs leading-relaxed whitespace-pre-line bg-white/5 p-3 rounded-lg border border-white/10 select-text cursor-text">${item.detailedPlotSummary}</p></div>`;
-        seoContainer.innerHTML = seoBodyContent;
-    }
-
-    downloadClickCount = 0; const downloadBtn = document.getElementById('mainDownloadBtn');
+    downloadClickCount = 0;
+    const downloadBtn = document.getElementById('mainDownloadBtn');
     if (downloadBtn) {
         document.getElementById('downloadBtnText').innerText = "Download";
         downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
@@ -947,110 +983,275 @@ function openModal(id) {
         if (wave) wave.classList.remove('hidden');
     }
 
-    if (item.episodes && item.episodes.length > 0) { if (!isSameMovie) currentEpisodeIndex = 0; } else { currentEpisodeIndex = null; }
-    const seriesSec = document.getElementById('seriesSection'); const epList = document.getElementById('episodeList');
+    if (item.episodes && item.episodes.length > 0) {
+        if (!isSameMovie) currentEpisodeIndex = 0;
+    } else {
+        currentEpisodeIndex = null;
+    }
+
+    const seriesSec = document.getElementById('seriesSection');
+    const epList = document.getElementById('episodeList');
     if (item.episodes && seriesSec && epList) {
-        seriesSec.classList.remove('hidden'); document.getElementById('seriesInfoText').innerText = item.seriesInfo; epList.innerHTML = '';
+        seriesSec.classList.remove('hidden');
+        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
+        epList.innerHTML = '';
         item.episodes.forEach((ep, idx) => {
-            const btn = document.createElement('button'); btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
-            if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active'); btn.innerText = ep.title; btn.onclick = () => playEpisode(idx, btn); epList.appendChild(btn);
+            const btn = document.createElement('button');
+            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
+            if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active');
+            btn.innerText = ep.title;
+            btn.onclick = () => playEpisode(idx, btn);
+    
+            epList.appendChild(btn);
         });
-    } else if (seriesSec) { seriesSec.classList.add('hidden'); }
+    } else if (seriesSec) { 
+        seriesSec.classList.add('hidden');
+    }
 
     let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
     const actualVideoContainer = document.getElementById('actualVideo');
+
     if (actualVideoContainer) {
-        actualVideoContainer.classList.remove('hidden'); const existingIframe = document.getElementById('videoIframe');
-        if (!isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank") {
+        actualVideoContainer.classList.remove('hidden');
+
+        const existingIframe = document.getElementById('videoIframe');
+        const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
+        // 🔥 FIXED: Direct iframe injection without layout-breaking wrapper divs
+        if (needsNewIframe) {
             actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
     }
 
     const modal = document.getElementById('movieModal');
     if (modal) {
-        modal.classList.remove('hidden'); void modal.offsetWidth; modal.classList.add('active');
-        setTimeout(() => { injectResponsiveAdNode(document.getElementById('modalAdTop')); injectResponsiveAdNode(document.getElementById('modalAdBottom')); }, 150);
+        modal.classList.remove('hidden');
+        void modal.offsetWidth; 
+        modal.classList.add('active');
+        setTimeout(() => {
+            injectResponsiveAdNode(document.getElementById('modalAdTop'));
+            injectResponsiveAdNode(document.getElementById('modalAdBottom'));
+        }, 150);
     }
-    document.body.style.position = 'fixed'; document.body.style.top = `-${savedScrollY}px`; document.body.style.width = '100%';
+
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.width = '100%';
 }
 
 function handleDownloadClick() {
     if (!currentItem) return;
+
     if (downloadClickCount >= 3) {
-        downloadClickCount = 0; const downloadBtn = document.getElementById('mainDownloadBtn'); document.getElementById('downloadBtnText').innerText = "Download";
-        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80'); downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
-        if (downloadBtn.querySelector('.animate-shine-wave')) downloadBtn.querySelector('.animate-shine-wave').classList.remove('hidden'); return;
+        downloadClickCount = 0;
+        const downloadBtn = document.getElementById('mainDownloadBtn');
+        document.getElementById('downloadBtnText').innerText = "Download";
+
+        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+        downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+
+        const wave = downloadBtn.querySelector('.animate-shine-wave');
+        if (wave) wave.classList.remove('hidden');
+
+        return;
     }
+
     downloadClickCount++;
-    if (downloadClickCount === 1 || downloadClickCount === 2) { document.getElementById('downloadBtnText').innerText = downloadClickCount === 1 ? "Ready For Download" : "Download (Final Click)"; if (currentItem.downloadUrl1) window.open(currentItem.downloadUrl1, '_blank'); }
-    else if (downloadClickCount === 3) {
-        document.getElementById('downloadBtnText').innerText = "Link Expire"; const downloadBtn = document.getElementById('mainDownloadBtn');
-        if (downloadBtn) { downloadBtn.classList.remove('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105'); downloadBtn.classList.add('!bg-none', '!bg-[#111]', '!border-white', '!text-white', 'cursor-not-allowed', 'opacity-80'); if (downloadBtn.querySelector('.animate-shine-wave')) downloadBtn.querySelector('.animate-shine-wave').classList.add('hidden'); }
-        if (currentEpisodeIndex !== null && currentItem.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl) window.open(currentItem.episodes[currentEpisodeIndex].downloadUrl, '_blank'); else if (currentItem.downloadUrl2) window.open(currentItem.downloadUrl2, '_blank');
+
+    if (downloadClickCount === 1) {
+        document.getElementById('downloadBtnText').innerText = "Ready For Download";
+        if (currentItem.downloadUrl1) {
+            window.open(currentItem.downloadUrl1, '_blank');
+        }
+    } else if (downloadClickCount === 2) {
+        document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
+        if (currentItem.downloadUrl1) {
+            window.open(currentItem.downloadUrl1, '_blank');
+        }
+    } else if (downloadClickCount === 3) {
+        document.getElementById('downloadBtnText').innerText = "Link Expire";
+        const downloadBtn = document.getElementById('mainDownloadBtn');
+        if (downloadBtn) {
+            downloadBtn.classList.remove('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+            downloadBtn.classList.add('!bg-none', '!bg-[#111]', '!border-white', '!text-white', 'cursor-not-allowed', 'opacity-80');
+
+            const wave = downloadBtn.querySelector('.animate-shine-wave');
+            if (wave) wave.classList.add('hidden');
+        }
+
+        if (currentEpisodeIndex !== null && currentItem.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl) {
+            window.open(currentItem.episodes[currentEpisodeIndex].downloadUrl, '_blank');
+        } else if (currentItem.downloadUrl2) {
+            window.open(currentItem.downloadUrl2, '_blank');
+        }
     }
 }
 
 function playEpisode(index, btnElement) {
-    const episode = currentItem.episodes[index]; document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active')); btnElement.classList.add('active'); let url = episode.embedUrl;
+    const episode = currentItem.episodes[index];
+    document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
+    btnElement.classList.add('active');
+    let url = episode.embedUrl;
+
     const actualVideo = document.getElementById('actualVideo');
     if (actualVideo) {
-        actualVideo.classList.remove('hidden'); const existingIframe = document.getElementById('videoIframe');
-        if (!existingIframe || existingIframe.src !== url) actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+        actualVideo.classList.remove('hidden');
+        const existingIframe = document.getElementById('videoIframe');
+        
+        // 🔥 FIXED: Direct iframe injection without layout-breaking wrapper divs
+        if (!existingIframe || existingIframe.src !== url) {
+            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+        }
     }
-    currentEpisodeIndex = index; downloadClickCount = 0; const downloadBtn = document.getElementById('mainDownloadBtn'); document.getElementById('downloadBtnText').innerText = "Download";
-    downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80'); downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
-    if (downloadBtn.querySelector('.animate-shine-wave')) downloadBtn.querySelector('.animate-shine-wave').classList.remove('hidden');
+
+    currentEpisodeIndex = index;
+    downloadClickCount = 0;
+    const downloadBtn = document.getElementById('mainDownloadBtn');
+    document.getElementById('downloadBtnText').innerText = "Download";
+
+    downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+    downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+
+    const wave = downloadBtn.querySelector('.animate-shine-wave');
+    if (wave) wave.classList.remove('hidden');
 }
 
 let isModalClosing = false;
+
 function closeModal(triggerBack = true, explicitClose = false) {
-    const modal = document.getElementById('movieModal'); if (!modal || modal.classList.contains('hidden')) return;
-    if (document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
-    isModalClosing = true; document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
-    if (!triggerBack) { modal.classList.add('hidden'); modal.classList.remove('active'); isModalClosing = false; }
-    else { modal.classList.remove('active'); setTimeout(() => { modal.classList.add('hidden'); isModalClosing = false; }, 300); }
-    setTimeout(() => { if (document.getElementById('actualVideo')) document.getElementById('actualVideo').innerHTML = ''; }, 300);
-    document.body.style.position = ''; document.body.style.top = ''; document.body.style.width = ''; window.scrollTo(0, savedScrollY);
-    if (triggerBack && window.history.state?.isModalOpen) window.history.back();
+    const modal = document.getElementById('movieModal');
+    if (!modal || modal.classList.contains('hidden')) return;
+
+    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
+
+    isModalClosing = true;
+    // 🔥 SEO: Restore Default Page Title
+    document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
+    
+    // 🔥 AD-LOOP FIX: ইউজার নিজে বন্ধ করলেই কেবল সেশন মেমোরি থেকে ডাটা রিমুভ হবে
+    sessionStorage.removeItem('MovieDakhi_ActiveModalId');
+
+    if (!triggerBack) {
+        modal.classList.add('hidden');
+        modal.classList.remove('active');
+        isModalClosing = false;
+    } else {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            isModalClosing = false;
+        }, 300);
+    }
+
+    setTimeout(() => {
+        const actualVideoContainer = document.getElementById('actualVideo');
+        if (actualVideoContainer) {
+            actualVideoContainer.innerHTML = ''; 
+        }
+    }, 300);
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, savedScrollY);
+    if (triggerBack && window.history.state?.isModalOpen) {
+        window.history.back();
+    }
 }
 
 if (searchInput) {
-    searchInput.addEventListener('focus', () => { if (!preSearchState && searchInput.value.trim().length === 0) preSearchState = { view: currentView, scrollY: window.scrollY, category: document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all', displayedCount: libraryDisplayedCount }; });
+    searchInput.addEventListener('focus', () => {
+        if (!preSearchState && searchInput.value.trim().length === 0) {
+            const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
+            preSearchState = {
+                view: currentView,
+                scrollY: window.scrollY,
+           
+                category: activeCat,
+                displayedCount: libraryDisplayedCount
+            };
+        }
+    });
     searchInput.addEventListener('input', debounce(() => {
-        const rawQuery = searchInput.value; updateSearchUI();
+        const rawQuery = searchInput.value;
+        updateSearchUI();
+
         if (rawQuery.trim().length > 0) {
-            if (!preSearchState) preSearchState = { view: currentView, scrollY: window.scrollY, category: document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all', displayedCount: libraryDisplayedCount };
-            if (currentView !== 'library') switchView('library'); initLibraryRender();
-        } else { if (preSearchState) { switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY); preSearchState = null; } else { initLibraryRender(); } }
+            if (!preSearchState) {
+                const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
+                preSearchState = {
+            
+                    view: currentView,
+                    scrollY: window.scrollY,
+                    category: activeCat,
+                    displayedCount: libraryDisplayedCount
+                };
+            
+            }
+
+            if (currentView !== 'library') switchView('library');
+            initLibraryRender();
+        } else {
+            if (preSearchState) {
+                switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
+                preSearchState = null; 
+         
+            } else {
+                initLibraryRender();
+            }
+        }
     }, 300));
-    searchInput.addEventListener('blur', () => { setTimeout(() => { if ((document.getElementById('movieModal')?.classList.contains('active')) || (document.getElementById('categoryMenu')?.classList.contains('active'))) return; if (searchInput.value.trim().length === 0 && preSearchState) clearSearch(); }, 200); });
-    searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); searchInput.blur(); } });
+    searchInput.addEventListener('blur', () => {
+        setTimeout(() => {
+            const modal = document.getElementById('movieModal');
+            const catMenu = document.getElementById('categoryMenu');
+
+            if ((modal && modal.classList.contains('active')) || (catMenu && catMenu.classList.contains('active'))) {
+                return;
+            }
+
+         
+            if (searchInput.value.trim().length === 0 && preSearchState) {
+                clearSearch();
+            }
+        }, 200);
+    });
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            searchInput.blur();
+        }
+    });
 }
 
+// ==========================================
+// 🚀 IN-APP BROWSER DETECTOR & SUGGESTION BOX
+// ==========================================
 let announcementScrollY = 0;
 function showAnnouncement() {
-    const popup = document.getElementById('announcementPopup'); if (!popup) return;
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const popup = document.getElementById('announcementPopup');
+    if (!popup) return;
 
-    const isMessengerApp = /Messenger|Orca|FB_IAB\/MESSENGER/i.test(ua);
+    const ua = navigator.userAgent || navigator.vendor ||
+    window.opera;
+    const isFacebookApp = /FBAN|FBAV|Ios/i.test(ua);
     const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
+    const isInstaApp = /Instagram/i.test(ua);
     const isAndroidWebviewApp = /wv|android.*version\/[0-9]/i.test(ua);
     const isOperaMini = ua.includes('Opera Mini') || ua.includes('OPR/');
-    const isFBOrInstagramApp = /FBAN|FBAV|Instagram/i.test(ua) && !isMessengerApp;
-
-    const isTrappedApp = !isOperaMini && (isMessengerApp || isUCBrowser || (isAndroidWebviewApp && !isFBOrInstagramApp));
-
+    const isTrappedApp = !isOperaMini && (isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp);
     const warningText = document.getElementById('browserWarningText');
     if (warningText && isTrappedApp) {
-        if (isMessengerApp) {
-            warningText.innerHTML = `Messenger browser <span class="text-white font-black">Cannot Play or Download</span> movies.
-Tap below to use a real browser which you have!`;
+        if (isFacebookApp) {
+            warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+            Tap below to use a real browser which you have!`;
         } else if (isUCBrowser) {
             warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies.
-Tap below to use a real browser which you have!`;
+            Tap below to use a real browser which you have!`;
+        } else if (isInstaApp) {
+            warningText.innerHTML = `Instagram browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+            Tap below to use a real browser which you have!`;
         } else if (isAndroidWebviewApp) {
             warningText.innerHTML = `This built-in browser <span class="text-white font-black">Cannot Play or Download</span> movies.
-Tap below to use a real browser which you have!`;
+            Tap below to use a real browser which you have!`;
         }
     }
 
@@ -1097,157 +1298,429 @@ Tap below to use a real browser which you have!`;
     }, 50);
 }
 
-// 🚀 AUTOMATED DEEP LINK BREAKOUT SYSTEM
-function autoBreakoutToRealBrowser() {
-    const currentUrl = window.location.href;
-    const cleanUrlPath = currentUrl.replace('https://', '').replace('http://', '');
+function closeAnnouncement() {
+    const popup = document.getElementById('announcementPopup');
+    if(!popup) return;
+    
+    popup.classList.remove('active');
+    setTimeout(() => {
+        popup.classList.add('hidden');
+        popup.classList.remove('flex');
 
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
-    const isAndroid = /android/i.test(ua);
-    const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
 
-    if (isAndroid) {
-        const universalBrowserIntent = `intent://${cleanUrlPath}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;`;
-        window.location.href = universalBrowserIntent;
-    } else if (isIOS) {
-        window.location.href = `googlechrome://navigate?url=${encodeURIComponent(currentUrl)}`;
+        isPopupAdBlocking = false;
+        if (!isPopupAdBlocking) {
+            initStaticAds();
+       
+        }
+        
+        document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
+            if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
+        });
+        
+        document.querySelectorAll('.cat-ad-adsterra').forEach(container => {
+            if (!container.querySelector('iframe') && container.dataset.loaded === 'true') {
+                injectResponsiveAdNode(container);
+            }
+        });
+
         setTimeout(() => {
-            window.location.href = `microsoft-edge-${currentUrl}`;
-        }, 250);
-    }
+            injectPopAds(); 
+        }, 500);
+
+    }, 500);
 }
 
+// 🚀 OPEN IN REAL BROWSER LOGIC
 function openInBrowser(browser) {
-    autoBreakoutToRealBrowser();
-    showToast("Opening requested browser view...");
+    const targetDomain = 'moviedakhi.com';
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+    const isAndroid = /android/i.test(userAgent);
+    let schemeUrl = '';
+    let androidIntents = [];
+
+    const genericIntent = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;`;
+    if (browser === 'chrome') {
+        schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.android.chrome;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.chrome.beta;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'edge') {
+        schemeUrl = `microsoft-edge-https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx.beta;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'opera') {
+        schemeUrl = `opera-http://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.browser;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.mini.native;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'firefox') {
+        schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox;end;`,
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox_beta;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'brave') {
+        schemeUrl = `brave://open-url?url=https://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.brave.browser;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'safari') {
+        schemeUrl = `x-safari-https://${targetDomain}`;
+        androidIntents = [genericIntent];
+    } else if (browser === 'vivaldi') {
+        schemeUrl = `vivaldi://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.vivaldi.browser;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'duckduckgo') {
+        schemeUrl = `ddg://${targetDomain}`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.duckduckgo.mobile.android;end;`,
+            genericIntent
+        ];
+    } else if (browser === 'via') {
+        schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
+        androidIntents = [
+            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=mark.via.gp;end;`,
+            genericIntent
+        ];
+    }
+
+    let appOpened = false;
+
+    function handleVisibilityChange() {
+        if (document.visibilityState === 'hidden' || document.hidden) {
+            appOpened = true;
+        }
+    }
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("pagehide", () => { appOpened = true; });
+    window.addEventListener("blur", () => { appOpened = true; });
+
+    if (isAndroid && androidIntents.length > 0) {
+        let currentIntentIndex = 0;
+        function tryNextIntent() {
+            if (appOpened || currentIntentIndex >= androidIntents.length) {
+                document.removeEventListener("visibilitychange", handleVisibilityChange);
+                return;
+            }
+            
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = androidIntents[currentIntentIndex];
+            document.body.appendChild(iframe);
+            
+            setTimeout(() => {
+                if (document.body.contains(iframe)) {
+                    document.body.removeChild(iframe);
+                }
+                if (!appOpened) {
+                   
+                    currentIntentIndex++;
+                    tryNextIntent();
+                }
+            }, 800);
+        }
+        
+        tryNextIntent();
+        showToast("Redirecting to browser...");
+    } else if (schemeUrl) {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = schemeUrl;
+        document.body.appendChild(iframe);
+
+        setTimeout(() => {
+            if(document.body.contains(iframe)) document.body.removeChild(iframe);
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
+
+            if (!appOpened) {
+                if (isIOS) {
+                    window.location.href = `x-safari-https://${targetDomain}`;
+              
+                } else {
+                    window.location.href = `https://${targetDomain}`;
+                }
+            }
+        }, 1000);
+        if (!isAndroid && !isIOS) {
+            showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
+        } else {
+            showToast("Redirecting to browser...");
+        }
+    }
 }
 
 const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
-const isMessengerCheck = /Messenger|Orca|FB_IAB\/MESSENGER/i.test(uaCheck);
+const isFBCheck = /FBAN|FBAV|Ios/i.test(uaCheck);
 const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
+const isInstaCheck = /Instagram/i.test(uaCheck);
 const isAndroidWebviewCheck = /wv|android.*version\/[0-9]/i.test(uaCheck);
+
 const isOperaMiniCheck = uaCheck.includes('Opera Mini') || uaCheck.includes('OPR/');
-const isFBOrInstagramCheck = /FBAN|FBAV|Instagram/i.test(uaCheck) && !isMessengerCheck;
+const isTrappedCheck = !isOperaMiniCheck && (isFBCheck || isUCCheck || isInstaCheck || isAndroidWebviewCheck);
 
-const isTrappedCheck = !isOperaMiniCheck && (isMessengerCheck || isUCCheck || (isAndroidWebviewCheck && !isFBOrInstagramCheck));
+const sessionKey = 'MovieDakhi_Welcome_Session_Final';
+const localKey = 'MovieDakhi_Welcome_Time_Final';
+const nowTime = new Date().getTime();
+const lastShown = localStorage.getItem(localKey);
 
-const sessionKey = 'MovieDakhi_Welcome_Session_Final'; const localKey = 'MovieDakhi_Welcome_Time_Final'; const nowTime = new Date().getTime(); const lastShown = localStorage.getItem(localKey);
-const hasSession = sessionStorage.getItem(sessionKey); const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000;
-const urlParams2 = new URLSearchParams(window.location.search); const isFallback = urlParams2.get('fb_fallback');
+const hasSession = sessionStorage.getItem(sessionKey);
+const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000;
+
+const urlParams2 = new URLSearchParams(window.location.search);
+const isFallback = urlParams2.get('fb_fallback');
 const shouldShowPopup = !isFallback && (isTrappedCheck || (!hasSession && !hasRecentLocal));
-
 if (shouldShowPopup) {
     if (isTrappedCheck) {
-        isPopupAdBlocking = true;
-        autoBreakoutToRealBrowser();
+         isPopupAdBlocking = true;
     }
     setTimeout(() => {
-        sessionStorage.setItem(sessionKey, 'true'); localStorage.setItem(localKey, nowTime.toString());
+        sessionStorage.setItem(sessionKey, 'true');
+        localStorage.setItem(localKey, nowTime.toString());
         showAnnouncement();
-    }, isTrappedCheck ? 300 : 20000);
+    }, isTrappedCheck ? 500 : 20000);
 } else {
-    setTimeout(() => injectPopAds(), 3500);
+    setTimeout(() => {
+        injectPopAds();
+    }, 3500);
 }
 
 let scrollTimeoutId;
 window.addEventListener('scroll', () => {
     if (currentView === 'library') {
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-        if (scrollTop + clientHeight >= scrollHeight - 500) { if (!isLoading && libraryDisplayedCount < libraryData.length) renderLibraryChunk(); }
+        if (scrollTop + clientHeight >= scrollHeight - 500) {
+            if (!isLoading && libraryDisplayedCount < libraryData.length) {
+                renderLibraryChunk();
+            }
+        }
+  
     }
+
     clearTimeout(scrollTimeoutId);
     scrollTimeoutId = setTimeout(() => {
-        if ((!document.getElementById('movieModal')?.classList.contains('active')) && (!document.getElementById('categoryMenu')?.classList.contains('active'))) {
-            try { window.history.replaceState({ ...window.history.state, scrollY: window.scrollY, displayedCount: libraryDisplayedCount }, ''); } catch (e) { }
+        const modal = document.getElementById('movieModal');
+        const catMenu = document.getElementById('categoryMenu');
+        if ((!modal || !modal.classList.contains('active')) && (!catMenu || !catMenu.classList.contains('active'))) {
+            const currentState = history.state || { view: currentView, category: null, validDakhiState: true };
+            try {
+           
+                window.history.replaceState({
+                    ...currentState,
+                    scrollY: window.scrollY,
+                    displayedCount: libraryDisplayedCount
+                }, '');
+            } catch (e) { }
         }
     }, 150);
 });
 
 window.addEventListener('beforeunload', () => {
-    if ((!document.getElementById('movieModal')?.classList.contains('active')) && (!document.getElementById('categoryMenu')?.classList.contains('active'))) {
-        sessionStorage.setItem('MovieDakhi_ExactScroll', window.scrollY); sessionStorage.setItem('MovieDakhi_Count', libraryDisplayedCount);
+    const modal = document.getElementById('movieModal');
+    const catMenu = document.getElementById('categoryMenu');
+    if ((!modal || !modal.classList.contains('active')) && (!catMenu || !catMenu.classList.contains('active'))) {
+        sessionStorage.setItem('MovieDakhi_ExactScroll', window.scrollY);
+        sessionStorage.setItem('MovieDakhi_Count', libraryDisplayedCount);
     }
 });
 
+// 🔥 DOM CONTENT LOADED - INIT & SEO AUTO-OPEN
 document.addEventListener('DOMContentLoaded', async () => {
-    await databaseLoadPromise;
-    const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll'); const reloadCount = sessionStorage.getItem('MovieDakhi_Count');
-    let finalScroll = 0; let finalCount = ITEMS_PER_PAGE; let isRestoring = false;
-    if (reloadScroll !== null) { finalScroll = parseInt(reloadScroll, 10); sessionStorage.removeItem('MovieDakhi_ExactScroll'); if (finalScroll > 0) isRestoring = true; }
-    if (reloadCount !== null) { finalCount = parseInt(reloadCount, 10); sessionStorage.removeItem('MovieDakhi_Count'); }
+    
+    await databaseLoadPromise; 
 
-    renderCategories(); initHeroSlider(); renderRecentAdds(); renderCategorySections(isRestoring);
+    const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
+    const reloadCount = sessionStorage.getItem('MovieDakhi_Count');
+    let finalScroll = 0;
+    let finalCount = ITEMS_PER_PAGE;
+    let isRestoring = false;
 
-    const params = new URLSearchParams(window.location.search); const view = params.get('view') || 'home'; const category = params.get('category');
-    let movieSlug = window.CF_MOVIE_SLUG || params.get('movie');
-    if (!movieSlug && window.location.pathname.endsWith('.html')) {
-        const filename = window.location.pathname.split('/').pop();
-        if (!['index.html', 'Contact.html', 'DMCA.html', 'Privacy.html', 'Disclaimer.html'].includes(filename) && filename !== '') movieSlug = filename.replace('.html', '');
+    if (reloadScroll !== null) {
+        finalScroll = parseInt(reloadScroll, 10);
+        sessionStorage.removeItem('MovieDakhi_ExactScroll');
+        if (finalScroll > 0) isRestoring = true;
+ 
+    }
+    if (reloadCount !== null) {
+        finalCount = parseInt(reloadCount, 10);
+        sessionStorage.removeItem('MovieDakhi_Count');
     }
 
+    renderCategories();
+    initHeroSlider();
+    renderRecentAdds();
+    renderCategorySections(isRestoring);
+    
+    const params = new URLSearchParams(window.location.search);
+    const view = params.get('view') || 'home';
+    const category = params.get('category');
+    const movieSlug = params.get('movie');
+
+    const isBlob = window.location.protocol === 'blob:';
     if (history.state && !movieSlug) {
-        const state = history.state; finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY || 0); finalCount = finalCount > ITEMS_PER_PAGE ? finalCount : (state.displayedCount || ITEMS_PER_PAGE);
+        const state = history.state;
+        finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY || 0);
+        finalCount = finalCount > ITEMS_PER_PAGE ?
+        finalCount : (state.displayedCount || ITEMS_PER_PAGE);
         switchView(state.view, state.category, false, finalCount);
-    } else if (window.location.protocol !== 'blob:' && !movieSlug) {
-        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: finalCount, validDakhiState: true }, ''); } catch (e) { }
+    } else if (!isBlob && !movieSlug) {
+        try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: finalCount, validDakhiState: true }, '');
+        } catch (e) { }
         switchView(view, category, false, finalCount);
-    } else if (!movieSlug) { switchView('home', null, false, finalCount); }
+    } else if (!movieSlug) {
+        switchView('home', null, false, finalCount);
+    }
 
     updateCanonical(window.location.href);
-    if (isRestoring && !movieSlug) { requestAnimationFrame(() => { window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' }); setTimeout(() => window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' }), 50); }); }
-    if (movieSlug) { const targetMovie = contentData.find(m => m.slug === movieSlug); if (targetMovie) setTimeout(() => openModal(targetMovie.id), 300); }
-    setTimeout(() => { if (!isPopupAdBlocking) initStaticAds(); }, 100);
+
+    if (isRestoring && !movieSlug) {
+        requestAnimationFrame(() => {
+            window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' });
+            setTimeout(() => window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' }), 50);
+        });
+    }
+
+    // 🔥 SEO & AD-RESTORE: বিজ্ঞাপনের কারণে পেজ রিলোড বা ইউআরএল চেঞ্জ হয়ে গেলেও মেমোরি থেকে মোডাল রিস্টোর হবে
+    const savedActiveModalId = sessionStorage.getItem('MovieDakhi_ActiveModalId');
+    if (savedActiveModalId !== null) {
+        const targetMovie = contentData.find(m => m.id === parseInt(savedActiveModalId, 10));
+        if (targetMovie) {
+            setTimeout(() => { openModal(targetMovie.id); }, 300);
+        }
+    } else if (movieSlug) {
+        const targetMovie = contentData.find(m => m.slug === movieSlug);
+        if (targetMovie) {
+            setTimeout(() => {
+                openModal(targetMovie.id);
+            }, 300);
+        }
+    }
+
+    setTimeout(() => {
+        if (!isPopupAdBlocking) {
+            initStaticAds();
+        }
+    }, 100);
 });
 
 window.addEventListener('popstate', (event) => {
-    const state = event.state; const modal = document.getElementById('movieModal'); let handledOverlayClose = false;
+    const state = event.state;
+    const modal = document.getElementById('movieModal');
+
+    let handledOverlayClose = false;
+
     if (modal && (!modal.classList.contains('hidden') || isModalClosing)) {
-        if (state && state.validDakhiState && !state.isModalOpen) { if (!isModalClosing) closeModal(false, false); handledOverlayClose = true; }
-        else if (state && state.isModalOpen) return; else return;
+        // 🔥 AD-LOOP FIX: যদি বিজ্ঞাপনের ব্যাক-অ্যাকশনের কারণে মোডাল অটোমেটিক বন্ধ হতে যায়, তবে তাকে আটকে দাও
+        if (sessionStorage.getItem('MovieDakhi_ActiveModalId')) {
+            const savedId = parseInt(sessionStorage.getItem('MovieDakhi_ActiveModalId'), 10);
+            const item = contentData.find(m => m.id === savedId);
+            if (item) {
+                const movieSlug = item.slug || generateMovieSlug(item.title);
+                const newUrl = new URL(window.location.origin + window.location.pathname);
+                newUrl.searchParams.set('movie', movieSlug);
+                try { window.history.pushState({ ...state, isModalOpen: true, modalId: savedId, validDakhiState: true }, '', newUrl); } catch(e){}
+            }
+            return;
+        }
+
+        if (state && state.validDakhiState && !state.isModalOpen) {
+            if (!isModalClosing) {
+                closeModal(false, false);
+            }
+        
+            handledOverlayClose = true;
+        } else if (state && state.isModalOpen) {
+            return;
+        } else {
+            return;
+        }
     }
-    if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) { toggleCategoryMenu(false, false); handledOverlayClose = true; }
-    if (handledOverlayClose) return;
+
+    if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
+        toggleCategoryMenu(false, false);
+        handledOverlayClose = true;
+   
+    }
+
+    if (handledOverlayClose) {
+        return;
+    }
+
     if (state || window.location.search) {
         updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
         switchView(state?.view || 'home', state?.category || null, false, state?.displayedCount || 30);
-        void document.documentElement.offsetHeight; window.scrollTo({ top: state?.scrollY || 0, behavior: 'instant' });
-    } else { switchView('home', null, false); void document.documentElement.offsetHeight; window.scrollTo({ top: 0, behavior: 'instant' }); }
+        void document.documentElement.offsetHeight;
+        window.scrollTo({ top: state?.scrollY || 0, behavior: 'instant' });
+    } else {
+        switchView('home', null, false);
+        void document.documentElement.offsetHeight;
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
 });
 
 window.addEventListener('click', (e) => {
     if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal(true, true);
-    if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab')?.contains(e.target)) toggleCategoryMenu(false);
-});
-
-// 🚀 POPUNDER AD LOOP FIX DETECTOR (উইন্ডো ফোকাস ট্র্যাকিং লজিক)
-window.addEventListener('blur', () => {
-    // ইউজার যখন প্লে বা অন্য কোনো ক্লিকে পপআন্ডার অ্যাডের নতুন ট্যাবে ডাইভার্ট হবে, তখন আমরা মোডাল ক্লোজ লক করে দেব
-    if (document.getElementById('movieModal') && !document.getElementById('movieModal').classList.contains('hidden')) {
-        window.isUserViewingAdTab = true;
-    }
-});
-
-window.addEventListener('focus', () => {
-    // ইউজার অ্যাড দেখে আবার আপনার ওয়েবসাইটে ফিরে আসলে ভেরিয়েবলটি রিসেট হবে
-    setTimeout(() => {
-        window.isUserViewingAdTab = false;
-    }, 500);
+    if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
 
 function showToast(message) {
-    if (!document.getElementById('toastMessage') || !document.getElementById('toastText')) return;
-    document.getElementById('toastText').innerHTML = message;
-    document.getElementById('toastMessage').classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
-    document.getElementById('toastMessage').classList.add('opacity-100', 'translate-y-0');
-    setTimeout(() => { document.getElementById('toastMessage').classList.add('opacity-0', '-translate-y-8', 'pointer-events-none'); document.getElementById('toastMessage').classList.remove('opacity-100', 'translate-y-0'); }, 4000);
+    const toast = document.getElementById('toastMessage');
+    const toastText = document.getElementById('toastText');
+    if (!toast || !toastText) return;
+    toastText.innerHTML = message;
+    toast.classList.remove('opacity-0', '-translate-y-8', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 4000);
 }
 
 function copyWebsiteLink(btn) {
-    const link = "https://moviedakhi.com"; const textArea = document.createElement("textarea"); textArea.value = link; textArea.style.top = "0"; textArea.style.left = "0"; textArea.style.position = "fixed"; document.body.appendChild(textArea); textArea.focus(); textArea.select();
+    const link = "https://moviedakhi.com";
+    const textArea = document.createElement("textarea");
+    textArea.value = link;
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
     try {
-        document.execCommand('copy'); showToast("Link copied! Open your browser and paste it.");
-        const originalHtml = `<i class="fas fa-copy"></i> Copy`; btn.innerHTML = `<i class="fas fa-check"></i> Copied`; btn.classList.remove('bg-[#E50914]', 'hover:bg-red-600'); btn.classList.add('bg-green-600', 'hover:bg-green-500');
-        setTimeout(() => { btn.innerHTML = originalHtml; btn.classList.add('bg-[#E50914]', 'hover:bg-red-600'); btn.classList.remove('bg-green-600', 'hover:bg-green-500'); }, 2000);
-    } catch (err) { showToast("Failed to copy link."); }
+        document.execCommand('copy');
+        showToast("Link copied! Open your browser and paste it.");
+
+        const originalHtml = `<i class="fas fa-copy"></i> Copy`;
+        btn.innerHTML = `<i class="fas fa-check"></i> Copied`;
+        btn.classList.remove('bg-[#E50914]', 'hover:bg-red-600');
+        btn.classList.add('bg-green-600', 'hover:bg-green-500');
+        setTimeout(() => {
+            btn.innerHTML = originalHtml;
+            btn.classList.add('bg-[#E50914]', 'hover:bg-red-600');
+            btn.classList.remove('bg-green-600', 'hover:bg-green-500');
+        }, 2000);
+    } catch (err) {
+        showToast("Failed to copy link. Please manually select the text.");
+    }
+
     document.body.removeChild(textArea);
 }
