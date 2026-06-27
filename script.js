@@ -1225,78 +1225,78 @@ if (searchInput) {
 // ==========================================
 // 🚀 IN-APP BROWSER DETECTOR & SUGGESTION BOX
 // ==========================================
-let announcementScrollY = 0;
-function showAnnouncement() {
-    const popup = document.getElementById('announcementPopup');
-    if (!popup) return;
+// let announcementScrollY = 0;
+// function showAnnouncement() {
+//     const popup = document.getElementById('announcementPopup');
+//     if (!popup) return;
 
-    const ua = navigator.userAgent || navigator.vendor ||
-    window.opera;
-    const isFacebookApp = /FBAN|FBAV|Ios/i.test(ua);
-    const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
-    const isInstaApp = /Instagram/i.test(ua);
-    const isAndroidWebviewApp = /wv|android.*version\/[0-9]/i.test(ua);
-    const isOperaMini = ua.includes('Opera Mini') || ua.includes('OPR/');
-    const isTrappedApp = !isOperaMini && (isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp);
-    const warningText = document.getElementById('browserWarningText');
-    if (warningText && isTrappedApp) {
-        if (isFacebookApp) {
-            warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies.
-            Tap below to use a real browser which you have!`;
-        } else if (isUCBrowser) {
-            warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies.
-            Tap below to use a real browser which you have!`;
-        } else if (isInstaApp) {
-            warningText.innerHTML = `Instagram browser <span class="text-white font-black">Cannot Play or Download</span> movies.
-            Tap below to use a real browser which you have!`;
-        } else if (isAndroidWebviewApp) {
-            warningText.innerHTML = `This built-in browser <span class="text-white font-black">Cannot Play or Download</span> movies.
-            Tap below to use a real browser which you have!`;
-        }
-    }
+//     const ua = navigator.userAgent || navigator.vendor ||
+//     window.opera;
+//     const isFacebookApp = /FBAN|FBAV|Ios/i.test(ua);
+//     const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
+//     const isInstaApp = /Instagram/i.test(ua);
+//     const isAndroidWebviewApp = /wv|android.*version\/[0-9]/i.test(ua);
+//     const isOperaMini = ua.includes('Opera Mini') || ua.includes('OPR/');
+//     const isTrappedApp = !isOperaMini && (isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp);
+//     const warningText = document.getElementById('browserWarningText');
+//     if (warningText && isTrappedApp) {
+//         if (isFacebookApp) {
+//             warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+//             Tap below to use a real browser which you have!`;
+//         } else if (isUCBrowser) {
+//             warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+//             Tap below to use a real browser which you have!`;
+//         } else if (isInstaApp) {
+//             warningText.innerHTML = `Instagram browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+//             Tap below to use a real browser which you have!`;
+//         } else if (isAndroidWebviewApp) {
+//             warningText.innerHTML = `This built-in browser <span class="text-white font-black">Cannot Play or Download</span> movies.
+//             Tap below to use a real browser which you have!`;
+//         }
+//     }
 
-    const suggestionBox = document.getElementById('browserSuggestionBox');
-    const topCloseBtn = document.getElementById('announcementCloseBtnTop');
-    const backdrop = document.getElementById('popupBackdrop');
-    const popupWelcomeText = document.getElementById('popupWelcomeText');
-    const popupTelegramBtn = document.getElementById('popupTelegramBtn');
-    const popupBoxContainer = document.getElementById('popupBoxContainer');
-    if (isTrappedApp) {
-        if (suggestionBox) suggestionBox.classList.remove('hidden');
-        if (topCloseBtn) topCloseBtn.classList.add('hidden');
-        if (backdrop) backdrop.onclick = null;
+//     const suggestionBox = document.getElementById('browserSuggestionBox');
+//     const topCloseBtn = document.getElementById('announcementCloseBtnTop');
+//     const backdrop = document.getElementById('popupBackdrop');
+//     const popupWelcomeText = document.getElementById('popupWelcomeText');
+//     const popupTelegramBtn = document.getElementById('popupTelegramBtn');
+//     const popupBoxContainer = document.getElementById('popupBoxContainer');
+//     if (isTrappedApp) {
+//         if (suggestionBox) suggestionBox.classList.remove('hidden');
+//         if (topCloseBtn) topCloseBtn.classList.add('hidden');
+//         if (backdrop) backdrop.onclick = null;
 
-        if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
-        if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
-        if (popupBoxContainer) {
-            popupBoxContainer.classList.remove('p-5', 'md:p-8');
-            popupBoxContainer.classList.add('p-4');
-        }
-    } else {
-        if (suggestionBox) suggestionBox.classList.add('hidden');
-        if (topCloseBtn) topCloseBtn.classList.remove('hidden');
-        if (backdrop) backdrop.onclick = closeAnnouncement;
+//         if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
+//         if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
+//         if (popupBoxContainer) {
+//             popupBoxContainer.classList.remove('p-5', 'md:p-8');
+//             popupBoxContainer.classList.add('p-4');
+//         }
+//     } else {
+//         if (suggestionBox) suggestionBox.classList.add('hidden');
+//         if (topCloseBtn) topCloseBtn.classList.remove('hidden');
+//         if (backdrop) backdrop.onclick = closeAnnouncement;
 
-        if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
-        if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
-        if (popupBoxContainer) {
-            popupBoxContainer.classList.add('p-5', 'md:p-8');
-            popupBoxContainer.classList.remove('p-4');
-        }
-    }
+//         if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
+//         if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
+//         if (popupBoxContainer) {
+//             popupBoxContainer.classList.add('p-5', 'md:p-8');
+//             popupBoxContainer.classList.remove('p-4');
+//         }
+//     }
 
-    popup.classList.remove('hidden');
-    popup.classList.add('flex');
+//     popup.classList.remove('hidden');
+//     popup.classList.add('flex');
 
-    announcementScrollY = window.scrollY || document.documentElement.scrollTop;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${announcementScrollY}px`;
-    document.body.style.width = '100%';
+//     announcementScrollY = window.scrollY || document.documentElement.scrollTop;
+//     document.body.style.position = 'fixed';
+//     document.body.style.top = `-${announcementScrollY}px`;
+//     document.body.style.width = '100%';
 
-    setTimeout(() => {
-        popup.classList.add('active');
-    }, 50);
-}
+//     setTimeout(() => {
+//         popup.classList.add('active');
+//     }, 50);
+// }
 
 function closeAnnouncement() {
     const popup = document.getElementById('announcementPopup');
@@ -1336,136 +1336,136 @@ function closeAnnouncement() {
 }
 
 // 🚀 OPEN IN REAL BROWSER LOGIC
-function openInBrowser(browser) {
-    const targetDomain = 'moviedakhi.com';
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-    const isAndroid = /android/i.test(userAgent);
-    let schemeUrl = '';
-    let androidIntents = [];
+// function openInBrowser(browser) {
+//     const targetDomain = 'moviedakhi.com';
+//     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+//     const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+//     const isAndroid = /android/i.test(userAgent);
+//     let schemeUrl = '';
+//     let androidIntents = [];
 
-    const genericIntent = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;`;
-    if (browser === 'chrome') {
-        schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.android.chrome;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.chrome.beta;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'edge') {
-        schemeUrl = `microsoft-edge-https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx.beta;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'opera') {
-        schemeUrl = `opera-http://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.browser;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.mini.native;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'firefox') {
-        schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox_beta;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'brave') {
-        schemeUrl = `brave://open-url?url=https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.brave.browser;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'safari') {
-        schemeUrl = `x-safari-https://${targetDomain}`;
-        androidIntents = [genericIntent];
-    } else if (browser === 'vivaldi') {
-        schemeUrl = `vivaldi://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.vivaldi.browser;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'duckduckgo') {
-        schemeUrl = `ddg://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.duckduckgo.mobile.android;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'via') {
-        schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=mark.via.gp;end;`,
-            genericIntent
-        ];
-    }
+//     const genericIntent = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;`;
+//     if (browser === 'chrome') {
+//         schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
+//         androidIntents = [
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.android.chrome;end;`,
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.chrome.beta;end;`,
+//             genericIntent
+//         ];
+//     } else if (browser === 'edge') {
+//         schemeUrl = `microsoft-edge-https://${targetDomain}`;
+//         androidIntents = [
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx;end;`,
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx.beta;end;`,
+//             genericIntent
+//         ];
+//     } else if (browser === 'opera') {
+//         schemeUrl = `opera-http://${targetDomain}`;
+//         androidIntents = [
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.browser;end;`,
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.mini.native;end;`,
+//             genericIntent
+//         ];
+//     } else if (browser === 'firefox') {
+//         schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
+//         androidIntents = [
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox;end;`,
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox_beta;end;`,
+//             genericIntent
+//         ];
+//     } else if (browser === 'brave') {
+//         schemeUrl = `brave://open-url?url=https://${targetDomain}`;
+//         androidIntents = [
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.brave.browser;end;`,
+//             genericIntent
+//         ];
+//     } else if (browser === 'safari') {
+//         schemeUrl = `x-safari-https://${targetDomain}`;
+//         androidIntents = [genericIntent];
+//     } else if (browser === 'vivaldi') {
+//         schemeUrl = `vivaldi://${targetDomain}`;
+//         androidIntents = [
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.vivaldi.browser;end;`,
+//             genericIntent
+//         ];
+//     } else if (browser === 'duckduckgo') {
+//         schemeUrl = `ddg://${targetDomain}`;
+//         androidIntents = [
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.duckduckgo.mobile.android;end;`,
+//             genericIntent
+//         ];
+//     } else if (browser === 'via') {
+//         schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
+//         androidIntents = [
+//             `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=mark.via.gp;end;`,
+//             genericIntent
+//         ];
+//     }
 
-    let appOpened = false;
+//     let appOpened = false;
 
-    function handleVisibilityChange() {
-        if (document.visibilityState === 'hidden' || document.hidden) {
-            appOpened = true;
-        }
-    }
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    window.addEventListener("pagehide", () => { appOpened = true; });
-    window.addEventListener("blur", () => { appOpened = true; });
+//     function handleVisibilityChange() {
+//         if (document.visibilityState === 'hidden' || document.hidden) {
+//             appOpened = true;
+//         }
+//     }
+//     document.addEventListener("visibilitychange", handleVisibilityChange);
+//     window.addEventListener("pagehide", () => { appOpened = true; });
+//     window.addEventListener("blur", () => { appOpened = true; });
 
-    if (isAndroid && androidIntents.length > 0) {
-        let currentIntentIndex = 0;
-        function tryNextIntent() {
-            if (appOpened || currentIntentIndex >= androidIntents.length) {
-                document.removeEventListener("visibilitychange", handleVisibilityChange);
-                return;
-            }
+//     if (isAndroid && androidIntents.length > 0) {
+//         let currentIntentIndex = 0;
+//         function tryNextIntent() {
+//             if (appOpened || currentIntentIndex >= androidIntents.length) {
+//                 document.removeEventListener("visibilitychange", handleVisibilityChange);
+//                 return;
+//             }
             
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = androidIntents[currentIntentIndex];
-            document.body.appendChild(iframe);
+//             const iframe = document.createElement('iframe');
+//             iframe.style.display = 'none';
+//             iframe.src = androidIntents[currentIntentIndex];
+//             document.body.appendChild(iframe);
             
-            setTimeout(() => {
-                if (document.body.contains(iframe)) {
-                    document.body.removeChild(iframe);
-                }
-                if (!appOpened) {
+//             setTimeout(() => {
+//                 if (document.body.contains(iframe)) {
+//                     document.body.removeChild(iframe);
+//                 }
+//                 if (!appOpened) {
                    
-                    currentIntentIndex++;
-                    tryNextIntent();
-                }
-            }, 800);
-        }
+//                     currentIntentIndex++;
+//                     tryNextIntent();
+//                 }
+//             }, 800);
+//         }
         
-        tryNextIntent();
-        showToast("Redirecting to browser...");
-    } else if (schemeUrl) {
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = schemeUrl;
-        document.body.appendChild(iframe);
+//         tryNextIntent();
+//         showToast("Redirecting to browser...");
+//     } else if (schemeUrl) {
+//         const iframe = document.createElement('iframe');
+//         iframe.style.display = 'none';
+//         iframe.src = schemeUrl;
+//         document.body.appendChild(iframe);
 
-        setTimeout(() => {
-            if(document.body.contains(iframe)) document.body.removeChild(iframe);
-            document.removeEventListener("visibilitychange", handleVisibilityChange);
+//         setTimeout(() => {
+//             if(document.body.contains(iframe)) document.body.removeChild(iframe);
+//             document.removeEventListener("visibilitychange", handleVisibilityChange);
 
-            if (!appOpened) {
-                if (isIOS) {
-                    window.location.href = `x-safari-https://${targetDomain}`;
+//             if (!appOpened) {
+//                 if (isIOS) {
+//                     window.location.href = `x-safari-https://${targetDomain}`;
               
-                } else {
-                    window.location.href = `https://${targetDomain}`;
-                }
-            }
-        }, 1000);
-        if (!isAndroid && !isIOS) {
-            showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
-        } else {
-            showToast("Redirecting to browser...");
-        }
-    }
-}
+//                 } else {
+//                     window.location.href = `https://${targetDomain}`;
+//                 }
+//             }
+//         }, 1000);
+//         if (!isAndroid && !isIOS) {
+//             showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
+//         } else {
+//             showToast("Redirecting to browser...");
+//         }
+//     }
+// }
 
 const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
 const isFBCheck = /FBAN|FBAV|Ios/i.test(uaCheck);
