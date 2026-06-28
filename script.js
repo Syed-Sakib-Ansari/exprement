@@ -91,7 +91,7 @@ function injectResponsiveAdNode(container) {
     if (container.querySelector('iframe')) return;
 
     const isMobile = window.innerWidth <= 768;
-    const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
+    // const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
     const w = isMobile ? 320 : 728;
     const h = isMobile ? 50 : 90;
     injectAdsterra(container, key, w, h);
@@ -112,15 +112,15 @@ function injectPopAds() {
     if (popAdsInjected) return;
     popAdsInjected = true;
 
-    const socialBar = document.createElement('script');
-    socialBar.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
-    socialBar.async = true;
-    document.body.appendChild(socialBar);
+    // const socialBar = document.createElement('script');
+    // socialBar.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
+    // socialBar.async = true;
+    // document.body.appendChild(socialBar);
 
-    const popunder = document.createElement('script');
-    popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
-    popunder.async = true;
-    document.body.appendChild(popunder);
+    // const popunder = document.createElement('script');
+    // popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
+    // popunder.async = true;
+    // document.body.appendChild(popunder);
 }
 
 // ==========================================
@@ -159,7 +159,7 @@ function injectNativeBanner(container, h = 260) {
                 <style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style>
             </head>
             <body>
-                <script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></script>
+                <script async="async" data-cfasync="false" src=""></script>
                 <div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div>
             </body>
             </html>`);
@@ -167,6 +167,8 @@ function injectNativeBanner(container, h = 260) {
         } catch (e) { }
     }, 10);
 }
+
+// https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js
 
 function createMobileNativeAdBlock() {
     const block = document.createElement('div');
