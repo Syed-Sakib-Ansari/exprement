@@ -926,77 +926,73 @@ function updateLoadMoreVisibility() {
     }
 }
 
-function openModal(id) {
-    if (document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
+// [UX: ভিডিও মোডাল ওপেন হলে হিস্ট্রি ডুপ্লিকেশন ছাড়া এবং ভিডিও প্লেয়ার রেন্ডারিং মেমোরি রিস্টোর]
+async function openModal(id) {
+    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
     savedScrollY = window.scrollY;
 
     const item = contentData.find(m => m.id === id);
     if (!item) return;
+    
+    // 🔥 AD-LOOP FIX: বিজ্ঞপ্তির কারণে রিডাইরেক্ট হলেও মেমোরিতে মোডালের আইডি লক থাকবে
+    sessionStorage.setItem('MovieDakhi_ActiveModalId', id);
 
-    // 🔥 URL AND HISTORY SEO UPDATE (CF FIX)
     const movieSlug = item.slug || generateMovieSlug(item.title);
-    const newUrl = new URL('/' + movieSlug + '.html', window.location.origin);
-
+    const newUrl = new URL(window.location.origin + window.location.pathname);
+    newUrl.searchParams.set('movie', movieSlug);
+    
     const currentState = history.state || { view: currentView, validDakhiState: true };
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-    try {
-        window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl);
+    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl);
     } catch (e) { }
 
-    // 🔥 HIGH-VOLUME DYNAMIC SEO GENERATOR
     document.title = `Watch ${item.title} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
-
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-        metaDescription = document.createElement('meta');
-        metaDescription.name = "description";
-        document.head.appendChild(metaDescription);
-    }
-    metaDescription.content = `Watch ${item.title} full movie online for free in HD quality. Download ${item.title} complete web series 1080p, 720p. Stream ${item.genre} movies seamlessly on MovieDakhi.`;
-
+    
     const modalTitleElem = document.getElementById('modalTitle');
-    const isSameMovie = modalTitleElem && modalTitleElem.innerText === item.title;
+    if(modalTitleElem) modalTitleElem.innerText = item.title;
+    
+    if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
+    if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
 
-    currentItem = item;
-    if (modalTitleElem) modalTitleElem.innerText = item.title;
-
-    if (document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
-    if (document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
-
-    // 🔥 CLEAN INTRO TEXT FOR TOP MODAL
-    if (document.getElementById('modalDesc')) {
+    if(document.getElementById('modalDesc')) {
         document.getElementById('modalDesc').innerHTML = `▶ Streaming and download links for <strong>${item.title}</strong> are ready below. Scroll down to read the full movie synopsis and details.`;
         document.getElementById('modalDesc').className = "text-sm md:text-base text-gray-400 leading-relaxed mb-8 max-w-3xl mx-auto font-medium italic";
     }
 
-    // 🔥 DYNAMIC SEOCONTENT GENERATOR WITH NEW ENGLISH JSON KEYS
+    // ⏳ লোডিং স্পিনার জেনারেটর (কোড যখন ব্যাকগ্রাউন্ডে KV ডেটাবেজ থেকে বড় ডাটা টানবে)
     let seoContainer = document.getElementById('modalSeoContent');
     if (!seoContainer) {
         seoContainer = document.createElement('div');
         seoContainer.id = 'modalSeoContent';
         seoContainer.className = "text-sm md:text-base text-gray-400 leading-relaxed mt-6 max-w-3xl mx-auto font-medium text-left w-full";
-
+        
         const adBottomWrapper = document.getElementById('modalAdBottom')?.parentNode;
         if (adBottomWrapper) {
             adBottomWrapper.parentNode.insertBefore(seoContainer, adBottomWrapper.nextSibling);
         }
     }
-
     if (seoContainer) {
-        let seoBodyContent = "";
-        if (item.synopsis) {
-            seoBodyContent += `<div class="mt-6 text-left border-t border-white/5 pt-4 select-text"><b class="text-white text-sm md:text-base block mb-1">📖 Synopsis :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.synopsis}</p></div>`;
+        seoContainer.innerHTML = `<div class="py-12 text-center text-gray-600 font-bold uppercase text-xs tracking-widest"><i class="fas fa-spinner animate-spin mr-2 text-red-600"></i> Loading Extended Movie Script...</div>`;
+    }
+
+    // 🚀 ক্লাউডফ্লেয়ার KV ডেটাবেজ থেকে অন-ফ্লাই এপিআই ডেটা ফেচিং মেকানিজম
+    try {
+        const response = await fetch(`/api/movie/${movieSlug}`);
+        if (response.ok) {
+            const kvMovieData = await response.json();
+            currentItem = kvMovieData; // সম্পূর্ণ অবজেক্ট মেমোরিতে রিস্টোর হলো
+
+            let seoBodyContent = "";
+            if (currentItem.synopsis) seoBodyContent += `<div class="mt-6 text-left border-t border-white/5 pt-4 select-text"><b class="text-white text-sm md:text-base block mb-1">📖 Synopsis :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${currentItem.synopsis}</p></div>`;
+            if (currentItem.movieHighlights) seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">✨ Movie Highlights :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${currentItem.movieHighlights}</p></div>`;
+            if (currentItem.streamingRecommendation) seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🎯 Streaming Recommendation :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${currentItem.streamingRecommendation}</p></div>`;
+            if (currentItem.detailedPlotSummary) seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🍿 Detailed Plot Summary :</b><p class="text-gray-400 text-[11px] md:text-xs leading-relaxed whitespace-pre-line bg-white/5 p-3 rounded-lg border border-white/10 select-text cursor-text">${currentItem.detailedPlotSummary}</p></div>`;
+            
+            if (seoContainer) seoContainer.innerHTML = seoBodyContent;
         }
-        if (item.movieHighlights) {
-            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">✨ Movie Highlights :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.movieHighlights}</p></div>`;
-        }
-        if (item.streamingRecommendation) {
-            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🎯 Streaming Recommendation :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.streamingRecommendation}</p></div>`;
-        }
-        if (item.detailedPlotSummary) {
-            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🍿 Detailed Plot Summary :</b><p class="text-gray-400 text-[11px] md:text-xs leading-relaxed whitespace-pre-line bg-white/5 p-3 rounded-lg border border-white/10 select-text cursor-text">${item.detailedPlotSummary}</p></div>`;
-        }
-        seoContainer.innerHTML = seoBodyContent;
+    } catch (err) {
+        console.warn("KV API Offline Fallback to Catalog Data:", err);
+        currentItem = item; // নেটওয়ার্ক এরর হলে ব্যাকআপ হিসেবে হালকা ক্যাটালগ কাজ করবে
     }
 
     downloadClickCount = 0;
@@ -1009,7 +1005,8 @@ function openModal(id) {
         if (wave) wave.classList.remove('hidden');
     }
 
-    if (item.episodes && item.episodes.length > 0) {
+    const isSameMovie = modalTitleElem && modalTitleElem.innerText === currentItem.title;
+    if (currentItem.episodes && currentItem.episodes.length > 0) {
         if (!isSameMovie) currentEpisodeIndex = 0;
     } else {
         currentEpisodeIndex = null;
@@ -1017,29 +1014,27 @@ function openModal(id) {
 
     const seriesSec = document.getElementById('seriesSection');
     const epList = document.getElementById('episodeList');
-    if (item.episodes && seriesSec && epList) {
+    if (currentItem.episodes && seriesSec && epList) {
         seriesSec.classList.remove('hidden');
-        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
+        document.getElementById('seriesInfoText').innerText = currentItem.seriesInfo || "";
         epList.innerHTML = '';
-        item.episodes.forEach((ep, idx) => {
+        currentItem.episodes.forEach((ep, idx) => {
             const btn = document.createElement('button');
             btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
             if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active');
             btn.innerText = ep.title;
             btn.onclick = () => playEpisode(idx, btn);
-
             epList.appendChild(btn);
         });
-    } else if (seriesSec) {
+    } else if (seriesSec) { 
         seriesSec.classList.add('hidden');
     }
 
-    let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
+    let url = currentItem.episodes && currentEpisodeIndex !== null ? currentItem.episodes[currentEpisodeIndex].embedUrl : (currentItem.episodes ? currentItem.episodes[0].embedUrl : currentItem.embedUrl);
     const actualVideoContainer = document.getElementById('actualVideo');
 
     if (actualVideoContainer) {
         actualVideoContainer.classList.remove('hidden');
-
         const existingIframe = document.getElementById('videoIframe');
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
         if (needsNewIframe) {
@@ -1050,7 +1045,7 @@ function openModal(id) {
     const modal = document.getElementById('movieModal');
     if (modal) {
         modal.classList.remove('hidden');
-        void modal.offsetWidth;
+        void modal.offsetWidth; 
         modal.classList.add('active');
         setTimeout(() => {
             injectResponsiveAdNode(document.getElementById('modalAdTop'));
