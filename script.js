@@ -91,7 +91,7 @@ function injectResponsiveAdNode(container) {
     if (container.querySelector('iframe')) return;
 
     const isMobile = window.innerWidth <= 768;
-    // const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
+    const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
     const w = isMobile ? 320 : 728;
     const h = isMobile ? 50 : 90;
     injectAdsterra(container, key, w, h);
