@@ -428,8 +428,8 @@ function dragEnd(e) {
 
         const maxX = document.documentElement.clientWidth - fab.offsetWidth;
         const maxY = document.documentElement.clientHeight - fab.offsetHeight;
-        newX = Math.max(0, Math.min(nextX, maxX));
-        newY = Math.max(0, Math.min(nextY, maxY));
+        newX = Math.max(0, Math.min(newX, maxX));
+        newY = Math.max(0, Math.min(newY, maxY));
 
         fab.style.transform = 'none';
         fab.style.left = `${newX}px`;
@@ -994,7 +994,7 @@ function openModal(id) {
             seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🎯 Streaming Recommendation :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.streamingRecommendation}</p></div>`;
         }
         if (item.detailedPlotSummary) {
-            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🍿 Detailed Plot Summary :</b><p class="text-gray-400 text-[11px] md:text-xs leading-relaxed whitespace-pre-line bg-white/5 p-3 rounded-lg border border-white/5 select-text cursor-text">${item.detailedPlotSummary}</p></div>`;
+            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🍿 Detailed Plot Summary :</b><p class="text-gray-400 text-[11px] md:text-xs leading-relaxed whitespace-pre-line bg-white/5 p-3 rounded-lg border border-white/10 select-text cursor-text">${item.detailedPlotSummary}</p></div>`;
         }
         seoContainer.innerHTML = seoBodyContent;
     }
@@ -1471,8 +1471,13 @@ window.addEventListener('click', (e) => {
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && !document.getElementById('mobileFab')?.contains(e.target)) toggleCategoryMenu(false);
 });
 
+// 👑 🎯 FIXED: BYPASS VIDEO IFRAME FOCUS BLUR TO KEEP BACK BUTTON RECOVERY SYNCED PERFECTLY
 window.addEventListener('blur', () => {
     if (document.getElementById('movieModal') && !document.getElementById('movieModal').classList.contains('hidden')) {
+        // If user focuses on the player, ignore it so it doesn't trick the system into thinking a spam ad tab was opened
+        if (document.activeElement && document.activeElement.id === 'videoIframe') {
+            return;
+        }
         window.isUserViewingAdTab = true;
     }
 });
