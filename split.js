@@ -94,18 +94,30 @@ function getHtmlTemplate(movie, slug) {
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 pt-24 pb-16 flex flex-col items-center">
+    <main class="max-w-5xl mx-auto px-4 pt-24 pb-16 flex flex-col items-center">
         
         <div class="w-full flex justify-center my-3 min-h-[50px] md:min-h-[90px]">
             <div class="hidden md:block">
                 <script type="text/javascript">
-                    atOptions = { 'key' : 'd07f22b9f96bb57b376565604ef61214', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
+                    atOptions = {
+                        'key' : 'd07f22b9f96bb57b376565604ef61214',
+                        'format' : 'iframe',
+                        'height' : 90,
+                        'width' : 728,
+                        'params' : {}
+                    };
                 </script>
                 <script type="text/javascript" src="https://onsetcab.com/d07f22b9f96bb57b376565604ef61214/invoke.js"></script>
             </div>
             <div class="block md:hidden">
                 <script type="text/javascript">
-                    atOptions = { 'key' : '70c7d4486938c9292683286ff6e376a9', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
+                    atOptions = {
+                        'key' : '70c7d4486938c9292683286ff6e376a9',
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                    };
                 </script>
                 <script type="text/javascript" src="https://onsetcab.com/70c7d4486938c9292683286ff6e376a9/invoke.js"></script>
             </div>
@@ -115,11 +127,21 @@ function getHtmlTemplate(movie, slug) {
             <div class="flex flex-wrap items-center justify-center gap-3">
                 <span class="text-[10px] md:text-xs font-black uppercase tracking-wider text-gray-400">Supported Browsers:</span>
                 <div class="flex items-center gap-2 bg-black/40 px-3 py-1.5 rounded-xl border border-white/5 shadow-inner">
-                    <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm" title="Google Chrome"><img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/chrome/chrome.svg" class="w-4 h-4 object-contain" alt="Chrome"></div>
-                    <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm" title="Microsoft Edge"><img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/edge/edge.svg" class="w-4 h-4 object-contain" alt="Edge"></div>
-                    <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm" title="Opera Browser"><img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/opera/opera.svg" class="w-4 h-4 object-contain" alt="Opera"></div>
-                    <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm" title="Mozilla Firefox"><img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/firefox/firefox.svg" class="w-4 h-4 object-contain" alt="Firefox"></div>
-                    <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm" title="Brave Browser"><img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/brave/brave.svg" class="w-4 h-4 object-contain" alt="Brave"></div>
+                    <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm" title="Google Chrome">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/chrome/chrome.svg" class="w-4 h-4 object-contain" alt="Chrome">
+                    </div>
+                    <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm" title="Microsoft Edge">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/edge/edge.svg" class="w-4 h-4 object-contain" alt="Edge">
+                    </div>
+                    <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm" title="Opera Browser">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/opera/opera.svg" class="w-4 h-4 object-contain" alt="Opera">
+                    </div>
+                    <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm" title="Mozilla Firefox">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/firefox/firefox.svg" class="w-4 h-4 object-contain" alt="Firefox">
+                    </div>
+                    <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm" title="Brave Browser">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/brave/brave.svg" class="w-4 h-4 object-contain" alt="Brave">
+                    </div>
                 </div>
             </div>
             <div class="flex flex-wrap items-center justify-center gap-2.5 w-full lg:w-auto">
@@ -136,9 +158,8 @@ function getHtmlTemplate(movie, slug) {
         </div>
 
         <h1 class="text-2xl md:text-4xl font-black text-center uppercase tracking-tight mb-6 mt-6">${movie.title}</h1>
-        
         <div class="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 relative">
-            <iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${defaultEmbedUrl}" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" referrerpolicy="no-referrer"></iframe>
+            <iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${defaultEmbedUrl}" allowfullscreen="true" allow="autoplay; fullscreen"></iframe>
         </div>
 
         ${isSeries ? `
@@ -156,13 +177,25 @@ function getHtmlTemplate(movie, slug) {
         <div class="w-full flex justify-center mb-10 min-h-[50px] md:min-h-[90px]">
             <div class="hidden md:block">
                 <script type="text/javascript">
-                    atOptions = { 'key' : 'd07f22b9f96bb57b376565604ef61214', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
+                    atOptions = {
+                        'key' : 'd07f22b9f96bb57b376565604ef61214',
+                        'format' : 'iframe',
+                        'height' : 90,
+                        'width' : 728,
+                        'params' : {}
+                    };
                 </script>
                 <script type="text/javascript" src="https://onsetcab.com/d07f22b9f96bb57b376565604ef61214/invoke.js"></script>
             </div>
             <div class="block md:hidden">
                 <script type="text/javascript">
-                    atOptions = { 'key' : '70c7d4486938c9292683286ff6e376a9', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
+                    atOptions = {
+                        'key' : '70c7d4486938c9292683286ff6e376a9',
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                    };
                 </script>
                 <script type="text/javascript" src="https://onsetcab.com/70c7d4486938c9292683286ff6e376a9/invoke.js"></script>
             </div>
@@ -192,7 +225,6 @@ function getHtmlTemplate(movie, slug) {
         <p>&copy; 2026 MOVIEDAKHI. DIGITAL ENTERTAINMENT EXCELLENCE.</p>
     </footer>
 
-    <script src="https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js"></script>
     <script src="https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js"></script>
 
     <script>
@@ -230,8 +262,7 @@ function getHtmlTemplate(movie, slug) {
             }
             document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
-            clickCount = 0; 
+            clickCount = 0;
             document.getElementById('btnText').innerText = "Download Episode " + (idx + 1);
             currentEpisodeDownloadUrl = epDownloadUrl || "";
         }
@@ -265,14 +296,14 @@ function getHtmlTemplate(movie, slug) {
 
 function startStaticGeneration() {
     if (!fs.existsSync(masterFilePath)) {
-        console.error("❌ master_movies.json ফাইলটি পাওয়া যায়নি!");
+        console.error("❌ master_movies.json ফাইলটি পাওয়া যায়নি!");
         return;
     }
 
     const allMovies = JSON.parse(fs.readFileSync(masterFilePath, 'utf8'));
     const lightMoviesCatalog = [];
 
-    console.log(`🚀 ${allMovies.length}টি মুভির জন্য আলাদা এইচটিএমেল ফাইল 'movies' ফোল্ডারে ஜেনারেট হচ্ছে...`);
+    console.log(`🚀 ${allMovies.length}টি মুভির জন্য আলাদা এইচটিএমেল ফাইল 'movies' ফোল্ডারে জেনারেট হচ্ছে...`);
 
     allMovies.forEach((movie, i) => {
         const slug = generateMovieSlug(movie.title);
@@ -305,7 +336,7 @@ function startStaticGeneration() {
     });
 
     fs.writeFileSync(publicJsonPath, JSON.stringify(lightMoviesCatalog, null, 3), 'utf8');
-    console.log(`\n✅ অল ডান সাকিব ভাই! ফাইল রি-জেনারেট সম্পূর্ণ হয়েছে।`);
+    console.log(`\n✅ অল ডান সাকিব ভাই! ফাইল রি-জেনারেট সম্পূর্ণ হয়েছে।`);
 }
 
 startStaticGeneration();
