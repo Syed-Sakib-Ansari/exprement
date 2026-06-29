@@ -269,7 +269,7 @@ function getOptimizedImageUrl(url, width = 300) {
 function debounce(func, wait) {
     let timeout;
     return function (...args) {
-        clearInterval(timeout);
+        clearTimeout(timeout);
         timeout = setTimeout(() => func.apply(this, args), wait);
     };
 }
@@ -662,7 +662,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 function createMovieCard(item) {
     const card = document.createElement('a');
     const movieSlug = item.slug || generateMovieSlug(item.title);
-    card.href = `movies/${movieSlug}.html`; // 🎯 নতুন স্প্লিট পাথ লিংক
+    card.href = `${movieSlug}.html`; // 🔥 CF UPDATE
     card.className = 'movie-card relative flex flex-col group cursor-pointer no-underline';
 
     const infoText = item.seriesInfo ?
@@ -683,12 +683,17 @@ items-center p-5 transition-all duration-300">
             </div>
             <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300">
                 <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
+  
           </div>
         </div>
         <div class="mt-4 text-center flex flex-col items-center md:block">
             <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
             ${infoText}
         </div>`;
+    card.onclick = (e) => {
+        e.preventDefault();
+        openModal(item.id);
+    };
     return card;
 }
 
@@ -752,6 +757,7 @@ function renderCategorySections(forceRenderAll = false) {
                 <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:border-red-600 transition-all shadow-lg transition-transform duration-300 group-hover:scale-110">
                     <i class="fas fa-arrow-right text-white text-xl"></i>
                 </div>
+      
           <h4 class="font-black text-sm uppercase text-white tracking-widest transition-transform duration-300 group-hover:scale-110">View All</h4>
                 <p class="text-[10px] text-gray-500 font-bold mt-2 uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110">${displayName}</p>
             </div>`;
@@ -783,12 +789,14 @@ function renderCategorySections(forceRenderAll = false) {
             </div>
 
             <div class="flex items-center space-x-3 mb-8 justify-center">
+             
    <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
                 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
             </div>
             
             <div class="lazy-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto">
                 <div class="col-span-full py-16 flex justify-center items-center">
+  
                   <div class="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin opacity-45"></div>
                 </div>
             </div>`;
@@ -912,7 +920,7 @@ function updateLoadMoreVisibility() {
     if (libraryDisplayedCount < libraryData.length) {
         loading.classList.remove('hidden');
     } else {
-        setTimeout(() => {
+        loading.setTimeout(() => {
             loading.classList.add('hidden');
         }, 100);
     }
