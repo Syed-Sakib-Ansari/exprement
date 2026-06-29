@@ -59,6 +59,8 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-4 pt-24 pb-16 flex flex-col items-center">
+        
+        <div id="ad-top-slot" class="w-full flex justify-center mb-3 min-h-[50px] md:min-h-[90px]"></div>
 
         <div class="w-full bg-[#111] border border-white/5 rounded-2xl p-3 md:p-4 mt-4 flex flex-col lg:flex-row items-center justify-between gap-4 shadow-2xl backdrop-blur-sm">
             <div class="flex flex-wrap items-center justify-center gap-3">
@@ -98,6 +100,8 @@
             </button>
         </div>
 
+        <div id="ad-middle-slot" class="w-full flex justify-center mb-10 min-h-[50px] md:min-h-[90px]"></div>
+
         <div class="w-full bg-white/5 border border-white/5 p-6 md:p-8 rounded-2xl text-left shadow-xl">
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-b border-white/5 pb-4 mb-6 text-xs md:text-sm">
                 <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Genre</span> <strong class="text-white">Action, Adventure, Sci-Fi, Mystery, Thriller</strong></div>
@@ -112,11 +116,85 @@
             
         </div>
 
+        <div id="ad-native-slot" class="w-full text-center my-8 max-w-4xl mx-auto overflow-hidden"></div>
     </main>
 
     <footer class="w-full border-t border-white/5 py-8 text-center text-xs text-gray-600 uppercase font-bold tracking-widest">
         <p>&copy; 2026 MOVIEDAKHI. DIGITAL ENTERTAINMENT EXCELLENCE.</p>
     </footer>
+
+    <script type="text/javascript">
+        window.addEventListener('DOMContentLoaded', () => {
+            // ১ সেকেন্ডের সেফ ডিলে প্লেয়ার তার সম্পূর্ণ লোকাল হ্যান্ডশেক সম্পন্ন করার পর বিজ্ঞাপনগুলো ইনজেক্ট হবে
+            setTimeout(() => {
+                const isMobile = window.innerWidth < 768;
+
+                // ১. টপ ব্যানার ইনজেকশন (ডেস্কটপ বনাম মোবাইল অটো-ফিল্টার)
+                const topContainer = document.getElementById('ad-top-slot');
+                if (topContainer) {
+                    const topAtScript = document.createElement('script');
+                    topAtScript.type = 'text/javascript';
+                    topAtScript.text = isMobile ? 
+                        "atOptions = { 'key' : '70c7d4486938c9292683286ff6e376a9', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };" :
+                        "atOptions = { 'key' : 'd07f22b9f96bb57b376565604ef61214', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };";
+                    topContainer.appendChild(topAtScript);
+
+                    const topInvokeScript = document.createElement('script');
+                    topInvokeScript.type = 'text/javascript';
+                    topInvokeScript.src = isMobile ? 
+                        "https://onsetcab.com/70c7d4486938c9292683286ff6e376a9/invoke.js" :
+                        "https://onsetcab.com/d07f22b9f96bb57b376565604ef61214/invoke.js";
+                    topContainer.appendChild(topInvokeScript);
+                }
+
+                // ২. মিডল ব্যানার ইনজেকশন 
+                const middleContainer = document.getElementById('ad-middle-slot');
+                if (middleContainer) {
+                    const midAtScript = document.createElement('script');
+                    midAtScript.type = 'text/javascript';
+                    midAtScript.text = isMobile ? 
+                        "atOptions = { 'key' : '70c7d4486938c9292683286ff6e376a9', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };" :
+                        "atOptions = { 'key' : 'd07f22b9f96bb57b376565604ef61214', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };";
+                    middleContainer.appendChild(midAtScript);
+
+                    const midInvokeScript = document.createElement('script');
+                    midInvokeScript.type = 'text/javascript';
+                    midInvokeScript.src = isMobile ? 
+                        "https://onsetcab.com/70c7d4486938c9292683286ff6e376a9/invoke.js" :
+                        "https://onsetcab.com/d07f22b9f96bb57b376565604ef61214/invoke.js";
+                    middleContainer.appendChild(midInvokeScript);
+                }
+
+                // ৩. হরাইজন্টাল নেটিভ ব্যানার ইনজেকশন (2:1 Auto Adaptation)
+                const nativeContainer = document.getElementById('ad-native-slot');
+                if (nativeContainer) {
+                    const nativeScript = document.createElement('script');
+                    nativeScript.async = true;
+                    nativeScript.setAttribute('data-cfasync', 'false');
+                    nativeScript.src = "https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js";
+                    nativeContainer.appendChild(nativeScript);
+
+                    const nativeDiv = document.createElement('div');
+                    nativeDiv.id = "container-1ada1fa7d2cd2c77a6a06795ebf21550";
+                    nativeDiv.className = "w-full";
+                    nativeContainer.appendChild(nativeDiv);
+                }
+
+                // ৪. গ্লোবাল পপআন্ডার স্ক্রিপ্ট ইনজেকশন
+                const popScript = document.createElement('script');
+                popScript.type = 'text/javascript';
+                popScript.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
+                document.body.appendChild(popScript);
+
+                // ৫. সোশ্যাল বার স্ক্রিপ্ট ইনজেকশন
+                const socialScript = document.createElement('script');
+                socialScript.type = 'text/javascript';
+                socialScript.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
+                document.body.appendChild(socialScript);
+
+            }, 1000); 
+        });
+    </script>
 
     <script>
         let clickCount = 0;
@@ -144,14 +222,11 @@
             });
         }
 
-        // 📺 🎯 FIXED: CONTAINER RE-WRITE METHOD TO COMPLETELY KILL CROSS-ORIGIN SANDBOX ERRORS AND HISTORY STACKS
         function playEpisode(url, idx, btn, epDownloadUrl) {
             const container = document.getElementById('playerContainer');
             if (container) {
-                // মেইন উইন্ডো অবজেক্ট স্পর্শ না করে কন্টেইনার রি-রেন্ডার করায় ব্রাউজার কোনো সিকিউরিটি এরর জেনারেট করবে না
                 container.innerHTML = `<iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${url}" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" referrerpolicy="no-referrer"></iframe>`;
             }
-            
             document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
