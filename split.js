@@ -124,6 +124,14 @@ function getHtmlTemplate(movie, slug) {
 
         <h1 class="text-2xl md:text-4xl font-black text-center uppercase tracking-tight mb-6 mt-6">${movie.title}</h1>
         
+        <div class="w-full bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-3 md:p-4 mb-4 flex items-start gap-3">
+            <i class="fas fa-exclamation-triangle text-yellow-500 mt-0.5 text-lg"></i>
+            <div>
+                <h4 class="text-yellow-500 font-bold text-sm uppercase tracking-wide">Video Not Playing?</h4>
+                <p class="text-gray-300 text-xs mt-1 leading-relaxed">Free servers require pop-ups. If your mobile browser blocks them, the player will show an error. Please tap the <strong>"Pop-ups blocked"</strong> notification at the top of your screen and select <strong>"Always Show"</strong> to stream seamlessly.</p>
+            </div>
+        </div>
+
         <div id="playerContainer" class="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 relative">
             <iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${defaultEmbedUrl}" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture"></iframe>
         </div>
@@ -261,7 +269,6 @@ function getHtmlTemplate(movie, slug) {
             });
         }
 
-        // 📺 🎯 FIXED: RE-RENDER IFRAME SAFELY WITHOUT ANY LOCKING POLICIES
         function playEpisode(url, idx, btn, epDownloadUrl) {
             const container = document.getElementById('playerContainer');
             if (container) {
@@ -344,7 +351,7 @@ function startStaticGeneration() {
     });
 
     fs.writeFileSync(publicJsonPath, JSON.stringify(lightMoviesCatalog, null, 3), 'utf8');
-    console.log(`\n✅ অল ডান সাকিব ভাই! আলটিমেট ট্র্যাকিং পলিসি ফিক্স সম্পূর্ণ হয়েছে।`);
+    console.log(`\n✅ অল ডান সাকিব ভাই! ফাইল রি-জেনারেট সম্পূর্ণ হয়েছে।`);
 }
 
 startStaticGeneration();
