@@ -138,7 +138,7 @@ function getHtmlTemplate(movie, slug) {
         <h1 class="text-2xl md:text-4xl font-black text-center uppercase tracking-tight mb-6 mt-6">${movie.title}</h1>
         
         <div class="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 relative">
-            <iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${defaultEmbedUrl}" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts text-center"></iframe>
+            <iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${defaultEmbedUrl}" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture"></iframe>
         </div>
 
         ${isSeries ? `
@@ -164,7 +164,7 @@ function getHtmlTemplate(movie, slug) {
                 <script type="text/javascript">
                     atOptions = { 'key' : '70c7d4486938c9292683286ff6e376a9', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
                 </script>
-                <script type="text/javascript" src="https://onsetcab.com/70c7d448693鱼69292683286ff6e376a9/invoke.js"></script>
+                <script type="text/javascript" src="https://onsetcab.com/70c7d4486938c9292683286ff6e376a9/invoke.js"></script>
             </div>
         </div>
 
