@@ -138,7 +138,7 @@ function getHtmlTemplate(movie, slug) {
         <h1 class="text-2xl md:text-4xl font-black text-center uppercase tracking-tight mb-6 mt-6">${movie.title}</h1>
         
         <div class="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 relative">
-            <iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${defaultEmbedUrl}" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture"></iframe>
+            <iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${defaultEmbedUrl}" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" referrerpolicy="no-referrer"></iframe>
         </div>
 
         ${isSeries ? `
@@ -272,7 +272,7 @@ function startStaticGeneration() {
     const allMovies = JSON.parse(fs.readFileSync(masterFilePath, 'utf8'));
     const lightMoviesCatalog = [];
 
-    console.log(`🚀 ${allMovies.length}টি মুভির জন্য আলাদা এইচটিএমেল ফাইল 'movies' ফোল্ডারে জেনারেট হচ্ছে...`);
+    console.log(`🚀 ${allMovies.length}টি মুভির জন্য আলাদা এইচটিএমেল ফাইল 'movies' ফোল্ডারে ஜেনারেট হচ্ছে...`);
 
     allMovies.forEach((movie, i) => {
         const slug = generateMovieSlug(movie.title);
