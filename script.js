@@ -933,6 +933,7 @@ function openModal(id) {
     const item = contentData.find(m => m.id === id);
     if (!item) return;
 
+    // 🔥 URL AND HISTORY SEO UPDATE (CF FIX)
     const movieSlug = item.slug || generateMovieSlug(item.title);
     const newUrl = new URL('/' + movieSlug + '.html', window.location.origin);
 
@@ -942,7 +943,8 @@ function openModal(id) {
         window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl);
     } catch (e) { }
 
-    document.title = `Watch ${item.title} Full Movie Online Free | MovieDakhi`;
+    // 🔥 HIGH-VOLUME DYNAMIC SEO GENERATOR
+    document.title = `Watch ${item.title} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
 
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -958,38 +960,53 @@ function openModal(id) {
     currentItem = item;
     if (modalTitleElem) modalTitleElem.innerText = item.title;
 
-    if (document.getElementById('modalGenre')) document.getElementById('modalGenre').innerText = item.genre || 'N/A';
-    if (document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category || 'N/A';
-    if (document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language || 'N/A';
-    if (document.getElementById('modalQuality')) document.getElementById('modalQuality').innerText = item.quality || 'N/A';
+    if (document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
+    if (document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
 
-    const copyBtn = document.getElementById('modalCopyBtn');
-    if (copyBtn) {
-        copyBtn.onclick = function () {
-            navigator.clipboard.writeText(window.location.href).then(() => {
-                const prevHtml = copyBtn.innerHTML;
-                copyBtn.innerHTML = '<i class="fas fa-check text-green-500"></i> Copied!';
-                setTimeout(() => { copyBtn.innerHTML = prevHtml; }, 2000);
-            });
-        };
+    // 🔥 CLEAN INTRO TEXT FOR TOP MODAL
+    if (document.getElementById('modalDesc')) {
+        document.getElementById('modalDesc').innerHTML = `▶ Streaming and download links for <strong>${item.title}</strong> are ready below. Scroll down to read the full movie synopsis and details.`;
+        document.getElementById('modalDesc').className = "text-sm md:text-base text-gray-400 leading-relaxed mb-8 max-w-3xl mx-auto font-medium italic";
     }
 
-    // High-Volume Content Data Structure Mapping
+    // 🔥 DYNAMIC SEOCONTENT GENERATOR WITH NEW ENGLISH JSON KEYS
     let seoContainer = document.getElementById('modalSeoContent');
+    if (!seoContainer) {
+        seoContainer = document.createElement('div');
+        seoContainer.id = 'modalSeoContent';
+        seoContainer.className = "text-sm md:text-base text-gray-400 leading-relaxed mt-6 max-w-3xl mx-auto font-medium text-left w-full";
+
+        const adBottomWrapper = document.getElementById('modalAdBottom')?.parentNode;
+        if (adBottomWrapper) {
+            adBottomWrapper.parentNode.insertBefore(seoContainer, adBottomWrapper.nextSibling);
+        }
+    }
+
     if (seoContainer) {
         let seoBodyContent = "";
-        if (item.synopsis) seoBodyContent += `<div><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-book-open text-red-600 mr-2"></i> Synopsis</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.synopsis}</p></div>`;
-        if (item.movieHighlights) seoBodyContent += `<div><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-star text-red-600 mr-2"></i> Highlights</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.movieHighlights}</p></div>`;
-        if (item.streamingRecommendation) seoBodyContent += `<div><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-thumbs-up text-red-600 mr-2"></i> Streaming Recommendation</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.streamingRecommendation}</p></div>`;
-        if (item.detailedPlotSummary) seoBodyContent += `<div><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-film text-red-600 mr-2"></i> Detailed Plot Summary</h4><p class="text-gray-400 text-[11px] md:text-xs leading-relaxed whitespace-pre-line bg-black/30 p-4 rounded-xl border border-white/5">${item.detailedPlotSummary}</p></div>`;
+        if (item.synopsis) {
+            seoBodyContent += `<div class="mt-6 text-left border-t border-white/5 pt-4 select-text"><b class="text-white text-sm md:text-base block mb-1">📖 Synopsis :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.synopsis}</p></div>`;
+        }
+        if (item.movieHighlights) {
+            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">✨ Movie Highlights :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.movieHighlights}</p></div>`;
+        }
+        if (item.streamingRecommendation) {
+            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🎯 Streaming Recommendation :</b><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.streamingRecommendation}</p></div>`;
+        }
+        if (item.detailedPlotSummary) {
+            seoBodyContent += `<div class="mt-4 text-left select-text"><b class="text-white text-sm md:text-base block mb-1">🍿 Detailed Plot Summary :</b><p class="text-gray-400 text-[11px] md:text-xs leading-relaxed whitespace-pre-line bg-white/5 p-3 rounded-lg border border-white/10 select-text cursor-text">${item.detailedPlotSummary}</p></div>`;
+        }
         seoContainer.innerHTML = seoBodyContent;
     }
 
     downloadClickCount = 0;
     const downloadBtn = document.getElementById('mainDownloadBtn');
     if (downloadBtn) {
-        document.getElementById('downloadBtnText').innerText = "Download " + (item.episodes && item.episodes.length > 0 ? "Episode 1" : "Movie");
-        downloadBtn.className = "bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-black text-xs md:text-sm uppercase tracking-widest transition transform hover:scale-105 shadow-xl shadow-red-600/20 flex items-center gap-2 cursor-pointer";
+        document.getElementById('downloadBtnText').innerText = "Download";
+        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+        downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+        const wave = downloadBtn.querySelector('.animate-shine-wave');
+        if (wave) wave.classList.remove('hidden');
     }
 
     if (item.episodes && item.episodes.length > 0) {
@@ -1002,13 +1019,15 @@ function openModal(id) {
     const epList = document.getElementById('episodeList');
     if (item.episodes && seriesSec && epList) {
         seriesSec.classList.remove('hidden');
-        document.getElementById('seriesInfoText').innerText = item.seriesInfo || 'Episodes';
+        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
         epList.innerHTML = '';
         item.episodes.forEach((ep, idx) => {
             const btn = document.createElement('button');
-            btn.className = `ep-btn px-4 py-2 md:px-6 md:py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase text-white ${idx === (currentEpisodeIndex || 0) ? 'active' : ''}`;
+            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
+            if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active');
             btn.innerText = ep.title;
             btn.onclick = () => playEpisode(idx, btn);
+
             epList.appendChild(btn);
         });
     } else if (seriesSec) {
@@ -1016,7 +1035,17 @@ function openModal(id) {
     }
 
     let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
-    document.getElementById('actualVideo').innerHTML = `<iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${url}" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture"></iframe>`;
+    const actualVideoContainer = document.getElementById('actualVideo');
+
+    if (actualVideoContainer) {
+        actualVideoContainer.classList.remove('hidden');
+
+        const existingIframe = document.getElementById('videoIframe');
+        const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
+        if (needsNewIframe) {
+            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+        }
+    }
 
     const modal = document.getElementById('movieModal');
     if (modal) {
@@ -1024,9 +1053,8 @@ function openModal(id) {
         void modal.offsetWidth;
         modal.classList.add('active');
         setTimeout(() => {
-            injectResponsiveAdNode(document.getElementById('modalAdTopSlot'));
-            injectResponsiveAdNode(document.getElementById('modalAdMiddleSlot'));
-            injectNativeBanner(document.getElementById('modalAdBottomSlot'), 260);
+            injectResponsiveAdNode(document.getElementById('modalAdTop'));
+            injectResponsiveAdNode(document.getElementById('modalAdBottom'));
         }, 150);
     }
 
