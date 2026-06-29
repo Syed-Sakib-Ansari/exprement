@@ -1,0 +1,237 @@
+const fs = require('fs');
+const path = require('path');
+
+const masterFilePath = path.join(__dirname, 'master_movies.json'); 
+const publicJsonPath = path.join(__dirname, 'movies.json');        
+const outputFolder = path.join(__dirname, 'movies'); 
+
+if (!fs.existsSync(outputFolder)) {
+    fs.mkdirSync(outputFolder);
+}
+
+function generateMovieSlug(title) {
+    if (!title) return "movie";
+    return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+}
+
+function getHtmlTemplate(movie, slug) {
+    const isSeries = !!movie.episodes && movie.episodes.length > 0;
+    const defaultEmbedUrl = isSeries ? movie.episodes[0].embedUrl : (movie.embedUrl || '');
+    
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": isSeries ? "TVSeries" : "Movie",
+        "name": movie.title,
+        "image": movie.posterUrl,
+        "genre": movie.genre,
+        "description": movie.synopsis || `Watch ${movie.title} full movie online for free in HD quality on MovieDakhi.`
+    };
+
+    if (isSeries) {
+        schemaData.numberOfEpisodes = movie.episodes.length;
+    }
+
+    let episodeButtonsHtml = '';
+    if (isSeries) {
+        movie.episodes.forEach((ep, idx) => {
+            const safeEmbedUrl = ep.embedUrl ? ep.embedUrl.replace(/'/g, "\\'") : '';
+            const safeDownloadUrl = ep.downloadUrl ? ep.downloadUrl.replace(/'/g, "\\'") : '';
+            
+            episodeButtonsHtml += `<button onclick="playEpisode('${safeEmbedUrl}', ${idx}, this, '${safeDownloadUrl}')" class="ep-btn px-4 py-2 md:px-6 md:py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase text-white ${idx === 0 ? 'active' : ''}">${ep.title}</button>`;
+        });
+    }
+
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Watch ${movie.title} Full Movie Online Free | Download HD - MovieDakhi</title>
+    <meta name="description" content="Watch ${movie.title} full movie online for free in HD quality. Download ${movie.title} complete series 1080p, 720p. Stream ${movie.genre} movies seamlessly on MovieDakhi.">
+    <meta name="keywords" content="${movie.title}, watch ${movie.title} online, download ${movie.title}, free movie, MovieDakhi, ${movie.genre}">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon2.png">
+    
+    <link rel="canonical" href="https://moviedakhi.com/movies/${slug}.html">
+    
+    <meta property="og:title" content="Watch ${movie.title} Full Movie Online Free | MovieDakhi">
+    <meta property="og:description" content="Watch ${movie.title} in HD quality for free. Download links available.">
+    <meta property="og:image" content="${movie.posterUrl}">
+    <meta property="og:url" content="https://moviedakhi.com/movies/${slug}.html">
+    <meta property="og:type" content="video.movie">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script type="application/ld+json">
+        ${JSON.stringify(schemaData, null, 3)}
+    </script>
+    
+    <style>
+        body { background-color: #0a0a0a; color: #fff; font-family: system-ui, sans-serif; }
+        .ep-btn.active { background-color: #E50914 !important; border-color: #E50914 !important; }
+    </style>
+</head>
+<body>
+
+    <header class="w-full bg-black/60 border-b border-white/5 py-4 px-6 fixed top-0 left-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-red-600 text-xl md:text-2xl font-black tracking-tighter no-underline uppercase">MOVIE DAKHI</a>
+            <a href="/" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition"><i class="fas fa-home mr-1"></i> Back to Home</a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 pt-24 pb-16 flex flex-col items-center">
+        <div class="w-full text-center my-4 min-h-[90px] bg-white/5 rounded-xl border border-white/5 flex items-center justify-center text-gray-600 text-xs uppercase tracking-widest">
+            <span>Advertisement (Top Banner)</span>
+        </div>
+
+        <h1 class="text-2xl md:text-4xl font-black text-center uppercase tracking-tight mb-6 mt-4">${movie.title}</h1>
+        <div class="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 relative">
+            <iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${defaultEmbedUrl}" allowfullscreen="true" allow="autoplay; fullscreen"></iframe>
+        </div>
+
+        ${isSeries ? `
+        <div class="w-full mt-8 bg-white/5 p-4 md:p-6 rounded-xl border border-white/5">
+            <h3 class="text-sm font-black uppercase tracking-widest text-gray-400 mb-4"><i class="fas fa-list mr-2 text-red-600"></i> ${movie.seriesInfo || 'Episodes'}</h3>
+            <div id="episodeContainer" class="flex flex-wrap gap-3">${episodeButtonsHtml}</div>
+        </div>` : ''}
+
+        <div class="my-10 text-center">
+            <button id="downloadBtn" onclick="handleDownload()" class="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-black text-xs md:text-sm uppercase tracking-widest transition transform hover:scale-105 shadow-xl shadow-red-600/20 flex items-center gap-2 cursor-pointer">
+                <i class="fas fa-download"></i> <span id="btnText">Download ${isSeries ? 'Episode 1' : 'Movie'}</span>
+            </button>
+        </div>
+
+        <div class="w-full text-center mb-10 min-h-[90px] bg-white/5 rounded-xl border border-white/5 flex items-center justify-center text-gray-600 text-xs uppercase tracking-widest">
+            <span>Advertisement (Bottom of Download Button)</span>
+        </div>
+
+        <div class="w-full bg-white/5 border border-white/5 p-6 md:p-8 rounded-2xl text-left shadow-xl">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-b border-white/5 pb-4 mb-6 text-xs md:text-sm">
+                <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Genre</span> <strong class="text-white">${movie.genre || 'N/A'}</strong></div>
+                <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Category</span> <strong class="text-white">${movie.category || 'N/A'}</strong></div>
+                <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Language</span> <strong class="text-white">${movie.language || 'N/A'}</strong></div>
+                <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Quality</span> <strong class="text-white">${movie.quality || 'N/A'}</strong></div>
+            </div>
+
+            ${movie.synopsis ? `<div class="mb-6"><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-book-open text-red-600 mr-2"></i> Synopsis</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${movie.synopsis}</p></div>` : ''}
+            ${movie.movieHighlights ? `<div class="mb-6"><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-star text-red-600 mr-2"></i> Highlights</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${movie.movieHighlights}</p></div>` : ''}
+            ${movie.streamingRecommendation ? `<div class="mb-6"><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-thumbs-up text-red-600 mr-2"></i> Streaming Recommendation</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${movie.streamingRecommendation}</p></div>` : ''}
+            ${movie.detailedPlotSummary ? `<div><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-film text-red-600 mr-2"></i> Detailed Plot Summary</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed whitespace-pre-line bg-black/30 p-4 rounded-xl border border-white/5">${movie.detailedPlotSummary}</p></div>` : ''}
+        </div>
+
+        <div class="w-full text-center my-8 min-h-[250px] bg-white/5 rounded-xl border border-white/5 flex items-center justify-center text-gray-600 text-xs uppercase tracking-widest">
+            <span>Advertisement (Native Banner)</span>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-white/5 py-8 text-center text-xs text-gray-600 uppercase font-bold tracking-widest">
+        <p>&copy; 2026 MOVIEDAKHI. DIGITAL ENTERTAINMENT EXCELLENCE.</p>
+    </footer>
+
+    <script>
+        let clickCount = 0;
+        const dl1 = "${movie.downloadUrl1 || ''}";
+        const dl2 = "${movie.downloadUrl2 || ''}";
+        
+        let currentEpisodeDownloadUrl = "${isSeries && movie.episodes[0] && movie.episodes[0].downloadUrl ? movie.episodes[0].downloadUrl.replace(/'/g, "\\'") : ''}";
+
+        // 📺 FIXED: আইফ্রেম হিস্ট্রি ট্র্যাপ দূর করার আলটিমেট লজিক
+        function playEpisode(url, idx, btn, epDownloadUrl) {
+            const player = document.getElementById('videoPlayer');
+            
+            if (player && player.contentWindow) {
+                // 🎯 সোর্স চেঞ্জ করার বদলে 'location.replace' ব্যবহার করায় ব্রাউজারের ব্যাক বাটনে কোনো হিস্ট্রি রিপিট হবে না
+                player.contentWindow.location.replace(url);
+            } else if (player) {
+                player.src = url;
+            }
+            
+            document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            clickCount = 0;
+            document.getElementById('btnText').innerText = "Download Episode " + (idx + 1);
+            
+            currentEpisodeDownloadUrl = epDownloadUrl || "";
+            
+            const mainBtn = document.getElementById('downloadBtn');
+            mainBtn.className = "bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-black text-xs md:text-sm uppercase tracking-widest transition transform hover:scale-105 shadow-xl shadow-red-600/20 flex items-center gap-2 cursor-pointer opacity-100";
+        }
+
+        function handleDownload() {
+            if (clickCount >= 3) return;
+            clickCount++;
+            
+            if (clickCount === 1) {
+                document.getElementById('btnText').innerText = "Ready For Download";
+                if (dl1) window.open(dl1, '_blank');
+            } else if (clickCount === 2) {
+                document.getElementById('btnText').innerText = "Download (Final Click)";
+                if (dl1) window.open(dl1, '_blank');
+            } else if (clickCount === 3) {
+                document.getElementById('btnText').innerText = "Link Expired";
+                const btn = document.getElementById('downloadBtn');
+                btn.className = "bg-gray-900 border border-white/10 text-gray-500 px-10 py-4 rounded-full font-black text-xs md:text-sm uppercase tracking-widest flex items-center gap-2 cursor-not-allowed opacity-60";
+                
+                if (currentEpisodeDownloadUrl && currentEpisodeDownloadUrl.trim() !== "") {
+                    window.open(currentEpisodeDownloadUrl, '_blank');
+                } else if (dl2 && dl2.trim() !== "") {
+                    window.open(dl2, '_blank');
+                }
+            }
+        }
+    </script>
+</body>
+</html>`;
+}
+
+function startStaticGeneration() {
+    if (!fs.existsSync(masterFilePath)) {
+        console.error("❌ master_movies.json ফাইলটি পাওয়া যায়নি!");
+        return;
+    }
+
+    const allMovies = JSON.parse(fs.readFileSync(masterFilePath, 'utf8'));
+    const lightMoviesCatalog = [];
+
+    console.log(`🚀 ${allMovies.length}টি মুভির জন্য আলাদা এইচটিএমেল ফাইল 'movies' ফোল্ডারে জেনারেট হচ্ছে...`);
+
+    allMovies.forEach((movie, i) => {
+        const slug = generateMovieSlug(movie.title);
+
+        const lightMovie = {
+            id: i,
+            title: movie.title,
+            posterUrl: movie.posterUrl,
+            genre: movie.genre,
+            category: movie.category,
+            language: movie.language,
+            quality: movie.quality,
+            seriesInfo: movie.seriesInfo || null,
+            embedUrl: movie.embedUrl || null
+        };
+        if (movie.episodes) {
+            lightMovie.episodes = movie.episodes.map(ep => ({
+                number: ep.number,
+                title: ep.title,
+                embedUrl: ep.embedUrl
+            }));
+        }
+        lightMoviesCatalog.push(lightMovie);
+
+        const htmlFileName = `${slug}.html`;
+        const htmlFilePath = path.join(outputFolder, htmlFileName);
+        const htmlContent = getHtmlTemplate(movie, slug);
+        
+        fs.writeFileSync(htmlFilePath, htmlContent, 'utf8');
+    });
+
+    fs.writeFileSync(publicJsonPath, JSON.stringify(lightMoviesCatalog, null, 3), 'utf8');
+    console.log(`\n✅ অল ডান সাকিব ভাই! 'movies' ফোল্ডারের ব্যাক বাটন বা ট্র্যাপ ফিক্স কমপ্লিট।`);
+}
+
+startStaticGeneration();
