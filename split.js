@@ -225,6 +225,10 @@ function getHtmlTemplate(movie, slug) {
         <p>&copy; 2026 MOVIEDAKHI. DIGITAL ENTERTAINMENT EXCELLENCE.</p>
     </footer>
 
+    <script src="https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js"></script>
+
+    <script src="https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js"></script>
+
     <script>
         let clickCount = 0;
         const dl1 = "${movie.downloadUrl1 || ''}";
