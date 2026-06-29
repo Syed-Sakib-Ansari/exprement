@@ -125,7 +125,7 @@ function getHtmlTemplate(movie, slug) {
         <h1 class="text-2xl md:text-4xl font-black text-center uppercase tracking-tight mb-6 mt-6">${movie.title}</h1>
         
         <div id="playerContainer" class="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 relative">
-            <iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${defaultEmbedUrl}" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" referrerpolicy="no-referrer"></iframe>
+            <iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="${defaultEmbedUrl}" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture"></iframe>
         </div>
 
         ${isSeries ? `
@@ -165,11 +165,10 @@ function getHtmlTemplate(movie, slug) {
 
     <script type="text/javascript">
         window.addEventListener('DOMContentLoaded', () => {
-            // ১ সেকেন্ডের সেফ ডিলে প্লেয়ার তার সম্পূর্ণ লোকাল হ্যান্ডশেক সম্পন্ন করার পর বিজ্ঞাপনগুলো ইনজেক্ট হবে
             setTimeout(() => {
                 const isMobile = window.innerWidth < 768;
 
-                // ১. টপ ব্যানার ইনজেকশন (ডেস্কটপ বনাম মোবাইল অটো-ফিল্টার)
+                // 1. Top Banner Injection
                 const topContainer = document.getElementById('ad-top-slot');
                 if (topContainer) {
                     const topAtScript = document.createElement('script');
@@ -187,7 +186,7 @@ function getHtmlTemplate(movie, slug) {
                     topContainer.appendChild(topInvokeScript);
                 }
 
-                // ২. মিডল ব্যানার ইনজেকশন 
+                // 2. Middle Banner Injection
                 const middleContainer = document.getElementById('ad-middle-slot');
                 if (middleContainer) {
                     const midAtScript = document.createElement('script');
@@ -205,7 +204,7 @@ function getHtmlTemplate(movie, slug) {
                     middleContainer.appendChild(midInvokeScript);
                 }
 
-                // ৩. হরাইজন্টাল নেটিভ ব্যানার ইনজেকশন (2:1 Auto Adaptation)
+                // 3. Native Banner Injection
                 const nativeContainer = document.getElementById('ad-native-slot');
                 if (nativeContainer) {
                     const nativeScript = document.createElement('script');
@@ -220,13 +219,13 @@ function getHtmlTemplate(movie, slug) {
                     nativeContainer.appendChild(nativeDiv);
                 }
 
-                // ৪. গ্লোবাল পপআন্ডার স্ক্রিপ্ট ইনজেকশন
+                // 4. Popunder Injection
                 const popScript = document.createElement('script');
                 popScript.type = 'text/javascript';
                 popScript.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
                 document.body.appendChild(popScript);
 
-                // ৫. সোশ্যাল বার স্ক্রিপ্ট ইনজেকশন
+                // 5. Social Bar Injection
                 const socialScript = document.createElement('script');
                 socialScript.type = 'text/javascript';
                 socialScript.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
@@ -262,10 +261,11 @@ function getHtmlTemplate(movie, slug) {
             });
         }
 
+        // 📺 🎯 FIXED: RE-RENDER IFRAME SAFELY WITHOUT ANY LOCKING POLICIES
         function playEpisode(url, idx, btn, epDownloadUrl) {
             const container = document.getElementById('playerContainer');
             if (container) {
-                container.innerHTML = \`<iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="\${url}" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" referrerpolicy="no-referrer"></iframe>\`;
+                container.innerHTML = \`<iframe id="videoPlayer" class="w-full h-full border-0 outline-none" src="\${url}" allowfullscreen="true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture"></iframe>\`;
             }
             document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -344,7 +344,7 @@ function startStaticGeneration() {
     });
 
     fs.writeFileSync(publicJsonPath, JSON.stringify(lightMoviesCatalog, null, 3), 'utf8');
-    console.log(`\n✅ অল ডান সাকিব ভাই! আলটিমেট ডাইনামিক জাভাস্ক্রিপ্ট অ্যাড ইঞ্জিন সিঙ্ক সম্পূর্ণ হয়েছে।`);
+    console.log(`\n✅ অল ডান সাকিব ভাই! আলটিমেট ট্র্যাকিং পলিসি ফিক্স সম্পূর্ণ হয়েছে।`);
 }
 
 startStaticGeneration();
