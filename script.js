@@ -662,7 +662,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 function createMovieCard(item) {
     const card = document.createElement('a');
     const movieSlug = item.slug || generateMovieSlug(item.title);
-    card.href = `${movieSlug}.html`; // 🔥 CF UPDATE
+    card.href = `movies/${movieSlug}.html`; // 🎯 নতুন স্প্লিট পাথ লিংক
     card.className = 'movie-card relative flex flex-col group cursor-pointer no-underline';
 
     const infoText = item.seriesInfo ?
@@ -690,10 +690,6 @@ items-center p-5 transition-all duration-300">
             <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
             ${infoText}
         </div>`;
-    card.onclick = (e) => {
-        e.preventDefault();
-        openModal(item.id);
-    };
     return card;
 }
 
