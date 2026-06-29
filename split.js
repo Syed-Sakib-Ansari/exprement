@@ -193,22 +193,6 @@ function getHtmlTemplate(movie, slug) {
     </footer>
 
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                // 1. Inject Popunder Smoothly
-                const popunderScript = document.createElement('script');
-                popunderScript.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
-                document.body.appendChild(popunderScript);
-
-                // 2. Inject Social Bar Smoothly
-                const socialBarScript = document.createElement('script');
-                socialBarScript.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
-                document.body.appendChild(socialBarScript);
-            }, 1500); // ১.৫ সেকেন্ডের ডিলে প্লেয়ারকে প্রথম ১ নম্বর প্রায়োরিটি দিয়ে রান করাবে
-        });
-    </script>
-
-    <script>
         let clickCount = 0;
         const dl1 = "${movie.downloadUrl1 || ''}";
         const dl2 = "${movie.downloadUrl2 || ''}";
@@ -318,7 +302,7 @@ function startStaticGeneration() {
     });
 
     fs.writeFileSync(publicJsonPath, JSON.stringify(lightMoviesCatalog, null, 3), 'utf8');
-    console.log(`\n✅ অল ডান সাকিব ভাই! ফাইল রি-জেনারেট সম্পূর্ণ হয়েছে।`);
+    console.log(`\n✅ অল ডান সাকিব ভাই! ফাইল রি-জেনারেট সম্পূর্ণ হয়েছে।`);
 }
 
 startStaticGeneration();
