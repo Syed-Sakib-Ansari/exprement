@@ -1,8 +1,13 @@
+// ==========================================
+// 🚀 SYSTEM & HISTORY CONFIGURATION
+// ==========================================
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
+// ==========================================
 // 🚀 NETWORK SPEED OPTIMIZATION FOR ADS
+// ==========================================
 if (!document.querySelector('link[href="https://onsetcab.com"]')) {
     const preconnect1 = document.createElement('link');
     preconnect1.rel = 'preconnect'; 
@@ -134,6 +139,7 @@ function injectNativeBanner(container, h = 260) {
     
     const iframeWrapper = document.createElement('div');
     iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
+    
     const iframe = document.createElement('iframe');
     iframe.style.width = "100%";
     iframe.style.height = h + "px";
@@ -147,6 +153,7 @@ function injectNativeBanner(container, h = 260) {
     
     iframeWrapper.appendChild(iframe);
     container.appendChild(iframeWrapper);
+    
     setTimeout(() => {
         try {
             const doc = iframe.contentWindow.document || iframe.contentDocument;
@@ -173,6 +180,7 @@ function createMobileNativeAdBlock() {
     block.className = 'flex md:hidden col-span-full w-full justify-center my-4';
     const container = document.createElement('div');
     container.className = 'w-full bg-[#111] rounded-xl overflow-hidden border border-white/5 shadow-lg relative min-h-[250px] flex items-center justify-center';
+    
     const label = document.createElement('span');
     label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
     label.innerText = "Advertisement";
@@ -202,7 +210,9 @@ function createDesktopNativeAdBlock() {
     return block;
 }
 
-// ১. লোকাল ব্যাকআপ মুভির ডাটাবেজ
+// ==========================================
+// 🚀 DATABASE & FETCH SYSTEM
+// ==========================================
 const contentData = [
     {
         title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Recent Adds", language: "Hindi", quality: "HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1"
@@ -212,7 +222,6 @@ const contentData = [
     }
 ];
 
-// ২. ASYNC FETCH SYSTEM
 async function loadContentDatabase() {
     try {
         const response = await fetch('movies.json');
@@ -235,6 +244,9 @@ async function loadContentDatabase() {
 
 const databaseLoadPromise = loadContentDatabase();
 
+// ==========================================
+// 🚀 GLOBAL VARIABLES & DOM CACHING
+// ==========================================
 const categories = [
     "all", "Hollywood", "Bollywood", "South", "Animation",
     "Korean Country", "Chinese", "Hollywood Series", "Bollywood Series",
@@ -265,6 +277,9 @@ const ITEMS_PER_PAGE = 30;
 let isLoading = false;
 let activeSubGridId = null;
 
+// ==========================================
+// 🚀 UTILITY FUNCTIONS
+// ==========================================
 function getOptimizedImageUrl(url, width = 300) {
     if (!url) return "";
     if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
@@ -281,6 +296,9 @@ function debounce(func, wait) {
     };
 }
 
+// ==========================================
+// 🚀 CATEGORY MENU & NAVIGATION RENDER
+// ==========================================
 function renderCategories() {
     const mobileGrid = document.getElementById('mobileCategoryGrid');
     const desktopNav = document.getElementById('desktopCategoryPills');
@@ -377,6 +395,9 @@ function toggleCategoryMenu(show, triggerBack = true) {
     }
 }
 
+// ==========================================
+// 🚀 DRAGGABLE MOBILE FAB LOGIC
+// ==========================================
 const fab = document.getElementById('mobileFab');
 let isDragging = false;
 let startX, startY, initialX, initialY;
@@ -487,6 +508,9 @@ window.addEventListener('resize', () => {
     if (currentY < 0) fab.style.top = `0px`;
 });
 
+// ==========================================
+// 🚀 HERO SLIDER INITIALIZATION
+// ==========================================
 function initHeroSlider() {
     if (!sliderWrapper || !sliderDots) return;
     const slides = contentData.filter(item => item.category === "Recent Adds" || item.category === "Bollywood" || item.category === "Hollywood").slice(0, 6);
@@ -552,6 +576,9 @@ function initHeroSlider() {
     startSlideTimer();
 }
 
+// ==========================================
+// 🚀 SEARCH SYSTEM UI MANIPULATION
+// ==========================================
 function updateSearchUI() {
     const libraryFilters = document.getElementById('libraryFilters');
     if (searchInput.value.trim().length > 0) {
@@ -594,6 +621,9 @@ function updateCanonical(url) {
     }
 }
 
+// ==========================================
+// 🚀 SINGLE PAGE APPLICATION (SPA) VIEW SWITCHER
+// ==========================================
 function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
     if (mode) {
         const currentScroll = window.scrollY;
@@ -675,6 +705,9 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     }, 100);
 }
 
+// ==========================================
+// 🚀 CARD GENERATOR & CONTENT RENDERING
+// ==========================================
 function createMovieCard(item) {
     const card = document.createElement('a'); 
     const movieSlug = item.slug || generateMovieSlug(item.title);
@@ -830,6 +863,9 @@ function renderCategorySections(forceRenderAll = false) {
     categorySections.appendChild(fragment);
 }
 
+// ==========================================
+// 🚀 DOM CACHING SYSTEM FOR SPA LIBRARY
+// ==========================================
 function initLibraryRender(filter = "all", initialCount = 0) {
     if (!libraryGrid) return;
     const rawQuery = searchInput ? searchInput.value : '';
@@ -943,100 +979,122 @@ function updateLoadMoreVisibility() {
     }
 }
 
-// 👑 🎯 FIXED: NEW DATA FIELDS PORTING & UNIQUE REWRITTEN DAKHI AD ROUTING HANDSHAKE
+// ==========================================
+// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC
+// ==========================================
 function openModal(id) {
-    if (document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
+    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
     savedScrollY = window.scrollY;
 
     const item = contentData.find(m => m.id === id);
     if (!item) return;
 
-    // ইউআরএল মাস্কিং এসইও হ্যান্ডশেক (.html এক্সটেনশন মাস্কড রুট পাথ)
-// 🔥 URL AND HISTORY SEO UPDATE
-const movieSlug = item.slug || generateMovieSlug(item.title);
-// ✅ সঠিক কোড (ফাইলগুলো এখন /movies/ ফোল্ডার থেকে রিকোয়েস্ট হবে)
-const newUrl = new URL(window.location.origin + '/movies/' + movieSlug + '.html');
-
+    // 🔥 URL AND HISTORY SEO UPDATE
+    const movieSlug = item.slug || generateMovieSlug(item.title);
+    // ✅ সঠিক কোড (এসইও ফ্রেন্ডলি)
+    const newUrl = new URL(window.location.origin + '/' + movieSlug + '.html');
+    
     const currentState = history.state || { view: currentView, validDakhiState: true };
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
     try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl); } catch (e) { }
 
-    document.title = `Watch ${item.title} Full Movie Online Free | MovieDakhi`;
-
+    // 🔥 HIGH-VOLUME DYNAMIC SEO GENERATOR
+    document.title = `Watch ${item.title} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
+    
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
         metaDescription = document.createElement('meta');
         metaDescription.name = "description";
         document.head.appendChild(metaDescription);
     }
-    metaDescription.content = `Watch ${item.title} full movie online for free in HD quality. Download ${item.title} complete series 1080p, 720p.`;
+    metaDescription.content = `Watch ${item.title} full movie online for free in HD quality. Download ${item.title} complete web series 1080p, 720p. Stream ${item.genre} movies seamlessly on MovieDakhi.`;
 
-    document.getElementById('modalTitle').innerText = item.title;
-    document.getElementById('modalGenre').innerText = item.genre || 'N/A';
-    document.getElementById('modalCategory').innerText = item.category || 'N/A';
-    document.getElementById('modalLanguage').innerText = item.language || 'N/A';
-    document.getElementById('modalQuality').innerText = item.quality || 'N/A';
+    const modalTitleElem = document.getElementById('modalTitle');
+    const isSameMovie = modalTitleElem && modalTitleElem.innerText === item.title;
 
-    const copyBtn = document.getElementById('modalCopyBtn');
-    if (copyBtn) {
-        copyBtn.onclick = function () {
-            navigator.clipboard.writeText(window.location.href).then(() => {
-                const prevHtml = copyBtn.innerHTML;
-                copyBtn.innerHTML = '<i class="fas fa-check text-green-500"></i> Copied!';
-                setTimeout(() => { copyBtn.innerHTML = prevHtml; }, 2000);
-            });
-        };
+    currentItem = item;
+    if(modalTitleElem) modalTitleElem.innerText = item.title;
+    
+    if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
+    if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
+
+    if(document.getElementById('modalDesc')) {
+        document.getElementById('modalDesc').innerHTML = `
+            <span class="font-bold text-gray-300">${item.genre || "Entertainment"}</span>
+            <div class="mt-3 text-[10px] md:text-xs text-gray-500 leading-relaxed font-medium">
+                ▶ Watch <strong class="text-gray-300">${item.title}</strong> full movie online free in HD. You can also download the complete movie / web series in 1080p directly to your device. Enjoy high-quality streaming without buffering on MovieDakhi.
+            </div>
+        `;
     }
 
-    // 👑 🎯 DYNAMIC DATA FIELD INJECTIONS: SYNOPSIS, HIGHLIGHTS, STREAMING REC, PLOT SUMMARY
-    let seoBodyContent = "";
-    if (item.synopsis) seoBodyContent += `<div><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-book-open text-red-600 mr-2"></i> Synopsis</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.synopsis}</p></div>`;
-    if (item.movieHighlights) seoBodyContent += `<div><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-star text-red-600 mr-2"></i> Highlights</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.movieHighlights}</p></div>`;
-    if (item.streamingRecommendation) seoBodyContent += `<div><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-thumbs-up text-red-600 mr-2"></i> Streaming Recommendation</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed">${item.streamingRecommendation}</p></div>`;
-    if (item.detailedPlotSummary) seoBodyContent += `<div><h4 class="text-white font-black text-sm md:text-base mb-2 uppercase tracking-wide"><i class="fas fa-film text-red-600 mr-2"></i> Detailed Plot Summary</h4><p class="text-gray-400 text-xs md:text-sm leading-relaxed whitespace-pre-line bg-black/30 p-4 rounded-xl border border-white/5">${item.detailedPlotSummary}</p></div>`;
-    document.getElementById('modalSeoContent').innerHTML = seoBodyContent;
-
     downloadClickCount = 0;
-    document.getElementById('downloadBtnText').innerText = "Download " + (item.episodes && item.episodes.length > 0 ? "Episode 1" : "Movie");
+    const downloadBtn = document.getElementById('mainDownloadBtn');
+    if (downloadBtn) {
+        document.getElementById('downloadBtnText').innerText = "Download";
+        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+        downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+        const wave = downloadBtn.querySelector('.animate-shine-wave');
+        if (wave) wave.classList.remove('hidden');
+    }
 
     if (item.episodes && item.episodes.length > 0) {
-        currentEpisodeIndex = 0;
-        const seriesSec = document.getElementById('seriesSection');
-        const epList = document.getElementById('episodeList');
+        if (!isSameMovie) currentEpisodeIndex = 0;
+    } else {
+        currentEpisodeIndex = null;
+    }
+
+    const seriesSec = document.getElementById('seriesSection');
+    const epList = document.getElementById('episodeList');
+    if (item.episodes && seriesSec && epList) {
         seriesSec.classList.remove('hidden');
-        document.getElementById('seriesInfoText').innerText = item.seriesInfo || 'Episodes';
+        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
         epList.innerHTML = '';
         item.episodes.forEach((ep, idx) => {
             const btn = document.createElement('button');
-            btn.className = `ep-btn px-4 py-2 md:px-6 md:py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase text-white ${idx === 0 ? 'active' : ''}`;
+            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
+            if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active');
             btn.innerText = ep.title;
             btn.onclick = () => playEpisode(idx, btn);
             epList.appendChild(btn);
         });
-    } else {
-        currentEpisodeIndex = null;
-        document.getElementById('seriesSection').classList.add('hidden');
+    } else if (seriesSec) { 
+        seriesSec.classList.add('hidden'); 
     }
 
-    // 📺 AD-INSULATED DYNAMIC IFRAME RE-CREATION (STOPS CROSS-ORIGIN AND NESTED HISTORY STACK CORRUPTION)
-    let initialUrl = item.episodes && item.episodes.length > 0 ? item.episodes[0].embedUrl : (item.embedUrl || '');
-    document.getElementById('actualVideo').innerHTML = `<iframe id="videoPlayer" class="w-full h-full border-0 outline-none rounded-lg bg-black" srcdoc="<!DOCTYPE html><html><head><style>html,body{margin:0;padding:0;width:100%;height:100%;background:#000;overflow:hidden;}</style></head><body><iframe src='${initialUrl}' style='width:100%;height:100%;border:0;outline:none;' allowfullscreen='true' allow='autoplay; fullscreen; encrypted-media; picture-in-picture'></iframe></body></html>" frameborder="0" scrolling="no" allowfullscreen="true" sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"></iframe>`;
+    let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
+    const actualVideoContainer = document.getElementById('actualVideo');
+
+    if (actualVideoContainer) {
+        actualVideoContainer.classList.remove('hidden');
+
+        const existingIframe = document.getElementById('videoIframe');
+        const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
+
+        if (needsNewIframe) {
+            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+        }
+    }
 
     const modal = document.getElementById('movieModal');
-    modal.classList.remove('hidden'); void modal.offsetWidth; modal.classList.add('active');
+    if (modal) {
+        modal.classList.remove('hidden');
+        void modal.offsetWidth; 
+        modal.classList.add('active');
+        
+        setTimeout(() => {
+            injectResponsiveAdNode(document.getElementById('modalAdTop'));
+            injectResponsiveAdNode(document.getElementById('modalAdBottom'));
+        }, 150);
+    }
 
-    setTimeout(() => {
-        const topContainer = document.getElementById('modalAdTopSlot');
-        const midContainer = document.getElementById('modalAdMiddleSlot');
-        const btmContainer = document.getElementById('modalAdBottomSlot');
-        if (topContainer) injectResponsiveAdNode(topContainer);
-        if (midContainer) injectResponsiveAdNode(midContainer);
-        if (btmContainer) injectNativeBanner(btmContainer, 260);
-    }, 150);
-
-    document.body.style.position = 'fixed'; document.body.style.top = `-${savedScrollY}px`; document.body.style.width = '100%';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.width = '100%';
 }
 
+// ==========================================
+// 🚀 DOWNLOAD BUTTON TRIGGER & EPISODES SYSTEM
+// ==========================================
 function handleDownloadClick() {
     if (!currentItem) return;
 
@@ -1086,32 +1144,34 @@ function handleDownloadClick() {
     }
 }
 
-function handleHardwareBackOverride() {
-    if (window.isUserViewingAdTab) {
-        window.isUserViewingAdTab = false;
-        const modal = document.getElementById('movieModal');
-        if (modal && !modal.classList.contains('hidden') && currentItem) {
-            const movieSlug = currentItem.slug || generateMovieSlug(currentItem.title);
-            const adRecoverUrl = new URL('/' + movieSlug + '.html', window.location.origin);
-            try {
-                window.history.pushState({ view: currentView, isModalOpen: true, modalId: currentItem.id, validDakhiState: true }, '', adRecoverUrl);
-            } catch (e) { }
-            return true;
-        }
-    }
-    return false;
-}
-
 function playEpisode(index, btnElement) {
     const episode = currentItem.episodes[index];
-    document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
     btnElement.classList.add('active');
-    
-    document.getElementById('actualVideo').innerHTML = `<iframe id="videoPlayer" class="w-full h-full border-0 outline-none rounded-lg bg-black" srcdoc="<!DOCTYPE html><html><head><style>html,body{margin:0;padding:0;width:100%;height:100%;background:#000;overflow:hidden;}</style></head><body><iframe src='${episode.embedUrl}' style='width:100%;height:100%;border:0;outline:none;' allowfullscreen='true' allow='autoplay; fullscreen; encrypted-media; picture-in-picture'></iframe></body></html>" frameborder="0" scrolling="no" allowfullscreen="true" sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"></iframe>`;
-    
+
+    let url = episode.embedUrl;
+
+    const actualVideo = document.getElementById('actualVideo');
+    if (actualVideo) {
+        actualVideo.classList.remove('hidden');
+
+        const existingIframe = document.getElementById('videoIframe');
+        
+        if (!existingIframe || existingIframe.src !== url) {
+            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+        }
+    }
+
     currentEpisodeIndex = index;
     downloadClickCount = 0;
-    document.getElementById('downloadBtnText').innerText = "Download Episode " + (index + 1);
+    const downloadBtn = document.getElementById('mainDownloadBtn');
+    document.getElementById('downloadBtnText').innerText = "Download";
+
+    downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+    downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+
+    const wave = downloadBtn.querySelector('.animate-shine-wave');
+    if (wave) wave.classList.remove('hidden');
 }
 
 let isModalClosing = false;
@@ -1120,10 +1180,12 @@ function closeModal(triggerBack = true, explicitClose = false) {
     const modal = document.getElementById('movieModal');
     if (!modal || modal.classList.contains('hidden')) return;
 
-    if (document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
+    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
 
     isModalClosing = true;
+
     document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
+
     if (!triggerBack) {
         modal.classList.add('hidden');
         modal.classList.remove('active');
@@ -1139,21 +1201,23 @@ function closeModal(triggerBack = true, explicitClose = false) {
     setTimeout(() => {
         const actualVideoContainer = document.getElementById('actualVideo');
         if (actualVideoContainer) {
-            actualVideoContainer.innerHTML = '';
-            document.getElementById('modalAdTopSlot').innerHTML = '';
-            document.getElementById('modalAdMiddleSlot').innerHTML = '';
-            document.getElementById('modalAdBottomSlot').innerHTML = '';
+            actualVideoContainer.innerHTML = ''; 
         }
     }, 300);
+
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
     window.scrollTo(0, savedScrollY);
+
     if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
     }
 }
 
+// ==========================================
+// 🚀 SEARCH INPUT EVENT LISTENERS
+// ==========================================
 if (searchInput) {
     searchInput.addEventListener('focus', () => {
         if (!preSearchState && searchInput.value.trim().length === 0) {
@@ -1166,6 +1230,7 @@ if (searchInput) {
             };
         }
     });
+
     searchInput.addEventListener('input', debounce(() => {
         const rawQuery = searchInput.value;
         updateSearchUI();
@@ -1192,6 +1257,7 @@ if (searchInput) {
             }
         }
     }, 300));
+
     searchInput.addEventListener('blur', () => {
         setTimeout(() => {
             const modal = document.getElementById('movieModal');
@@ -1206,6 +1272,7 @@ if (searchInput) {
             }
         }, 200);
     });
+
     searchInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -1218,6 +1285,7 @@ if (searchInput) {
 // 🚀 GENERAL ANNOUNCEMENT POPUP LOGIC
 // ==========================================
 let announcementScrollY = 0;
+
 function showAnnouncement() {
     const popup = document.getElementById('announcementPopup');
     if (!popup) return;
@@ -1229,6 +1297,7 @@ function showAnnouncement() {
 
     if (topCloseBtn) topCloseBtn.classList.remove('hidden');
     if (backdrop) backdrop.onclick = closeAnnouncement;
+
     if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
 
     if (popupBoxContainer) {
@@ -1243,6 +1312,7 @@ function showAnnouncement() {
     document.body.style.position = 'fixed';
     document.body.style.top = `-${announcementScrollY}px`;
     document.body.style.width = '100%';
+
     setTimeout(() => {
         popup.classList.add('active');
     }, 50);
@@ -1267,7 +1337,7 @@ function closeAnnouncement() {
         initStaticAds();
         
         document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
-             if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
+            if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
         });
         
         document.querySelectorAll('.cat-ad-adsterra').forEach(container => {
@@ -1299,7 +1369,7 @@ const isFallback = urlParams2.get('fb_fallback');
 const shouldShowPopup = !isFallback && (!hasSession && !hasRecentLocal);
 
 if (shouldShowPopup) {
-    isPopupAdBlocking = false;
+    isPopupAdBlocking = false; 
     setTimeout(() => {
         sessionStorage.setItem(sessionKey, 'true');
         localStorage.setItem(localKey, nowTime.toString());
@@ -1308,7 +1378,7 @@ if (shouldShowPopup) {
 } else {
     setTimeout(() => {
         injectPopAds();
-    }, 3500);
+    }, 3500); 
 }
 
 let scrollTimeoutId;
@@ -1349,9 +1419,10 @@ window.addEventListener('beforeunload', () => {
 });
 
 // ==========================================
-// 🚀 DOM CONTENT LOADED - APPLICATION INIT WITH STANDALONE PATH ROUTING
+// 🚀 DOM CONTENT LOADED - APPLICATION INIT
 // ==========================================
 document.addEventListener('DOMContentLoaded', async () => {
+    
     await databaseLoadPromise; 
 
     const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
@@ -1378,15 +1449,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view') || 'home';
     const category = params.get('category');
-    
-    // 👑 🎯 FIXED: DYNAMIC PATHNAME PARSER FOR STANDALONE DOMAIN ROOT ROUTING (.html masking lookup)
-    let movieSlug = params.get('movie');
-    if (!movieSlug && window.location.pathname.endsWith('.html')) {
-        const filename = window.location.pathname.split('/').pop();
-        if (!['index.html', 'Contact.html', 'DMCA.html', 'Privacy.html', 'Disclaimer.html'].includes(filename) && filename !== '') {
-            movieSlug = filename.replace('.html', '');
-        }
-    }
+    const movieSlug = params.get('movie');
 
     const isBlob = window.location.protocol === 'blob:';
     if (history.state && !movieSlug) {
@@ -1431,22 +1494,27 @@ window.addEventListener('popstate', (event) => {
     const state = event.state;
     const modal = document.getElementById('movieModal');
 
-    // 👑 🎯 FIXED: FORCE INTERCEPT IMMEDIATE MODAL WINDOW DESTRUCTION PRIOR TO OVERRIDES
-    if (modal && !modal.classList.contains('hidden')) {
-        closeModal(false, false);
-        return;
-    }
-
-    if (handleHardwareBackOverride()) {
-        return;
-    }
-
     let handledOverlayClose = false;
+
+    if (modal && (!modal.classList.contains('hidden') || isModalClosing)) {
+        if (state && state.validDakhiState && !state.isModalOpen) {
+            if (!isModalClosing) {
+                closeModal(false, false);
+            }
+            handledOverlayClose = true;
+        } else if (state && state.isModalOpen) {
+            return;
+        } else {
+            return;
+        }
+    }
+
     if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
         toggleCategoryMenu(false, false);
         handledOverlayClose = true;
     }
 
+    // 🔥 FIXED: 'handledOverlayCheck' renamed to 'handledOverlayClose' to fix ReferenceError
     if (handledOverlayClose) {
         return;
     }
@@ -1469,22 +1537,6 @@ window.addEventListener('popstate', (event) => {
 window.addEventListener('click', (e) => {
     if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal(true, true);
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
-});
-
-// 👑 🎯 FIXED: PREVENT FALSE AD TAB DETECTIONS ON VIDEO handshakes
-window.addEventListener('blur', () => {
-    if (document.getElementById('movieModal') && !document.getElementById('movieModal').classList.contains('hidden')) {
-        if (document.activeElement && document.activeElement.id === 'videoPlayer') {
-            return;
-        }
-        window.isUserViewingAdTab = true;
-    }
-});
-
-window.addEventListener('focus', () => {
-    setTimeout(() => {
-        window.isUserViewingAdTab = false;
-    }, 500);
 });
 
 function showToast(message) {
