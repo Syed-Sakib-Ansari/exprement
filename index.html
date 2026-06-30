@@ -75,7 +75,7 @@
         ]
         }
     </script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
 </head>
@@ -174,50 +174,64 @@
         </div>
     </div>
 
-    <div id="movieModal" class="fixed inset-0 z-[130] hidden" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 bg-black/95 backdrop-blur-md transition-opacity" onclick="closeModal(true, true)"></div>
-        <div class="fixed inset-0 z-[140] overflow-y-auto" id="modalScrollContainer">
-            <div class="flex min-h-full items-center justify-center p-4" id="modalFlexContainer">
-                <div class="relative w-full max-w-5xl rounded-2xl bg-[#111] shadow-2xl my-8 overflow-hidden">
-                    <div class="aspect-video w-full bg-black relative flex items-center justify-center overflow-hidden">
-                        <div id="actualVideo" class="absolute inset-0 bg-black w-full h-full z-10 hidden"></div>
-                    </div>
+    <div id="movieModal" class="fixed inset-0 z-[130] hidden bg-[#0a0a0a] overflow-y-auto select-none" role="dialog" aria-modal="true">
+        <button onclick="closeModal(true, true)" class="fixed top-4 right-4 bg-red-600 hover:bg-red-700 text-white w-9 h-9 rounded-full flex items-center justify-center transition z-[150] shadow-lg cursor-pointer">
+            <i class="fas fa-times text-md"></i>
+        </button>
 
-                    <div class="p-6 md:p-10 text-center">
-                        <div class="flex flex-wrap items-center justify-center gap-3 mb-4">
-                            <span id="modalLanguage" class="lang-badge">Hindi</span>
-                            <span id="modalCategory" class="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest">Hollywood</span>
-                            <span id="modalYear" class="text-gray-600 text-xs md:text-sm font-bold">&nbsp;</span>
-                        </div>
-                        <h2 id="modalTitle" class="text-3xl md:text-5xl font-black mb-6 leading-tight">Content Title</h2>
-                        <div id="seriesSection" class="hidden mb-10">
-                            <h4 class="text-xs font-black text-gray-500 uppercase mb-4 tracking-[0.2em]" id="seriesInfoText">Season 1 • Episodes</h4>
-                            <div id="episodeList" class="flex flex-wrap justify-center gap-2 md:gap-3"></div>
-                        </div>
-                        <p id="modalDesc" class="text-sm md:text-lg text-gray-400 leading-relaxed mb-8 max-w-3xl mx-auto font-medium italic">Description here...</p>
+        <div class="w-full max-w-4xl mx-auto px-4 pt-20 pb-16 flex flex-col items-center">
+            <div id="modalAdTopSlot" class="w-full flex justify-center mb-4 min-h-[50px] md:min-h-[90px]"></div>
 
-                        <div class="w-full flex flex-col items-center gap-4 mb-4 min-h-[90px]">
-                            <div id="modalAdTop" class="w-full"></div>
-                        </div>
-
-                        <div class="flex flex-wrap justify-center gap-4 relative z-20 my-8">
-                            <button id="mainDownloadBtn" onclick="handleDownloadClick()" class="relative overflow-hidden bg-gradient-to-r from-[#2B2727] to-[#2B2727] border border-[#E3DADA] text-white px-8 py-3.5 rounded-md font-black hover:scale-105 transition-all duration-300 text-sm md:text-sm uppercase tracking-widest flex items-center gap-3 group">
-                                <i class="fas fa-cloud-download-alt text-md relative z-10 group:-translate-y-1 transition-transform duration-300"></i>
-                                <span id="downloadBtnText" class="relative z-10">Download</span>
-                            </button>
-
-                            <button onclick="closeModal(true, true)" class="bg-red-600/10 border border-red-600/20 text-red-600 px-8 py-3.5 rounded-lg font-black hover:bg-red-600 hover:text-white transition text-sm uppercase tracking-widest flex items-center gap-3">
-                                <i class="fas fa-times"></i> Close
-                            </button>
-                        </div>
-
-                        <div class="w-full flex flex-col items-center gap-4 mt-6 mb-4 min-h-[90px]">
-                            <div id="modalAdBottom" class="w-full"></div>
-                        </div>
-
+            <div class="w-full bg-[#111] border border-white/5 rounded-2xl p-3 md:p-4 flex flex-col lg:flex-row items-center justify-between gap-4 shadow-2xl backdrop-blur-sm w-full">
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <span class="text-[10px] md:text-xs font-black uppercase tracking-wider text-gray-400">Supported Browsers:</span>
+                    <div class="flex items-center gap-2 bg-black/40 px-3 py-1.5 rounded-xl border border-white/5 shadow-inner">
+                        <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm"><img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/chrome/chrome.svg" class="w-4 h-4 object-contain" alt="Chrome"></div>
+                        <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm"><img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/edge/edge.svg" class="w-4 h-4 object-contain" alt="Edge"></div>
+                        <div class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shadow-sm"><img src="https://cdnjs.cloudflare.com/ajax/libs/browser-logos/74.1.0/opera/opera.svg" class="w-4 h-4 object-contain" alt="Opera"></div>
                     </div>
                 </div>
+                <div class="flex flex-wrap items-center justify-center gap-2 w-full lg:w-auto">
+                    <button id="modalCopyBtn" class="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition cursor-pointer shadow-md select-none active:scale-95">
+                        <i class="fas fa-copy text-red-500"></i> Copy Link
+                    </button>
+                    <a href="https://t.me/+oeXeresjsFA1MjI1" target="_blank" class="flex items-center gap-2 bg-sky-600/10 hover:bg-sky-600/20 border border-sky-500/30 text-sky-400 px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition shadow-md no-underline active:scale-95">
+                        <i class="fab fa-telegram text-sm"></i> Telegram
+                    </a>
+                </div>
             </div>
+
+            <h1 id="modalTitle" class="text-2xl md:text-4xl font-black text-center uppercase tracking-tight mb-6 mt-6 text-white">Content Title</h1>
+            
+            <div id="playerContainer" class="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 relative">
+                <div id="actualVideo" class="w-full h-full"></div>
+            </div>
+
+            <div id="seriesSection" class="w-full mt-8 bg-white/5 p-4 md:p-6 rounded-xl border border-white/5 hidden">
+                <h3 id="seriesInfoText" class="text-sm font-black uppercase tracking-widest text-gray-400 mb-4"><i class="fas fa-list mr-2 text-red-600"></i> Episodes</h3>
+                <div id="episodeList" class="flex flex-wrap gap-3 justify-center"></div>
+            </div>
+
+            <div class="my-10 text-center">
+                <button id="mainDownloadBtn" onclick="handleDownloadClick()" class="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-black text-xs md:text-sm uppercase tracking-widest transition transform hover:scale-105 shadow-xl shadow-red-600/20 flex items-center gap-2 cursor-pointer">
+                    <i class="fas fa-download"></i> <span id="downloadBtnText">Download</span>
+                </button>
+            </div>
+
+            <div id="modalAdMiddleSlot" class="w-full flex justify-center mb-10 min-h-[50px] md:min-h-[90px]"></div>
+
+            <div class="w-full bg-white/5 border border-white/5 p-6 md:p-8 rounded-2xl text-left shadow-xl">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-b border-white/5 pb-4 mb-6 text-xs md:text-sm">
+                    <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Genre</span> <strong id="modalGenre" class="text-white">N/A</strong></div>
+                    <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Category</span> <strong id="modalCategory" class="text-white">N/A</strong></div>
+                    <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Language</span> <strong id="modalLanguage" class="text-white">N/A</strong></div>
+                    <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Quality</span> <strong id="modalQuality" class="text-white">N/A</strong></div>
+                </div>
+
+                <div id="modalSeoContent" class="space-y-6"></div>
+            </div>
+
+            <div id="modalAdBottomSlot" class="w-full text-center my-8 max-w-4xl mx-auto overflow-hidden"></div>
         </div>
     </div>
 
