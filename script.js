@@ -1292,14 +1292,12 @@ function showAnnouncement() {
 
     const topCloseBtn = document.getElementById('announcementCloseBtnTop');
     const backdrop = document.getElementById('popupBackdrop');
-    const popupWelcomeText = document.getElementById('popupWelcomeText');
     const popupTelegramBtn = document.getElementById('popupTelegramBtn');
     const popupBoxContainer = document.getElementById('popupBoxContainer');
 
     if (topCloseBtn) topCloseBtn.classList.remove('hidden');
     if (backdrop) backdrop.onclick = closeAnnouncement;
 
-    if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
     if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
 
     if (popupBoxContainer) {
