@@ -224,12 +224,11 @@ const contentData = [
 
 async function loadContentDatabase() {
     try {
-        // 🚀 পরিবর্তন: সম্পূর্ণ ভারী ফাইল বাদ দিয়ে শুধু হালকা ১.৫ MB-র ইনডেক্স ফাইল লোড হবে
-        const response = await fetch('movie-index.json');
+        const response = await fetch('movies.json');
         if (response.ok) {
             const db = await response.json();
             if (Array.isArray(db) && db.length > 0) {
-                contentData.length = 0;
+                contentData.length = 0; 
                 contentData.push(...db); 
             }
         }
@@ -983,39 +982,23 @@ function updateLoadMoreVisibility() {
 // ==========================================
 // 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC
 // ==========================================
-async function openModal(id) {
+function openModal(id) {
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
     savedScrollY = window.scrollY;
 
     const item = contentData.find(m => m.id === id);
     if (!item) return;
 
+    // 🔥 URL AND HISTORY SEO UPDATE
     const movieSlug = item.slug || generateMovieSlug(item.title);
-
-    // 🚀 মডালের ডেসক্রিপশনে একটি সাময়িক লোডিং টেক্সট শো করানো
-    const modalDescElem = document.getElementById('modalDesc');
-    if (modalDescElem) modalDescElem.innerHTML = `<span class="text-red-500 animate-pulse font-bold">Loading player and secure links...</span>`;
-
-    // 🚀 মেইন ট্রিক: এবার অন-ডিমান্ড ওই নির্দিষ্ট মুভির ২ KB-র ছোট ফাইলটি ব্যাকএন্ড থেকে ফেচ করা হচ্ছে
-    try {
-        const detailRes = await fetch(`/data/movies/${movieSlug}.json`);
-        if (detailRes.ok) {
-            const details = await detailRes.json();
-            // হালকা ডাটার সাথে ভারী ডাটা মার্জ (Merge) করা হচ্ছে
-            Object.assign(item, details);
-        }
-    } catch (err) {
-        console.error("Error loading movie details from sharded file:", err);
-    }
-
-    // 🔥 বাকি ইতিহাস ও ইউআরএল লজিক একদম আগের মতোই নিখুঁত থাকবে
-    const newUrl = new URL(window.location.origin + window.location.pathname); 
-    newUrl.searchParams.set('movie', movieSlug); 
+    // ✅ সঠিক কোড (এসইও ফ্রেন্ডলি)
+    const newUrl = new URL(window.location.origin + '/' + movieSlug + '.html');
     
     const currentState = history.state || { view: currentView, validDakhiState: true };
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
     try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl); } catch (e) { }
 
+    // 🔥 HIGH-VOLUME DYNAMIC SEO GENERATOR
     document.title = `Watch ${item.title} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
     
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -1083,6 +1066,7 @@ async function openModal(id) {
 
     if (actualVideoContainer) {
         actualVideoContainer.classList.remove('hidden');
+
         const existingIframe = document.getElementById('videoIframe');
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
 
@@ -1569,5 +1553,3 @@ function showToast(message) {
         toast.classList.remove('opacity-100', 'translate-y-0');
     }, 4000);
 }
-
-// 35467354673546735467354673546735467354673546735467354673546735467
