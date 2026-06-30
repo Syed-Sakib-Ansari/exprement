@@ -3,7 +3,7 @@ const path = require('path');
 
 // ডাটাবেজ এবং আউটপুট ফোল্ডার পাথ কনফিগারেশন
 const masterFilePath = path.join(__dirname, 'movies.json'); 
-const outputFolder = path.join(__dirname, 'movies'); // 🎯 ফাইলগুলো 'movies' ফোল্ডারে জেনারেট হবে
+const outputFolder = path.join(__dirname, 'movies'); // 🎯 ফাইলগুলো নিখুঁতভাবে 'movies' ফোল্ডারে জেনারেট হবে
 
 // 'movies' ফোল্ডার না থাকলে স্বয়ংক্রিয়ভাবে তৈরি করবে
 if (!fs.existsSync(outputFolder)) {
@@ -32,6 +32,7 @@ function getHtmlTemplate(movie, slug) {
         schemaData.numberOfEpisodes = movie.episodes.length;
     }
 
+    // এপিসোড বাটনের জেনারেশন মেকানিজম
     let episodeButtonsHtml = '';
     if (isSeries) {
         movie.episodes.forEach((ep, idx) => {
@@ -136,7 +137,7 @@ function getHtmlTemplate(movie, slug) {
         
         <div class="w-full max-w-5xl mx-auto mb-12">
             <div id="playerContainer" class="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black border border-white/10 player-glow group">
-                <iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${defaultEmbedUrl}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                <div class="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-bold tracking-widest uppercase">Loading Player...</div>
             </div>
         </div>
 
@@ -188,6 +189,16 @@ function getHtmlTemplate(movie, slug) {
         
         let currentEpisodeDownloadUrl = "${isSeries && movie.episodes[0] && movie.episodes[0].downloadUrl ? movie.episodes[0].downloadUrl.replace(/'/g, "\\'") : ''}";
         const isSeriesPage = ${isSeries};
+
+        // 👑 🎯 FIXED: পেজ লোড হওয়া মাত্রই জাভাস্ক্রিপ্ট ডাইনামিকালি আইফ্রেম ইনজেক্ট করবে (ঠিক আগের সাইটের মতো)
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const container = document.getElementById('playerContainer');
+                if (container) {
+                    container.innerHTML = \`<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${defaultEmbedUrl}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>\`;
+                }
+            }, 150); // ব্রাউজার ফিল্টার বাইপাস করার জন্য ছোট ডাইনামিক ডিলে
+        });
 
         function copyWebsiteLink(btn) {
             const currentUrl = window.location.href; 
@@ -259,7 +270,7 @@ function startStaticGeneration() {
         fs.writeFileSync(htmlFilePath, htmlContent, 'utf8');
     });
 
-    console.log(`\n✅ অল ডান সাকিব ভাই! ফাইলগুলো 'movies/' ফোল্ডারে পাঠানো হয়েছে এবং স্যান্ডবক্স কোড ক্লিন করা হয়েছে।`);
+    console.log(`\n✅ অল ডান সাকিব ভাই! স্ট্যাটিক ফাইলগুলো ডাইনামিকালি ইনজেক্ট করার সিক্রেট লজিক সহ 'movies/' ফোল্ডারে পাঠানো সম্পূর্ণ হয়েছে।`);
 }
 
 startStaticGeneration();

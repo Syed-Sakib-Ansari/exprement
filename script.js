@@ -952,8 +952,10 @@ function openModal(id) {
     if (!item) return;
 
     // ইউআরএল মাস্কিং এসইও হ্যান্ডশেক (.html এক্সটেনশন মাস্কড রুট পাথ)
-    const movieSlug = item.slug || generateMovieSlug(item.title);
-   const newUrl = new URL(window.location.origin + '/' + movieSlug + '.html');
+// 🔥 URL AND HISTORY SEO UPDATE
+const movieSlug = item.slug || generateMovieSlug(item.title);
+// ✅ সঠিক কোড (ফাইলগুলো এখন /movies/ ফোল্ডার থেকে রিকোয়েস্ট হবে)
+const newUrl = new URL(window.location.origin + '/movies/' + movieSlug + '.html');
 
     const currentState = history.state || { view: currentView, validDakhiState: true };
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
