@@ -224,11 +224,12 @@ const contentData = [
 
 async function loadContentDatabase() {
     try {
-        const response = await fetch('movies.json');
+        // 🚀 পরিবর্তন: সম্পূর্ণ ভারী ফাইল বাদ দিয়ে শুধু হালকা ১.৫ MB-র ইনডেক্স ফাইল লোড হবে
+        const response = await fetch('movie-index.json');
         if (response.ok) {
             const db = await response.json();
             if (Array.isArray(db) && db.length > 0) {
-                contentData.length = 0; 
+                contentData.length = 0;
                 contentData.push(...db); 
             }
         }
@@ -982,15 +983,32 @@ function updateLoadMoreVisibility() {
 // ==========================================
 // 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC
 // ==========================================
-function openModal(id) {
+async function openModal(id) {
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
     savedScrollY = window.scrollY;
 
     const item = contentData.find(m => m.id === id);
     if (!item) return;
 
-    // 🔥 URL AND HISTORY SEO UPDATE
     const movieSlug = item.slug || generateMovieSlug(item.title);
+
+    // 🚀 মডালের ডেসক্রিপশনে একটি সাময়িক লোডিং টেক্সট শো করানো
+    const modalDescElem = document.getElementById('modalDesc');
+    if (modalDescElem) modalDescElem.innerHTML = `<span class="text-red-500 animate-pulse font-bold">Loading player and secure links...</span>`;
+
+    // 🚀 মেইন ট্রিক: এবার অন-ডিমান্ড ওই নির্দিষ্ট মুভির ২ KB-র ছোট ফাইলটি ব্যাকএন্ড থেকে ফেচ করা হচ্ছে
+    try {
+        const detailRes = await fetch(`/data/movies/${movieSlug}.json`);
+        if (detailRes.ok) {
+            const details = await detailRes.json();
+            // হালকা ডাটার সাথে ভারী ডাটা মার্জ (Merge) করা হচ্ছে
+            Object.assign(item, details);
+        }
+    } catch (err) {
+        console.error("Error loading movie details from sharded file:", err);
+    }
+
+    // 🔥 বাকি ইতিহাস ও ইউআরএল লজিক একদম আগের মতোই নিখুঁত থাকবে
     const newUrl = new URL(window.location.origin + window.location.pathname); 
     newUrl.searchParams.set('movie', movieSlug); 
     
@@ -998,7 +1016,6 @@ function openModal(id) {
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
     try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl); } catch (e) { }
 
-    // 🔥 HIGH-VOLUME DYNAMIC SEO GENERATOR
     document.title = `Watch ${item.title} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
     
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -1066,7 +1083,6 @@ function openModal(id) {
 
     if (actualVideoContainer) {
         actualVideoContainer.classList.remove('hidden');
-
         const existingIframe = document.getElementById('videoIframe');
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
 
@@ -1554,34 +1570,4 @@ function showToast(message) {
     }, 4000);
 }
 
-function copyWebsiteLink(btn) {
-    const link = "https://moviedakhi.com";
-    const textArea = document.createElement("textarea");
-    textArea.value = link;
-    textArea.style.top = "0";
-    textArea.style.left = "0";
-    textArea.style.position = "fixed";
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-
-    try {
-        document.execCommand('copy');
-        showToast("Link copied! Open your browser and paste it.");
-
-        const originalHtml = `<i class="fas fa-copy"></i> Copy`;
-        btn.innerHTML = `<i class="fas fa-check"></i> Copied`;
-        btn.classList.remove('bg-[#E50914]', 'hover:bg-red-600');
-        btn.classList.add('bg-green-600', 'hover:bg-green-500');
-
-        setTimeout(() => {
-            btn.innerHTML = originalHtml;
-            btn.classList.add('bg-[#E50914]', 'hover:bg-red-600');
-            btn.classList.remove('bg-green-600', 'hover:bg-green-500');
-        }, 2000);
-    } catch (err) {
-        showToast("Failed to copy link. Please manually select the text.");
-    }
-
-    document.body.removeChild(textArea);
-}
+// 35467354673546735467354673546735467354673546735467354673546735467

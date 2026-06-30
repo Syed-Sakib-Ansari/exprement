@@ -3,95 +3,91 @@ export async function onRequest(context) {
     const url = new URL(request.url);
     const path = url.pathname; 
 
-    // ১. স্ট্যাটিক ফাইল হ্যান্ডেলিং (CSS, JS, Images, TXT) সরাসরি লোড হতে দিন
+    // ১. স্ট্যাটিক অ্যাসেট ফাইল হলে কোনো প্রসেস ছাড়াই সরাসরি রিড করবে
     if (path.match(/\.(css|js|json|png|jpg|jpeg|gif|ico|xml|txt)$/i)) {
         return env.ASSETS.fetch(request);
     }
 
-    // 🚀 ২. ফ্রন্টএন্ডের জন্য নতুন সুরক্ষিত ডাইনামিক API রুট (অন-ডিমান্ড ফুল ডাটা রিলিজ)
-    if (path.startsWith('/api/movie/')) {
-        const movieSlug = path.replace('/api/movie/', '');
-        const movieData = await env.MOVIE_DB.get(movieSlug);
-        if (!movieData) {
-            return new Response(JSON.stringify({ error: "Movie not found" }), {
-                status: 404,
-                headers: { 
-                    "content-type": "application/json;charset=UTF-8", 
-                    "Access-Control-Allow-Origin": "*" 
-                }
-            });
-        }
-        return new Response(movieData, {
-            headers: { 
-                "content-type": "application/json;charset=UTF-8", 
-                "Access-Control-Allow-Origin": "*" 
-            }
-        });
-    }
-
-    // ৩. গুগল ক্রলার ও সার্চ ইঞ্জিনের জন্য আলতিমেট ইন্ডিভিজুয়াল মুভি র‍্যাংকিং (SSR) লেয়ার
     const excludedFiles = ['/index.html', '/Contact.html', '/DMCA.html', '/Privacy.html', '/Disclaimer.html'];
     
     if (path.endsWith('.html') && !excludedFiles.includes(path)) {
         const movieSlug = decodeURIComponent(path.replace('/', '').replace('.html', ''));
         
         try {
-            // 🎯 ৫ মেগাবাইটের জেসন ফাইল রিড করার ঝামেলা শেষ! সরাসরি KV ডেটাবেজ থেকে ডেটা কল
-            const targetMovie = await env.MOVIE_DB.get(movieSlug, { type: "json" });
-
+            // 🚀 পরিবর্তন: ২৫ MB-র ফাইলের পরিবর্তে সরাসরি সুনির্দিষ্ট মুভির মাত্র ২ KB-র ফাইলটি ব্যাকএন্ড ফেচ করছে!
+            const movieRes = await env.ASSETS.fetch(new URL(`/data/movies/${movieSlug}.json`, request.url));
+            
             const htmlRes = await env.ASSETS.fetch(new URL('/index.html', request.url));
             let html = await htmlRes.text();
 
-            if (targetMovie) {
-                const safeTitle = targetMovie.title.replace(/"/g, '&quot;');
-                const safeGenre = (targetMovie.genre || 'Action, Entertainment').replace(/"/g, '&quot;');
-                const safeLanguage = (targetMovie.language || 'Dual Audio').replace(/"/g, '&quot;');
-                const safeCategory = (targetMovie.category || 'Recent Adds').replace(/"/g, '&quot;');
-                const fullMovieUrl = `https://moviedakhi.com/${movieSlug}.html`;
-                const poster = targetMovie.posterUrl || '';
-                
-                // গুগল ইনডেক্সিং টাইটেল ও মেটা ডেসক্রিপশন সেটআপ
-                html = html.replace(/<title>.*?<\/title>/i, `<title>Watch ${safeTitle} Online Free HD | MovieDakhi</title>`);
-                
-                const descTag = `<meta name="description" content="Watch or download ${safeTitle} full movie. Genre: ${safeGenre} | Language: ${safeLanguage} | MovieDakhi">`;
-                if (html.match(/<meta\s+name=["']description["'].*?>/i)) {
-                    html = html.replace(/<meta\s+name=["']description["'].*?>/i, descTag);
-                } else {
-                    html = html.replace('</head>', `${descTag}\n</head>`);
+            if (movieRes.ok) {
+                const targetMovie = await movieRes.json();
+                const safeTitle = targetMovie.title || "Movie";
+                const movieGenre = targetMovie.genre || "Entertainment";
+
+                const pageTitle = `Watch ${safeTitle} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
+                const pageDesc = `Watch ${safeTitle} full movie online for free in HD quality. Download ${safeTitle} complete web series 1080p, 720p. Stream ${movieGenre} movies seamlessly on MovieDakhi.`;
+                const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
+                const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+
+                // মেটা ট্যাগ রিপ্লেসমেন্ট (গুগল এসইও এর জন্য)
+                html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${pageTitle}</title>`);
+                html = html.replace(/<meta\s+name="description"\s+content="[^"]*"/i, `<meta name="description" content="${pageDesc}"`);
+                html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"/i, `<link rel="canonical" href="${movieUrl}"`);
+
+                // Open Graph (Facebook SEO)
+                html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"/i, `<meta property="og:url" content="${movieUrl}"`);
+                html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"/i, `<meta property="og:title" content="${pageTitle}"`);
+                html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"/i, `<meta property="og:description" content="${pageDesc}"`);
+                html = html.replace(/<meta\s+property="og:image"\s+content="[^"]*"/i, `<meta property="og:image" content="${imageUrl}"`);
+
+                // Twitter SEO
+                html = html.replace(/<meta\s+property="twitter:url"\s+content="[^"]*"/i, `<meta property="twitter:url" content="${movieUrl}"`);
+                html = html.replace(/<meta\s+property="twitter:title"\s+content="[^"]*"/i, `<meta property="twitter:title" content="${pageTitle}"`);
+                html = html.replace(/<meta\s+property="twitter:description"\s+content="[^"]*"/i, `<meta property="twitter:description" content="${pageDesc}"`);
+                html = html.replace(/<meta\s+property="twitter:image"\s+content="[^"]*"/i, `<meta property="twitter:image" content="${imageUrl}"`);
+
+                // 🚀 গুগল সার্চ কনসোলের জন্য "Movie Schema Markup" ইনজেকশন
+                const movieSchema = {
+                    "@context": "https://schema.org",
+                    "@type": "Movie",
+                    "name": safeTitle,
+                    "url": movieUrl,
+                    "image": imageUrl,
+                    "genre": movieGenre.split(', '),
+                    "description": pageDesc,
+                    "potentialAction": {
+                        "@type": "WatchAction",
+                        "target": movieUrl
+                    }
+                };
+                html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(movieSchema)}</script>\n</head>`);
+
+                // 🍿 গুগলের ক্রলার ইনডেক্সিংয়ের জন্য টেক্সট ইনজেকশন
+                let seoBodyContent = `
+                <div id="modalSeoContent" class="text-sm md:text-base text-gray-400 leading-relaxed mt-6 max-w-3xl mx-auto font-medium等">
+                    <span class="font-bold text-gray-300">${movieGenre}</span>
+                    <div class="mt-3 text-[10px] md:text-xs text-gray-500 leading-relaxed font-medium">
+                        ▶ Watch <strong class="text-gray-300">${safeTitle}</strong> full movie online free in HD. You can also download the complete movie / web series in 1080p directly to your device. Enjoy high-quality streaming without buffering on MovieDakhi.
+                    </div>`;
+
+                if (targetMovie.synopsis) {
+                    seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">📖 Synopsis:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.synopsis}</p></div>`;
                 }
-                
-                // সোশ্যাল মিডিয়া ইনডেক্স প্রিভিউ ট্যাগ (OpenGraph & Twitter Card)
-                let ogTags = `<meta property="og:title" content="Watch ${safeTitle} - MovieDakhi"><meta property="og:description" content="Stream or download ${safeTitle} in high quality free."><meta property="og:url" content="${fullMovieUrl}"><meta property="og:type" content="video.movie"><meta property="og:site_name" content="MovieDakhi">`;
-                if(poster) ogTags += `<meta property="og:image" content="${poster}">`;
+                if (targetMovie.movieHighlights) {
+                    seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">🎯 Movie Highlights:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.movieHighlights}</p></div>`;
+                }
+                if (targetMovie.detailedPlotSummary) {
+                    seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">🍿 Detailed Plot Summary:</b><p style="color: #999; font-size: 13px; white-space: pre-line; line-height: 1.6; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">${targetMovie.detailedPlotSummary}</p></div>`;
+                }
+                seoBodyContent += `</div>`;
 
-                let twitterTags = `<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Watch ${safeTitle} - MovieDakhi"><meta name="twitter:description" content="Fast streaming and direct download links for ${safeTitle} full movie.">`;
-                if(poster) twitterTags += `<meta name="twitter:image" content="${poster}">`;
-
-                html = html.replace('</head>', `${ogTags}\n${twitterTags}\n</head>`);
-                
-                // ভিডিও মোডালের লেআউট রিপ্লেসমেন্ট
-                html = html.replace(/<h2 id="modalTitle"[^>]*>.*?<\/h2>/i, `<h2 id="modalTitle" class="text-3xl md:text-5xl font-black mb-6 leading-tight">${safeTitle}</h2>`);
-                html = html.replace(/(<[a-z0-9]+[^>]*id="modalLanguage"[^>]*>).*?(<\/[a-z0-9]+>)/i, `$1${safeLanguage}$2`);
-                html = html.replace(/(<[a-z0-9]+[^>]*id="modalCategory"[^>]*>).*?(<\/[a-z0-9]+>)/i, `$1${safeCategory}$2`);
-                html = html.replace(/<p id="modalDesc"[^>]*>.*?<\/p>/i, `<p id="modalDesc" class="text-sm md:text-base text-gray-400 leading-relaxed mb-8 max-w-3xl mx-auto font-medium italic">▶ Streaming and download links for <strong>${safeTitle}</strong> are ready below. Scroll down to read the full movie synopsis and details.</p>`);
-
-                // গুগলের রিড করার জন্য বড় টেক্সট ব্লকের ইনজেকশন লজিক
-                let seoBodyContent = '';
-                if (targetMovie.synopsis) seoBodyContent += `<div style="margin-top: 25px; text-align: left; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">📖 Synopsis:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.synopsis}</p></div>`;
-                if (targetMovie.movieHighlights) seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">✨ Movie Highlights:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.movieHighlights}</p></div>`;
-                if (targetMovie.streamingRecommendation) seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">🎯 Streaming Recommendation:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.streamingRecommendation}</p></div>`;
-                if (targetMovie.detailedPlotSummary) seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">🍿 Detailed Plot Summary:</b><p style="color: #999; font-size: 13px; white-space: pre-line; line-height: 1.6; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); font-style: normal;">${targetMovie.detailedPlotSummary}</p></div>`;
-
-                html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n<div id="modalSeoContent" class="text-sm md:text-base text-gray-400 leading-relaxed mt-6 max-w-3xl mx-auto font-medium text-left" style="display: block; width: 100%;">${seoBodyContent}</div>`);
-                html = html.replace('</head>', `<script>window.CF_MOVIE_SLUG = "${movieSlug}";</script>\n</head>`);
+                html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n${seoBodyContent}`);
             }
             
-            return new Response(html, { 
-                headers: { "content-type": "text/html;charset=UTF-8" }
-            });
-            
-        } catch(e) {
-            return env.ASSETS.fetch(new URL('/index.html', request.url));
+            return new Response(html, { headers: { 'Content-Type': 'text/html' } });
+        } catch (err) {
+            return env.ASSETS.fetch(request);
         }
     }
 
