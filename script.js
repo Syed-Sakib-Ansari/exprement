@@ -1,8 +1,13 @@
+// ==========================================
+// 🚀 SYSTEM & HISTORY CONFIGURATION
+// ==========================================
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
+// ==========================================
 // 🚀 NETWORK SPEED OPTIMIZATION FOR ADS
+// ==========================================
 if (!document.querySelector('link[href="https://onsetcab.com"]')) {
     const preconnect1 = document.createElement('link');
     preconnect1.rel = 'preconnect'; 
@@ -25,7 +30,7 @@ function generateMovieSlug(title) {
 }
 
 // ==========================================
-// 🚀 SMART RESPONSIVE AD INJECTOR (With Anti-Reload Lock)
+// 🚀 SMART RESPONSIVE AD INJECTOR (ADSTERRA)
 // ==========================================
 function injectAdsterra(container, key, w, h) {
     if(!container || isPopupAdBlocking) return;
@@ -124,81 +129,6 @@ function injectPopAds() {
 }
 
 // ==========================================
-// 🚀 3-MINUTE AD-FREE ZONE LOGIC (MONETAG ADS)
-// ==========================================
-// let monetagAdsInjected = false;
-
-// function injectMonetagAds() {
-//     if (monetagAdsInjected) return;
-    
-//     // চেক করবে ইউজার নিরাপদ ব্রাউজারে আছে কি না
-//     const isSafeBrowser = !(/FBAN|FBAV|Instagram|UCBrowser|UCWEB|UCMini|wv|WebView|Android.*Version\/[\d.]+/i.test(navigator.userAgent || navigator.vendor || window.opera));
-    
-//     // যদি ব্রাউজার ওয়ার্নিং পপআপ ওপেন থাকে, তবে অ্যাড লোড পেছাবে
-//     if (typeof isPopupAdBlocking !== 'undefined' && isPopupAdBlocking) {
-//         setTimeout(injectMonetagAds, 2000);
-//         return;
-//     }
-
-//     if (isSafeBrowser) {
-//         monetagAdsInjected = true;
-
-//         // 1. Vignette Banner (Zone: 11121262)
-//         const vignette = document.createElement('script');
-//         vignette.dataset.zone = '11121262';
-//         vignette.src = 'https://n6wxm.com/vignette.min.js';
-//         document.body.appendChild(vignette);
-
-//         // 2. In-Page Push (Zone: 11121270)
-//         const inPagePush = document.createElement('script');
-//         inPagePush.dataset.zone = '11121270';
-//         inPagePush.src = 'https://nap5k.com/tag.min.js';
-//         document.body.appendChild(inPagePush);
-
-//         // 3. Push Notifications (Zone: 11121272)
-//         const pushNotif = document.createElement('script');
-//         pushNotif.dataset.zone = '11121272';
-//         pushNotif.src = 'https://5gvci.com/act/files/tag.min.js?z=11121272';
-//         pushNotif.async = true;
-//         pushNotif.dataset.cfasync = 'false';
-//         document.head.appendChild(pushNotif);
-
-//         // 4. Popunder (Zone: 11121310)
-//         const popunder = document.createElement('script');
-//         popunder.dataset.zone = '11121310';
-//         popunder.src = 'https://al5sm.com/tag.min.js';
-//         document.body.appendChild(popunder);
-        
-//         console.log("🚀 Monetag Ads Activated After 3 Minutes");
-//     }
-// }
-
-// function setupAdFreeTimer() {
-//     const adFreeSessionKey = 'MovieDakhi_AdFree_Start_Time';
-//     let startTime = sessionStorage.getItem(adFreeSessionKey); 
-
-//     if (!startTime) {
-//         startTime = new Date().getTime();
-//         sessionStorage.setItem(adFreeSessionKey, startTime.toString());
-//     }
-
-//     const elapsed = new Date().getTime() - parseInt(startTime);
-//     const waitTime = 180000; // ৩ মিনিট = ১,৮০,০০০ মিলি-সেকেন্ড
-
-//     if (elapsed >= waitTime) {
-//         // যদি ৩ মিনিট আগেই পার হয়ে থাকে, তবে সাথে সাথে অ্যাড দিয়ে দেবে
-//         injectMonetagAds();
-//     } else {
-//         // ৩ মিনিট হতে যতটুকু সময় বাকি, ততটুকু অপেক্ষা করে অ্যাড দেবে
-//         const remainingTime = waitTime - elapsed;
-//         setTimeout(injectMonetagAds, remainingTime);
-//     }
-// }
-
-// // 🔥 টাইমারটি চালু করার কল (এটি আপনার কোডের বাইরের দিকে থাকবে)
-// setupAdFreeTimer();
-
-// ==========================================
 // 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
 // ==========================================
 function injectNativeBanner(container, h = 260) {
@@ -280,7 +210,9 @@ function createDesktopNativeAdBlock() {
     return block;
 }
 
-// ১. লোকাল ব্যাকআপ মুভির ডাটাবেজ
+// ==========================================
+// 🚀 DATABASE & FETCH SYSTEM
+// ==========================================
 const contentData = [
     {
         title: "The Great Grand Superhero: Aliens Ka Aagman (2026)", embedUrl: "https://moviedakhi.4meplayer.com/#ov3ao", posterUrl: "https://m.media-amazon.com/images/M/MV5BMDQ2YTgxMzAtMTE1OS00Y2RkLWFhMzAtYWEyY2ZjNTY0YTQ3XkEyXkFqcGc@._V1_.jpg", genre: "Drama, Adventure, Comedy, Family, Sci-Fi", category: "Recent Adds", language: "Hindi", quality: "HDTC", downloadUrl1: "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", downloadUrl2: "https://moviedakhi.4meplayer.com/#ov3ao&dl=1"
@@ -290,7 +222,6 @@ const contentData = [
     }
 ];
 
-// ২. ASYNC FETCH SYSTEM
 async function loadContentDatabase() {
     try {
         const response = await fetch('movies.json');
@@ -313,6 +244,9 @@ async function loadContentDatabase() {
 
 const databaseLoadPromise = loadContentDatabase();
 
+// ==========================================
+// 🚀 GLOBAL VARIABLES & DOM CACHING
+// ==========================================
 const categories = [
     "all", "Hollywood", "Bollywood", "South", "Animation",
     "Korean Country", "Chinese", "Hollywood Series", "Bollywood Series",
@@ -343,6 +277,9 @@ const ITEMS_PER_PAGE = 30;
 let isLoading = false;
 let activeSubGridId = null;
 
+// ==========================================
+// 🚀 UTILITY FUNCTIONS
+// ==========================================
 function getOptimizedImageUrl(url, width = 300) {
     if (!url) return "";
     if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
@@ -359,6 +296,9 @@ function debounce(func, wait) {
     };
 }
 
+// ==========================================
+// 🚀 CATEGORY MENU & NAVIGATION RENDER
+// ==========================================
 function renderCategories() {
     const mobileGrid = document.getElementById('mobileCategoryGrid');
     const desktopNav = document.getElementById('desktopCategoryPills');
@@ -387,7 +327,7 @@ function renderCategories() {
         const realLink = `?view=library&category=${encodeURIComponent(cat)}`;
 
         const mobileItem = document.createElement('a');
-            mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
+        mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
         mobileItem.innerText = label;
         mobileItem.href = realLink;
         mobileItem.onclick = (e) => {
@@ -455,6 +395,9 @@ function toggleCategoryMenu(show, triggerBack = true) {
     }
 }
 
+// ==========================================
+// 🚀 DRAGGABLE MOBILE FAB LOGIC
+// ==========================================
 const fab = document.getElementById('mobileFab');
 let isDragging = false;
 let startX, startY, initialX, initialY;
@@ -565,6 +508,9 @@ window.addEventListener('resize', () => {
     if (currentY < 0) fab.style.top = `0px`;
 });
 
+// ==========================================
+// 🚀 HERO SLIDER INITIALIZATION
+// ==========================================
 function initHeroSlider() {
     if (!sliderWrapper || !sliderDots) return;
     const slides = contentData.filter(item => item.category === "Recent Adds" || item.category === "Bollywood" || item.category === "Hollywood").slice(0, 6);
@@ -630,6 +576,9 @@ function initHeroSlider() {
     startSlideTimer();
 }
 
+// ==========================================
+// 🚀 SEARCH SYSTEM UI MANIPULATION
+// ==========================================
 function updateSearchUI() {
     const libraryFilters = document.getElementById('libraryFilters');
     if (searchInput.value.trim().length > 0) {
@@ -672,6 +621,9 @@ function updateCanonical(url) {
     }
 }
 
+// ==========================================
+// 🚀 SINGLE PAGE APPLICATION (SPA) VIEW SWITCHER
+// ==========================================
 function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
     if (mode) {
         const currentScroll = window.scrollY;
@@ -753,7 +705,9 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     }, 100);
 }
 
-// 🚀 CREATE MOVIE CARD
+// ==========================================
+// 🚀 CARD GENERATOR & CONTENT RENDERING
+// ==========================================
 function createMovieCard(item) {
     const card = document.createElement('a'); 
     const movieSlug = item.slug || generateMovieSlug(item.title);
@@ -792,7 +746,6 @@ function createMovieCard(item) {
     return card;
 }
 
-// 🚀 RECENT ADDS RENDER
 function renderRecentAdds() {
     if (!recentAddsGrid) return;
     recentAddsGrid.innerHTML = '';
@@ -810,7 +763,6 @@ function renderRecentAdds() {
     recentAddsGrid.appendChild(fragment);
 }
 
-// 🚀 CATEGORY SECTIONS RENDER
 function renderCategorySections(forceRenderAll = false) {
     if (!categorySections) return;
     categorySections.innerHTML = '';
@@ -989,7 +941,6 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     }
 }
 
-// 🚀 LIBRARY SCROLL CHUNK
 function renderLibraryChunk() {
     if (isLoading) return;
     isLoading = true;
@@ -1028,6 +979,9 @@ function updateLoadMoreVisibility() {
     }
 }
 
+// ==========================================
+// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC
+// ==========================================
 function openModal(id) {
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
     savedScrollY = window.scrollY;
@@ -1064,7 +1018,6 @@ function openModal(id) {
     if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
     if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
 
-    // 🔥 DYNAMIC MODAL SEO TEXT
     if(document.getElementById('modalDesc')) {
         document.getElementById('modalDesc').innerHTML = `
             <span class="font-bold text-gray-300">${item.genre || "Entertainment"}</span>
@@ -1117,7 +1070,6 @@ function openModal(id) {
         const existingIframe = document.getElementById('videoIframe');
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
 
-        // 🔥 FIXED: Direct iframe injection without layout-breaking wrapper divs
         if (needsNewIframe) {
             actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
@@ -1140,6 +1092,9 @@ function openModal(id) {
     document.body.style.width = '100%';
 }
 
+// ==========================================
+// 🚀 DOWNLOAD BUTTON TRIGGER & EPISODES SYSTEM
+// ==========================================
 function handleDownloadClick() {
     if (!currentItem) return;
 
@@ -1202,7 +1157,6 @@ function playEpisode(index, btnElement) {
 
         const existingIframe = document.getElementById('videoIframe');
         
-        // 🔥 FIXED: Direct iframe injection without layout-breaking wrapper divs
         if (!existingIframe || existingIframe.src !== url) {
             actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
@@ -1230,7 +1184,6 @@ function closeModal(triggerBack = true, explicitClose = false) {
 
     isModalClosing = true;
 
-    // 🔥 SEO: Restore Default Page Title
     document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
 
     if (!triggerBack) {
@@ -1262,6 +1215,9 @@ function closeModal(triggerBack = true, explicitClose = false) {
     }
 }
 
+// ==========================================
+// 🚀 SEARCH INPUT EVENT LISTENERS
+// ==========================================
 if (searchInput) {
     searchInput.addEventListener('focus', () => {
         if (!preSearchState && searchInput.value.trim().length === 0) {
@@ -1326,7 +1282,7 @@ if (searchInput) {
 }
 
 // ==========================================
-// 🚀 IN-APP BROWSER DETECTOR & SUGGESTION BOX
+// 🚀 GENERAL ANNOUNCEMENT POPUP LOGIC
 // ==========================================
 let announcementScrollY = 0;
 
@@ -1334,59 +1290,21 @@ function showAnnouncement() {
     const popup = document.getElementById('announcementPopup');
     if (!popup) return;
 
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
-    const isFacebookApp = /FBAN|FBAV|Ios/i.test(ua);
-    const isUCBrowser = /UCBrowser|UCWEB|UCMini/i.test(ua);
-    const isInstaApp = /Instagram/i.test(ua);
-    const isAndroidWebviewApp = /wv|android.*version\/[0-9]/i.test(ua);
-    
-    const isOperaMini = ua.includes('Opera Mini') || ua.includes('OPR/');
-    const isTrappedApp = !isOperaMini && (isFacebookApp || isUCBrowser || isInstaApp || isAndroidWebviewApp);
-
-    const warningText = document.getElementById('browserWarningText');
-    if (warningText && isTrappedApp) {
-        if (isFacebookApp) {
-            warningText.innerHTML = `Facebook browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
-        } else if (isUCBrowser) {
-            warningText.innerHTML = `UC browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
-        } else if (isInstaApp) {
-            warningText.innerHTML = `Instagram browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
-        } else if (isAndroidWebviewApp) {
-            warningText.innerHTML = `This built-in browser <span class="text-white font-black">Cannot Play or Download</span> movies. Tap below to use a real browser which you have!`;
-        }
-    }
-
-    const suggestionBox = document.getElementById('browserSuggestionBox');
     const topCloseBtn = document.getElementById('announcementCloseBtnTop');
     const backdrop = document.getElementById('popupBackdrop');
     const popupWelcomeText = document.getElementById('popupWelcomeText');
     const popupTelegramBtn = document.getElementById('popupTelegramBtn');
     const popupBoxContainer = document.getElementById('popupBoxContainer');
 
-    if (isTrappedApp) {
-        if (suggestionBox) suggestionBox.classList.remove('hidden');
-        if (topCloseBtn) topCloseBtn.classList.add('hidden');
-        if (backdrop) backdrop.onclick = null;
+    if (topCloseBtn) topCloseBtn.classList.remove('hidden');
+    if (backdrop) backdrop.onclick = closeAnnouncement;
 
-        if (popupWelcomeText) popupWelcomeText.classList.add('hidden');
-        if (popupTelegramBtn) popupTelegramBtn.classList.add('hidden');
+    if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
+    if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
 
-        if (popupBoxContainer) {
-            popupBoxContainer.classList.remove('p-5', 'md:p-8');
-            popupBoxContainer.classList.add('p-4');
-        }
-    } else {
-        if (suggestionBox) suggestionBox.classList.add('hidden');
-        if (topCloseBtn) topCloseBtn.classList.remove('hidden');
-        if (backdrop) backdrop.onclick = closeAnnouncement;
-
-        if (popupWelcomeText) popupWelcomeText.classList.remove('hidden');
-        if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
-
-        if (popupBoxContainer) {
-            popupBoxContainer.classList.add('p-5', 'md:p-8');
-            popupBoxContainer.classList.remove('p-4');
-        }
+    if (popupBoxContainer) {
+        popupBoxContainer.classList.add('p-5', 'md:p-8');
+        popupBoxContainer.classList.remove('p-4');
     }
 
     popup.classList.remove('hidden');
@@ -1418,9 +1336,7 @@ function closeAnnouncement() {
         window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
 
         isPopupAdBlocking = false;
-        if (!isPopupAdBlocking) {
-            initStaticAds();
-        }
+        initStaticAds();
         
         document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
             if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
@@ -1439,150 +1355,9 @@ function closeAnnouncement() {
     }, 500);
 }
 
-// 🚀 OPEN IN REAL BROWSER LOGIC
-function openInBrowser(browser) {
-    const targetDomain = 'moviedakhi.com';
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-    const isAndroid = /android/i.test(userAgent);
-
-    let schemeUrl = '';
-    let androidIntents = [];
-
-    const genericIntent = `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;`;
-
-    if (browser === 'chrome') {
-        schemeUrl = `googlechrome://navigate?url=https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.android.chrome;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.chrome.beta;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'edge') {
-        schemeUrl = `microsoft-edge-https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.microsoft.emmx.beta;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'opera') {
-        schemeUrl = `opera-http://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.browser;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.opera.mini.native;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'firefox') {
-        schemeUrl = `firefox://open-url?url=https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox;end;`,
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=org.mozilla.firefox_beta;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'brave') {
-        schemeUrl = `brave://open-url?url=https://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.brave.browser;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'safari') {
-        schemeUrl = `x-safari-https://${targetDomain}`;
-        androidIntents = [genericIntent];
-    } else if (browser === 'vivaldi') {
-        schemeUrl = `vivaldi://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.vivaldi.browser;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'duckduckgo') {
-        schemeUrl = `ddg://${targetDomain}`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=com.duckduckgo.mobile.android;end;`,
-            genericIntent
-        ];
-    } else if (browser === 'via') {
-        schemeUrl = `intent://${targetDomain}#Intent;scheme=https;package=mark.via.gp;end;`;
-        androidIntents = [
-            `intent://${targetDomain}#Intent;scheme=https;action=android.intent.action.VIEW;package=mark.via.gp;end;`,
-            genericIntent
-        ];
-    }
-
-    let appOpened = false;
-
-    function handleVisibilityChange() {
-        if (document.visibilityState === 'hidden' || document.hidden) {
-            appOpened = true;
-        }
-    }
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    window.addEventListener("pagehide", () => { appOpened = true; });
-    window.addEventListener("blur", () => { appOpened = true; });
-
-    if (isAndroid && androidIntents.length > 0) {
-        let currentIntentIndex = 0;
-        
-        function tryNextIntent() {
-            if (appOpened || currentIntentIndex >= androidIntents.length) {
-                document.removeEventListener("visibilitychange", handleVisibilityChange);
-                return;
-            }
-            
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = androidIntents[currentIntentIndex];
-            document.body.appendChild(iframe);
-            
-            setTimeout(() => {
-                if (document.body.contains(iframe)) {
-                    document.body.removeChild(iframe);
-                }
-                if (!appOpened) {
-                    currentIntentIndex++;
-                    tryNextIntent();
-                }
-            }, 800);
-        }
-        
-        tryNextIntent();
-        showToast("Redirecting to browser...");
-        
-    } else if (schemeUrl) {
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = schemeUrl;
-        document.body.appendChild(iframe);
-
-        setTimeout(() => {
-            if(document.body.contains(iframe)) document.body.removeChild(iframe);
-            document.removeEventListener("visibilitychange", handleVisibilityChange);
-
-            if (!appOpened) {
-                if (isIOS) {
-                    window.location.href = `x-safari-https://${targetDomain}`;
-                } else {
-                    window.location.href = `https://${targetDomain}`;
-                }
-            }
-        }, 1000);
-        
-        if (!isAndroid && !isIOS) {
-            showToast(`Opening ${browser.charAt(0).toUpperCase() + browser.slice(1)}...`);
-        } else {
-            showToast("Redirecting to browser...");
-        }
-    }
-}
-
-const uaCheck = navigator.userAgent || navigator.vendor || window.opera;
-const isFBCheck = /FBAN|FBAV|Ios/i.test(uaCheck);
-const isUCCheck = /UCBrowser|UCWEB|UCMini/i.test(uaCheck);
-const isInstaCheck = /Instagram/i.test(uaCheck);
-const isAndroidWebviewCheck = /wv|android.*version\/[0-9]/i.test(uaCheck);
-
-const isOperaMiniCheck = uaCheck.includes('Opera Mini') || uaCheck.includes('OPR/');
-const isTrappedCheck = !isOperaMiniCheck && (isFBCheck || isUCCheck || isInstaCheck || isAndroidWebviewCheck);
-
+// ==========================================
+// 🚀 SESSION & SCROLL PERSISTENCE CONFIG
+// ==========================================
 const sessionKey = 'MovieDakhi_Welcome_Session_Final';
 const localKey = 'MovieDakhi_Welcome_Time_Final';
 const nowTime = new Date().getTime();
@@ -1593,17 +1368,15 @@ const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000;
 
 const urlParams2 = new URLSearchParams(window.location.search);
 const isFallback = urlParams2.get('fb_fallback');
-const shouldShowPopup = !isFallback && (isTrappedCheck || (!hasSession && !hasRecentLocal));
+const shouldShowPopup = !isFallback && (!hasSession && !hasRecentLocal);
 
 if (shouldShowPopup) {
-    if (isTrappedCheck) {
-         isPopupAdBlocking = true; 
-    }
+    isPopupAdBlocking = false; 
     setTimeout(() => {
         sessionStorage.setItem(sessionKey, 'true');
         localStorage.setItem(localKey, nowTime.toString());
         showAnnouncement();
-    }, isTrappedCheck ? 500 : 20000);
+    }, 20000);
 } else {
     setTimeout(() => {
         injectPopAds();
@@ -1647,7 +1420,9 @@ window.addEventListener('beforeunload', () => {
     }
 });
 
-// 🔥 DOM CONTENT LOADED - INIT & SEO AUTO-OPEN
+// ==========================================
+// 🚀 DOM CONTENT LOADED - APPLICATION INIT
+// ==========================================
 document.addEventListener('DOMContentLoaded', async () => {
     
     await databaseLoadPromise; 
@@ -1700,7 +1475,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // 🔥 SEO: AUTO OPEN MODAL IF DIRECT MOVIE URL IS VISITED
     if (movieSlug) {
         const targetMovie = contentData.find(m => m.slug === movieSlug);
         if (targetMovie) {
@@ -1711,13 +1485,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     setTimeout(() => {
-        if (!isPopupAdBlocking) {
-            initStaticAds();
-        }
+        initStaticAds();
     }, 100); 
-
 });
 
+// ==========================================
+// 🚀 POPSTATE NAVIGATION HISTORY ENGINE
+// ==========================================
 window.addEventListener('popstate', (event) => {
     const state = event.state;
     const modal = document.getElementById('movieModal');
@@ -1742,6 +1516,7 @@ window.addEventListener('popstate', (event) => {
         handledOverlayClose = true;
     }
 
+    // 🔥 FIXED: 'handledOverlayCheck' renamed to 'handledOverlayClose' to fix ReferenceError
     if (handledOverlayClose) {
         return;
     }
@@ -1758,6 +1533,9 @@ window.addEventListener('popstate', (event) => {
     }
 });
 
+// ==========================================
+// 🚀 GLOBAL CLICK BACKDROP CLOSERS & TOASTS
+// ==========================================
 window.addEventListener('click', (e) => {
     if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal(true, true);
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
