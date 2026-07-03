@@ -989,44 +989,195 @@ function openModal(id) {
     const item = contentData.find(m => m.id === id);
     if (!item) return;
 
-    // 🔥 URL AND HISTORY SEO UPDATE
+    // ১. URL এবং হিস্ট্রি এসইও আপডেট
     const movieSlug = item.slug || generateMovieSlug(item.title);
-    // ✅ সঠিক কোড (এসইও ফ্রেন্ডলি)
     const newUrl = new URL(window.location.origin + '/' + movieSlug + '.html');
     
     const currentState = history.state || { view: currentView, validDakhiState: true };
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
     try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl); } catch (e) { }
 
-    // 🔥 HIGH-VOLUME DYNAMIC SEO GENERATOR
-    document.title = `Watch ${item.title} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
+    // 🚀 ULTIMATE GLOBAL HYBRID SEO GENERATOR
+    const isSeries = item.episodes && item.episodes.length > 0;
+    const contentType = isSeries ? "Web Series All Episodes" : "Full Movie";
+    const titleKey = item.title;
     
+    // 🔍 স্মার্ট ইয়ার এক্সট্রাকশন (Regex)
+    const yearMatch = titleKey.match(/\((\d{4})\)/);
+    const extractedYear = yearMatch ? yearMatch[1] : new Date().getFullYear();
+    const releaseYear = item.year || extractedYear;
+
+    // 🎴 ডাইনামিক টাইটেল ডুপ্লিকেশন ফিক্স
+    const titleHasYear = titleKey.includes(`(${releaseYear})`);
+    const SEOFullTitle = titleHasYear ? titleKey : `${titleKey} (${releaseYear})`;
+
+    // গ্লোবাল ও রিজিওনাল ল্যাঙ্গুয়েজ মিক্সচার
+    const cleanLang = item.language || "Dual Audio [Hindi-English] / ESub"; 
+
+    // 🔥 আল্ট্রা-এসইও ফ্রেন্ডলি টাইটেল (Movie Name First + Extreme SEO Combo)
+    document.title = `${SEOFullTitle} [${cleanLang}] | Index of / Download 4K 1080p, Watch Online Free ${contentType} - MovieDakhi`;
+    
+    // 🔥 ২. মেটা ডেসক্রিপশন অপ্টিমাইজেশন
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
         metaDescription = document.createElement('meta');
         metaDescription.name = "description";
         document.head.appendChild(metaDescription);
     }
-    metaDescription.content = `Watch ${item.title} full movie online for free in HD quality. Download ${item.title} complete web series 1080p, 720p. Stream ${item.genre} movies seamlessly on MovieDakhi.`;
+    metaDescription.content = `Index of /${SEOFullTitle} ${contentType} direct download link. Stream ${titleKey} online free in 4K Ultra HD / 1080p BluRay. High-speed Google Drive & Telegram links for ${cleanLang} with English Subtitles (ESub) HEVC x265 on MovieDakhi.`;
 
+    // 🔗 ৩. ডাইনামিক ক্যানোনিকাল ট্যাগ ফিক্স (CRITICAL FOR SEO INDEXING)
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.rel = 'canonical';
+        document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = newUrl.href;
+
+    // 🛠️ ৪. ডাইনামিক JSON-LD স্কিমা মার্কআপ (গুগল রিচ স্নিপেটস)
+    let schemaScript = document.getElementById('seoSchemaDynamic');
+    if (!schemaScript) {
+        schemaScript = document.createElement('script');
+        schemaScript.id = 'seoSchemaDynamic';
+        schemaScript.type = 'application/ld+json';
+        document.head.appendChild(schemaScript);
+    }
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": isSeries ? "TVSeries" : "Movie",
+        "name": titleKey,
+        "alternateName": isSeries ? [
+            `Index of ${titleKey}`,
+            `${titleKey} Web Series All Episodes Download`,
+            `${titleKey} Complete Season Download 1080p`,
+            `${titleKey} Dual Audio Hindi English Web Series`,
+            `Watch ${titleKey} All Seasons Online Free HD`,
+            `${titleKey} Google Drive Direct Link Series`,
+            `${titleKey} English Subtitles x265 HEVC`
+        ] : [
+            `Index of ${titleKey}`,
+            `${titleKey} Full Movie Download 1080p`,
+            `${titleKey} Dual Audio Hindi English`,
+            `Watch ${titleKey} Full Movie Online Free HD`,
+            `${titleKey} Google Drive Direct Link`,
+            `${titleKey} English Subtitles x265`
+        ],
+        "image": item.poster || window.location.origin + "/default-poster.jpg",
+        "genre": item.genre || "Entertainment",
+        "dateCreated": releaseYear,
+        "inLanguage": ["English", "Hindi"],
+        "description": metaDescription.content
+    };
+    schemaScript.textContent = JSON.stringify(schemaData);
+
+    // ৫. সোশ্যাল মিডিয়া মেটা ট্যাগ অপ্টিমাইজেশন (Facebook Open Graph & Twitter Cards)
+    const setMetaTag = (attrName, attrValue, content) => {
+        let el = document.querySelector(`meta[${attrName}="${attrValue}"]`);
+        if (!el) { el = document.createElement('meta'); el.setAttribute(attrName, attrValue); document.head.appendChild(el); }
+        el.setAttribute('content', content);
+    };
+    // Facebook
+    setMetaTag('property', 'og:title', document.title);
+    setMetaTag('property', 'og:description', metaDescription.content);
+    setMetaTag('property', 'og:url', newUrl.href);
+    // Twitter / X
+    setMetaTag('name', 'twitter:title', document.title);
+    setMetaTag('name', 'twitter:description', metaDescription.content);
+    setMetaTag('name', 'twitter:card', 'summary_large_image');
+
+    // ডোম কন্টেন্ট ইনজেকশন
     const modalTitleElem = document.getElementById('modalTitle');
-    const isSameMovie = modalTitleElem && modalTitleElem.innerText === item.title;
+    const isSameMovie = modalTitleElem && modalTitleElem.innerText === titleKey;
 
     currentItem = item;
-    if(modalTitleElem) modalTitleElem.innerText = item.title;
+    if(modalTitleElem) modalTitleElem.innerText = titleKey;
     
     if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
     if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
 
+    // 🔍 ডাইনামিক ফুটার কিওয়ার্ড ভ্যারিয়েশন জেনারেটর
+    const dynamicFooterKeywords = isSeries ? 
+        `index of /${titleKey} download, ${titleKey} web series all episodes download, ${titleKey} complete season google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english series, ${titleKey} english subtitles esub, katmoviehd ${titleKey} series, vegamovies ${titleKey} season, download web series free movie-dakhi.` :
+        `index of /${titleKey} download, ${titleKey} full movie watch online free hd, download ${titleKey} google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english download, ${titleKey} english subtitles esub, 1080p bluray download filmyzilla, 720p webrip vegamovies, bolly4u full movie download.`;
+
+    // 🛑 UI/UX Optimized Description Section (নিখুঁত প্যাডিং ও ডিভাইডার সহ)
     if(document.getElementById('modalDesc')) {
         document.getElementById('modalDesc').innerHTML = `
-            <span class="font-bold text-gray-300">${item.genre || "Entertainment"}</span>
-            <div class="mt-3 text-[10px] md:text-xs text-gray-500 leading-relaxed font-medium">
-                ▶ Watch <strong class="text-gray-300">${item.title}</strong> full movie online free in HD. You can also download the complete movie / web series in 1080p directly to your device. Enjoy high-quality streaming without buffering on MovieDakhi.
+            <div class="seo-rich-layout text-left space-y-5 font-sans text-xs md:text-[13px] text-gray-300 antialiased not-italic select-text">
+                
+                <!-- 1. Category & Server Status -->
+                <div class="flex flex-wrap items-center gap-3 border-b border-white/5 pb-3">
+                    <span class="px-2 py-0.5 text-[10px] font-black tracking-wider text-white bg-red-600 rounded-sm uppercase inline-block">
+                        ${item.genre || "Drama"}
+                    </span>
+                    <span class="text-[11px] text-gray-500 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span> Ultra Fast Mirror Enabled
+                    </span>
+                </div>
+                
+                <!-- 2. Intro Paragraph -->
+                <p class="leading-relaxed text-gray-400 text-[12px] md:text-[13px] font-normal pt-4 pb-4">
+                    Looking for the secure <strong class="text-white font-semibold">Index of /${SEOFullTitle}</strong> direct servers? MovieDakhi provides optimized, ultra-fast cloud mirrors to stream and download this trending <span class="text-red-400 font-medium">${contentType.toLowerCase()}</span> with zero buffering.
+                </p>
+
+                <!-- 3. Specifications Grid (নিখুঁত py-2.5 প্যাডিং এবং ডিভাইডার সহ) -->
+                <div class="p-3 md:p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
+                    
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">📌 Directory</span>
+                        <span class="font-semibold text-white truncate max-w-[160px] md:max-w-xs" title="Index of /${titleKey}">Index of /${titleKey}</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🎬 Codec</span>
+                        <span class="font-semibold text-white">MKV / MP4 / x265 HEVC</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🌐 Audio Track</span>
+                        <span class="font-bold text-emerald-400">${cleanLang}</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">📅 Year</span>
+                        <span class="font-semibold text-white">${releaseYear}</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06] sm:border-b-0">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🔥 Quality</span>
+                        <span class="font-semibold text-amber-400">480p, 720p, 1080p, 4K UHD</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between py-2.5">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">📝 Subtitles</span>
+                        <span class="font-semibold text-gray-200">English (Softcoded ESub)</span>
+                    </div>
+                    
+                </div>
+
+                <!-- 4. OTT Style Info Box -->
+                <div class="flex items-start gap-3 bg-blue-950/30 border border-blue-500/25 p-4 rounded-lg text-[12px] text-blue-300/90 leading-relaxed mt-4">
+                    <span class="text-base shrink-0 leading-none mt-0.5">📥</span>
+                    <div>
+                        <strong class="text-blue-200 font-semibold block mb-0.5">Direct Cloud Access Confirmed</strong>
+                        Get instant access via high-speed <span class="text-white font-medium">Google Drive & Telegram Links</span>. Optimized perfectly for remote streaming on Mobile, PC, Chromecast, or Android Smart TV setups without annoying ads.
+                    </div>
+                </div>
+
+                <!-- 5. SEO Crawler Footprint (ডাইনামিক কিওয়ার্ড ইনজেকশন) -->
+                <div class="pt-4 border-t border-white/5">
+                    <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-1.5">Metadata Index Reference</span>
+                    <p class="text-[10px] text-gray-700 leading-relaxed text-justify select-none opacity-25 tracking-wide font-normal normal-case">
+                        ${dynamicFooterKeywords}
+                    </p>
+                </div>
+
             </div>
         `;
     }
 
+    // Download Button Control
     downloadClickCount = 0;
     const downloadBtn = document.getElementById('mainDownloadBtn');
     if (downloadBtn) {
@@ -1037,6 +1188,7 @@ function openModal(id) {
         if (wave) wave.classList.remove('hidden');
     }
 
+    // Episode Management
     if (item.episodes && item.episodes.length > 0) {
         if (!isSameMovie) currentEpisodeIndex = 0;
     } else {
@@ -1061,12 +1213,12 @@ function openModal(id) {
         seriesSec.classList.add('hidden'); 
     }
 
+    // Iframe Handler
     let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
     const actualVideoContainer = document.getElementById('actualVideo');
 
     if (actualVideoContainer) {
         actualVideoContainer.classList.remove('hidden');
-
         const existingIframe = document.getElementById('videoIframe');
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
 
@@ -1075,6 +1227,7 @@ function openModal(id) {
         }
     }
 
+    // Modal Activation
     const modal = document.getElementById('movieModal');
     if (modal) {
         modal.classList.remove('hidden');
