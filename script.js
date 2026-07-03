@@ -1008,14 +1008,13 @@ window.addEventListener('focus', () => {
             // আনলক হওয়ার পর ব্যাকগ্রাউন্ড মোডালটি সচল থাকবে, তাই overflow-hidden রিলিজ হবে না
             activePopupType = null;
             pendingModalId = null;
-        } else if (activePopupType === 'feedback') {
+} else if (activePopupType === 'feedback') {
             const feedbackDiv = document.getElementById('feedbackPopup');
             if (feedbackDiv) {
                 feedbackDiv.classList.remove('flex');
                 feedbackDiv.classList.add('hidden');
             }
-            // フィডব্যাক শেষ হওয়ার পর সম্পূর্ণ স্ক্রোল লক রিলিজ হবে
-            document.body.classList.remove('overflow-hidden');
+            // ফিডব্যাক শেষ হওয়ার পর বডি অলরেডি সঠিক জায়গায় আছে, তাই শুধু স্টেট রিলিজ হবে
             activePopupType = null;
         }
     }
@@ -1348,7 +1347,7 @@ function playEpisode(index, btnElement) {
 
 let isModalClosing = false;
 
-// মোডাল ক্লোজ করার সম্পূর্ণ বাগ-ফ্রি মেকানিজম (100% Guaranteed to show Feedback popup)
+// মোডাল ক্লোজ করার নিখুঁত মেকানিজম (মোবাইল স্ক্রোল জাম্প বাগ ১০০% ফিক্সড)
 function closeModal(triggerBack = true, explicitClose = false) {
     const modal = document.getElementById('movieModal');
     if (!modal || modal.classList.contains('hidden')) return;
@@ -1368,25 +1367,24 @@ function closeModal(triggerBack = true, explicitClose = false) {
         actualVideoContainer.innerHTML = ''; 
     }
 
-    // ২. ওল্ড পজিশন ফিক্সড রিমুভ করে উইন্ডোকে নরমাল স্ক্রোলে ফিরিয়ে আনা (হিস্ট্রি ওভাররাইড বাগ ফিক্স)
+    // ২. বডি পজিশন রিলিজ করে ইনস্ট্যান্টলি আগের স্ক্রোল লোকেশনে ফিরিয়ে আনা (মোবাইল জাম্প প্রোটেকশন)
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
     document.body.classList.remove('overflow-hidden');
+    window.scrollTo(0, savedScrollY); // 🎯 এটি পেজকে আগের জায়গায় ধরে রাখবে
 
-    // ৩. নতুন ট্যাবে উইন্ডো ব্যাক হিস্ট্রি প্রসেস করা
+    // ৩. উইন্ডো ব্যাক হিস্ট্রি প্রসেস করা
     if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
     }
 
-    // ৪. মোডাল উইন্ডো ভ্যানিশ হওয়ার সাথে সাথে ফিডব্যাক পোপআপ লোড করা (১০০% কাজ করবে)
+    // ৪. মোডাল উইন্ডো যাওয়ার সাথে সাথে ফিডব্যাক পোপআপ লোড করা
     const feedbackPopup = document.getElementById('feedbackPopup');
     if (feedbackPopup) {
         feedbackPopup.classList.remove('hidden');
         feedbackPopup.classList.add('flex');
-        
-        // ফিডব্যাক পপআপ ওপেন থাকা অবস্থায় নতুন করে স্ক্রোল লক করা
-        document.body.classList.add('overflow-hidden');
+        // নোট: বডিতে নতুন করে overflow-hidden দেওয়া হয়নি, যাতে মোবাইল ব্রাউজার স্ন্যাপিং এরর না করে।
     }
 }
 
