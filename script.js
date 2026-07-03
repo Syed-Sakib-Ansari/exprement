@@ -980,16 +980,72 @@ function updateLoadMoreVisibility() {
 }
 
 // ==========================================
-// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC
+// 🚀 DYNAMIC AD INTERSTITIAL STATE ENGINE & LOGIC
+// ==========================================
+let pendingModalId = null;
+let activePopupType = null;
+let isAdTabOpened = false;
+const adTargetUrl = "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263";
+
+// পপআপ অ্যাকশন ও উইন্ডো রাউটিং হ্যান্ডলার
+function handlePopupAction(type) {
+    activePopupType = type;
+    isAdTabOpened = true;
+    window.open(adTargetUrl, '_blank');
+}
+
+// ইউজার যখন অ্যাড দেখে আবার সাইটে ব্যাক করবে (Focus Return Listener)
+window.addEventListener('focus', () => {
+    if (isAdTabOpened && activePopupType) {
+        isAdTabOpened = false;
+        
+        if (activePopupType === 'unlock') {
+            const unlockDiv = document.getElementById('unlockPopup');
+            if (unlockDiv) {
+                unlockDiv.classList.remove('flex');
+                unlockDiv.classList.add('hidden');
+            }
+            // আনলক হওয়ার পর ব্যাকগ্রাউন্ড মোডালটি সচল থাকবে, তাই overflow-hidden রিলিজ হবে না
+            activePopupType = null;
+            pendingModalId = null;
+        } else if (activePopupType === 'feedback') {
+            const feedbackDiv = document.getElementById('feedbackPopup');
+            if (feedbackDiv) {
+                feedbackDiv.classList.remove('flex');
+                feedbackDiv.classList.add('hidden');
+            }
+            // フィডব্যাক শেষ হওয়ার পর সম্পূর্ণ স্ক্রোল লক রিলিজ হবে
+            document.body.classList.remove('overflow-hidden');
+            activePopupType = null;
+        }
+    }
+});
+
+// ==========================================
+// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC (BUG FIXED)
 // ==========================================
 function openModal(id) {
-    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
     savedScrollY = window.scrollY;
+
+    // ১. প্রথমে মোডাল বক্সের সব ডেটা ব্যাকগ্রাউন্ডে নিখুঁতভাবে রেন্ডার করবে
+    executeActualOpenModal(id);
+
+    // ২. মোডাল শো হওয়ার সাথে সাথেই তার ওপরে ইনস্ট্যান্ট প্রিমিয়াম আনলক বক্সটি ভাসিয়ে দেবে
+    const popup = document.getElementById('unlockPopup');
+    if (popup) {
+        popup.classList.remove('hidden');
+        popup.classList.add('flex');
+        document.body.classList.add('overflow-hidden'); // আধুনিক স্ক্রোল লক মেকানিজম
+    }
+}
+
+// মোডাল ইন্টারফেস জেনারেটর (আপনার কোর এসইও এবং ডিভি স্ট্রাকচার অপরিবর্তিত রাখা হয়েছে)
+function executeActualOpenModal(id) {
+    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
 
     const item = contentData.find(m => m.id === id);
     if (!item) return;
 
-    // ১. URL এবং হিস্ট্রি এসইও আপডেট
     const movieSlug = item.slug || generateMovieSlug(item.title);
     const newUrl = new URL(window.location.origin + '/' + movieSlug + '.html');
     
@@ -997,27 +1053,20 @@ function openModal(id) {
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
     try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl); } catch (e) { }
 
-    // 🚀 ULTIMATE GLOBAL HYBRID SEO GENERATOR
     const isSeries = item.episodes && item.episodes.length > 0;
     const contentType = isSeries ? "Web Series All Episodes" : "Full Movie";
     const titleKey = item.title;
     
-    // 🔍 স্মার্ট ইয়ার এক্সট্রাকশন (Regex)
     const yearMatch = titleKey.match(/\((\d{4})\)/);
     const extractedYear = yearMatch ? yearMatch[1] : new Date().getFullYear();
     const releaseYear = item.year || extractedYear;
 
-    // 🎴 ডাইনামিক টাইটেল ডুপ্লিকেশন ফিক্স
     const titleHasYear = titleKey.includes(`(${releaseYear})`);
     const SEOFullTitle = titleHasYear ? titleKey : `${titleKey} (${releaseYear})`;
-
-    // গ্লোবাল ও রিজিওনাল ল্যাঙ্গুয়েজ মিক্সচার
     const cleanLang = item.language || "Dual Audio [Hindi-English] / ESub"; 
 
-    // 🔥 আল্ট্রা-এসইও ফ্রেন্ডলি টাইটেল (Movie Name First + Extreme SEO Combo)
     document.title = `${SEOFullTitle} [${cleanLang}] | Index of / Download 4K 1080p, Watch Online Free ${contentType} - MovieDakhi`;
     
-    // 🔥 ২. মেটা ডেসক্রিপশন অপ্টিমাইজেশন
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
         metaDescription = document.createElement('meta');
@@ -1026,7 +1075,6 @@ function openModal(id) {
     }
     metaDescription.content = `Index of /${SEOFullTitle} ${contentType} direct download link. Stream ${titleKey} online free in 4K Ultra HD / 1080p BluRay. High-speed Google Drive & Telegram links for ${cleanLang} with English Subtitles (ESub) HEVC x265 on MovieDakhi.`;
 
-    // 🔗 ৩. ডাইনামিক ক্যানোনিকাল ট্যাগ ফিক্স (CRITICAL FOR SEO INDEXING)
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
         canonicalLink = document.createElement('link');
@@ -1035,7 +1083,6 @@ function openModal(id) {
     }
     canonicalLink.href = newUrl.href;
 
-    // 🛠️ ৪. ডাইনামিক JSON-LD স্কিমা মার্কআপ (গুগল রিচ স্নিপেটস)
     let schemaScript = document.getElementById('seoSchemaDynamic');
     if (!schemaScript) {
         schemaScript = document.createElement('script');
@@ -1071,22 +1118,18 @@ function openModal(id) {
     };
     schemaScript.textContent = JSON.stringify(schemaData);
 
-    // ৫. সোশ্যাল মিডিয়া মেটা ট্যাগ অপ্টিমাইজেশন (Facebook Open Graph & Twitter Cards)
     const setMetaTag = (attrName, attrValue, content) => {
         let el = document.querySelector(`meta[${attrName}="${attrValue}"]`);
         if (!el) { el = document.createElement('meta'); el.setAttribute(attrName, attrValue); document.head.appendChild(el); }
         el.setAttribute('content', content);
     };
-    // Facebook
     setMetaTag('property', 'og:title', document.title);
     setMetaTag('property', 'og:description', metaDescription.content);
     setMetaTag('property', 'og:url', newUrl.href);
-    // Twitter / X
     setMetaTag('name', 'twitter:title', document.title);
     setMetaTag('name', 'twitter:description', metaDescription.content);
     setMetaTag('name', 'twitter:card', 'summary_large_image');
 
-    // ডোম কন্টেন্ট ইনজেকশন
     const modalTitleElem = document.getElementById('modalTitle');
     const isSameMovie = modalTitleElem && modalTitleElem.innerText === titleKey;
 
@@ -1096,17 +1139,13 @@ function openModal(id) {
     if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
     if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
 
-    // 🔍 ডাইনামিক ফুটার কিওয়ার্ড ভ্যারিয়েশন জেনারেটর
     const dynamicFooterKeywords = isSeries ? 
         `index of /${titleKey} download, ${titleKey} web series all episodes download, ${titleKey} complete season google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english series, ${titleKey} english subtitles esub, katmoviehd ${titleKey} series, vegamovies ${titleKey} season, download web series free movie-dakhi.` :
         `index of /${titleKey} download, ${titleKey} full movie watch online free hd, download ${titleKey} google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english download, ${titleKey} english subtitles esub, 1080p bluray download filmyzilla, 720p webrip vegamovies, bolly4u full movie download.`;
 
-    // 🛑 UI/UX Optimized Description Section (নিখুঁত প্যাডিং ও ডিভাইডার সহ)
     if(document.getElementById('modalDesc')) {
         document.getElementById('modalDesc').innerHTML = `
             <div class="seo-rich-layout text-left space-y-5 font-sans text-xs md:text-[13px] text-gray-300 antialiased not-italic select-text">
-                
-                <!-- 1. Category & Server Status -->
                 <div class="flex flex-wrap items-center gap-3 border-b border-white/5 pb-3">
                     <span class="px-2 py-0.5 text-[10px] font-black tracking-wider text-white bg-red-600 rounded-sm uppercase inline-block">
                         ${item.genre || "Drama"}
@@ -1115,48 +1154,35 @@ function openModal(id) {
                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span> Ultra Fast Mirror Enabled
                     </span>
                 </div>
-                
-                <!-- 2. Intro Paragraph -->
                 <p class="leading-relaxed text-gray-400 text-[12px] md:text-[13px] font-normal pt-4 pb-4">
                     Looking for the secure <strong class="text-white font-semibold">Index of /${SEOFullTitle}</strong> direct servers? MovieDakhi provides optimized, ultra-fast cloud mirrors to stream and download this trending <span class="text-red-400 font-medium">${contentType.toLowerCase()}</span> with zero buffering.
                 </p>
-
-                <!-- 3. Specifications Grid (নিখুঁত py-2.5 প্যাডিং এবং ডিভাইডার সহ) -->
                 <div class="p-3 md:p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
-                    
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
                         <span class="text-gray-400 font-medium flex items-center gap-2">📌 Directory</span>
                         <span class="font-semibold text-white truncate max-w-[160px] md:max-w-xs" title="Index of /${titleKey}">Index of /${titleKey}</span>
                     </div>
-                    
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
                         <span class="text-gray-400 font-medium flex items-center gap-2">🎬 Codec</span>
                         <span class="font-semibold text-white">MKV / MP4 / x265 HEVC</span>
                     </div>
-                    
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
                         <span class="text-gray-400 font-medium flex items-center gap-2">🌐 Audio Track</span>
                         <span class="font-bold text-emerald-400">${cleanLang}</span>
                     </div>
-                    
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
                         <span class="text-gray-400 font-medium flex items-center gap-2">📅 Year</span>
                         <span class="font-semibold text-white">${releaseYear}</span>
                     </div>
-                    
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06] sm:border-b-0">
                         <span class="text-gray-400 font-medium flex items-center gap-2">🔥 Quality</span>
                         <span class="font-semibold text-amber-400">480p, 720p, 1080p, 4K UHD</span>
                     </div>
-                    
                     <div class="flex items-center justify-between py-2.5">
                         <span class="text-gray-400 font-medium flex items-center gap-2">📝 Subtitles</span>
                         <span class="font-semibold text-gray-200">English (Softcoded ESub)</span>
                     </div>
-                    
                 </div>
-
-                <!-- 4. OTT Style Info Box -->
                 <div class="flex items-start gap-3 bg-blue-950/30 border border-blue-500/25 p-4 rounded-lg text-[12px] text-blue-300/90 leading-relaxed mt-4">
                     <span class="text-base shrink-0 leading-none mt-0.5">📥</span>
                     <div>
@@ -1164,20 +1190,16 @@ function openModal(id) {
                         Get instant access via high-speed <span class="text-white font-medium">Google Drive & Telegram Links</span>. Optimized perfectly for remote streaming on Mobile, PC, Chromecast, or Android Smart TV setups without annoying ads.
                     </div>
                 </div>
-
-                <!-- 5. SEO Crawler Footprint (ডাইনামিক কিওয়ার্ড ইনজেকশন) -->
                 <div class="pt-4 border-t border-white/5">
                     <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-1.5">Metadata Index Reference</span>
                     <p class="text-[10px] text-gray-700 leading-relaxed text-justify select-none opacity-25 tracking-wide font-normal normal-case">
                         ${dynamicFooterKeywords}
                     </p>
                 </div>
-
             </div>
         `;
     }
 
-    // Download Button Control
     downloadClickCount = 0;
     const downloadBtn = document.getElementById('mainDownloadBtn');
     if (downloadBtn) {
@@ -1188,7 +1210,6 @@ function openModal(id) {
         if (wave) wave.classList.remove('hidden');
     }
 
-    // Episode Management
     if (item.episodes && item.episodes.length > 0) {
         if (!isSameMovie) currentEpisodeIndex = 0;
     } else {
@@ -1213,7 +1234,6 @@ function openModal(id) {
         seriesSec.classList.add('hidden'); 
     }
 
-    // Iframe Handler
     let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
     const actualVideoContainer = document.getElementById('actualVideo');
 
@@ -1227,7 +1247,6 @@ function openModal(id) {
         }
     }
 
-    // Modal Activation
     const modal = document.getElementById('movieModal');
     if (modal) {
         modal.classList.remove('hidden');
@@ -1329,6 +1348,7 @@ function playEpisode(index, btnElement) {
 
 let isModalClosing = false;
 
+// মোডাল ক্লোজ করার সম্পূর্ণ বাগ-ফ্রি মেকানিজম (100% Guaranteed to show Feedback popup)
 function closeModal(triggerBack = true, explicitClose = false) {
     const modal = document.getElementById('movieModal');
     if (!modal || modal.classList.contains('hidden')) return;
@@ -1336,35 +1356,37 @@ function closeModal(triggerBack = true, explicitClose = false) {
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
 
     isModalClosing = true;
-
     document.title = "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD";
 
-    if (!triggerBack) {
-        modal.classList.add('hidden');
-        modal.classList.remove('active');
-        isModalClosing = false;
-    } else {
-        modal.classList.remove('active');
-        setTimeout(() => {
-            modal.classList.add('hidden');
-            isModalClosing = false;
-        }, 300);
+    // ১. মোডাল উইন্ডো হাইড করা
+    modal.classList.remove('active');
+    modal.classList.add('hidden');
+    isModalClosing = false;
+
+    const actualVideoContainer = document.getElementById('actualVideo');
+    if (actualVideoContainer) {
+        actualVideoContainer.innerHTML = ''; 
     }
 
-    setTimeout(() => {
-        const actualVideoContainer = document.getElementById('actualVideo');
-        if (actualVideoContainer) {
-            actualVideoContainer.innerHTML = ''; 
-        }
-    }, 300);
-
+    // ২. ওল্ড পজিশন ফিক্সড রিমুভ করে উইন্ডোকে নরমাল স্ক্রোলে ফিরিয়ে আনা (হিস্ট্রি ওভাররাইড বাগ ফিক্স)
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
-    window.scrollTo(0, savedScrollY);
+    document.body.classList.remove('overflow-hidden');
 
+    // ৩. নতুন ট্যাবে উইন্ডো ব্যাক হিস্ট্রি প্রসেস করা
     if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
+    }
+
+    // ৪. মোডাল উইন্ডো ভ্যানিশ হওয়ার সাথে সাথে ফিডব্যাক পোপআপ লোড করা (১০০% কাজ করবে)
+    const feedbackPopup = document.getElementById('feedbackPopup');
+    if (feedbackPopup) {
+        feedbackPopup.classList.remove('hidden');
+        feedbackPopup.classList.add('flex');
+        
+        // ফিডব্যাক পপআপ ওপেন থাকা অবস্থায় নতুন করে স্ক্রোল লক করা
+        document.body.classList.add('overflow-hidden');
     }
 }
 
@@ -1667,7 +1689,6 @@ window.addEventListener('popstate', (event) => {
         handledOverlayClose = true;
     }
 
-    // 🔥 FIXED: 'handledOverlayCheck' renamed to 'handledOverlayClose' to fix ReferenceError
     if (handledOverlayClose) {
         return;
     }
