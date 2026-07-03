@@ -987,37 +987,41 @@ let activePopupType = null;
 let isAdTabOpened = false;
 const adTargetUrl = "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263";
 
-// পপআপ অ্যাকশন ও উইন্ডো রাউটিং হ্যান্ডলার
+// পপআপ অ্যাকশন ও উইন্ডো রাউটিং হ্যান্ডলার (ইনস্ট্যান্ট ক্লোজ মেকানিজম যুক্ত করা হয়েছে)
 function handlePopupAction(type) {
-    activePopupType = type;
-    isAdTabOpened = true;
+    // ১. নতুন ট্যাবে ইনস্ট্যান্টলি অ্যাড লিংকটি ওপেন হবে
     window.open(adTargetUrl, '_blank');
+
+    // ২. একই সাথে (Instant) মেইন পেজের পপআপ বক্সটি সম্পূর্ণ বন্ধ হয়ে যাবে
+    if (type === 'unlock') {
+        const unlockDiv = document.getElementById('unlockPopup');
+        if (unlockDiv) {
+            unlockDiv.classList.remove('flex');
+            unlockDiv.classList.add('hidden');
+        }
+    } else if (type === 'feedback') {
+        const feedbackDiv = document.getElementById('feedbackPopup');
+        if (feedbackDiv) {
+            feedbackDiv.classList.remove('flex');
+            feedbackDiv.classList.add('hidden');
+        }
+        // বডি স্ক্রোল ও ফিক্সড স্টেট নরমাল ট্র্যাকে ফিরিয়ে আনা (স্ক্রোল জাম্প প্রোটেকশন)
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.classList.remove('overflow-hidden');
+        window.scrollTo(0, savedScrollY);
+    }
+
+    // স্টেট ক্লিয়ার্যান্স (যাতে ব্রাউজার মেমোরিতে কোনো কনফ্লিক্ট না হয়)
+    activePopupType = null;
+    isAdTabOpened = false;
 }
 
-// ইউজার যখন অ্যাড দেখে আবার সাইটে ব্যাক করবে (Focus Return Listener)
+// উইন্ডো ফোকাস লিসেনার এখন শুধু ব্যাকগ্রাউন্ড সেফটি রিসেট হিসেবে কাজ করবে
 window.addEventListener('focus', () => {
-    if (isAdTabOpened && activePopupType) {
-        isAdTabOpened = false;
-        
-        if (activePopupType === 'unlock') {
-            const unlockDiv = document.getElementById('unlockPopup');
-            if (unlockDiv) {
-                unlockDiv.classList.remove('flex');
-                unlockDiv.classList.add('hidden');
-            }
-            // আনলক হওয়ার পর ব্যাকগ্রাউন্ড মোডালটি সচল থাকবে, তাই overflow-hidden রিলিজ হবে না
-            activePopupType = null;
-            pendingModalId = null;
-} else if (activePopupType === 'feedback') {
-            const feedbackDiv = document.getElementById('feedbackPopup');
-            if (feedbackDiv) {
-                feedbackDiv.classList.remove('flex');
-                feedbackDiv.classList.add('hidden');
-            }
-            // ফিডব্যাক শেষ হওয়ার পর বডি অলরেডি সঠিক জায়গায় আছে, তাই শুধু স্টেট রিলিজ হবে
-            activePopupType = null;
-        }
-    }
+    isAdTabOpened = false;
+    activePopupType = null;
 });
 
 // ==========================================
