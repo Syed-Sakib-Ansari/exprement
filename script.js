@@ -642,7 +642,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 
     if (viewName === 'home') {
         homeView.classList.add('active');
-        document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
+        document.title = "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD";
     } else {
         libraryView.classList.add('active');
         if (filterCategory) {
@@ -1337,7 +1337,7 @@ function closeModal(triggerBack = true, explicitClose = false) {
 
     isModalClosing = true;
 
-    document.title = "MovieDakhi | Watch Free Movies & Web Series Online";
+    document.title = "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD";
 
     if (!triggerBack) {
         modal.classList.add('hidden');
