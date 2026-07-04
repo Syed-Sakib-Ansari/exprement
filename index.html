@@ -234,7 +234,7 @@
     <script src="script.js" defer></script>
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
             m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
             m[i].l=1*new Date();
@@ -244,7 +244,7 @@
 
         ym(109630357, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/109630357" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/109630357" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
     <!-- /Yandex.Metrika counter -->
 
     <script type="text/javascript">
@@ -275,25 +275,28 @@
     <!-- 🚀 ULTRA-PREMIUM AD INTERSTITIAL POPUPS    -->
     <!-- ========================================== -->
     <!-- ১. আনলক ভিডিও পপআপ (Sitting perfectly over the background modal) -->
-<!-- ১. আনলক ভিডিও পপআপ (ফুল পেজ ব্লার কমানো হয়েছে এবং মেইন বক্সে ব্লার বাড়ানো হয়েছে) -->
-<div id="unlockPopup" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/30 backdrop-blur-sm transition-all duration-300">
-    <div class="relative w-[92%] max-w-[360px] rounded-2xl border border-white/10 bg-[#121214]/80 backdrop-blur-2xl p-7 text-center shadow-[0_30px_70px_rgba(0,0,0,0.9)] not-italic font-sans antialiased">
-            <!-- টপ রাইট ক্লোজ ক্রস আইকন -->
-            <button onclick="handlePopupAction('unlock')" class="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors duration-200 p-1" aria-label="Close">
-                <i class="fas fa-times text-sm"></i>
-            </button>
+    <div id="unlockPopup" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/60 backdrop-blur-sm transition-all duration-300">
+        <div class="relative w-[304px] h-[78px] rounded bg-[#f9f9f9] border border-[#d3d3d3] shadow-[0_2px_4px_rgba(0,0,0,0.08)] flex items-center justify-between px-3 select-none font-sans antialiased not-italic">
             
-            <!-- ওটিটি লক আইকন -->
-            <div class="w-12 h-12 bg-red-500/10 border border-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4 text-red-500 animate-pulse">
-                <i class="fas fa-lock text-base"></i>
+            <!-- বাম অংশ: চেকবক্স এবং টেক্সট লেবেল (ক্লিক করলেই অ্যাড ট্রিগার হবে) -->
+            <div onclick="handlePopupAction('unlock')" class="flex items-center gap-3 cursor-pointer flex-1 h-full py-2">
+                <!-- রিক্যাপচা স্টাইল কাস্টম চেকবক্স -->
+                <div class="w-6 h-6 bg-white border-2 border-[#c1c1c1] rounded hover:border-[#b2b2b2] transition-colors flex items-center justify-center shrink-0 shadow-inner">
+                    <!-- বক্সে হোভার বা ক্লিকের জন্য খালি রাখা হয়েছে যেন আসল মনে হয় -->
+                </div>
+                <!-- নিখুঁত গুগল ফন্ট সাইজ ও কালার টেক্সট -->
+                <span class="text-[14px] font-normal text-[#222] tracking-normal select-none">I'm not a robot</span>
             </div>
             
-            <h3 class="text-base font-black text-white uppercase tracking-wider mb-2">Streaming Link Locked</h3>
-            <p class="text-[11px] md:text-xs text-gray-400 mb-6 leading-relaxed px-2">To unlock and bypass secure cloud path servers, please complete the instant network verification link below.</p>
-            
-            <button onclick="handlePopupAction('unlock')" class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-widest transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-red-600/20 flex items-center justify-center gap-2">
-                <span>🗝 Unlock the Video (Click Here)</span>
-            </button>
+            <!-- ডান অংশ: রিক্যাপচা ব্র্যান্ডিং এবং স্পিনিং সাইকেল গ্রাফিক -->
+            <div class="flex flex-col items-center justify-center shrink-0 pr-1 select-none pointer-events-none w-14">
+                <div class="relative w-8 h-8 flex items-center justify-center">
+                    <!-- image_59fafe.png এর মতো ব্লু-গ্রে সাইকেল লুপ আইকন -->
+                    <i class="fas fa-sync text-blue-500 text-lg opacity-95"></i>
+                </div>
+                <span class="text-[8px] text-gray-400 mt-0.5 tracking-tighter scale-90">privacy • terms</span>
+            </div>
+
         </div>
     </div>
 
@@ -311,15 +314,15 @@
                 <i class="fas fa-thumbs-up text-base"></i>
             </div>
             
-            <h3 class="text-base font-black text-white uppercase tracking-wider mb-2">Stream Finished</h3>
+            <h3 class="text-base font-black text-white uppercase tracking-wider mb-2">How Was The Movie ?</h3>
             <p class="text-[11px] md:text-xs text-gray-400 mb-6 leading-relaxed px-1">Thank you for watching on MovieDakhi. Did you enjoy the video quality and server streaming speed?</p>
             
             <div class="grid grid-cols-2 gap-3">
                 <button onclick="handlePopupAction('feedback')" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-widest transition-all duration-200 shadow-md active:scale-[0.95]">
-                    👍 Yes, Liked It
+                    👍 Yes, Good
                 </button>
                 <button onclick="handlePopupAction('feedback')" class="bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 font-bold py-3 rounded-xl text-xs uppercase tracking-widest transition-all duration-200 active:scale-[0.95]">
-                    👎 No
+                    👎 No, Bad
                 </button>
             </div>
         </div>
