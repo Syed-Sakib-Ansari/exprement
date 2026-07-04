@@ -999,7 +999,7 @@ function handlePopupAction(type) {
             unlockDiv.classList.remove('flex');
             unlockDiv.classList.add('hidden');
         }
-    } else if (type === 'feedback') {
+        } else if (type === 'feedback') {
         const feedbackDiv = document.getElementById('feedbackPopup');
         if (feedbackDiv) {
             feedbackDiv.classList.remove('flex');
@@ -1011,6 +1011,12 @@ function handlePopupAction(type) {
         document.body.style.width = '';
         document.body.classList.remove('overflow-hidden');
         window.scrollTo(0, savedScrollY);
+
+        // 🚀 ফিডব্যাক বক্স বন্ধ হওয়ার সাথে সাথে ডাইনামিক্যালি স্ক্রিপ্ট অ্যাড রান করানো হবে
+        const feedbackAdScript = document.createElement('script');
+        feedbackAdScript.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
+        feedbackAdScript.async = true;
+        document.body.appendChild(feedbackAdScript);
     }
 
     // স্টেট ক্লিয়ার্যান্স (যাতে ব্রাউজার মেমোরিতে কোনো কনফ্লিক্ট না হয়)
