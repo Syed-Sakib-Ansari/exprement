@@ -1494,6 +1494,7 @@ window.addEventListener('click', (e) => {
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
 
+// আপনার script.js ফাইলের একদম শেষ মাথাটি ঠিক এভাবে ক্লিন রাখুন
 function showToast(message) {
     const toast = document.getElementById('toastMessage');
     const toastText = document.getElementById('toastText');
