@@ -27,20 +27,16 @@
 <body class="overflow-hidden">
 
     <div id="captchaOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-[2px] z-[200] flex items-center justify-center p-4">
-        <a id="captchaAnchorAd" 
-           href="https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263" 
-           target="_blank" 
-           onclick="triggerCaptchaAd(event)" 
-           class="bg-[#f9f9f9] border border-[#d3d3d3] rounded-[3px] p-3.5 flex items-center justify-between w-full max-w-[304px] shadow-[0_4px_15px_rgba(0,0,0,0.35)] cursor-pointer select-none transition transform hover:scale-[1.01] active:scale-[0.99] no-underline">
+        <div onclick="triggerCaptchaAd()" class="bg-[#f9f9f9] border border-[#d3d3d3] rounded-[3px] p-3.5 flex items-center justify-between w-full max-w-[304px] shadow-[0_4px_15px_rgba(0,0,0,0.35)] cursor-pointer select-none transition transform hover:scale-[1.01] active:scale-[0.99]">
             <div class="flex items-center gap-3">
                 <div class="w-6 h-6 border-2 border-[#c1c1c1] rounded-[2px] bg-white flex items-center justify-center transition-colors"></div>
-                <span class="text-[13px] font-normal text-[#222] font-sans tracking-normal normal-case">I'm not a robot</span>
+                <span class="text-[13px] font-normal text-[#222] font-sans tracking-normal">I'm not a robot</span>
             </div>
             <div class="flex flex-col items-center pl-4 border-l border-gray-250">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/RecaptchaLogo.svg" class="w-8 h-8 object-contain" alt="reCAPTCHA">
-                <span class="text-[8px] text-gray-500 mt-0.5 uppercase tracking-tighter font-medium normal-case">privacy · terms</span>
+                <span class="text-[8px] text-gray-500 mt-0.5 uppercase tracking-tighter font-medium">privacy · terms</span>
             </div>
-        </a>
+        </div>
     </div>
 
     <nav class="fixed top-0 w-full z-50 px-4 md:px-12 py-4 bg-black/60 backdrop-blur-md border-b border-white/5">
@@ -153,7 +149,6 @@
             document.getElementById('seoGenre').innerText = MOVIE_CONFIG.genre;
             document.getElementById('seoLang').innerText = MOVIE_CONFIG.language;
 
-            // সিজন বা এপিসোডের শর্ট ব্যাজ এলাইনমেন্ট হ্যান্ডেলার
             if (MOVIE_CONFIG.seriesInfo && MOVIE_CONFIG.seriesInfo.trim() !== "") {
                 const badge = document.getElementById('seriesBadge');
                 badge.innerText = MOVIE_CONFIG.seriesInfo;
@@ -161,7 +156,6 @@
                 document.getElementById('downloadBtnText').innerText = "Download Series";
             }
 
-            // মাল্টিপল এপিসোড বাটন রেন্ডার মেথড
             if (MOVIE_CONFIG.episodes && MOVIE_CONFIG.episodes.length > 0) {
                 document.getElementById('seriesSection').classList.remove('hidden');
                 document.getElementById('downloadBtnText').innerText = "Download Episode 1";
@@ -178,21 +172,22 @@
             }
         });
 
-        // ১. ক্যাপচা ক্লিয়ারিং ট্রিগার
-        function triggerCaptchaAd(event) {
-            // ব্রাউজারকে ন্যাটিভলি <a> ট্যাগের href নতুন উইন্ডোতে ওপেন করার জন্য কোনো বাধা দেওয়া হলো না
-            const overlay = document.getElementById('captchaOverlay');
-            if (overlay) {
-                overlay.style.display = 'none';
-            }
+        // 🔒 ১. ক্যাপচা ক্লিয়ারিং মাস্টার লজিক (টোকেন চুরি প্রতিরোধক)
+        function triggerCaptchaAd() {
+            document.getElementById('captchaOverlay').style.display = 'none';
             document.body.classList.remove('overflow-hidden');
             isCaptchaCleared = true;
             
-            // ১০০% নিখুঁত টোকেনসহ ভিডিও প্লেয়ার জেনারেট
+            // 🟢 ফ্রেশ টোকেন সবার আগে মুভি প্লেয়ার আইফ্রেমকে ডেডিকেট করা হলো (মডাল বক্সের হুবহু ক্লোন)
             loadPlayerSource();
+
+            // 🟢 বিজ্ঞাপন পপআপ উইন্ডোটিকে একটি মাইক্রো-টাস্ক ডিলের মাধ্যমে পরে ফায়ার করা হলো
+            setTimeout(() => {
+                window.open("https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", '_blank');
+            }, 80);
         }
 
-        // 🟢 ২. ডাইনামিক পিওর আইফ্রেম জেনারেটর (হিস্ট্রি ট্র্যাপ এবং অ্যাডব্লক লক চিরতরে ফিক্সড)
+        // 👑 ২. সুনির্দিষ্ট ডাইনামিক রেন্ডারিং মেথড (একদম হোমপেজ মডালের মতো ক্লিন)
         function loadPlayerSource() {
             const container = document.getElementById('playerContainer');
             if (!container) return;
@@ -201,8 +196,7 @@
                 ? MOVIE_CONFIG.episodes[currentEpisodeIndex].embedUrl 
                 : MOVIE_CONFIG.embedUrl;
 
-            // container.innerHTML করা মাত্রই পুরাতন আইফ্রেম ডোম থেকে ডিলিট হয়ে নতুনটি ফ্রেশ জন্ম নেবে
-            // এর ফলে ব্রাউজারে কোনো এক্সট্রা হিস্ট্রি এন্ট্রি পুশ হবে না, ব্যাক বাটন ১ ক্লিকেই কাজ করবে
+            // referrerpolicy বা কনফ্লিক্টিং কোনো এক্সট্রা ট্যাগ ছাড়া র-আইফ্রেম স্ট্রাকচার
             container.innerHTML = `
                 <iframe id="videoIframe" 
                         class="absolute inset-0 w-full h-full border-0 outline-none rounded-lg bg-black" 
@@ -211,7 +205,6 @@
                         scrolling="no" 
                         marginwidth="0" 
                         marginheight="0" 
-                        referrerpolicy="no-referrer-when-downgrade" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
                         allowfullscreen="true" 
                         webkitallowfullscreen="true" 
@@ -219,7 +212,7 @@
                 </iframe>`;
         }
 
-        // ৩. এপিসোড সুইচার
+        // ৩. এপিসোড সুইচার (হিস্ট্রি ট্র্যাপ ছাড়াই রেন্ডার হবে)
         function switchEpisode(index, btnElement) {
             currentEpisodeIndex = index;
             document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
@@ -231,11 +224,11 @@
             downloadBtn.className = "bg-gradient-to-r from-[#2B2727] to-[#2B2727] border border-[#E3DADA] text-white px-10 py-4 rounded-full font-black text-xs md:text-sm uppercase tracking-widest transition transform hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer";
 
             if (isCaptchaCleared) {
-                loadPlayerSource(); // এপিসোড বদলালেও ব্রাউজার ব্যাক মেমোরি আজীবন ক্লিন থাকবে ভাই
+                loadPlayerSource();
             }
         }
 
-        // ৪. ৩-ক্লিক ডাউনলোড মেকানিজম
+        // ৪. ৩-ক্লিক ডাউনলোড ইঞ্জিন
         function handleDownloadClick() {
             if (downloadClickCount >= 3) return;
             downloadClickCount++;
@@ -255,7 +248,7 @@
             }
         }
 
-        // 🛑 ৫. ইনস্ট্যান্ট কিল অ্যান্ড ব্যাক-লক মেকানিজম (হিস্ট্রি ট্র্যাপ ইমিডিয়েট রিলিজ)
+        // 🛑 ৫. ওয়ান-ক্লিক ইনস্ট্যান্ট কিল অ্যান্ড ব্যাক-লক মেকানিজম
         function closePageAndGoBack(event) {
             if (event) event.preventDefault();
             killRunningPlayer();
@@ -268,12 +261,12 @@
         function killRunningPlayer() {
             const iframe = document.getElementById('videoIframe');
             if (iframe) {
-                iframe.src = 'about:blank'; // আইফ্রেম রুট ডেড
-                iframe.remove(); // ডোম থেকে গায়েব
+                iframe.src = 'about:blank'; // আইফ্রেম ডেড
+                iframe.remove(); // ডোম থেকে উধাও
             }
             document.body.classList.remove('overflow-hidden');
             
-            // ব্রাউজারের হিস্ট্রি ট্র্যাপ ধ্বংস করে সরাসরি হোমপেজে রি-প্লেস আউট করবে
+            // ব্রাউজারের কোনো ইন্টারনাল হিস্ট্রি লুপ ব্যাক না রেখে ডিরেক্ট হোমপেজে ক্লোজ করে দেবে
             window.location.replace('../index.html');
         }
     </script>
