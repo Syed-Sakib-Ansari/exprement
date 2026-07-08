@@ -165,7 +165,7 @@
             }
         });
 
-        // 🔒 ১. আপনার সফল script.js-এর ওয়ান-ক্লিক জেসচার মেকানিজম
+        // 🔒 ১. ওয়ান-ক্লিক জেসচার মেকানিজম (ফেসবুক ব্রাউজার লকআউট ১০০% বাইপাস)
         function initDirectPlayerGesture() {
             if (isPlayerLoaded) return;
             
@@ -174,16 +174,14 @@
             container.classList.remove('cursor-pointer');
             isPlayerLoaded = true;
 
-            // 🟢 আপনার স্ক্রিপ্ট ফাইলের হুবহু সফল ও ক্লিন র-আইফ্রেম স্ট্রাকচার ইনজেকশন
-            loadPlayerSource();
+            // 🟢 ফিক্স: কোনো টাইম ডিলে ছাড়া ক্লিকের ১ম মিলিসেকেন্ডেই আগে বিজ্ঞাপনটি ন্যাটিভলি ফায়ার হবে
+            window.open(MOVIE_CONFIG.downloadUrl1, '_blank');
 
-            // 🟢 পপআপটি ব্রাউজার সিকিউরিটি ট্র্যাপ এড়াতে সামান্য (৮০ms) ডিলের পর ফায়ার হবে
-            setTimeout(() => {
-                window.open(MOVIE_CONFIG.downloadUrl1, '_blank');
-            }, 80);
+            // 🟢 ফিক্স: টোকেন কনজাম্পশন বাঁচাতে বিজ্ঞাপন ফায়ারিংয়ের ঠিক পরের লাইনেই আইফ্রেম লোড হবে
+            loadPlayerSource();
         }
 
-        // 👑 ২. ডাইনামিক রেন্ডারিং ইঞ্জিন (হুবহু হোমপেজ মডাল কোডের ক্লোন)
+        // 👑 ২. সুনির্দিষ্ট ডাইনামিক রেন্ডারিং মেথড (হুবহু হোমপেজের সফল ইনজেকশন মেথড)
         function loadPlayerSource() {
             const container = document.getElementById('playerContainer');
             if (!container) return;
@@ -192,11 +190,11 @@
                 ? MOVIE_CONFIG.episodes[currentEpisodeIndex].embedUrl 
                 : MOVIE_CONFIG.embedUrl;
 
-            // আপনার script.js-এর হুবহু ১-টু-১ আইফ্রেম কোড
+            // আপনার প্রোভাইড করা ওয়ান-পেজ সিস্টেমের হুবহু এরর-ফ্রি আইফ্রেম কোড ক্লোন
             container.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${targetUrl}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
 
-        // ৩. এপিসোড সুইচার
+        // ৩. এপিসোর্ড সুইচার
         function switchEpisode(index, btnElement) {
             currentEpisodeIndex = index;
             document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
@@ -248,7 +246,8 @@
                 iframe.src = 'about:blank'; // আইফ্রেম ডেড
                 iframe.remove(); // ডোম থেকে উধাও
             }
-            window.location.replace('../index.html'); // হিস্ট্রি লুপ ক্র্যাশ করে ডিরেক্ট হোমপেজে ক্লোজ করে দেবে
+            // ব্রাউজারের কোনো ইন্টারনাল হিস্ট্রি লুপ ব্যাক না রেখে সরাসরি হোমপেজে ক্লিয়ার আউট করবে
+            window.location.replace('../index.html');
         }
     </script>
 </body>
