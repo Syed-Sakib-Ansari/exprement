@@ -211,7 +211,7 @@ function createDesktopNativeAdBlock() {
 }
 
 // ==========================================
-// 🚀 DATABASE & FETCH SYSTEM
+// 🚀 DATABASE, HIGH-SPEED CACHING & INSTANT O(1) INDEXING
 // ==========================================
 const contentData = [
     {
@@ -222,24 +222,99 @@ const contentData = [
     }
 ];
 
-async function loadContentDatabase() {
+const categoryIndexMap = {}; // $O(1)$ হ্যাশ-ম্যাপ গ্লোবাল অবজেক্ট
+
+function buildCategoryIndex() {
+    // আগের ইনডেক্সিং কি ক্লিয়ার করা
+    Object.keys(categoryIndexMap).forEach(key => delete categoryIndexMap[key]);
+    // ডাটাবেজ ম্যাপ স্ট্রাকচারে পুশ করা
+    contentData.forEach(item => {
+        const cat = item.category || "Others";
+        if (!categoryIndexMap[cat]) {
+            categoryIndexMap[cat] = [];
+        }
+        categoryIndexMap[cat].push(item);
+    });
+}
+
+function processContentItems() {
+    contentData.forEach((item, index) => { 
+        item.id = index; 
+        item.slug = generateMovieSlug(item.title); 
+    });
+    buildCategoryIndex(); // আল্ট্রা ফাস্ট হ্যাশ-ম্যাপ বিল্ডার চালুকরণ
+}
+
+async function fetchAndCacheNetworkDatabase() {
     try {
         const response = await fetch('movies.json');
         if (response.ok) {
-            const db = await response.json();
+            const text = await response.text();
+            const db = JSON.parse(text);
             if (Array.isArray(db) && db.length > 0) {
+                localStorage.setItem('moviedakhi_db_cache', text);
                 contentData.length = 0; 
                 contentData.push(...db); 
+                processContentItems();
             }
         }
     } catch (err) {
-        console.warn("External JSON database failed to load. Using fallback array.", err);
-    } finally {
-        contentData.forEach((item, index) => { 
-            item.id = index; 
-            item.slug = generateMovieSlug(item.title); 
-        });
+        console.warn("Live fetch failed, using internal database fallback.", err);
+        processContentItems();
     }
+}
+
+function triggerBackgroundUpdateCheck() {
+    setTimeout(async () => {
+        try {
+            const response = await fetch('movies.json');
+            if (response.ok) {
+                const text = await response.text();
+                const cachedText = localStorage.getItem('moviedakhi_db_cache');
+                
+                // যদি সার্ভারে কোনো পরিবর্তন হয়ে থাকে তবেই সাইলেন্ট আপডেট হবে
+                if (text !== cachedText) {
+                    const db = JSON.parse(text);
+                    if (Array.isArray(db) && db.length > 0) {
+                        localStorage.setItem('moviedakhi_db_cache', text);
+                        contentData.length = 0; 
+                        contentData.push(...db); 
+                        processContentItems();
+                        
+                        // ব্রাউজার স্ক্রিন সাইলেন্ট লাইভ রিলিজ রিফ্রেশমেন্ট
+                        if (currentView === 'home') {
+                            initHeroSlider();
+                            renderRecentAdds();
+                            renderCategorySections(false);
+                        } else {
+                            initLibraryRender();
+                        }
+                    }
+                }
+            }
+        } catch (err) {
+            console.error("Background auto-update check failed safely.", err);
+        }
+    }, 1200); // মূল থ্রেডের কাজ শেষ হওয়ার পর ব্যাকগ্রাউন্ড চেক চালু হবে
+}
+
+async function loadContentDatabase() {
+    const cachedData = localStorage.getItem('moviedakhi_db_cache');
+    if (cachedData) {
+        try {
+            const db = JSON.parse(cachedData);
+            if (Array.isArray(db) && db.length > 0) {
+                contentData.length = 0;
+                contentData.push(...db);
+                processContentItems(); // ০ মিলি-সেকেন্ডে পেজ ওপেন হবে
+                triggerBackgroundUpdateCheck(); // সাইলেন্ট ব্যাকগ্রাউন্ড ভ্যালিডেটর রান
+                return;
+            }
+        } catch (e) {
+            localStorage.removeItem('moviedakhi_db_cache');
+        }
+    }
+    await fetchAndCacheNetworkDatabase();
 }
 
 const databaseLoadPromise = loadContentDatabase();
@@ -513,7 +588,9 @@ window.addEventListener('resize', () => {
 // ==========================================
 function initHeroSlider() {
     if (!sliderWrapper || !sliderDots) return;
-    const slides = contentData.filter(item => item.category === "Recent Adds" || item.category === "Bollywood" || item.category === "Hollywood").slice(0, 6);
+    
+    // ম্যাপ ট্র্যাকার থেকে ইনস্ট্যান্ট কালেক্ট করা হচ্ছে
+    const slides = [...(categoryIndexMap["Recent Adds"] || []), ...(categoryIndexMap["Bollywood"] || []), ...(categoryIndexMap["Hollywood"] || [])].slice(0, 6);
     if (slides.length === 0) return;
 
     let currentSlide = 0;
@@ -749,7 +826,9 @@ function createMovieCard(item) {
 function renderRecentAdds() {
     if (!recentAddsGrid) return;
     recentAddsGrid.innerHTML = '';
-    const recentItems = contentData.filter(item => item.category === "Recent Adds");
+    
+    // 🎯 ওল্ড কোডের লুপ বাদ দিয়ে ডাইরেক্ট ও(১) হ্যাশ-ম্যাপ রিড করা হচ্ছে
+    const recentItems = categoryIndexMap["Recent Adds"] || [];
     const fragment = document.createDocumentFragment();
     
     recentItems.slice(0, 18).forEach((item, index) => {
@@ -786,7 +865,9 @@ function renderCategorySections(forceRenderAll = false) {
     function loadCategorySection(targetSection) {
         const cat = targetSection.getAttribute('data-category-lazy');
         const lazyGrid = targetSection.querySelector('.lazy-grid');
-        const filtered = contentData.filter(m => m.category === cat);
+        
+        // 🎯 লুপ ও ফিল্টার ছাড়া ইনস্ট্যান্ট ও(১) হ্যাশ-ম্যাপ কন্টেন্ট রিড
+        const filtered = categoryIndexMap[cat] || [];
 
         lazyGrid.innerHTML = '';
         const cardsFragment = document.createDocumentFragment();
@@ -827,7 +908,7 @@ function renderCategorySections(forceRenderAll = false) {
     }
 
     categories.filter(c => c !== 'all').forEach(cat => {
-        const filtered = contentData.filter(m => m.category === cat);
+        const filtered = categoryIndexMap[cat] || [];
         if (filtered.length === 0) return;
 
         const displayName = cat === 'Korean Country' ? 'Korean' : cat;
@@ -896,12 +977,6 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     if (subGrid) {
         subGrid.classList.remove('hidden');
         libraryDisplayedCount = parseInt(subGrid.dataset.displayedCount || ITEMS_PER_PAGE, 10);
-        
-        libraryData = contentData.filter(item => {
-            return filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
-        });
-        
-        updateLoadMoreVisibility();
         return; 
     }
 
@@ -910,7 +985,15 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     subGrid.className = libraryGrid.dataset.originalClasses;
     libraryGrid.appendChild(subGrid);
 
-    libraryData = contentData.filter(item => {
+    // 🎯 ম্যাপ রিড অপ্টিমাইজেশন লেয়ার (সার্চ না থাকলে পুরো ডাটাবেজের লুপ বন্ধ রাখবে)
+    let sourceArray = contentData;
+    if (!isSearch && filter !== "all") {
+        sourceArray = categoryIndexMap[filter] || [];
+    } else if (!isSearch && filter === "all") {
+        sourceArray = categoryIndexMap["Recent Adds"] || [];
+    }
+
+    libraryData = sourceArray.filter(item => {
         const matchesCat = filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
         const matchesSearch = isSearch ? (cleanStr(item.title).includes(cleanQuery) || cleanStr(item.category).includes(cleanQuery) || cleanStr(item.genre).includes(cleanQuery)) : true;
         return matchesCat && matchesSearch;
@@ -989,66 +1072,56 @@ const adTargetUrl = "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8b
 
 // পপআপ অ্যাকশন ও উইন্ডো রাউটিং হ্যান্ডলার (ইনস্ট্যান্ট ক্লোজ মেকানিজম যুক্ত করা হয়েছে)
 function handlePopupAction(type) {
-    // ১. নতুন ট্যাবে ইনস্ট্যান্টলি অ্যাড লিংকটি ওপেন হবে
     window.open(adTargetUrl, '_blank');
 
-    // ২. একই সাথে (Instant) মেইন পেজের পপআপ বক্সটি সম্পূর্ণ বন্ধ হয়ে যাবে
     if (type === 'unlock') {
         const unlockDiv = document.getElementById('unlockPopup');
         if (unlockDiv) {
             unlockDiv.classList.remove('flex');
             unlockDiv.classList.add('hidden');
         }
-        } else if (type === 'feedback') {
+    } else if (type === 'feedback') {
         const feedbackDiv = document.getElementById('feedbackPopup');
         if (feedbackDiv) {
             feedbackDiv.classList.remove('flex');
             feedbackDiv.classList.add('hidden');
         }
-        // বডি স্ক্রোল ও ফিক্সড স্টেট নরমাল ট্র্যাকে ফিরিয়ে আনা (স্ক্রোল জাম্প প্রোটেকশন)
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
         document.body.classList.remove('overflow-hidden');
         window.scrollTo(0, savedScrollY);
 
-        // 🚀 ফিডব্যাক বক্স বন্ধ হওয়ার সাথে সাথে ডাইনামিক্যালি স্ক্রিপ্ট অ্যাড রান করানো হবে
         const feedbackAdScript = document.createElement('script');
         feedbackAdScript.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
         feedbackAdScript.async = true;
         document.body.appendChild(feedbackAdScript);
     }
 
-    // স্টেট ক্লিয়ার্যান্স (যাতে ব্রাউজার মেমোরিতে কোনো কনফ্লিক্ট না হয়)
     activePopupType = null;
     isAdTabOpened = false;
 }
 
-// উইন্ডো ফোকাস লিসেনার এখন শুধু ব্যাকগ্রাউন্ড সেফটি রিসেট হিসেবে কাজ করবে
 window.addEventListener('focus', () => {
     isAdTabOpened = false;
     activePopupType = null;
 });
 
 // ==========================================
-// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC (BUG FIXED)
+// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC
 // ==========================================
 function openModal(id) {
     savedScrollY = window.scrollY;
-
-    // ১. প্রথমে মোডাল বক্সের সব ডেটা ব্যাকগ্রাউন্ডে নিখুঁতভাবে রেন্ডার করবে
     executeActualOpenModal(id);
 
-    // ২. মোডাল শো হওয়ার সাথে সাথেই তার ওপরে ইনস্ট্যান্ট প্রিমিয়াম আনলক বক্সটি ভাসিয়ে দেবে
     const popup = document.getElementById('unlockPopup');
     if (popup) {
         popup.classList.remove('hidden');
         popup.classList.add('flex');
-        document.body.classList.add('overflow-hidden'); // আধুনিক স্ক্রোল লক মেকানিজম
+        document.body.classList.add('overflow-hidden'); 
     }
 }
 
-// মোডাল ইন্টারফেস জেনারেটর (আপনার কোর এসইও এবং ডিভি স্ট্রাকচার অপরিবর্তিত রাখা হয়েছে)
 function executeActualOpenModal(id) {
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
 
@@ -1166,7 +1239,7 @@ function executeActualOpenModal(id) {
                 <p class="leading-relaxed text-gray-400 text-[12px] md:text-[13px] font-normal pt-4 pb-4">
                     Looking for the secure <strong class="text-white font-semibold">Index of /${SEOFullTitle}</strong> direct servers? MovieDakhi provides optimized, ultra-fast cloud mirrors to stream and download this trending <span class="text-red-400 font-medium">${contentType.toLowerCase()}</span> with zero buffering.
                 </p>
-                <div class="p-3 md:p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
+                <div class="p-3 md:p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid g-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
                         <span class="text-gray-400 font-medium flex items-center gap-2">📌 Directory</span>
                         <span class="font-semibold text-white truncate max-w-[160px] md:max-w-xs" title="Index of /${titleKey}">Index of /${titleKey}</span>
@@ -1357,7 +1430,6 @@ function playEpisode(index, btnElement) {
 
 let isModalClosing = false;
 
-// মোডাল ক্লোজ করার নিখুঁত মেকানিজম (মোবাইল স্ক্রোল জাম্প বাগ ১০০% ফিক্সড)
 function closeModal(triggerBack = true, explicitClose = false) {
     const modal = document.getElementById('movieModal');
     if (!modal || modal.classList.contains('hidden')) return;
@@ -1367,7 +1439,6 @@ function closeModal(triggerBack = true, explicitClose = false) {
     isModalClosing = true;
     document.title = "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD";
 
-    // ১. মোডাল উইন্ডো হাইড করা
     modal.classList.remove('active');
     modal.classList.add('hidden');
     isModalClosing = false;
@@ -1377,24 +1448,20 @@ function closeModal(triggerBack = true, explicitClose = false) {
         actualVideoContainer.innerHTML = ''; 
     }
 
-    // ২. বডি পজিশন রিলিজ করে ইনস্ট্যান্টলি আগের স্ক্রোল লোকেশনে ফিরিয়ে আনা (মোবাইল জাম্প প্রোটেকশন)
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
     document.body.classList.remove('overflow-hidden');
-    window.scrollTo(0, savedScrollY); // 🎯 এটি পেজকে আগের জায়গায় ধরে রাখবে
+    window.scrollTo(0, savedScrollY);
 
-    // ৩. উইন্ডো ব্যাক হিস্ট্রি প্রসেস করা
     if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
     }
 
-    // ৪. মোডাল উইন্ডো যাওয়ার সাথে সাথে ফিডব্যাক পোপআপ লোড করা
     const feedbackPopup = document.getElementById('feedbackPopup');
     if (feedbackPopup) {
         feedbackPopup.classList.remove('hidden');
         feedbackPopup.classList.add('flex');
-        // নোট: বডিতে নতুন করে overflow-hidden দেওয়া হয়নি, যাতে মোবাইল ব্রাউজার স্ন্যাপিং এরর না করে।
     }
 }
 
