@@ -26,28 +26,34 @@
 </head>
 <body>
 
+<div id="captchaOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-[2px] z-[200] flex items-center justify-center p-4">
+        <div onclick="triggerCaptchaAd()" class="bg-[#f9f9f9] border border-[#d3d3d3] rounded-[3px] p-3.5 flex items-center justify-between w-full max-w-[304px] shadow-[0_4px_15px_rgba(0,0,0,0.35)] cursor-pointer select-none transition transform hover:scale-[1.01] active:scale-[0.99]">
+            <div class="flex items-center gap-3">
+                <div class="w-6 h-6 border-2 border-[#c1c1c1] rounded-[2px] bg-white flex items-center justify-center transition-colors"></div>
+                <span class="text-[13px] font-normal text-[#222] font-sans tracking-normal">I'm not a robot</span>
+            </div>
+            <div class="flex flex-col items-center pl-4 border-l border-gray-250">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/RecaptchaLogo.svg" class="w-8 h-8 object-contain" alt="reCAPTCHA">
+                <span class="text-[8px] text-gray-500 mt-0.5 uppercase tracking-tighter font-medium">privacy · terms</span>
+            </div>
+        </div>
+    </div>
+
     <nav class="fixed top-0 w-full z-50 px-4 md:px-12 py-4 bg-black/60 backdrop-blur-md border-b border-white/5">
         <div class="max-w-10xl mx-auto flex justify-between items-center">
-            <a href="../index.html" class="text-xl md:text-2xl font-black text-red-600 tracking-tighter no-underline uppercase">MOVIE DAKHI</a>
-            <a href="../index.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition no-underline"><i class="fas fa-home mr-1"></i> Back to Home</a>
+            <a href="#" onclick="closePageAndGoBack(event)" class="text-xl md:text-2xl font-black text-red-600 tracking-tighter no-underline uppercase">MOVIE DAKHI</a>
+            <a href="#" onclick="closePageAndGoBack(event)" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition no-underline"><i class="fas fa-arrow-left mr-1"></i> Back to Home</a>
         </div>
     </nav>
 
     <main class="max-w-4xl mx-auto px-4 pt-24 pb-16 flex flex-col items-center">
         
-        <div class="w-full flex justify-center mb-3 min-h-[50px] md:min-h-[90px]">
-            <script type="text/javascript">atOptions={'key':'d07f22b9f96bb57b376565604ef61214','format':'iframe','height':90,'width':728,'params':{}};</script>
-            <script type="text/javascript" src="https://onsetcab.com/d07f22b9f96bb57b376565604ef61214/invoke.js"></script>
-        </div>
-
         <h1 class="text-2xl md:text-4xl font-black text-center uppercase tracking-tight mb-6 mt-4">MOVIE_OR_SERIES_TITLE</h1>
         
         <div class="w-full max-w-5xl mx-auto mb-12">
-            <div id="playerContainer" 
-                 class="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black border border-white/10 player-glow flex items-center justify-center">
-                
+            <div id="playerContainer" class="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black border border-white/10 player-glow flex items-center justify-center">
                 <iframe id="videoIframe" 
-                        class="absolute inset-0 w-full h-full border-0 outline-none bg-black" 
+                        class="absolute inset-0 w-full h-full border-0 outline-none rounded-lg bg-black" 
                         src="https://abyssplayer.com/Q7JjVhHBp" 
                         frameborder="0" 
                         scrolling="no" 
@@ -59,32 +65,74 @@
                         webkitallowfullscreen="true" 
                         mozallowfullscreen="true">
                 </iframe>
-
-                <div id="invisibleGuard" class="absolute inset-0 bg-transparent z-20 cursor-pointer" onclick="activatePlayerGesture()"></div>
             </div>
         </div>
 
-        <div class="my-10 text-center">
+        <div class="my-6 text-center">
             <button id="mainDownloadBtn" onclick="handleDownloadClick()" class="bg-gradient-to-r from-[#2B2727] to-[#2B2727] border border-[#E3DADA] text-white px-10 py-4 rounded-full font-black text-xs md:text-sm uppercase tracking-widest transition transform hover:scale-105 shadow-xl flex items-center gap-2 cursor-pointer">
                 <i class="fas fa-cloud-download-alt text-md"></i> <span id="downloadBtnText">Download Movie</span>
             </button>
         </div>
+
+        <div class="w-full bg-white/5 border border-white/5 p-6 md:p-8 rounded-2xl text-left shadow-xl mt-6">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-b border-white/5 pb-4 mb-6 text-xs md:text-sm">
+                <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Genre</span> <strong class="text-white">GENRE_NAME</strong></div>
+                <div><span class="text-gray-500 block uppercase font-bold tracking-wider mb-1">Language</span> <strong class="text-white">LANGUAGE</strong></div>
+            </div>
+
+            <div class="space-y-6 text-xs md:text-sm leading-relaxed text-gray-400">
+                <div class="text-left select-text">
+                    <b class="text-white text-sm md:text-base block mb-1">📖 Synopsis :</b>
+                    <p class="text-gray-400 leading-relaxed">এখানে আপনার নতুন কাস্টম মুভির সংক্ষিপ্ত কাহিনীর সারসংক্ষেপ বা সিনোপসিস হাত দিয়ে লিখে দিন ভাই।</p>
+                </div>
+                
+                <div class="text-left select-text">
+                    <b class="text-white text-sm md:text-base block mb-1">✨ Movie Highlights :</b>
+                    <p class="text-gray-400 leading-relaxed">এখানে মুভির মূল আকর্ষণীয় রিভিউ হাইলাইটসগুলো এক দুই লাইনে লিখে দিন।</p>
+                </div>
+
+                <div class="text-left select-text">
+                    <b class="text-white text-sm md:text-base block mb-1">🍿 Streaming Recommendation :</b>
+                    <p class="text-gray-400 leading-relaxed">এই মুভিটি কোন ক্যাটাগরির অডিয়েন্সের জন্য সেরা স্ট্রিম চয়েস হবে, সেই রিকমেন্ডেশন টেক্সট এখানে দিন।</p>
+                </div>
+                
+                <div class="text-left select-text">
+                    <b class="text-white text-sm md:text-base block mb-1">🎬 Detailed Plot Summary :</b>
+                    <p class="text-gray-400 leading-relaxed bg-white/5 p-3 rounded-lg border border-white/10">এখানে সম্পূর্ণ মুভির বিস্তারিত কাহিনী বা নিখুঁত প্লট সামারি গুছিয়ে লিখে দেবেন ভাই, যা গুগল খুব দ্রুত ক্রল করবে।</p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script>
-        // 🚀 ইউজারের প্রথম ক্লিকের মাধ্যমে ভ্যালিড টোকেন জেনারেট করে আইফ্রেম লোড করার ফাস্ট মেকানিজম
-        function activatePlayerGesture() {
-            const guard = document.getElementById('invisibleGuard');
-            if (guard) {
-                guard.remove(); // অদৃশ্য প্রোটেকশন লেয়ারটি সাথে সাথে মুছে যাবে
-            }
-            
-            const iframe = document.getElementById('videoIframe');
-            if (iframe) {
-                // মডাল বক্সের সেই ১০০% সফল ডাইনামিক সোর্স ইনজেকশন মেথড
-                iframe.src = "https://abyssplayer.com/Q7JjVhHBp";
+        // 🔒 ১. ক্যাপচায় ক্লিক করলে আপনার নির্দিষ্ট অ্যাড লিংকটি ট্রিগার হবে
+        function triggerCaptchaAd() {
+            window.open("https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", '_blank');
+            const overlay = document.getElementById('captchaOverlay');
+            if (overlay) {
+                overlay.style.display = 'none'; // ক্যাপচা স্ক্রিন রিমুভ
             }
         }
+
+        // 🛑 ২. ব্যাক বাটনে ক্লিক করলে রানিং মুভি ও অডিও সাথে সাথে ইনস্ট্যান্ট কিল করার লজিক
+        function closePageAndGoBack(event) {
+            if (event) event.preventDefault();
+            const iframe = document.getElementById('videoIframe');
+            if (iframe) {
+                iframe.src = 'about:blank'; // আইফ্রেম রুট ডেড করা হলো
+                iframe.remove();
+            }
+            window.location.href = '../index.html';
+        }
+
+        // ব্রাউজারের নিজস্ব হার্ডওয়্যার ব্যাক বাটন প্রেস করার সিকিউরিটি ক্যাচ
+        window.addEventListener('popstate', function() {
+            const iframe = document.getElementById('videoIframe');
+            if (iframe) {
+                iframe.src = 'about:blank';
+                iframe.remove();
+            }
+        });
 
         let clickCount = 0;
         const dl1 = "YOUR_MAIN_DOWNLOAD_URL_1";
