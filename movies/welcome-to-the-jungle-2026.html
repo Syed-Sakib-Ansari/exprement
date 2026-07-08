@@ -59,6 +59,8 @@
                         webkitallowfullscreen="true" 
                         mozallowfullscreen="true">
                 </iframe>
+
+                <div id="invisibleGuard" class="absolute inset-0 bg-transparent z-20 cursor-pointer" onclick="activatePlayerGesture()"></div>
             </div>
         </div>
 
@@ -70,13 +72,18 @@
     </main>
 
     <script>
-        // 🚀 আপনার নিজস্ব ফাংশন স্ট্রাকচার অপরিবর্তিত রাখা হয়েছে
-        function initializeLivePlayer() {
-            const container = document.getElementById('playerContainer');
-            container.removeAttribute('onclick'); 
-            container.classList.remove('cursor-pointer');
+        // 🚀 ইউজারের প্রথম ক্লিকের মাধ্যমে ভ্যালিড টোকেন জেনারেট করে আইফ্রেম লোড করার ফাস্ট মেকানিজম
+        function activatePlayerGesture() {
+            const guard = document.getElementById('invisibleGuard');
+            if (guard) {
+                guard.remove(); // অদৃশ্য প্রোটেকশন লেয়ারটি সাথে সাথে মুছে যাবে
+            }
             
-            container.innerHTML = `<iframe id="videoIframe" class="absolute inset-0 w-full h-full border-0 outline-none bg-black" src="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" referrerpolicy="no-referrer-when-downgrade" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+            const iframe = document.getElementById('videoIframe');
+            if (iframe) {
+                // মডাল বক্সের সেই ১০০% সফল ডাইনামিক সোর্স ইনজেকশন মেথড
+                iframe.src = "https://abyssplayer.com/Q7JjVhHBp";
+            }
         }
 
         let clickCount = 0;
