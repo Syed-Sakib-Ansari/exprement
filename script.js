@@ -1,3 +1,6 @@
+// ==========================================
+// 🚀 SYSTEM & HISTORY CONFIGURATION
+// ==========================================
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
@@ -535,7 +538,7 @@ function initHeroSlider() {
                     <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
                     <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
                     <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
-                    <button onclick="window.location.href='movies/${movie.slug || generateMovieSlug(movie.title)}.html'" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
+                    <button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
                         <i class="fas fa-play"></i> Watch Now
                     </button>
                 </div>
@@ -708,9 +711,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 function createMovieCard(item) {
     const card = document.createElement('a'); 
     const movieSlug = item.slug || generateMovieSlug(item.title);
-    
-    // 👑 🎯 FIXED: অ্যাঙ্কর ট্যাগের ডিফল্ট রুট লিংক প্যারামিটার পরিবর্তন করে ডিরেক্ট ফিজিক্যাল পেজে ম্যাপ করা হলো
-    card.href = `movies/${movieSlug}.html`;
+    card.href = `?movie=${movieSlug}`;
     card.className = 'movie-card relative flex flex-col group cursor-pointer no-underline';
 
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
@@ -739,8 +740,8 @@ function createMovieCard(item) {
         </div>`;
         
     card.onclick = (e) => {
-        const movieSlug = item.slug || generateMovieSlug(item.title);
-        window.location.href = `movies/${movieSlug}.html`;
+        e.preventDefault(); 
+        openModal(item.id);
     };
     return card;
 }
@@ -986,52 +987,290 @@ let activePopupType = null;
 let isAdTabOpened = false;
 const adTargetUrl = "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263";
 
+// পপআপ অ্যাকশন ও উইন্ডো রাউটিং হ্যান্ডলার (ইনস্ট্যান্ট ক্লোজ মেকানিজম যুক্ত করা হয়েছে)
 function handlePopupAction(type) {
+    // ১. নতুন ট্যাবে ইনস্ট্যান্টলি অ্যাড লিংকটি ওপেন হবে
     window.open(adTargetUrl, '_blank');
 
+    // ২. একই সাথে (Instant) মেইন পেজের পপআপ বক্সটি সম্পূর্ণ বন্ধ হয়ে যাবে
     if (type === 'unlock') {
         const unlockDiv = document.getElementById('unlockPopup');
         if (unlockDiv) {
             unlockDiv.classList.remove('flex');
             unlockDiv.classList.add('hidden');
         }
-    } else if (type === 'feedback') {
+        } else if (type === 'feedback') {
         const feedbackDiv = document.getElementById('feedbackPopup');
         if (feedbackDiv) {
             feedbackDiv.classList.remove('flex');
             feedbackDiv.classList.add('hidden');
         }
+        // বডি স্ক্রোল ও ফিক্সড স্টেট নরমাল ট্র্যাকে ফিরিয়ে আনা (স্ক্রোল জাম্প প্রোটেকশন)
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
         document.body.classList.remove('overflow-hidden');
         window.scrollTo(0, savedScrollY);
 
+        // 🚀 ফিডব্যাক বক্স বন্ধ হওয়ার সাথে সাথে ডাইনামিক্যালি স্ক্রিপ্ট অ্যাড রান করানো হবে
         const feedbackAdScript = document.createElement('script');
         feedbackAdScript.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
         feedbackAdScript.async = true;
         document.body.appendChild(feedbackAdScript);
     }
 
+    // স্টেট ক্লিয়ার্যান্স (যাতে ব্রাউজার মেমোরিতে কোনো কনফ্লিক্ট না হয়)
     activePopupType = null;
     isAdTabOpened = false;
 }
 
+// উইন্ডো ফোকাস লিসেনার এখন শুধু ব্যাকগ্রাউন্ড সেফটি রিসেট হিসেবে কাজ করবে
 window.addEventListener('focus', () => {
     isAdTabOpened = false;
     activePopupType = null;
 });
 
 // ==========================================
-// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC (DEACTIVATED FOR HOME ROUTING)
+// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC (BUG FIXED)
 // ==========================================
 function openModal(id) {
-    // হোমপেজে মডাল ট্র্যাকার ডিঅ্যাক্টিভেট করে সরাসরি ফিজিক্যাল লিংকে রি-ডাইরেক্ট করবে
-    const item = contentData.find(m => m.id === id);
-    if (item) {
-        const movieSlug = item.slug || generateMovieSlug(item.title);
-        window.location.href = `movies/${movieSlug}.html`;
+    savedScrollY = window.scrollY;
+
+    // ১. প্রথমে মোডাল বক্সের সব ডেটা ব্যাকগ্রাউন্ডে নিখুঁতভাবে রেন্ডার করবে
+    executeActualOpenModal(id);
+
+    // ২. মোডাল শো হওয়ার সাথে সাথেই তার ওপরে ইনস্ট্যান্ট প্রিমিয়াম আনলক বক্সটি ভাসিয়ে দেবে
+    const popup = document.getElementById('unlockPopup');
+    if (popup) {
+        popup.classList.remove('hidden');
+        popup.classList.add('flex');
+        document.body.classList.add('overflow-hidden'); // আধুনিক স্ক্রোল লক মেকানিজম
     }
+}
+
+// মোডাল ইন্টারফেস জেনারেটর (আপনার কোর এসইও এবং ডিভি স্ট্রাকচার অপরিবর্তিত রাখা হয়েছে)
+function executeActualOpenModal(id) {
+    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
+
+    const item = contentData.find(m => m.id === id);
+    if (!item) return;
+
+    const movieSlug = item.slug || generateMovieSlug(item.title);
+    const newUrl = new URL(window.location.origin + '/' + movieSlug + '.html');
+    
+    const currentState = history.state || { view: currentView, validDakhiState: true };
+    try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl); } catch (e) { }
+
+    const isSeries = item.episodes && item.episodes.length > 0;
+    const contentType = isSeries ? "Web Series All Episodes" : "Full Movie";
+    const titleKey = item.title;
+    
+    const yearMatch = titleKey.match(/\((\d{4})\)/);
+    const extractedYear = yearMatch ? yearMatch[1] : new Date().getFullYear();
+    const releaseYear = item.year || extractedYear;
+
+    const titleHasYear = titleKey.includes(`(${releaseYear})`);
+    const SEOFullTitle = titleHasYear ? titleKey : `${titleKey} (${releaseYear})`;
+    const cleanLang = item.language || "Dual Audio [Hindi-English] / ESub"; 
+
+    document.title = `${SEOFullTitle} [${cleanLang}] | Index of / Download 4K 1080p, Watch Online Free ${contentType} - MovieDakhi`;
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.name = "description";
+        document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = `Index of /${SEOFullTitle} ${contentType} direct download link. Stream ${titleKey} online free in 4K Ultra HD / 1080p BluRay. High-speed Google Drive & Telegram links for ${cleanLang} with English Subtitles (ESub) HEVC x265 on MovieDakhi.`;
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.rel = 'canonical';
+        document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = newUrl.href;
+
+    let schemaScript = document.getElementById('seoSchemaDynamic');
+    if (!schemaScript) {
+        schemaScript = document.createElement('script');
+        schemaScript.id = 'seoSchemaDynamic';
+        schemaScript.type = 'application/ld+json';
+        document.head.appendChild(schemaScript);
+    }
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": isSeries ? "TVSeries" : "Movie",
+        "name": titleKey,
+        "alternateName": isSeries ? [
+            `Index of ${titleKey}`,
+            `${titleKey} Web Series All Episodes Download`,
+            `${titleKey} Complete Season Download 1080p`,
+            `${titleKey} Dual Audio Hindi English Web Series`,
+            `Watch ${titleKey} All Seasons Online Free HD`,
+            `${titleKey} Google Drive Direct Link Series`,
+            `${titleKey} English Subtitles x265 HEVC`
+        ] : [
+            `Index of ${titleKey}`,
+            `${titleKey} Full Movie Download 1080p`,
+            `${titleKey} Dual Audio Hindi English`,
+            `Watch ${titleKey} Full Movie Online Free HD`,
+            `${titleKey} Google Drive Direct Link`,
+            `${titleKey} English Subtitles x265`
+        ],
+        "image": item.poster || window.location.origin + "/default-poster.jpg",
+        "genre": item.genre || "Entertainment",
+        "dateCreated": releaseYear,
+        "inLanguage": ["English", "Hindi"],
+        "description": metaDescription.content
+    };
+    schemaScript.textContent = JSON.stringify(schemaData);
+
+    const setMetaTag = (attrName, attrValue, content) => {
+        let el = document.querySelector(`meta[${attrName}="${attrValue}"]`);
+        if (!el) { el = document.createElement('meta'); el.setAttribute(attrName, attrValue); document.head.appendChild(el); }
+        el.setAttribute('content', content);
+    };
+    setMetaTag('property', 'og:title', document.title);
+    setMetaTag('property', 'og:description', metaDescription.content);
+    setMetaTag('property', 'og:url', newUrl.href);
+    setMetaTag('name', 'twitter:title', document.title);
+    setMetaTag('name', 'twitter:description', metaDescription.content);
+    setMetaTag('name', 'twitter:card', 'summary_large_image');
+
+    const modalTitleElem = document.getElementById('modalTitle');
+    const isSameMovie = modalTitleElem && modalTitleElem.innerText === titleKey;
+
+    currentItem = item;
+    if(modalTitleElem) modalTitleElem.innerText = titleKey;
+    
+    if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
+    if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
+
+    const dynamicFooterKeywords = isSeries ? 
+        `index of /${titleKey} download, ${titleKey} web series all episodes download, ${titleKey} complete season google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english series, ${titleKey} english subtitles esub, katmoviehd ${titleKey} series, vegamovies ${titleKey} season, download web series free movie-dakhi.` :
+        `index of /${titleKey} download, ${titleKey} full movie watch online free hd, download ${titleKey} google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english download, ${titleKey} english subtitles esub, 1080p bluray download filmyzilla, 720p webrip vegamovies, bolly4u full movie download.`;
+
+    if(document.getElementById('modalDesc')) {
+        document.getElementById('modalDesc').innerHTML = `
+            <div class="seo-rich-layout text-left space-y-5 font-sans text-xs md:text-[13px] text-gray-300 antialiased not-italic select-text">
+                <div class="flex flex-wrap items-center gap-3 border-b border-white/5 pb-3">
+                    <span class="px-2 py-0.5 text-[10px] font-black tracking-wider text-white bg-red-600 rounded-sm uppercase inline-block">
+                        ${item.genre || "Drama"}
+                    </span>
+                    <span class="text-[11px] text-gray-500 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span> Ultra Fast Mirror Enabled
+                    </span>
+                </div>
+                <p class="leading-relaxed text-gray-400 text-[12px] md:text-[13px] font-normal pt-4 pb-4">
+                    Looking for the secure <strong class="text-white font-semibold">Index of /${SEOFullTitle}</strong> direct servers? MovieDakhi provides optimized, ultra-fast cloud mirrors to stream and download this trending <span class="text-red-400 font-medium">${contentType.toLowerCase()}</span> with zero buffering.
+                </p>
+                <div class="p-3 md:p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">📌 Directory</span>
+                        <span class="font-semibold text-white truncate max-w-[160px] md:max-w-xs" title="Index of /${titleKey}">Index of /${titleKey}</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🎬 Codec</span>
+                        <span class="font-semibold text-white">MKV / MP4 / x265 HEVC</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🌐 Audio Track</span>
+                        <span class="font-bold text-emerald-400">${cleanLang}</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">📅 Year</span>
+                        <span class="font-semibold text-white">${releaseYear}</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06] sm:border-b-0">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🔥 Quality</span>
+                        <span class="font-semibold text-amber-400">480p, 720p, 1080p, 4K UHD</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2.5">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">📝 Subtitles</span>
+                        <span class="font-semibold text-gray-200">English (Softcoded ESub)</span>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 bg-blue-950/30 border border-blue-500/25 p-4 rounded-lg text-[12px] text-blue-300/90 leading-relaxed mt-4">
+                    <span class="text-base shrink-0 leading-none mt-0.5">📥</span>
+                    <div>
+                        <strong class="text-blue-200 font-semibold block mb-0.5">Direct Cloud Access Confirmed</strong>
+                        Get instant access via high-speed <span class="text-white font-medium">Google Drive & Telegram Links</span>. Optimized perfectly for remote streaming on Mobile, PC, Chromecast, or Android Smart TV setups without annoying ads.
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-white/5">
+                    <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-1.5">Metadata Index Reference</span>
+                    <p class="text-[10px] text-gray-700 leading-relaxed text-justify select-none opacity-25 tracking-wide font-normal normal-case">
+                        ${dynamicFooterKeywords}
+                    </p>
+                </div>
+            </div>
+        `;
+    }
+
+    downloadClickCount = 0;
+    const downloadBtn = document.getElementById('mainDownloadBtn');
+    if (downloadBtn) {
+        document.getElementById('downloadBtnText').innerText = "Download";
+        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+        downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+        const wave = downloadBtn.querySelector('.animate-shine-wave');
+        if (wave) wave.classList.remove('hidden');
+    }
+
+    if (item.episodes && item.episodes.length > 0) {
+        if (!isSameMovie) currentEpisodeIndex = 0;
+    } else {
+        currentEpisodeIndex = null;
+    }
+
+    const seriesSec = document.getElementById('seriesSection');
+    const epList = document.getElementById('episodeList');
+    if (item.episodes && seriesSec && epList) {
+        seriesSec.classList.remove('hidden');
+        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
+        epList.innerHTML = '';
+        item.episodes.forEach((ep, idx) => {
+            const btn = document.createElement('button');
+            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
+            if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active');
+            btn.innerText = ep.title;
+            btn.onclick = () => playEpisode(idx, btn);
+            epList.appendChild(btn);
+        });
+    } else if (seriesSec) { 
+        seriesSec.classList.add('hidden'); 
+    }
+
+    let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
+    const actualVideoContainer = document.getElementById('actualVideo');
+
+    if (actualVideoContainer) {
+        actualVideoContainer.classList.remove('hidden');
+        const existingIframe = document.getElementById('videoIframe');
+        const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
+
+        if (needsNewIframe) {
+            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+        }
+    }
+
+    const modal = document.getElementById('movieModal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        void modal.offsetWidth; 
+        modal.classList.add('active');
+        
+        setTimeout(() => {
+            injectResponsiveAdNode(document.getElementById('modalAdTop'));
+            injectResponsiveAdNode(document.getElementById('modalAdBottom'));
+        }, 150);
+    }
+
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.width = '100%';
 }
 
 // ==========================================
@@ -1096,7 +1335,12 @@ function playEpisode(index, btnElement) {
     const actualVideo = document.getElementById('actualVideo');
     if (actualVideo) {
         actualVideo.classList.remove('hidden');
-        actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+
+        const existingIframe = document.getElementById('videoIframe');
+        
+        if (!existingIframe || existingIframe.src !== url) {
+            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+        }
     }
 
     currentEpisodeIndex = index;
@@ -1113,15 +1357,17 @@ function playEpisode(index, btnElement) {
 
 let isModalClosing = false;
 
+// মোডাল ক্লোজ করার নিখুঁত মেকানিজম (মোবাইল স্ক্রোল জাম্প বাগ ১০০% ফিক্সড)
 function closeModal(triggerBack = true, explicitClose = false) {
     const modal = document.getElementById('movieModal');
     if (!modal || modal.classList.contains('hidden')) return;
 
-    if (document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
+    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
 
     isModalClosing = true;
     document.title = "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD";
 
+    // ১. মোডাল উইন্ডো হাইড করা
     modal.classList.remove('active');
     modal.classList.add('hidden');
     isModalClosing = false;
@@ -1131,20 +1377,24 @@ function closeModal(triggerBack = true, explicitClose = false) {
         actualVideoContainer.innerHTML = ''; 
     }
 
+    // ২. বডি পজিশন রিলিজ করে ইনস্ট্যান্টলি আগের স্ক্রোল লোকেশনে ফিরিয়ে আনা (মোবাইল জাম্প প্রোটেকশন)
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
     document.body.classList.remove('overflow-hidden');
-    window.scrollTo(0, savedScrollY);
+    window.scrollTo(0, savedScrollY); // 🎯 এটি পেজকে আগের জায়গায় ধরে রাখবে
 
+    // ৩. উইন্ডো ব্যাক হিস্ট্রি প্রসেস করা
     if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
     }
 
+    // ৪. মোডাল উইন্ডো যাওয়ার সাথে সাথে ফিডব্যাক পোপআপ লোড করা
     const feedbackPopup = document.getElementById('feedbackPopup');
     if (feedbackPopup) {
         feedbackPopup.classList.remove('hidden');
         feedbackPopup.classList.add('flex');
+        // নোট: বডিতে নতুন করে overflow-hidden দেওয়া হয়নি, যাতে মোবাইল ব্রাউজার স্ন্যাপিং এরর না করে।
     }
 }
 
@@ -1164,54 +1414,29 @@ if (searchInput) {
         }
     });
 
-    let searchDatabase = null;
-
-    searchInput.addEventListener('input', debounce(async () => {
-        const rawQuery = searchInput.value.trim().toLowerCase();
+    searchInput.addEventListener('input', debounce(() => {
+        const rawQuery = searchInput.value;
         updateSearchUI();
 
-        if (rawQuery.length > 0) {
-            if (!searchDatabase) {
-                try {
-                    const res = await fetch('search.json');
-                    if (res.ok) searchDatabase = await res.json();
-                } catch (err) {
-                    console.error("Search index load error:", err);
-                }
+        if (rawQuery.trim().length > 0) {
+            if (!preSearchState) {
+                const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
+                preSearchState = {
+                    view: currentView,
+                    scrollY: window.scrollY,
+                    category: activeCat,
+                    displayedCount: libraryDisplayedCount
+                };
             }
 
             if (currentView !== 'library') switchView('library');
-
-            const subGrid = document.getElementById(activeSubGridId);
-            if (subGrid) subGrid.innerHTML = '';
-
-            if (searchDatabase) {
-                const filteredResults = searchDatabase.filter(item => 
-                    item.title.toLowerCase().replace(/[^a-z0-9]/g, '').includes(rawQuery.replace(/[^a-z0-9]/g, ''))
-                );
-
-                if (filteredResults.length === 0) {
-                    subGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
-                } else {
-                    const fragment = document.createDocumentFragment();
-                    filteredResults.forEach(item => {
-                        const card = document.createElement('a');
-                        card.href = `movies/${item.slug}.html`;
-                        card.className = 'movie-card bg-[#111] p-3 rounded-lg border border-white/5 hover:border-red-600 transition flex items-center justify-between no-underline group';
-                        
-                        card.innerHTML = `
-                            <span class="text-xs md:text-sm font-black text-white uppercase tracking-tight group-hover:text-red-500 transition">${item.title}</span>
-                            <i class="fas fa-play text-[10px] text-gray-500 group-hover:text-red-500 transition pl-2"></i>
-                        `;
-                        fragment.appendChild(card);
-                    });
-                    subGrid.appendChild(fragment);
-                }
-            }
+            initLibraryRender();
         } else {
             if (preSearchState) {
                 switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
-                preSearchState = null;
+                preSearchState = null; 
+            } else {
+                initLibraryRender();
             }
         }
     }, 300));
@@ -1407,8 +1632,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view') || 'home';
     const category = params.get('category');
-    
-    // 👑 🎯 FIXED: URL এ পুরাতন '?movie=' কুয়েরি প্যারামিটার পেলেও মডাল ওপেন না করে সরাসরি ডাইরেক্ট ফিজিক্যাল পেজে রিডাইরেক্ট রুলস
     const movieSlug = params.get('movie');
 
     const isBlob = window.location.protocol === 'blob:';
@@ -1434,8 +1657,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     if (movieSlug) {
-        // যদি ব্রাউজার এখনো কোনো ওল্ড ইউআরএল ট্র্যাকে '?movie=' ক্যাচ করে, তবে পপআপ ব্লক করে ডিরেক্ট ফিজিক্যাল পেজে পুশ করবে
-        window.location.href = `movies/${movieSlug}.html`;
+        const targetMovie = contentData.find(m => m.slug === movieSlug);
+        if (targetMovie) {
+            setTimeout(() => {
+                openModal(targetMovie.id);
+            }, 300); 
+        }
     }
 
     setTimeout(() => {
@@ -1494,7 +1721,6 @@ window.addEventListener('click', (e) => {
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
 
-// আপনার script.js ফাইলের একদম শেষ মাথাটি ঠিক এভাবে ক্লিন রাখুন
 function showToast(message) {
     const toast = document.getElementById('toastMessage');
     const toastText = document.getElementById('toastText');
