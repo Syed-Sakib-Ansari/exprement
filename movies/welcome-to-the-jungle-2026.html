@@ -44,15 +44,21 @@
         
         <div class="w-full max-w-5xl mx-auto mb-12">
             <div id="playerContainer" 
-                 class="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black border border-white/10 player-glow group cursor-pointer flex items-center justify-center" 
-                 onclick="initializeLivePlayer()">
+                 class="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black border border-white/10 player-glow flex items-center justify-center">
                 
-                <img src="YOUR_MOVIE_POSTER_URL" class="absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-500 group-hover:scale-105" alt="Click to Watch">
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
-                
-                <div class="relative z-10 w-16 h-16 md:w-20 md:h-20 rounded-full bg-red-600 flex items-center justify-center text-white text-xl md:text-2xl shadow-2xl shadow-red-600/50 transition-all duration-300 group-hover:scale-110 group-hover:bg-red-700">
-                    <i class="fas fa-play ml-1"></i>
-                </div>
+                <iframe id="videoIframe" 
+                        class="absolute inset-0 w-full h-full border-0 outline-none bg-black" 
+                        src="https://abyssplayer.com/Q7JjVhHBp" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        marginwidth="0" 
+                        marginheight="0" 
+                        referrerpolicy="no-referrer-when-downgrade" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
+                        allowfullscreen="true" 
+                        webkitallowfullscreen="true" 
+                        mozallowfullscreen="true">
+                </iframe>
             </div>
         </div>
 
@@ -64,14 +70,13 @@
     </main>
 
     <script>
-        // 🚀 ক্লিক হওয়ামাত্রই মডাল বক্সের সেই সফল আইফ্রেমটি এখানে ইনজেক্ট হবে
+        // 🚀 আপনার নিজস্ব ফাংশন স্ট্রাকচার অপরিবর্তিত রাখা হয়েছে
         function initializeLivePlayer() {
             const container = document.getElementById('playerContainer');
-            container.removeAttribute('onclick'); // ডাবল ক্লিক লক
+            container.removeAttribute('onclick'); 
             container.classList.remove('cursor-pointer');
             
-            // মডাল বক্সের সেই ১০০% সফল আইফ্রেম টেমপ্লেট
-            container.innerHTML = `<iframe id="videoIframe" class="absolute inset-0 w-full h-full border-0 outline-none bg-black" src="https://abyssplayer.com/Q7JjVhHBp" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+            container.innerHTML = `<iframe id="videoIframe" class="absolute inset-0 w-full h-full border-0 outline-none bg-black" src="https://abyssplayer.com/Q7JjVhHBp" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" referrerpolicy="no-referrer-when-downgrade" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
 
         let clickCount = 0;
