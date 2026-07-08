@@ -105,7 +105,7 @@
             <div class="space-y-6 text-xs md:text-sm leading-relaxed text-gray-400">
                 <div class="text-left select-text">
                     <b class="text-white text-sm md:text-base block mb-1">📖 Synopsis :</b>
-                    <p id="seoSynopsis" class="text-gray-400 leading-relaxed">এখানে আপনার নতুন কাস্টম মুভির সংক্ষিপ্ত কাহিনীর সারসংক্ষেপ বা সিনোপসিস হাত দিয়ে লিখে দিন ভাই।</p>
+                    <p id="seoSynopsis" class="text-gray-400 leading-relaxed">এখানে আপনার নিজের ভাষায় মুভির সংক্ষিপ্ত কাহিনীর সারসংক্ষেপ বা সিনোপসিস হাত দিয়ে লিখে দিন ভাই।</p>
                 </div>
                 <div class="text-left select-text">
                     <b class="text-white text-sm md:text-base block mb-1">✨ Movie Highlights :</b>
@@ -172,22 +172,22 @@
             }
         });
 
-        // 🔒 ১. ক্যাপচা ক্লিয়ারিং মাস্টার লজিক (টোকেন চুরি প্রতিরোধক)
+        // 🔒 ১. ক্যাপচা ক্লিয়ারিং মাস্টার লজিক (টোকেন হাইজ্যাকিং ১০০% প্রতিরোধক)
         function triggerCaptchaAd() {
             document.getElementById('captchaOverlay').style.display = 'none';
             document.body.classList.remove('overflow-hidden');
             isCaptchaCleared = true;
             
-            // 🟢 ফ্রেশ টোকেন সবার আগে মুভি প্লেয়ার আইফ্রেমকে ডেডিকেট করা হলো (মডাল বক্সের হুবহু ক্লোন)
+            // 🟢 হুবহু script.js-এর সফল মেকানিজম: ফ্রেশ ক্লিক টোকেন সবার আগে মুভি প্লেয়ারকে দেওয়া হলো
             loadPlayerSource();
 
-            // 🟢 বিজ্ঞাপন পপআপ উইন্ডোটিকে একটি মাইক্রো-টাস্ক ডিলের মাধ্যমে পরে ফায়ার করা হলো
+            // 🟢 বিজ্ঞাপন পপআপ উইন্ডোটি ব্রাউজার সিকিউরিটি ট্র্যাপ এড়াতে সামান্য (৮০ms) ডিলের পর পরে ফায়ার হবে
             setTimeout(() => {
-                window.open("https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", '_blank');
+                window.open(MOVIE_CONFIG.downloadUrl1, '_blank');
             }, 80);
         }
 
-        // 👑 ২. সুনির্দিষ্ট ডাইনামিক রেন্ডারিং মেথড (একদম হোমপেজ মডালের মতো ক্লিন)
+        // 👑 ২. সুনির্দিষ্ট ডাইনামিক রেন্ডারিং মেথড (একদম হোমপেজ মডাল কোডের ক্লোন)
         function loadPlayerSource() {
             const container = document.getElementById('playerContainer');
             if (!container) return;
@@ -196,23 +196,11 @@
                 ? MOVIE_CONFIG.episodes[currentEpisodeIndex].embedUrl 
                 : MOVIE_CONFIG.embedUrl;
 
-            // referrerpolicy বা কনফ্লিক্টিং কোনো এক্সট্রা ট্যাগ ছাড়া র-আইফ্রেম স্ট্রাকচার
-            container.innerHTML = `
-                <iframe id="videoIframe" 
-                        class="absolute inset-0 w-full h-full border-0 outline-none rounded-lg bg-black" 
-                        src="${targetUrl}" 
-                        frameborder="0" 
-                        scrolling="no" 
-                        marginwidth="0" 
-                        marginheight="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
-                        allowfullscreen="true" 
-                        webkitallowfullscreen="true" 
-                        mozallowfullscreen="true">
-                </iframe>`;
+            // আপনার script.js ফাইলে যেভাবে ক্লিন ও এরর-ফ্রি র-আইফ্রেম তৈরি করা আছে, ঠিক সেটিই এখানে অ্যাপ্লাই করা হলো ভাই
+            container.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${targetUrl}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
         }
 
-        // ৩. এপিসোড সুইচার (হিস্ট্রি ট্র্যাপ ছাড়াই রেন্ডার হবে)
+        // ৩. এপিসোড সুইচার
         function switchEpisode(index, btnElement) {
             currentEpisodeIndex = index;
             document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
@@ -262,12 +250,10 @@
             const iframe = document.getElementById('videoIframe');
             if (iframe) {
                 iframe.src = 'about:blank'; // আইফ্রেম ডেড
-                iframe.remove(); // ডোম থেকে উধাও
+                iframe.remove(); // ডোম থেকে উधাও
             }
             document.body.classList.remove('overflow-hidden');
-            
-            // ব্রাউজারের কোনো ইন্টারনাল হিস্ট্রি লুপ ব্যাক না রেখে ডিরেক্ট হোমপেজে ক্লোজ করে দেবে
-            window.location.replace('../index.html');
+            window.location.replace('../index.html'); // হিস্ট্রি লুপ ক্র্যাশ করে ডিরেক্ট হোমপেজে ক্লোজ করে দেবে
         }
     </script>
 </body>
