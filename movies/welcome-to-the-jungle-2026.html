@@ -24,9 +24,9 @@
         .player-glow { box-shadow: 0 0 30px rgba(229, 9, 20, 0.05); }
     </style>
 </head>
-<body>
+<body class="overflow-hidden">
 
-<div id="captchaOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-[2px] z-[200] flex items-center justify-center p-4">
+    <div id="captchaOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-[2px] z-[200] flex items-center justify-center p-4">
         <div onclick="triggerCaptchaAd()" class="bg-[#f9f9f9] border border-[#d3d3d3] rounded-[3px] p-3.5 flex items-center justify-between w-full max-w-[304px] shadow-[0_4px_15px_rgba(0,0,0,0.35)] cursor-pointer select-none transition transform hover:scale-[1.01] active:scale-[0.99]">
             <div class="flex items-center gap-3">
                 <div class="w-6 h-6 border-2 border-[#c1c1c1] rounded-[2px] bg-white flex items-center justify-center transition-colors"></div>
@@ -54,7 +54,7 @@
             <div id="playerContainer" class="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black border border-white/10 player-glow flex items-center justify-center">
                 <iframe id="videoIframe" 
                         class="absolute inset-0 w-full h-full border-0 outline-none rounded-lg bg-black" 
-                        src="https://abyssplayer.com/Q7JjVhHBp" 
+                        src="" 
                         frameborder="0" 
                         scrolling="no" 
                         marginwidth="0" 
@@ -93,7 +93,7 @@
 
                 <div class="text-left select-text">
                     <b class="text-white text-sm md:text-base block mb-1">🍿 Streaming Recommendation :</b>
-                    <p class="text-gray-400 leading-relaxed">এই মুভিটি কোন ক্যাটাগরির অডিয়েন্সের জন্য সেরা স্ট্রিম চয়েস হবে, সেই রিকমেন্ডেশন টেক্সট এখানে দিন।</p>
+                    <p class="text-gray-400 leading-relaxed">এই মুভিটি কোন ক্যাটাগরির অডিয়েন্সের জন্য সেরা স্ট্রিম চয়েস হবে, সেই কাস্টম রিকমেন্ডেশন টেক্সট এখানে দিন।</p>
                 </div>
                 
                 <div class="text-left select-text">
@@ -107,10 +107,21 @@
     <script>
         // 🔒 ১. ক্যাপচায় ক্লিক করলে আপনার নির্দিষ্ট অ্যাড লিংকটি ট্রিগার হবে
         function triggerCaptchaAd() {
+            // বিজ্ঞাপন লিংক ফায়ার করা হলো
             window.open("https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263", '_blank');
+            
             const overlay = document.getElementById('captchaOverlay');
             if (overlay) {
                 overlay.style.display = 'none'; // ক্যাপচা স্ক্রিন রিমুভ
+            }
+            
+            // 🟢 স্ক্রল আনলক: ক্যাপচা চলে যাওয়ার পর বডির স্ক্রল নরমাল হয়ে যাবে
+            document.body.classList.remove('overflow-hidden');
+
+            // 🟢 ফেসবুক ব্রাউজার ফিক্স: ইউজারের ক্লিকের ঠিক সাথে সাথে আইফ্রেম সোর্স লোড করা হলো
+            const iframe = document.getElementById('videoIframe');
+            if (iframe) {
+                iframe.src = "https://abyssplayer.com/Q7JjVhHBp";
             }
         }
 
@@ -122,6 +133,7 @@
                 iframe.src = 'about:blank'; // আইফ্রেম রুট ডেড করা হলো
                 iframe.remove();
             }
+            document.body.classList.remove('overflow-hidden');
             window.location.href = '../index.html';
         }
 
