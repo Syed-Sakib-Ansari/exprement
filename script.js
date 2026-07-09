@@ -30,183 +30,17 @@ function generateMovieSlug(title) {
 }
 
 // ==========================================
-// 🚀 SMART RESPONSIVE AD INJECTOR (ADSTERRA)
+// 🚀 NATIVE GRID SAFE COUPLING (LIGHTWEIGHT)
 // ==========================================
-function injectAdsterra(container, key, w, h) {
-    if(!container || isPopupAdBlocking) return;
-    container.innerHTML = '';
-    container.className = "flex bg-[#0a0a0a] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center shrink-0 mx-auto shadow-lg";
-    container.style.width = '100%';
-    container.style.maxWidth = w + 'px';
-    container.style.minHeight = h + 'px';
-    
-    const label = document.createElement('span');
-    label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
-    label.innerText = "Advertisement";
-    container.appendChild(label);
-    
-    const iframeWrapper = document.createElement('div');
-    iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
-    
-    const iframe = document.createElement('iframe');
-    iframe.width = w;
-    iframe.height = h;
-    iframe.frameBorder = "0";
-    iframe.scrolling = "no";
-    iframe.style.border = "none";
-    iframe.style.overflow = "hidden";
-    iframe.style.backgroundColor = "transparent";
-    iframe.style.display = "block";
-    iframe.setAttribute('allowtransparency', 'true');
-    
-    iframeWrapper.appendChild(iframe);
-    container.appendChild(iframeWrapper);
-    
-    setTimeout(() => {
-        try {
-            const doc = iframe.contentWindow.document || iframe.contentDocument;
-            doc.open();
-            doc.write(`<!DOCTYPE html>
-            <html>
-            <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;}</style>
-            </head>
-            <body>
-                <script type="text/javascript">
-                    atOptions = {
-                        'key' : '${key}',
-                        'format' : 'iframe',
-                        'height' : ${h},
-                        'width' : ${w},
-                        'params' : {}
-                    };
-                </script>
-                <script type="text/javascript" src="https://onsetcab.com/${key}/invoke.js"></script>
-            </body>
-            </html>`);
-            doc.close();
-        } catch(e) { }
-    }, 10);
-}
-
-function injectResponsiveAdNode(container) {
-    if(!container) return;
-    if(container.querySelector('iframe')) return; 
-    
-    const isMobile = window.innerWidth <= 768;
-    const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
-    const w = isMobile ? 320 : 728;
-    const h = isMobile ? 50 : 90;
-    injectAdsterra(container, key, w, h);
-}
-
-function initStaticAds() {
-    injectResponsiveAdNode(document.getElementById('homeAdTopAdsterra'));
-    injectResponsiveAdNode(document.getElementById('homeAdTopAdsterra2'));
-    injectResponsiveAdNode(document.getElementById('libAdTopAdsterra'));
-    injectResponsiveAdNode(document.getElementById('libAdTopAdsterra2'));
-}
-
-// ==========================================
-// 🚀 DYNAMIC POPUNDER INJECTOR
-// ==========================================
-let popAdsInjected = false;
-function injectPopAds() {
-    if (popAdsInjected) return;
-    popAdsInjected = true;
-    
-    const socialBar = document.createElement('script');
-    socialBar.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
-    socialBar.async = true;
-    document.body.appendChild(socialBar);
-    
-    const popunder = document.createElement('script');
-    popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
-    popunder.async = true;
-    document.body.appendChild(popunder);
-}
-
-// ==========================================
-// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
-// ==========================================
-function injectNativeBanner(container, h = 260) {
-    if(!container || isPopupAdBlocking) return;
-    if(container.querySelector('iframe')) return;
-    
-    container.innerHTML = '';
-    
-    const iframeWrapper = document.createElement('div');
-    iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
-    
-    const iframe = document.createElement('iframe');
-    iframe.style.width = "100%";
-    iframe.style.height = h + "px";
-    iframe.frameBorder = "0";
-    iframe.scrolling = "no";
-    iframe.style.border = "none";
-    iframe.style.overflow = "hidden";
-    iframe.style.backgroundColor = "transparent";
-    iframe.style.display = "block";
-    iframe.setAttribute('allowtransparency', 'true');
-    
-    iframeWrapper.appendChild(iframe);
-    container.appendChild(iframeWrapper);
-    
-    setTimeout(() => {
-        try {
-            const doc = iframe.contentWindow.document || iframe.contentDocument;
-            doc.open();
-            doc.write(`<!DOCTYPE html>
-            <html>
-            <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style>
-            </head>
-            <body>
-                <script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></script>
-                <div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div>
-            </body>
-            </html>`);
-            doc.close();
-        } catch(e) { }
-    }, 10);
-}
-
 function createMobileNativeAdBlock() {
     const block = document.createElement('div');
-    block.className = 'flex md:hidden col-span-full w-full justify-center my-4';
-    const container = document.createElement('div');
-    container.className = 'w-full bg-[#111] rounded-xl overflow-hidden border border-white/5 shadow-lg relative min-h-[250px] flex items-center justify-center';
-    
-    const label = document.createElement('span');
-    label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
-    label.innerText = "Advertisement";
-    container.appendChild(label);
-    
-    injectNativeBanner(container, 260);
-    block.appendChild(container);
+    block.style.display = 'none'; // 🎯 লেআউট ব্রেকিং এড়াতে অদৃশ্য ০-ব্যান্ডউইথ নোড
     return block;
 }
 
 function createDesktopNativeAdBlock() {
     const block = document.createElement('div');
-    block.className = 'hidden md:flex col-span-full w-full justify-between gap-4 my-6';
-    
-    for(let i=0; i<3; i++) {
-        const container = document.createElement('div');
-        container.className = 'flex-1 w-full bg-[#111] rounded-xl overflow-hidden border border-white/5 shadow-lg relative min-h-[250px] flex items-center justify-center';
-        
-        const label = document.createElement('span');
-        label.className = "absolute top-1 left-2 text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
-        label.innerText = "Advertisement";
-        container.appendChild(label);
-
-        injectNativeBanner(container, 260);
-        block.appendChild(container);
-    }
+    block.style.display = 'none'; // 🎯 লেআউট ব্রেকিং এড়াতে অদৃশ্য ০-ব্যান্ডউইথ নোড
     return block;
 }
 
@@ -222,12 +56,10 @@ const contentData = [
     }
 ];
 
-const categoryIndexMap = {}; // $O(1)$ হ্যাশ-ম্যাপ গ্লোবাল অবজেক্ট
+const categoryIndexMap = {}; 
 
 function buildCategoryIndex() {
-    // আগের ইনডেক্সিং কি ক্লিয়ার করা
     Object.keys(categoryIndexMap).forEach(key => delete categoryIndexMap[key]);
-    // ডাটাবেজ ম্যাপ স্ট্রাকচারে পুশ করা
     contentData.forEach(item => {
         const cat = item.category || "Others";
         if (!categoryIndexMap[cat]) {
@@ -242,7 +74,7 @@ function processContentItems() {
         item.id = index; 
         item.slug = generateMovieSlug(item.title); 
     });
-    buildCategoryIndex(); // আল্ট্রা ফাস্ট হ্যাশ-ম্যাপ বিল্ডার চালুকরণ
+    buildCategoryIndex(); 
 }
 
 async function fetchAndCacheNetworkDatabase() {
@@ -272,7 +104,6 @@ function triggerBackgroundUpdateCheck() {
                 const text = await response.text();
                 const cachedText = localStorage.getItem('moviedakhi_db_cache');
                 
-                // যদি সার্ভারে কোনো পরিবর্তন হয়ে থাকে তবেই সাইলেন্ট আপডেট হবে
                 if (text !== cachedText) {
                     const db = JSON.parse(text);
                     if (Array.isArray(db) && db.length > 0) {
@@ -281,7 +112,6 @@ function triggerBackgroundUpdateCheck() {
                         contentData.push(...db); 
                         processContentItems();
                         
-                        // ব্রাউজার স্ক্রিন সাইলেন্ট লাইভ রিলিজ রিফ্রেশমেন্ট
                         if (currentView === 'home') {
                             initHeroSlider();
                             renderRecentAdds();
@@ -295,7 +125,7 @@ function triggerBackgroundUpdateCheck() {
         } catch (err) {
             console.error("Background auto-update check failed safely.", err);
         }
-    }, 1200); // মূল থ্রেডের কাজ শেষ হওয়ার পর ব্যাকগ্রাউন্ড চেক চালু হবে
+    }, 1200); 
 }
 
 async function loadContentDatabase() {
@@ -306,8 +136,8 @@ async function loadContentDatabase() {
             if (Array.isArray(db) && db.length > 0) {
                 contentData.length = 0;
                 contentData.push(...db);
-                processContentItems(); // ০ মিলি-সেকেন্ডে পেজ ওপেন হবে
-                triggerBackgroundUpdateCheck(); // সাইলেন্ট ব্যাকগ্রাউন্ড ভ্যালিডেটর রান
+                processContentItems(); 
+                triggerBackgroundUpdateCheck(); 
                 return;
             }
         } catch (e) {
@@ -589,7 +419,6 @@ window.addEventListener('resize', () => {
 function initHeroSlider() {
     if (!sliderWrapper || !sliderDots) return;
     
-    // ম্যাপ ট্র্যাকার থেকে ইনস্ট্যান্ট কালেক্ট করা হচ্ছে
     const slides = [...(categoryIndexMap["Recent Adds"] || []), ...(categoryIndexMap["Bollywood"] || []), ...(categoryIndexMap["Hollywood"] || [])].slice(0, 6);
     if (slides.length === 0) return;
 
@@ -774,12 +603,6 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
             window.scrollTo({ top: targetScroll, behavior: 'instant' });
         }
     }
-
-    setTimeout(() => {
-        if (!isPopupAdBlocking) {
-            initStaticAds();
-        }
-    }, 100);
 }
 
 // ==========================================
@@ -827,7 +650,6 @@ function renderRecentAdds() {
     if (!recentAddsGrid) return;
     recentAddsGrid.innerHTML = '';
     
-    // 🎯 ওল্ড কোডের লুপ বাদ দিয়ে ডাইরেক্ট ও(১) হ্যাশ-ম্যাপ রিড করা হচ্ছে
     const recentItems = categoryIndexMap["Recent Adds"] || [];
     const fragment = document.createDocumentFragment();
     
@@ -866,7 +688,6 @@ function renderCategorySections(forceRenderAll = false) {
         const cat = targetSection.getAttribute('data-category-lazy');
         const lazyGrid = targetSection.querySelector('.lazy-grid');
         
-        // 🎯 লুপ ও ফিল্টার ছাড়া ইনস্ট্যান্ট ও(১) হ্যাশ-ম্যাপ কন্টেন্ট রিড
         const filtered = categoryIndexMap[cat] || [];
 
         lazyGrid.innerHTML = '';
@@ -896,13 +717,6 @@ function renderCategorySections(forceRenderAll = false) {
         viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
         lazyGrid.appendChild(viewAllCard);
 
-        targetSection.querySelectorAll('.cat-ad-adsterra').forEach(container => {
-            if (!container.dataset.loaded) {
-                injectResponsiveAdNode(container);
-                container.dataset.loaded = 'true';
-            }
-        });
-
         targetSection.classList.remove('opacity-0');
         targetSection.classList.add('opacity-100');
     }
@@ -917,13 +731,8 @@ function renderCategorySections(forceRenderAll = false) {
         section.setAttribute('data-category-lazy', cat);
 
         section.innerHTML = `
-            <div class="w-full flex flex-col items-center gap-4 mb-8 mt-4 min-h-[150px]">
-                <div class="cat-ad-adsterra w-full"></div>
-                <div class="cat-ad-adsterra w-full"></div>
-            </div>
-
-            <div class="flex items-center space-x-3 mb-8 justify-center">
-                <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
+            <div class="flex items-center space-x-3 space-y-10 md:space-y-28 mb-8 justify-center">
+                <div class="w-1.5 h-7 md:h-10 bg-red-600 rounded-full shadow-lg shadow-red-600/20 md:mt-28 mt-10"></div>
                 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
             </div>
             
@@ -985,7 +794,6 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     subGrid.className = libraryGrid.dataset.originalClasses;
     libraryGrid.appendChild(subGrid);
 
-    // 🎯 ম্যাপ রিড অপ্টিমাইজেশন লেয়ার (সার্চ না থাকলে পুরো ডাটাবেজের লুপ বন্ধ রাখবে)
     let sourceArray = contentData;
     if (!isSearch && filter !== "all") {
         sourceArray = categoryIndexMap[filter] || [];
@@ -1070,7 +878,6 @@ let activePopupType = null;
 let isAdTabOpened = false;
 const adTargetUrl = "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263";
 
-// পপআপ অ্যাকশন ও উইন্ডো রাউটিং হ্যান্ডলার (ইনস্ট্যান্ট ক্লোজ মেকানিজম যুক্ত করা হয়েছে)
 function handlePopupAction(type) {
     window.open(adTargetUrl, '_blank');
 
@@ -1239,7 +1046,7 @@ function executeActualOpenModal(id) {
                 <p class="leading-relaxed text-gray-400 text-[12px] md:text-[13px] font-normal pt-4 pb-4">
                     Looking for the secure <strong class="text-white font-semibold">Index of /${SEOFullTitle}</strong> direct servers? MovieDakhi provides optimized, ultra-fast cloud mirrors to stream and download this trending <span class="text-red-400 font-medium">${contentType.toLowerCase()}</span> with zero buffering.
                 </p>
-                <div class="p-3 md:p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid g-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
+                <div class="p-3 md:p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
                         <span class="text-gray-400 font-medium flex items-center gap-2">📌 Directory</span>
                         <span class="font-semibold text-white truncate max-w-[160px] md:max-w-xs" title="Index of /${titleKey}">Index of /${titleKey}</span>
@@ -1334,11 +1141,6 @@ function executeActualOpenModal(id) {
         modal.classList.remove('hidden');
         void modal.offsetWidth; 
         modal.classList.add('active');
-        
-        setTimeout(() => {
-            injectResponsiveAdNode(document.getElementById('modalAdTop'));
-            injectResponsiveAdNode(document.getElementById('modalAdBottom'));
-        }, 150);
     }
 
     document.body.style.position = 'fixed';
@@ -1584,17 +1386,6 @@ function closeAnnouncement() {
         window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
 
         isPopupAdBlocking = false;
-        initStaticAds();
-        
-        document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
-            if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
-        });
-        
-        document.querySelectorAll('.cat-ad-adsterra').forEach(container => {
-            if (!container.querySelector('iframe') && container.dataset.loaded === 'true') {
-                injectResponsiveAdNode(container);
-            }
-        });
 
         setTimeout(() => {
             injectPopAds(); 
@@ -1625,11 +1416,12 @@ if (shouldShowPopup) {
         localStorage.setItem(localKey, nowTime.toString());
         showAnnouncement();
     }, 20000);
-} else {
-    setTimeout(() => {
-        injectPopAds();
-    }, 3500); 
 }
+
+// 🎯 পপআপ নোটিশ আসুক বা না আসুক, পেজ লোড হওয়ার সাথে সাথে পপআন্ডার ও সোশ্যাল বার ২০০ মিলি-সেকেন্ডে ফায়ার হবে
+setTimeout(() => {
+    injectPopAds();
+}, 200);
 
 let scrollTimeoutId;
 window.addEventListener('scroll', () => {
@@ -1691,18 +1483,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         sessionStorage.removeItem('MovieDakhi_Count');
     }
 
-    // renderCategories();
-    // initHeroSlider();
-    // renderRecentAdds();
-    // renderCategorySections(isRestoring);
-    
-    // const params = new URLSearchParams(window.location.search);
-    // const view = params.get('view') || 'home';
-    // const category = params.get('category');
-    // const movieSlug = params.get('movie');
-
-    // const isBlob = window.location.protocol === 'blob:';
-
     renderCategories();
     initHeroSlider();
     renderRecentAdds();
@@ -1712,7 +1492,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const view = params.get('view') || 'home';
     const category = params.get('category');
     
-    // 🎯 পরিবর্তন: const বদলে let করা হলো এবং ডিরেক্ট পাথনেম রিডিং মেকানিজম যুক্ত করা হলো
     let movieSlug = params.get('movie');
 
     if (!movieSlug) {
@@ -1756,10 +1535,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }, 300); 
         }
     }
-
-    setTimeout(() => {
-        initStaticAds();
-    }, 100); 
 });
 
 // ==========================================
