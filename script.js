@@ -1691,6 +1691,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         sessionStorage.removeItem('MovieDakhi_Count');
     }
 
+    // renderCategories();
+    // initHeroSlider();
+    // renderRecentAdds();
+    // renderCategorySections(isRestoring);
+    
+    // const params = new URLSearchParams(window.location.search);
+    // const view = params.get('view') || 'home';
+    // const category = params.get('category');
+    // const movieSlug = params.get('movie');
+
+    // const isBlob = window.location.protocol === 'blob:';
+
     renderCategories();
     initHeroSlider();
     renderRecentAdds();
@@ -1699,9 +1711,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view') || 'home';
     const category = params.get('category');
-    const movieSlug = params.get('movie');
+    
+    // 🎯 পরিবর্তন: const বদলে let করা হলো এবং ডিরেক্ট পাথনেম রিডিং মেকানিজম যুক্ত করা হলো
+    let movieSlug = params.get('movie');
+
+    if (!movieSlug) {
+        const path = window.location.pathname;
+        if (path.endsWith('.html')) {
+            const excludedFiles = ['/index.html', '/Contact.html', '/DMCA.html', '/Privacy.html', '/Disclaimer.html'];
+            if (!excludedFiles.includes(path)) {
+                movieSlug = decodeURIComponent(path.replace('/', '').replace('.html', ''));
+            }
+        }
+    }
 
     const isBlob = window.location.protocol === 'blob:';
+    
     if (history.state && !movieSlug) {
         const state = history.state;
         finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY || 0);
