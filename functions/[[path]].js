@@ -8,7 +8,7 @@ export async function onRequest(context) {
         return env.ASSETS.fetch(request);
     }
 
-    // ২. এগুলো সাধারণ পেজ তাই এগুলোতে মুভি এসইও প্রসেস হবে acquisitions না
+    // ২. এগুলো সাধারণ পেজ তাই এগুলোতে মুভি এসইও প্রসেস হবে না
     const excludedFiles = ['/index.html', '/Contact.html', '/DMCA.html', '/Privacy.html', '/Disclaimer.html'];
     
     if (path.endsWith('.html') && !excludedFiles.includes(path)) {
@@ -40,24 +40,41 @@ export async function onRequest(context) {
                 const pageTitle = `Watch ${safeTitle} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
                 const pageDesc = `Watch ${safeTitle} full movie online for free in HD quality. Download ${safeTitle} complete web series 1080p, 720p. Stream ${movieGenre} movies seamlessly on MovieDakhi.`;
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
+                
+                // ইনবক্স গ্যারান্টি: সরাসরি ট্রাস্টেড অরিজিনাল সিডিএন ইমেজ
                 const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
-                // ⚡ কড়া মেটা ট্যাগ রিপ্লেসমেন্ট (Regex ব্যবহার করা হয়েছে যেন মাল্টিপল লাইনেও বাগ না খায়)
-                html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${pageTitle}</title>`);
-                html = html.replace(/<meta\s+name="description"\s+content="[^"]*"/i, `<meta name="description" content="${pageDesc}"`);
-                html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"/i, `<link rel="canonical" href="${movieUrl}"`);
+                // ⚡ ওল্ড মেটা ট্যাগগুলো ক্লিন করা (ডুপ্লিকেট নোড বা জ্যাম এড়াতে সব পুরনো ট্যাগ ইরেজ করা হলো)
+                html = html.replace(/<title>[\s\S]*?<\/title>/i, '');
+                html = html.replace(/<meta[^>]*?name="description"[^>]*?>/gi, '');
+                html = html.replace(/<link[^>]*?rel="canonical"[^>]*?>/gi, '');
+                html = html.replace(/<meta[^>]*?property="og:[^>]*?>/gi, '');
+                html = html.replace(/<meta[^>]*?(?:name|property)="twitter:[^>]*?>/gi, '');
 
-                // ⚡ Open Graph (Facebook SEO) মেটা ট্যাগ আপডেট
-                html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"/i, `<meta property="og:url" content="${movieUrl}"`);
-                html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"/i, `<meta property="og:title" content="${pageTitle}"`);
-                html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"/i, `<meta property="og:description" content="${pageDesc}"`);
-                html = html.replace(/<meta\s+property="og:image"\s+content="[^"]*"/i, `<meta property="og:image" content="${imageUrl}"`);
+                // 🎯 মাস্টার মনোলিথিক মেটা ব্লক (সব চ্যাট ইনবক্স/DM প্রিভিউ এবং ক্রলারের জন্য একসাথে ইনজেকশন)
+                const metaBlock = `
+    <title>${pageTitle}</title>
+    <meta name="description" content="${pageDesc}">
+    <link rel="canonical" href="${movieUrl}">
+    <meta property="og:type" content="video.movie">
+    <meta property="og:url" content="${movieUrl}">
+    <meta property="og:title" content="${pageTitle}">
+    <meta property="og:description" content="${pageDesc}">
+    <meta property="og:image" content="${imageUrl}">
+    <meta property="og:image:secure_url" content="${imageUrl}">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:type" content="image/jpeg">
+    <link rel="image_src" href="${imageUrl}">
+    <meta itemprop="image" content="${imageUrl}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="${movieUrl}">
+    <meta name="twitter:title" content="${pageTitle}">
+    <meta name="twitter:description" content="${pageDesc}">
+    <meta name="twitter:image" content="${imageUrl}">`;
 
-                // ⚡ Twitter SEO মেta ট্যাগ আপডেট
-                html = html.replace(/<meta\s+property="twitter:url"\s+content="[^"]*"/i, `<meta property="twitter:url" content="${movieUrl}"`);
-                html = html.replace(/<meta\s+property="twitter:title"\s+content="[^"]*"/i, `<meta property="twitter:title" content="${pageTitle}"`);
-                html = html.replace(/<meta\s+property="twitter:description"\s+content="[^"]*"/i, `<meta property="twitter:description" content="${pageDesc}"`);
-                html = html.replace(/<meta\s+property="twitter:image"\s+content="[^"]*"/i, `<meta property="twitter:image" content="${imageUrl}"`);
+                // হেড ট্যাগের ঠিক নিচেই সুপার হাই-প্রিওরিটিতে ইনজেক্ট করা হলো
+                html = html.replace('<head>', `<head>\n    ${metaBlock}`);
 
                 // 🚀 গুগল সার্চ বটের জন্য ডাইনামিক JSON-LD "Movie Schema Markup" ইনজেকশন (এতে র‍্যাংকিং দ্বিগুণ ফাস্ট হবে)
                 const movieSchema = {
@@ -89,12 +106,12 @@ export async function onRequest(context) {
                 if (targetMovie.movieHighlights) {
                     seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">🎯 Streaming Recommendation:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.movieHighlights}</p></div>`;
                 }
-                if (targetMovie.detailedPlotSummary) {
+                if (targetMovie.detailedPlotSummary) {  
                     seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">🍿 Detailed Plot Summary:</b><p style="color: #999; font-size: 13px; white-space: pre-line; line-height: 1.6; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); font-style: normal;">${targetMovie.detailedPlotSummary}</p></div>`;
                 }
                 seoBodyContent += `</div>`;
 
-                // আপনার HTML ফাইলের source 33-এ থাকা placeholder এ সেভ করা হচ্ছে
+                // আপনার HTML ফাইলের placeholder এ কন্টেন্ট ইনজেকশন করা হচ্ছে
                 html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n${seoBodyContent}`);
             }
             

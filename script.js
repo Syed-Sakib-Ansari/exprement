@@ -30,188 +30,22 @@ function generateMovieSlug(title) {
 }
 
 // ==========================================
-// 🚀 SMART RESPONSIVE AD INJECTOR (ADSTERRA)
+// 🚀 NATIVE GRID SAFE COUPLING (LIGHTWEIGHT)
 // ==========================================
-function injectAdsterra(container, key, w, h) {
-    if(!container || isPopupAdBlocking) return;
-    container.innerHTML = '';
-    container.className = "flex bg-[#0a0a0a] border border-white/5 rounded-xl relative overflow-hidden justify-center items-center shrink-0 mx-auto shadow-lg";
-    container.style.width = '100%';
-    container.style.maxWidth = w + 'px';
-    container.style.minHeight = h + 'px';
-    
-    const label = document.createElement('span');
-    label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
-    label.innerText = "Advertisement";
-    container.appendChild(label);
-    
-    const iframeWrapper = document.createElement('div');
-    iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
-    
-    const iframe = document.createElement('iframe');
-    iframe.width = w;
-    iframe.height = h;
-    iframe.frameBorder = "0";
-    iframe.scrolling = "no";
-    iframe.style.border = "none";
-    iframe.style.overflow = "hidden";
-    iframe.style.backgroundColor = "transparent";
-    iframe.style.display = "block";
-    iframe.setAttribute('allowtransparency', 'true');
-    
-    iframeWrapper.appendChild(iframe);
-    container.appendChild(iframeWrapper);
-    
-    setTimeout(() => {
-        try {
-            const doc = iframe.contentWindow.document || iframe.contentDocument;
-            doc.open();
-            doc.write(`<!DOCTYPE html>
-            <html>
-            <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;}</style>
-            </head>
-            <body>
-                <script type="text/javascript">
-                    atOptions = {
-                        'key' : '${key}',
-                        'format' : 'iframe',
-                        'height' : ${h},
-                        'width' : ${w},
-                        'params' : {}
-                    };
-                </script>
-                <script type="text/javascript" src="https://onsetcab.com/${key}/invoke.js"></script>
-            </body>
-            </html>`);
-            doc.close();
-        } catch(e) { }
-    }, 10);
-}
-
-function injectResponsiveAdNode(container) {
-    if(!container) return;
-    if(container.querySelector('iframe')) return; 
-    
-    const isMobile = window.innerWidth <= 768;
-    const key = isMobile ? '70c7d4486938c9292683286ff6e376a9' : 'd07f22b9f96bb57b376565604ef61214';
-    const w = isMobile ? 320 : 728;
-    const h = isMobile ? 50 : 90;
-    injectAdsterra(container, key, w, h);
-}
-
-function initStaticAds() {
-    injectResponsiveAdNode(document.getElementById('homeAdTopAdsterra'));
-    injectResponsiveAdNode(document.getElementById('homeAdTopAdsterra2'));
-    injectResponsiveAdNode(document.getElementById('libAdTopAdsterra'));
-    injectResponsiveAdNode(document.getElementById('libAdTopAdsterra2'));
-}
-
-// ==========================================
-// 🚀 DYNAMIC POPUNDER INJECTOR
-// ==========================================
-let popAdsInjected = false;
-function injectPopAds() {
-    if (popAdsInjected) return;
-    popAdsInjected = true;
-    
-    const socialBar = document.createElement('script');
-    socialBar.src = "https://onsetcab.com/bb/1a/2a/bb1a2a42a86c1e91bdba1e5aeadde4ac.js";
-    socialBar.async = true;
-    document.body.appendChild(socialBar);
-    
-    const popunder = document.createElement('script');
-    popunder.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
-    popunder.async = true;
-    document.body.appendChild(popunder);
-}
-
-// ==========================================
-// 🚀 NATIVE BANNER (2:1) ISOLATED INJECTOR
-// ==========================================
-function injectNativeBanner(container, h = 260) {
-    if(!container || isPopupAdBlocking) return;
-    if(container.querySelector('iframe')) return;
-    
-    container.innerHTML = '';
-    
-    const iframeWrapper = document.createElement('div');
-    iframeWrapper.className = "relative z-10 w-full h-full flex justify-center items-center";
-    
-    const iframe = document.createElement('iframe');
-    iframe.style.width = "100%";
-    iframe.style.height = h + "px";
-    iframe.frameBorder = "0";
-    iframe.scrolling = "no";
-    iframe.style.border = "none";
-    iframe.style.overflow = "hidden";
-    iframe.style.backgroundColor = "transparent";
-    iframe.style.display = "block";
-    iframe.setAttribute('allowtransparency', 'true');
-    
-    iframeWrapper.appendChild(iframe);
-    container.appendChild(iframeWrapper);
-    
-    setTimeout(() => {
-        try {
-            const doc = iframe.contentWindow.document || iframe.contentDocument;
-            doc.open();
-            doc.write(`<!DOCTYPE html>
-            <html>
-            <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <style>body{margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;} #container-1ada1fa7d2cd2c77a6a06795ebf21550 { width: 100%; display: flex; justify-content: center; }</style>
-            </head>
-            <body>
-                <script async="async" data-cfasync="false" src="https://onsetcab.com/1ada1fa7d2cd2c77a6a06795ebf21550/invoke.js"></script>
-                <div id="container-1ada1fa7d2cd2c77a6a06795ebf21550"></div>
-            </body>
-            </html>`);
-            doc.close();
-        } catch(e) { }
-    }, 10);
-}
-
 function createMobileNativeAdBlock() {
     const block = document.createElement('div');
-    block.className = 'flex md:hidden col-span-full w-full justify-center my-4';
-    const container = document.createElement('div');
-    container.className = 'w-full bg-[#111] rounded-xl overflow-hidden border border-white/5 shadow-lg relative min-h-[250px] flex items-center justify-center';
-    
-    const label = document.createElement('span');
-    label.className = "absolute top-1 left-2 text-[6px] md:text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
-    label.innerText = "Advertisement";
-    container.appendChild(label);
-    
-    injectNativeBanner(container, 260);
-    block.appendChild(container);
+    block.style.display = 'none'; // 🎯 লেআউট ব্রেকিং এড়াতে অদৃশ্য ০-ব্যান্ডউইথ নোড
     return block;
 }
 
 function createDesktopNativeAdBlock() {
     const block = document.createElement('div');
-    block.className = 'hidden md:flex col-span-full w-full justify-between gap-4 my-6';
-    
-    for(let i=0; i<3; i++) {
-        const container = document.createElement('div');
-        container.className = 'flex-1 w-full bg-[#111] rounded-xl overflow-hidden border border-white/5 shadow-lg relative min-h-[250px] flex items-center justify-center';
-        
-        const label = document.createElement('span');
-        label.className = "absolute top-1 left-2 text-[8px] text-gray-600 font-black tracking-widest uppercase pointer-events-none z-0";
-        label.innerText = "Advertisement";
-        container.appendChild(label);
-
-        injectNativeBanner(container, 260);
-        block.appendChild(container);
-    }
+    block.style.display = 'none'; // 🎯 লেআউট ব্রেকিং এড়াতে অদৃশ্য ০-ব্যান্ডউইথ নোড
     return block;
 }
 
 // ==========================================
-// 🚀 DATABASE & FETCH SYSTEM
+// 🚀 DATABASE, HIGH-SPEED CACHING & INSTANT O(1) INDEXING
 // ==========================================
 const contentData = [
     {
@@ -222,24 +56,95 @@ const contentData = [
     }
 ];
 
-async function loadContentDatabase() {
+const categoryIndexMap = {}; 
+
+function buildCategoryIndex() {
+    Object.keys(categoryIndexMap).forEach(key => delete categoryIndexMap[key]);
+    contentData.forEach(item => {
+        const cat = item.category || "Others";
+        if (!categoryIndexMap[cat]) {
+            categoryIndexMap[cat] = [];
+        }
+        categoryIndexMap[cat].push(item);
+    });
+}
+
+function processContentItems() {
+    contentData.forEach((item, index) => { 
+        item.id = index; 
+        item.slug = generateMovieSlug(item.title); 
+    });
+    buildCategoryIndex(); 
+}
+
+async function fetchAndCacheNetworkDatabase() {
     try {
         const response = await fetch('movies.json');
         if (response.ok) {
-            const db = await response.json();
+            const text = await response.text();
+            const db = JSON.parse(text);
             if (Array.isArray(db) && db.length > 0) {
+                localStorage.setItem('moviedakhi_db_cache', text);
                 contentData.length = 0; 
                 contentData.push(...db); 
+                processContentItems();
             }
         }
     } catch (err) {
-        console.warn("External JSON database failed to load. Using fallback array.", err);
-    } finally {
-        contentData.forEach((item, index) => { 
-            item.id = index; 
-            item.slug = generateMovieSlug(item.title); 
-        });
+        console.warn("Live fetch failed, using internal database fallback.", err);
+        processContentItems();
     }
+}
+
+function triggerBackgroundUpdateCheck() {
+    setTimeout(async () => {
+        try {
+            const response = await fetch('movies.json');
+            if (response.ok) {
+                const text = await response.text();
+                const cachedText = localStorage.getItem('moviedakhi_db_cache');
+                
+                if (text !== cachedText) {
+                    const db = JSON.parse(text);
+                    if (Array.isArray(db) && db.length > 0) {
+                        localStorage.setItem('moviedakhi_db_cache', text);
+                        contentData.length = 0; 
+                        contentData.push(...db); 
+                        processContentItems();
+                        
+                        if (currentView === 'home') {
+                            initHeroSlider();
+                            renderRecentAdds();
+                            renderCategorySections(false);
+                        } else {
+                            initLibraryRender();
+                        }
+                    }
+                }
+            }
+        } catch (err) {
+            console.error("Background auto-update check failed safely.", err);
+        }
+    }, 1200); 
+}
+
+async function loadContentDatabase() {
+    const cachedData = localStorage.getItem('moviedakhi_db_cache');
+    if (cachedData) {
+        try {
+            const db = JSON.parse(cachedData);
+            if (Array.isArray(db) && db.length > 0) {
+                contentData.length = 0;
+                contentData.push(...db);
+                processContentItems(); 
+                triggerBackgroundUpdateCheck(); 
+                return;
+            }
+        } catch (e) {
+            localStorage.removeItem('moviedakhi_db_cache');
+        }
+    }
+    await fetchAndCacheNetworkDatabase();
 }
 
 const databaseLoadPromise = loadContentDatabase();
@@ -513,7 +418,8 @@ window.addEventListener('resize', () => {
 // ==========================================
 function initHeroSlider() {
     if (!sliderWrapper || !sliderDots) return;
-    const slides = contentData.filter(item => item.category === "Recent Adds" || item.category === "Bollywood" || item.category === "Hollywood").slice(0, 6);
+    
+    const slides = [...(categoryIndexMap["Recent Adds"] || []), ...(categoryIndexMap["Bollywood"] || []), ...(categoryIndexMap["Hollywood"] || [])].slice(0, 6);
     if (slides.length === 0) return;
 
     let currentSlide = 0;
@@ -697,12 +603,6 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
             window.scrollTo({ top: targetScroll, behavior: 'instant' });
         }
     }
-
-    setTimeout(() => {
-        if (!isPopupAdBlocking) {
-            initStaticAds();
-        }
-    }, 100);
 }
 
 // ==========================================
@@ -749,7 +649,8 @@ function createMovieCard(item) {
 function renderRecentAdds() {
     if (!recentAddsGrid) return;
     recentAddsGrid.innerHTML = '';
-    const recentItems = contentData.filter(item => item.category === "Recent Adds");
+    
+    const recentItems = categoryIndexMap["Recent Adds"] || [];
     const fragment = document.createDocumentFragment();
     
     recentItems.slice(0, 18).forEach((item, index) => {
@@ -786,7 +687,8 @@ function renderCategorySections(forceRenderAll = false) {
     function loadCategorySection(targetSection) {
         const cat = targetSection.getAttribute('data-category-lazy');
         const lazyGrid = targetSection.querySelector('.lazy-grid');
-        const filtered = contentData.filter(m => m.category === cat);
+        
+        const filtered = categoryIndexMap[cat] || [];
 
         lazyGrid.innerHTML = '';
         const cardsFragment = document.createDocumentFragment();
@@ -815,19 +717,12 @@ function renderCategorySections(forceRenderAll = false) {
         viewAllCard.onclick = () => { clearSearch(true); switchView('library', cat); };
         lazyGrid.appendChild(viewAllCard);
 
-        targetSection.querySelectorAll('.cat-ad-adsterra').forEach(container => {
-            if (!container.dataset.loaded) {
-                injectResponsiveAdNode(container);
-                container.dataset.loaded = 'true';
-            }
-        });
-
         targetSection.classList.remove('opacity-0');
         targetSection.classList.add('opacity-100');
     }
 
     categories.filter(c => c !== 'all').forEach(cat => {
-        const filtered = contentData.filter(m => m.category === cat);
+        const filtered = categoryIndexMap[cat] || [];
         if (filtered.length === 0) return;
 
         const displayName = cat === 'Korean Country' ? 'Korean' : cat;
@@ -836,13 +731,8 @@ function renderCategorySections(forceRenderAll = false) {
         section.setAttribute('data-category-lazy', cat);
 
         section.innerHTML = `
-            <div class="w-full flex flex-col items-center gap-4 mb-8 mt-4 min-h-[150px]">
-                <div class="cat-ad-adsterra w-full"></div>
-                <div class="cat-ad-adsterra w-full"></div>
-            </div>
-
-            <div class="flex items-center space-x-3 mb-8 justify-center">
-                <div class="w-1.5 h-7 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
+            <div class="flex items-center space-x-3 space-y-10 md:space-y-28 mb-8 justify-center">
+                <div class="w-1.5 h-7 md:h-10 bg-red-600 rounded-full shadow-lg shadow-red-600/20 md:mt-28 mt-10"></div>
                 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
             </div>
             
@@ -896,12 +786,6 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     if (subGrid) {
         subGrid.classList.remove('hidden');
         libraryDisplayedCount = parseInt(subGrid.dataset.displayedCount || ITEMS_PER_PAGE, 10);
-        
-        libraryData = contentData.filter(item => {
-            return filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
-        });
-        
-        updateLoadMoreVisibility();
         return; 
     }
 
@@ -910,7 +794,14 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     subGrid.className = libraryGrid.dataset.originalClasses;
     libraryGrid.appendChild(subGrid);
 
-    libraryData = contentData.filter(item => {
+    let sourceArray = contentData;
+    if (!isSearch && filter !== "all") {
+        sourceArray = categoryIndexMap[filter] || [];
+    } else if (!isSearch && filter === "all") {
+        sourceArray = categoryIndexMap["Recent Adds"] || [];
+    }
+
+    libraryData = sourceArray.filter(item => {
         const matchesCat = filter === "all" || item.category === filter || (filter === "all" && item.category === "Recent Adds");
         const matchesSearch = isSearch ? (cleanStr(item.title).includes(cleanQuery) || cleanStr(item.category).includes(cleanQuery) || cleanStr(item.genre).includes(cleanQuery)) : true;
         return matchesCat && matchesSearch;
@@ -987,68 +878,57 @@ let activePopupType = null;
 let isAdTabOpened = false;
 const adTargetUrl = "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263";
 
-// পপআপ অ্যাকশন ও উইন্ডো রাউটিং হ্যান্ডলার (ইনস্ট্যান্ট ক্লোজ মেকানিজম যুক্ত করা হয়েছে)
 function handlePopupAction(type) {
-    // ১. নতুন ট্যাবে ইনস্ট্যান্টলি অ্যাড লিংকটি ওপেন হবে
     window.open(adTargetUrl, '_blank');
 
-    // ২. একই সাথে (Instant) মেইন পেজের পপআপ বক্সটি সম্পূর্ণ বন্ধ হয়ে যাবে
     if (type === 'unlock') {
         const unlockDiv = document.getElementById('unlockPopup');
         if (unlockDiv) {
             unlockDiv.classList.remove('flex');
             unlockDiv.classList.add('hidden');
         }
-        } else if (type === 'feedback') {
+    } else if (type === 'feedback') {
         const feedbackDiv = document.getElementById('feedbackPopup');
         if (feedbackDiv) {
             feedbackDiv.classList.remove('flex');
             feedbackDiv.classList.add('hidden');
         }
-        // বডি স্ক্রোল ও ফিক্সড স্টেট নরমাল ট্র্যাকে ফিরিয়ে আনা (স্ক্রোল জাম্প প্রোটেকশন)
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
         document.body.classList.remove('overflow-hidden');
         window.scrollTo(0, savedScrollY);
 
-        // 🚀 ফিডব্যাক বক্স বন্ধ হওয়ার সাথে সাথে ডাইনামিক্যালি স্ক্রিপ্ট অ্যাড রান করানো হবে
         const feedbackAdScript = document.createElement('script');
         feedbackAdScript.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
         feedbackAdScript.async = true;
         document.body.appendChild(feedbackAdScript);
     }
 
-    // স্টেট ক্লিয়ার্যান্স (যাতে ব্রাউজার মেমোরিতে কোনো কনফ্লিক্ট না হয়)
     activePopupType = null;
     isAdTabOpened = false;
 }
 
-// উইন্ডো ফোকাস লিসেনার এখন শুধু ব্যাকগ্রাউন্ড সেফটি রিসেট হিসেবে কাজ করবে
 window.addEventListener('focus', () => {
     isAdTabOpened = false;
     activePopupType = null;
 });
 
 // ==========================================
-// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC (BUG FIXED)
+// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC
 // ==========================================
 function openModal(id) {
     savedScrollY = window.scrollY;
-
-    // ১. প্রথমে মোডাল বক্সের সব ডেটা ব্যাকগ্রাউন্ডে নিখুঁতভাবে রেন্ডার করবে
     executeActualOpenModal(id);
 
-    // ২. মোডাল শো হওয়ার সাথে সাথেই তার ওপরে ইনস্ট্যান্ট প্রিমিয়াম আনলক বক্সটি ভাসিয়ে দেবে
     const popup = document.getElementById('unlockPopup');
     if (popup) {
         popup.classList.remove('hidden');
         popup.classList.add('flex');
-        document.body.classList.add('overflow-hidden'); // আধুনিক স্ক্রোল লক মেকানিজম
+        document.body.classList.add('overflow-hidden'); 
     }
 }
 
-// মোডাল ইন্টারফেস জেনারেটর (আপনার কোর এসইও এবং ডিভি স্ট্রাকচার অপরিবর্তিত রাখা হয়েছে)
 function executeActualOpenModal(id) {
     if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
 
@@ -1136,8 +1016,13 @@ function executeActualOpenModal(id) {
     setMetaTag('property', 'og:description', metaDescription.content);
     setMetaTag('property', 'og:url', newUrl.href);
     setMetaTag('name', 'twitter:title', document.title);
-    setMetaTag('name', 'twitter:description', metaDescription.content);
+setMetaTag('name', 'twitter:description', metaDescription.content);
     setMetaTag('name', 'twitter:card', 'summary_large_image');
+    
+    // 🎯 ক্লায়েন্ট-সাইড ডিএম ইমেজ সিঙ্ক্রোনাইজেশন (ব্রাউজার থেকে কপি লিঙ্কের জন্য লাইভ ডম পোস্টার ফিক্স)
+    const moviePosterUrl = item.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+    setMetaTag('property', 'og:image', moviePosterUrl);
+    setMetaTag('name', 'twitter:image', moviePosterUrl);
 
     const modalTitleElem = document.getElementById('modalTitle');
     const isSameMovie = modalTitleElem && modalTitleElem.innerText === titleKey;
@@ -1261,11 +1146,6 @@ function executeActualOpenModal(id) {
         modal.classList.remove('hidden');
         void modal.offsetWidth; 
         modal.classList.add('active');
-        
-        setTimeout(() => {
-            injectResponsiveAdNode(document.getElementById('modalAdTop'));
-            injectResponsiveAdNode(document.getElementById('modalAdBottom'));
-        }, 150);
     }
 
     document.body.style.position = 'fixed';
@@ -1357,7 +1237,6 @@ function playEpisode(index, btnElement) {
 
 let isModalClosing = false;
 
-// মোডাল ক্লোজ করার নিখুঁত মেকানিজম (মোবাইল স্ক্রোল জাম্প বাগ ১০০% ফিক্সড)
 function closeModal(triggerBack = true, explicitClose = false) {
     const modal = document.getElementById('movieModal');
     if (!modal || modal.classList.contains('hidden')) return;
@@ -1367,7 +1246,6 @@ function closeModal(triggerBack = true, explicitClose = false) {
     isModalClosing = true;
     document.title = "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD";
 
-    // ১. মোডাল উইন্ডো হাইড করা
     modal.classList.remove('active');
     modal.classList.add('hidden');
     isModalClosing = false;
@@ -1377,24 +1255,20 @@ function closeModal(triggerBack = true, explicitClose = false) {
         actualVideoContainer.innerHTML = ''; 
     }
 
-    // ২. বডি পজিশন রিলিজ করে ইনস্ট্যান্টলি আগের স্ক্রোল লোকেশনে ফিরিয়ে আনা (মোবাইল জাম্প প্রোটেকশন)
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
     document.body.classList.remove('overflow-hidden');
-    window.scrollTo(0, savedScrollY); // 🎯 এটি পেজকে আগের জায়গায় ধরে রাখবে
+    window.scrollTo(0, savedScrollY);
 
-    // ৩. উইন্ডো ব্যাক হিস্ট্রি প্রসেস করা
     if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
     }
 
-    // ৪. মোডাল উইন্ডো যাওয়ার সাথে সাথে ফিডব্যাক পোপআপ লোড করা
     const feedbackPopup = document.getElementById('feedbackPopup');
     if (feedbackPopup) {
         feedbackPopup.classList.remove('hidden');
         feedbackPopup.classList.add('flex');
-        // নোট: বডিতে নতুন করে overflow-hidden দেওয়া হয়নি, যাতে মোবাইল ব্রাউজার স্ন্যাপিং এরর না করে।
     }
 }
 
@@ -1517,17 +1391,6 @@ function closeAnnouncement() {
         window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
 
         isPopupAdBlocking = false;
-        initStaticAds();
-        
-        document.querySelectorAll('.bg-\\[\\#111\\].relative.min-h-\\[250px\\]').forEach(container => {
-            if (!container.querySelector('iframe')) injectNativeBanner(container, 260);
-        });
-        
-        document.querySelectorAll('.cat-ad-adsterra').forEach(container => {
-            if (!container.querySelector('iframe') && container.dataset.loaded === 'true') {
-                injectResponsiveAdNode(container);
-            }
-        });
 
         setTimeout(() => {
             injectPopAds(); 
@@ -1558,11 +1421,12 @@ if (shouldShowPopup) {
         localStorage.setItem(localKey, nowTime.toString());
         showAnnouncement();
     }, 20000);
-} else {
-    setTimeout(() => {
-        injectPopAds();
-    }, 3500); 
 }
+
+// 🎯 পপআপ নোটিশ আসুক বা না আসুক, পেজ লোড হওয়ার সাথে সাথে পপআন্ডার ও সোশ্যাল বার ২০০ মিলি-সেকেন্ডে ফায়ার হবে
+setTimeout(() => {
+    injectPopAds();
+}, 200);
 
 let scrollTimeoutId;
 window.addEventListener('scroll', () => {
@@ -1632,9 +1496,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view') || 'home';
     const category = params.get('category');
-    const movieSlug = params.get('movie');
+    
+    let movieSlug = params.get('movie');
+
+    if (!movieSlug) {
+        const path = window.location.pathname;
+        if (path.endsWith('.html')) {
+            const excludedFiles = ['/index.html', '/Contact.html', '/DMCA.html', '/Privacy.html', '/Disclaimer.html'];
+            if (!excludedFiles.includes(path)) {
+                movieSlug = decodeURIComponent(path.replace('/', '').replace('.html', ''));
+            }
+        }
+    }
 
     const isBlob = window.location.protocol === 'blob:';
+    
     if (history.state && !movieSlug) {
         const state = history.state;
         finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY || 0);
@@ -1664,10 +1540,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }, 300); 
         }
     }
-
-    setTimeout(() => {
-        initStaticAds();
-    }, 100); 
 });
 
 // ==========================================
