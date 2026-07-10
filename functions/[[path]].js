@@ -42,22 +42,36 @@ export async function onRequest(context) {
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
                 const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
-                // ⚡ কড়া মেটা ট্যাগ রিপ্লেসমেন্ট (Regex ব্যবহার করা হয়েছে যেন মাল্টিপল লাইনেও বাগ না খায়)
-                html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${pageTitle}</title>`);
-                html = html.replace(/<meta\s+name="description"\s+content="[^"]*"/i, `<meta name="description" content="${pageDesc}"`);
-                html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"/i, `<link rel="canonical" href="${movieUrl}"`);
+                // ⚡ ১. ওল্ড বা ডুপ্লিকেট ট্যাগ ট্র্যাপ এড়াতে পুরোনো সমস্ত মেটা ট্যাগগুলোকে ১ লাইনে ক্লিনআপ করা হলো ভাই
+                html = html.replace(/<title>[\s\S]*?<\/title>/i, '');
+                html = html.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i, '');
+                html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, '');
+                html = html.replace(/<meta\s+(property|name)="og:[^"]*"\s+content="[^**]**"\s*\/?>/gi, '');
+                html = html.replace(/<meta\s+(property|name)="twitter:[^"]*"\s+content="[^**]**"\s*\/?>/gi, '');
 
-                // ⚡ Open Graph (Facebook SEO) মেটা ট্যাগ আপডেট
-                html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"/i, `<meta property="og:url" content="${movieUrl}"`);
-                html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"/i, `<meta property="og:title" content="${pageTitle}"`);
-                html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"/i, `<meta property="og:description" content="${pageDesc}"`);
-                html = html.replace(/<meta\s+property="og:image"\s+content="[^"]*"/i, `<meta property="og:image" content="${imageUrl}"`);
+                // ⚡ ২. ফেসবুক, হোয়াটসঅ্যাপ, টেলিগ্রাম এবং টুইটারের জন্য ১০০% গ্যারান্টিড সোশ্যাল মেটা ট্যাগ ইনজেকশন
+                const perfectMetaTags = `
+    <title>${pageTitle}</title>
+    <meta name="description" content="${pageDesc}" />
+    <link rel="canonical" href="${movieUrl}" />
+    
+    <meta property="og:type" content="video.movie" />
+    <meta property="og:url" content="${movieUrl}" />
+    <meta property="og:title" content="${pageTitle}" />
+    <meta property="og:description" content="${pageDesc}" />
+    <meta property="og:image" content="${imageUrl}" />
+    <meta property="og:image:secure_url" content="${imageUrl}" />
+    <meta property="og:image:type" content="image/jpeg" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="${movieUrl}" />
+    <meta name="twitter:title" content="${pageTitle}" />
+    <meta name="twitter:description" content="${pageDesc}" />
+    <meta name="twitter:image" content="${imageUrl}" />
+                `;
 
-                // ⚡ Twitter SEO মেta ট্যাগ আপডেট
-                html = html.replace(/<meta\s+property="twitter:url"\s+content="[^"]*"/i, `<meta property="twitter:url" content="${movieUrl}"`);
-                html = html.replace(/<meta\s+property="twitter:title"\s+content="[^"]*"/i, `<meta property="twitter:title" content="${pageTitle}"`);
-                html = html.replace(/<meta\s+property="twitter:description"\s+content="[^"]*"/i, `<meta property="twitter:description" content="${pageDesc}"`);
-                html = html.replace(/<meta\s+property="twitter:image"\s+content="[^"]*"/i, `<meta property="twitter:image" content="${imageUrl}"`);
+                // হেড ট্যাগের একদম শেষ মাথায় ফ্রেশ বুস্টিং ট্যাগ ইনজেক্ট করা হলো
+                html = html.replace('</head>', `${perfectMetaTags}\n</head>`);
 
                 // 🚀 গুগল সার্চ বটের জন্য ডাইনামিক JSON-LD "Movie Schema Markup" ইনজেকশন (এতে র‍্যাংকিং দ্বিগুণ ফাস্ট হবে)
                 const movieSchema = {
