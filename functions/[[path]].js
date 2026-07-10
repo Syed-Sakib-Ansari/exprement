@@ -42,14 +42,17 @@ export async function onRequest(context) {
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
                 const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
-                // ⚡ ১. ওল্ড বা ডুপ্লিকেট ট্যাগ ট্র্যাপ এড়াতে পুরোনো সমস্ত মেটা ট্যাগগুলোকে ১ লাইনে ক্লিনআপ করা হলো ভাই (ফিক্সড)
+                // ⚡ ১. ওল্ড বা কনф্লিক্টিং ও ডুপ্লিকেট ট্যাগ ট্র্যাপ এড়াতে পুরোনো সমস্ত সোশ্যাল ট্যাগগুলোকে ১ লাইনে ক্লিনআপ করা হলো ভাই
                 html = html.replace(/<title>[\s\S]*?<\/title>/i, '');
                 html = html.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i, '');
                 html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, '');
                 html = html.replace(/<meta\s+(property|name)="og:[^"]*"\s+content="[^"]*"\s*\/?>/gi, '');
                 html = html.replace(/<meta\s+(property|name)="twitter:[^"]*"\s+content="[^"]*"\s*\/?>/gi, '');
 
-                // ⚡ ২. ফেসবুক, হোয়াটসঅ্যাপ, টেলিগ্রাম এবং টুইটারের জন্য ১০০% গ্যারান্টিড সোশ্যাল মেটা ট্যাগ ইনজেকশন
+                // ⚡ ২. অ্যামাজন হটলিংক ব্লক বাইপাস করতে ওয়ার্কার লেভেলেই আল্ট্রা-ক্যাশ ইমেজ প্রক্সি জেনারেট করা হলো ভাই
+                const proxiedImageUrl = imageUrl.includes('i.postimg.cc') ? imageUrl : `https://wsrv.nl/?url=${encodeURIComponent(imageUrl)}&w=600&output=jpg&q=80`;
+
+                // ⚡ ৩. ফেসবুক, হোয়াটসঅ্যাপ এবং টেলিগ্রামের জন্য ফার্স্ট-ক্লিক থাম্বনেইল এনশিওরড মেটা ট্যাগ ব্লক
                 const perfectMetaTags = `
     <title>${pageTitle}</title>
     <meta name="description" content="${pageDesc}" />
@@ -59,18 +62,21 @@ export async function onRequest(context) {
     <meta property="og:url" content="${movieUrl}" />
     <meta property="og:title" content="${pageTitle}" />
     <meta property="og:description" content="${pageDesc}" />
-    <meta property="og:image" content="${imageUrl}" />
-    <meta property="og:image:secure_url" content="${imageUrl}" />
+    <meta property="og:image" content="${proxiedImageUrl}" />
+    <meta property="og:image:secure_url" content="${proxiedImageUrl}" />
     <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="900" />
+    <meta property="og:site_name" content="MovieDakhi" />
     
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="${movieUrl}" />
     <meta name="twitter:title" content="${pageTitle}" />
     <meta name="twitter:description" content="${pageDesc}" />
-    <meta name="twitter:image" content="${imageUrl}" />
+    <meta name="twitter:image" content="${proxiedImageUrl}" />
                 `;
 
-                // হেড ট্যাগের একদম শেষ মাথায় ফ্রেশ বুস্টিং ট্যাগ ইনজেক্ট করা হলো
+                // head ট্যাগের শেষ মাথায় ফ্রেশ ট্যাগ ইনজেকশন
                 html = html.replace('</head>', `${perfectMetaTags}\n</head>`);
 
                 // 🚀 গুগল সার্চ বটের জন্য ডাইনামিক JSON-LD "Movie Schema Markup" ইনজেকশন
@@ -79,7 +85,7 @@ export async function onRequest(context) {
                     "@type": "Movie",
                     "name": safeTitle,
                     "url": movieUrl,
-                    "image": imageUrl,
+                    "image": proxiedImageUrl,
                     "genre": movieGenre.split(', '),
                     "description": pageDesc,
                     "potentialAction": {
