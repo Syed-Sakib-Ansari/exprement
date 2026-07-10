@@ -1007,7 +1007,7 @@ function executeActualOpenModal(id) {
     };
     schemaScript.textContent = JSON.stringify(schemaData);
 
-    const setMetaTag = (attrName, attrValue, content) => {
+const setMetaTag = (attrName, attrValue, content) => {
         let el = document.querySelector(`meta[${attrName}="${attrValue}"]`);
         if (!el) { el = document.createElement('meta'); el.setAttribute(attrName, attrValue); document.head.appendChild(el); }
         el.setAttribute('content', content);
@@ -1018,6 +1018,11 @@ function executeActualOpenModal(id) {
     setMetaTag('name', 'twitter:title', document.title);
     setMetaTag('name', 'twitter:description', metaDescription.content);
     setMetaTag('name', 'twitter:card', 'summary_large_image');
+    
+    // 🎯 গ্লোবাল ইনবক্স ও ডিএম বুস্টার (মুভি পোস্টার ইমেজ সরাসরি ব্রাউজার ডম-এ পুশ করা হলো)
+    const currentPoster = item.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+    setMetaTag('property', 'og:image', currentPoster);
+    setMetaTag('name', 'twitter:image', currentPoster);
 
     const modalTitleElem = document.getElementById('modalTitle');
     const isSameMovie = modalTitleElem && modalTitleElem.innerText === titleKey;
