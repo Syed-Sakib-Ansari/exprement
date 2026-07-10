@@ -77,6 +77,50 @@ function processContentItems() {
     buildCategoryIndex(); 
 }
 
+// ==========================================
+// 🚀 INDEXEDDB CORE LAYER HELPERS (লাইফ-টাইম স্টোরেজ বর্ম)
+// ==========================================
+function openMovieDakhiDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open('MovieDakhiDB', 1);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains('cacheStore')) {
+                db.createObjectStore('cacheStore');
+            }
+        };
+        request.onsuccess = (e) => resolve(e.target.result);
+        request.onerror = (e) => reject(e.target.error);
+    });
+}
+
+function getIDBCache(key) {
+    return openMovieDakhiDB().then(db => {
+        return new Promise((resolve) => {
+            const transaction = db.transaction('cacheStore', 'readonly');
+            const store = transaction.objectStore('cacheStore');
+            const request = store.get(key);
+            request.onsuccess = (e) => resolve(e.target.result || null);
+            request.onerror = () => resolve(null);
+        });
+    });
+}
+
+function setIDBCache(key, value) {
+    return openMovieDakhiDB().then(db => {
+        return new Promise((resolve) => {
+            const transaction = db.transaction('cacheStore', 'readwrite');
+            const store = transaction.objectStore('cacheStore');
+            const request = store.put(value, key);
+            request.onsuccess = () => resolve(true);
+            request.onerror = () => resolve(false);
+        });
+    });
+}
+
+// ==========================================
+// 🚀 DYNAMIC FETCH ENGINE WITH ASYNCHRONOUS INDEXEDDB
+// ==========================================
 async function fetchAndCacheNetworkDatabase() {
     try {
         const response = await fetch('movies.json');
@@ -84,7 +128,8 @@ async function fetchAndCacheNetworkDatabase() {
             const text = await response.text();
             const db = JSON.parse(text);
             if (Array.isArray(db) && db.length > 0) {
-                localStorage.setItem('moviedakhi_db_cache', text);
+                // 🟢 লোকালস্টোরেজ বদলে ইনডেক্সড-ডিবি তে সেভ করা হলো ভাই
+                await setIDBCache('moviedakhi_db_cache', text);
                 contentData.length = 0; 
                 contentData.push(...db); 
                 processContentItems();
@@ -102,12 +147,13 @@ function triggerBackgroundUpdateCheck() {
             const response = await fetch('movies.json');
             if (response.ok) {
                 const text = await response.text();
-                const cachedText = localStorage.getItem('moviedakhi_db_cache');
+                // 🟢 ব্যাকগ্রাউন্ডে অ্যাসিনক্রোনাসলি ইন্ডেক্সড-ডিবি ক্যাশ চেক হবে
+                const cachedText = await getIDBCache('moviedakhi_db_cache');
                 
                 if (text !== cachedText) {
                     const db = JSON.parse(text);
                     if (Array.isArray(db) && db.length > 0) {
-                        localStorage.setItem('moviedakhi_db_cache', text);
+                        await setIDBCache('moviedakhi_db_cache', text);
                         contentData.length = 0; 
                         contentData.push(...db); 
                         processContentItems();
@@ -129,10 +175,11 @@ function triggerBackgroundUpdateCheck() {
 }
 
 async function loadContentDatabase() {
-    const cachedData = localStorage.getItem('moviedakhi_db_cache');
-    if (cachedData) {
+    // 🟢 পেজ লোড হওয়ার সাথে সাথে মেমোরি ফ্রি রেখে ইন্ডেক্সড-ডিবি থেকে ডাটা রিড হবে ভাই
+    const cachedText = await getIDBCache('moviedakhi_db_cache');
+    if (cachedText) {
         try {
-            const db = JSON.parse(cachedData);
+            const db = JSON.parse(cachedText);
             if (Array.isArray(db) && db.length > 0) {
                 contentData.length = 0;
                 contentData.push(...db);
@@ -141,7 +188,7 @@ async function loadContentDatabase() {
                 return;
             }
         } catch (e) {
-            localStorage.removeItem('moviedakhi_db_cache');
+            // ক্যাশ রিড এরর হ্যান্ডেলিং
         }
     }
     await fetchAndCacheNetworkDatabase();
