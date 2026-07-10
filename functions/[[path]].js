@@ -8,7 +8,7 @@ export async function onRequest(context) {
         return env.ASSETS.fetch(request);
     }
 
-    // ২. এগুলো সাধারণ পেজ তাই এগুলোতে মুভি এসইও প্রসেস হবে acquisitions না
+    // ২. এগুলো সাধারণ পেজ তাই এগুলোতে মুভি এসইও প্রসেস হবে না
     const excludedFiles = ['/index.html', '/Contact.html', '/DMCA.html', '/Privacy.html', '/Disclaimer.html'];
     
     if (path.endsWith('.html') && !excludedFiles.includes(path)) {
@@ -36,18 +36,18 @@ export async function onRequest(context) {
                 const safeTitle = targetMovie.title;
                 const movieGenre = targetMovie.genre || "Entertainment";
                 
-                // কাস্টম ডাইনামিক মেটা টাইটেল এবং ডেসক্রিপশন তৈরি (আপনার ফ্রন্টএন্ড JS এর সাথে মিল রেখে)
+                // কাস্টম ডাইনামিক মেটা টাইটেল এবং ডেসক্রিপশন তৈরি
                 const pageTitle = `Watch ${safeTitle} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
                 const pageDesc = `Watch ${safeTitle} full movie online for free in HD quality. Download ${safeTitle} complete web series 1080p, 720p. Stream ${movieGenre} movies seamlessly on MovieDakhi.`;
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
                 const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
-                // ⚡ ১. ওল্ড বা ডুপ্লিকেট ট্যাগ ট্র্যাপ এড়াতে পুরোনো সমস্ত মেটা ট্যাগগুলোকে ১ লাইনে ক্লিনআপ করা হলো ভাই
+                // ⚡ ১. ওল্ড বা ডুপ্লিকেট ট্যাগ ট্র্যাপ এড়াতে পুরোনো সমস্ত মেটা ট্যাগগুলোকে ১ লাইনে ক্লিনআপ করা হলো ভাই (ফিক্সড)
                 html = html.replace(/<title>[\s\S]*?<\/title>/i, '');
                 html = html.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i, '');
                 html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, '');
-                html = html.replace(/<meta\s+(property|name)="og:[^"]*"\s+content="[^**]**"\s*\/?>/gi, '');
-                html = html.replace(/<meta\s+(property|name)="twitter:[^"]*"\s+content="[^**]**"\s*\/?>/gi, '');
+                html = html.replace(/<meta\s+(property|name)="og:[^"]*"\s+content="[^"]*"\s*\/?>/gi, '');
+                html = html.replace(/<meta\s+(property|name)="twitter:[^"]*"\s+content="[^"]*"\s*\/?>/gi, '');
 
                 // ⚡ ২. ফেসবুক, হোয়াটসঅ্যাপ, টেলিগ্রাম এবং টুইটারের জন্য ১০০% গ্যারান্টিড সোশ্যাল মেটা ট্যাগ ইনজেকশন
                 const perfectMetaTags = `
@@ -73,7 +73,7 @@ export async function onRequest(context) {
                 // হেড ট্যাগের একদম শেষ মাথায় ফ্রেশ বুস্টিং ট্যাগ ইনজেক্ট করা হলো
                 html = html.replace('</head>', `${perfectMetaTags}\n</head>`);
 
-                // 🚀 গুগল সার্চ বটের জন্য ডাইনামিক JSON-LD "Movie Schema Markup" ইনজেকশন (এতে র‍্যাংকিং দ্বিগুণ ফাস্ট হবে)
+                // 🚀 গুগল সার্চ বটের জন্য ডাইনামিক JSON-LD "Movie Schema Markup" ইনজেকশন
                 const movieSchema = {
                     "@context": "https://schema.org",
                     "@type": "Movie",
@@ -89,7 +89,7 @@ export async function onRequest(context) {
                 };
                 html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(movieSchema)}</script>\n</head>`);
 
-                // 🍿 গুগলের ইনডেক্সিং বটের জন্য বডি কন্টেন্ট ইনজেকশন (Visible text keywords scraping)
+                // 🍿 গুগলের ইনডেক্সিং বটের জন্য বডি কন্টেন্ট ইনজেকশন
                 let seoBodyContent = `
                 <div id="modalSeoContent" class="text-sm md:text-base text-gray-400 leading-relaxed mt-6 max-w-3xl mx-auto font-medium">
                     <span class="font-bold text-gray-300">${movieGenre}</span>
@@ -108,7 +108,7 @@ export async function onRequest(context) {
                 }
                 seoBodyContent += `</div>`;
 
-                // আপনার HTML ফাইলের source 33-এ থাকা placeholder এ সেভ করা হচ্ছে
+                // আপনার HTML ফাইলের placeholder এ সেভ করা হচ্ছে
                 html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n${seoBodyContent}`);
             }
             
