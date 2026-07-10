@@ -1019,10 +1019,14 @@ function executeActualOpenModal(id) {
 setMetaTag('name', 'twitter:description', metaDescription.content);
     setMetaTag('name', 'twitter:card', 'summary_large_image');
     
-    // 🎯 ক্লায়েন্ট-সাইড ডিএম ইমেজ সিঙ্ক্রোনাইজেশন (ব্রাউজার থেকে কপি লিঙ্কের জন্য লাইভ ডম পোস্টার ফিক্স)
-    const moviePosterUrl = item.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
-    setMetaTag('property', 'og:image', moviePosterUrl);
-    setMetaTag('name', 'twitter:image', moviePosterUrl);
+// 🎯 ক্লায়েন্ট-সাইড ডিএম ইমেজ সিঙ্ক্রোনাইজেশন (ব্রাউজার থেকে কপি লিঙ্কের জন্য লাইভ ডম পোস্টার ফিক্স)
+const rawPosterUrl = item.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+const moviePosterUrl = rawPosterUrl.includes('postimg.cc')
+    ? rawPosterUrl 
+    : `https://wsrv.nl/?url=${encodeURIComponent(rawPosterUrl)}&w=600&output=jpeg&q=80`;
+
+setMetaTag('property', 'og:image', moviePosterUrl);
+setMetaTag('name', 'twitter:image', moviePosterUrl);
 
     const modalTitleElem = document.getElementById('modalTitle');
     const isSameMovie = modalTitleElem && modalTitleElem.innerText === titleKey;

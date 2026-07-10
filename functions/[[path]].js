@@ -41,8 +41,11 @@ export async function onRequest(context) {
                 const pageDesc = `Watch ${safeTitle} full movie online for free in HD quality. Download ${safeTitle} complete web series 1080p, 720p. Stream ${movieGenre} movies seamlessly on MovieDakhi.`;
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
                 
-                // ইনবক্স গ্যারান্টি: সরাসরি ট্রাস্টেড অরিজিনাল সিডিএন ইমেজ
-                const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+// ইনবক্স গ্যারান্টি: সরাসরি ট্রাস্টেড অরিজিনাল সিডিএন ইমেজ (Proxied for Social Bots)
+const rawImageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+const imageUrl = rawImageUrl.includes('postimg.cc') 
+    ? rawImageUrl 
+    : `https://wsrv.nl/?url=${encodeURIComponent(rawImageUrl)}&w=600&output=jpeg&q=80`;
 
                 // ⚡ ওল্ড মেটা ট্যাগগুলো ক্লিন করা (ডুপ্লিকেট নোড বা জ্যাম এড়াতে সব পুরনো ট্যাগ ইরেজ করা হলো)
                 html = html.replace(/<title>[\s\S]*?<\/title>/i, '');
