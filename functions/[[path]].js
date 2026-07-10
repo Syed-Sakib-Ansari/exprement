@@ -41,10 +41,10 @@ export async function onRequest(context) {
                 const pageDesc = `Watch ${safeTitle} full movie online for free in HD quality. Download ${safeTitle} complete web series 1080p, 720p. Stream ${movieGenre} movies seamlessly on MovieDakhi.`;
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
                 
-                // ১০০% ইনবক্স গ্যারান্টি: সরাসরি ট্রাস্টেড অরিজিনাল সিডিএন ইমেজ দেওয়া হলো].js]
+                // ইনবক্স গ্যারান্টি: সরাসরি ট্রাস্টেড অরিজিনাল সিডিএন ইমেজ].js]
                 const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
-                // ⚡ কড়া মেটা ট্যাগ ও ক্যানোনিকাল লিংক রিপ্লেসমেন্ট].js]
+                // ⚡ কড়া মেটা ট্যাগ ও ক্যানোনিকাল লিংক রিপ্লেসমেন্ট (Clean Edge replacement)].js]
                 html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${pageTitle}</title>`);
                 html = html.replace(/<meta[^>]*?name="description"[^>]*?>/i, `<meta name="description" content="${pageDesc}">`);
                 html = html.replace(/<link[^>]*?rel="canonical"[^>]*?>/i, `<link rel="canonical" href="${movieUrl}">`);
@@ -54,21 +54,23 @@ export async function onRequest(context) {
                 html = html.replace(/<meta[^>]*?property="og:title"[^>]*?>/i, `<meta property="og:title" content="${pageTitle}">`);
                 html = html.replace(/<meta[^>]*?property="og:description"[^>]*?>/i, `<meta property="og:description" content="${pageDesc}">`);
                 
-                // 🎯 ডাইমেনশন মেকানিজম সিঙ্ক্রোনাইজেশন ফিক্স (ইনবক্স বটদের জন্য গ্রুপ আকারে একসাথে ইনজেক্ট করা হয়েছে)].js]
+                // 🎯 ইনবক্স মাস্টার ব্লক: ওজি মেইন ইমেজের সাথে ইনবক্স চ্যাট ফ্রেমওয়ার্কের ব্যাকওয়ার্ড নোড এবং রিকোয়ার্ড ডাইমেনশন একসাথে ইনজেক্ট করা হয়েছে].js]
                 const ogImageBlock = `<meta property="og:image" content="${imageUrl}">
     <meta property="og:image:secure_url" content="${imageUrl}">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="900">
-    <meta property="og:image:type" content="image/jpeg">`;
+    <meta property="og:image:type" content="image/jpeg">
+    <link rel="image_src" href="${imageUrl}">
+    <meta itemprop="image" content="${imageUrl}">`;
                 
                 html = html.replace(/<meta[^>]*?property="og:image"[^>]*?>/i, ogImageBlock);
 
-                // ⚡ Twitter Cards & Messenger Client Protocols].js]
-                html = html.replace(/<meta[^>]*?name="twitter:card"[^>]*?>/i, `<meta name="twitter:card" content="summary_large_image">`);
-                html = html.replace(/<meta[^>]*?name="twitter:url"[^>]*?>/i, `<meta name="twitter:url" content="${movieUrl}">`);
-                html = html.replace(/<meta[^>]*?name="twitter:title"[^>]*?>/i, `<meta name="twitter:title" content="${pageTitle}">`);
-                html = html.replace(/<meta[^>]*?name="twitter:description"[^>]*?>/i, `<meta name="twitter:description" content="${pageDesc}">`);
-                html = html.replace(/<meta[^>]*?name="twitter:image"[^>]*?>/i, `<meta name="twitter:image" content="${imageUrl}">`);
+                // ⚡ Twitter Cards & Messenger Client Protocols (index.html এর 'property' কনফ্লিক্ট মেলাতে রেগুলার এক্সপ্রেশন আপডেট করা হয়েছে)].js]
+                html = html.replace(/<meta[^>]*?(?:name|property)="twitter:card"[^>]*?>/i, `<meta name="twitter:card" content="summary_large_image">`);
+                html = html.replace(/<meta[^>]*?(?:name|property)="twitter:url"[^>]*?>/i, `<meta name="twitter:url" content="${movieUrl}">`);
+                html = html.replace(/<meta[^>]*?(?:name|property)="twitter:title"[^>]*?>/i, `<meta name="twitter:title" content="${pageTitle}">`);
+                html = html.replace(/<meta[^>]*?(?:name|property)="twitter:description"[^>]*?>/i, `<meta name="twitter:description" content="${pageDesc}">`);
+                html = html.replace(/<meta[^>]*?(?:name|property)="twitter:image"[^>]*?>/i, `<meta name="twitter:image" content="${imageUrl}">`);
 
                 // 🚀 গুগল সার্চ বটের জন্য ডাইনামিক JSON-LD "Movie Schema Markup" ইনজেকশন (এতে র‍্যাংকিং দ্বিগুণ ফাস্ট হবে)].js]
                 const movieSchema = {
