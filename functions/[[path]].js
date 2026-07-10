@@ -41,28 +41,29 @@ export async function onRequest(context) {
                 const pageDesc = `Watch ${safeTitle} full movie online for free in HD quality. Download ${safeTitle} complete web series 1080p, 720p. Stream ${movieGenre} movies seamlessly on MovieDakhi.`;
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
                 
-                // 🎯 ১০০% ইনবক্স গ্যারান্টি: প্রক্সি ইমেজ বাদ দিয়ে সরাসরি ট্রাস্টেড অরিজিনাল সিডিএন ইমেজ দেওয়া হলো].js]
+                // ১০০% ইনবক্স গ্যারান্টি: সরাসরি ট্রাস্টেড অরিজিনাল সিডিএন ইমেজ দেওয়া হলো].js]
                 const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
-                // ⚡ কড়া মেটা ট্যাগ রিপ্লেসমেন্ট (সম্পূর্ণ ট্যাগ ম্যাচ লজিক যা কোনো বাড়তি '>' চিহ্ন অবশিষ্টাংশ রাখবে না)].js]
+                // ⚡ কড়া মেটা ট্যাগ ও ক্যানোনিকাল লিংক রিপ্লেসমেন্ট].js]
                 html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${pageTitle}</title>`);
                 html = html.replace(/<meta[^>]*?name="description"[^>]*?>/i, `<meta name="description" content="${pageDesc}">`);
                 html = html.replace(/<link[^>]*?rel="canonical"[^>]*?>/i, `<link rel="canonical" href="${movieUrl}">`);
 
-                // ⚡ Open Graph Protocols (Supports Facebook, WhatsApp, Telegram, LinkedIn, Discord, IMO, Viber, Slack, Pinterest)].js]
+                // ⚡ Open Graph Protocols (Supports Facebook, WhatsApp, Telegram, LinkedIn, Discord, IMO, Viber, Slack, Pinterest Inboxes)].js]
                 html = html.replace(/<meta[^>]*?property="og:url"[^>]*?>/i, `<meta property="og:url" content="${movieUrl}">`);
                 html = html.replace(/<meta[^>]*?property="og:title"[^>]*?>/i, `<meta property="og:title" content="${pageTitle}">`);
                 html = html.replace(/<meta[^>]*?property="og:description"[^>]*?>/i, `<meta property="og:description" content="${pageDesc}">`);
                 
-                // ওজি মেইন ইমেজ এবং সিকিউর উইজেট প্যাথ আপডেট].js]
-                html = html.replace(/<meta[^>]*?property="og:image"[^>]*?>/i, `<meta property="og:image" content="${imageUrl}">\n    <meta property="og:image:secure_url" content="${imageUrl}">`);
+                // 🎯 ডাইমেনশন মেকানিজম সিঙ্ক্রোনাইজেশন ফিক্স (ইনবক্স বটদের জন্য গ্রুপ আকারে একসাথে ইনজেক্ট করা হয়েছে)].js]
+                const ogImageBlock = `<meta property="og:image" content="${imageUrl}">
+    <meta property="og:image:secure_url" content="${imageUrl}">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:type" content="image/jpeg">`;
+                
+                html = html.replace(/<meta[^>]*?property="og:image"[^>]*?>/i, ogImageBlock);
 
-                // ডাইমেনশন সিঙ্ক্রোনাইজেশন ফিক্স].js]
-                html = html.replace(/<meta[^>]*?property="og:image:width"[^>]*?>/i, `<meta property="og:image:width" content="600">`);
-                html = html.replace(/<meta[^>]*?property="og:image:height"[^>]*?>/i, `<meta property="og:image:height" content="900">`);
-                html = html.replace(/<meta[^>]*?property="og:image:type"[^>]*?>/i, `<meta property="og:image:type" content="image/jpeg">`);
-
-                // ⚡ Twitter Cards & Messenger Client Protocols (Strictly replaces entire tags seamlessly)].js]
+                // ⚡ Twitter Cards & Messenger Client Protocols].js]
                 html = html.replace(/<meta[^>]*?name="twitter:card"[^>]*?>/i, `<meta name="twitter:card" content="summary_large_image">`);
                 html = html.replace(/<meta[^>]*?name="twitter:url"[^>]*?>/i, `<meta name="twitter:url" content="${movieUrl}">`);
                 html = html.replace(/<meta[^>]*?name="twitter:title"[^>]*?>/i, `<meta name="twitter:title" content="${pageTitle}">`);
@@ -104,7 +105,7 @@ export async function onRequest(context) {
                 }
                 seoBodyContent += `</div>`;
 
-                // আপনার HTML ফাইলের placeholder এ সেভ করা হচ্ছে].js]
+                // আপনার HTML ফাইলের placeholder এ কন্টেন্ট ইনজেকশন করা হচ্ছে].js]
                 html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n${seoBodyContent}`);
             }
             
