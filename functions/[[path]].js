@@ -41,30 +41,33 @@ export async function onRequest(context) {
                 const pageDesc = `Watch ${safeTitle} full movie online for free in HD quality. Download ${safeTitle} complete web series 1080p, 720p. Stream ${movieGenre} movies seamlessly on MovieDakhi.`;
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
                 
-                // 🎯 র ইমেজকে ক্রলার-ফ্রেন্ডলি ৬০০x৯০০ জেপেগে লাইটওয়েট কনভার্ট করা হলো (মেসেঞ্জার/হোয়াটসঅ্যাপ ফাস্ট লোড ফিক্স)].js]
-                const rawImg = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
-                const imageUrl = rawImg.includes('postimg.cc') ? rawImg : `https://wsrv.nl/?url=${encodeURIComponent(rawImg)}&w=600&h=900&fit=cover&output=jpg`;
+                // 🎯 ১০০% ইনবক্স গ্যারান্টি: প্রক্সি ইমেজ বাদ দিয়ে সরাসরি ট্রাস্টেড অরিজিনাল সিডিএন ইমেজ দেওয়া হলো].js]
+                const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
-                // ⚡ কড়া মেটা ট্যাগ রিপ্লেসমেন্ট (Regex ব্যবহার করা হয়েছে যেন মাল্টিপল লাইনেও বাগ না খায়)].js]
+                // ⚡ কড়া মেটা ট্যাগ রিপ্লেসমেন্ট (সম্পূর্ণ ট্যাগ ম্যাচ লজিক যা কোনো বাড়তি '>' চিহ্ন অবশিষ্টাংশ রাখবে না)].js]
                 html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${pageTitle}</title>`);
-                html = html.replace(/<meta\s+(?:name|property)="description"\s+content="[^"]*"/i, `<meta name="description" content="${pageDesc}">`);
-                html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"/i, `<link rel="canonical" href="${movieUrl}">`);
+                html = html.replace(/<meta[^>]*?name="description"[^>]*?>/i, `<meta name="description" content="${pageDesc}">`);
+                html = html.replace(/<link[^>]*?rel="canonical"[^>]*?>/i, `<link rel="canonical" href="${movieUrl}">`);
 
                 // ⚡ Open Graph Protocols (Supports Facebook, WhatsApp, Telegram, LinkedIn, Discord, IMO, Viber, Slack, Pinterest)].js]
-                html = html.replace(/<meta\s+(?:name|property)="og:url"\s+content="[^"]*"/i, `<meta property="og:url" content="${movieUrl}">`);
-                html = html.replace(/<meta\s+(?:name|property)="og:title"\s+content="[^"]*"/i, `<meta property="og:title" content="${pageTitle}">`);
-                html = html.replace(/<meta\s+(?:name|property)="og:description"\s+content="[^"]*"/i, `<meta property="og:description" content="${pageDesc}">`);
+                html = html.replace(/<meta[^>]*?property="og:url"[^>]*?>/i, `<meta property="og:url" content="${movieUrl}">`);
+                html = html.replace(/<meta[^>]*?property="og:title"[^>]*?>/i, `<meta property="og:title" content="${pageTitle}">`);
+                html = html.replace(/<meta[^>]*?property="og:description"[^>]*?>/i, `<meta property="og:description" content="${pageDesc}">`);
                 
-                // হোয়াটসঅ্যাপ এবং লিঙ্কডইন রিকোয়ারমেন্ট মেলাতে উইডথ এবং হাইট নোড মেটা ইনজেকশন].js]
-                const fullOgImageMarkup = `<meta property="og:image" content="${imageUrl}">\n    <meta property="og:image:width" content="600">\n    <meta property="og:image:height" content="900">\n    <meta property="og:image:type" content="image/jpeg">`;
-                html = html.replace(/<meta\s+(?:name|property)="og:image"\s+content="[^"]*"/i, fullOgImageMarkup);
+                // ওজি মেইন ইমেজ এবং সিকিউর উইজেট প্যাথ আপডেট].js]
+                html = html.replace(/<meta[^>]*?property="og:image"[^>]*?>/i, `<meta property="og:image" content="${imageUrl}">\n    <meta property="og:image:secure_url" content="${imageUrl}">`);
 
-                // ⚡ Twitter Cards & Discord Rich Presence Protocols (Strictly sets standard compliant 'name' attributes)].js]
-                html = html.replace(/<meta\s+(?:name|property)="twitter:card"\s+content="[^"]*"/i, `<meta name="twitter:card" content="summary_large_image">`);
-                html = html.replace(/<meta\s+(?:name|property)="twitter:url"\s+content="[^"]*"/i, `<meta name="twitter:url" content="${movieUrl}">`);
-                html = html.replace(/<meta\s+(?:name|property)="twitter:title"\s+content="[^"]*"/i, `<meta name="twitter:title" content="${pageTitle}">`);
-                html = html.replace(/<meta\s+(?:name|property)="twitter:description"\s+content="[^"]*"/i, `<meta name="twitter:description" content="${pageDesc}">`);
-                html = html.replace(/<meta\s+(?:name|property)="twitter:image"\s+content="[^"]*"/i, `<meta name="twitter:image" content="${imageUrl}">`);
+                // ডাইমেনশন সিঙ্ক্রোনাইজেশন ফিক্স].js]
+                html = html.replace(/<meta[^>]*?property="og:image:width"[^>]*?>/i, `<meta property="og:image:width" content="600">`);
+                html = html.replace(/<meta[^>]*?property="og:image:height"[^>]*?>/i, `<meta property="og:image:height" content="900">`);
+                html = html.replace(/<meta[^>]*?property="og:image:type"[^>]*?>/i, `<meta property="og:image:type" content="image/jpeg">`);
+
+                // ⚡ Twitter Cards & Messenger Client Protocols (Strictly replaces entire tags seamlessly)].js]
+                html = html.replace(/<meta[^>]*?name="twitter:card"[^>]*?>/i, `<meta name="twitter:card" content="summary_large_image">`);
+                html = html.replace(/<meta[^>]*?name="twitter:url"[^>]*?>/i, `<meta name="twitter:url" content="${movieUrl}">`);
+                html = html.replace(/<meta[^>]*?name="twitter:title"[^>]*?>/i, `<meta name="twitter:title" content="${pageTitle}">`);
+                html = html.replace(/<meta[^>]*?name="twitter:description"[^>]*?>/i, `<meta name="twitter:description" content="${pageDesc}">`);
+                html = html.replace(/<meta[^>]*?name="twitter:image"[^>]*?>/i, `<meta name="twitter:image" content="${imageUrl}">`);
 
                 // 🚀 গুগল সার্চ বটের জন্য ডাইনামিক JSON-LD "Movie Schema Markup" ইনজেকশন (এতে র‍্যাংকিং দ্বিগুণ ফাস্ট হবে)].js]
                 const movieSchema = {
