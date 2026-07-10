@@ -3,32 +3,32 @@ export async function onRequest(context) {
     const url = new URL(request.url);
     const path = url.pathname; 
 
-    // ১. স্ট্যাটিক ফাইল (CSS, JS, চিত্র ইত্যাদি) হলে সরাসরি পাস করে দেবে
+    // ১. স্ট্যাটিক ফাইল (CSS, JS, চিত্র ইত্যাদি) হলে সরাসরি পাস করে দেবে].js]
     if (path.match(/\.(css|js|json|png|jpg|jpeg|gif|ico|xml|txt)$/i)) {
         return env.ASSETS.fetch(request);
     }
 
-    // ২. এগুলো সাধারণ পেজ তাই এগুলোতে মুভি এসইও প্রসেস হবে না
+    // ২. এগুলো সাধারণ পেজ তাই এগুলোতে মুভি এসইও প্রসেস হবে না].js]
     const excludedFiles = ['/index.html', '/Contact.html', '/DMCA.html', '/Privacy.html', '/Disclaimer.html'];
     
     if (path.endsWith('.html') && !excludedFiles.includes(path)) {
-        // ইউআরএল থেকে স্ল্যাগ বের করা (যেমন: /avatar-2026.html -> avatar-2026)
+        // ইউআরএল থেকে স্ল্যাগ বের করা (যেমন: /avatar-2026.html -> avatar-2026)].js]
         const movieSlug = decodeURIComponent(path.replace('/', '').replace('.html', ''));
         
         try {
-            // ডাটাবেজ/JSON ফাইল থেকে সব মুভি লোড করা
+            // ডাটাবেজ/JSON ফাইল থেকে সব মুভি লোড করা].js]
             const moviesRes = await env.ASSETS.fetch(new URL('/movies.json', request.url));
             if (!moviesRes.ok) throw new Error("JSON database load failed");
             const movies = await moviesRes.json();
             
-            // স্ল্যাগ ম্যাচ করে সুনির্দিষ্ট মুভিটি খুঁজে বের করা
+            // স্ল্যাগ ম্যাচ করে সুনির্দিষ্ট মুভিটি খুঁজে বের করা].js]
             const targetMovie = movies.find(m => {
                 if(!m.title) return false;
                 const slug = m.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
                 return slug === movieSlug;
             });
 
-            // মূল index.html ফাইলটি রিড করা
+            // মূল index.html ফাইলটি রিড করা].js]
             const htmlRes = await env.ASSETS.fetch(new URL('/index.html', request.url));
             let html = await htmlRes.text();
 
@@ -36,23 +36,20 @@ export async function onRequest(context) {
                 const safeTitle = targetMovie.title;
                 const movieGenre = targetMovie.genre || "Entertainment";
                 
-                // কাস্টম ডাইনামিক মেটা টাইটেল এবং ডেসক্রিপশন তৈরি
+                // কাস্টম ডাইনামিক মেটা টাইটেল এবং ডেসক্রিপশন তৈরি].js]
                 const pageTitle = `Watch ${safeTitle} Full Movie Online Free | Download HD 1080p - MovieDakhi`;
                 const pageDesc = `Watch ${safeTitle} full movie online for free in HD quality. Download ${safeTitle} complete web series 1080p, 720p. Stream ${movieGenre} movies seamlessly on MovieDakhi.`;
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
                 const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
-                // ⚡ ১. ওল্ড বা কনф্লিক্টিং ও ডুপ্লিকেট ট্যাগ ট্র্যাপ এড়াতে পুরোনো সমস্ত সোশ্যাল ট্যাগগুলোকে ১ লাইনে ক্লিনআপ করা হলো ভাই
+                // ⚡ ১. ওল্ড বা কনফ্লিক্টিং ও ডুপ্লিকেট ট্যাগ ট্র্যাপ এড়াতে পুরোনো সমস্ত সোশ্যাল ট্যাগগুলোকে ১ লাইনে ক্লিনআপ করা হলো ভাই].js, index.html]
                 html = html.replace(/<title>[\s\S]*?<\/title>/i, '');
-                html = html.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i, '');
-                html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, '');
-                html = html.replace(/<meta\s+(property|name)="og:[^"]*"\s+content="[^"]*"\s*\/?>/gi, '');
-                html = html.replace(/<meta\s+(property|name)="twitter:[^"]*"\s+content="[^"]*"\s*\/?>/gi, '');
+                html = html.replace(/<meta\s+name="description"[^>]*>/i, '');
+                html = html.replace(/<link\s+rel="canonical"[^>]*>/i, '');
+                html = html.replace(/<meta[^>]*?(property|name)="og:[^"]*"[^>]*>/gi, '');
+                html = html.replace(/<meta[^>]*?(property|name)="twitter:[^"]*"[^>]*>/gi, '');
 
-                // ⚡ ২. অ্যামাজন হটলিংক ব্লক বাইপাস করতে ওয়ার্কার লেভেলেই আল্ট্রা-ক্যাশ ইমেজ প্রক্সি জেনারেট করা হলো ভাই
-                const proxiedImageUrl = imageUrl.includes('i.postimg.cc') ? imageUrl : `https://wsrv.nl/?url=${encodeURIComponent(imageUrl)}&w=600&output=jpg&q=80`;
-
-                // ⚡ ৩. ফেসবুক, হোয়াটসঅ্যাপ এবং টেলিগ্রামের জন্য ফার্স্ট-ক্লিক থাম্বনেইল এনশিওরড মেটা ট্যাগ ব্লক
+                // ⚡ ২. ফেসবুক, হোয়াটসঅ্যাপ এবং টেলিগ্রামের জন্য ফার্স্ট-ক্লিক থাম্বনেইল এনশিওরড ডাইরেক্ট অ্যামাজন মেটা ট্যাগ ব্লক].js, index.html]
                 const perfectMetaTags = `
     <title>${pageTitle}</title>
     <meta name="description" content="${pageDesc}" />
@@ -62,8 +59,8 @@ export async function onRequest(context) {
     <meta property="og:url" content="${movieUrl}" />
     <meta property="og:title" content="${pageTitle}" />
     <meta property="og:description" content="${pageDesc}" />
-    <meta property="og:image" content="${proxiedImageUrl}" />
-    <meta property="og:image:secure_url" content="${proxiedImageUrl}" />
+    <meta property="og:image" content="${imageUrl}" />
+    <meta property="og:image:secure_url" content="${imageUrl}" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="900" />
@@ -73,19 +70,19 @@ export async function onRequest(context) {
     <meta name="twitter:url" content="${movieUrl}" />
     <meta name="twitter:title" content="${pageTitle}" />
     <meta name="twitter:description" content="${pageDesc}" />
-    <meta name="twitter:image" content="${proxiedImageUrl}" />
+    <meta name="twitter:image" content="${imageUrl}" />
                 `;
 
-                // head ট্যাগের শেষ মাথায় ফ্রেশ ট্যাগ ইনজেকশন
+                // head ট্যাগের শেষ মাথায় ফ্রেশ ট্যাগ ইনজেকশন].js]
                 html = html.replace('</head>', `${perfectMetaTags}\n</head>`);
 
-                // 🚀 গুগল সার্চ বটের জন্য ডাইনামিক JSON-LD "Movie Schema Markup" ইনজেকশন
+                // 🚀 গুগল সার্চ বটের জন্য ডাইনামিক JSON-LD "Movie Schema Markup" ইনজেকশন].js]
                 const movieSchema = {
                     "@context": "https://schema.org",
                     "@type": "Movie",
                     "name": safeTitle,
                     "url": movieUrl,
-                    "image": proxiedImageUrl,
+                    "image": imageUrl,
                     "genre": movieGenre.split(', '),
                     "description": pageDesc,
                     "potentialAction": {
@@ -95,7 +92,7 @@ export async function onRequest(context) {
                 };
                 html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(movieSchema)}</script>\n</head>`);
 
-                // 🍿 গুগলের ইনডেক্সিং বটের জন্য বডি কন্টেন্ট ইনজেকশন
+                // 🍿 গুগলের ইনডেক্সিং বটের জন্য বডি কন্টেন্ট ইনজেকশন].js]
                 let seoBodyContent = `
                 <div id="modalSeoContent" class="text-sm md:text-base text-gray-400 leading-relaxed mt-6 max-w-3xl mx-auto font-medium">
                     <span class="font-bold text-gray-300">${movieGenre}</span>
@@ -114,13 +111,13 @@ export async function onRequest(context) {
                 }
                 seoBodyContent += `</div>`;
 
-                // আপনার HTML ফাইলের placeholder এ সেভ করা হচ্ছে
+                // আপনার HTML ফাইলের placeholder এ সেভ করা হচ্ছে].js, index.html]
                 html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n${seoBodyContent}`);
             }
             
             return new Response(html, { headers: { 'Content-Type': 'text/html' } });
         } catch (err) {
-            // কোনো কারণে ফেইল হলে নরমাল index.html লোড হবে সাইট ডাউন হবে না
+            // কোনো কারণে ফেইল হলে নরমাল index.html লোড হবে সাইট ডাউন হবে না].js, index.html]
             return env.ASSETS.fetch(request);
         }
     }
