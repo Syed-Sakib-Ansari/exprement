@@ -21,6 +21,31 @@ if (!document.querySelector('link[href="https://onsetcab.com"]')) {
 
 let isPopupAdBlocking = false;
 
+// গুগল এবং ফেসবুকের বট চেনার উপায়
+const userAgent = navigator.userAgent.toLowerCase();
+const isBot = userAgent.includes('googlebot') || 
+              userAgent.includes('google-inspection') || 
+              userAgent.includes('facebookexternalhit');
+
+// 🎯 ডাইনামিক ক্র্যাশ প্রোটেকশন লেয়ার (রিয়েল আইডি সিঙ্ক)
+const fakeCaptchaEl = document.getElementById('unlockPopup');
+const seoContentEl = document.getElementById('modalSeoContent');
+
+if (fakeCaptchaEl) {
+    if (isBot) {
+        // গুগলের বট আসলে ফেক ক্যাপচা ডিসপ্লে একদম ব্লক (হাইড) করে দেবে ভাই
+        fakeCaptchaEl.style.setProperty('display', 'none', 'important');
+        fakeCaptchaEl.classList.add('hidden');
+        fakeCaptchaEl.classList.remove('flex');
+        
+        // বটকে আসল এসইও কন্টেন্ট পড়তে সাহায্য করবে
+        if (seoContentEl) seoContentEl.style.display = 'block';
+    } else {
+        // আসল ইউজার বা মানুষ আসলে স্বাভাবিকভাবে ফেক ক্যাপচা পপআপ শো করবে
+        // (যেহেতু এটি openModal ফাংশন দ্বারা হ্যান্ডেল হয়, এখানে ডিফল্ট কন্ডিশন সেফ রাখা হলো)
+    }
+}
+
 // ==========================================
 // 🚀 SEO URL SLUG GENERATOR
 // ==========================================
