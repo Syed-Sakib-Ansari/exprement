@@ -68,8 +68,6 @@ export async function onRequest(context) {
                 <meta property="og:description" content="${pageDesc}">
                 <meta property="og:image" content="${imageUrl}">
                 <meta property="og:image:secure_url" content="${imageUrl}">
-                <meta property="og:image:width" content="600">
-                <meta property="og:image:height" content="900">
                 <meta property="og:image:type" content="image/jpeg">
                 <link rel="image_src" href="${imageUrl}">
                 <meta itemprop="image" content="${imageUrl}">
