@@ -41,29 +41,27 @@ export async function onRequest(context) {
                 const pageDesc = `Watch ${safeTitle} full movie online for free in HD quality. Download ${safeTitle} complete web series 1080p, 720p. Stream ${movieGenre} movies seamlessly on MovieDakhi.`;
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
 
-                // ইনবক্স গ্যারান্টি: সরাসরি ট্রাস্টেড অরিজিনাল সিডিএন ইমেজ (Proxied for Social Bots)
-                const rawImageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
-                const imageUrl = rawImageUrl.includes('postimg.cc')
-                    ? rawImageUrl
-                    : `https://wsrv.nl/?url=${encodeURIComponent(rawImageUrl)}&w=600&output=jpeg&q=80`;
+                // 🟢 ফেসবুক কমেন্ট ইনবক্স গ্যারান্টি: সোশাল ক্রলারের ট্রাস্টের জন্য কুয়েরি প্যারামিটার ছাড়া ডিরেক্ট অরিজিনাল ইমেজ ব্যবহার করা হলো ভাই
+                const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
                 // ⚡ ১. index.html-এর গ্লোবাল robots ট্যাগসহ বাকি ওল্ড মেটা ট্যাগগুলো ক্লিন করা হলো যেন ক্রলার কনফিউজড না হয়
                 html = html.replace(/<title>[\s\S]*?<\/title>/i, '');
                 html = html.replace(/<meta[^>]*?name="description"[^>]*?>/gi, '');
                 html = html.replace(/<link[^>]*?rel="canonical"[^>]*?>/gi, '');
-                html = html.replace(/<meta[^>]*?name="robots"[^>]*?>/gi, ''); // 🎯 গ্লোবাল ইনডেক্স ট্যাগ ক্লিনআপ লেয়ার[cite: 8]
+                html = html.replace(/<meta[^>]*?name="robots"[^>]*?>/gi, ''); // 🎯 গ্লোবাল ইনডেক্স ট্যাগ ক্লিনআপ লেয়ার
                 html = html.replace(/<meta[^>]*?property="og:[^>]*?>/gi, '');
                 html = html.replace(/<meta[^>]*?(?:name|property)="twitter:[^>]*?>/gi, '');
 
-                // ⚡ ২. মুভি অবজেক্টে নো-ইনডেক্স ট্রু থাকলে "noindex, nofollow" সেট হবে, অন্যথায় স্বাভাবিক ইনডেক্স থাকবে ভাই
+                // ⚡ ২. মুভি অবজেক্টে নো-ইনডেক্স TRU থাকলে "noindex, nofollow" সেট হবে, অন্যথায় স্বাভাবিক ইনডেক্স থাকবে ভাই
                 const robotsContent = targetMovie.noindex === true ? "noindex, nofollow" : "index, follow";
 
-                // 🎯 ৩. ডাইনামিক রোবটস ট্যাগসহ মাস্টার মনোলিথিক মেটা ব্লক
+                // 🎯 ৩. ডাইনামিক রোবটস এবং fb:app_id ট্যাগসহ মাস্টার মনোলিথিক মেটা ব্লক (কমেন্ট প্রিভিউ ফিক্স)
                 const metaBlock = `
                 <title>${pageTitle}</title>
                 <meta name="description" content="${pageDesc}">
                 <link rel="canonical" href="${movieUrl}">
                 <meta name="robots" content="${robotsContent}">
+                <meta property="fb:app_id" content="966242223397117">
                 <meta property="og:type" content="video.movie">
                 <meta property="og:url" content="${movieUrl}">
                 <meta property="og:title" content="${pageTitle}">
@@ -81,7 +79,7 @@ export async function onRequest(context) {
                 <meta name="twitter:description" content="${pageDesc}">
                 <meta name="twitter:image" content="${imageUrl}">`;
 
-                // হেড ট্যাগের ঠিক নিচেই সুপার হাই-প্রিওরিটিতে ইনজেক্ট করা হলো
+                // head ট্যাগের ঠিক নিচেই সুপার হাই-প্রিওরিটিতে ইনজেক্ট করা হলো
                 html = html.replace('<head>', `<head>\n    ${metaBlock}`);
 
                 // 🚀 গুগল সার্চ বটের জন্য ডাইনামিক JSON-LD "Movie Schema Markup" ইনজেকশন (এতে র‍্যাংকিং দ্বিগুণ ফাস্ট হবে)
