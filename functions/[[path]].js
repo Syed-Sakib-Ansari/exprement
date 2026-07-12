@@ -120,16 +120,21 @@ export async function onRequest(context) {
                 // আপনার HTML ফাইলের placeholder 에 কন্টেন্ট ইনজেকশন করা হচ্ছে
                 html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n${seoBodyContent}`);
 
-                // 🟢 🎯 গুগল এবং ফেসবুক বটের জন্য ব্যাকএন্ড লেভেলে ফেক পপআপ রিমুভাল লেয়ার
+// 🟢 🎯 গুগল এবং ফেসবুক বটের জন্য ব্যাকএন্ড লেভেলে ফেক পপআপ ও ডুপ্লিকেট কন্টেন্ট রিমুভাল লেয়ার
                 const userAgentLower = (request.headers.get('user-agent') || '').toLowerCase();
                 const isBotCrawl = userAgentLower.includes('googlebot') || 
                                    userAgentLower.includes('google-inspection') || 
                                    userAgentLower.includes('facebookexternalhit');
 
                 if (isBotCrawl) {
-                    // বট আসলে index.html এর ভেতরের ফেক ক্যাপচা ডিভগুলোকে ব্যাকএন্ড থেকেই সম্পূর্ণ হাওয়া করে দেবে ভাই
+                    // ১. ক্যাপচা ও ফিডব্যাক পপআপ হাইড (আগের কোড)
                     html = html.replace('id="unlockPopup"\n        class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/60 backdrop-blur-sm transition-all duration-300"', 'id="unlockPopup" class="hidden" style="display: none !important;"');
                     html = html.replace('id="feedbackPopup"\n        class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/50 backdrop-blur-sm transition-all duration-300"', 'id="feedbackPopup" class="hidden" style="display: none !important;"');
+                    
+                    // ২. 🚀 দ্য মাস্টার স্ট্রোক: গুগল বটের সামনে থেকে হোমপেজ ও লাইব্রেরি ভিউ সম্পূর্ণ গায়েব করে দেওয়া!
+                    // এতে গুগল পেজটিকে আর কখনোই হোমপেজের ডুপ্লিকেট ভাবতে পারবে না।
+                    html = html.replace('<div id="homeView" class="view-container active">', '<div id="homeView" style="display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; overflow: hidden !important;">');
+                    html = html.replace('<div id="libraryView" class="view-container pt-32 px-6 md:px-12">', '<div id="libraryView" style="display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; overflow: hidden !important;">');
                 }
 
                 // ==========================================
