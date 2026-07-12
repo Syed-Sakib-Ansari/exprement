@@ -41,7 +41,7 @@ export async function onRequest(context) {
                 const pageDesc = `Watch ${safeTitle} full movie online for free in HD quality. Download ${safeTitle} complete web series 1080p, 720p. Stream ${movieGenre} movies seamlessly on MovieDakhi.`;
                 const movieUrl = `https://moviedakhi.com/${movieSlug}.html`;
 
-                // 🟢 ফেসবুক কমেন্ট ইনবক্স গ্যারান্টি: সোশাল ক্রলারের ট্রাস্টের জন্য কুয়েরি প্যারামিটার ছাড়া ডিরেক্ট অরিজিনাল ইমেজ ব্যবহার করা হলো ভাই
+                // 🟢 ফেসবুক কমেন্ট ইনবক্স গ্যারান্টি: সোশাল ক্রলারের ট্রাস্টের জন্য কুয়েরি প্যারামিটার ছাড়া ডিরেক্ট অরিジナル ইমেজ ব্যবহার করা হলো ভাই
                 const imageUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
                 // ⚡ ১. index.html-এর গ্লোবাল robots ট্যাগসহ বাকি ওল্ড মেটা ট্যাগগুলো ক্লিন করা হলো যেন ক্রলার কনফিউজড না হয়
@@ -117,8 +117,20 @@ export async function onRequest(context) {
                 }
                 seoBodyContent += `</div>`;
 
-                // আপনার HTML ফাইলের placeholder এ কন্টেন্ট ইনজেকশন করা হচ্ছে
+                // আপনার HTML ফাইলের placeholder 에 কন্টেন্ট ইনজেকশন করা হচ্ছে
                 html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n${seoBodyContent}`);
+
+                // 🟢 🎯 গুগল এবং ফেসবুক বটের জন্য ব্যাকএন্ড লেভেলে ফেক পপআপ রিমুভাল লেয়ার
+                const userAgentLower = (request.headers.get('user-agent') || '').toLowerCase();
+                const isBotCrawl = userAgentLower.includes('googlebot') || 
+                                   userAgentLower.includes('google-inspection') || 
+                                   userAgentLower.includes('facebookexternalhit');
+
+                if (isBotCrawl) {
+                    // বট আসলে index.html এর ভেতরের ফেক ক্যাপচা ডিভগুলোকে ব্যাকএন্ড থেকেই সম্পূর্ণ হাওয়া করে দেবে ভাই
+                    html = html.replace('id="unlockPopup"\n        class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/60 backdrop-blur-sm transition-all duration-300"', 'id="unlockPopup" class="hidden" style="display: none !important;"');
+                    html = html.replace('id="feedbackPopup"\n        class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/50 backdrop-blur-sm transition-all duration-300"', 'id="feedbackPopup" class="hidden" style="display: none !important;"');
+                }
 
                 // ==========================================
                 // 🚀 100% GOOGLE-SAFE & HIGH SEO VALUE CONTENT BLOCK (Mixer Layer)
