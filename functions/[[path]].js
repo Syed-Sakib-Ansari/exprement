@@ -119,6 +119,34 @@ export async function onRequest(context) {
 
                 // আপনার HTML ফাইলের placeholder এ কন্টেন্ট ইনজেকশন করা হচ্ছে
                 html = html.replace('<div id="modalAdBottom" class="w-full"></div>', `<div id="modalAdBottom" class="w-full"></div>\n${seoBodyContent}`);
+
+                // ==========================================
+                // 🚀 100% GOOGLE-SAFE & HIGH SEO VALUE CONTENT BLOCK (Mixer Layer)
+                // ==========================================
+                const googleBotForcedContent = `
+                <div id="seoDirectoryBlock" style="display: block !important; visibility: visible !important; width: 100% !important; background: rgba(255,255,255,0.01) !important; border-top: 1px solid rgba(255,255,255,0.05) !important; padding: 24px !important; margin-top: 40px !important; text-align: left !important; font-family: sans-serif !important; color: #a3a3a3 !important;">
+                    <div style="max-w: 1200px !important; margin: 0 auto !important; padding: 0 15px !important;">
+                        <h2 style="font-size: 18px !important; color: #ffffff !important; font-weight: 700 !important; margin-bottom: 8px !important; text-transform: uppercase !important; letter-spacing: 0.5px !important;">
+                            Watch ${safeTitle} Full Movie Online Free
+                        </h2>
+                        <h3 style="font-size: 13px !important; color: #ef4444 !important; font-weight: 600 !important; margin-bottom: 12px !important;">
+                            Download ${safeTitle} Complete Web Series 1080p Bluray HD
+                        </h3>
+                        <p style="font-size: 12px !important; line-height: 1.6 !important; margin-bottom: 8px !important; color: #d4d4d8 !important;">
+                            <strong>Database Source:</strong> ${movieSlug}.html — Direct Download Link Activated (Secure Cloud Server)
+                        </p>
+                        <p style="font-size: 12px !important; line-height: 1.6 !important; margin-bottom: 8px !important; color: #d4d4d8 !important;">
+                            <strong>Genre Category:</strong> ${movieGenre}
+                        </p>
+                        <p style="font-size: 12px !important; line-height: 1.6 !important; margin: 0 !important; color: #a1a1aa !important;">
+                            Stream online or download ${safeTitle} complete season / full movie via high-speed Google Drive and Telegram links. Available in Dual Audio [Hindi-English] Dubbed 4K Ultra HD, 1080p BluRay, and x265 HEVC codec free on MovieDakhi.
+                        </p>
+                    </div>
+                </div>
+                `;
+
+                // 🎯 লেআউট ব্রেক ছাড়া বডির একদম শেষে ন্যাচারাল ফুটারের ওপরে পুশ করার মেথড
+                html = html.replace('</body>', `${googleBotForcedContent}\n</body>`);
             }
 
             return new Response(html, { headers: { 'Content-Type': 'text/html' } });
