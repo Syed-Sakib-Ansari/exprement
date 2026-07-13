@@ -167,8 +167,21 @@ export async function onRequest(context) {
             }
 
             return new Response(html, { headers: { 'Content-Type': 'text/html' } });
-        } catch (err) {
-            // কোনো কারণে ফেইল হলে নরমাল index.html লোড হবে সাইট ডাউন হবে না
+} catch (err) {
+            // মুভি ডাটাবেজে না থাকলে বা কোনো এরর হলে কাস্টম 404.html পেজ লোড হবে ৪MD স্ট্যাটাস সহ
+            try {
+                const errorPage = await env.ASSETS.fetch(new URL('/404.html', request.url));
+                if (errorPage.ok) {
+                    const errorHtml = await errorPage.text();
+                    return new Response(errorHtml, { 
+                        status: 404, 
+                        headers: { 'Content-Type': 'text/html' } 
+                    });
+                }
+            } catch (e) {
+                // যদি 404.html ফাইলটি কোনো কারণে লোড না হয়, তবে একটি সাধারণ 404 মেসেজ দেখাবে
+                return new Response("404 Not Found - Movie Disappeared or Removed", { status: 404 });
+            }
             return env.ASSETS.fetch(request);
         }
     }
