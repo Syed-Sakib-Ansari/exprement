@@ -6,47 +6,6 @@ if ('scrollRestoration' in history) {
 }
 
 // ==========================================
-// 🚀 NETWORK SPEED OPTIMIZATION FOR ADS
-// ==========================================
-if (!document.querySelector('link[href="https://onsetcab.com"]')) {
-    const preconnect1 = document.createElement('link');
-    preconnect1.rel = 'preconnect'; 
-    preconnect1.href = 'https://onsetcab.com';
-    const preconnect2 = document.createElement('link');
-    preconnect2.rel = 'dns-prefetch'; 
-    preconnect2.href = 'https://onsetcab.com';
-    document.head.appendChild(preconnect1); 
-    document.head.appendChild(preconnect2);
-}
-
-let isPopupAdBlocking = false;
-
-// // গুগল এবং ফেসবুকের বট চেনার উপায়
-// const userAgent = navigator.userAgent.toLowerCase();
-// const isBot = userAgent.includes('googlebot') || 
-//               userAgent.includes('google-inspection') || 
-//               userAgent.includes('facebookexternalhit');
-
-// // 🎯 ডাইনামিক ক্র্যাশ প্রোটেকশন লেয়ার (রিয়েল আইডি সিঙ্ক)
-// const fakeCaptchaEl = document.getElementById('unlockPopup');
-// const seoContentEl = document.getElementById('modalSeoContent');
-
-// if (fakeCaptchaEl) {
-//     if (isBot) {
-//         // গুগলের বট আসলে ফেক ক্যাপচা ডিসপ্লে একদম ব্লক (হাইড) করে দেবে ভাই
-//         fakeCaptchaEl.style.setProperty('display', 'none', 'important');
-//         fakeCaptchaEl.classList.add('hidden');
-//         fakeCaptchaEl.classList.remove('flex');
-        
-//         // বটকে আসল এসইও কন্টেন্ট পড়তে সাহায্য করবে
-//         if (seoContentEl) seoContentEl.style.display = 'block';
-//     } else {
-//         // আসল ইউজার বা মানুষ আসলে স্বাভাবিকভাবে ফেক ক্যাপচা পপআপ শো করবে
-//         // (যেহেতু এটি openModal ফাংশন দ্বারা হ্যান্ডেল হয়, এখানে ডিফল্ট কন্ডিশন সেফ রাখা হলো)
-//     }
-// }
-
-// ==========================================
 // 🚀 SEO URL SLUG GENERATOR
 // ==========================================
 function generateMovieSlug(title) {
@@ -55,27 +14,9 @@ function generateMovieSlug(title) {
 }
 
 // ==========================================
-// 🚀 NATIVE GRID SAFE COUPLING (LIGHTWEIGHT)
-// ==========================================
-function createMobileNativeAdBlock() {
-    const block = document.createElement('div');
-    block.style.display = 'none'; // 🎯 লেআউট ব্রেকিং এড়াতে অদৃশ্য ০-ব্যান্ডউইথ নোড
-    return block;
-}
-
-function createDesktopNativeAdBlock() {
-    const block = document.createElement('div');
-    block.style.display = 'none'; // 🎯 লেআউট ব্রেকিং এড়াতে অদৃশ্য ০-ব্যান্ডউইথ নোড
-    return block;
-}
-
-// ==========================================
 // 🚀 DATABASE, HIGH-SPEED CACHING & INSTANT O(1) INDEXING
 // ==========================================
-const contentData = [
-
-];
-
+const contentData = [];
 const categoryIndexMap = {}; 
 
 function buildCategoryIndex() {
@@ -148,7 +89,6 @@ async function fetchAndCacheNetworkDatabase() {
             const text = await response.text();
             const db = JSON.parse(text);
             if (Array.isArray(db) && db.length > 0) {
-                // 🟢 লোকালস্টোরেজ বদলে ইনডেক্সড-ডিবি তে সেভ করা হলো ভাই
                 await setIDBCache('moviedakhi_db_cache', text);
                 contentData.length = 0; 
                 contentData.push(...db); 
@@ -167,7 +107,6 @@ function triggerBackgroundUpdateCheck() {
             const response = await fetch('movies.json');
             if (response.ok) {
                 const text = await response.text();
-                // 🟢 ব্যাকগ্রাউন্ডে অ্যাসিনক্রোনাসলি ইন্ডেক্সড-ডিবি ক্যাশ চেক হবে
                 const cachedText = await getIDBCache('moviedakhi_db_cache');
                 
                 if (text !== cachedText) {
@@ -195,7 +134,6 @@ function triggerBackgroundUpdateCheck() {
 }
 
 async function loadContentDatabase() {
-    // 🟢 পেজ লোড হওয়ার সাথে সাথে মেমোরি ফ্রি রেখে ইন্ডেক্সড-ডিবি থেকে ডাটা রিড হবে ভাই
     const cachedText = await getIDBCache('moviedakhi_db_cache');
     if (cachedText) {
         try {
@@ -231,6 +169,8 @@ let currentEpisodeIndex = null;
 let preSearchState = null;
 let currentView = 'home';
 let sliderInterval;
+let scrollTimeoutId = null;
+let isModalClosing = false;
 
 const homeView = document.getElementById('homeView');
 const libraryView = document.getElementById('libraryView');
@@ -511,7 +451,7 @@ function initHeroSlider() {
                     <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
                     <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
                     <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
-                    <button onclick="openModal(${movie.id}); showCaptcha();" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
+                    <button onclick="openModal(${movie.id});" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
                         <i class="fas fa-play"></i> Watch Now
                     </button>
                 </div>
@@ -706,11 +646,10 @@ function createMovieCard(item) {
             ${infoText}
         </div>`;
         
-card.onclick = (e) => {
-        e.preventDefault(); 
-        openModal(item.id);
-        showCaptcha(); // 🎯 ইউজারের ক্লিকে ক্যাপচা আসবে
-    };
+        card.onclick = (e) => {
+            e.preventDefault(); 
+            openModal(item.id);
+        };
     return card;
 }
 
@@ -723,10 +662,6 @@ function renderRecentAdds() {
     
     recentItems.slice(0, 18).forEach((item, index) => {
         fragment.appendChild(createMovieCard(item));
-        let currentIdx = index + 1;
-        
-        if (currentIdx % 8 === 0) fragment.appendChild(createMobileNativeAdBlock());
-        if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
     });
     
     recentAddsGrid.appendChild(fragment);
@@ -763,10 +698,6 @@ function renderCategorySections(forceRenderAll = false) {
         
         filtered.slice(0, 11).forEach((item, index) => {
             cardsFragment.appendChild(createMovieCard(item));
-            let currentIdx = index + 1;
-            
-            if (currentIdx % 8 === 0) cardsFragment.appendChild(createMobileNativeAdBlock());
-            if (currentIdx % 6 === 0) cardsFragment.appendChild(createDesktopNativeAdBlock());
         });
         
         lazyGrid.appendChild(cardsFragment);
@@ -884,10 +815,6 @@ function initLibraryRender(filter = "all", initialCount = 0) {
         const fragment = document.createDocumentFragment();
         libraryData.slice(0, libraryDisplayedCount).forEach((item, index) => {
             fragment.appendChild(createMovieCard(item));
-            let currentIdx = index + 1;
-            
-            if (currentIdx % 8 === 0) fragment.appendChild(createMobileNativeAdBlock());
-            if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
         });
         subGrid.appendChild(fragment);
     }
@@ -913,10 +840,6 @@ function renderLibraryChunk() {
         const fragment = document.createDocumentFragment();
         chunk.forEach((item, index) => {
             fragment.appendChild(createMovieCard(item));
-            let currentIdx = libraryDisplayedCount + index + 1;
-            
-            if (currentIdx % 4 === 0) fragment.appendChild(createMobileNativeAdBlock());
-            if (currentIdx % 6 === 0) fragment.appendChild(createDesktopNativeAdBlock());
         });
         subGrid.appendChild(fragment);
         libraryDisplayedCount = nextCount;
@@ -937,78 +860,6 @@ function updateLoadMoreVisibility() {
         loading.classList.add('hidden');
     }
 }
-
-// ==========================================
-// 🚀 DYNAMIC AD INTERSTITIAL STATE ENGINE & LOGIC
-// ==========================================
-let pendingModalId = null;
-let activePopupType = null;
-let isAdTabOpened = false;
-const adTargetUrl = "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263";
-
-// ==========================================
-// 🚀 NEW CAPTCHA MODAL CONTROL SYSTEM
-// ==========================================
-function showCaptcha() {
-    const captchaBox = document.getElementById('unlockPopup');
-    if (captchaBox) {
-        captchaBox.classList.remove('hidden');
-        captchaBox.classList.add('flex');
-        document.body.classList.add('overflow-hidden');
-        
-        // ব্যাক বাটন প্রেস করলে ক্যাপচা ক্লোজ হওয়ার লজিক
-        history.pushState({ modal: 'captcha' }, null, location.href);
-        window.addEventListener('popstate', closeCaptchaOnBack);
-    }
-}
-
-function closeCaptcha() {
-    const captchaBox = document.getElementById('unlockPopup');
-    if (captchaBox && !captchaBox.classList.contains('hidden')) {
-        captchaBox.classList.add('hidden');
-        captchaBox.classList.remove('flex');
-    }
-}
-
-function closeCaptchaOnBack(event) {
-    closeCaptcha();
-    window.removeEventListener('popstate', closeCaptchaOnBack);
-}
-
-function handlePopupAction(type) {
-    window.open(adTargetUrl, '_blank');
-
-    if (type === 'unlock') {
-        // নতুন ক্লিন ফাংশন কল
-        closeCaptcha();
-        window.removeEventListener('popstate', closeCaptchaOnBack);
-        
-    } else if (type === 'feedback') {
-        const feedbackDiv = document.getElementById('feedbackPopup');
-        if (feedbackDiv) {
-            feedbackDiv.classList.remove('flex');
-            feedbackDiv.classList.add('hidden');
-        }
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        document.body.classList.remove('overflow-hidden');
-        window.scrollTo(0, savedScrollY);
-
-        const feedbackAdScript = document.createElement('script');
-        feedbackAdScript.src = "https://onsetcab.com/b0/0f/d3/b00fd39ae575d8dcda8321c78d265453.js";
-        feedbackAdScript.async = true;
-        document.body.appendChild(feedbackAdScript);
-    }
-
-    activePopupType = null;
-    isAdTabOpened = false;
-}
-
-window.addEventListener('focus', () => {
-    isAdTabOpened = false;
-    activePopupType = null;
-});
 
 // ==========================================
 // 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC
@@ -1105,17 +956,16 @@ function executeActualOpenModal(id) {
     setMetaTag('property', 'og:description', metaDescription.content);
     setMetaTag('property', 'og:url', newUrl.href);
     setMetaTag('name', 'twitter:title', document.title);
-setMetaTag('name', 'twitter:description', metaDescription.content);
+    setMetaTag('name', 'twitter:description', metaDescription.content);
     setMetaTag('name', 'twitter:card', 'summary_large_image');
     
-// 🎯 ক্লায়েন্ট-সাইড ডিএম ইমেজ সিঙ্ক্রোনাইজেশন (ব্রাউজার থেকে কপি লিঙ্কের জন্য লাইভ ডম পোস্টার ফিক্স)
-const rawPosterUrl = item.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
-const moviePosterUrl = rawPosterUrl.includes('postimg.cc')
-    ? rawPosterUrl 
-    : `https://wsrv.nl/?url=${encodeURIComponent(rawPosterUrl)}&w=600&output=jpeg&q=80`;
+    const rawPosterUrl = item.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+    const moviePosterUrl = rawPosterUrl.includes('postimg.cc')
+        ? rawPosterUrl 
+        : `https://wsrv.nl/?url=${encodeURIComponent(rawPosterUrl)}&w=600&output=jpeg&q=80`;
 
-setMetaTag('property', 'og:image', moviePosterUrl);
-setMetaTag('name', 'twitter:image', moviePosterUrl);
+    setMetaTag('property', 'og:image', moviePosterUrl);
+    setMetaTag('name', 'twitter:image', moviePosterUrl);
 
     const modalTitleElem = document.getElementById('modalTitle');
     const isSameMovie = modalTitleElem && modalTitleElem.innerText === titleKey;
@@ -1246,6 +1096,51 @@ setMetaTag('name', 'twitter:image', moviePosterUrl);
     document.body.style.width = '100%';
 }
 
+// 🎯 মডাল ক্লোজ করা এবং ভিডিও স্টপ করার ফাংশন
+function closeModal(triggerBack = false, isUserAction = false) {
+    if (isModalClosing) return;
+    isModalClosing = true;
+
+    const modal = document.getElementById('movieModal');
+    if (modal) {
+        modal.classList.remove('active');
+        
+        // 🛑 STOP VIDEO: আইফ্রেম মুছে দেওয়ার ফলে ভিডিও এবং অডিও সাথে সাথে বন্ধ হয়ে যাবে
+        setTimeout(() => {
+            const actualVideo = document.getElementById('actualVideo');
+            if (actualVideo) {
+                actualVideo.innerHTML = ''; 
+                actualVideo.classList.add('hidden');
+            }
+            modal.classList.add('hidden');
+        }, 300); // মডালের ফেইড-আউট এনিমেশনের সাথে মিল রেখে 300ms সময়
+    }
+
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, savedScrollY);
+
+    const fab = document.getElementById('mobileFab');
+    if (fab) fab.classList.remove('fab-hidden');
+
+    // 🎯 ইউআরএল (URL) এবং হিস্ট্রি ঠিক রাখা
+    if (triggerBack && window.history.state?.isModalOpen) {
+        window.history.back();
+    } else if (isUserAction) {
+        const url = new URL(window.location);
+        url.searchParams.delete('movie');
+        try { 
+            const currentState = history.state || { view: currentView, validDakhiState: true };
+            window.history.replaceState({ ...currentState, isModalOpen: false }, '', url.pathname + (url.search ? url.search : '')); 
+        } catch (e) {}
+        updateCanonical(url.href);
+        document.title = currentView === 'home' ? "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD" : "All Movies & Web Series - MovieDakhi";
+    }
+
+    setTimeout(() => { isModalClosing = false; }, 350);
+}
+
 // ==========================================
 // 🚀 DOWNLOAD BUTTON TRIGGER & EPISODES SYSTEM
 // ==========================================
@@ -1328,43 +1223,6 @@ function playEpisode(index, btnElement) {
     if (wave) wave.classList.remove('hidden');
 }
 
-let isModalClosing = false;
-
-function closeModal(triggerBack = true, explicitClose = false) {
-    const modal = document.getElementById('movieModal');
-    if (!modal || modal.classList.contains('hidden')) return;
-
-    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.remove('fab-hidden');
-
-    isModalClosing = true;
-    document.title = "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD";
-
-    modal.classList.remove('active');
-    modal.classList.add('hidden');
-    isModalClosing = false;
-
-    const actualVideoContainer = document.getElementById('actualVideo');
-    if (actualVideoContainer) {
-        actualVideoContainer.innerHTML = ''; 
-    }
-
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    document.body.classList.remove('overflow-hidden');
-    window.scrollTo(0, savedScrollY);
-
-    if (triggerBack && window.history.state?.isModalOpen) {
-        window.history.back();
-    }
-
-    const feedbackPopup = document.getElementById('feedbackPopup');
-    if (feedbackPopup) {
-        feedbackPopup.classList.remove('hidden');
-        feedbackPopup.classList.add('flex');
-    }
-}
-
 // ==========================================
 // 🚀 SEARCH INPUT EVENT LISTENERS
 // ==========================================
@@ -1431,97 +1289,6 @@ if (searchInput) {
     });
 }
 
-// ==========================================
-// 🚀 GENERAL ANNOUNCEMENT POPUP LOGIC
-// ==========================================
-let announcementScrollY = 0;
-
-function showAnnouncement() {
-    const popup = document.getElementById('announcementPopup');
-    if (!popup) return;
-
-    const topCloseBtn = document.getElementById('announcementCloseBtnTop');
-    const backdrop = document.getElementById('popupBackdrop');
-    const popupTelegramBtn = document.getElementById('popupTelegramBtn');
-    const popupBoxContainer = document.getElementById('popupBoxContainer');
-
-    if (topCloseBtn) topCloseBtn.classList.remove('hidden');
-    if (backdrop) backdrop.onclick = closeAnnouncement;
-
-    if (popupTelegramBtn) popupTelegramBtn.classList.remove('hidden');
-
-    if (popupBoxContainer) {
-        popupBoxContainer.classList.add('p-5', 'md:p-8');
-        popupBoxContainer.classList.remove('p-4');
-    }
-
-    popup.classList.remove('hidden');
-    popup.classList.add('flex');
-
-    announcementScrollY = window.scrollY || document.documentElement.scrollTop;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${announcementScrollY}px`;
-    document.body.style.width = '100%';
-
-    setTimeout(() => {
-        popup.classList.add('active');
-    }, 50);
-}
-
-function closeAnnouncement() {
-    const popup = document.getElementById('announcementPopup');
-    if(!popup) return;
-    
-    popup.classList.remove('active');
-
-    setTimeout(() => {
-        popup.classList.add('hidden');
-        popup.classList.remove('flex');
-
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        window.scrollTo({ top: announcementScrollY, behavior: 'instant' });
-
-        isPopupAdBlocking = false;
-
-        setTimeout(() => {
-            injectPopAds(); 
-        }, 500);
-
-    }, 500);
-}
-
-// ==========================================
-// 🚀 SESSION & SCROLL PERSISTENCE CONFIG
-// ==========================================
-const sessionKey = 'MovieDakhi_Welcome_Session_Final';
-const localKey = 'MovieDakhi_Welcome_Time_Final';
-const nowTime = new Date().getTime();
-const lastShown = localStorage.getItem(localKey);
-
-const hasSession = sessionStorage.getItem(sessionKey);
-const hasRecentLocal = lastShown && (nowTime - parseInt(lastShown)) < 1800000;
-
-const urlParams2 = new URLSearchParams(window.location.search);
-const isFallback = urlParams2.get('fb_fallback');
-const shouldShowPopup = !isFallback && (!hasSession && !hasRecentLocal);
-
-if (shouldShowPopup) {
-    isPopupAdBlocking = false; 
-    setTimeout(() => {
-        sessionStorage.setItem(sessionKey, 'true');
-        localStorage.setItem(localKey, nowTime.toString());
-        showAnnouncement();
-    }, 20000);
-}
-
-// 🎯 পপআপ নোটিশ আসুক বা না আসুক, পেজ লোড হওয়ার সাথে সাথে পপআন্ডার ও সোশ্যাল বার ২০০ মিলি-সেকেন্ডে ফায়ার হবে
-setTimeout(() => {
-    injectPopAds();
-}, 200);
-
-let scrollTimeoutId;
 window.addEventListener('scroll', () => {
     if (currentView === 'library') {
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
