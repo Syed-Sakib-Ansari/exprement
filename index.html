@@ -334,15 +334,15 @@
     <!-- 🚀 ULTRA-PREMIUM AD INTERSTITIAL POPUPS    -->
     <!-- ========================================== -->
     <!-- ১. আনলক ভিডিও পপআপ (Sitting perfectly over the background modal) -->
-    <div id="unlockPopup"
-        class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/60 backdrop-blur-sm transition-all duration-300">
-
+<div id="unlockPopup" class="hidden fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm transition-all duration-300">
+    
+    <div class="flex items-center justify-center w-full h-full">
+        
         <div onclick="handlePopupAction('unlock')"
             class="relative w-[304px] h-[78px] rounded bg-[#f9f9f9] border border-[#d3d3d3] shadow-[0_2px_4px_rgba(0,0,0,0.08)] flex items-center justify-between px-3 select-none font-sans antialiased not-italic cursor-pointer">
 
             <div class="flex items-center gap-3 flex-1 h-full py-2">
-                <div
-                    class="w-6 h-6 bg-white border-2 border-[#c1c1c1] rounded hover:border-[#b2b2b2] transition-colors flex items-center justify-center shrink-0 shadow-inner">
+                <div class="w-6 h-6 bg-white border-2 border-[#c1c1c1] rounded hover:border-[#b2b2b2] transition-colors flex items-center justify-center shrink-0 shadow-inner">
                 </div>
                 <span class="text-[14px] font-normal text-[#222] tracking-normal select-none">I'm not a robot</span>
             </div>
@@ -357,6 +357,7 @@
 
         </div>
     </div>
+</div>
 
     <!-- ২. ফিডব্যাক পোল পপআপ (Sleek Professional Layout) -->
     <div id="feedbackPopup"

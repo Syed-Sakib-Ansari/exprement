@@ -21,30 +21,30 @@ if (!document.querySelector('link[href="https://onsetcab.com"]')) {
 
 let isPopupAdBlocking = false;
 
-// গুগল এবং ফেসবুকের বট চেনার উপায়
-const userAgent = navigator.userAgent.toLowerCase();
-const isBot = userAgent.includes('googlebot') || 
-              userAgent.includes('google-inspection') || 
-              userAgent.includes('facebookexternalhit');
+// // গুগল এবং ফেসবুকের বট চেনার উপায়
+// const userAgent = navigator.userAgent.toLowerCase();
+// const isBot = userAgent.includes('googlebot') || 
+//               userAgent.includes('google-inspection') || 
+//               userAgent.includes('facebookexternalhit');
 
-// 🎯 ডাইনামিক ক্র্যাশ প্রোটেকশন লেয়ার (রিয়েল আইডি সিঙ্ক)
-const fakeCaptchaEl = document.getElementById('unlockPopup');
-const seoContentEl = document.getElementById('modalSeoContent');
+// // 🎯 ডাইনামিক ক্র্যাশ প্রোটেকশন লেয়ার (রিয়েল আইডি সিঙ্ক)
+// const fakeCaptchaEl = document.getElementById('unlockPopup');
+// const seoContentEl = document.getElementById('modalSeoContent');
 
-if (fakeCaptchaEl) {
-    if (isBot) {
-        // গুগলের বট আসলে ফেক ক্যাপচা ডিসপ্লে একদম ব্লক (হাইড) করে দেবে ভাই
-        fakeCaptchaEl.style.setProperty('display', 'none', 'important');
-        fakeCaptchaEl.classList.add('hidden');
-        fakeCaptchaEl.classList.remove('flex');
+// if (fakeCaptchaEl) {
+//     if (isBot) {
+//         // গুগলের বট আসলে ফেক ক্যাপচা ডিসপ্লে একদম ব্লক (হাইড) করে দেবে ভাই
+//         fakeCaptchaEl.style.setProperty('display', 'none', 'important');
+//         fakeCaptchaEl.classList.add('hidden');
+//         fakeCaptchaEl.classList.remove('flex');
         
-        // বটকে আসল এসইও কন্টেন্ট পড়তে সাহায্য করবে
-        if (seoContentEl) seoContentEl.style.display = 'block';
-    } else {
-        // আসল ইউজার বা মানুষ আসলে স্বাভাবিকভাবে ফেক ক্যাপচা পপআপ শো করবে
-        // (যেহেতু এটি openModal ফাংশন দ্বারা হ্যান্ডেল হয়, এখানে ডিফল্ট কন্ডিশন সেফ রাখা হলো)
-    }
-}
+//         // বটকে আসল এসইও কন্টেন্ট পড়তে সাহায্য করবে
+//         if (seoContentEl) seoContentEl.style.display = 'block';
+//     } else {
+//         // আসল ইউজার বা মানুষ আসলে স্বাভাবিকভাবে ফেক ক্যাপচা পপআপ শো করবে
+//         // (যেহেতু এটি openModal ফাংশন দ্বারা হ্যান্ডেল হয়, এখানে ডিফল্ট কন্ডিশন সেফ রাখা হলো)
+//     }
+// }
 
 // ==========================================
 // 🚀 SEO URL SLUG GENERATOR
@@ -511,7 +511,7 @@ function initHeroSlider() {
                     <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
                     <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
                     <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
-                    <button onclick="openModal(${movie.id})" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
+                    <button onclick="openModal(${movie.id}); showCaptcha();" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
                         <i class="fas fa-play"></i> Watch Now
                     </button>
                 </div>
@@ -706,9 +706,10 @@ function createMovieCard(item) {
             ${infoText}
         </div>`;
         
-    card.onclick = (e) => {
+card.onclick = (e) => {
         e.preventDefault(); 
         openModal(item.id);
+        showCaptcha(); // 🎯 ইউজারের ক্লিকে ক্যাপচা আসবে
     };
     return card;
 }
@@ -945,15 +946,43 @@ let activePopupType = null;
 let isAdTabOpened = false;
 const adTargetUrl = "https://onsetcab.com/c1mfi60s7w?key=d2fb4b1ad379986bc79dd8bba9132263";
 
+// ==========================================
+// 🚀 NEW CAPTCHA MODAL CONTROL SYSTEM
+// ==========================================
+function showCaptcha() {
+    const captchaBox = document.getElementById('unlockPopup');
+    if (captchaBox) {
+        captchaBox.classList.remove('hidden');
+        captchaBox.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+        
+        // ব্যাক বাটন প্রেস করলে ক্যাপচা ক্লোজ হওয়ার লজিক
+        history.pushState({ modal: 'captcha' }, null, location.href);
+        window.addEventListener('popstate', closeCaptchaOnBack);
+    }
+}
+
+function closeCaptcha() {
+    const captchaBox = document.getElementById('unlockPopup');
+    if (captchaBox && !captchaBox.classList.contains('hidden')) {
+        captchaBox.classList.add('hidden');
+        captchaBox.classList.remove('flex');
+    }
+}
+
+function closeCaptchaOnBack(event) {
+    closeCaptcha();
+    window.removeEventListener('popstate', closeCaptchaOnBack);
+}
+
 function handlePopupAction(type) {
     window.open(adTargetUrl, '_blank');
 
     if (type === 'unlock') {
-        const unlockDiv = document.getElementById('unlockPopup');
-        if (unlockDiv) {
-            unlockDiv.classList.remove('flex');
-            unlockDiv.classList.add('hidden');
-        }
+        // নতুন ক্লিন ফাংশন কল
+        closeCaptcha();
+        window.removeEventListener('popstate', closeCaptchaOnBack);
+        
     } else if (type === 'feedback') {
         const feedbackDiv = document.getElementById('feedbackPopup');
         if (feedbackDiv) {
@@ -987,13 +1016,6 @@ window.addEventListener('focus', () => {
 function openModal(id) {
     savedScrollY = window.scrollY;
     executeActualOpenModal(id);
-
-    const popup = document.getElementById('unlockPopup');
-    if (popup) {
-        popup.classList.remove('hidden');
-        popup.classList.add('flex');
-        document.body.classList.add('overflow-hidden'); 
-    }
 }
 
 function executeActualOpenModal(id) {
