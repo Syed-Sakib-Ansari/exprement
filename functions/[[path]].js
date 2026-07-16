@@ -3,12 +3,21 @@ export async function onRequest(context) {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // ১. স্ট্যাটিক ফাইল (CSS, JS, চিত্র ইত্যাদি) হলে সরাসরি পাস করে দেবে
+    // 🚀 ১. পুরনো ?movie=slug লিংকগুলোকে নতুন .html লিংকে ৩০১ রিডাইরেক্ট করুন (SEO সেভ করার জন্য)
+    const movieParam = url.searchParams.get('movie');
+    if (movieParam) {
+        const redirectUrl = new URL(request.url);
+        redirectUrl.pathname = `/${decodeURIComponent(movieParam)}.html`;
+        redirectUrl.search = ''; 
+        return Response.redirect(redirectUrl.toString(), 301);
+    }
+
+    // ২. স্ট্যাটিক ফাইল (CSS, JS, চিত্র ইত্যাদি) হলে সরাসরি পাস করে দেবে
     if (path.match(/\.(css|js|json|png|jpg|jpeg|gif|ico|xml|txt)$/i)) {
         return env.ASSETS.fetch(request);
     }
 
-    // ২. এগুলো সাধারণ পেজ তাই এগুলোতে মুভি এসইও প্রসেস হবে না
+    // ৩. এগুলো সাধারণ পেজ তাই এগুলোতে মুভি এসইও প্রসেস হবে না
     const excludedFiles = ['/index.html', '/Contact.html', '/DMCA.html', '/Privacy.html', '/Disclaimer.html'];
 
     if (path.endsWith('.html') && !excludedFiles.includes(path)) {
@@ -28,123 +37,62 @@ export async function onRequest(context) {
                 return computedSlug === movieSlug;
             });
 
-            // যদি মুভিটি ডাটাবেজে না থাকে, তবে নরমাল রিকোয়েস্ট পাস হবে (Fallback to main index)
-            if (!targetMovie) {
-                return env.ASSETS.fetch(request);
-            }
+            // মূল index.html ফাইলটি রিড করা
+            const response = await env.ASSETS.fetch(new URL('/index.html', request.url));
+            let html = await response.text();
 
-            // মূল index.html ফাইলটি মেমোরিতে নেওয়া
-            const indexRes = await env.ASSETS.fetch(new URL('/index.html', request.url));
-            if (!indexRes.ok) throw new Error("Index template load failed");
-            let html = await indexRes.text();
+            if (targetMovie) {
+                // 🎯 মুভি খুঁজে পাওয়া গেলে ডাইনামিক মেটা ট্যাগ ইনজেক্ট হবে
+                const movieTitle = targetMovie.title;
+                const moviePoster = targetMovie.posterUrl || '';
+                const currentMovieUrl = `https://moviedakhi.com/${encodeURIComponent(movieSlug)}.html`;
 
-            // ডাটা প্রিপারেশন
-            const safeTitle = targetMovie.title;
-            const isSeries = targetMovie.episodes && targetMovie.episodes.length > 0;
-            const contentType = isSeries ? "Web Series All Episodes" : "Full Movie";
-            const cleanLang = targetMovie.language || "Dual Audio [Hindi-English]";
-            
-            const yearMatch = safeTitle.match(/\((\d{4})\)/);
-            const extractedYear = yearMatch ? yearMatch[1] : new Date().getFullYear();
-            const movieYear = targetMovie.year || extractedYear;
-
-            const titleHasYear = safeTitle.includes(`(${movieYear})`);
-            const SEOTitle = titleHasYear ? safeTitle : `${safeTitle} (${movieYear})`;
-
-            // ৩. মেটা ট্যাগ জেনারেটর (গুগল এবং সোশ্যাল মিডিয়ার জন্য হাইপার অপ্টিমাইজড)
-            const dynamicTitle = `${SEOTitle} [${cleanLang}] | Index of / Download 4K 1080p, Watch Online Free ${contentType} - MovieDakhi`;
-            const dynamicDesc = `Index of /${SEOTitle} ${contentType} direct download link. Stream ${safeTitle} online free in 4K Ultra HD / 1080p BluRay. High-speed Google Drive & Telegram links for ${cleanLang} with English Subtitles (ESub) HEVC x265 on MovieDakhi.`;
-            const dynamicUrl = url.href;
-            
-            const rawPosterUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
-            const moviePosterUrl = rawPosterUrl.includes('postimg.cc') 
-                ? rawPosterUrl 
-                : `https://wsrv.nl/?url=${encodeURIComponent(rawPosterUrl)}&w=600&output=jpeg&q=80`;
-
-                // ডাইনামিক ক্যানোনিকাল ইউআরএল তৈরি (SEO ফ্রেন্ডলি .html ফরম্যাট)
-                const currentMovieUrl = `https://moviedakhi.com/${movieSlug}.html`;
                 const dynamicCanonicalTag = `<link rel="canonical" href="${currentMovieUrl}">`;
-
-                // হোমপেজের ক্যানোনিকাল ট্যাগটিকে ডাইনামিক মুভি ক্যানোনিকাল ট্যাগ দিয়ে রিপ্লেস
                 html = html.replace('<link rel="canonical" href="https://moviedakhi.com/">', dynamicCanonicalTag);
-
-                // টাইটেল এবং অন্যান্য মেটা ডাটা রিপ্লেস (আপনার বর্তমান কোড)
                 html = html.replace('<title>MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD</title>', `<title>${movieTitle} - MovieDakhi</title>`);
 
-            const metaMatches = [
-                { regex: /<meta\s+name="description"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="description" content="${dynamicDesc}">` },
-                { regex: /<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:title" content="${dynamicTitle}">` },
-                { regex: /<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:description" content="${dynamicDesc}">` },
-                { regex: /<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:url" content="${dynamicUrl}">` },
-                { regex: /<meta\s+property="og:image"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:image" content="${moviePosterUrl}">` },
-                { regex: /<meta\s+name="twitter:title"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="twitter:title" content="${dynamicTitle}">` },
-                { regex: /<meta\s+name="twitter:description"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="twitter:description" content="${dynamicDesc}">` },
-                { regex: /<meta\s+name="twitter:image"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="twitter:image" content="${moviePosterUrl}">` }
-            ];
-
-            metaMatches.forEach(item => {
-                if (html.match(item.regex)) {
-                    html = html.replace(item.regex, item.replacement);
-                } else {
-                    html = html.replace('</head>', `${item.replacement}\n</head>`);
-                }
-            });
-
-            // ৫. ডাইনামিক স্কিমা জেনারেশন (গুগল রিচ স্নিপেটের জন্য বর্ম)
-            const schemaData = {
-                "@context": "https://schema.org",
-                "@type": isSeries ? "TVSeries" : "Movie",
-                "name": safeTitle,
-                "image": targetMovie.posterUrl || "",
-                "genre": targetMovie.category || "Entertainment",
-                "dateCreated": movieYear,
-                "inLanguage": ["English", "Hindi"],
-                "description": dynamicDesc
-            };
-            const dynamicSchemaScript = `<script id="seoSchemaDynamic" type="application/ld+json">${JSON.stringify(schemaData)}</script>`;
-            html = html.replace('</head>', `${dynamicSchemaScript}\n</head>`);
-
-            // ৬. ক্রলার গ্যারান্টি লেয়ার (GoogleBot / Facebook Scraper-এর জন্য স্ট্রাকচার্ড ডেটা ইনজেকশন)
-            const userAgent = (request.headers.get('user-agent') || '').toLowerCase();
-            const isBot = userAgent.includes('googlebot') || userAgent.includes('google-inspection') || userAgent.includes('facebookexternalhit');
-
-            if (isBot) {
-                const movieGenre = targetMovie.category || "Hollywood";
-                let seoBodyContent = `
-                <div id="seoContentSection" style="background: #000 !important; color: #fff !important; padding: 20px !important; font-family: sans-serif !important; direction: ltr !important;">
-                    <h1 style="font-size: 24px !important; margin-bottom: 10px !important; color: #ef4444 !important;">${dynamicTitle}</h1>
-                    <p style="font-size: 14px !important; line-height: 1.6 !important; color: #e4e4e7 !important; margin-bottom: 15px !important;">${dynamicDesc}</p>
-                    <div style="border: 1px solid #27272a !important; padding: 15px !important; border-radius: 8px !important; background: #09090b !important;">
-                        <p style="font-size: 12px !important; line-height: 1.6 !important; margin-bottom: 8px !important; color: #d4d4d8 !important;">
-                            <strong>Database Source:</strong> ${movieSlug}.html — Direct Download Link Activated (Secure Cloud Server)
-                        </p>
-                        <p style="font-size: 12px !important; line-height: 1.6 !important; margin-bottom: 8px !important; color: #d4d4d8 !important;">
-                            <strong>Genre Category:</strong> ${movieGenre}
-                        </p>
-                        <p style="font-size: 12px !important; line-height: 1.6 !important; margin: 0 !important; color: #a1a1aa !important;">
-                            Stream online or download ${safeTitle} complete season / full movie via high-speed Google Drive and Telegram links. Available in Dual Audio [Hindi-English] Dubbed 4K Ultra HD, 1080p BluRay, and x265 HEVC codec free on MovieDakhi.
-                        </p>
-                    </div>
+                // ডাইনামিক ওপেন গ্রাফ (OG) ট্যাগ
+                const ogTags = `
+                    <meta property="og:title" content="${movieTitle} - MovieDakhi" />
+                    <meta property="og:description" content="Watch ${movieTitle} in Dual Audio HD Quality Free Online on MovieDakhi." />
+                    <meta property="og:image" content="${moviePoster}" />
+                    <meta property="og:url" content="${currentMovieUrl}" />
+                    <meta property="og:type" content="video.movie" />
                 `;
-                
+                html = html.replace('</head>', `${ogTags}\n</head>`);
+
+                // ক্রলার বা গুগলের জন্য বডিতে কন্টেন্ট পুশ
+                let seoBodyContent = `
+                    <div id="seo-crawler-content" style="display:none !important; visibility:hidden; height:0; width:0; overflow:hidden;">
+                        <h1>${movieTitle}</h1>
+                        <img src="${moviePoster}" alt="${movieTitle} Poster">
+                        <p>Genre: ${targetMovie.genre || ''}</p>
+                        <p>Category: ${targetMovie.category || ''}</p>
+                        <p>Language: ${targetMovie.language || ''}</p>
+                `;
                 if (targetMovie.movieHighlights) {
-                    seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">🎯 Streaming Recommendation:</b><p style="color: #bbb; font-size: 14px; line-height: 1.6;">${targetMovie.movieHighlights}</p></div>`;
+                    seoBodyContent += `<p>${targetMovie.movieHighlights}</p>`;
                 }
                 if (targetMovie.detailedPlotSummary) {
-                    seoBodyContent += `<div style="margin-top: 20px; text-align: left;"><b style="color: #fff; font-size: 16px; display: block; margin-bottom: 5px;">🍿 Detailed Plot Summary:</b><p style="color: #999; font-size: 13px; white-space: pre-line; line-height: 1.6; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); font-style: normal;">${targetMovie.detailedPlotSummary}</p></div>`;
+                    seoBodyContent += `<p>${targetMovie.detailedPlotSummary}</p>`;
                 }
                 seoBodyContent += `</div>`;
-
-                // লেআউট ব্রেক ছাড়া বডির একদম শেষে ন্যাচারাল ফুটারের ওপরে পুশ করার মেথড
                 html = html.replace('</body>', `${seoBodyContent}\n</body>`);
+            } else {
+                // ⚠️ যদি মুভি স্ল্যাগ ডাটাবেজে না মেলে, তবুও ৪০৪ না দিয়ে হোমপেজ লোড করতে দিন যেন গুগল ক্রল করতে পারে!
+                const fallbackCanonical = `<link rel="canonical" href="https://moviedakhi.com${path}">`;
+                html = html.replace('<link rel="canonical" href="https://moviedakhi.com/">', fallbackCanonical);
             }
 
-            return new Response(html, { headers: { 'Content-Type': 'text/html' } });
-        } catch (err) {
-            // কোনো কারণে ফেইল হলে নরমাল index.html লোড হবে, সাইট ডাউন হবে না
-            return env.ASSETS.fetch(request);
+            return new Response(html, { headers: { "content-type": "text/html;charset=UTF-8" } });
+
+        } catch (error) {
+            // যেকোনো এররে সেফটি ব্যাকআপ হিসেবে বেসিক হোমপেজ রিটার্ন করবে, ৪০৪ এরর দেবে না
+            const fallbackResponse = await env.ASSETS.fetch(new URL('/index.html', request.url));
+            return fallbackResponse;
         }
     }
 
+    // বাকি সব সাধারণ পেজের জন্য ডিফল্ট অ্যাসেট লোড
     return env.ASSETS.fetch(request);
 }
