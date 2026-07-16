@@ -42,30 +42,49 @@ export async function onRequest(context) {
                 const response = await env.ASSETS.fetch(new URL('/index.html', request.url));
                 let html = await response.text();
 
-                // 🎯 মুভি খুঁজে পাওয়া গেলে ডাইনামিক মেটা ট্যাগ ইনজেক্ট হবে
+                // 🎯 মুভি ডাটা ও ইউআরএল
                 const movieTitle = targetMovie.title;
-                const moviePoster = targetMovie.posterUrl || '';
+                const movieDesc = `Watch ${movieTitle} in Dual Audio HD Quality Free Online on MovieDakhi.`;
                 const currentMovieUrl = `https://moviedakhi.com/${encodeURIComponent(movieSlug)}.html`;
 
+                // 🖼️ সোশ্যাল মিডিয়ার জন্য অপ্টিমাইজড পোস্টার (WhatsApp বড় সাইজের ছবি সাপোর্ট করে না তাই wsrv.nl দিয়ে ছোট করা হলো)
+                const rawPosterUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+                const moviePosterUrl = rawPosterUrl.includes('postimg.cc') 
+                    ? rawPosterUrl 
+                    : `https://wsrv.nl/?url=${encodeURIComponent(rawPosterUrl)}&w=600&output=jpeg&q=80`;
+
+                // ক্যানোনিকাল এবং টাইটেল রিপ্লেস
                 const dynamicCanonicalTag = `<link rel="canonical" href="${currentMovieUrl}">`;
                 html = html.replace('<link rel="canonical" href="https://moviedakhi.com/">', dynamicCanonicalTag);
-                html = html.replace('<title>MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD</title>', `<title>${movieTitle} - MovieDakhi</title>`);
+                html = html.replace(/<title>.*?<\/title>/i, `<title>${movieTitle} - MovieDakhi</title>`);
 
-                // ডাইনামিক ওপেন গ্রাফ (OG) ট্যাগ
-                const ogTags = `
-                    <meta property="og:title" content="${movieTitle} - MovieDakhi" />
-                    <meta property="og:description" content="Watch ${movieTitle} in Dual Audio HD Quality Free Online on MovieDakhi." />
-                    <meta property="og:image" content="${moviePoster}" />
-                    <meta property="og:url" content="${currentMovieUrl}" />
-                    <meta property="og:type" content="video.movie" />
-                `;
-                html = html.replace('</head>', `${ogTags}\n</head>`);
+                // 🚀 ৪. সোশ্যাল মিডিয়া (Facebook, WhatsApp, Twitter) প্রিভিউ ফিক্স (Regex Replace Method)
+                const metaMatches = [
+                    { regex: /<meta\s+name="description"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="description" content="${movieDesc}">` },
+                    { regex: /<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:title" content="${movieTitle} - MovieDakhi">` },
+                    { regex: /<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:description" content="${movieDesc}">` },
+                    { regex: /<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:url" content="${currentMovieUrl}">` },
+                    { regex: /<meta\s+property="og:image"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:image" content="${moviePosterUrl}">` },
+                    { regex: /<meta\s+property="og:type"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:type" content="video.movie">` },
+                    { regex: /<meta\s+name="twitter:card"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="twitter:card" content="summary_large_image">` },
+                    { regex: /<meta\s+name="twitter:title"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="twitter:title" content="${movieTitle} - MovieDakhi">` },
+                    { regex: /<meta\s+name="twitter:description"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="twitter:description" content="${movieDesc}">` },
+                    { regex: /<meta\s+name="twitter:image"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="twitter:image" content="${moviePosterUrl}">` }
+                ];
 
-                // ক্রলার বা গুগলের জন্য বডিতে কন্টেন্ট পুশ
+                metaMatches.forEach(item => {
+                    if (html.match(item.regex)) {
+                        html = html.replace(item.regex, item.replacement);
+                    } else {
+                        html = html.replace('</head>', `    ${item.replacement}\n</head>`);
+                    }
+                });
+
+                // 🕷️ ক্রলার বা গুগলের জন্য বডিতে কন্টেন্ট পুশ
                 let seoBodyContent = `
                     <div id="seo-crawler-content" style="display:none !important; visibility:hidden; height:0; width:0; overflow:hidden;">
                         <h1>${movieTitle}</h1>
-                        <img src="${moviePoster}" alt="${movieTitle} Poster">
+                        <img src="${moviePosterUrl}" alt="${movieTitle} Poster">
                         <p>Genre: ${targetMovie.genre || ''}</p>
                         <p>Category: ${targetMovie.category || ''}</p>
                         <p>Language: ${targetMovie.language || ''}</p>
@@ -82,7 +101,7 @@ export async function onRequest(context) {
                 return new Response(html, { headers: { "content-type": "text/html;charset=UTF-8" } });
 
             } else {
-                // 🚨 ৪. মুভি ডাটাবেজে না থাকলে একটি প্রপার ৪০৪ (Not Found) পেজ রিটার্ন করা হবে
+                // 🚨 ৫. মুভি ডাটাবেজে না থাকলে একটি প্রপার ৪০৪ (Not Found) পেজ রিটার্ন করা হবে
                 const notFoundHtml = `
                     <!DOCTYPE html>
                     <html lang="en">
