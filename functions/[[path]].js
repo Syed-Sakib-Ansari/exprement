@@ -37,12 +37,12 @@ export async function onRequest(context) {
                 return computedSlug === movieSlug;
             });
 
-            // মূল index.html ফাইলটি রিড করা
-            const response = await env.ASSETS.fetch(new URL('/index.html', request.url));
-            let html = await response.text();
-
             if (targetMovie) {
-                // 🎯 মুভি খুঁজে পাওয়া গেলে ডাইনামিক মেটা ট্যাগ ইনজেক্ট হবে
+                // মূল index.html ফাইলটি রিড করা
+                const response = await env.ASSETS.fetch(new URL('/index.html', request.url));
+                let html = await response.text();
+
+                // 🎯 মুভি খুঁজে পাওয়া গেলে ডাইনামিক মেটা ট্যাগ ইনজেক্ট হবে
                 const movieTitle = targetMovie.title;
                 const moviePoster = targetMovie.posterUrl || '';
                 const currentMovieUrl = `https://moviedakhi.com/${encodeURIComponent(movieSlug)}.html`;
@@ -78,16 +78,42 @@ export async function onRequest(context) {
                 }
                 seoBodyContent += `</div>`;
                 html = html.replace('</body>', `${seoBodyContent}\n</body>`);
+
+                return new Response(html, { headers: { "content-type": "text/html;charset=UTF-8" } });
+
             } else {
-                // ⚠️ যদি মুভি স্ল্যাগ ডাটাবেজে না মেলে, তবুও ৪০৪ না দিয়ে হোমপেজ লোড করতে দিন যেন গুগল ক্রল করতে পারে!
-                const fallbackCanonical = `<link rel="canonical" href="https://moviedakhi.com${path}">`;
-                html = html.replace('<link rel="canonical" href="https://moviedakhi.com/">', fallbackCanonical);
+                // 🚨 ৪. মুভি ডাটাবেজে না থাকলে একটি প্রপার ৪০৪ (Not Found) পেজ রিটার্ন করা হবে
+                const notFoundHtml = `
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>404 Not Found - MovieDakhi</title>
+                        <style>
+                            body { background-color: #0f0f0f; color: #ffffff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; }
+                            h1 { font-size: 6rem; color: #dc2626; margin: 0 0 10px 0; text-shadow: 0 0 20px rgba(220, 38, 38, 0.5); }
+                            p { font-size: 1.2rem; color: #a1a1aa; margin-bottom: 30px; }
+                            a { text-decoration: none; background-color: #dc2626; color: white; padding: 12px 24px; border-radius: 30px; font-weight: bold; transition: 0.3s; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;}
+                            a:hover { background-color: #b91c1c; transform: scale(1.05); }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>404</h1>
+                        <p>Sorry, the movie you are looking for has been removed or does not exist.</p>
+                        <a href="/">Go Back to Home</a>
+                    </body>
+                    </html>
+                `;
+                return new Response(notFoundHtml, { 
+                    status: 404, 
+                    statusText: "Not Found",
+                    headers: { "content-type": "text/html;charset=UTF-8" } 
+                });
             }
 
-            return new Response(html, { headers: { "content-type": "text/html;charset=UTF-8" } });
-
         } catch (error) {
-            // যেকোনো এররে সেফটি ব্যাকআপ হিসেবে বেসিক হোমপেজ রিটার্ন করবে, ৪০৪ এরর দেবে না
+            // ডাটাবেজ ফেইল হলে সেফটি ব্যাকআপ হিসেবে বেসিক হোমপেজ রিটার্ন করবে
             const fallbackResponse = await env.ASSETS.fetch(new URL('/index.html', request.url));
             return fallbackResponse;
         }
