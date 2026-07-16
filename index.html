@@ -17,6 +17,7 @@
     <!--JuicyAds-->
     <!-- <meta name="juicyads-site-verification" content="4918bb9b65739987d18fa28e1653fef4"> -->
 
+    <link rel="canonical" href="https://moviedakhi.com/">
     <title>MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD</title>
     <meta name="description"
         content="Watch the latest Bollywood, Hollywood, South Indian, and Korean Dual-Audio movies & web series on MovieDakhi. Explore today for high-quality HD streaming!">
@@ -64,8 +65,6 @@
     <meta name="twitter:description"
         content="Stream your favorite movies and TV shows in HD. Bollywood, Hollywood, K-Drama and more.">
     <meta name="twitter:image" content="https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png">
-
-    <link rel="canonical" href="https://moviedakhi.com/">
 
     <script type="application/ld+json">
         {
@@ -192,10 +191,22 @@
         </main>
     </div>
 
-    <div id="libraryView" class="view-container pt-32 px-6 md:px-12">
-        <div class="max-w-10xl mx-auto">
-            <h2 style="color: #0f0f0f;" class="text-3xl md:text-5xl text-center uppercase tracking-tighter">.</h2>
-            <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 max-w-5xl mx-auto" id="libraryFilters"></div>
+<div id="libraryView" class="view-container pt-32 px-6 md:px-12">
+    <div class="max-w-10xl mx-auto">
+        
+        <style>
+            .lib-responsive-spacer {
+                height: 45px; /* Perfect for Mobile (keeps layout below navbar) */
+            }
+            @media (min-width: 768px) {
+                .lib-responsive-spacer {
+                    height: 10px; /* Greatly reduced space for Big Screens/Desktop */
+                }
+            }
+        </style>
+        <div class="lib-responsive-spacer"></div>
+
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 max-w-5xl mx-auto" id="libraryFilters"></div>
 
             <!-- <div class="w-full flex flex-col items-center gap-4 mb-12 min-h-[150px]">
                 <div id="libAdTopAdsterra" class="w-full"></div>

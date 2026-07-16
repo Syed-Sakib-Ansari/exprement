@@ -61,8 +61,15 @@ export async function onRequest(context) {
                 ? rawPosterUrl 
                 : `https://wsrv.nl/?url=${encodeURIComponent(rawPosterUrl)}&w=600&output=jpeg&q=80`;
 
-            // ৪. মেটা কন্টেন্ট রিপ্লেসমেন্ট ইনজেকশন
-            html = html.replace(/<title>.*?<\/title>/i, `<title>${dynamicTitle}</title>`);
+                // ডাইনামিক ক্যানোনিকাল ইউআরএল তৈরি (SEO ফ্রেন্ডলি .html ফরম্যাট)
+                const currentMovieUrl = `https://moviedakhi.com/${movieSlug}.html`;
+                const dynamicCanonicalTag = `<link rel="canonical" href="${currentMovieUrl}">`;
+
+                // হোমপেজের ক্যানোনিকাল ট্যাগটিকে ডাইনামিক মুভি ক্যানোনিকাল ট্যাগ দিয়ে রিপ্লেস
+                html = html.replace('<link rel="canonical" href="https://moviedakhi.com/">', dynamicCanonicalTag);
+
+                // টাইটেল এবং অন্যান্য মেটা ডাটা রিপ্লেস (আপনার বর্তমান কোড)
+                html = html.replace('<title>MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD</title>', `<title>${movieTitle} - MovieDakhi</title>`);
 
             const metaMatches = [
                 { regex: /<meta\s+name="description"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="description" content="${dynamicDesc}">` },
