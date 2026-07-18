@@ -80,23 +80,20 @@ export async function onRequest(context) {
                     }
                 });
 
-                // 🕷️ ক্রলার বা গুগলের জন্য বডিতে কন্টেন্ট পুশ
-                let seoBodyContent = `
-                    <div id="seo-crawler-content" style="display:none !important; visibility:hidden; height:0; width:0; overflow:hidden;">
-                        <h1>${movieTitle}</h1>
-                        <img src="${moviePosterUrl}" alt="${movieTitle} Poster">
-                        <p>Genre: ${targetMovie.genre || ''}</p>
-                        <p>Category: ${targetMovie.category || ''}</p>
-                        <p>Language: ${targetMovie.language || ''}</p>
-                `;
-                if (targetMovie.movieHighlights) {
-                    seoBodyContent += `<p>${targetMovie.movieHighlights}</p>`;
-                }
-                if (targetMovie.detailedPlotSummary) {
-                    seoBodyContent += `<p>${targetMovie.detailedPlotSummary}</p>`;
-                }
-                seoBodyContent += `</div>`;
-                html = html.replace('</body>', `${seoBodyContent}\n</body>`);
+                // 🕷️ Safe Schema.org JSON-LD for Google Crawlers (Replaces the hidden div)
+                const movieSchema = {
+                    "@context": "https://schema.org",
+                    "@type": "Movie",
+                    "name": movieTitle,
+                    "image": moviePosterUrl,
+                    "genre": targetMovie.genre || '',
+                    "description": targetMovie.detailedPlotSummary || targetMovie.movieHighlights || movieDesc,
+                    "inLanguage": targetMovie.language || ''
+                };
+                const schemaScript = `<script type="application/ld+json">${JSON.stringify(movieSchema)}</script>`;
+
+                // Inject the schema script safely into the <head> of the document
+                html = html.replace('</head>', `    ${schemaScript}\n</head>`);
 
                 return new Response(html, { headers: { "content-type": "text/html;charset=UTF-8" } });
 

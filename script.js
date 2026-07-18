@@ -618,7 +618,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 function createMovieCard(item) {
     const card = document.createElement('a'); 
     const movieSlug = item.slug || generateMovieSlug(item.title);
-    card.href = `?movie=${movieSlug}`;
+card.href = `/${movieSlug}.html`;
     card.className = 'movie-card relative flex flex-col group cursor-pointer no-underline';
 
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
