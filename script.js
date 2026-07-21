@@ -1496,7 +1496,7 @@ function initWelcomePopup() {
                 // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে
                 document.body.style.overflow = 'hidden';
             }
-        }, 3000);
+        }, 12000);
     }
 }
 
