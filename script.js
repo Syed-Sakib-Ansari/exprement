@@ -1330,6 +1330,11 @@ window.addEventListener('beforeunload', () => {
 // ==========================================
 document.addEventListener('DOMContentLoaded', async () => {
     
+    const seoContent = document.getElementById('seo-ssr-content');
+    if (seoContent) {
+        seoContent.style.display = 'none';
+    }
+    
     await databaseLoadPromise; 
 
     const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
@@ -1392,7 +1397,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    if (movieSlug) {
+if (movieSlug) {
         const targetMovie = contentData.find(m => m.slug === movieSlug);
         if (targetMovie) {
             setTimeout(() => {
@@ -1400,6 +1405,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             }, 300); 
         }
     }
+
+    // 🚀 পপআপ চালু করার কমান্ড
+    initWelcomePopup();
 });
 
 // ==========================================
@@ -1466,4 +1474,47 @@ function showToast(message) {
         toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
         toast.classList.remove('opacity-100', 'translate-y-0');
     }, 4000);
+}
+
+// ==========================================
+// 🚀 WELCOME & BOOKMARK POPUP LOGIC
+// ==========================================
+function initWelcomePopup() {
+    const popup = document.getElementById('welcomePopup');
+    const content = document.getElementById('welcomePopupContent');
+    
+    // লোকাল স্টোরেজ চেক করবে (যাতে বারবার বিরক্ত না করে)
+    if (!localStorage.getItem('MovieDakhi_WelcomeShown')) {
+        // ৩ সেকেন্ড পর পপআপ আসবে
+        setTimeout(() => {
+            if(popup) {
+                popup.classList.remove('hidden');
+                void popup.offsetWidth; // Trigger reflow for animation
+                popup.classList.remove('opacity-0');
+                if(content) content.classList.remove('scale-95');
+                
+                // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে
+                document.body.style.overflow = 'hidden';
+            }
+        }, 3000);
+    }
+}
+
+function closeWelcomePopup() {
+    const popup = document.getElementById('welcomePopup');
+    const content = document.getElementById('welcomePopupContent');
+    
+    if (popup) {
+        popup.classList.add('opacity-0');
+        if(content) content.classList.add('scale-95');
+        
+        setTimeout(() => {
+            popup.classList.add('hidden');
+            // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
+            document.body.style.overflow = '';
+        }, 500); 
+    }
+    
+    // ব্রাউজারে সেভ করে রাখবে
+    localStorage.setItem('MovieDakhi_WelcomeShown', 'true');
 }

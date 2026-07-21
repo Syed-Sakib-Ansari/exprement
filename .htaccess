@@ -1,8 +1,0 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  # যদি ফাইল বা ফোল্ডারটি এক্সিস্ট না করে, তবে ইনডেক্স ফাইলে রিডাইরেক্ট করো
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^category/(.*)$ /?view=library&category=$1 [L,QSA]
-</IfModule>

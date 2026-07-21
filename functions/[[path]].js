@@ -1,5 +1,13 @@
 export async function onRequest(context) {
     const { request, env } = context;
+    
+    // ✅ নতুন: Edge Caching (সার্ভারের লোড কমাতে এবং স্পিড বাড়াতে)
+    const cache = caches.default;
+    let cachedResponse = await cache.match(request);
+    if (cachedResponse) {
+        return cachedResponse;
+    }
+
     const url = new URL(request.url);
     const path = url.pathname;
 
@@ -47,7 +55,7 @@ export async function onRequest(context) {
                 const movieDesc = `Watch ${movieTitle} in Dual Audio HD Quality Free Online on MovieDakhi.`;
                 const currentMovieUrl = `https://moviedakhi.com/${encodeURIComponent(movieSlug)}.html`;
 
-                // 🖼️ সোশ্যাল মিডিয়ার জন্য অপ্টিমাইজড পোস্টার (WhatsApp বড় সাইজের ছবি সাপোর্ট করে না তাই wsrv.nl দিয়ে ছোট করা হলো)
+                // 🖼️ সোশ্যাল মিডিয়ার জন্য অপ্টিমাইজড পোস্টার 
                 const rawPosterUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
                 const moviePosterUrl = rawPosterUrl.includes('postimg.cc') 
                     ? rawPosterUrl 
@@ -55,10 +63,10 @@ export async function onRequest(context) {
 
                 // ক্যানোনিকাল এবং টাইটেল রিপ্লেস
                 const dynamicCanonicalTag = `<link rel="canonical" href="${currentMovieUrl}">`;
-                html = html.replace('<link rel="canonical" href="https://moviedakhi.com/">', dynamicCanonicalTag);
+                html = html.replace('</head>', `    ${dynamicCanonicalTag}\n</head>`);
                 html = html.replace(/<title>.*?<\/title>/i, `<title>${movieTitle} - MovieDakhi</title>`);
 
-                // 🚀 ৪. সোশ্যাল মিডিয়া (Facebook, WhatsApp, Twitter) প্রিভিউ ফিক্স (Regex Replace Method)
+                // 🚀 ৪. সোশ্যাল মিডিয়া (Facebook, WhatsApp, Twitter) প্রিভিউ ফিক্স
                 const metaMatches = [
                     { regex: /<meta\s+name="description"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="description" content="${movieDesc}">` },
                     { regex: /<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:title" content="${movieTitle} - MovieDakhi">` },
@@ -80,7 +88,7 @@ export async function onRequest(context) {
                     }
                 });
 
-                // 🕷️ Safe Schema.org JSON-LD for Google Crawlers (Replaces the hidden div)
+                // 🕷️ Safe Schema.org JSON-LD for Google Crawlers
                 const movieSchema = {
                     "@context": "https://schema.org",
                     "@type": "Movie",
@@ -92,10 +100,32 @@ export async function onRequest(context) {
                 };
                 const schemaScript = `<script type="application/ld+json">${JSON.stringify(movieSchema)}</script>`;
 
-                // Inject the schema script safely into the <head> of the document
                 html = html.replace('</head>', `    ${schemaScript}\n</head>`);
 
-                return new Response(html, { headers: { "content-type": "text/html;charset=UTF-8" } });
+                // ✅ নতুন: বডির ভেতরে মুভির আসল কন্টেন্ট ইনজেক্ট করা (Soft 404 ফিক্স করার জন্য)
+                const seoBodyContent = `
+                    <div style="padding: 100px 20px; color: white;">
+                        <h1>${movieTitle}</h1>
+                        <img src="${moviePosterUrl}" alt="${movieTitle}">
+                        <p>${movieDesc}</p>
+                        <p>Genre: ${targetMovie.genre || 'Entertainment'}</p>
+                        <p>Language: ${targetMovie.language || 'Dual Audio'}</p>
+                        <a href="${currentMovieUrl}">Download / Watch ${movieTitle}</a>
+                    </div>
+                `;
+                html = html.replace('<div id="seo-ssr-content"></div>', `<div id="seo-ssr-content">${seoBodyContent}</div>`);
+
+                // ✅ নতুন: Response তৈরি করে Cache এ সেভ করা (১ দিনের জন্য)
+                const finalResponse = new Response(html, { 
+                    headers: { 
+                        "content-type": "text/html;charset=UTF-8",
+                        "Cache-Control": "s-maxage=86400" 
+                    } 
+                });
+                
+                context.waitUntil(cache.put(request, finalResponse.clone()));
+                
+                return finalResponse;
 
             } else {
                 // 🚨 ৫. মুভি ডাটাবেজে না থাকলে একটি প্রপার ৪০৪ (Not Found) পেজ রিটার্ন করা হবে
