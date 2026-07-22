@@ -4,6 +4,63 @@
     --card-bg: #1a1a1a;
 }
 
+        /* Ambient Glow behind the modal */
+        .ambient-glow {
+            position: absolute;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 50% 30%, rgba(225, 29, 72, 0.18) 0%, rgba(30, 64, 175, 0.12) 45%, transparent 70%);
+            top: -20%;
+            left: -20%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Glass Container Styling */
+        .cyber-glass {
+            background: linear-gradient(165deg, rgba(22, 22, 29, 0.96) 0%, rgba(10, 10, 14, 0.98) 100%);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95),
+                        0 0 40px rgba(225, 29, 72, 0.12),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        /* Electric Telegram CTA */
+        .telegram-cyber-btn {
+            background: linear-gradient(135deg, #0088CC 0%, #005580 50%, #0284C7 100%);
+            box-shadow: 0 10px 24px -6px rgba(0, 136, 204, 0.45),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .telegram-cyber-btn:hover {
+            box-shadow: 0 14px 30px -4px rgba(0, 168, 232, 0.65),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        /* Shimmer Animation Line */
+        @keyframes cyberShimmer {
+            0% { transform: translateX(-150%) skewX(-25deg); }
+            35% { transform: translateX(250%) skewX(-25deg); }
+            100% { transform: translateX(250%) skewX(-25deg); }
+        }
+
+        .animate-shimmer {
+            animation: cyberShimmer 3.5s infinite ease-in-out;
+        }
+
+        /* Apple-style Keyboard Tag */
+        kbd {
+            background: linear-gradient(180deg, #2D2D38 0%, #17171F 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 2px solid #0A0A0E;
+            border-radius: 6px;
+            color: #F3F4F6;
+            padding: 2px 6px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+
 /* ================== Cursor problem start ================== */
 * {
     -webkit-tap-highlight-color: transparent;
