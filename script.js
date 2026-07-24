@@ -208,6 +208,17 @@ function debounce(func, wait) {
     };
 }
 
+// 🚀 EMBED URL CLEANER & PARSER (Extracts clean URL if <iframe ...> HTML tag is pasted)
+function cleanEmbedUrl(rawUrl) {
+    if (!rawUrl) return "";
+    let str = rawUrl.trim();
+    const match = str.match(/src=["']([^"']+)["']/i);
+    if (match && match[1]) {
+        str = match[1];
+    }
+    return str.replace(/&amp;/g, '&');
+}
+
 // ==========================================
 // 🚀 CATEGORY MENU & NAVIGATION RENDER
 // ==========================================
@@ -1067,11 +1078,13 @@ function executeActualOpenModal(id) {
             btn.onclick = () => playEpisode(idx, btn);
             epList.appendChild(btn);
         });
-    } else if (seriesSec) { 
+} else if (seriesSec) { 
         seriesSec.classList.add('hidden'); 
     }
 
-    let url = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
+    let rawUrl = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
+    let url = cleanEmbedUrl(rawUrl);
+
     const actualVideoContainer = document.getElementById('actualVideo');
 
     if (actualVideoContainer) {
@@ -1080,7 +1093,7 @@ function executeActualOpenModal(id) {
         const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
 
         if (needsNewIframe) {
-            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" src="${url}" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;"></iframe>`;
         }
     }
 
@@ -1198,7 +1211,7 @@ function playEpisode(index, btnElement) {
     document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
     btnElement.classList.add('active');
 
-    let url = episode.embedUrl;
+    let url = cleanEmbedUrl(episode.embedUrl);
 
     const actualVideo = document.getElementById('actualVideo');
     if (actualVideo) {
@@ -1207,7 +1220,7 @@ function playEpisode(index, btnElement) {
         const existingIframe = document.getElementById('videoIframe');
         
         if (!existingIframe || existingIframe.src !== url) {
-            actualVideo.innerHTML = `<iframe id="videoIframe" class="w-full h-full border-0 outline-none rounded-lg bg-black" src="${url}" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>`;
+            actualVideo.innerHTML = `<iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" src="${url}" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;"></iframe>`;
         }
     }
 

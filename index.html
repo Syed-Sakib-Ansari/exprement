@@ -229,12 +229,28 @@
         </div>
         <div class="fixed inset-0 z-[140] overflow-y-auto" id="modalScrollContainer">
             <div class="flex min-h-full items-center justify-center p-4" id="modalFlexContainer">
-                <div class="relative w-full max-w-5xl rounded-2xl bg-[#111] shadow-2xl my-8 overflow-hidden">
-                    <div class="aspect-video w-full bg-black relative flex items-center justify-center overflow-hidden">
-                        <div id="actualVideo" class="absolute inset-0 bg-black w-full h-full z-10 hidden"></div>
-                    </div>
+<div class="relative w-full max-w-5xl rounded-2xl bg-[#111] shadow-2xl my-8 overflow-hidden">
+                        
+                        <!-- ✅ BULLETPROOF VIDEO CONTAINER FOR GOOGLE DRIVE -->
+                        <style>
+                            .drive-video-wrapper {
+                                position: relative;
+                                width: 100%;
+                                background-color: #000;
+                                overflow: hidden;
+                                padding-top: 75%; /* Mobile: Taller (4:3 ratio) to fit Google Drive controls */
+                            }
+                            @media (min-width: 768px) {
+                                .drive-video-wrapper {
+                                    padding-top: 56.25%; /* Desktop: Perfect 16:9 ratio */
+                                }
+                            }
+                        </style>
+                        <div class="drive-video-wrapper border-b border-white/10 rounded-t-2xl">
+                            <div id="actualVideo" class="absolute inset-0 w-full h-full bg-black z-10 hidden"></div>
+                        </div>
 
-                    <div class="p-6 md:p-10 text-center">
+                        <div class="p-6 md:p-10 text-center">
                         <div class="flex flex-wrap items-center justify-center gap-3 mb-4">
                             <span id="modalLanguage" class="lang-badge">Hindi</span>
                             <span id="modalCategory"
