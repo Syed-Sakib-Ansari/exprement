@@ -171,6 +171,7 @@ let currentView = 'home';
 let sliderInterval;
 let scrollTimeoutId = null;
 let isModalClosing = false;
+let lastVisitedCategory = 'all'; // 🚀 NEW: For Tracking Category Changes
 
 const homeView = document.getElementById('homeView');
 const libraryView = document.getElementById('libraryView');
@@ -575,13 +576,19 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
             preSearchState = null;
         }
 
-        document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
+document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
 
         const catValue = filterCategory || 'all';
         document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
         document.querySelector(`#libraryFilters .category-pill[data-category="${catValue}"]`)?.classList.add('active');
 
         initLibraryRender(catValue, restoredCount);
+
+        // 🚀 NEW: Show Unlock Popup if user changes category
+        if (lastVisitedCategory !== catValue && catValue !== 'all') {
+            showUnlockPopup();
+        }
+        lastVisitedCategory = catValue;
     }
 
     if (mode) {
@@ -1528,6 +1535,42 @@ function closeWelcomePopup() {
         }, 500); 
     }
     
-    // ব্রাউজারে সেভ করে রাখবে
+// ব্রাউজারে সেভ করে রাখবে
     localStorage.setItem('MovieDakhi_WelcomeShown', 'true');
+}
+
+// ==========================================
+// 🚀 UNLOCK CATEGORY POPUP LOGIC
+// ==========================================
+function showUnlockPopup() {
+    const popup = document.getElementById('unlockCategoryPopup');
+    if (popup) {
+        popup.classList.remove('hidden');
+        void popup.offsetWidth; // Trigger reflow for animation
+        popup.classList.remove('opacity-0');
+        
+        // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে (পেছনের কনটেন্ট ব্লার হয়ে থাকবে)
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeUnlockPopup() {
+    const popup = document.getElementById('unlockCategoryPopup');
+    if (popup) {
+        popup.classList.add('opacity-0');
+        setTimeout(() => {
+            popup.classList.add('hidden');
+            // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
+            document.body.style.overflow = '';
+        }, 300); // এনিমেশনের সাথে মিল রেখে
+    }
+}
+
+function handleWatchAdClick() {
+    // ১. প্রথমে পপআপটি ক্লোজ করবে এবং পেজের স্ক্রলিং ঠিক করবে
+    closeUnlockPopup();
+
+    // ২. আপনার দেওয়া Smart Link টি নতুন ট্যাবে অ্যাড হিসেবে ওপেন করবে
+    const smartAdLink = "https://heeddialscary.com/ve7t00zk4?key=4043af13b2ec2d0cbcb5779a973266cd"; 
+    window.open(smartAdLink, '_blank');
 }
