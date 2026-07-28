@@ -84,7 +84,7 @@
         ]
         }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -190,22 +190,25 @@
         </main>
     </div>
 
-<div id="libraryView" class="view-container pt-32 px-6 md:px-12">
-    <div class="max-w-10xl mx-auto">
-        
-        <style>
-            .lib-responsive-spacer {
-                height: 45px; /* Perfect for Mobile (keeps layout below navbar) */
-            }
-            @media (min-width: 768px) {
-                .lib-responsive-spacer {
-                    height: 10px; /* Greatly reduced space for Big Screens/Desktop */
-                }
-            }
-        </style>
-        <div class="lib-responsive-spacer"></div>
+    <div id="libraryView" class="view-container pt-32 px-6 md:px-12">
+        <div class="max-w-10xl mx-auto">
 
-        <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 max-w-5xl mx-auto" id="libraryFilters"></div>
+            <style>
+                .lib-responsive-spacer {
+                    height: 45px;
+                    /* Perfect for Mobile (keeps layout below navbar) */
+                }
+
+                @media (min-width: 768px) {
+                    .lib-responsive-spacer {
+                        height: 10px;
+                        /* Greatly reduced space for Big Screens/Desktop */
+                    }
+                }
+            </style>
+            <div class="lib-responsive-spacer"></div>
+
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 max-w-5xl mx-auto" id="libraryFilters"></div>
 
             <!-- <div class="w-full flex flex-col items-center gap-4 mb-12 min-h-[150px]">
                 <div id="libAdTopAdsterra" class="w-full"></div>
@@ -229,28 +232,31 @@
         </div>
         <div class="fixed inset-0 z-[140] overflow-y-auto" id="modalScrollContainer">
             <div class="flex min-h-full items-center justify-center p-4" id="modalFlexContainer">
-<div class="relative w-full max-w-5xl rounded-2xl bg-[#111] shadow-2xl my-8 overflow-hidden">
-                        
-                        <!-- ✅ BULLETPROOF VIDEO CONTAINER FOR GOOGLE DRIVE -->
-                        <style>
-                            .drive-video-wrapper {
-                                position: relative;
-                                width: 100%;
-                                background-color: #000;
-                                overflow: hidden;
-                                padding-top: 75%; /* Mobile: Taller (4:3 ratio) to fit Google Drive controls */
-                            }
-                            @media (min-width: 768px) {
-                                .drive-video-wrapper {
-                                    padding-top: 56.25%; /* Desktop: Perfect 16:9 ratio */
-                                }
-                            }
-                        </style>
-                        <div class="drive-video-wrapper border-b border-white/10 rounded-t-2xl">
-                            <div id="actualVideo" class="absolute inset-0 w-full h-full bg-black z-10 hidden"></div>
-                        </div>
+                <div class="relative w-full max-w-5xl rounded-2xl bg-[#111] shadow-2xl my-8 overflow-hidden">
 
-                        <div class="p-6 md:p-10 text-center">
+                    <!-- ✅ BULLETPROOF VIDEO CONTAINER FOR GOOGLE DRIVE -->
+                    <style>
+                        .drive-video-wrapper {
+                            position: relative;
+                            width: 100%;
+                            background-color: #000;
+                            overflow: hidden;
+                            padding-top: 75%;
+                            /* Mobile: Taller (4:3 ratio) to fit Google Drive controls */
+                        }
+
+                        @media (min-width: 768px) {
+                            .drive-video-wrapper {
+                                padding-top: 56.25%;
+                                /* Desktop: Perfect 16:9 ratio */
+                            }
+                        }
+                    </style>
+                    <div class="drive-video-wrapper border-b border-white/10 rounded-t-2xl">
+                        <div id="actualVideo" class="absolute inset-0 w-full h-full bg-black z-10 hidden"></div>
+                    </div>
+
+                    <div class="p-6 md:p-10 text-center">
                         <div class="flex flex-wrap items-center justify-center gap-3 mb-4">
                             <span id="modalLanguage" class="lang-badge">Hindi</span>
                             <span id="modalCategory"
@@ -305,33 +311,40 @@
             <a href="Contact.html" class="hover:text-red-500 transition-colors">Contact</a>
         </div>
         <p class="text-gray-700 text-[10px] font-bold tracking-widest uppercase">&copy; 2024 MovieDakhi. Movie Dakhi
-        Digital Entertainment Excellence</p>
+            Digital Entertainment Excellence</p>
     </footer>
 
-<!-- 🚀 PREMIUM VIP POPUP MODAL -->
+    <!-- 🚀 PREMIUM VIP POPUP MODAL -->
     <!-- Notice: No onclick event on the background wrapper, ensuring it doesn't close on outside click -->
-    <div id="welcomePopup" class="fixed inset-0 z-[99999] hidden bg-blue/85 backdrop-blur-xl transition-opacity duration-500 opacity-0 overflow-y-auto">
-        
+    <div id="welcomePopup"
+        class="fixed inset-0 z-[99999] hidden bg-blue/85 backdrop-blur-xl transition-opacity duration-500 opacity-0 overflow-y-auto">
+
         <!-- ✅ NEW WRAPPER FOR SAFE SCROLLING ON SMALL SCREENS -->
         <div class="flex min-h-full items-center justify-center p-4 py-20">
-            
-            <div class="bg-gradient-to-b from-[#131318] to-[#0a0a0c] w-full max-w-[440px] rounded-[2rem] p-1 pt-12 relative transform scale-95 transition-transform duration-500 border border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,1)]" id="welcomePopupContent">
-                
+
+            <div class="bg-gradient-to-b from-[#131318] to-[#0a0a0c] w-full max-w-[440px] rounded-[2rem] p-1 pt-12 relative transform scale-95 transition-transform duration-500 border border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,1)]"
+                id="welcomePopupContent">
+
                 <!-- THE BOOKMARK ICON (Pedestal Design) -->
                 <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 z-20">
                     <div class="relative">
-                        <div class="absolute inset--4 rounded-full border-2 border-white/20 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-                        <div class="w-20 h-20 bg-gradient-to-b from-zinc-800 to-zinc-950 rounded-full flex items-center justify-center border border-zinc-700/50 shadow-[0_10px_25px_rgba(0,0,0,0.8)] relative z-10">
-                            <i class="fa-regular fa-bookmark text-4xl text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)]"></i>
+                        <div
+                            class="absolute inset--4 rounded-full border-2 border-white/20 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]">
+                        </div>
+                        <div
+                            class="w-20 h-20 bg-gradient-to-b from-zinc-800 to-zinc-950 rounded-full flex items-center justify-center border border-zinc-700/50 shadow-[0_10px_25px_rgba(0,0,0,0.8)] relative z-10">
+                            <i
+                                class="fa-regular fa-bookmark text-4xl text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)]"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- MODAL CONTENT -->
                 <div class="px-6 md:px-8 pb-8 relative z-10 text-center">
-                    
+
                     <div class="mb-5 mt-0">
-                        <h2 class="text-[26px] md:text-3xl font-black text-white tracking-tight mb-3 leading-tight drop-shadow-md">
+                        <h2
+                            class="text-[26px] md:text-3xl font-black text-white tracking-tight mb-3 leading-tight drop-shadow-md">
                             Don't Lose This Website!
                         </h2>
                         <!-- <p class="text-gray-200 text-[14.5px] md:text-base font-semibold leading-[2.5] px-1 md:px-2 drop-shadow-sm pb-2">
@@ -339,27 +352,36 @@
                         </p> -->
                     </div>
 
-<!-- STEP 1: Telegram Button -->
+                    <!-- STEP 1: Telegram Button -->
                     <div class="relative mb-5">
-                        <div class="absolute -top-3 right-4 bg-[#FFD700] text-black text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-[0_4px_10px_rgba(255,215,0,0.3)] z-20">
+                        <div
+                            class="absolute -top-3 right-4 bg-[#FFD700] text-black text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-[0_4px_10px_rgba(255,215,0,0.3)] z-20">
                             🔥 240k+ Users Joined
                         </div>
 
                         <!-- ✅ Added onclick="closeWelcomePopup()" here -->
-                        <a href="https://t.me/+oeXeresjsFA1MjI1" target="_blank" onclick="closeWelcomePopup()" class="w-full block rounded-2xl p-4 md:p-5 text-left group outline-none bg-gradient-to-br from-[#1E88E5] to-[#1565C0] shadow-[0_10px_25px_-5px_rgba(30,136,229,0.5)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] relative overflow-hidden">
+                        <a href="https://t.me/+oeXeresjsFA1MjI1" target="_blank" onclick="closeWelcomePopup()"
+                            class="w-full block rounded-2xl p-4 md:p-5 text-left group outline-none bg-gradient-to-br from-[#1E88E5] to-[#1565C0] shadow-[0_10px_25px_-5px_rgba(30,136,229,0.5)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] relative overflow-hidden">
                             <!-- Shimmer Animation Line -->
-                            <div class="absolute top-0 left-[-150%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] animate-[shimmer_3s_infinite]"></div>
-                            
+                            <div
+                                class="absolute top-0 left-[-150%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] animate-[shimmer_3s_infinite]">
+                            </div>
+
                             <div class="relative z-10 flex items-center gap-4">
-                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shrink-0 shadow-inner group-hover:scale-110 transition-transform duration-300">
+                                <div
+                                    class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shrink-0 shadow-inner group-hover:scale-110 transition-transform duration-300">
                                     <i class="fab fa-telegram text-2xl text-white"></i>
                                 </div>
                                 <div>
-                                    <span class="text-white/70 text-[10px] font-bold uppercase tracking-widest block mb-0.5">Step 1 (Mandatory)</span>
-                                    <h3 class="font-black text-xl md:text-2xl text-white tracking-tight leading-none mb-1.5 drop-shadow-sm">
+                                    <span
+                                        class="text-white/70 text-[10px] font-bold uppercase tracking-widest block mb-0.5">Step
+                                        1 (Mandatory)</span>
+                                    <h3
+                                        class="font-black text-xl md:text-2xl text-white tracking-tight leading-none mb-1.5 drop-shadow-sm">
                                         Join Backup Channel
                                     </h3>
-                                    <p class="text-[10px] md:text-[11px] font-bold text-blue-100 uppercase tracking-widest opacity-90 leading-none">
+                                    <p
+                                        class="text-[10px] md:text-[11px] font-bold text-blue-100 uppercase tracking-widest opacity-90 leading-none">
                                         Get unblocked domains & 4K Links
                                     </p>
                                 </div>
@@ -368,7 +390,8 @@
                     </div>
 
                     <!-- STEP 2: Bookmark Instruction -->
-                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-left flex items-start gap-4 mb-4">
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-2xl p-4 text-left flex items-start gap-4 mb-4">
                         <div class="bg-white/10 w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                             <span class="text-white font-bold text-sm">2</span>
                         </div>
@@ -377,13 +400,17 @@
                             <p class="text-gray-400 text-xs leading-relaxed mb-2.5">
                                 Click the <b class="text-white">Bookmark</b> icon in your browser menu.
                             </p>
-                            <div class="inline-flex items-center gap-2 bg-black/40 px-3 py-2 rounded-xl border border-white/5">
+                            <div
+                                class="inline-flex items-center gap-2 bg-black/40 px-3 py-2 rounded-xl border border-white/5">
                                 <i class="fas fa-desktop text-gray-500 text-xs"></i>
-                                <span class="text-gray-500 text-[10px] font-bold uppercase tracking-wider">PC Shortcut:</span>
+                                <span class="text-gray-500 text-[10px] font-bold uppercase tracking-wider">PC
+                                    Shortcut:</span>
                                 <div class="flex items-center gap-1 text-white">
-                                    <span class="bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] border border-[#333] border-b-black border-b-2 rounded-md px-2 py-0.5 font-mono text-[10px] font-bold shadow-[0_2px_0_rgba(0,0,0,0.5)]">CTRL</span> 
-                                    <span class="text-gray-600 font-bold text-[10px]">+</span> 
-                                    <span class="bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] border border-[#333] border-b-black border-b-2 rounded-md px-2 py-0.5 font-mono text-[10px] font-bold shadow-[0_2px_0_rgba(0,0,0,0.5)]">D</span>
+                                    <span
+                                        class="bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] border border-[#333] border-b-black border-b-2 rounded-md px-2 py-0.5 font-mono text-[10px] font-bold shadow-[0_2px_0_rgba(0,0,0,0.5)]">CTRL</span>
+                                    <span class="text-gray-600 font-bold text-[10px]">+</span>
+                                    <span
+                                        class="bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] border border-[#333] border-b-black border-b-2 rounded-md px-2 py-0.5 font-mono text-[10px] font-bold shadow-[0_2px_0_rgba(0,0,0,0.5)]">D</span>
                                 </div>
                             </div>
                         </div>
@@ -391,48 +418,61 @@
 
                     <!-- Facebook Button -->
                     <!-- ✅ Added onclick="closeWelcomePopup()" here -->
-                    <a href="https://www.facebook.com/profile.php?id=61586944455346" target="_blank" onclick="closeWelcomePopup()" class="w-full py-3.5 rounded-xl bg-[#1877f2] hover:bg-[#166fe5] shadow-[0_4px_15px_rgba(24,119,242,0.3)] text-white font-bold text-xs flex items-center justify-center gap-2.5 transition-all uppercase tracking-wider group mb-5">
-                        <i class="fab fa-facebook-f text-white text-lg group-hover:scale-110 transition-transform"></i> 
+                    <a href="https://www.facebook.com/profile.php?id=61586944455346" target="_blank"
+                        onclick="closeWelcomePopup()"
+                        class="w-full py-3.5 rounded-xl bg-[#1877f2] hover:bg-[#166fe5] shadow-[0_4px_15px_rgba(24,119,242,0.3)] text-white font-bold text-xs flex items-center justify-center gap-2.5 transition-all uppercase tracking-wider group mb-5">
+                        <i class="fab fa-facebook-f text-white text-lg group-hover:scale-110 transition-transform"></i>
                         Follow Facebook Page
                     </a>
 
                     <!-- Only Close Option (Red Button) -->
-                    <button onclick="closeWelcomePopup()" class="w-full bg-red-600/10 border border-red-600/20 text-red-500 hover:bg-red-600 hover:border-red-600 hover:text-white py-3.5 rounded-xl font-bold text-[10px] md:text-[11px] uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 group">
+                    <button onclick="closeWelcomePopup()"
+                        class="w-full bg-red-600/10 border border-red-600/20 text-red-500 hover:bg-red-600 hover:border-red-600 hover:text-white py-3.5 rounded-xl font-bold text-[10px] md:text-[11px] uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 group">
                         <i class="fas fa-times text-sm group-hover:rotate-90 transition-transform duration-300"></i>
                         I've already joined and saved this site
                     </button>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
     <!-- 🚀 UNLOCK CATEGORY POPUP MODAL -->
-    <div id="unlockCategoryPopup" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-[99998] hidden opacity-0 transition-opacity duration-300">
-        
-        <div class="bg-[#f0f4f9] rounded-[24px] max-w-[480px] w-full p-8 sm:p-10 md:p-12 relative shadow-2xl text-center popup-appear" id="unlockCategoryContent">
-            
+    <div id="unlockCategoryPopup"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-[99998] hidden opacity-0 transition-opacity duration-300">
+
+        <div class="bg-[#f0f4f9] rounded-[24px] max-w-[480px] w-full p-8 sm:p-10 md:p-12 relative shadow-2xl text-center popup-appear"
+            id="unlockCategoryContent">
+
             <!-- <button onclick="closeUnlockPopup()" class="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-200/80 focus:outline-none transition-colors duration-200 cursor-pointer" aria-label="Close popup">
                 <svg class="w-5 h-5 text-[#d0d4da]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             </button> -->
 
-            <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto bg-[#232427] rounded-full flex items-center justify-center shadow-lg mb-6 sm:mb-8 transition-transform hover:scale-105 duration-300">
+            <div
+                class="w-20 h-20 sm:w-24 sm:h-24 mx-auto bg-[#232427] rounded-full flex items-center justify-center shadow-lg mb-6 sm:mb-8 transition-transform hover:scale-105 duration-300">
                 <i class="fa-solid fa-lock-open text-white text-3xl sm:text-4xl ml-1"></i>
             </div>
 
-            <h2 class="text-2xl sm:text-[32px] font-black text-[#111] uppercase tracking-wide mb-3 leading-tight">Unlock Category</h2>
-            <p class="text-[#5f6368] text-[14px] sm:text-[15.5px] font-medium leading-relaxed mb-4 px-2 sm:px-6">Watch a quick sponsor ad to unlock exclusive movies in this category.</p>
+            <h2 class="text-2xl sm:text-[32px] font-black text-[#111] uppercase tracking-wide mb-3 leading-tight">Unlock
+                Category</h2>
+            <p class="text-[#5f6368] text-[14px] sm:text-[15.5px] font-medium leading-relaxed mb-4 px-2 sm:px-6">Watch a
+                quick sponsor ad to unlock exclusive movies in this category.</p>
 
             <!-- 🚀 SCRIPT REMOVED: Now using Direct Smart Link in JS -->
 
             <div class="flex justify-center w-full">
                 <!-- 🚀 ADDED ONCLICK EVENT TO CLOSE POPUP AND OPEN SMART LINK -->
-                <button onclick="handleWatchAdClick()" class="bg-[#1a73e8] hover:bg-[#155ebb] transition-colors duration-300 w-full sm:max-w-[380px] rounded-[20px] py-4 sm:py-5 px-4 sm:px-6 flex items-center justify-center btn-pulse btn-shine cursor-pointer group shadow-[0_8px_25px_rgba(26,115,232,0.4)]">
-                    <div class="bg-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center mr-3 sm:mr-4 shadow-md shrink-0 relative transition-transform group-hover:scale-110">
+                <button onclick="handleWatchAdClick()"
+                    class="bg-[#1a73e8] hover:bg-[#155ebb] transition-colors duration-300 w-full sm:max-w-[380px] rounded-[20px] py-4 sm:py-5 px-4 sm:px-6 flex items-center justify-center btn-pulse btn-shine cursor-pointer group shadow-[0_8px_25px_rgba(26,115,232,0.4)]">
+                    <div
+                        class="bg-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center mr-3 sm:mr-4 shadow-md shrink-0 relative transition-transform group-hover:scale-110">
                         <div class="absolute inset-0 rounded-full border-2 border-white animate-ping opacity-75"></div>
-                        <i class="fa-solid fa-play text-[#1a73e8] text-[12px] sm:text-[14px] ml-0.5 sm:ml-1 relative z-10"></i>
+                        <i
+                            class="fa-solid fa-play text-[#1a73e8] text-[12px] sm:text-[14px] ml-0.5 sm:ml-1 relative z-10"></i>
                     </div>
-                    <span class="text-white font-black text-[15px] min-[375px]:text-[16.5px] sm:text-[19px] md:text-[20px] tracking-wide sm:tracking-wider uppercase drop-shadow-md whitespace-nowrap">Watch Ad For Unlock</span>
+                    <span
+                        class="text-white font-black text-[15px] min-[375px]:text-[16.5px] sm:text-[19px] md:text-[20px] tracking-wide sm:tracking-wider uppercase drop-shadow-md whitespace-nowrap">Watch
+                        Ad For Unlock</span>
                 </button>
             </div>
 
@@ -442,83 +482,91 @@
 
     <script src="script.js" defer></script>
 
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109630357', 'ym');
+    <!-- 🚀 NATIVE AD POPUP MODAL (Fix for Blank Screen) -->
+    <div id="nativeAdPopup"
+        class="fixed inset-0 flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none -z-50 bg-black/60 backdrop-blur-sm">
 
-        ym(109630357, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/109630357" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-
-    <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "xrflo9zumf");
-    </script>
-
-<!-- <script src="https://heeddialscary.com/dd/e3/5f/dde35f1e9c3f10f1151ade78282c0cac.js"></script> -->
-
-<!-- 🚀 NATIVE AD POPUP MODAL (Fix for Blank Screen) -->
-    <div id="nativeAdPopup" class="fixed inset-0 flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none -z-50 bg-black/60 backdrop-blur-sm">
-        
         <!-- Responsive wrapper: Mobile remains 340px | Desktop scales dynamically up to 800px without scrollbars -->
-        <div class="relative w-full max-w-[340px] md:max-w-[min(800px,calc(100vh-120px))] mx-auto flex flex-col items-end native-popup-appear">
-            
+        <div
+            class="relative w-full max-w-[340px] md:max-w-[min(800px,calc(100vh-120px))] mx-auto flex flex-col items-end native-popup-appear">
+
             <!-- SKIP BUTTON -->
             <!-- <button onclick="closeNativeAdPopup()" class="text-white/30 hover:text-white/60 text-[10px] uppercase tracking-widest mb-1.5 pr-1 transition-colors duration-300 focus:outline-none" aria-label="Skip Ad">
                 Skip <span class="ml-1 opacity-50">❯</span>
             </button> -->
 
             <!-- MAIN POPUP BOX -->
-            <div class="bg-white rounded-[16px] w-full overflow-hidden flex flex-col native-ad-pulse border border-gray-200">
-                
+            <div
+                class="bg-white rounded-[16px] w-full overflow-hidden flex flex-col native-ad-pulse border border-gray-200">
+
                 <!-- Header -->
-                <div class="text-center pt-3 pb-3 bg-white w-full border-b flex justify-center items-center z-20 shadow-sm relative">
-                    <h2 class="text-[19px] md:text-[24px] font-black text-[#0f1419] tracking-tight leading-none m-0 p-0 flex items-center justify-center gap-2.5">
-                        <span class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ff3b30] shadow-[0_0_12px_4px_rgba(255,59,48,0.4)] animate-pulse relative top-[1px]"></span>
+                <div
+                    class="text-center pt-3 pb-3 bg-white w-full border-b flex justify-center items-center z-20 shadow-sm relative">
+                    <h2
+                        class="text-[19px] md:text-[24px] font-black text-[#0f1419] tracking-tight leading-none m-0 p-0 flex items-center justify-center gap-2.5">
+                        <span
+                            class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ff3b30] shadow-[0_0_12px_4px_rgba(255,59,48,0.4)] animate-pulse relative top-[1px]"></span>
                         Watch Full Video 👇
                     </h2>
                 </div>
 
                 <!-- Ad Box -->
-                <div class="w-full bg-white flex justify-center items-center p-0 m-0 leading-none relative z-10 overflow-hidden rounded-b-[16px] min-h-[250px] md:min-h-[min(700px,calc(100vh-180px))]">
-                    
+                <div
+                    class="w-full bg-white flex justify-center items-center p-0 m-0 leading-none relative z-10 overflow-hidden rounded-b-[16px] min-h-[250px] md:min-h-[min(700px,calc(100vh-180px))]">
+
                     <!-- FAKE PLAY BUTTON OVERLAY -->
-                    <div class="absolute inset-0 z-50 pointer-events-none flex items-center justify-center pb-12 md:hidden">
-                        <div class="premium-play-btn w-[65px] h-[65px] bg-black/20 backdrop-blur-[1px] rounded-full flex items-center justify-center border border-white/20 shadow-lg">
-                            <svg class="w-8 h-8 text-white/95 ml-1.5 filter drop-shadow-[0_3px_5px_rgba(0,0,0,0.7)]" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <div
+                        class="absolute inset-0 z-50 pointer-events-none flex items-center justify-center pb-12 md:hidden">
+                        <div
+                            class="premium-play-btn w-[65px] h-[65px] bg-black/20 backdrop-blur-[1px] rounded-full flex items-center justify-center border border-white/20 shadow-lg">
+                            <svg class="w-8 h-8 text-white/95 ml-1.5 filter drop-shadow-[0_3px_5px_rgba(0,0,0,0.7)]"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
                         </div>
                     </div>
 
                     <!-- FAKE PROGRESS BAR -->
-                    <div class="absolute bottom-0 left-0 h-1 md:h-1.5 bg-[#e50914] z-50 pointer-events-none fake-progress shadow-[0_0_10px_rgba(229,9,20,0.8)]"></div>
+                    <div
+                        class="absolute bottom-0 left-0 h-1 md:h-1.5 bg-[#e50914] z-50 pointer-events-none fake-progress shadow-[0_0_10px_rgba(229,9,20,0.8)]">
+                    </div>
 
                     <!-- 🚀 UNIFIED ADSTERRA NATIVE AD CODE (Works for both Mobile & Desktop smoothly) -->
-                    <script async="async" data-cfasync="false" src="https://heeddialscary.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"></script>
-                    <div id="container-faea46eecf01053afa6ef2518e3c0630" class="w-full h-full p-0 m-0 bg-gray-100 flex items-center justify-center"></div>
+                    <script async="async" data-cfasync="false"
+                        src="https://heeddialscary.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"></script>
+                    <div id="container-faea46eecf01053afa6ef2518e3c0630"
+                        class="w-full h-full p-0 m-0 bg-gray-100 flex items-center justify-center"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 🚀 ULTRA FAST POPUNDER INJECTOR -->
+    <!-- 🚀 NON-BLOCKING THIRD-PARTY ANALYTICS & ADS DEFERRED INITIALIZER -->
     <script>
-        window.addEventListener('load', function() {
-            // পেজ সম্পূর্ণ লোড হওয়ার ২০০০ মিলি-সেকেন্ড (২ সেকেন্ড) পর স্ক্রিপ্ট লোড হবে
-            setTimeout(function() {
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                // 1. Clarity Tracking
+                (function (c, l, a, r, i, t, y) {
+                    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                    t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+                })(window, document, "clarity", "script", "xrflo9zumf");
+
+                // 2. Yandex Metrika
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+                })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=109630357', 'ym');
+                ym(109630357, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+
+                // 3. Popunder Ad
                 var popScript = document.createElement('script');
                 popScript.src = "https://heeddialscary.com/dd/e3/5f/dde35f1e9c3f10f1151ade78282c0cac.js";
                 popScript.async = true;
                 document.body.appendChild(popScript);
-            }, 2000);
+            }, 1500);
         });
     </script>
 </body>
