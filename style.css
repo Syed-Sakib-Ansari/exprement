@@ -502,5 +502,17 @@ body {
 
 
 /* NativeBanner Ad */
+.native-popup-appear { animation: modalPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+@keyframes modalPop { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.native-ad-pulse { animation: nativeBoxPulse 2s infinite ease-in-out; }
+@keyframes nativeBoxPulse { 0%, 100% { transform: scale(1); box-shadow: 0 20px 50px rgba(0,0,0,0.5); } 50% { transform: scale(1.02); box-shadow: 0 25px 60px rgba(220, 38, 38, 0.25); } }
+.premium-play-btn { position: relative; animation: innerPulse 2s infinite ease-in-out; }
+@keyframes innerPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.premium-play-btn::before, .premium-play-btn::after { content: ''; position: absolute; inset: -1px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.9); animation: waveExpand 2s infinite cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }
+.premium-play-btn::after { animation-delay: 1s; }
+@keyframes waveExpand { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(1.8); opacity: 0; } }
+.fake-progress { animation: progressBar 15s linear infinite; }
+@keyframes progressBar { 0% { width: 0%; } 100% { width: 100%; } }
+
 /* Force text inside ads to be visible and black */
 #container-faea46eecf01053afa6ef2518e3c0630 * { color: #0f1419 !important; text-shadow: none !important; }
