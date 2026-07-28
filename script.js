@@ -1428,6 +1428,9 @@ if (movieSlug) {
 
     // 🚀 পপআপ চালু করার কমান্ড
     initWelcomePopup();
+    
+    // 🚀 NATIVE AD START (প্রথমবার ১৭ সেকেন্ড ডিলে দিয়ে চালু হবে)
+    scheduleNextNativeAd(true);
 });
 
 // ==========================================
@@ -1571,6 +1574,79 @@ function handleWatchAdClick() {
     closeUnlockPopup();
 
     // ২. আপনার দেওয়া Smart Link টি নতুন ট্যাবে অ্যাড হিসেবে ওপেন করবে
-    const smartAdLink = "https://heeddialscary.com/ve7t00zk4?key=4043af13b2ec2d0cbcb5779a973266cd"; 
+    const smartAdLink = "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e"; 
     window.open(smartAdLink, '_blank');
 }
+
+// ==========================================
+// 🚀 NATIVE AD POPUP LOGIC (Randomized Timer)
+// ==========================================
+function showNativeAdPopup() {
+    const popup = document.getElementById('nativeAdPopup');
+    if (popup) {
+        // 🚀 Remove hidden states and bring popup to front
+        popup.classList.remove('opacity-0', 'pointer-events-none', '-z-50');
+        popup.classList.add('opacity-100', 'pointer-events-auto', 'z-[99990]');
+        
+        // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে (হালকা ব্লার থাকবে)
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeNativeAdPopup() {
+    const popup = document.getElementById('nativeAdPopup');
+    if (popup) {
+        // 🚀 Hide popup and send it to back
+        popup.classList.remove('opacity-100', 'pointer-events-auto', 'z-[99990]');
+        popup.classList.add('opacity-0', 'pointer-events-none', '-z-50');
+        
+        setTimeout(() => {
+            // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
+            document.body.style.overflow = '';
+        }, 300);
+    }
+}
+
+function scheduleNextNativeAd(isFirst = false) {
+    // ⏰ টাইমিং লজিক (Randomized): 
+    // প্রথমবার: ঠিক ১৭ সেকেন্ড
+    // পরের বারগুলো: ৩০ সেকেন্ড থেকে ৫০ সেকেন্ডের মধ্যে রেন্ডম (যাতে গড়ে ৪০ সেকেন্ড হয়)। 
+    // ফলে প্রতি ১ মিনিট ২০ সেকেন্ডে (৮০ সেকেন্ড) ঠিক ২ বার অ্যাড আসবে।
+    
+    const delay = isFirst ? 17000 : (30000 + Math.floor(Math.random() * 20000));
+    
+    setTimeout(() => {
+        const modal = document.getElementById('movieModal');
+        const welcome = document.getElementById('welcomePopup');
+        const unlock = document.getElementById('unlockCategoryPopup');
+        const catMenu = document.getElementById('categoryMenu');
+        
+        // চেক করবে অন্য কোনো পপআপ বা মেনু ওপেন আছে কি না
+        const isModalOpen = modal && modal.classList.contains('active');
+        const isWelcomeOpen = welcome && !welcome.classList.contains('hidden');
+        const isUnlockOpen = unlock && !unlock.classList.contains('hidden');
+        const isCatMenuOpen = catMenu && catMenu.classList.contains('active');
+
+// যদি অন্য কোনো পপআপ ওপেন না থাকে, তবেই এই অ্যাডটি দেখাবে
+        if (!isModalOpen && !isWelcomeOpen && !isUnlockOpen && !isCatMenuOpen) {
+            showNativeAdPopup();
+        }
+
+        // এরপর লুপ কন্টিনিউ করার জন্য আবার ফাংশনটি কল করে দেবে
+        scheduleNextNativeAd(false);
+    }, delay);
+}
+
+// ==========================================
+// 🚀 AUTO-CLOSE POPUP ON AD CLICK (Window Blur Trick)
+// ==========================================
+window.addEventListener('blur', () => {
+    const popup = document.getElementById('nativeAdPopup');
+    
+    // চেক করবে পপআপটি বর্তমানে ওপেন আছে কি না (opacity-100 আছে কি না)
+    if (popup && popup.classList.contains('opacity-100')) {
+        // যদি ওপেন থাকে এবং উইন্ডো ফোকাস হারায় (অর্থাৎ নতুন ট্যাবে অ্যাড ওপেন হয়), 
+        // তবে সাথে সাথে পপআপটি নিজে থেকে ক্লোজ হয়ে যাবে।
+        closeNativeAdPopup();
+    }
+});
