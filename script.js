@@ -1649,4 +1649,4 @@ window.addEventListener('blur', () => {
         // তবে সাথে সাথে পপআপটি নিজে থেকে ক্লোজ হয়ে যাবে।
         closeNativeAdPopup();
     }
-});
+}); 1222222222
