@@ -1545,29 +1545,29 @@ function closeWelcomePopup() {
 // ==========================================
 // 🚀 UNLOCK CATEGORY POPUP LOGIC
 // ==========================================
-function showUnlockPopup() {
-    const popup = document.getElementById('unlockCategoryPopup');
-    if (popup) {
-        popup.classList.remove('hidden');
-        void popup.offsetWidth; // Trigger reflow for animation
-        popup.classList.remove('opacity-0');
+// function showUnlockPopup() {
+//     const popup = document.getElementById('unlockCategoryPopup');
+//     if (popup) {
+//         popup.classList.remove('hidden');
+//         void popup.offsetWidth; // Trigger reflow for animation
+//         popup.classList.remove('opacity-0');
         
-        // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে (পেছনের কনটেন্ট ব্লার হয়ে থাকবে)
-        document.body.style.overflow = 'hidden';
-    }
-}
+//         // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে (পেছনের কনটেন্ট ব্লার হয়ে থাকবে)
+//         document.body.style.overflow = 'hidden';
+//     }
+// }
 
-function closeUnlockPopup() {
-    const popup = document.getElementById('unlockCategoryPopup');
-    if (popup) {
-        popup.classList.add('opacity-0');
-        setTimeout(() => {
-            popup.classList.add('hidden');
-            // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
-            document.body.style.overflow = '';
-        }, 300); // এনিমেশনের সাথে মিল রেখে
-    }
-}
+// function closeUnlockPopup() {
+//     const popup = document.getElementById('unlockCategoryPopup');
+//     if (popup) {
+//         popup.classList.add('opacity-0');
+//         setTimeout(() => {
+//             popup.classList.add('hidden');
+//             // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
+//             document.body.style.overflow = '';
+//         }, 300); // এনিমেশনের সাথে মিল রেখে
+//     }
+// }
 
 function handleWatchAdClick() {
     // ১. প্রথমে পপআপটি ক্লোজ করবে এবং পেজের স্ক্রলিং ঠিক করবে
@@ -1618,7 +1618,7 @@ function scheduleNextNativeAd(isFirst = false) {
     setTimeout(() => {
         const modal = document.getElementById('movieModal');
         const welcome = document.getElementById('welcomePopup');
-        const unlock = document.getElementById('unlockCategoryPopup');
+        // const unlock = document.getElementById('unlockCategoryPopup');
         const catMenu = document.getElementById('categoryMenu');
         
         // চেক করবে অন্য কোনো পপআপ বা মেনু ওপেন আছে কি না
