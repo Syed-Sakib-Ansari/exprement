@@ -289,12 +289,23 @@ function toggleCategoryMenu(show, triggerBack = true) {
     const fabIconTimes = document.getElementById('fabIconTimes');
 
     if (show) {
-        savedScrollY = window.scrollY;
+        // 🚀 ১. মেনু খোলার আগে একদম সঠিক স্ক্রল পজিশন রিড করা
+        savedScrollY = window.scrollY || document.documentElement.scrollTop;
 
-        // 🚀 মেনু খোলার আগে বর্তমান পেজ ও স্ক্রল পজিশন পারফেক্টলি সেভ করে রাখা হচ্ছে
         const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || null;
+        
+        // 🚀 ২. বর্তমান পজিশনটি ব্যাকগ্রাউন্ড হিস্ট্রিতে লক করা
         try {
             window.history.replaceState({
+                view: currentView,
+                category: activeCat,
+                scrollY: savedScrollY,
+                displayedCount: libraryDisplayedCount,
+                validDakhiState: true
+            }, '');
+            
+            window.history.pushState({
+                isMenuOpen: true,
                 view: currentView,
                 category: activeCat,
                 scrollY: savedScrollY,
@@ -322,6 +333,13 @@ function toggleCategoryMenu(show, triggerBack = true) {
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
+
+        // 🚀 ৩. মেনু ক্লোজ করার সাথে সাথেই আগের জায়গায় স্ক্রল ধরে রাখা
+        window.scrollTo({ top: savedScrollY, left: 0, behavior: 'instant' });
+
+        if (triggerBack && window.history.state?.isMenuOpen) {
+            window.history.back();
+        }
 
         fab.classList.remove('menu-open');
 
@@ -1326,6 +1344,9 @@ if (searchInput) {
 }
 
 window.addEventListener('scroll', () => {
+    // 🚀 বডি fixed অবস্থায় থাকলে স্ক্রল ইভেন্ট রিড করা বন্ধ রাখবে
+    if (document.body.style.position === 'fixed') return;
+
     if (currentView === 'library') {
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
         if (scrollTop + clientHeight >= scrollHeight - 500) {
@@ -1339,7 +1360,7 @@ window.addEventListener('scroll', () => {
     scrollTimeoutId = setTimeout(() => {
         const modal = document.getElementById('movieModal');
         const catMenu = document.getElementById('categoryMenu');
-        if ((!modal || !modal.classList.contains('active')) && (!catMenu || !catMenu.classList.contains('active'))) {
+        if ((!modal || !modal.classList.contains('active')) && (!catMenu || !catMenu.classList.contains('active')) && document.body.style.position !== 'fixed') {
             const currentState = history.state || { view: currentView, category: null, validDakhiState: true };
             try {
                 window.history.replaceState({
@@ -1471,7 +1492,7 @@ window.addEventListener('popstate', (event) => {
         }
     }
 
-    if (categoryMenu && !categoryMenu.classList.contains('hidden') && (!state || !state.isMenuOpen)) {
+    if (categoryMenu && (!categoryMenu.classList.contains('hidden') || categoryMenu.classList.contains('active')) && (!state || !state.isMenuOpen)) {
         toggleCategoryMenu(false, false);
         handledOverlayClose = true;
     }
@@ -1480,18 +1501,17 @@ window.addEventListener('popstate', (event) => {
         return;
     }
 
-if (state || window.location.search) {
+    if (state || window.location.search) {
         const targetView = state?.view || 'home';
         const targetCat = state?.category || null;
-        const targetScroll = state?.scrollY || 0;
+        // 🚀 স্ক্রল পজিশন নিখুঁতভাবে রিস্টোর করা
+        const targetScroll = (state && typeof state.scrollY === 'number') ? state.scrollY : savedScrollY;
         const targetCount = state?.displayedCount || 30;
 
         updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
         
-        // 🚀 ১. আগের ভিউ এবং পুরো আইটেম রেঞ্জ লোড করবে
         switchView(targetView, targetCat, false, targetCount);
         
-        // 🚀 ২. লেআউট রেন্ডার সম্পন্ন হওয়ার পর পূর্বের স্ক্রল পজিশনে নিখুঁতভাবে জাম্প করবে
         requestAnimationFrame(() => {
             window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' });
             setTimeout(() => {
