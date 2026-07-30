@@ -377,15 +377,15 @@ body {
     pointer-events: none;
 }
 
-/* Smooth Icon Swap Animation inside FAB */
+/* Smooth Icon Swap Animation inside FAB (With !important protection) */
 #mobileFab.menu-open #fabIconBars {
-    transform: scale(0) rotate(-90deg);
-    opacity: 0;
+    transform: scale(0) rotate(-90deg) !important;
+    opacity: 0 !important;
 }
 
 #mobileFab.menu-open #fabIconTimes {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
+    transform: scale(1) rotate(0deg) !important;
+    opacity: 1 !important;
 }
 
 /* Category Menu Box Styling & Animations */

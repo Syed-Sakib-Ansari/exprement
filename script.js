@@ -254,10 +254,10 @@ function renderCategories() {
         mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
         mobileItem.innerText = label;
         mobileItem.href = realLink;
-        mobileItem.onclick = (e) => {
+mobileItem.onclick = (e) => {
             e.preventDefault();
-            toggleCategoryMenu(false, false);
-            switchView('library', cat, 'replace');
+            toggleCategoryMenu(false, false, true);
+            switchView('library', cat, true); // ✅ 'true' (pushState) দেওয়া হয়েছে যাতে আগের ক্যাটাগরি হিস্ট্রিতে সেভ থাকে
         };
         mobileGrid.appendChild(mobileItem);
 
@@ -285,13 +285,23 @@ let savedScrollY = 0;
 
 function toggleCategoryMenu(show, triggerBack = true) {
     const fab = document.getElementById('mobileFab');
+    const fabIconBars = document.getElementById('fabIconBars');
+    const fabIconTimes = document.getElementById('fabIconTimes');
 
     if (show) {
         savedScrollY = window.scrollY;
 
-        const currentState = history.state || {};
-        try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-        try { window.history.pushState({ ...currentState, isMenuOpen: true }, ''); } catch (e) { }
+        // 🚀 মেনু খোলার আগে বর্তমান পেজ ও স্ক্রল পজিশন পারফেক্টলি সেভ করে রাখা হচ্ছে
+        const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || null;
+        try {
+            window.history.replaceState({
+                view: currentView,
+                category: activeCat,
+                scrollY: savedScrollY,
+                displayedCount: libraryDisplayedCount,
+                validDakhiState: true
+            }, '');
+        } catch (e) { }
 
         categoryMenu.classList.remove('hidden');
         void categoryMenu.offsetWidth; 
@@ -302,6 +312,9 @@ function toggleCategoryMenu(show, triggerBack = true) {
         document.body.style.width = '100%';
 
         fab.classList.add('menu-open');
+
+        if (fabIconBars) fabIconBars.classList.add('scale-0', 'opacity-0', '-rotate-90');
+        if (fabIconTimes) fabIconTimes.classList.remove('scale-0', 'opacity-0', 'rotate-90');
     } else {
         categoryMenu.classList.remove('active');
         setTimeout(() => categoryMenu.classList.add('hidden'), 400);
@@ -309,13 +322,11 @@ function toggleCategoryMenu(show, triggerBack = true) {
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
-        window.scrollTo(0, savedScrollY);
-
-        if (triggerBack && window.history.state?.isMenuOpen) {
-            window.history.back();
-        }
 
         fab.classList.remove('menu-open');
+
+        if (fabIconBars) fabIconBars.classList.remove('scale-0', 'opacity-0', '-rotate-90');
+        if (fabIconTimes) fabIconTimes.classList.add('scale-0', 'opacity-0', 'rotate-90');
     }
 }
 
@@ -552,13 +563,17 @@ function updateCanonical(url) {
 function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
     if (mode) {
         const currentScroll = window.scrollY;
-        const currentState = window.history.state || {
-            view: currentView,
-            category: null,
-            displayedCount: libraryDisplayedCount,
-            validDakhiState: true
-        };
-        try { window.history.replaceState({ ...currentState, scrollY: currentScroll }, ''); } catch (e) { }
+        const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || null;
+        try {
+            // 🚀 নতুন ক্যাটাগরিতে যাওয়ার ঠিক মুহূর্তে আগের পেজের স্টেট নিখুঁতভাবে হিস্ট্রিতে সেভ করা হচ্ছে
+            window.history.replaceState({
+                view: currentView,
+                category: activeCat,
+                scrollY: currentScroll,
+                displayedCount: libraryDisplayedCount,
+                validDakhiState: true
+            }, '');
+        } catch (e) { }
     }
 
     currentView = viewName;
@@ -576,25 +591,20 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
             preSearchState = null;
         }
 
-document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
+        document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.replace(/\+/g, ' ')} Movies - MovieDakhi` : "All Movies & Web Series - MovieDakhi";
 
         const catValue = filterCategory || 'all';
         document.querySelectorAll('#libraryFilters .category-pill').forEach(p => p.classList.remove('active'));
         document.querySelector(`#libraryFilters .category-pill[data-category="${catValue}"]`)?.classList.add('active');
 
         initLibraryRender(catValue, restoredCount);
-
-        // 🚀 NEW: Show Unlock Popup if user changes category
-        if (lastVisitedCategory !== catValue && catValue !== 'all') {
-            showUnlockPopup();
-        }
-        lastVisitedCategory = catValue;
     }
 
     if (mode) {
         try {
             const isBlob = window.location.protocol === 'blob:';
-            const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: 30, validDakhiState: true };
+            // 🚀 নতুন পেজ বা ক্যাটাগরি ওপেন করার সময় সেটির পজিশন ০ (Top) হিস্ট্রিতে পুশ হবে
+            const stateObj = { view: viewName, category: filterCategory, scrollY: 0, displayedCount: 30, validDakhiState: true };
 
             if (!isBlob) {
                 const url = new URL(window.location);
@@ -613,19 +623,12 @@ document.title = filterCategory && filterCategory !== 'all' ? `${filterCategory.
                     window.history.pushState(stateObj, '', url);
                 }
                 updateCanonical(url.href);
-            } else {
-                if (mode === 'replace') {
-                    window.history.replaceState(stateObj, '', window.location.href);
-                } else {
-                    window.history.pushState(stateObj, '', window.location.href);
-                }
             }
-            void document.documentElement.offsetHeight;
-            window.scrollTo({ top: targetScroll, behavior: 'instant' });
+            
+            // 🚀 নতুন পেজে ঢুকলে সবসময় পেজের ওপরে (0) স্ক্রল হবে
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         } catch (e) {
-            console.warn("Navigation History Error (Safely Ignored):", e.message);
-            void document.documentElement.offsetHeight;
-            window.scrollTo({ top: targetScroll, behavior: 'instant' });
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         }
     }
 }
@@ -800,10 +803,23 @@ function initLibraryRender(filter = "all", initialCount = 0) {
         subGrid = null;
     }
 
-    if (subGrid) {
+if (subGrid) {
         subGrid.classList.remove('hidden');
-        libraryDisplayedCount = parseInt(subGrid.dataset.displayedCount || ITEMS_PER_PAGE, 10);
-        return; 
+        let currentRendered = subGrid.children.length;
+        let targetRender = Math.max(initialCount, parseInt(subGrid.dataset.displayedCount || ITEMS_PER_PAGE, 10));
+        
+        // 🚀 ব্যাকে আসার পর যদি আগের চেয়ে বেশি আইটেম দরকার হয়, তা রেন্ডার করে পেজের হাইট আগের জায়গায় আনবে
+        if (currentRendered < targetRender && currentRendered < libraryData.length) {
+            const fragment = document.createDocumentFragment();
+            libraryData.slice(currentRendered, targetRender).forEach(item => {
+                fragment.appendChild(createMovieCard(item));
+            });
+            subGrid.appendChild(fragment);
+        }
+        libraryDisplayedCount = Math.min(targetRender, libraryData.length);
+        subGrid.dataset.displayedCount = libraryDisplayedCount;
+        updateLoadMoreVisibility();
+        return;
     }
 
     subGrid = document.createElement('div');
@@ -1464,11 +1480,24 @@ window.addEventListener('popstate', (event) => {
         return;
     }
 
-    if (state || window.location.search) {
+if (state || window.location.search) {
+        const targetView = state?.view || 'home';
+        const targetCat = state?.category || null;
+        const targetScroll = state?.scrollY || 0;
+        const targetCount = state?.displayedCount || 30;
+
         updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
-        switchView(state?.view || 'home', state?.category || null, false, state?.displayedCount || 30);
-        void document.documentElement.offsetHeight;
-        window.scrollTo({ top: state?.scrollY || 0, behavior: 'instant' });
+        
+        // 🚀 ১. আগের ভিউ এবং পুরো আইটেম রেঞ্জ লোড করবে
+        switchView(targetView, targetCat, false, targetCount);
+        
+        // 🚀 ২. লেআউট রেন্ডার সম্পন্ন হওয়ার পর পূর্বের স্ক্রল পজিশনে নিখুঁতভাবে জাম্প করবে
+        requestAnimationFrame(() => {
+            window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' });
+            setTimeout(() => {
+                window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' });
+            }, 50);
+        });
     } else {
         switchView('home', null, false);
         void document.documentElement.offsetHeight;
@@ -1545,29 +1574,29 @@ function closeWelcomePopup() {
 // ==========================================
 // 🚀 UNLOCK CATEGORY POPUP LOGIC
 // ==========================================
-// function showUnlockPopup() {
-//     const popup = document.getElementById('unlockCategoryPopup');
-//     if (popup) {
-//         popup.classList.remove('hidden');
-//         void popup.offsetWidth; // Trigger reflow for animation
-//         popup.classList.remove('opacity-0');
+function showUnlockPopup() {
+    const popup = document.getElementById('unlockCategoryPopup');
+    if (popup) {
+        popup.classList.remove('hidden');
+        void popup.offsetWidth; // Trigger reflow for animation
+        popup.classList.remove('opacity-0');
         
-//         // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে (পেছনের কনটেন্ট ব্লার হয়ে থাকবে)
-//         document.body.style.overflow = 'hidden';
-//     }
-// }
+        // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে (পেছনের কনটেন্ট ব্লার হয়ে থাকবে)
+        document.body.style.overflow = 'hidden';
+    }
+}
 
-// function closeUnlockPopup() {
-//     const popup = document.getElementById('unlockCategoryPopup');
-//     if (popup) {
-//         popup.classList.add('opacity-0');
-//         setTimeout(() => {
-//             popup.classList.add('hidden');
-//             // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
-//             document.body.style.overflow = '';
-//         }, 300); // এনিমেশনের সাথে মিল রেখে
-//     }
-// }
+function closeUnlockPopup() {
+    const popup = document.getElementById('unlockCategoryPopup');
+    if (popup) {
+        popup.classList.add('opacity-0');
+        setTimeout(() => {
+            popup.classList.add('hidden');
+            // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
+            document.body.style.overflow = '';
+        }, 300); // এনিমেশনের সাথে মিল রেখে
+    }
+}
 
 function handleWatchAdClick() {
     // ১. প্রথমে পপআপটি ক্লোজ করবে এবং পেজের স্ক্রলিং ঠিক করবে
@@ -1581,7 +1610,21 @@ function handleWatchAdClick() {
 // ==========================================
 // 🚀 NATIVE AD POPUP LOGIC (Randomized Timer)
 // ==========================================
+// 🚀 পপআপ অন হওয়ার সাথে সাথেই কেবল অ্যাড স্ক্রিপ্ট ইনজেক্ট হবে
+function injectNativeAdScript() {
+    const container = document.getElementById('container-faea46eecf01053afa6ef2518e3c0630');
+    if (!container || container.dataset.loaded) return;
+
+    container.dataset.loaded = 'true';
+    const script = document.createElement('script');
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    script.src = "https://heeddialscary.com/faea46eecf01053afa6ef2518e3c0630/invoke.js";
+    container.appendChild(script);
+}
+
 function showNativeAdPopup() {
+    injectNativeAdScript(); // ⚡ পপআপ শো হলেই অ্যাড লোড শুরু হবে
     const popup = document.getElementById('nativeAdPopup');
     if (popup) {
         // 🚀 Remove hidden states and bring popup to front
@@ -1618,7 +1661,7 @@ function scheduleNextNativeAd(isFirst = false) {
     setTimeout(() => {
         const modal = document.getElementById('movieModal');
         const welcome = document.getElementById('welcomePopup');
-        // const unlock = document.getElementById('unlockCategoryPopup');
+        const unlock = document.getElementById('unlockCategoryPopup');
         const catMenu = document.getElementById('categoryMenu');
         
         // চেক করবে অন্য কোনো পপআপ বা মেনু ওপেন আছে কি না
