@@ -39,10 +39,10 @@
 
     <!-- 🚀 2. ULTRA-FAST SINGLE RESPONSIVE PRELOAD -->
     <link rel="preload" as="image"
-    href="https://wsrv.nl/?url=https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg&w=1200&output=webp&q=75"
-    imagesrcset="https://wsrv.nl/?url=https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg&w=600&output=webp&q=75 600w,
+        href="https://wsrv.nl/?url=https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg&w=1200&output=webp&q=75"
+        imagesrcset="https://wsrv.nl/?url=https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg&w=600&output=webp&q=75 600w,
                  https://wsrv.nl/?url=https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg&w=1200&output=webp&q=75 1200w"
-    imagesizes="(max-width: 768px) 100vw, 100vw" type="image/webp" fetchpriority="high">
+        imagesizes="(max-width: 768px) 100vw, 100vw" type="image/webp" fetchpriority="high">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -431,7 +431,8 @@
                     <!-- Only Close Option (Red Button) -->
                     <button onclick="closeWelcomePopup()"
                         class="w-full bg-red-600/10 border border-red-600/20 text-red-500 hover:bg-red-600 hover:border-red-600 hover:text-white px-3 py-3 rounded-xl font-bold text-[9.5px] min-[360px]:text-[10px] md:text-[11px] uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 group leading-tight">
-                        <i class="fas fa-times text-xs shrink-0 group-hover:rotate-90 transition-transform duration-300"></i>
+                        <i
+                            class="fas fa-times text-xs shrink-0 group-hover:rotate-90 transition-transform duration-300"></i>
                         <span>I've already joined and saved this site</span>
                     </button>
                 </div>
@@ -447,8 +448,13 @@
         <div class="bg-[#f0f4f9] rounded-[24px] max-w-[480px] w-full p-8 sm:p-10 md:p-12 relative shadow-2xl text-center popup-appear"
             id="unlockCategoryContent">
 
-            <button onclick="closeUnlockPopup()" class="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-200/80 focus:outline-none transition-colors duration-200 cursor-pointer" aria-label="Close popup">
-                <svg class="w-5 h-5 text-[#d0d4da]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            <button onclick="closeUnlockPopup()"
+                class="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-200/80 focus:outline-none transition-colors duration-200 cursor-pointer"
+                aria-label="Close popup">
+                <svg class="w-5 h-5 text-[#d0d4da]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
             </button>
 
             <div
@@ -486,57 +492,32 @@
     <!-- 🚀 NATIVE AD POPUP MODAL (Fix for Blank Screen) -->
     <div id="nativeAdPopup"
         class="fixed inset-0 flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none -z-50 bg-black/60 backdrop-blur-sm">
-
-        <!-- Responsive wrapper: Mobile remains 340px | Desktop scales dynamically up to 800px without scrollbars -->
+        <!-- Responsive wrapper: Compact, centered & perfect proportion on all devices -->
         <div
-            class="relative w-full max-w-[340px] md:max-w-[min(800px,calc(100vh-120px))] mx-auto flex flex-col items-end native-popup-appear">
-
-            <!-- SKIP BUTTON -->
-            <!-- <button onclick="closeNativeAdPopup()" class="text-white/30 hover:text-white/60 text-[10px] uppercase tracking-widest mb-1.5 pr-1 transition-colors duration-300 focus:outline-none" aria-label="Skip Ad">
-                Skip <span class="ml-1 opacity-50">❯</span>
-            </button> -->
+            class="relative w-full max-w-[340px] sm:max-w-[380px] mx-auto flex flex-col items-center native-popup-appear">
 
             <!-- MAIN POPUP BOX -->
             <div
-                class="bg-white rounded-[16px] w-full overflow-hidden flex flex-col native-ad-pulse border border-gray-200">
+                class="bg-white rounded-[20px] w-full overflow-hidden flex flex-col native-ad-pulse border border-gray-200 relative shadow-2xl">
 
-                <!-- Header -->
+                <!-- Header (Clean Padding & Responsive Text Alignment) -->
                 <div
-                    class="text-center pt-3 pb-3 bg-white w-full border-b flex justify-center items-center z-20 shadow-sm relative">
+                    class="text-center px-3 py-3 bg-white w-full border-b flex justify-center items-center z-20 shadow-sm relative">
                     <h2
-                        class="text-[19px] md:text-[24px] font-black text-[#0f1419] tracking-tight leading-none m-0 p-0 flex items-center justify-center gap-2.5">
+                        class="text-sm sm:text-base font-black text-[#0f1419] tracking-tight leading-tight m-0 p-0 flex items-center justify-center gap-2">
                         <span
-                            class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ff3b30] shadow-[0_0_12px_4px_rgba(255,59,48,0.4)] animate-pulse relative top-[1px]"></span>
-                        Click The Ad To Close This Box 👇
+                            class="w-2.5 h-2.5 rounded-full bg-[#ff3b30] shadow-[0_0_10px_2px_rgba(255,59,48,0.5)] animate-pulse shrink-0"></span>
+                        <span>Click The Ad To Close This Box 👇</span>
                     </h2>
                 </div>
 
-                <!-- Ad Box -->
+                <!-- Ad Box (Snug content wrapping - No white gaps) -->
                 <div
-                    class="w-full bg-white flex justify-center items-center p-0 m-0 leading-none relative z-10 overflow-hidden rounded-b-[16px] min-h-[250px] md:min-h-[min(700px,calc(100vh-180px))]">
+                    class="w-full bg-white flex justify-center items-center p-0 m-0 relative z-10 overflow-hidden rounded-b-[20px] min-h-[260px]">
 
-                    <!-- FAKE PLAY BUTTON OVERLAY -->
-                    <div
-                        class="absolute inset-0 z-50 pointer-events-none flex items-center justify-center pb-12 md:hidden">
-                        <div
-                            class="premium-play-btn w-[65px] h-[65px] bg-black/20 backdrop-blur-[1px] rounded-full flex items-center justify-center border border-white/20 shadow-lg">
-                            <svg class="w-8 h-8 text-white/95 ml-1.5 filter drop-shadow-[0_3px_5px_rgba(0,0,0,0.7)]"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- FAKE PROGRESS BAR -->
-                    <div
-                        class="absolute bottom-0 left-0 h-1 md:h-1.5 bg-[#e50914] z-50 pointer-events-none fake-progress shadow-[0_0_10px_rgba(229,9,20,0.8)]">
-                    </div>
-
-                    <!-- 🚀 UNIFIED ADSTERRA NATIVE AD CODE (Works for both Mobile & Desktop smoothly) -->
-                    <script async="async" data-cfasync="false"
-                        src="https://heeddialscary.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"></script>
+                    <!-- 🚀 UNIFIED ADSTERRA NATIVE AD CODE CONTAINER -->
                     <div id="container-faea46eecf01053afa6ef2518e3c0630"
-                        class="w-full h-full p-0 m-0 bg-gray-100 flex items-center justify-center"></div>
+                        class="w-full h-full p-0 m-0 bg-white flex items-center justify-center"></div>
                 </div>
             </div>
         </div>
@@ -545,32 +526,33 @@
     <!-- 🚀 NON-BLOCKING THIRD-PARTY ANALYTICS & ADS DEFERRED INITIALIZER -->
     <script>
         window.addEventListener('load', function () {
-            setTimeout(function () {
-                // 1. Clarity Tracking
-                (function (c, l, a, r, i, t, y) {
-                    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-                    t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-                    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-                })(window, document, "clarity", "script", "xrflo9zumf");
+                setTimeout(function () {
+                    // 1. Clarity Tracking
+                    (function (c, l, a, r, i, t, y) {
+                        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+                    })(window, document, "clarity", "script", "xrflo9zumf");
 
-                // 2. Yandex Metrika
-                (function (m, e, t, r, i, k, a) {
-                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-                    m[i].l = 1 * new Date();
-                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-                })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=109630357', 'ym');
-                ym(109630357, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+                    // 2. Yandex Metrika
+                    (function (m, e, t, r, i, k, a) {
+                        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+                        m[i].l = 1 * new Date();
+                        for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+                    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=109630357', 'ym');
+                    ym(109630357, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
 
-                // 3. Popunder Ad
-                var popScript = document.createElement('script');
-                popScript.src = "https://heeddialscary.com/dd/e3/5f/dde35f1e9c3f10f1151ade78282c0cac.js";
-                popScript.async = true;
-                document.body.appendChild(popScript);
-            }, 1500);
-        });
-    </script>
-    <script async="async" data-cfasync="false" src="https://heeddialscary.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"></script>
+                    // 3. Popunder Ad
+                    var popScript = document.createElement('script');
+                    popScript.src = "https://heeddialscary.com/dd/e3/5f/dde35f1e9c3f10f1151ade78282c0cac.js";
+                    popScript.async = true;
+                    document.body.appendChild(popScript);
+                }, 1500);
+            });
+        </script>
+        <script async="async" data-cfasync="false"
+            src="https://heeddialscary.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"></script>
 </body>
 
 </html>

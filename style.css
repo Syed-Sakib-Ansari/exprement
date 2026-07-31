@@ -650,20 +650,6 @@ body {
     }
 }
 
-.fake-progress {
-    animation: progressBar 15s linear infinite;
-}
-
-@keyframes progressBar {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 100%;
-    }
-}
-
 /* Force text inside ads to be visible and black */
 #container-faea46eecf01053afa6ef2518e3c0630 * {
     color: #0f1419 !important;

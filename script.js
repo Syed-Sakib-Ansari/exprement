@@ -616,6 +616,12 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
         document.querySelector(`#libraryFilters .category-pill[data-category="${catValue}"]`)?.classList.add('active');
 
         initLibraryRender(catValue, restoredCount);
+
+        // 🚀 UNLOCK CATEGORY POPUP TRIGGER: ইউজার 'all' বাদে অন্য ক্যাটাগরিতে স্যুইচ করলে পপআপ ওপেন হবে
+        if (lastVisitedCategory !== catValue && catValue !== 'all') {
+            showUnlockPopup();
+        }
+        lastVisitedCategory = catValue;
     }
 
     if (mode) {
@@ -1150,7 +1156,6 @@ function executeActualOpenModal(id) {
     document.body.style.width = '100%';
 }
 
-// 🎯 মডাল ক্লোজ করা এবং ভিডিও স্টপ করার ফাংশন
 function closeModal(triggerBack = false, isUserAction = false) {
     if (isModalClosing) return;
     isModalClosing = true;
@@ -1167,6 +1172,9 @@ function closeModal(triggerBack = false, isUserAction = false) {
                 actualVideo.classList.add('hidden');
             }
             modal.classList.add('hidden');
+
+            // 🚀 Movie Modal বন্ধ হওয়ার সাথে সাথেই Native Ad Popup রিলিজ করা হবে
+            showNativeAdPopup();
         }, 300); // মডালের ফেইড-আউট এনিমেশনের সাথে মিল রেখে 300ms সময়
     }
 
@@ -1465,9 +1473,7 @@ if (movieSlug) {
 
     // 🚀 পপআপ চালু করার কমান্ড
     initWelcomePopup();
-    
-    // 🚀 NATIVE AD START (প্রথমবার ১৭ সেকেন্ড ডিলে দিয়ে চালু হবে)
-    scheduleNextNativeAd(true);
+
 });
 
 // ==========================================
@@ -1594,7 +1600,15 @@ function closeWelcomePopup() {
 // ==========================================
 // 🚀 UNLOCK CATEGORY POPUP LOGIC
 // ==========================================
+// 🎛️ ON/OFF CONTROL SWITCH
+// 🟢 পপআপ চালু রাখতে চাইলে: true
+// 🔴 পপআপ বন্ধ রাখতে চাইলে: false
+const ENABLE_UNLOCK_CATEGORY_POPUP = true; 
+
 function showUnlockPopup() {
+    // 🛑 যদি কন্ট্রোল সুইচ OFF (false) থাকে, তবে পপআপ ওপেন হবে না
+    if (!ENABLE_UNLOCK_CATEGORY_POPUP) return;
+
     const popup = document.getElementById('unlockCategoryPopup');
     if (popup) {
         popup.classList.remove('hidden');
@@ -1670,36 +1684,26 @@ function closeNativeAdPopup() {
     }
 }
 
-function scheduleNextNativeAd(isFirst = false) {
-    // ⏰ টাইমিং লজিক (Randomized): 
-    // প্রথমবার: ঠিক ১৭ সেকেন্ড
-    // পরের বারগুলো: ৩০ সেকেন্ড থেকে ৫০ সেকেন্ডের মধ্যে রেন্ডম (যাতে গড়ে ৪০ সেকেন্ড হয়)। 
-    // ফলে প্রতি ১ মিনিট ২০ সেকেন্ডে (৮০ সেকেন্ড) ঠিক ২ বার অ্যাড আসবে।
+// 🚀 FULL BOX CLICK TRIGGER: বক্সে ক্লিক করলে অরিজিনাল অ্যাড লিংক ওপেন করে পপআপ বন্ধ করে দেবে
+// function handleNativeAdBoxClick(e) {
+//     if (e) e.stopPropagation();
     
-    const delay = isFirst ? 17000 : (30000 + Math.floor(Math.random() * 20000));
+//     const container = document.getElementById('container-faea46eecf01053afa6ef2518e3c0630');
+//     let adUrl = null;
+
+//     if (container) {
+//         const adAnchor = container.querySelector('a');
+//         if (adAnchor && adAnchor.href) {
+//             adUrl = adAnchor.href;
+//         }
+//     }
+
+//     // যদি কোনো কারণে অ্যাড লোড হতে দেরি হয়, তবে ফলব্যাক স্মার্ট-লিংক ওপেন হবে
+//     const targetLink = adUrl || "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     
-    setTimeout(() => {
-        const modal = document.getElementById('movieModal');
-        const welcome = document.getElementById('welcomePopup');
-        const unlock = document.getElementById('unlockCategoryPopup');
-        const catMenu = document.getElementById('categoryMenu');
-        
-        // চেক করবে অন্য কোনো পপআপ বা মেনু ওপেন আছে কি না
-        const isModalOpen = modal && modal.classList.contains('active');
-        const isWelcomeOpen = welcome && !welcome.classList.contains('hidden');
-        const isUnlockOpen = unlock && !unlock.classList.contains('hidden');
-        const isCatMenuOpen = catMenu && catMenu.classList.contains('active');
-
-// যদি অন্য কোনো পপআপ ওপেন না থাকে, তবেই এই অ্যাডটি দেখাবে
-        if (!isModalOpen && !isWelcomeOpen && !isUnlockOpen && !isCatMenuOpen) {
-            showNativeAdPopup();
-        }
-
-        // এরপর লুপ কন্টিনিউ করার জন্য আবার ফাংশনটি কল করে দেবে
-        scheduleNextNativeAd(false);
-    }, delay);
-}
-
+//     window.open(targetLink, '_blank');
+//     closeNativeAdPopup();
+// }
 // ==========================================
 // 🚀 AUTO-CLOSE POPUP ON AD CLICK (Window Blur Trick)
 // ==========================================
