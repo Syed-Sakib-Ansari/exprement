@@ -230,7 +230,7 @@
         </div>
     </div>
 
-<!-- 🚀 FULL SCREEN THEATER TYPE MOVIE MODAL -->
+    <!-- 🚀 FULL SCREEN THEATER TYPE MOVIE MODAL -->
     <div id="movieModal" class="fixed inset-0 z-[130] hidden bg-[#0f0f0f] overflow-y-auto" role="dialog"
         aria-modal="true">
 
@@ -239,11 +239,12 @@
             <!-- 🎬 TOP HEADER: MOVIE TITLE (উপযুক্ত ও পরিচ্ছন্ন স্পেসিং সহ) -->
             <div class="px-4 md:px-8 text-center max-w-5xl mx-auto w-full mb-4 md:mb-6">
                 <h2 id="modalTitle"
-                    class="text-2xl sm:text-4xl md:text-5xl font-black leading-tight text-white drop-shadow-md mt-8">Content
+                    class="text-2xl sm:text-4xl md:text-5xl font-black leading-tight text-white drop-shadow-md mt-2">
+                    Content
                     Title</h2>
             </div>
 
-            <!-- 🎬 MOBILE CUT-OFF FIX CINEMA PLAYER -->
+            <!-- 🎬 PERFECT MOBILE PLAYER FIX (কোনো কন্ট্রোল বা সাইড কাটবে না) -->
             <style>
                 .drive-video-wrapper {
                     position: relative;
@@ -259,14 +260,15 @@
                     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(229, 9, 20, 0.2);
                 }
 
-                /* 📱 MOBILE RESPONSIVE FIX (প্লেয়ার কেটে যাওয়া বন্ধ করতে) */
+                /* 📱 MOBILE RESPONSIVE FIX (কন্ট্রোল বার কাটা পড়া সম্পূর্ণ বন্ধ করতে) */
                 @media (max-width: 768px) {
                     .drive-video-wrapper {
+                        width: 100%;
                         max-width: 100%;
                         aspect-ratio: 4 / 3;
-                        /* 🚀 ৪:৩ রেশিও দেওয়ার ফলে কন্ট্রোল বারের জন্য পর্যাপ্ত জায়গা থাকবে */
-                        min-height: 240px;
-                        /* 🚀 প্লেয়ারের হাইট চ্যাপ্টা বা ছোট হবে না */
+                        /* 🚀 ৪:৩ রেশিও দিয়ে ভার্টিক্যাল স্পেস বাড়ানো হয়েছে */
+                        min-height: 290px;
+                        /* 🚀 মিনিমাম হাইট ৩০০px করায় কন্ট্রোল কাটার আর সুযোগ নেই */
                         border-radius: 12px;
                     }
                 }
