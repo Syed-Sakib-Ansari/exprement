@@ -17,7 +17,7 @@ function generateMovieSlug(title) {
 // 🚀 DATABASE, HIGH-SPEED CACHING & INSTANT O(1) INDEXING
 // ==========================================
 const contentData = [];
-const categoryIndexMap = {}; 
+const categoryIndexMap = {};
 
 function buildCategoryIndex() {
     Object.keys(categoryIndexMap).forEach(key => delete categoryIndexMap[key]);
@@ -31,11 +31,11 @@ function buildCategoryIndex() {
 }
 
 function processContentItems() {
-    contentData.forEach((item, index) => { 
-        item.id = index; 
-        item.slug = generateMovieSlug(item.title); 
+    contentData.forEach((item, index) => {
+        item.id = index;
+        item.slug = generateMovieSlug(item.title);
     });
-    buildCategoryIndex(); 
+    buildCategoryIndex();
 }
 
 // ==========================================
@@ -90,8 +90,8 @@ async function fetchAndCacheNetworkDatabase() {
             const db = JSON.parse(text);
             if (Array.isArray(db) && db.length > 0) {
                 await setIDBCache('moviedakhi_db_cache', text);
-                contentData.length = 0; 
-                contentData.push(...db); 
+                contentData.length = 0;
+                contentData.push(...db);
                 processContentItems();
             }
         }
@@ -108,15 +108,15 @@ function triggerBackgroundUpdateCheck() {
             if (response.ok) {
                 const text = await response.text();
                 const cachedText = await getIDBCache('moviedakhi_db_cache');
-                
+
                 if (text !== cachedText) {
                     const db = JSON.parse(text);
                     if (Array.isArray(db) && db.length > 0) {
                         await setIDBCache('moviedakhi_db_cache', text);
-                        contentData.length = 0; 
-                        contentData.push(...db); 
+                        contentData.length = 0;
+                        contentData.push(...db);
                         processContentItems();
-                        
+
                         if (currentView === 'home') {
                             initHeroSlider();
                             renderRecentAdds();
@@ -130,7 +130,7 @@ function triggerBackgroundUpdateCheck() {
         } catch (err) {
             console.error("Background auto-update check failed safely.", err);
         }
-    }, 1200); 
+    }, 1200);
 }
 
 async function loadContentDatabase() {
@@ -141,8 +141,8 @@ async function loadContentDatabase() {
             if (Array.isArray(db) && db.length > 0) {
                 contentData.length = 0;
                 contentData.push(...db);
-                processContentItems(); 
-                triggerBackgroundUpdateCheck(); 
+                processContentItems();
+                triggerBackgroundUpdateCheck();
                 return;
             }
         } catch (e) {
@@ -166,6 +166,7 @@ const categories = [
 let currentItem = null;
 let downloadClickCount = 0;
 let currentEpisodeIndex = null;
+let currentServerIndex = 1; // 🚀 নতুন সার্ভার ট্র্যাক করার জন্য
 let preSearchState = null;
 let currentView = 'home';
 let sliderInterval;
@@ -221,6 +222,80 @@ function cleanEmbedUrl(rawUrl) {
 }
 
 // ==========================================
+// 🚀 EPISODE-STYLE MULTI-SERVER ENGINE
+// ==========================================
+function renderServerButtons() {
+    const serverSec = document.getElementById('serverSection');
+    const serverList = document.getElementById('serverList');
+    if (!serverSec || !serverList || !currentItem) return;
+
+    // 🚀 ১. যদি ওয়েব সিরিজ হয়, তবে সার্ভার অপশন পুরোপুরি হাইড করবে এবং ১ম এপিসোড প্লে করবে
+    const isSeries = currentItem.episodes && currentItem.episodes.length > 0;
+
+    if (isSeries) {
+        serverSec.classList.add('hidden');
+        const epIndex = currentEpisodeIndex !== null ? currentEpisodeIndex : 0;
+        if (currentItem.episodes[epIndex] && currentItem.episodes[epIndex].embedUrl) {
+            loadIframeUrl(currentItem.episodes[epIndex].embedUrl);
+        }
+        return;
+    }
+
+    // 🚀 ২. শুধু সিঙ্গেল মুভির জন্য স্টাইলিশ সার্ভার বাটন দেখাবে
+    const target = currentItem;
+
+    const servers = [
+        { key: 'embedUrl', label: 'Server 1 (Primary)', },
+        { key: 'embedUrl2', label: 'Server 2 (Super Fast)', },
+        { key: 'embedUrl3', label: 'Server 3 (VIP Stream)', },
+        { key: 'embedUrl4', label: 'Server 4 (Alternative)', }
+    ];
+
+    const activeServers = servers.filter(s => target[s.key] && typeof target[s.key] === 'string' && target[s.key].trim() !== '');
+
+    if (activeServers.length > 0) {
+        serverSec.classList.remove('hidden');
+        serverList.innerHTML = '';
+
+        activeServers.forEach((s, idx) => {
+            const btn = document.createElement('button');
+            // 🚀 প্রতিটি সার্ভার বাটনের জন্য আলাদা কালার ক্লাস যুক্ত করা হচ্ছে (server-btn-1, server-btn-2...)
+            btn.className = `server-btn server-btn-${idx + 1} ${idx === 0 ? 'active' : ''}`;
+            btn.innerHTML = `<i class="fas fa-server text-[10px]"></i> ${s.label}`;
+            btn.onclick = () => playServer(target[s.key], btn);
+            serverList.appendChild(btn);
+        });
+
+        // প্রথম সার্ভার প্লে করবে
+        loadIframeUrl(target[activeServers[0].key]);
+    } else {
+        serverSec.classList.add('hidden');
+    }
+}
+
+// সার্ভার বাটনে ক্লিক করলে এই ফাংশনটি কল হবে
+function playServer(rawUrl, btnElement) {
+    // 🚀 ১. ইউজার অন্য কোনো সার্ভার বাটনে ক্লিক করলেই স্মার্ট লিংক অ্যাড নতুন ট্যাবে ওপেন হবে
+    const smartAdLink = "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+    window.open(smartAdLink, '_blank');
+
+    // 🚀 ২. ক্লিক করা বাটনের স্টাইল একটিভ/ড্যাপসা করা এবং নির্বাচিত ভিডিও প্লে করা
+    document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
+    if (btnElement) btnElement.classList.add('active');
+    loadIframeUrl(rawUrl);
+}
+
+// প্লেয়ারে আইফ্রেম লোড করার অরিজিনাল কোড
+function loadIframeUrl(rawUrl) {
+    let url = cleanEmbedUrl(rawUrl);
+    const actualVideo = document.getElementById('actualVideo');
+    if (actualVideo) {
+        actualVideo.classList.remove('hidden');
+        actualVideo.innerHTML = `<iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" src="${url}" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;"></iframe>`;
+    }
+}
+
+// ==========================================
 // 🚀 CATEGORY MENU & NAVIGATION RENDER
 // ==========================================
 function renderCategories() {
@@ -254,7 +329,7 @@ function renderCategories() {
         mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
         mobileItem.innerText = label;
         mobileItem.href = realLink;
-mobileItem.onclick = (e) => {
+        mobileItem.onclick = (e) => {
             e.preventDefault();
             toggleCategoryMenu(false, false, true);
             switchView('library', cat, true); // ✅ 'true' (pushState) দেওয়া হয়েছে যাতে আগের ক্যাটাগরি হিস্ট্রিতে সেভ থাকে
@@ -293,7 +368,7 @@ function toggleCategoryMenu(show, triggerBack = true) {
         savedScrollY = window.scrollY || document.documentElement.scrollTop;
 
         const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || null;
-        
+
         // 🚀 ২. বর্তমান পজিশনটি ব্যাকগ্রাউন্ড হিস্ট্রিতে লক করা
         try {
             window.history.replaceState({
@@ -303,7 +378,7 @@ function toggleCategoryMenu(show, triggerBack = true) {
                 displayedCount: libraryDisplayedCount,
                 validDakhiState: true
             }, '');
-            
+
             window.history.pushState({
                 isMenuOpen: true,
                 view: currentView,
@@ -315,7 +390,7 @@ function toggleCategoryMenu(show, triggerBack = true) {
         } catch (e) { }
 
         categoryMenu.classList.remove('hidden');
-        void categoryMenu.offsetWidth; 
+        void categoryMenu.offsetWidth;
         categoryMenu.classList.add('active');
 
         document.body.style.position = 'fixed';
@@ -466,7 +541,7 @@ window.addEventListener('resize', () => {
 // ==========================================
 function initHeroSlider() {
     if (!sliderWrapper || !sliderDots) return;
-    
+
     const slides = [...(categoryIndexMap["Recent Adds"] || []), ...(categoryIndexMap["Bollywood"] || []), ...(categoryIndexMap["Hollywood"] || [])].slice(0, 6);
     if (slides.length === 0) return;
 
@@ -480,7 +555,7 @@ function initHeroSlider() {
     slides.forEach((movie, index) => {
         const slide = document.createElement('div');
         slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
-        
+
         const loadingAttr = index === 0 ? 'eager' : 'lazy';
         const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
 
@@ -522,7 +597,7 @@ function initHeroSlider() {
             startSlideTimer();
         }
     };
-    
+
     setTimeout(() => {
         const activeSlide = document.querySelector('.slide.active .slide-content');
         if (activeSlide) { activeSlide.style.opacity = '1'; activeSlide.style.transform = 'translateY(0)'; }
@@ -638,7 +713,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
                 } else {
                     url.searchParams.delete('category');
                 }
-                
+
                 url.searchParams.delete('movie');
 
                 if (mode === 'replace') {
@@ -648,7 +723,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
                 }
                 updateCanonical(url.href);
             }
-            
+
             // 🚀 নতুন পেজে ঢুকলে সবসময় পেজের ওপরে (0) স্ক্রল হবে
             window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         } catch (e) {
@@ -661,9 +736,9 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 // 🚀 CARD GENERATOR & CONTENT RENDERING
 // ==========================================
 function createMovieCard(item) {
-    const card = document.createElement('a'); 
+    const card = document.createElement('a');
     const movieSlug = item.slug || generateMovieSlug(item.title);
-card.href = `/${movieSlug}.html`;
+    card.href = `/${movieSlug}.html`;
     card.className = 'movie-card relative flex flex-col group cursor-pointer no-underline';
 
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
@@ -690,25 +765,25 @@ card.href = `/${movieSlug}.html`;
             <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
             ${infoText}
         </div>`;
-        
-        card.onclick = (e) => {
-            e.preventDefault(); 
-            openModal(item.id);
-        };
+
+    card.onclick = (e) => {
+        e.preventDefault();
+        openModal(item.id);
+    };
     return card;
 }
 
 function renderRecentAdds() {
     if (!recentAddsGrid) return;
     recentAddsGrid.innerHTML = '';
-    
+
     const recentItems = categoryIndexMap["Recent Adds"] || [];
     const fragment = document.createDocumentFragment();
-    
+
     recentItems.slice(0, 18).forEach((item, index) => {
         fragment.appendChild(createMovieCard(item));
     });
-    
+
     recentAddsGrid.appendChild(fragment);
 }
 
@@ -735,16 +810,16 @@ function renderCategorySections(forceRenderAll = false) {
     function loadCategorySection(targetSection) {
         const cat = targetSection.getAttribute('data-category-lazy');
         const lazyGrid = targetSection.querySelector('.lazy-grid');
-        
+
         const filtered = categoryIndexMap[cat] || [];
 
         lazyGrid.innerHTML = '';
         const cardsFragment = document.createDocumentFragment();
-        
+
         filtered.slice(0, 11).forEach((item, index) => {
             cardsFragment.appendChild(createMovieCard(item));
         });
-        
+
         lazyGrid.appendChild(cardsFragment);
 
         const displayName = cat === 'Korean Country' ? 'Korean' : cat;
@@ -809,7 +884,7 @@ function initLibraryRender(filter = "all", initialCount = 0) {
 
     if (!libraryGrid.dataset.initialized) {
         libraryGrid.dataset.originalClasses = libraryGrid.className;
-        libraryGrid.className = 'relative w-full'; 
+        libraryGrid.className = 'relative w-full';
         libraryGrid.dataset.initialized = 'true';
     }
 
@@ -827,11 +902,11 @@ function initLibraryRender(filter = "all", initialCount = 0) {
         subGrid = null;
     }
 
-if (subGrid) {
+    if (subGrid) {
         subGrid.classList.remove('hidden');
         let currentRendered = subGrid.children.length;
         let targetRender = Math.max(initialCount, parseInt(subGrid.dataset.displayedCount || ITEMS_PER_PAGE, 10));
-        
+
         // 🚀 ব্যাকে আসার পর যদি আগের চেয়ে বেশি আইটেম দরকার হয়, তা রেন্ডার করে পেজের হাইট আগের জায়গায় আনবে
         if (currentRendered < targetRender && currentRendered < libraryData.length) {
             const fragment = document.createDocumentFragment();
@@ -888,12 +963,12 @@ if (subGrid) {
 function renderLibraryChunk() {
     if (isLoading) return;
     isLoading = true;
-    
+
     const nextCount = libraryDisplayedCount + ITEMS_PER_PAGE;
     const chunk = libraryData.slice(libraryDisplayedCount, nextCount);
-    
+
     let subGrid = document.getElementById(activeSubGridId);
-    
+
     if (chunk.length > 0 && subGrid) {
         const fragment = document.createDocumentFragment();
         chunk.forEach((item, index) => {
@@ -904,14 +979,14 @@ function renderLibraryChunk() {
         subGrid.dataset.displayedCount = libraryDisplayedCount;
         updateLoadMoreVisibility();
     }
-    
+
     isLoading = false;
 }
 
 function updateLoadMoreVisibility() {
     const loading = document.getElementById('loadingIndicator');
     if (!loading) return;
-    
+
     if (libraryDisplayedCount < libraryData.length) {
         loading.classList.remove('hidden');
     } else {
@@ -928,32 +1003,40 @@ function openModal(id) {
 }
 
 function executeActualOpenModal(id) {
-    if(document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
+    if (document.getElementById('mobileFab')) document.getElementById('mobileFab').classList.add('fab-hidden');
 
     const item = contentData.find(m => m.id === id);
     if (!item) return;
 
     const movieSlug = item.slug || generateMovieSlug(item.title);
-    const newUrl = new URL(window.location.origin + '/' + movieSlug + '.html');
-    
+
+    // 🚀 BULLETPROOF URL CREATION (ক্র্যাশ প্রতিরোধ কোড)
+    let newUrl;
+    try {
+        const baseOrigin = (window.location.origin && window.location.origin !== 'null') ? window.location.origin : 'https://moviedakhi.com';
+        newUrl = new URL('/' + movieSlug + '.html', baseOrigin);
+    } catch (e) {
+        newUrl = { href: window.location.href };
+    }
+
     const currentState = history.state || { view: currentView, validDakhiState: true };
     try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', newUrl); } catch (e) { }
+    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', (newUrl.href || newUrl)); } catch (e) { }
 
     const isSeries = item.episodes && item.episodes.length > 0;
     const contentType = isSeries ? "Web Series All Episodes" : "Full Movie";
     const titleKey = item.title;
-    
+
     const yearMatch = titleKey.match(/\((\d{4})\)/);
     const extractedYear = yearMatch ? yearMatch[1] : new Date().getFullYear();
     const releaseYear = item.year || extractedYear;
 
     const titleHasYear = titleKey.includes(`(${releaseYear})`);
     const SEOFullTitle = titleHasYear ? titleKey : `${titleKey} (${releaseYear})`;
-    const cleanLang = item.language || "Dual Audio [Hindi-English] / ESub"; 
+    const cleanLang = item.language || "Dual Audio [Hindi-English] / ESub";
 
     document.title = `${SEOFullTitle} [${cleanLang}] | Index of / Download 4K 1080p, Watch Online Free ${contentType} - MovieDakhi`;
-    
+
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
         metaDescription = document.createElement('meta');
@@ -1016,10 +1099,10 @@ function executeActualOpenModal(id) {
     setMetaTag('name', 'twitter:title', document.title);
     setMetaTag('name', 'twitter:description', metaDescription.content);
     setMetaTag('name', 'twitter:card', 'summary_large_image');
-    
+
     const rawPosterUrl = item.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
     const moviePosterUrl = rawPosterUrl.includes('postimg.cc')
-        ? rawPosterUrl 
+        ? rawPosterUrl
         : `https://wsrv.nl/?url=${encodeURIComponent(rawPosterUrl)}&w=600&output=jpeg&q=80`;
 
     setMetaTag('property', 'og:image', moviePosterUrl);
@@ -1029,16 +1112,16 @@ function executeActualOpenModal(id) {
     const isSameMovie = modalTitleElem && modalTitleElem.innerText === titleKey;
 
     currentItem = item;
-    if(modalTitleElem) modalTitleElem.innerText = titleKey;
-    
-    if(document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
-    if(document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
+    if (modalTitleElem) modalTitleElem.innerText = titleKey;
 
-    const dynamicFooterKeywords = isSeries ? 
+    if (document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
+    if (document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
+
+    const dynamicFooterKeywords = isSeries ?
         `index of /${titleKey} download, ${titleKey} web series all episodes download, ${titleKey} complete season google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english series, ${titleKey} english subtitles esub, katmoviehd ${titleKey} series, vegamovies ${titleKey} season, download web series free movie-dakhi.` :
         `index of /${titleKey} download, ${titleKey} full movie watch online free hd, download ${titleKey} google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english download, ${titleKey} english subtitles esub, 1080p bluray download filmyzilla, 720p webrip vegamovies, bolly4u full movie download.`;
 
-    if(document.getElementById('modalDesc')) {
+    if (document.getElementById('modalDesc')) {
         document.getElementById('modalDesc').innerHTML = `
             <div class="seo-rich-layout text-left space-y-5 font-sans text-xs md:text-[13px] text-gray-300 antialiased not-italic select-text">
                 <div class="flex flex-wrap items-center gap-3 border-b border-white/5 pb-3">
@@ -1113,43 +1196,40 @@ function executeActualOpenModal(id) {
 
     const seriesSec = document.getElementById('seriesSection');
     const epList = document.getElementById('episodeList');
-    if (item.episodes && seriesSec && epList) {
+
+    // 🚀 ওয়েব সিরিজ হলে এপিসোড বাটনগুলো তৈরি করবে
+    if (item.episodes && item.episodes.length > 0 && seriesSec && epList) {
         seriesSec.classList.remove('hidden');
-        document.getElementById('seriesInfoText').innerText = item.seriesInfo;
+        if (document.getElementById('seriesInfoText')) {
+            document.getElementById('seriesInfoText').innerText = item.seriesInfo || "Season 1 • Episodes";
+        }
         epList.innerHTML = '';
         item.episodes.forEach((ep, idx) => {
             const btn = document.createElement('button');
-            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase`;
-            if (idx === (currentEpisodeIndex || 0)) btn.classList.add('active');
-            btn.innerText = ep.title;
+            btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase ${idx === (currentEpisodeIndex || 0) ? 'active' : ''}`;
+            btn.innerText = ep.title || `Episode ${idx + 1}`;
             btn.onclick = () => playEpisode(idx, btn);
             epList.appendChild(btn);
         });
-} else if (seriesSec) { 
-        seriesSec.classList.add('hidden'); 
-    }
 
-    let rawUrl = item.episodes && currentEpisodeIndex !== null ? item.episodes[currentEpisodeIndex].embedUrl : (item.episodes ? item.episodes[0].embedUrl : item.embedUrl);
-    let url = cleanEmbedUrl(rawUrl);
-
-    const actualVideoContainer = document.getElementById('actualVideo');
-
-    if (actualVideoContainer) {
-        actualVideoContainer.classList.remove('hidden');
-        const existingIframe = document.getElementById('videoIframe');
-        const needsNewIframe = !isSameMovie || !existingIframe || existingIframe.src === "" || existingIframe.src === "about:blank";
-
-        if (needsNewIframe) {
-            actualVideoContainer.innerHTML = `<iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" src="${url}" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;"></iframe>`;
+        // ১ম পর্বের ভিডিও সাথে সাথে প্লে করবে
+        const currentEp = item.episodes[currentEpisodeIndex || 0];
+        if (currentEp && currentEp.embedUrl) {
+            loadIframeUrl(currentEp.embedUrl);
         }
+    } else if (seriesSec) {
+        seriesSec.classList.add('hidden');
     }
 
     const modal = document.getElementById('movieModal');
     if (modal) {
         modal.classList.remove('hidden');
-        void modal.offsetWidth; 
+        void modal.offsetWidth;
         modal.classList.add('active');
     }
+
+    // 🚀 সিঙ্গেল মুভি হলে সার্ভার বাটন জেনারেট করবে
+    renderServerButtons();
 
     document.body.style.position = 'fixed';
     document.body.style.top = `-${savedScrollY}px`;
@@ -1163,12 +1243,12 @@ function closeModal(triggerBack = false, isUserAction = false) {
     const modal = document.getElementById('movieModal');
     if (modal) {
         modal.classList.remove('active');
-        
+
         // 🛑 STOP VIDEO: আইফ্রেম মুছে দেওয়ার ফলে ভিডিও এবং অডিও সাথে সাথে বন্ধ হয়ে যাবে
         setTimeout(() => {
             const actualVideo = document.getElementById('actualVideo');
             if (actualVideo) {
-                actualVideo.innerHTML = ''; 
+                actualVideo.innerHTML = '';
                 actualVideo.classList.add('hidden');
             }
             modal.classList.add('hidden');
@@ -1192,10 +1272,10 @@ function closeModal(triggerBack = false, isUserAction = false) {
     } else if (isUserAction) {
         const url = new URL(window.location);
         url.searchParams.delete('movie');
-        try { 
+        try {
             const currentState = history.state || { view: currentView, validDakhiState: true };
-            window.history.replaceState({ ...currentState, isModalOpen: false }, '', url.pathname + (url.search ? url.search : '')); 
-        } catch (e) {}
+            window.history.replaceState({ ...currentState, isModalOpen: false }, '', url.pathname + (url.search ? url.search : ''));
+        } catch (e) { }
         updateCanonical(url.href);
         document.title = currentView === 'home' ? "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD" : "All Movies & Web Series - MovieDakhi";
     }
@@ -1256,33 +1336,28 @@ function handleDownloadClick() {
 }
 
 function playEpisode(index, btnElement) {
-    const episode = currentItem.episodes[index];
     document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
     btnElement.classList.add('active');
 
-    let url = cleanEmbedUrl(episode.embedUrl);
-
-    const actualVideo = document.getElementById('actualVideo');
-    if (actualVideo) {
-        actualVideo.classList.remove('hidden');
-
-        const existingIframe = document.getElementById('videoIframe');
-        
-        if (!existingIframe || existingIframe.src !== url) {
-            actualVideo.innerHTML = `<iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" src="${url}" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;"></iframe>`;
-        }
-    }
-
     currentEpisodeIndex = index;
     downloadClickCount = 0;
+
+    // 🚀 ওয়েব সিরিজের পর্বের জন্য সরাসরি ভিডিও প্লে হবে (সার্ভার বাটন ছাড়া)
+    const ep = currentItem.episodes[index];
+    if (ep && ep.embedUrl) {
+        loadIframeUrl(ep.embedUrl);
+    }
+
+    // সার্ভার সেকশন লুকিয়ে রাখবে
+    const serverSec = document.getElementById('serverSection');
+    if (serverSec) serverSec.classList.add('hidden');
+
     const downloadBtn = document.getElementById('mainDownloadBtn');
-    document.getElementById('downloadBtnText').innerText = "Download";
-
-    downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-    downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
-
-    const wave = downloadBtn.querySelector('.animate-shine-wave');
-    if (wave) wave.classList.remove('hidden');
+    if (downloadBtn) {
+        document.getElementById('downloadBtnText').innerText = "Download";
+        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+        downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+    }
 }
 
 // ==========================================
@@ -1321,7 +1396,7 @@ if (searchInput) {
         } else {
             if (preSearchState) {
                 switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
-                preSearchState = null; 
+                preSearchState = null;
             } else {
                 initLibraryRender();
             }
@@ -1394,13 +1469,13 @@ window.addEventListener('beforeunload', () => {
 // 🚀 DOM CONTENT LOADED - APPLICATION INIT
 // ==========================================
 document.addEventListener('DOMContentLoaded', async () => {
-    
+
     const seoContent = document.getElementById('seo-ssr-content');
     if (seoContent) {
         seoContent.style.display = 'none';
     }
-    
-    await databaseLoadPromise; 
+
+    await databaseLoadPromise;
 
     const reloadScroll = sessionStorage.getItem('MovieDakhi_ExactScroll');
     const reloadCount = sessionStorage.getItem('MovieDakhi_Count');
@@ -1422,11 +1497,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     initHeroSlider();
     renderRecentAdds();
     renderCategorySections(isRestoring);
-    
+
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view') || 'home';
     const category = params.get('category');
-    
+
     let movieSlug = params.get('movie');
 
     if (!movieSlug) {
@@ -1440,7 +1515,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     const isBlob = window.location.protocol === 'blob:';
-    
+
     if (history.state && !movieSlug) {
         const state = history.state;
         finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY || 0);
@@ -1462,12 +1537,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-if (movieSlug) {
+    if (movieSlug) {
         const targetMovie = contentData.find(m => m.slug === movieSlug);
         if (targetMovie) {
             setTimeout(() => {
                 openModal(targetMovie.id);
-            }, 300); 
+            }, 300);
         }
     }
 
@@ -1515,9 +1590,9 @@ window.addEventListener('popstate', (event) => {
         const targetCount = state?.displayedCount || 30;
 
         updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
-        
+
         switchView(targetView, targetCat, false, targetCount);
-        
+
         requestAnimationFrame(() => {
             window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' });
             setTimeout(() => {
@@ -1560,17 +1635,17 @@ function showToast(message) {
 function initWelcomePopup() {
     const popup = document.getElementById('welcomePopup');
     const content = document.getElementById('welcomePopupContent');
-    
+
     // লোকাল স্টোরেজ চেক করবে (যাতে বারবার বিরক্ত না করে)
     if (!localStorage.getItem('MovieDakhi_WelcomeShown')) {
         // ৩ সেকেন্ড পর পপআপ আসবে
         setTimeout(() => {
-            if(popup) {
+            if (popup) {
                 popup.classList.remove('hidden');
                 void popup.offsetWidth; // Trigger reflow for animation
                 popup.classList.remove('opacity-0');
-                if(content) content.classList.remove('scale-95');
-                
+                if (content) content.classList.remove('scale-95');
+
                 // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে
                 document.body.style.overflow = 'hidden';
             }
@@ -1581,19 +1656,19 @@ function initWelcomePopup() {
 function closeWelcomePopup() {
     const popup = document.getElementById('welcomePopup');
     const content = document.getElementById('welcomePopupContent');
-    
+
     if (popup) {
         popup.classList.add('opacity-0');
-        if(content) content.classList.add('scale-95');
-        
+        if (content) content.classList.add('scale-95');
+
         setTimeout(() => {
             popup.classList.add('hidden');
             // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
             document.body.style.overflow = '';
-        }, 500); 
+        }, 500);
     }
-    
-// ব্রাউজারে সেভ করে রাখবে
+
+    // ব্রাউজারে সেভ করে রাখবে
     localStorage.setItem('MovieDakhi_WelcomeShown', 'true');
 }
 
@@ -1603,7 +1678,7 @@ function closeWelcomePopup() {
 // 🎛️ ON/OFF CONTROL SWITCH
 // 🟢 পপআপ চালু রাখতে চাইলে: true
 // 🔴 পপআপ বন্ধ রাখতে চাইলে: false
-const ENABLE_UNLOCK_CATEGORY_POPUP = true; 
+const ENABLE_UNLOCK_CATEGORY_POPUP = true;
 
 function showUnlockPopup() {
     // 🛑 যদি কন্ট্রোল সুইচ OFF (false) থাকে, তবে পপআপ ওপেন হবে না
@@ -1614,7 +1689,7 @@ function showUnlockPopup() {
         popup.classList.remove('hidden');
         void popup.offsetWidth; // Trigger reflow for animation
         popup.classList.remove('opacity-0');
-        
+
         // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে (পেছনের কনটেন্ট ব্লার হয়ে থাকবে)
         document.body.style.overflow = 'hidden';
     }
@@ -1637,7 +1712,7 @@ function handleWatchAdClick() {
     closeUnlockPopup();
 
     // ২. আপনার দেওয়া Smart Link টি নতুন ট্যাবে অ্যাড হিসেবে ওপেন করবে
-    const smartAdLink = "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e"; 
+    const smartAdLink = "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 }
 
@@ -1664,7 +1739,7 @@ function showNativeAdPopup() {
         // 🚀 Remove hidden states and bring popup to front
         popup.classList.remove('opacity-0', 'pointer-events-none', '-z-50');
         popup.classList.add('opacity-100', 'pointer-events-auto', 'z-[99990]');
-        
+
         // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে (হালকা ব্লার থাকবে)
         document.body.style.overflow = 'hidden';
     }
@@ -1676,7 +1751,7 @@ function closeNativeAdPopup() {
         // 🚀 Hide popup and send it to back
         popup.classList.remove('opacity-100', 'pointer-events-auto', 'z-[99990]');
         popup.classList.add('opacity-0', 'pointer-events-none', '-z-50');
-        
+
         setTimeout(() => {
             // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
             document.body.style.overflow = '';
@@ -1687,7 +1762,7 @@ function closeNativeAdPopup() {
 // 🚀 FULL BOX CLICK TRIGGER: বক্সে ক্লিক করলে অরিজিনাল অ্যাড লিংক ওপেন করে পপআপ বন্ধ করে দেবে
 // function handleNativeAdBoxClick(e) {
 //     if (e) e.stopPropagation();
-    
+
 //     const container = document.getElementById('container-faea46eecf01053afa6ef2518e3c0630');
 //     let adUrl = null;
 
@@ -1700,7 +1775,7 @@ function closeNativeAdPopup() {
 
 //     // যদি কোনো কারণে অ্যাড লোড হতে দেরি হয়, তবে ফলব্যাক স্মার্ট-লিংক ওপেন হবে
 //     const targetLink = adUrl || "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
-    
+
 //     window.open(targetLink, '_blank');
 //     closeNativeAdPopup();
 // }
@@ -1709,7 +1784,7 @@ function closeNativeAdPopup() {
 // ==========================================
 window.addEventListener('blur', () => {
     const popup = document.getElementById('nativeAdPopup');
-    
+
     // চেক করবে পপআপটি বর্তমানে ওপেন আছে কি না (opacity-100 আছে কি না)
     if (popup && popup.classList.contains('opacity-100')) {
         // যদি ওপেন থাকে এবং উইন্ডো ফোকাস হারায় (অর্থাৎ নতুন ট্যাবে অ্যাড ওপেন হয়), 

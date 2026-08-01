@@ -655,3 +655,64 @@ body {
     color: #0f1419 !important;
     text-shadow: none !important;
 }
+
+/* ========================================== */
+/* 🚀 ALWAYS BRIGHT SERVER BUTTONS (DYNAMIC ACTIVE) */
+/* ========================================== */
+.server-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    transition: all 0.25s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #ffffff;
+    opacity: 1 !important; /* 🌟 সব বাটন ডিফল্টভাবে ১০০% উজ্জ্বল ও স্পষ্ট থাকবে */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔴 Server 1 - Bright Vibrant Red */
+.server-btn-1 {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+}
+
+/* 🔵 Server 2 - Bright Cyan Blue */
+.server-btn-2 {
+    background: linear-gradient(135deg, #ff0d1a 0%, #b30000 100%);
+    box-shadow: 0 4px 15px rgba(255, 13, 26, 0.35);
+}
+
+/* 🟡 Server 3 - Bright Gold/Amber */
+.server-btn-3 {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
+}
+
+/* 🟣 Server 4 - Bright Purple */
+.server-btn-4 {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35);
+}
+
+/* 🖱️ Hover State - মাউস নিলে আরও ব্রাইট ও ভেসে উঠবে */
+.server-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.2);
+    border-color: #ffffff;
+}
+
+/* ⚡ Active/Selected State - যে বাটনটি ইউজার ক্লিক করেছে সেটি ড্যাপসা/প্রেসড হয়ে যাবে */
+.server-btn.active {
+    opacity: 0.5 !important; /* 📉 ক্লিক করা বাটনটি ড্যাপসা দেখাবে */
+    filter: brightness(0.6) contrast(1.2) !important;
+    transform: scale(0.95); /* একটু ভেতরের দিকে দাবানো (Pressed Down) ফিল দেবে */
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.8) !important; /* ইনার শ্যাডো */
+}
