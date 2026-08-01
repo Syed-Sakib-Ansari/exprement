@@ -1716,9 +1716,10 @@ function handleWatchAdClick() {
 }
 
 // ==========================================
-// 🚀 NATIVE AD POPUP LOGIC (Randomized Timer)
+// 🚀 NATIVE AD POPUP LOGIC (Randomized Timer & Backdrop Multi-Click Close)
 // ==========================================
-// 🚀 পপআপ অন হওয়ার সাথে সাথেই কেবল অ্যাড স্ক্রিপ্ট ইনজেক্ট হবে
+let nativeAdBackdropClickCount = 0; // 🚀 Clicks tracker
+
 function injectNativeAdScript() {
     const container = document.getElementById('container-faea46eecf01053afa6ef2518e3c0630');
     if (!container || container.dataset.loaded) return;
@@ -1732,14 +1733,13 @@ function injectNativeAdScript() {
 }
 
 function showNativeAdPopup() {
-    injectNativeAdScript(); // ⚡ পপআপ শো হলেই অ্যাড লোড শুরু হবে
+    nativeAdBackdropClickCount = 0; // 🚀 Reset counter whenever popup opens
+    injectNativeAdScript(); 
     const popup = document.getElementById('nativeAdPopup');
     if (popup) {
-        // 🚀 Remove hidden states and bring popup to front
         popup.classList.remove('opacity-0', 'pointer-events-none', '-z-50');
         popup.classList.add('opacity-100', 'pointer-events-auto', 'z-[99990]');
 
-        // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে (হালকা ব্লার থাকবে)
         document.body.style.overflow = 'hidden';
     }
 }
@@ -1747,15 +1747,28 @@ function showNativeAdPopup() {
 function closeNativeAdPopup() {
     const popup = document.getElementById('nativeAdPopup');
     if (popup) {
-        // 🚀 Hide popup and send it to back
         popup.classList.remove('opacity-100', 'pointer-events-auto', 'z-[99990]');
         popup.classList.add('opacity-0', 'pointer-events-none', '-z-50');
 
         setTimeout(() => {
-            // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
             document.body.style.overflow = '';
         }, 300);
     }
+}
+
+// 🚀 BACKDROP OUTSIDE CLICK HANDLER (Closes popup after > 2 clicks)
+const nativeAdPopupElem = document.getElementById('nativeAdPopup');
+if (nativeAdPopupElem) {
+    nativeAdPopupElem.addEventListener('click', (e) => {
+        // e.target === nativeAdPopupElem checks if the user clicked directly on the background
+        if (e.target === nativeAdPopupElem) {
+            nativeAdBackdropClickCount++;
+            if (nativeAdBackdropClickCount > 2) {
+                closeNativeAdPopup();
+                nativeAdBackdropClickCount = 0;
+            }
+        }
+    });
 }
 
 // 🚀 FULL BOX CLICK TRIGGER: বক্সে ক্লিক করলে অরিজিনাল অ্যাড লিংক ওপেন করে পপআপ বন্ধ করে দেবে
