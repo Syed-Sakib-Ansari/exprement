@@ -794,7 +794,7 @@ function renderCategorySections(forceRenderAll = false) {
 
     const observerOptions = {
         root: null,
-        rootMargin: '2500px 0px',
+        rootMargin: '400px 0px', /* মোবাইল স্ক্রিনের জন্য অপটিমাইজড মেমোরি সেভার */
         threshold: 0.01
     };
 

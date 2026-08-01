@@ -235,34 +235,24 @@ body {
 #mobileFab {
     position: fixed;
     top: 10px;
-    /* Placed exactly at the top for mobile */
     bottom: auto;
     right: 10px;
-    /* Placed exactly at the right for mobile */
     left: auto;
     width: 68px;
-    /* Proper circle size for mobile */
     height: 68px;
     background-color: var(--primary-red);
     border-radius: 50%;
     box-shadow: 0 4px 20px rgba(229, 9, 20, 0.5), inset 0 -3px 5px rgba(0, 0, 0, 0.2);
     z-index: 140;
-    /* Kept above everything, even the menu */
-    /* Updated transition to allow smooth hiding using transform and opacity */
     transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: grab;
     touch-action: none;
-    /* Crucial for preventing scrolling while dragging on touch screens */
-    animation: fab-intense-pulse 0.7s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
-    /* MOBILE FAB BUTTON ANIMATION */
+    will-change: transform;
+    /* 🚀 জিপিইউ প্রসেসর অপ্টিমাইজেশন (ফোন গরম হওয়া রোধ করবে) */
 }
 
 #fabIconContainer {
-    /* MOBILE FAB BUTTON ANIMATION */
     transition: transform 0.3s ease;
-    /* MOBILE FAB BUTTON ANIMATION */
-    animation: fab-intense-shake 1.8s infinite ease-in-out;
-    /* MOBILE FAB BUTTON ANIMATION */
 }
 
 /* MOBILE FAB BUTTON ANIMATION */
@@ -672,7 +662,8 @@ body {
     gap: 8px;
     cursor: pointer;
     color: #ffffff;
-    opacity: 1 !important; /* 🌟 সব বাটন ডিফল্টভাবে ১০০% উজ্জ্বল ও স্পষ্ট থাকবে */
+    opacity: 1 !important;
+    /* 🌟 সব বাটন ডিফল্টভাবে ১০০% উজ্জ্বল ও স্পষ্ট থাকবে */
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
@@ -710,9 +701,12 @@ body {
 
 /* ⚡ Active/Selected State - যে বাটনটি ইউজার ক্লিক করেছে সেটি ড্যাপসা/প্রেসড হয়ে যাবে */
 .server-btn.active {
-    opacity: 0.5 !important; /* 📉 ক্লিক করা বাটনটি ড্যাপসা দেখাবে */
+    opacity: 0.5 !important;
+    /* 📉 ক্লিক করা বাটনটি ড্যাপসা দেখাবে */
     filter: brightness(0.6) contrast(1.2) !important;
-    transform: scale(0.95); /* একটু ভেতরের দিকে দাবানো (Pressed Down) ফিল দেবে */
+    transform: scale(0.95);
+    /* একটু ভেতরের দিকে দাবানো (Pressed Down) ফিল দেবে */
     border: 2px solid rgba(255, 255, 255, 0.8) !important;
-    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.8) !important; /* ইনার শ্যাডো */
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.8) !important;
+    /* ইনার শ্যাডো */
 }
