@@ -1610,7 +1610,6 @@ window.addEventListener('popstate', (event) => {
 // 🚀 GLOBAL CLICK BACKDROP CLOSERS & TOASTS
 // ==========================================
 window.addEventListener('click', (e) => {
-    if (e.target === document.getElementById('movieModal') || e.target === document.getElementById('modalScrollContainer') || e.target === document.getElementById('modalFlexContainer')) closeModal(true, true);
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
 
