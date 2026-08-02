@@ -1,11 +1,16 @@
 export async function onRequest(context) {
     const { request, env } = context;
     
-    // ✅ নতুন: Edge Caching (সার্ভারের লোড কমাতে এবং স্পিড বাড়াতে)
-    const cache = caches.default;
-    let cachedResponse = await cache.match(request);
-    if (cachedResponse) {
-        return cachedResponse;
+const cache = caches.default;
+    // 🚀 ব্রাউজারে রিলোড বা নো-ক্যাশ রিকোয়েস্ট পাঠালে ক্যাশ বাইপাস করবে
+    const cacheHeader = request.headers.get('Cache-Control');
+    const isNoCache = cacheHeader && (cacheHeader.includes('no-cache') || cacheHeader.includes('no-store'));
+
+    if (!isNoCache) {
+        let cachedResponse = await cache.match(request);
+        if (cachedResponse) {
+            return cachedResponse;
+        }
     }
 
     const url = new URL(request.url);
@@ -128,7 +133,7 @@ export async function onRequest(context) {
                 return finalResponse;
 
             } else {
-                // 🚨 ৫. মুভি ডাটাবেজে না থাকলে একটি প্রপার ৪০৪ (Not Found) পেজ রিটার্ন করা হবে
+                // 🚨 ৫. মুভি ডাটাবেজে না থাকলে প্রপার ৪০৪ রিটার্ন করা হবে এবং ক্যাশ বন্ধ রাখা হবে
                 const notFoundHtml = `
                     <!DOCTYPE html>
                     <html lang="en">
@@ -154,7 +159,10 @@ export async function onRequest(context) {
                 return new Response(notFoundHtml, { 
                     status: 404, 
                     statusText: "Not Found",
-                    headers: { "content-type": "text/html;charset=UTF-8" } 
+                    headers: { 
+                        "content-type": "text/html;charset=UTF-8",
+                        "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"
+                    } 
                 });
             }
 
