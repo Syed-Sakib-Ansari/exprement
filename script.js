@@ -567,7 +567,7 @@ function initHeroSlider() {
 
     const windowWidth = window.innerWidth;
     let colCount = 3;
-    
+
     if (windowWidth >= 1280) colCount = 6;
     else if (windowWidth >= 1024) colCount = 5;
     else if (windowWidth >= 640) colCount = 4;
@@ -606,12 +606,12 @@ function initHeroSlider() {
         doubledItems.forEach(movie => {
             const imgCard = document.createElement('div');
             imgCard.className = 'w-full p-1.5 md:p-2 shrink-0 box-border';
-imgCard.innerHTML = `
+            imgCard.innerHTML = `
                 <div class="w-full aspect-[2/3] rounded-lg md:rounded-xl overflow-hidden shadow-lg border border-white/10 cursor-pointer hover:scale-105 transition-transform duration-300 bg-zinc-900">
                     <img src="${getOptimizedImageUrl(movie.posterUrl, 300)}" alt="${movie.title}" class="w-full h-full object-cover block" loading="lazy" decoding="async">
                 </div>
             `;
-            
+
             imgCard.onclick = () => openModal(movie.id);
             colDiv.appendChild(imgCard);
         });
@@ -864,7 +864,7 @@ function renderCategorySections(forceRenderAll = false) {
         targetSection.classList.add('opacity-100');
     }
 
-categories.filter(c => c !== 'all').forEach(cat => {
+    categories.filter(c => c !== 'all').forEach(cat => {
         const filtered = categoryIndexMap[cat] || [];
         if (filtered.length === 0) return;
 
@@ -1062,7 +1062,7 @@ function executeActualOpenModal(id) {
 
     document.title = `${SEOFullTitle} [${cleanLang}] | Index of / Download 4K 1080p, Watch Online Free ${contentType} - MovieDakhi`;
 
-document.title = `${SEOFullTitle} [${cleanLang}] | ${contentType} Media Details & Info - MovieDakhi`;
+    document.title = `${SEOFullTitle} [${cleanLang}] | ${contentType} Media Details & Info - MovieDakhi`;
 
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -1144,11 +1144,11 @@ document.title = `${SEOFullTitle} [${cleanLang}] | ${contentType} Media Details 
     if (document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
     if (document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
 
-const dynamicFooterKeywords = isSeries ?
+    const dynamicFooterKeywords = isSeries ?
         `${titleKey} web series overview, ${titleKey} episodes details, ${titleKey} season info, ${titleKey} dual audio hindi english series, ${titleKey} english subtitles esub, ${titleKey} media reference, movie-dakhi series review.` :
         `${titleKey} movie overview, ${titleKey} streaming details, ${titleKey} dual audio hindi english media, ${titleKey} english subtitles esub, ${titleKey} release info, movie-dakhi review.`;
 
-if (document.getElementById('modalDesc')) {
+    if (document.getElementById('modalDesc')) {
         document.getElementById('modalDesc').innerHTML = `
             <div class="seo-rich-layout text-left space-y-5 font-sans text-xs md:text-[13px] text-gray-300 antialiased not-italic select-text">
                 <div class="flex flex-wrap items-center gap-3 border-b border-white/5 pb-3">
@@ -1645,7 +1645,7 @@ if (movieModalElem) {
         if (window.innerWidth < 1024) return;
 
         const isInteractiveContent = e.target.closest('.drive-video-wrapper, #serverSection, #seriesSection, #socialJoinSection, #mainDownloadBtn, #modalDesc, .lang-badge, button, a, iframe, input');
-        
+
         if (!isInteractiveContent) {
             closeModal(true, true);
         }
@@ -1730,7 +1730,7 @@ function injectNativeAdScript() {
 
 function showNativeAdPopup() {
     nativeAdBackdropClickCount = 0; // 🚀 Reset counter whenever popup opens
-    injectNativeAdScript(); 
+    injectNativeAdScript();
     const popup = document.getElementById('nativeAdPopup');
     if (popup) {
         popup.classList.remove('opacity-0', 'pointer-events-none', '-z-50');

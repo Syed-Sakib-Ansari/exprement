@@ -21,7 +21,7 @@ export async function onRequest(context) {
     if (movieParam) {
         const redirectUrl = new URL(request.url);
         redirectUrl.pathname = `/${decodeURIComponent(movieParam)}.html`;
-        redirectUrl.search = ''; 
+        redirectUrl.search = '';
         return Response.redirect(redirectUrl.toString(), 301);
     }
 
@@ -62,13 +62,13 @@ export async function onRequest(context) {
             const response = await env.ASSETS.fetch(new URL('/index.html', request.url));
             let html = await response.text();
 
-const movieTitle = targetMovie.title;
+            const movieTitle = targetMovie.title;
             const movieDesc = `${movieTitle} Dual Audio [Hindi-English] HD Media Overview, Details & Streaming Information on MovieDakhi.`;
             const currentMovieUrl = `https://moviedakhi.com/${encodeURIComponent(movieSlug)}.html`;
 
             const rawPosterUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
-            const moviePosterUrl = rawPosterUrl.includes('postimg.cc') 
-                ? rawPosterUrl 
+            const moviePosterUrl = rawPosterUrl.includes('postimg.cc')
+                ? rawPosterUrl
                 : `https://wsrv.nl/?url=${encodeURIComponent(rawPosterUrl)}&w=600&output=jpeg&q=80`;
 
             const dynamicCanonicalTag = `<link rel="canonical" href="${currentMovieUrl}">`;
@@ -120,13 +120,13 @@ const movieTitle = targetMovie.title;
             `;
             html = html.replace('<div id="seo-ssr-content"></div>', `<div id="seo-ssr-content">${seoBodyContent}</div>`);
 
-            const finalResponse = new Response(html, { 
-                headers: { 
+            const finalResponse = new Response(html, {
+                headers: {
                     "content-type": "text/html;charset=UTF-8",
-                    "Cache-Control": "s-maxage=86400" 
-                } 
+                    "Cache-Control": "s-maxage=86400"
+                }
             });
-            
+
             context.waitUntil(cache.put(request, finalResponse.clone()));
             return finalResponse;
 
@@ -209,12 +209,12 @@ function render404() {
 </body>
 </html>`;
 
-    return new Response(notFoundHtml, { 
-        status: 404, 
+    return new Response(notFoundHtml, {
+        status: 404,
         statusText: "Not Found",
-        headers: { 
+        headers: {
             "content-type": "text/html;charset=UTF-8",
             "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"
-        } 
+        }
     });
 }
