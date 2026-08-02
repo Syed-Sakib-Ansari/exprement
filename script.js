@@ -36,7 +36,7 @@ async function getClientTMDBDetails(title, year) {
 
         const detail = await detailRes.json();
         const overview = detail.overview || '';
-        const cast = detail.credits?.cast?.slice(0, 6).map(c => c.name).join(', ') || '';
+        const cast = detail.credits?.cast?.slice(0, 5).map(c => c.name).join(', ') || '';
         const crew = detail.credits?.crew || [];
         const directorObj = crew.find(c => c.job === 'Director') || crew.find(c => c.known_for_department === 'Directing');
         const director = directorObj ? directorObj.name : '';
@@ -73,7 +73,6 @@ function renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear
                 </span>
             </div>
 
-            <!-- 📌 CAST & CREW SUMMARY -->
             <div class="p-4 bg-zinc-900/80 border border-white/10 rounded-xl space-y-2.5 text-[12px] shadow-lg">
                 <div class="flex flex-wrap items-center justify-between border-b border-white/[0.06] pb-2">
                     <span class="text-gray-400 font-medium">🎬 Director:</span>
@@ -89,7 +88,6 @@ function renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear
                 </div>
             </div>
 
-            <!-- 📝 STORYLINE & SYNOPSIS -->
             <div class="space-y-2 pt-2">
                 <h3 class="text-xs md:text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
                     <i class="fas fa-book-open text-red-500"></i> Detailed Storyline & Synopsis
@@ -99,7 +97,6 @@ function renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear
                 </p>
             </div>
 
-            <!-- 🌐 STREAMING & PLAYBACK GUIDE -->
             <div class="space-y-2">
                 <h3 class="text-xs md:text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
                     <i class="fas fa-tv text-blue-500"></i> Media & Playback Overview
@@ -109,7 +106,6 @@ function renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear
                 </p>
             </div>
 
-            <!-- 📊 TECHNICAL SPECIFICATIONS TABLE -->
             <div class="p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
                 <div class="flex items-center justify-between py-2 border-b border-white/[0.06]">
                     <span class="text-gray-400 font-medium">📌 Title</span>
@@ -256,7 +252,7 @@ function triggerBackgroundUpdateCheck() {
                 }
             }
         } catch (err) { }
-    }, 1200);
+    }, 4500);
 }
 
 async function loadContentDatabase() {
@@ -314,7 +310,8 @@ let activeSubGridId = null;
 function getOptimizedImageUrl(url, width = 300) {
     if (!url) return "";
     if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) return url;
-    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=75`;
+    const imgWidth = window.innerWidth < 640 ? Math.min(width, 200) : width;
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${imgWidth}&output=webp&q=75`;
 }
 
 function debounce(func, wait) {
@@ -536,6 +533,119 @@ function toggleCategoryMenu(show, triggerBack = true) {
     }
 }
 
+// ==========================================
+// 🚀 DRAGGABLE MOBILE FAB LOGIC
+// ==========================================
+const fab = document.getElementById('mobileFab');
+let isDragging = false;
+let startX, startY, initialX, initialY;
+let translateX = 0, translateY = 0;
+let moved = false;
+
+function dragStart(e) {
+    moved = false;
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+
+    const rect = fab.getBoundingClientRect();
+    initialX = rect.left;
+    initialY = rect.top;
+
+    fab.style.left = `${initialX}px`;
+    fab.style.top = `${initialY}px`;
+    fab.style.bottom = 'auto';
+    fab.style.right = 'auto';
+
+    fab.style.transition = 'none';
+    fab.setPointerCapture(e.pointerId);
+}
+
+function drag(e) {
+    if (!isDragging) return;
+
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+
+    if (Math.abs(dx) > 8 || Math.abs(dy) > 8) {
+        moved = true;
+    }
+
+    if (moved) {
+        let nextX = initialX + dx;
+        let nextY = initialY + dy;
+
+        const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+        const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+
+        nextX = Math.max(0, Math.min(nextX, maxX));
+        nextY = Math.max(0, Math.min(nextY, maxY));
+
+        translateX = nextX - initialX;
+        translateY = nextY - initialY;
+
+        fab.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+    }
+}
+
+function dragEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    fab.releasePointerCapture(e.pointerId);
+
+    if (moved) {
+        let newX = initialX + translateX;
+        let newY = initialY + translateY;
+
+        const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+        const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+
+        newX = Math.max(0, Math.min(newX, maxX));
+        newY = Math.max(0, Math.min(newY, maxY));
+
+        fab.style.transform = 'none';
+        fab.style.left = `${newX}px`;
+        fab.style.top = `${newY}px`;
+
+        translateX = 0;
+        translateY = 0;
+    }
+
+    void fab.offsetWidth;
+    fab.style.transition = 'background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+}
+
+if (fab) {
+    fab.addEventListener('pointerdown', dragStart);
+    fab.addEventListener('pointermove', drag);
+    fab.addEventListener('pointerup', dragEnd);
+    fab.addEventListener('pointercancel', dragEnd);
+
+    fab.addEventListener('click', (e) => {
+        if (moved) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
+        fab.classList.add('animation-stopped');
+        const isMenuOpen = categoryMenu.classList.contains('active');
+        toggleCategoryMenu(!isMenuOpen);
+    });
+}
+
+window.addEventListener('resize', () => {
+    if (!fab) return;
+    const maxX = document.documentElement.clientWidth - fab.offsetWidth;
+    const maxY = document.documentElement.clientHeight - fab.offsetHeight;
+    const currentX = fab.offsetLeft;
+    const currentY = fab.offsetTop;
+
+    if (currentX > maxX) fab.style.left = `${maxX}px`;
+    if (currentY > maxY) fab.style.top = `${maxY}px`;
+    if (currentX < 0) fab.style.left = `0px`;
+    if (currentY < 0) fab.style.top = `0px`;
+});
+
 function initHeroSlider() {
     const sliderWrapper = document.getElementById('sliderWrapper');
     if (!sliderWrapper || contentData.length === 0) return;
@@ -562,6 +672,7 @@ function initHeroSlider() {
     if (uniquePool.length === 0) return;
 
     const itemsPerCol = 8;
+    const heroImgWidth = windowWidth < 640 ? 180 : 250;
 
     for (let c = 0; c < colCount; c++) {
         const colDiv = document.createElement('div');
@@ -582,7 +693,7 @@ function initHeroSlider() {
             imgCard.className = 'w-full p-1.5 md:p-2 shrink-0 box-border';
             imgCard.innerHTML = `
                 <div class="w-full aspect-[2/3] rounded-lg md:rounded-xl overflow-hidden shadow-lg border border-white/10 cursor-pointer hover:scale-105 transition-transform duration-300 bg-zinc-900">
-                    <img src="${getOptimizedImageUrl(movie.posterUrl, 300)}" alt="${movie.title}" class="w-full h-full object-cover block" loading="lazy" decoding="async">
+                    <img src="${getOptimizedImageUrl(movie.posterUrl, heroImgWidth)}" alt="${movie.title}" class="w-full h-full object-cover block" loading="lazy" decoding="async">
                 </div>
             `;
 
@@ -712,7 +823,7 @@ function createMovieCard(item) {
         <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 transition-all duration-300">
             ${qualityBadgeHtml}
             ${languageBadgeHtml}
-            <img src="${getOptimizedImageUrl(item.posterUrl)}" alt="${item.title} Media Details & Poster" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110 will-change-transform" loading="lazy" decoding="async">
+            <img src="${getOptimizedImageUrl(item.posterUrl, 200)}" alt="${item.title} Media Details & Poster" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110 will-change-transform" loading="lazy" decoding="async">
             <div class="play-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center p-5 transition-opacity duration-500 ease-out">
                 <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-white flex items-center justify-center bg-black/20 backdrop-blur-[1px] shadow-[0_0_15px_rgba(0,0,0,0.6)] transform scale-90 group-hover:scale-100 transition-all duration-500 ease-out">
                     <i class="fas fa-play text-white text-xs md:text-sm ml-1"></i>
@@ -1025,7 +1136,6 @@ function executeActualOpenModal(id) {
         `${titleKey} web series overview, ${titleKey} episodes details, ${titleKey} season info, ${titleKey} dual audio hindi english series, ${titleKey} english subtitles esub, ${titleKey} media reference, movie-dakhi series review.` :
         `${titleKey} movie overview, ${titleKey} streaming details, ${titleKey} dual audio hindi english media, ${titleKey} english subtitles esub, ${titleKey} release info, movie-dakhi review.`;
 
-    // 🚀 TMDB DYNAMIC MODAL RENDER TRIGGER
     if (document.getElementById('modalDesc')) {
         renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear, contentType, dynamicFooterKeywords, null);
 
