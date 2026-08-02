@@ -537,7 +537,7 @@ window.addEventListener('resize', () => {
 });
 
 // ==========================================
-// 🚀 HERO SECTION VERTICAL MOVING CARDS ENGINE (PERFECT RESPONSIVE)
+// 🚀 HERO SECTION MOVING CARDS ENGINE (STRICTLY UNIQUE MOVIES PER COLUMN)
 // ==========================================
 function initHeroSlider() {
     const sliderWrapper = document.getElementById('sliderWrapper');
@@ -548,35 +548,49 @@ function initHeroSlider() {
     const windowWidth = window.innerWidth;
     let colCount = 3;
     
-    // 🖥️ স্ক্রিনের প্রস্থ অনুযায়ী নিখুঁত কলাম নির্ধারণ
     if (windowWidth >= 1280) colCount = 6;
     else if (windowWidth >= 1024) colCount = 5;
     else if (windowWidth >= 640) colCount = 4;
     else colCount = 3;
 
-    // 🚀 ১০০% উইডথ কভার করতে সিএসএস গ্রিডকে ডায়নামিক ফোরস করা (ডানপাশে ফাঁকা থাকবে না)
     sliderWrapper.style.gridTemplateColumns = `repeat(${colCount}, minmax(0, 1fr))`;
 
-    const pool = contentData.slice(0, 50);
-    if (pool.length === 0) return;
+    // 🚀 STEP 1: DEDUPLICATE DATABASE BY TITLE (Removes duplicate JSON entries)
+    const uniqueMoviesMap = new Map();
+    contentData.forEach(item => {
+        if (item && item.title && !uniqueMoviesMap.has(item.title)) {
+            uniqueMoviesMap.set(item.title, item);
+        }
+    });
+    const uniquePool = Array.from(uniqueMoviesMap.values());
+    if (uniquePool.length === 0) return;
+
+    const itemsPerCol = 8; // Number of unique movies per column
 
     for (let c = 0; c < colCount; c++) {
         const colDiv = document.createElement('div');
         const isUp = c % 2 === 0;
-        colDiv.className = `flex flex-col gap-3 md:gap-4 ${isUp ? 'marquee-col-up' : 'marquee-col-down'}`;
+        colDiv.className = `flex flex-col ${isUp ? 'marquee-col-up' : 'marquee-col-down'}`;
 
-        const colItems = pool.filter((_, idx) => idx % colCount === c);
+        // 🚀 STEP 2: DISJOINT SET ALLOCATION (Each column gets its own EXCLUSIVE list of movies)
+        const colItems = [];
+        const startIndex = (c * itemsPerCol) % uniquePool.length;
 
-        while (colItems.length < 8) {
-            colItems.push(...pool.slice(0, 6));
+        for (let i = 0; i < itemsPerCol; i++) {
+            colItems.push(uniquePool[(startIndex + i) % uniquePool.length]);
         }
 
+        // Double only for the seamless -50% loop boundary within its own column
         const doubledItems = [...colItems, ...colItems];
 
         doubledItems.forEach(movie => {
             const imgCard = document.createElement('div');
-            imgCard.className = 'w-full aspect-[2/3] rounded-lg md:rounded-xl overflow-hidden shadow-lg border border-white/10 shrink-0 cursor-pointer hover:scale-105 transition-transform duration-300';
-            imgCard.innerHTML = `<img src="${getOptimizedImageUrl(movie.posterUrl, 300)}" alt="${movie.title}" class="w-full h-full object-cover" loading="lazy">`;
+            imgCard.className = 'w-full p-1.5 md:p-2 shrink-0 box-border';
+            imgCard.innerHTML = `
+                <div class="w-full aspect-[2/3] rounded-lg md:rounded-xl overflow-hidden shadow-lg border border-white/10 cursor-pointer hover:scale-105 transition-transform duration-300 bg-zinc-900">
+                    <img src="${getOptimizedImageUrl(movie.posterUrl, 300)}" alt="${movie.title}" class="w-full h-full object-cover block" loading="lazy">
+                </div>
+            `;
             
             imgCard.onclick = () => openModal(movie.id);
             colDiv.appendChild(imgCard);
@@ -586,9 +600,11 @@ function initHeroSlider() {
     }
 }
 
-// 🚀 স্ক্রিন রি-সাইজ বা রোটেট করলেও অটোমেটিক গ্রিড অ্যাডজাস্ট হবে
+// 🚀 স্মার্ট রি-সাইজ লিসেনার: কেবল প্রস্থ (Width) পরিবর্তন হলেই এটি কাজ করবে, মোবাইলে স্ক্রল করার সময় রিস্টার্ট হবে না
+let lastWindowWidth = window.innerWidth;
 window.addEventListener('resize', debounce(() => {
-    if (currentView === 'home') {
+    if (currentView === 'home' && window.innerWidth !== lastWindowWidth) {
+        lastWindowWidth = window.innerWidth;
         initHeroSlider();
     }
 }, 250));

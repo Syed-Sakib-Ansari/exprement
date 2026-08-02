@@ -712,29 +712,35 @@ body {
 }
 
 /* ========================================== */
-/* 🚀 HERO SECTION MOVING MOVIE CARDS MARQUEE */
+/* 🚀 HERO SECTION MOVING MOVIE CARDS MARQUEE (SUB-PIXEL PRECISION FIX) */
 /* ========================================== */
 @keyframes marqueeScrollUp {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(0, -50%, 0); }
 }
 
 @keyframes marqueeScrollDown {
-    0% { transform: translateY(-50%); }
-    100% { transform: translateY(0); }
+    0% { transform: translate3d(0, -50%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
 }
 
 .marquee-col-up {
-    animation: marqueeScrollUp 45s linear infinite;
+    animation: marqueeScrollUp 40s linear infinite;
     will-change: transform;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .marquee-col-down {
-    animation: marqueeScrollDown 45s linear infinite;
+    animation: marqueeScrollDown 40s linear infinite;
     will-change: transform;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-/* 🚀 মাউস যে নির্দিষ্ট কলামের ওপর থাকবে, শুধুমাত্র সেই কলামটি থামবে (Pause) */
+/* 🚀 Pause animation smoothly on hover for individual column */
 .marquee-col-up:hover,
 .marquee-col-down:hover {
     animation-play-state: paused;
