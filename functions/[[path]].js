@@ -62,8 +62,8 @@ export async function onRequest(context) {
             const response = await env.ASSETS.fetch(new URL('/index.html', request.url));
             let html = await response.text();
 
-            const movieTitle = targetMovie.title;
-            const movieDesc = `Watch ${movieTitle} in Dual Audio HD Quality Free Online on MovieDakhi.`;
+const movieTitle = targetMovie.title;
+            const movieDesc = `${movieTitle} Dual Audio [Hindi-English] HD Media Overview, Details & Streaming Information on MovieDakhi.`;
             const currentMovieUrl = `https://moviedakhi.com/${encodeURIComponent(movieSlug)}.html`;
 
             const rawPosterUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";

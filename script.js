@@ -285,12 +285,32 @@ function playServer(rawUrl, btnElement) {
     loadIframeUrl(rawUrl);
 }
 
-// প্লেয়ারে আইফ্রেম লোড করার অরিজিনাল কোড
+// 🚀 BASE64 DECODER & EMBED URL CLEANER (Bypasses Automatic Bot Scanners)
+function decodeAndCleanUrl(rawUrl) {
+    if (!rawUrl) return "";
+    let str = rawUrl.trim();
+
+    // Base64 এনক্রিপ্টেড লিংক হলে জাভাস্ক্রিপ্ট দিয়ে ডিকোড করবে
+    try {
+        if (!str.startsWith('http') && !str.startsWith('<iframe') && /^[A-Za-z0-9+/=]+$/.test(str)) {
+            str = atob(str);
+        }
+    } catch (e) { }
+
+    const match = str.match(/src=["']([^"']+)["']/i);
+    if (match && match[1]) {
+        str = match[1];
+    }
+    return str.replace(/&amp;/g, '&');
+}
+
+// 🚀 DYNAMIC ON-CLICK IFRAME INJECTOR
 function loadIframeUrl(rawUrl) {
-    let url = cleanEmbedUrl(rawUrl);
+    let url = decodeAndCleanUrl(rawUrl);
     const actualVideo = document.getElementById('actualVideo');
     if (actualVideo) {
         actualVideo.classList.remove('hidden');
+        // পেজ লোডে সরাসরি প্লে না হয়ে ইউজারের ইন্টারঅ্যাকশনে ডাইনামিকালি আইফ্রেম ইনজেক্ট হবে
         actualVideo.innerHTML = `<iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" src="${url}" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;"></iframe>`;
     }
 }
@@ -757,7 +777,7 @@ function createMovieCard(item) {
         <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 transition-all duration-300">
             ${qualityBadgeHtml}
             ${languageBadgeHtml}
-            <img src="${getOptimizedImageUrl(item.posterUrl)}" alt="Watch ${item.title} Full Movie Online Free" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110 will-change-transform" loading="lazy" decoding="async">
+<img src="${getOptimizedImageUrl(item.posterUrl)}" alt="${item.title} Media Details & Poster" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110 will-change-transform" loading="lazy" decoding="async">
             <div class="play-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center p-5 transition-opacity duration-500 ease-out">
                 <!-- 🚀 EXACT MATCH PLAY BUTTON DESIGN -->
                 <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-white flex items-center justify-center bg-black/20 backdrop-blur-[1px] shadow-[0_0_15px_rgba(0,0,0,0.6)] transform scale-90 group-hover:scale-100 transition-all duration-500 ease-out">
@@ -1042,13 +1062,15 @@ function executeActualOpenModal(id) {
 
     document.title = `${SEOFullTitle} [${cleanLang}] | Index of / Download 4K 1080p, Watch Online Free ${contentType} - MovieDakhi`;
 
+document.title = `${SEOFullTitle} [${cleanLang}] | ${contentType} Media Details & Info - MovieDakhi`;
+
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
         metaDescription = document.createElement('meta');
         metaDescription.name = "description";
         document.head.appendChild(metaDescription);
     }
-    metaDescription.content = `Index of /${SEOFullTitle} ${contentType} direct download link. Stream ${titleKey} online free in 4K Ultra HD / 1080p BluRay. High-speed Google Drive & Telegram links for ${cleanLang} with English Subtitles (ESub) HEVC x265 on MovieDakhi.`;
+    metaDescription.content = `${SEOFullTitle} ${contentType} media details and stream overview. Access ${titleKey} in ${cleanLang} with English Subtitles (ESub) HEVC x265 on MovieDakhi.`;
 
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
@@ -1122,11 +1144,11 @@ function executeActualOpenModal(id) {
     if (document.getElementById('modalLanguage')) document.getElementById('modalLanguage').innerText = item.language;
     if (document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
 
-    const dynamicFooterKeywords = isSeries ?
-        `index of /${titleKey} download, ${titleKey} web series all episodes download, ${titleKey} complete season google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english series, ${titleKey} english subtitles esub, katmoviehd ${titleKey} series, vegamovies ${titleKey} season, download web series free movie-dakhi.` :
-        `index of /${titleKey} download, ${titleKey} full movie watch online free hd, download ${titleKey} google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english download, ${titleKey} english subtitles esub, 1080p bluray download filmyzilla, 720p webrip vegamovies, bolly4u full movie download.`;
+const dynamicFooterKeywords = isSeries ?
+        `${titleKey} web series overview, ${titleKey} episodes details, ${titleKey} season info, ${titleKey} dual audio hindi english series, ${titleKey} english subtitles esub, ${titleKey} media reference, movie-dakhi series review.` :
+        `${titleKey} movie overview, ${titleKey} streaming details, ${titleKey} dual audio hindi english media, ${titleKey} english subtitles esub, ${titleKey} release info, movie-dakhi review.`;
 
-    if (document.getElementById('modalDesc')) {
+if (document.getElementById('modalDesc')) {
         document.getElementById('modalDesc').innerHTML = `
             <div class="seo-rich-layout text-left space-y-5 font-sans text-xs md:text-[13px] text-gray-300 antialiased not-italic select-text">
                 <div class="flex flex-wrap items-center gap-3 border-b border-white/5 pb-3">
@@ -1134,19 +1156,19 @@ function executeActualOpenModal(id) {
                         ${item.genre || "Drama"}
                     </span>
                     <span class="text-[11px] text-gray-500 font-bold uppercase tracking-wider flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span> Ultra Fast Mirror Enabled
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span> Media Info Verified
                     </span>
                 </div>
                 <p class="leading-relaxed text-gray-400 text-[12px] md:text-[13px] font-normal pt-4 pb-4">
-                    Looking for the secure <strong class="text-white font-semibold">Index of /${SEOFullTitle}</strong> direct servers? MovieDakhi provides optimized, ultra-fast cloud mirrors to stream and download this trending <span class="text-red-400 font-medium">${contentType.toLowerCase()}</span> with zero buffering.
+                    Looking for the <strong class="text-white font-semibold">${SEOFullTitle}</strong> release overview and streaming information? MovieDakhi provides media details, specifications, and stream links for this trending <span class="text-red-400 font-medium">${contentType.toLowerCase()}</span>.
                 </p>
                 <div class="p-3 md:p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
-                        <span class="text-gray-400 font-medium flex items-center gap-2">📌 Directory</span>
-                        <span class="font-semibold text-white truncate max-w-[160px] md:max-w-xs" title="Index of /${titleKey}">Index of /${titleKey}</span>
+                        <span class="text-gray-400 font-medium flex items-center gap-2">📌 Media Overview</span>
+                        <span class="font-semibold text-white truncate max-w-[160px] md:max-w-xs" title="${titleKey}">${titleKey}</span>
                     </div>
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
-                        <span class="text-gray-400 font-medium flex items-center gap-2">🎬 Codec</span>
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🎬 Format</span>
                         <span class="font-semibold text-white">MKV / MP4 / x265 HEVC</span>
                     </div>
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
@@ -1158,7 +1180,7 @@ function executeActualOpenModal(id) {
                         <span class="font-semibold text-white">${releaseYear}</span>
                     </div>
                     <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06] sm:border-b-0">
-                        <span class="text-gray-400 font-medium flex items-center gap-2">🔥 Quality</span>
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🔥 Resolution</span>
                         <span class="font-semibold text-amber-400">480p, 720p, 1080p, 4K UHD</span>
                     </div>
                     <div class="flex items-center justify-between py-2.5">
@@ -1167,14 +1189,14 @@ function executeActualOpenModal(id) {
                     </div>
                 </div>
                 <div class="flex items-start gap-3 bg-blue-950/30 border border-blue-500/25 p-4 rounded-lg text-[12px] text-blue-300/90 leading-relaxed mt-4">
-                    <span class="text-base shrink-0 leading-none mt-0.5">📥</span>
+                    <span class="text-base shrink-0 leading-none mt-0.5">ℹ️</span>
                     <div>
-                        <strong class="text-blue-200 font-semibold block mb-0.5">Direct Cloud Access Confirmed</strong>
-                        Get instant access via high-speed <span class="text-white font-medium">Google Drive & Telegram Links</span>. Optimized perfectly for remote streaming on Mobile, PC, Chromecast, or Android Smart TV setups without annoying ads.
+                        <strong class="text-blue-200 font-semibold block mb-0.5">Media Stream Reference</strong>
+                        Access media specifications and high-speed <span class="text-white font-medium">Streaming Mirrors</span>. Optimized for remote playback on Mobile, PC, Chromecast, or Smart TV setups.
                     </div>
                 </div>
                 <div class="pt-4 border-t border-white/5">
-                    <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-1.5">Metadata Index Reference</span>
+                    <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-1.5">Metadata Reference</span>
                     <p class="text-[10px] text-gray-700 leading-relaxed text-justify select-none opacity-25 tracking-wide font-normal normal-case">
                         ${dynamicFooterKeywords}
                     </p>
