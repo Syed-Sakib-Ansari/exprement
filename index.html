@@ -87,7 +87,7 @@
         ]
         }
     </script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -157,16 +157,15 @@
     </div>
 
     <div id="homeView" class="view-container active">
-        <header id="heroSlider" class="relative h-[80vh] md:h-[90vh] w-full overflow-hidden bg-black">
-            <div id="sliderWrapper" class="absolute inset-0 w-full h-full"></div>
-            <div
-                class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/80 to-transparent z-20 pointer-events-none">
-            </div>
-            <div
-                class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0f0f0f] to-transparent z-20 pointer-events-none">
-            </div>
-            <div id="sliderDots" class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
-            </div>
+<!-- 🎬 MOVING MOVIE CARDS HERO SECTION (80% HEIGHT - CLEAN VIEW) -->
+        <header id="heroSlider" class="relative h-[100vh] w-full overflow-hidden bg-[#0f0f0f] flex items-center justify-center">
+            
+            <!-- 🚀 DYNAMIC RESPONSIVE WRAPPER (কোনো ফাঁকা জায়গা থাকবে না) -->
+            <div id="sliderWrapper" class="absolute inset-0 w-full h-full grid gap-2.5 sm:gap-3 md:gap-4 p-2 opacity-80 hover:opacity-100 transition-opacity pointer-events-auto overflow-hidden"></div>
+
+            <!-- 🚀 ২. ওপর ও নিচের বর্ডারের স্মুথ ফেড ওভারলে -->
+            <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0f0f0f] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0f0f0f] to-transparent z-10 pointer-events-none"></div>
         </header>
 
         <main class="px-6 md:px-12 py-12 relative z-30">

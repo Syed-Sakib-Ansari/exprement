@@ -537,73 +537,61 @@ window.addEventListener('resize', () => {
 });
 
 // ==========================================
-// 🚀 HERO SLIDER INITIALIZATION
+// 🚀 HERO SECTION VERTICAL MOVING CARDS ENGINE (PERFECT RESPONSIVE)
 // ==========================================
 function initHeroSlider() {
-    if (!sliderWrapper || !sliderDots) return;
+    const sliderWrapper = document.getElementById('sliderWrapper');
+    if (!sliderWrapper || contentData.length === 0) return;
 
-    const slides = [...(categoryIndexMap["Recent Adds"] || []), ...(categoryIndexMap["Bollywood"] || []), ...(categoryIndexMap["Hollywood"] || [])].slice(0, 6);
-    if (slides.length === 0) return;
-
-    let currentSlide = 0;
     sliderWrapper.innerHTML = '';
-    sliderDots.innerHTML = '';
 
-    const isMobile = window.innerWidth <= 768;
-    const sliderImageWidth = isMobile ? 600 : 1200;
+    const windowWidth = window.innerWidth;
+    let colCount = 3;
+    
+    // 🖥️ স্ক্রিনের প্রস্থ অনুযায়ী নিখুঁত কলাম নির্ধারণ
+    if (windowWidth >= 1280) colCount = 6;
+    else if (windowWidth >= 1024) colCount = 5;
+    else if (windowWidth >= 640) colCount = 4;
+    else colCount = 3;
 
-    slides.forEach((movie, index) => {
-        const slide = document.createElement('div');
-        slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
+    // 🚀 ১০০% উইডথ কভার করতে সিএসএস গ্রিডকে ডায়নামিক ফোরস করা (ডানপাশে ফাঁকা থাকবে না)
+    sliderWrapper.style.gridTemplateColumns = `repeat(${colCount}, minmax(0, 1fr))`;
 
-        const loadingAttr = index === 0 ? 'eager' : 'lazy';
-        const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
+    const pool = contentData.slice(0, 50);
+    if (pool.length === 0) return;
 
-        slide.innerHTML = `
-            <img src="${getOptimizedImageUrl(movie.posterUrl, sliderImageWidth)}" class="w-full h-full object-cover object-center" alt="${movie.title}" loading="${loadingAttr}" ${priorityAttr}>
-            <div class="absolute inset-0 bg-black/40"></div>
-            <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
-                <div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
-                    <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
-                    <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
-                    <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
-                    <button onclick="openModal(${movie.id});" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
-                        <i class="fas fa-play"></i> Watch Now
-                    </button>
-                </div>
-            </div>`;
-        sliderWrapper.appendChild(slide);
+    for (let c = 0; c < colCount; c++) {
+        const colDiv = document.createElement('div');
+        const isUp = c % 2 === 0;
+        colDiv.className = `flex flex-col gap-3 md:gap-4 ${isUp ? 'marquee-col-up' : 'marquee-col-down'}`;
 
-        const dot = document.createElement('button');
-        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
-        dot.onclick = () => goToSlide(index);
-        sliderDots.appendChild(dot);
-    });
+        const colItems = pool.filter((_, idx) => idx % colCount === c);
 
-    function startSlideTimer() {
-        clearInterval(sliderInterval);
-        sliderInterval = setInterval(() => { goToSlide((currentSlide + 1) % slides.length); }, 3500);
-    }
-
-    window.goToSlide = (index) => {
-        const allSlides = document.querySelectorAll('.slide');
-        const allDots = sliderDots.children;
-        if (allSlides.length > 0) {
-            allSlides[currentSlide].classList.remove('active');
-            allDots[currentSlide].className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300';
-            currentSlide = index;
-            allSlides[currentSlide].classList.add('active');
-            allDots[currentSlide].className = 'w-6 h-2 rounded-full bg-white transition-all duration-300';
-            startSlideTimer();
+        while (colItems.length < 8) {
+            colItems.push(...pool.slice(0, 6));
         }
-    };
 
-    setTimeout(() => {
-        const activeSlide = document.querySelector('.slide.active .slide-content');
-        if (activeSlide) { activeSlide.style.opacity = '1'; activeSlide.style.transform = 'translateY(0)'; }
-    }, 50);
-    startSlideTimer();
+        const doubledItems = [...colItems, ...colItems];
+
+        doubledItems.forEach(movie => {
+            const imgCard = document.createElement('div');
+            imgCard.className = 'w-full aspect-[2/3] rounded-lg md:rounded-xl overflow-hidden shadow-lg border border-white/10 shrink-0 cursor-pointer hover:scale-105 transition-transform duration-300';
+            imgCard.innerHTML = `<img src="${getOptimizedImageUrl(movie.posterUrl, 300)}" alt="${movie.title}" class="w-full h-full object-cover" loading="lazy">`;
+            
+            imgCard.onclick = () => openModal(movie.id);
+            colDiv.appendChild(imgCard);
+        });
+
+        sliderWrapper.appendChild(colDiv);
+    }
 }
+
+// 🚀 স্ক্রিন রি-সাইজ বা রোটেট করলেও অটোমেটিক গ্রিড অ্যাডজাস্ট হবে
+window.addEventListener('resize', debounce(() => {
+    if (currentView === 'home') {
+        initHeroSlider();
+    }
+}, 250));
 
 // ==========================================
 // 🚀 SEARCH SYSTEM UI MANIPULATION
@@ -750,19 +738,19 @@ function createMovieCard(item) {
         `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">${item.language}</div>` : '';
 
     card.innerHTML = `
-        <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 md:ring-0 transition-all duration-300 group-hover:ring-white/20 md:group-hover:ring-transparent">
+        <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 transition-all duration-300">
             ${qualityBadgeHtml}
             ${languageBadgeHtml}
-            <img src="${getOptimizedImageUrl(item.posterUrl)}" alt="Watch ${item.title} Full Movie Online Free" class="w-full h-full object-cover transition-transform duration-500 md:duration-300 group-hover:scale-110" loading="lazy" decoding="async">
-            <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center items-center p-5 transition-all duration-300">
-                <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]"><i class="fas fa-play text-white text-lg ml-1"></i></div>
-            </div>
-            <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300">
-                <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
+            <img src="${getOptimizedImageUrl(item.posterUrl)}" alt="Watch ${item.title} Full Movie Online Free" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110 will-change-transform" loading="lazy" decoding="async">
+            <div class="play-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center p-5 transition-opacity duration-500 ease-out">
+                <!-- 🚀 EXACT MATCH PLAY BUTTON DESIGN -->
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-white flex items-center justify-center bg-black/20 backdrop-blur-[1px] shadow-[0_0_15px_rgba(0,0,0,0.6)] transform scale-90 group-hover:scale-100 transition-all duration-500 ease-out">
+                    <i class="fas fa-play text-white text-xs md:text-sm ml-1"></i>
+                </div>
             </div>
         </div>
-        <div class="mt-4 text-center flex flex-col items-center md:block">
-            <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
+        <div class="mt-3 text-center flex flex-col items-center md:block">
+            <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 group-hover:text-red-500 transition-colors">${item.title}</h4>
             ${infoText}
         </div>`;
 
@@ -840,7 +828,7 @@ function renderCategorySections(forceRenderAll = false) {
         targetSection.classList.add('opacity-100');
     }
 
-    categories.filter(c => c !== 'all').forEach(cat => {
+categories.filter(c => c !== 'all').forEach(cat => {
         const filtered = categoryIndexMap[cat] || [];
         if (filtered.length === 0) return;
 
@@ -850,9 +838,9 @@ function renderCategorySections(forceRenderAll = false) {
         section.setAttribute('data-category-lazy', cat);
 
         section.innerHTML = `
-            <div class="flex items-center space-x-3 space-y-10 md:space-y-28 mb-8 justify-center">
-                <div class="w-1.5 h-7 md:h-10 bg-red-600 rounded-full shadow-lg shadow-red-600/20 md:mt-28 mt-10"></div>
-                <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="w-1.5 h-7 md:h-9 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
+                <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase text-white">${displayName}</h3>
             </div>
             
             <div class="lazy-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto">
