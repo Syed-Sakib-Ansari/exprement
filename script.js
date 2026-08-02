@@ -586,9 +586,9 @@ function initHeroSlider() {
         doubledItems.forEach(movie => {
             const imgCard = document.createElement('div');
             imgCard.className = 'w-full p-1.5 md:p-2 shrink-0 box-border';
-            imgCard.innerHTML = `
+imgCard.innerHTML = `
                 <div class="w-full aspect-[2/3] rounded-lg md:rounded-xl overflow-hidden shadow-lg border border-white/10 cursor-pointer hover:scale-105 transition-transform duration-300 bg-zinc-900">
-                    <img src="${getOptimizedImageUrl(movie.posterUrl, 300)}" alt="${movie.title}" class="w-full h-full object-cover block" loading="lazy">
+                    <img src="${getOptimizedImageUrl(movie.posterUrl, 300)}" alt="${movie.title}" class="w-full h-full object-cover block" loading="lazy" decoding="async">
                 </div>
             `;
             
@@ -850,11 +850,12 @@ categories.filter(c => c !== 'all').forEach(cat => {
 
         const displayName = cat === 'Korean Country' ? 'Korean' : cat;
         const section = document.createElement('section');
-        section.className = 'mb-16 lazy-section opacity-0 min-h-[350px] transition-opacity duration-500';
+        // 🚀 ADDED RESPONSIVE TOP PADDING & ENHANCED BOTTOM MARGIN
+        section.className = 'mb-20 md:mb-32 pt-6 md:pt-12 lazy-section opacity-0 min-h-[350px] transition-opacity duration-500';
         section.setAttribute('data-category-lazy', cat);
 
         section.innerHTML = `
-            <div class="flex items-center justify-center gap-3 mb-8">
+            <div class="flex items-center justify-center gap-3 mb-8 md:mb-12">
                 <div class="w-1.5 h-7 md:h-9 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
                 <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase text-white">${displayName}</h3>
             </div>
@@ -1550,9 +1551,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // 🚀 পপআপ চালু করার কমান্ড
-    initWelcomePopup();
-
 });
 
 // ==========================================
@@ -1644,49 +1642,6 @@ function showToast(message) {
         toast.classList.add('opacity-0', '-translate-y-8', 'pointer-events-none');
         toast.classList.remove('opacity-100', 'translate-y-0');
     }, 4000);
-}
-
-// ==========================================
-// 🚀 WELCOME & BOOKMARK POPUP LOGIC
-// ==========================================
-function initWelcomePopup() {
-    const popup = document.getElementById('welcomePopup');
-    const content = document.getElementById('welcomePopupContent');
-
-    // লোকাল স্টোরেজ চেক করবে (যাতে বারবার বিরক্ত না করে)
-    if (!localStorage.getItem('MovieDakhi_WelcomeShown')) {
-        // ৩ সেকেন্ড পর পপআপ আসবে
-        setTimeout(() => {
-            if (popup) {
-                popup.classList.remove('hidden');
-                void popup.offsetWidth; // Trigger reflow for animation
-                popup.classList.remove('opacity-0');
-                if (content) content.classList.remove('scale-95');
-
-                // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে
-                document.body.style.overflow = 'hidden';
-            }
-        }, 12000);
-    }
-}
-
-function closeWelcomePopup() {
-    const popup = document.getElementById('welcomePopup');
-    const content = document.getElementById('welcomePopupContent');
-
-    if (popup) {
-        popup.classList.add('opacity-0');
-        if (content) content.classList.add('scale-95');
-
-        setTimeout(() => {
-            popup.classList.add('hidden');
-            // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
-            document.body.style.overflow = '';
-        }, 500);
-    }
-
-    // ব্রাউজারে সেভ করে রাখবে
-    localStorage.setItem('MovieDakhi_WelcomeShown', 'true');
 }
 
 // ==========================================
