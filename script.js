@@ -1613,6 +1613,20 @@ window.addEventListener('click', (e) => {
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
 
+// 🚀 DESKTOP / BIG SCREEN BACKGROUND CLICK CLOSER FOR MOVIE MODAL
+const movieModalElem = document.getElementById('movieModal');
+if (movieModalElem) {
+    movieModalElem.addEventListener('click', (e) => {
+        // ইউজার প্লেয়ার, সার্ভার বাটন, ডেসক্রিপশন বা কোনো কন্ট্রোলে ক্লিক করেছে কি না তা চেক করবে
+        const isInteractiveContent = e.target.closest('.drive-video-wrapper, #serverSection, #seriesSection, #mainDownloadBtn, #modalDesc, .lang-badge, button, a, iframe, input');
+        
+        // যদি আসল কনটেন্টের বাইরে যেকোনো ফাঁকা জায়গায় ক্লিক করে, তবে মোডাল বন্ধ হয়ে যাবে
+        if (!isInteractiveContent) {
+            closeModal(true, true);
+        }
+    });
+}
+
 function showToast(message) {
     const toast = document.getElementById('toastMessage');
     const toastText = document.getElementById('toastText');
