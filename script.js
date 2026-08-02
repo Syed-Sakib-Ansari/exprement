@@ -1771,26 +1771,6 @@ if (nativeAdPopupElem) {
     });
 }
 
-// 🚀 FULL BOX CLICK TRIGGER: বক্সে ক্লিক করলে অরিজিনাল অ্যাড লিংক ওপেন করে পপআপ বন্ধ করে দেবে
-// function handleNativeAdBoxClick(e) {
-//     if (e) e.stopPropagation();
-
-//     const container = document.getElementById('container-faea46eecf01053afa6ef2518e3c0630');
-//     let adUrl = null;
-
-//     if (container) {
-//         const adAnchor = container.querySelector('a');
-//         if (adAnchor && adAnchor.href) {
-//             adUrl = adAnchor.href;
-//         }
-//     }
-
-//     // যদি কোনো কারণে অ্যাড লোড হতে দেরি হয়, তবে ফলব্যাক স্মার্ট-লিংক ওপেন হবে
-//     const targetLink = adUrl || "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
-
-//     window.open(targetLink, '_blank');
-//     closeNativeAdPopup();
-// }
 // ==========================================
 // 🚀 AUTO-CLOSE POPUP ON AD CLICK (Window Blur Trick)
 // ==========================================
