@@ -87,8 +87,17 @@
         ]
         }
     </script>
+<!-- 🚀 CLEAN PRECONNECTS (Fastest DNS & TLS Handshake) -->
+    <link rel="preconnect" href="https://wsrv.nl" crossorigin>
+    <link rel="dns-prefetch" href="https://wsrv.nl">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <!-- 🚀 NON-BLOCKING FONT AWESOME (Instant First Contentful Paint) -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- 🚀 NON-BLOCKING FONT AWESOME -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"></noscript>
 </head>
@@ -159,15 +168,13 @@
     </div>
 
     <div id="homeView" class="view-container active">
-<!-- 🎬 MOVING MOVIE CARDS HERO SECTION (80% HEIGHT - CLEAN VIEW) -->
+
+<!-- 🎬 MOVING MOVIE CARDS HERO SECTION (CLEAN & SLEEK VIEW) -->
         <header id="heroSlider" class="relative h-[100vh] w-full overflow-hidden bg-[#0f0f0f] flex items-center justify-center">
             
-            <!-- 🚀 DYNAMIC RESPONSIVE WRAPPER (কোনো ফাঁকা জায়গা থাকবে না) -->
-            <div id="sliderWrapper" class="absolute inset-0 w-full h-full grid gap-2.5 sm:gap-3 md:gap-4 p-2 opacity-80 hover:opacity-100 transition-opacity pointer-events-auto overflow-hidden"></div>
+            <!-- 🚀 DYNAMIC RESPONSIVE WRAPPER WITH CSS MASK (No Dark Overlays) -->
+            <div id="sliderWrapper" class="hero-poster-mask absolute inset-0 w-full h-full grid gap-2.5 sm:gap-3 md:gap-4 p-2 opacity-85 hover:opacity-100 transition-opacity pointer-events-auto overflow-hidden"></div>
 
-            <!-- 🚀 ২. ওপর ও নিচের বর্ডারের স্মুথ ফেড ওভারলে -->
-            <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0f0f0f] to-transparent z-10 pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0f0f0f] to-transparent z-10 pointer-events-none"></div>
         </header>
 
         <main class="px-6 md:px-12 py-12 relative z-30">
@@ -284,12 +291,26 @@
             <!-- 📝 CONTROLS & DETAILS SECTION (প্লেয়ারের নিচে) -->
             <div class="px-4 md:px-8 text-center max-w-4xl mx-auto w-full">
 
-                <!-- 🏷️ LANGUAGE & CATEGORY BADGES -->
+<!-- 🏷️ LANGUAGE & CATEGORY BADGES -->
                 <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-6">
                     <span id="modalLanguage" class="lang-badge">Hindi</span>
                     <span id="modalCategory"
                         class="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest">Hollywood</span>
                     <span id="modalYear" class="text-gray-600 text-xs md:text-sm font-bold">&nbsp;</span>
+                </div>
+
+                <!-- 🚀 SOCIAL JOIN BUTTONS (ONE ROW: FACEBOOK & TELEGRAM) -->
+                <div id="socialJoinSection" class="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-6 w-full max-w-md mx-auto">
+                    <a href="https://www.facebook.com/profile.php?id=61586944455346" target="_blank"
+                        class="flex-1 bg-[#1877f2] hover:bg-[#166fe5] text-white py-2.5 px-3 md:px-4 rounded-xl text-[11px] md:text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 transition-all duration-300 hover:scale-105 no-underline">
+                        <i class="fab fa-facebook-f text-sm"></i>
+                        <span>Join Facebook</span>
+                    </a>
+                    <a href="https://t.me/+oeXeresjsFA1MjI1" target="_blank"
+                        class="flex-1 bg-[#0088cc] hover:bg-[#0077b3] text-white py-2.5 px-3 md:px-4 rounded-xl text-[11px] md:text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20 transition-all duration-300 hover:scale-105 no-underline">
+                        <i class="fab fa-telegram-plane text-sm"></i>
+                        <span>Join Telegram</span>
+                    </a>
                 </div>
 
                 <!-- 🚀 ১. মুভি সার্ভার সেকশন -->

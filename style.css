@@ -724,24 +724,77 @@ body {
     100% { transform: translate3d(0, 0, 0); }
 }
 
-.marquee-col-up {
-    animation: marqueeScrollUp 40s linear infinite;
+/* ========================================== */
+/* 🚀 HERO SECTION MOVING CARDS MARQUEE (PREVENTS OVERHEATING) */
+/* ========================================== */
+@keyframes marqueeScrollUp {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(0, -50%, 0); }
+}
+
+@keyframes marqueeScrollDown {
+    0% { transform: translate3d(0, -50%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+.marquee-col-up,
+.marquee-col-down {
     will-change: transform;
-    transform-style: preserve-3d;
+    contain: layout paint;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
+.marquee-col-up {
+    animation: marqueeScrollUp 45s linear infinite;
+}
+
 .marquee-col-down {
-    animation: marqueeScrollDown 40s linear infinite;
-    will-change: transform;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    animation: marqueeScrollDown 45s linear infinite;
 }
 
 /* 🚀 Pause animation smoothly on hover for individual column */
 .marquee-col-up:hover,
 .marquee-col-down:hover {
     animation-play-state: paused;
+}
+
+/* 🚀 Pause animation smoothly on hover for individual column */
+.marquee-col-up:hover,
+.marquee-col-down:hover {
+    animation-play-state: paused;
+}
+
+/* ========================================== */
+/* 🚀 ULTRA-FAST GPU ACCELERATED MODAL SCROLLING */
+/* ========================================== */
+#movieModal {
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    transform: translateZ(0);
+}
+
+#movieModal > div {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* ========================================== */
+/* 🚀 SLEEK HERO POSTER FADE MASK (CSS MASKING) */
+/* ========================================== */
+.hero-poster-mask {
+    -webkit-mask-image: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        black 6%, 
+        black 85%, 
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        black 6%, 
+        black 85%, 
+        transparent 100%
+    );
 }
