@@ -367,7 +367,7 @@ function renderServerButtons() {
 }
 
 function playServer(rawUrl, btnElement) {
-    const smartAdLink = "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+    const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 
     document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
@@ -1585,7 +1585,7 @@ function closeUnlockPopup() {
 
 function handleWatchAdClick() {
     closeUnlockPopup();
-    const smartAdLink = "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+    const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 }
 
@@ -1599,7 +1599,7 @@ function injectNativeAdScript() {
     const script = document.createElement('script');
     script.async = true;
     script.setAttribute('data-cfasync', 'false');
-    script.src = "https://heeddialscary.com/faea46eecf01053afa6ef2518e3c0630/invoke.js";
+    script.src = "https://pl30567165.effectivecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js";
     container.appendChild(script);
 }
 
