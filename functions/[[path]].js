@@ -39,6 +39,17 @@ async function fetchTMDBData(title, year) {
     }
 }
 
+// 🚀 বুলেটপ্রুফ মেটা ট্যাগ রিপ্লেসমেন্ট ইঞ্জেক্টর
+function setMetaTag(html, attrType, key, value) {
+    const regex = new RegExp(`<meta\\s+[^>]*?${attrType}=["']${key}["'][^>]*?>`, 'gi');
+    const newTag = `<meta ${attrType}="${key}" content="${value}">`;
+    if (regex.test(html)) {
+        return html.replace(regex, newTag);
+    } else {
+        return html.replace('</head>', `    ${newTag}\n</head>`);
+    }
+}
+
 export async function onRequest(context) {
     const { request, env } = context;
     const url = new URL(request.url);
@@ -94,10 +105,8 @@ export async function onRequest(context) {
             const movieDesc = `${movieTitle} Dual Audio [Hindi-English] HD Media Overview, Details & Streaming Information on MovieDakhi.`;
             const currentMovieUrl = `https://moviedakhi.com/${encodeURIComponent(movieSlug)}.html`;
 
-            const rawPosterUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
-            const moviePosterUrl = rawPosterUrl.includes('postimg.cc')
-                ? rawPosterUrl
-                : `https://wsrv.nl/?url=${encodeURIComponent(rawPosterUrl)}&w=600&output=jpeg&q=80`;
+            // 🚀 সোশ্যাল মিডিয়ার (Telegram, Facebook) জন্য সরাসরি মূল পোস্টার ইউআরএল
+            const moviePosterUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
 
             const tmdb = await fetchTMDBData(targetMovie.title, targetMovie.year);
 
@@ -106,25 +115,23 @@ export async function onRequest(context) {
             const duration = tmdb?.runtime || 'Full Feature Duration';
             const synopsis = tmdb?.overview || `${movieTitle} is a premier ${targetMovie.category || 'Cinema'} title released in ${targetMovie.year || '2026'}. Featuring ${targetMovie.language || 'Dual Audio Hindi-English'} presentation, this release captures exceptional storytelling, high-fidelity sound design, and vivid visual sequences. Viewers can explore complete media specifications, stream links, and technical playback overview directly on MovieDakhi.`;
 
+            // 🚀 ১. Title & Canonical
             const dynamicCanonicalTag = `<link rel="canonical" href="${currentMovieUrl}">`;
             html = html.replace('</head>', `    ${dynamicCanonicalTag}\n</head>`);
             html = html.replace(/<title>.*?<\/title>/i, `<title>${movieTitle} - MovieDakhi</title>`);
 
-            const metaMatches = [
-                { regex: /<meta\s+name="description"\s+content=".*?"\s*\/?>/i, replacement: `<meta name="description" content="${movieDesc}">` },
-                { regex: /<meta\s+property="og:title"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:title" content="${movieTitle} - MovieDakhi">` },
-                { regex: /<meta\s+property="og:description"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:description" content="${movieDesc}">` },
-                { regex: /<meta\s+property="og:url"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:url" content="${currentMovieUrl}">` },
-                { regex: /<meta\s+property="og:image"\s+content=".*?"\s*\/?>/i, replacement: `<meta property="og:image" content="${moviePosterUrl}">` }
-            ];
-
-            metaMatches.forEach(item => {
-                if (html.match(item.regex)) {
-                    html = html.replace(item.regex, item.replacement);
-                } else {
-                    html = html.replace('</head>', `    ${item.replacement}\n</head>`);
-                }
-            });
+            // 🚀 ২. Open Graph & Twitter Card Meta Tags (সোশ্যাল প্রিভিউ ফিক্স)
+            html = setMetaTag(html, 'name', 'description', movieDesc);
+            html = setMetaTag(html, 'property', 'og:title', `${movieTitle} - MovieDakhi`);
+            html = setMetaTag(html, 'property', 'og:description', movieDesc);
+            html = setMetaTag(html, 'property', 'og:url', currentMovieUrl);
+            html = setMetaTag(html, 'property', 'og:image', moviePosterUrl);
+            html = setMetaTag(html, 'property', 'og:type', 'video.movie');
+            
+            html = setMetaTag(html, 'name', 'twitter:card', 'summary_large_image');
+            html = setMetaTag(html, 'name', 'twitter:title', `${movieTitle} - MovieDakhi`);
+            html = setMetaTag(html, 'name', 'twitter:description', movieDesc);
+            html = setMetaTag(html, 'name', 'twitter:image', moviePosterUrl);
 
             const movieSchema = {
                 "@context": "https://schema.org",
