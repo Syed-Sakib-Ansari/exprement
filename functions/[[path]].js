@@ -39,15 +39,14 @@ async function fetchTMDBData(title, year) {
     }
 }
 
-// 🚀 বুলেটপ্রুফ মেটা ট্যাগ রিপ্লেসমেন্ট ইঞ্জেক্টর
+// 🚀 ফিক্সড মেটা ট্যাগ ইনজেক্টর (RegExp lastIndex বাগ সমাধান করা হয়েছে)
 function setMetaTag(html, attrType, key, value) {
-    const regex = new RegExp(`<meta\\s+[^>]*?${attrType}=["']${key}["'][^>]*?>`, 'gi');
     const newTag = `<meta ${attrType}="${key}" content="${value}">`;
+    const regex = new RegExp(`<meta\\s+[^>]*?${attrType}=["']${key}["'][^>]*?>`, 'i');
     if (regex.test(html)) {
         return html.replace(regex, newTag);
-    } else {
-        return html.replace('</head>', `    ${newTag}\n</head>`);
     }
+    return html.replace('</head>', `    ${newTag}\n</head>`);
 }
 
 export async function onRequest(context) {
@@ -74,18 +73,23 @@ export async function onRequest(context) {
         return Response.redirect(redirectUrl.toString(), 301);
     }
 
-    const movieSlug = decodeURIComponent(path.replace(/^\//, '').replace(/\.html$/i, ''));
-    if (!movieSlug) return env.ASSETS.fetch(request);
+    const rawSlug = decodeURIComponent(path.replace(/^\//, '').replace(/\.html$/i, '')).trim();
+    if (!rawSlug) return env.ASSETS.fetch(request);
 
     try {
         const moviesRes = await env.ASSETS.fetch(new URL('/movies.json', request.url));
         if (!moviesRes.ok) throw new Error("JSON database load failed");
         const movies = await moviesRes.json();
 
+        // 🚀 ফিক্সড স্ল্যাগ ম্যাচিং (json-এর slug এবং title উভয় চেক করবে)
+        const cleanMovieSlug = rawSlug.toLowerCase();
         const targetMovie = movies.find(m => {
-            if (!m.title) return false;
-            const computedSlug = m.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-            return computedSlug === movieSlug;
+            if (m.slug && m.slug.toLowerCase().trim() === cleanMovieSlug) return true;
+            if (m.title) {
+                const computedSlug = m.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+                if (computedSlug === cleanMovieSlug) return true;
+            }
+            return false;
         });
 
         if (targetMovie) {
@@ -103,10 +107,12 @@ export async function onRequest(context) {
 
             const movieTitle = targetMovie.title;
             const movieDesc = `${movieTitle} Dual Audio [Hindi-English] HD Media Overview, Details & Streaming Information on MovieDakhi.`;
-            const currentMovieUrl = `https://moviedakhi.com/${encodeURIComponent(movieSlug)}.html`;
+            const currentMovieUrl = `https://moviedakhi.com/${encodeURIComponent(rawSlug)}.html`;
 
-            // 🚀 সোশ্যাল মিডিয়ার (Telegram, Facebook) জন্য সরাসরি মূল পোস্টার ইউআরএল
-            const moviePosterUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+            let moviePosterUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+            if (moviePosterUrl.startsWith('//')) {
+                moviePosterUrl = 'https:' + moviePosterUrl;
+            }
 
             const tmdb = await fetchTMDBData(targetMovie.title, targetMovie.year);
 
@@ -120,7 +126,7 @@ export async function onRequest(context) {
             html = html.replace('</head>', `    ${dynamicCanonicalTag}\n</head>`);
             html = html.replace(/<title>.*?<\/title>/i, `<title>${movieTitle} - MovieDakhi</title>`);
 
-            // 🚀 ২. Open Graph & Twitter Card Meta Tags (সোশ্যাল প্রিভিউ ফিক্স)
+            // 🚀 ২. Open Graph & Twitter Card Meta Tags (১০০% কাজ করবে)
             html = setMetaTag(html, 'name', 'description', movieDesc);
             html = setMetaTag(html, 'property', 'og:title', `${movieTitle} - MovieDakhi`);
             html = setMetaTag(html, 'property', 'og:description', movieDesc);
@@ -224,7 +230,6 @@ function render404() {
 </head>
 <body class="text-white min-h-screen flex flex-col justify-between ambient-bg overflow-x-hidden relative">
 
-    <!-- 🎬 HEADER SECTION -->
     <header class="w-full py-5 px-6 md:px-12 flex justify-between items-center z-10 border-b border-white/5 bg-black/40 backdrop-blur-md">
         <a href="https://moviedakhi.com/" class="text-red-600 font-black text-2xl md:text-3xl tracking-tighter uppercase no-underline hover:opacity-90 transition">
             MOVIE<span class="text-white">&nbsp;DAKHI</span>
@@ -237,21 +242,16 @@ function render404() {
         </a>
     </header>
 
-    <!-- 🍿 MAIN 404 CARD CONTAINER -->
     <main class="flex-grow flex items-center justify-center p-6 z-10 my-8">
         <div class="bg-[#0f0f0f]/90 border border-white/10 p-8 sm:p-12 md:p-16 rounded-3xl glow-card max-w-2xl w-full text-center backdrop-blur-xl relative overflow-hidden">
-            
-            <!-- RED AMBIENT CIRCLE -->
             <div class="absolute -top-24 -right-24 w-48 h-48 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
-            <!-- FILM REEL ICON -->
             <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-red-600/10 border border-red-500/20 flex items-center justify-center text-red-600 shadow-inner">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V4a1 1 0 00-1-1H4a1 1 0 00-1 1v15a1 1 0 001 1z" />
                 </svg>
             </div>
 
-            <!-- 404 TEXT -->
             <h1 class="text-7xl sm:text-8xl md:text-9xl font-black text-red-600 tracking-tight glow-red mb-2 leading-none">
                 404
             </h1>
@@ -264,7 +264,6 @@ function render404() {
                 Sorry, the movie or page you are looking for has been moved, deleted, or doesn't exist in our library.
             </p>
 
-            <!-- ACTION BUTTON -->
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://moviedakhi.com/" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3.5 rounded-xl font-black text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 shadow-lg shadow-red-600/40 hover:scale-105 inline-flex items-center gap-2 no-underline">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -273,11 +272,9 @@ function render404() {
                     Explore Movies
                 </a>
             </div>
-
         </div>
     </main>
 
-    <!-- 📜 FOOTER -->
     <footer class="py-6 border-t border-white/5 text-center z-10 bg-black/40">
         <p class="text-gray-600 text-xs font-bold uppercase tracking-widest">
             © 2026 MOVIE DAKHI. ALL RIGHTS RESERVED.
