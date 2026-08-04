@@ -39,27 +39,17 @@ async function fetchTMDBData(title, year) {
     }
 }
 
-// 🚀 মেটা ট্যাগ ইনজেক্টর
-function setMetaTag(html, attrType, key, value) {
-    const newTag = `<meta ${attrType}="${key}" content="${value}">`;
-    const regex = new RegExp(`<meta\\s+[^>]*?${attrType}=["']${key}["'][^>]*?>`, 'i');
-    if (regex.test(html)) {
-        return html.replace(regex, newTag);
-    }
-    return html.replace('</head>', `    ${newTag}\n</head>`);
-}
-
 export async function onRequest(context) {
     const { request, env } = context;
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // ১. স্ট্যাটিক ফাইল হলে সরাসরি পাস করে দেবে
+    // ১. স্ট্যাটিক ফাইল এড়িয়ে যাওয়া
     if (path.match(/\.(css|js|json|png|jpg|jpeg|gif|ico|xml|txt|svg|webp)$/i)) {
         return env.ASSETS.fetch(request);
     }
 
-    // ২. এক্সক্লুডেড পেজ হলে নরমাল রেসপন্স দেবে
+    // ২. এক্সক্লুডেড পেজ চেক
     const excludedFiles = ['/', '/index.html', '/contact.html', '/dmca.html', '/privacy.html', '/disclaimer.html', '/404.html'];
     const cleanPath = path.toLowerCase().replace(/\/$/, '');
 
@@ -67,7 +57,7 @@ export async function onRequest(context) {
         return env.ASSETS.fetch(request);
     }
 
-    // ৩. পুরনো ?movie=slug থাকলে ৩০১ রিডাইরেক্ট
+    // ৩. পুরনো ?movie=slug লিংক থাকলে ৩০১ রিডাইরেক্ট
     const movieParam = url.searchParams.get('movie');
     if (movieParam) {
         const redirectUrl = new URL(request.url);
@@ -96,10 +86,9 @@ export async function onRequest(context) {
 
         if (targetMovie) {
             const response = await env.ASSETS.fetch(new URL('/index.html', request.url));
-            let html = await response.text();
-
+            
             const movieTitle = targetMovie.title;
-            const movieDesc = `${movieTitle} Dual Audio [Hindi-English] HD Media Overview, Details & Streaming Information on MovieDakhi.`;
+            const movieDesc = `${movieTitle} Dual Audio [Hindi-English] HD Media Overview & Streaming Information on MovieDakhi.`;
             const currentMovieUrl = `https://moviedakhi.com/${encodeURIComponent(rawSlug)}.html`;
 
             let moviePosterUrl = targetMovie.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
@@ -108,47 +97,58 @@ export async function onRequest(context) {
             }
 
             const tmdb = await fetchTMDBData(targetMovie.title, targetMovie.year);
-
-            const directorName = tmdb?.director || 'Renowned Filmmaker';
-            const castList = tmdb?.cast || 'Leading Industry Ensemble Cast';
+            const directorName = tmdb?.director || 'Renowned Director';
+            const castList = tmdb?.cast || 'Leading Industry Cast';
             const duration = tmdb?.runtime || 'Full Feature Duration';
-            const synopsis = tmdb?.overview || `${movieTitle} is a premier ${targetMovie.category || 'Cinema'} title released in ${targetMovie.year || '2026'}. Featuring ${targetMovie.language || 'Dual Audio Hindi-English'} presentation.`;
-
-            // Dynamic Canonical & Title
-            html = html.replace('</head>', `    <link rel="canonical" href="${currentMovieUrl}">\n</head>`);
-            html = html.replace(/<title>.*?<\/title>/i, `<title>${movieTitle} - MovieDakhi</title>`);
-
-            // Meta tags for Social Preview
-            html = setMetaTag(html, 'name', 'description', movieDesc);
-            html = setMetaTag(html, 'property', 'og:title', `${movieTitle} - MovieDakhi`);
-            html = setMetaTag(html, 'property', 'og:description', movieDesc);
-            html = setMetaTag(html, 'property', 'og:url', currentMovieUrl);
-            html = setMetaTag(html, 'property', 'og:image', moviePosterUrl);
-            html = setMetaTag(html, 'property', 'og:type', 'video.movie');
-            
-            html = setMetaTag(html, 'name', 'twitter:card', 'summary_large_image');
-            html = setMetaTag(html, 'name', 'twitter:title', `${movieTitle} - MovieDakhi`);
-            html = setMetaTag(html, 'name', 'twitter:description', movieDesc);
-            html = setMetaTag(html, 'name', 'twitter:image', moviePosterUrl);
+            const synopsis = tmdb?.overview || `${movieTitle} is available in ${targetMovie.language || 'Dual Audio'}. Stream or view details on MovieDakhi.`;
 
             const seoBodyContent = `
                 <article style="padding: 60px 20px; color: white; max-width: 900px; margin: 0 auto; font-family: sans-serif; line-height: 1.7;">
-                    <header style="margin-bottom: 25px;">
-                        <h1 style="font-size: 2.2rem; font-weight: 900; color: #e50914; margin-bottom: 12px;">${movieTitle} - Overview, Cast, Stream & Specs</h1>
-                    </header>
-                    <section style="display: flex; flex-wrap: wrap; gap: 25px; margin-bottom: 35px;">
-                        <img src="${moviePosterUrl}" alt="${movieTitle} Poster" style="width: 260px; border-radius: 12px; height: auto; object-fit: cover;">
-                        <div style="flex: 1; min-width: 280px;">
-                            <p><strong>Director:</strong> ${directorName}</p>
-                            <p><strong>Cast:</strong> ${castList}</p>
-                        </div>
-                    </section>
+                    <h1>${movieTitle} - Overview, Cast & Specs</h1>
+                    <img src="${moviePosterUrl}" alt="${movieTitle} Poster" style="width: 260px; border-radius: 12px;">
+                    <p><strong>Director:</strong> ${directorName}</p>
+                    <p><strong>Cast:</strong> ${castList}</p>
+                    <p><strong>Synopsis:</strong> ${synopsis}</p>
                 </article>
             `;
-            html = html.replace('<div id="seo-ssr-content"></div>', `<div id="seo-ssr-content">${seoBodyContent}</div>`);
 
-            // 🚀 নো-ক্যাশ হেডার (যাতে ক্লাউডফ্লেয়ার ভুল পেজ আটকে না রাখে)
-            return new Response(html, {
+            // 🚀 CLOUDFLARE HTMLREWRITER (মেটা ট্যাগ শতভাগ নিখুঁতভাবে রিপ্লেস করবে)
+            const transformedResponse = new HTMLRewriter()
+                .on('title', {
+                    element(e) { e.setInner(`${movieTitle} - MovieDakhi`); }
+                })
+                .on('meta[name="description"]', {
+                    element(e) { e.setAttribute('content', movieDesc); }
+                })
+                .on('meta[property="og:title"]', {
+                    element(e) { e.setAttribute('content', `${movieTitle} - MovieDakhi`); }
+                })
+                .on('meta[property="og:description"]', {
+                    element(e) { e.setAttribute('content', movieDesc); }
+                })
+                .on('meta[property="og:image"]', {
+                    element(e) { e.setAttribute('content', moviePosterUrl); }
+                })
+                .on('meta[property="og:url"]', {
+                    element(e) { e.setAttribute('content', currentMovieUrl); }
+                })
+                .on('meta[name="twitter:title"]', {
+                    element(e) { e.setAttribute('content', `${movieTitle} - MovieDakhi`); }
+                })
+                .on('meta[name="twitter:description"]', {
+                    element(e) { e.setAttribute('content', movieDesc); }
+                })
+                .on('meta[name="twitter:image"]', {
+                    element(e) { e.setAttribute('content', moviePosterUrl); }
+                })
+                .on('div#seo-ssr-content', {
+                    element(e) { e.setInner(seoBodyContent, { html: true }); }
+                })
+                .transform(response);
+
+            // নো-ক্যাশ হেডার রিটার্ন
+            return new Response(transformedResponse.body, {
+                status: 200,
                 headers: {
                     "content-type": "text/html;charset=UTF-8",
                     "Cache-Control": "no-cache, no-store, must-revalidate"
@@ -156,17 +156,13 @@ export async function onRequest(context) {
             });
 
         } else {
-            return render404();
+            return new Response(`<!DOCTYPE html><html><head><title>404 - MovieDakhi</title></head><body style="background:#000;color:#fff;text-align:center;padding:100px;"><h1>404 - Page Not Found</h1></body></html>`, {
+                status: 404,
+                headers: { "content-type": "text/html;charset=UTF-8" }
+            });
         }
 
     } catch (error) {
-        return render404();
+        return env.ASSETS.fetch(request);
     }
-}
-
-function render404() {
-    return new Response(`<!DOCTYPE html><html><head><title>404 - MovieDakhi</title></head><body style="background:#000;color:#fff;text-align:center;padding:100px;"><h1>404 - Page Not Found</h1></body></html>`, {
-        status: 404,
-        headers: { "content-type": "text/html;charset=UTF-8" }
-    });
 }
