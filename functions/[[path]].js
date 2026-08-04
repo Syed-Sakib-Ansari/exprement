@@ -116,16 +116,16 @@ export async function onRequest(context) {
             html = html.replace('</head>', `    ${dynamicCanonicalTag}\n</head>`);
             html = html.replace(/<title>.*?<\/title>/i, `<title>${movieTitle} - MovieDakhi</title>`);
 
-            // 🔥 মূল ফিক্সড এরিয়া: মাল্টিলাইন Regex ([\s\S]*?) এবং Twitter Cards যুক্ত করা হয়েছে 
+            // 🔥 অতি শক্তিশালী Regex (যেকোনো স্পেসিং, লাইন ব্রেক বা Minification থাকলেও পুরনো ট্যাগ ডিলিট করবে)
             const metaMatches = [
-                { regex: /<meta\s+name="description"\s+content="[\s\S]*?"\s*\/?>/i, replacement: `<meta name="description" content="${movieDesc}">` },
-                { regex: /<meta\s+property="og:title"\s+content="[\s\S]*?"\s*\/?>/i, replacement: `<meta property="og:title" content="${movieTitle} - MovieDakhi">` },
-                { regex: /<meta\s+property="og:description"\s+content="[\s\S]*?"\s*\/?>/i, replacement: `<meta property="og:description" content="${movieDesc}">` },
-                { regex: /<meta\s+property="og:url"\s+content="[\s\S]*?"\s*\/?>/i, replacement: `<meta property="og:url" content="${currentMovieUrl}">` },
-                { regex: /<meta\s+property="og:image"\s+content="[\s\S]*?"\s*\/?>/i, replacement: `<meta property="og:image" content="${moviePosterUrl}">` },
-                { regex: /<meta\s+name="twitter:title"\s+content="[\s\S]*?"\s*\/?>/i, replacement: `<meta name="twitter:title" content="${movieTitle} - MovieDakhi">` },
-                { regex: /<meta\s+name="twitter:description"\s+content="[\s\S]*?"\s*\/?>/i, replacement: `<meta name="twitter:description" content="${movieDesc}">` },
-                { regex: /<meta\s+name="twitter:image"\s+content="[\s\S]*?"\s*\/?>/i, replacement: `<meta name="twitter:image" content="${moviePosterUrl}">` }
+                { regex: /<\s*meta[^>]+name\s*=\s*["']description["'][^>]*>/i, replacement: `<meta name="description" content="${movieDesc}">` },
+                { regex: /<\s*meta[^>]+property\s*=\s*["']og:title["'][^>]*>/i, replacement: `<meta property="og:title" content="${movieTitle} - MovieDakhi">` },
+                { regex: /<\s*meta[^>]+property\s*=\s*["']og:description["'][^>]*>/i, replacement: `<meta property="og:description" content="${movieDesc}">` },
+                { regex: /<\s*meta[^>]+property\s*=\s*["']og:url["'][^>]*>/i, replacement: `<meta property="og:url" content="${currentMovieUrl}">` },
+                { regex: /<\s*meta[^>]+property\s*=\s*["']og:image["'][^>]*>/i, replacement: `<meta property="og:image" content="${moviePosterUrl}">` },
+                { regex: /<\s*meta[^>]+name\s*=\s*["']twitter:title["'][^>]*>/i, replacement: `<meta name="twitter:title" content="${movieTitle} - MovieDakhi">` },
+                { regex: /<\s*meta[^>]+name\s*=\s*["']twitter:description["'][^>]*>/i, replacement: `<meta name="twitter:description" content="${movieDesc}">` },
+                { regex: /<\s*meta[^>]+name\s*=\s*["']twitter:image["'][^>]*>/i, replacement: `<meta name="twitter:image" content="${moviePosterUrl}">` }
             ];
 
             metaMatches.forEach(item => {
@@ -184,7 +184,8 @@ export async function onRequest(context) {
             const finalResponse = new Response(html, {
                 headers: {
                     "content-type": "text/html;charset=UTF-8",
-                    "Cache-Control": "s-maxage=86400"
+                    // 🔥 টেস্টিংয়ের সুবিধার্থে ক্যাশ টাইম কমিয়ে আনা হলো (24 ঘণ্টার বদলে 1 মিনিট)
+                    "Cache-Control": "s-maxage=60"
                 }
             });
 
