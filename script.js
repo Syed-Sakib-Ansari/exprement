@@ -1558,7 +1558,7 @@ function showToast(message) {
     }, 4000);
 }
 
-const ENABLE_UNLOCK_CATEGORY_POPUP = true;
+const ENABLE_UNLOCK_CATEGORY_POPUP = false;
 
 function showUnlockPopup() {
     if (!ENABLE_UNLOCK_CATEGORY_POPUP) return;
@@ -1631,7 +1631,7 @@ if (nativeAdPopupElem) {
     nativeAdPopupElem.addEventListener('click', (e) => {
         if (e.target === nativeAdPopupElem) {
             nativeAdBackdropClickCount++;
-            if (nativeAdBackdropClickCount > 2) {
+            if (nativeAdBackdropClickCount > 4) {
                 closeNativeAdPopup();
                 nativeAdBackdropClickCount = 0;
             }
