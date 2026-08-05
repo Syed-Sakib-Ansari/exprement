@@ -393,36 +393,50 @@
         </div>
     </div>
 
-    <!-- 🚀 NON-BLOCKING THIRD-PARTY ANALYTICS & DEFERRED ADS -->
+<!-- 🚀 TBT FIX: USER INTERACTION DEFERRED ANALYTICS & ADS -->
     <script>
-        window.addEventListener('load', function () {
-            if ('requestIdleCallback' in window) {
-                requestIdleCallback(initAnalytics, { timeout: 4000 });
-            } else {
-                setTimeout(initAnalytics, 4000);
+        (function() {
+            var analyticsLoaded = false;
+            function loadThirdPartyScripts() {
+                if (analyticsLoaded) return;
+                analyticsLoaded = true;
+
+                // Microsoft Clarity
+                (function (c, l, a, r, i, t, y) {
+                    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                    t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+                })(window, document, "clarity", "script", "xrflo9zumf");
+
+                // Yandex Metrika
+                (function (m, e, t, r, i, k, a) {
+                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+                    m[i].l = 1 * new Date();
+                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+                })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=109630357', 'ym');
+                ym(109630357, 'init', { ssr: true, webvisor: false, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+
+                // Native Banner Ad
+                var adScript = document.createElement('script');
+                adScript.async = true;
+                adScript.src = "https://pl30567165.effectivecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js";
+                document.body.appendChild(adScript);
+
+                // Event Cleanup
+                window.removeEventListener('scroll', loadThirdPartyScripts);
+                window.removeEventListener('touchstart', loadThirdPartyScripts);
+                window.removeEventListener('mousemove', loadThirdPartyScripts);
+                window.removeEventListener('click', loadThirdPartyScripts);
             }
-        });
 
-        function initAnalytics() {
-            (function (c, l, a, r, i, t, y) {
-                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-                t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-            })(window, document, "clarity", "script", "xrflo9zumf");
-
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=109630357', 'ym');
-            ym(109630357, 'init', { ssr: true, webvisor: false, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
-
-            var adScript = document.createElement('script');
-            adScript.async = true;
-            adScript.src = "https://pl30567165.effectivecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js";
-            document.body.appendChild(adScript);
-        }
+            // ইউজার ইন্টার‍্যাকশন অথবা ৭ সেকেন্ড পর লোড হবে (মেইন থ্রেড ব্লক এড়াতে)
+            window.addEventListener('scroll', loadThirdPartyScripts, { passive: true });
+            window.addEventListener('touchstart', loadThirdPartyScripts, { passive: true });
+            window.addEventListener('mousemove', loadThirdPartyScripts, { passive: true });
+            window.addEventListener('click', loadThirdPartyScripts, { passive: true });
+            setTimeout(loadThirdPartyScripts, 7000);
+        })();
     </script>
 
     <!-- 🚀 ULTRA-FAST DEFERRED ADSTERRA POPUNDER (ZERO SPEED IMPACT) -->
