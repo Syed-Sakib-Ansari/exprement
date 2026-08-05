@@ -310,8 +310,11 @@ let activeSubGridId = null;
 function getOptimizedImageUrl(url, width = 300) {
     if (!url) return "";
     if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) return url;
-    const imgWidth = window.innerWidth < 640 ? Math.min(width, 200) : width;
-    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${imgWidth}&output=webp&q=75`;
+    // 🚀 DPR 2x multiplier for 100% crisp Retina HD resolution on Mobile
+    const dpr = Math.min(window.devicePixelRatio || 2, 2);
+    const baseWidth = window.innerWidth < 640 ? Math.min(width, 220) : width;
+    const targetWidth = Math.round(baseWidth * dpr);
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${targetWidth}&output=webp&q=88&il`;
 }
 
 function debounce(func, wait) {
@@ -809,7 +812,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     }
 }
 
-function createMovieCard(item) {
+function createMovieCard(item, isAboveFold = false) {
     const card = document.createElement('a');
     const movieSlug = item.slug || generateMovieSlug(item.title);
     card.href = `/${movieSlug}.html`;
@@ -819,11 +822,14 @@ function createMovieCard(item) {
     const qualityBadgeHtml = item.quality ? `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">${item.quality}</div>` : '';
     const languageBadgeHtml = item.language ? `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">${item.language}</div>` : '';
 
+    const loadingStrategy = isAboveFold ? 'eager' : 'lazy';
+    const fetchPriority = isAboveFold ? 'high' : 'auto';
+
     card.innerHTML = `
         <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 transition-all duration-300">
             ${qualityBadgeHtml}
             ${languageBadgeHtml}
-            <img src="${getOptimizedImageUrl(item.posterUrl, 200)}" alt="${item.title} Media Details & Poster" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110 will-change-transform" loading="lazy" decoding="async">
+            <img src="${getOptimizedImageUrl(item.posterUrl, 250)}" alt="${item.title} Media Details & Poster" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110" loading="${loadingStrategy}" fetchpriority="${fetchPriority}" decoding="async">
             <div class="play-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center p-5 transition-opacity duration-500 ease-out">
                 <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-white flex items-center justify-center bg-black/20 backdrop-blur-[1px] shadow-[0_0_15px_rgba(0,0,0,0.6)] transform scale-90 group-hover:scale-100 transition-all duration-500 ease-out">
                     <i class="fas fa-play text-white text-xs md:text-sm ml-1"></i>
@@ -849,8 +855,9 @@ function renderRecentAdds() {
     const recentItems = categoryIndexMap["Recent Adds"] || [];
     const fragment = document.createDocumentFragment();
 
-    recentItems.slice(0, 18).forEach((item) => {
-        fragment.appendChild(createMovieCard(item));
+    recentItems.slice(0, 18).forEach((item, index) => {
+        // 🚀 First 6 items load with high priority for instant LCP
+        fragment.appendChild(createMovieCard(item, index < 6));
     });
 
     recentAddsGrid.appendChild(fragment);

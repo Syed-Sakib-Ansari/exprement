@@ -179,7 +179,14 @@ body {
 /* Movie Card Styling */
 .movie-card {
     cursor: pointer;
-    contain: content;
+    contain: layout paint style;
+    content-visibility: auto;
+    contain-intrinsic-size: 180px 270px;
+}
+
+.lazy-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px 380px;
 }
 
 .movie-card:hover {
