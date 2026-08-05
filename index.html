@@ -471,11 +471,11 @@
                 }
             });
 
-            // 🎯 ২. অথবা ইউজার পেজে স্ক্রল, টাচ বা ক্লিক করলেই সাথে সাথে লোড হয়ে যাবে
-            window.addEventListener('scroll', loadAdsterraPopunder, { passive: true });
-            window.addEventListener('touchstart', loadAdsterraPopunder, { passive: true });
-            window.addEventListener('mousemove', loadAdsterraPopunder, { passive: true });
-            window.addEventListener('click', loadAdsterraPopunder, { passive: true });
+// 🚀 TBT FIX: প্রথম ৪ সেকেন্ড পর কেবল ক্লিক বা টাচে পপআন্ডার এক্টিভ হবে
+            setTimeout(function() {
+                window.addEventListener('click', loadAdsterraPopunder, { passive: true });
+                window.addEventListener('touchstart', loadAdsterraPopunder, { passive: true });
+            }, 4000);
         })();
     </script>
     

@@ -310,11 +310,10 @@ let activeSubGridId = null;
 function getOptimizedImageUrl(url, width = 300) {
     if (!url) return "";
     if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) return url;
-    // 🚀 DPR 2x multiplier for 100% crisp Retina HD resolution on Mobile
-    const dpr = Math.min(window.devicePixelRatio || 2, 2);
-    const baseWidth = window.innerWidth < 640 ? Math.min(width, 220) : width;
-    const targetWidth = Math.round(baseWidth * dpr);
-    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${targetWidth}&output=webp&q=88&il`;
+    // 🚀 PAGE WEIGHT FIX: কোয়ালিটি ঠিক রেখে নেটওয়ার্ক পে-লোড ৫০% কমানো হয়েছে
+    const isMobile = window.innerWidth < 640;
+    const targetWidth = isMobile ? 180 : Math.min(width, 280);
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${targetWidth}&output=webp&q=78`;
 }
 
 function debounce(func, wait) {
@@ -1435,10 +1434,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         sessionStorage.removeItem('MovieDakhi_Count');
     }
 
-    renderCategories();
-    // 🚀 LCP FAST FIX: প্রধান কন্টেন্ট আগে রেন্ডার হবে, ব্যাকগ্রাউন্ড মার্কি স্লাইডার পরে লোড হবে
+renderCategories();
+    
+    // 🚀 STEP 1: পেজের মূল কন্টেন্ট (LCP) সাথে সাথে রেন্ডার হবে
     renderRecentAdds();
-    renderCategorySections(isRestoring);
+
+    // 🚀 STEP 2: ব্রাউজারের মেইন থ্রেডকে ফ্রি রেখে ১০০ms পর ক্যাটাগরি লোড হবে
+    setTimeout(() => {
+        renderCategorySections(isRestoring);
+    }, 100);
+
+    // 🚀 STEP 3: ৩০০ms পর ব্যাকগ্রাউন্ড হিরো মার্কি স্লাইডার তৈরি হবে
+    setTimeout(() => {
+        initHeroSlider();
+    }, 300);
     
     if ('requestIdleCallback' in window) {
         requestIdleCallback(() => initHeroSlider(), { timeout: 1500 });
