@@ -57,7 +57,7 @@ function renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear
     const directorText = tmdb?.director || item.director || "Renowned Director";
     const castText = tmdb?.cast || (Array.isArray(item.cast) ? item.cast.join(', ') : item.cast) || "Top Featured Ensemble Cast";
     const durationText = tmdb?.runtime || item.duration || "Full Feature Length";
-    
+
     const plotText = tmdb?.overview || item.detailedPlotSummary || `${SEOFullTitle} is a prominent ${item.category || 'Cinema'} release officially debuting in ${releaseYear}. Presented in ${cleanLang}, this production delivers a rich narrative experience tailored for fans of ${item.genre || 'Action & Drama'}. The storyline brings together dynamic character arcs, high-definition audio-visual elements, and cinematic sequences that keep viewers engaged from start to finish.`;
 
     const playbackGuide = `On MovieDakhi, viewers can access full metadata, audio specifications, and verified stream references for ${SEOFullTitle}. The media file is encoded in x265 HEVC MKV format with English softcoded subtitles (ESub), providing ultra-smooth remote playback across Google Chrome, PC, Android, iOS, Smart TV, and Chromecast setups.`;
@@ -790,7 +790,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
             const isBlob = window.location.protocol === 'blob:';
             const stateObj = { view: viewName, category: filterCategory, scrollY: 0, displayedCount: 30, validDakhiState: true };
 
-if (!isBlob) {
+            if (!isBlob) {
                 const url = new URL(window.location);
                 url.searchParams.set('view', viewName);
                 if (filterCategory && filterCategory !== 'all' && viewName === 'library') {
@@ -1439,7 +1439,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     renderCategories();
     renderRecentAdds();
-    
+
     // 🚀 SCROLL RESTORATION FIX: রিলোড হলে ক্যাটাগরি সেকশন সাথে সাথে রেন্ডার করবে যাতে পেজের সঠিক হাইট তৈরি হয়
     renderCategorySections(isRestoring);
 
