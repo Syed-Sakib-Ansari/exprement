@@ -408,15 +408,6 @@
                     y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
                 })(window, document, "clarity", "script", "xrflo9zumf");
 
-                // Yandex Metrika
-                (function (m, e, t, r, i, k, a) {
-                    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-                    m[i].l = 1 * new Date();
-                    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-                    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-                })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=109630357', 'ym');
-                ym(109630357, 'init', { ssr: true, webvisor: false, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
-
                 // Native Banner Ad
                 var adScript = document.createElement('script');
                 adScript.async = true;
@@ -471,7 +462,7 @@
                 }
             });
 
-// 🚀 TBT FIX: প্রথম ৪ সেকেন্ড পর কেবল ক্লিক বা টাচে পপআন্ডার এক্টিভ হবে
+            // 🚀 TBT FIX: প্রথম ৪ সেকেন্ড পর কেবল ক্লিক বা টাচে পপআন্ডার এক্টিভ হবে
             setTimeout(function() {
                 window.addEventListener('click', loadAdsterraPopunder, { passive: true });
                 window.addEventListener('touchstart', loadAdsterraPopunder, { passive: true });
