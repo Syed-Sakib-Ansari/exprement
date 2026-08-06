@@ -1436,15 +1436,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     renderCategories();
-    // 🚀 LCP FAST FIX: প্রধান কন্টেন্ট আগে রেন্ডার হবে, ব্যাকগ্রাউন্ড মার্কি স্লাইডার পরে লোড হবে
+    initHeroSlider();
     renderRecentAdds();
     renderCategorySections(isRestoring);
-    
-    if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => initHeroSlider(), { timeout: 1500 });
-    } else {
-        setTimeout(() => initHeroSlider(), 800);
-    };
 
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view') || 'home';
