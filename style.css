@@ -179,7 +179,16 @@ body {
 /* Movie Card Styling */
 .movie-card {
     cursor: pointer;
-    contain: content;
+    contain: layout paint style;
+    content-visibility: auto;
+    contain-intrinsic-size: 180px 270px;
+}
+
+.lazy-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 100% 420px;
+    min-height: 380px;
+    contain: layout style paint;
 }
 
 .movie-card:hover {
@@ -709,4 +718,133 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.8) !important;
     box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.8) !important;
     /* ইনার শ্যাডো */
+}
+
+/* ========================================== */
+/* 🚀 HERO SECTION MOVING MOVIE CARDS MARQUEE (SUB-PIXEL PRECISION FIX) */
+/* ========================================== */
+@keyframes marqueeScrollUp {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(0, -50%, 0); }
+}
+
+@keyframes marqueeScrollDown {
+    0% { transform: translate3d(0, -50%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+/* ========================================== */
+/* 🚀 HERO SECTION MOVING CARDS MARQUEE (PREVENTS OVERHEATING) */
+/* ========================================== */
+@keyframes marqueeScrollUp {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(0, -50%, 0); }
+}
+
+@keyframes marqueeScrollDown {
+    0% { transform: translate3d(0, -50%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+.marquee-col-up,
+.marquee-col-down {
+    will-change: transform;
+    contain: layout paint;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.marquee-col-up {
+    animation: marqueeScrollUp 45s linear infinite;
+}
+
+.marquee-col-down {
+    animation: marqueeScrollDown 45s linear infinite;
+}
+
+/* 🚀 Pause animation smoothly on hover for individual column */
+.marquee-col-up:hover,
+.marquee-col-down:hover {
+    animation-play-state: paused;
+}
+
+/* 🚀 Pause animation smoothly on hover for individual column */
+.marquee-col-up:hover,
+.marquee-col-down:hover {
+    animation-play-state: paused;
+}
+
+/* ========================================== */
+/* 🚀 ULTRA-FAST GPU ACCELERATED MODAL SCROLLING */
+/* ========================================== */
+#movieModal {
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    transform: translateZ(0);
+}
+
+#movieModal > div {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* ========================================== */
+/* 🚀 SLEEK HERO POSTER FADE MASK (CSS MASKING) */
+/* ========================================== */
+.hero-poster-mask {
+    -webkit-mask-image: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        black 6%, 
+        black 85%, 
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        black 6%, 
+        black 85%, 
+        transparent 100%
+    );
+}
+
+/* ========================================== */
+/* 🚀 PROFESSIONAL VECTOR CLICK HAND ENGINE   */
+/* ========================================== */
+@keyframes outlineHandTap {
+    0%, 100% {
+        transform: translateY(0) scale(1) rotate(-5deg);
+        filter: drop-shadow(0 15px 15px rgba(0,0,0,0.4));
+    }
+    50% {
+        transform: translateY(10px) scale(0.92) rotate(-5deg);
+        filter: drop-shadow(0 5px 5px rgba(0,0,0,0.7));
+    }
+}
+
+@keyframes outlineRaysPulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        /* আঙুলের ডগার এক্সাক্ট পজিশন থেকে রে বের হবে */
+        transform-origin: 16px 6px; 
+    }
+    40%, 60% {
+        opacity: 1;
+        transform: scale(1.1);
+        transform-origin: 16px 6px;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.3);
+        transform-origin: 16px 6px;
+    }
+}
+
+.animate-outline-hand {
+    animation: outlineHandTap 1.3s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.animate-outline-rays {
+    animation: outlineRaysPulse 1.3s infinite cubic-bezier(0.25, 1, 0.5, 1);
 }
