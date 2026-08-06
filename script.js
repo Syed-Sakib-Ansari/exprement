@@ -57,7 +57,7 @@ function renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear
     const directorText = tmdb?.director || item.director || "Renowned Director";
     const castText = tmdb?.cast || (Array.isArray(item.cast) ? item.cast.join(', ') : item.cast) || "Top Featured Ensemble Cast";
     const durationText = tmdb?.runtime || item.duration || "Full Feature Length";
-
+    
     const plotText = tmdb?.overview || item.detailedPlotSummary || `${SEOFullTitle} is a prominent ${item.category || 'Cinema'} release officially debuting in ${releaseYear}. Presented in ${cleanLang}, this production delivers a rich narrative experience tailored for fans of ${item.genre || 'Action & Drama'}. The storyline brings together dynamic character arcs, high-definition audio-visual elements, and cinematic sequences that keep viewers engaged from start to finish.`;
 
     const playbackGuide = `On MovieDakhi, viewers can access full metadata, audio specifications, and verified stream references for ${SEOFullTitle}. The media file is encoded in x265 HEVC MKV format with English softcoded subtitles (ESub), providing ultra-smooth remote playback across Google Chrome, PC, Android, iOS, Smart TV, and Chromecast setups.`;
@@ -673,10 +673,8 @@ function initHeroSlider() {
     const uniquePool = Array.from(uniqueMoviesMap.values());
     if (uniquePool.length === 0) return;
 
-    // 🚀 ULTRA-FAST SPEED: কলাম প্রতি ছবির সংখ্যা কমিয়ে লোড স্পিড ৩ গুণ বাড়ানো হয়েছে
-    const isMobile = windowWidth < 640;
-    const itemsPerCol = isMobile ? 3 : 4;
-    const heroImgWidth = isMobile ? 140 : 200;
+    const itemsPerCol = 8;
+    const heroImgWidth = windowWidth < 640 ? 180 : 250;
 
     for (let c = 0; c < colCount; c++) {
         const colDiv = document.createElement('div');
@@ -806,10 +804,9 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
                     window.history.pushState(stateObj, '', url);
                 }
             }
-            // 🚀 targetScroll থাকলে সেখানে স্ক্রোল করবে, না থাকলে ০-তে যাবে
-            window.scrollTo({ top: targetScroll || 0, left: 0, behavior: 'instant' });
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         } catch (e) {
-            window.scrollTo({ top: targetScroll || 0, left: 0, behavior: 'instant' });
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         }
     }
 }
@@ -1437,11 +1434,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         sessionStorage.removeItem('MovieDakhi_Count');
     }
 
-    renderCategories();
+renderCategories();
+    
+    // 🚀 STEP 1: পেজের মূল কন্টেন্ট (LCP) সাথে সাথে রেন্ডার হবে
     renderRecentAdds();
 
-    // 🚀 SCROLL RESTORATION FIX: রিলোড হলে ক্যাটাগরি সেকশন সাথে সাথে রেন্ডার করবে যাতে পেজের সঠিক হাইট তৈরি হয়
-    renderCategorySections(isRestoring);
+    // 🚀 STEP 2: ব্রাউজারের মেইন থ্রেডকে ফ্রি রেখে ১০০ms পর ক্যাটাগরি লোড হবে
+    setTimeout(() => {
+        renderCategorySections(isRestoring);
+    }, 100);
+
+    // 🚀 STEP 3: ৩০০ms পর ব্যাকগ্রাউন্ড হিরো মার্কি স্লাইডার তৈরি হবে
+    setTimeout(() => {
+        initHeroSlider();
+    }, 300);
+    
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => initHeroSlider(), { timeout: 1500 });
+    } else {
+        setTimeout(() => initHeroSlider(), 800);
+    };
 
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view') || 'home';
@@ -1465,29 +1477,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         const state = history.state;
         finalScroll = finalScroll > 0 ? finalScroll : (state.scrollY || 0);
         finalCount = finalCount > ITEMS_PER_PAGE ? finalCount : (state.displayedCount || ITEMS_PER_PAGE);
-        switchView(state.view, state.category, false, finalCount, finalScroll);
+        switchView(state.view, state.category, false, finalCount);
     } else if (!isBlob && !movieSlug) {
         try { window.history.replaceState({ view: view, category: category, scrollY: 0, displayedCount: finalCount, validDakhiState: true }, ''); } catch (e) { }
-        switchView(view, category, false, finalCount, finalScroll);
+        switchView(view, category, false, finalCount);
     } else if (!movieSlug) {
-        switchView('home', null, false, finalCount, finalScroll);
+        switchView('home', null, false, finalCount);
     }
 
-    // 🚀 PERFECT SCROLL RESTORATION: লেআউট সেট হওয়ার পর নিখুঁতভাবে স্ক্রোল পজিশনে ফিরিয়ে নিয়ে যাবে
     if (isRestoring && !movieSlug) {
         requestAnimationFrame(() => {
             window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' });
-            setTimeout(() => {
-                window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' });
-            }, 100);
+            setTimeout(() => window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' }), 50);
         });
-    }
-
-    // 🚀 SPEED OPTIMIZATION: ব্যাকগ্রাউন্ড স্লাইডার মূল পেজ রেন্ডার হওয়ার পর হালকাভাবে লোড হবে
-    if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => initHeroSlider(), { timeout: 2000 });
-    } else {
-        setTimeout(() => initHeroSlider(), 1000);
     }
 
     if (movieSlug) {
