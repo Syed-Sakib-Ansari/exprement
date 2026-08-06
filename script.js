@@ -1,152 +1,21 @@
+// ==========================================
+// 🚀 SYSTEM & HISTORY CONFIGURATION
+// ==========================================
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
 // ==========================================
-// 🔑 TMDB API CONFIG & HELPER ENGINE
+// 🚀 SEO URL SLUG GENERATOR
 // ==========================================
-const CLIENT_TMDB_API_KEY = "dafa07a5692eee854f7f511b99316708";
-const clientTmdbCache = {};
-
-async function getClientTMDBDetails(title, year) {
-    const cacheKey = `${title}_${year}`;
-    if (clientTmdbCache[cacheKey]) return clientTmdbCache[cacheKey];
-    if (!CLIENT_TMDB_API_KEY) return null;
-
-    try {
-        const cleanTitle = title.replace(/\s*\(\d{4}\).*/, '').trim();
-        let searchUrl = `https://api.themoviedb.org/3/search/multi?api_key=${CLIENT_TMDB_API_KEY}&query=${encodeURIComponent(cleanTitle)}`;
-        let searchRes = await fetch(searchUrl);
-        if (!searchRes.ok) return null;
-
-        let searchData = await searchRes.json();
-        if (!searchData.results || searchData.results.length === 0) {
-            searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${CLIENT_TMDB_API_KEY}&query=${encodeURIComponent(cleanTitle)}`;
-            searchRes = await fetch(searchUrl);
-            if (searchRes.ok) searchData = await searchRes.json();
-        }
-
-        if (!searchData.results || searchData.results.length === 0) return null;
-
-        const match = searchData.results[0];
-        const mediaType = match.media_type === 'tv' ? 'tv' : 'movie';
-        const detailUrl = `https://api.themoviedb.org/3/${mediaType}/${match.id}?api_key=${CLIENT_TMDB_API_KEY}&append_to_response=credits`;
-        const detailRes = await fetch(detailUrl);
-        if (!detailRes.ok) return null;
-
-        const detail = await detailRes.json();
-        const overview = detail.overview || '';
-        const cast = detail.credits?.cast?.slice(0, 5).map(c => c.name).join(', ') || '';
-        const crew = detail.credits?.crew || [];
-        const directorObj = crew.find(c => c.job === 'Director') || crew.find(c => c.known_for_department === 'Directing');
-        const director = directorObj ? directorObj.name : '';
-        const runtime = detail.runtime ? `${detail.runtime} Mins` : (detail.episode_run_time?.[0] ? `${detail.episode_run_time[0]} Mins` : '');
-
-        const result = { overview, cast, director, runtime };
-        clientTmdbCache[cacheKey] = result;
-        return result;
-    } catch (e) {
-        return null;
-    }
-}
-
-function renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear, contentType, dynamicFooterKeywords, tmdb) {
-    const modalDescElem = document.getElementById('modalDesc');
-    if (!modalDescElem) return;
-
-    const directorText = tmdb?.director || item.director || "Renowned Director";
-    const castText = tmdb?.cast || (Array.isArray(item.cast) ? item.cast.join(', ') : item.cast) || "Top Featured Ensemble Cast";
-    const durationText = tmdb?.runtime || item.duration || "Full Feature Length";
-    
-    const plotText = tmdb?.overview || item.detailedPlotSummary || `${SEOFullTitle} is a prominent ${item.category || 'Cinema'} release officially debuting in ${releaseYear}. Presented in ${cleanLang}, this production delivers a rich narrative experience tailored for fans of ${item.genre || 'Action & Drama'}. The storyline brings together dynamic character arcs, high-definition audio-visual elements, and cinematic sequences that keep viewers engaged from start to finish.`;
-
-    const playbackGuide = `On MovieDakhi, viewers can access full metadata, audio specifications, and verified stream references for ${SEOFullTitle}. The media file is encoded in x265 HEVC MKV format with English softcoded subtitles (ESub), providing ultra-smooth remote playback across Google Chrome, PC, Android, iOS, Smart TV, and Chromecast setups.`;
-
-    modalDescElem.innerHTML = `
-        <div class="seo-rich-layout text-left space-y-6 font-sans text-xs md:text-[13px] text-gray-300 antialiased select-text">
-            <div class="flex flex-wrap items-center gap-3 border-b border-white/10 pb-3">
-                <span class="px-2.5 py-1 text-[10px] font-black tracking-wider text-white bg-red-600 rounded-sm uppercase inline-block">
-                    ${item.genre || "Action / Drama"}
-                </span>
-                <span class="text-[11px] text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span> TMDB Media Details Verified
-                </span>
-            </div>
-
-            <div class="p-4 bg-zinc-900/80 border border-white/10 rounded-xl space-y-2.5 text-[12px] shadow-lg">
-                <div class="flex flex-wrap items-center justify-between border-b border-white/[0.06] pb-2">
-                    <span class="text-gray-400 font-medium">🎬 Director:</span>
-                    <span class="font-bold text-white">${directorText}</span>
-                </div>
-                <div class="flex flex-wrap items-center justify-between border-b border-white/[0.06] pb-2">
-                    <span class="text-gray-400 font-medium">⭐ Star Cast:</span>
-                    <span class="font-bold text-red-400 truncate max-w-xs md:max-w-md">${castText}</span>
-                </div>
-                <div class="flex flex-wrap items-center justify-between">
-                    <span class="text-gray-400 font-medium">⏱️ Runtime:</span>
-                    <span class="font-bold text-amber-400">${durationText}</span>
-                </div>
-            </div>
-
-            <div class="space-y-2 pt-2">
-                <h3 class="text-xs md:text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
-                    <i class="fas fa-book-open text-red-500"></i> Detailed Storyline & Synopsis
-                </h3>
-                <p class="leading-relaxed text-gray-300 text-[12px] md:text-[13px] font-normal text-justify bg-zinc-950/60 p-3.5 rounded-lg border border-white/5">
-                    ${plotText}
-                </p>
-            </div>
-
-            <div class="space-y-2">
-                <h3 class="text-xs md:text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
-                    <i class="fas fa-tv text-blue-500"></i> Media & Playback Overview
-                </h3>
-                <p class="leading-relaxed text-gray-400 text-[11px] md:text-[12px] font-normal text-justify bg-zinc-950/40 p-3 rounded-lg border border-white/5">
-                    ${playbackGuide}
-                </p>
-            </div>
-
-            <div class="p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
-                <div class="flex items-center justify-between py-2 border-b border-white/[0.06]">
-                    <span class="text-gray-400 font-medium">📌 Title</span>
-                    <span class="font-semibold text-white truncate max-w-[150px]" title="${titleKey}">${titleKey}</span>
-                </div>
-                <div class="flex items-center justify-between py-2 border-b border-white/[0.06]">
-                    <span class="text-gray-400 font-medium">🎬 Format</span>
-                    <span class="font-semibold text-white">MKV / x265 HEVC</span>
-                </div>
-                <div class="flex items-center justify-between py-2 border-b border-white/[0.06]">
-                    <span class="text-gray-400 font-medium">🌐 Audio</span>
-                    <span class="font-bold text-emerald-400">${cleanLang}</span>
-                </div>
-                <div class="flex items-center justify-between py-2 border-b border-white/[0.06]">
-                    <span class="text-gray-400 font-medium">📅 Release Year</span>
-                    <span class="font-semibold text-white">${releaseYear}</span>
-                </div>
-                <div class="flex items-center justify-between py-2 border-b border-white/[0.06] sm:border-b-0">
-                    <span class="text-gray-400 font-medium">🔥 Quality</span>
-                    <span class="font-semibold text-amber-400">720p, 1080p, 4K UHD</span>
-                </div>
-                <div class="flex items-center justify-between py-2">
-                    <span class="text-gray-400 font-medium">📝 Subtitles</span>
-                    <span class="font-semibold text-gray-200">English (ESub)</span>
-                </div>
-            </div>
-
-            <div class="pt-3 border-t border-white/5">
-                <p class="text-[10px] text-gray-600 leading-relaxed text-justify opacity-40 font-normal">
-                    ${dynamicFooterKeywords}
-                </p>
-            </div>
-        </div>
-    `;
-}
-
 function generateMovieSlug(title) {
     if (!title) return "movie";
     return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
 }
 
+// ==========================================
+// 🚀 DATABASE, HIGH-SPEED CACHING & INSTANT O(1) INDEXING
+// ==========================================
 const contentData = [];
 const categoryIndexMap = {};
 
@@ -169,6 +38,9 @@ function processContentItems() {
     buildCategoryIndex();
 }
 
+// ==========================================
+// 🚀 INDEXEDDB CORE LAYER HELPERS (লাইফ-টাইম স্টোরেজ বর্ম)
+// ==========================================
 function openMovieDakhiDB() {
     return new Promise((resolve, reject) => {
         const request = indexedDB.open('MovieDakhiDB', 1);
@@ -207,6 +79,9 @@ function setIDBCache(key, value) {
     });
 }
 
+// ==========================================
+// 🚀 DYNAMIC FETCH ENGINE WITH ASYNCHRONOUS INDEXEDDB
+// ==========================================
 async function fetchAndCacheNetworkDatabase() {
     try {
         const response = await fetch('movies.json');
@@ -221,6 +96,7 @@ async function fetchAndCacheNetworkDatabase() {
             }
         }
     } catch (err) {
+        console.warn("Live fetch failed, using internal database fallback.", err);
         processContentItems();
     }
 }
@@ -251,8 +127,10 @@ function triggerBackgroundUpdateCheck() {
                     }
                 }
             }
-        } catch (err) { }
-    }, 4500);
+        } catch (err) {
+            console.error("Background auto-update check failed safely.", err);
+        }
+    }, 1200);
 }
 
 async function loadContentDatabase() {
@@ -267,13 +145,18 @@ async function loadContentDatabase() {
                 triggerBackgroundUpdateCheck();
                 return;
             }
-        } catch (e) { }
+        } catch (e) {
+            // ক্যাশ রিড এরর হ্যান্ডেলিং
+        }
     }
     await fetchAndCacheNetworkDatabase();
 }
 
 const databaseLoadPromise = loadContentDatabase();
 
+// ==========================================
+// 🚀 GLOBAL VARIABLES & DOM CACHING
+// ==========================================
 const categories = [
     "all", "Hollywood", "Bollywood", "South", "Animation",
     "Korean Country", "Chinese", "Hollywood Series", "Bollywood Series",
@@ -283,13 +166,13 @@ const categories = [
 let currentItem = null;
 let downloadClickCount = 0;
 let currentEpisodeIndex = null;
-let currentServerIndex = 1;
+let currentServerIndex = 1; // 🚀 নতুন সার্ভার ট্র্যাক করার জন্য
 let preSearchState = null;
 let currentView = 'home';
 let sliderInterval;
 let scrollTimeoutId = null;
 let isModalClosing = false;
-let lastVisitedCategory = 'all';
+let lastVisitedCategory = 'all'; // 🚀 NEW: For Tracking Category Changes
 
 const homeView = document.getElementById('homeView');
 const libraryView = document.getElementById('libraryView');
@@ -297,6 +180,7 @@ const recentAddsGrid = document.getElementById('recentAddsGrid');
 const libraryGrid = document.getElementById('libraryGrid');
 const categorySections = document.getElementById('categorySections');
 const sliderWrapper = document.getElementById('sliderWrapper');
+const sliderDots = document.getElementById('sliderDots');
 const searchInput = document.getElementById('searchInput');
 const searchIcon = document.getElementById('searchIcon');
 const categoryMenu = document.getElementById('categoryMenu');
@@ -307,14 +191,15 @@ const ITEMS_PER_PAGE = 30;
 let isLoading = false;
 let activeSubGridId = null;
 
+// ==========================================
+// 🚀 UTILITY FUNCTIONS
+// ==========================================
 function getOptimizedImageUrl(url, width = 300) {
     if (!url) return "";
-    if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) return url;
-    // 🚀 DPR 2x multiplier for 100% crisp Retina HD resolution on Mobile
-    const dpr = Math.min(window.devicePixelRatio || 2, 2);
-    const baseWidth = window.innerWidth < 640 ? Math.min(width, 220) : width;
-    const targetWidth = Math.round(baseWidth * dpr);
-    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${targetWidth}&output=webp&q=88&il`;
+    if (url.includes('wikimedia.org') || url.includes('wikipedia.org')) {
+        return url;
+    }
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&output=webp&q=75`;
 }
 
 function debounce(func, wait) {
@@ -325,11 +210,26 @@ function debounce(func, wait) {
     };
 }
 
+// 🚀 EMBED URL CLEANER & PARSER (Extracts clean URL if <iframe ...> HTML tag is pasted)
+function cleanEmbedUrl(rawUrl) {
+    if (!rawUrl) return "";
+    let str = rawUrl.trim();
+    const match = str.match(/src=["']([^"']+)["']/i);
+    if (match && match[1]) {
+        str = match[1];
+    }
+    return str.replace(/&amp;/g, '&');
+}
+
+// ==========================================
+// 🚀 EPISODE-STYLE MULTI-SERVER ENGINE
+// ==========================================
 function renderServerButtons() {
     const serverSec = document.getElementById('serverSection');
     const serverList = document.getElementById('serverList');
     if (!serverSec || !serverList || !currentItem) return;
 
+    // 🚀 ১. যদি ওয়েব সিরিজ হয়, তবে সার্ভার অপশন পুরোপুরি হাইড করবে এবং ১ম এপিসোড প্লে করবে
     const isSeries = currentItem.episodes && currentItem.episodes.length > 0;
 
     if (isSeries) {
@@ -341,12 +241,14 @@ function renderServerButtons() {
         return;
     }
 
+    // 🚀 ২. শুধু সিঙ্গেল মুভির জন্য স্টাইলিশ সার্ভার বাটন দেখাবে
     const target = currentItem;
+
     const servers = [
-        { key: 'embedUrl', label: 'Server 1 (Primary)' },
-        { key: 'embedUrl2', label: 'Server 2 (Super Fast)' },
-        { key: 'embedUrl3', label: 'Server 3 (VIP Stream)' },
-        { key: 'embedUrl4', label: 'Server 4 (Alternative)' }
+        { key: 'embedUrl', label: 'Server 1 (Primary)', },
+        { key: 'embedUrl2', label: 'Server 2 (Super Fast)', },
+        { key: 'embedUrl3', label: 'Server 3 (VIP Stream)', },
+        { key: 'embedUrl4', label: 'Server 4 (Alternative)', }
     ];
 
     const activeServers = servers.filter(s => target[s.key] && typeof target[s.key] === 'string' && target[s.key].trim() !== '');
@@ -357,116 +259,100 @@ function renderServerButtons() {
 
         activeServers.forEach((s, idx) => {
             const btn = document.createElement('button');
+            // 🚀 প্রতিটি সার্ভার বাটনের জন্য আলাদা কালার ক্লাস যুক্ত করা হচ্ছে (server-btn-1, server-btn-2...)
             btn.className = `server-btn server-btn-${idx + 1} ${idx === 0 ? 'active' : ''}`;
             btn.innerHTML = `<i class="fas fa-server text-[10px]"></i> ${s.label}`;
             btn.onclick = () => playServer(target[s.key], btn);
             serverList.appendChild(btn);
         });
 
+        // প্রথম সার্ভার প্লে করবে
         loadIframeUrl(target[activeServers[0].key]);
     } else {
         serverSec.classList.add('hidden');
     }
 }
 
+// সার্ভার বাটনে ক্লিক করলে এই ফাংশনটি কল হবে
 function playServer(rawUrl, btnElement) {
-    const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+    // 🚀 ১. ইউজার অন্য কোনো সার্ভার বাটনে ক্লিক করলেই স্মার্ট লিংক অ্যাড নতুন ট্যাবে ওপেন হবে
+    const smartAdLink = "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 
+    // 🚀 ২. ক্লিক করা বাটনের স্টাইল একটিভ/ড্যাপসা করা এবং নির্বাচিত ভিডিও প্লে করা
     document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
     if (btnElement) btnElement.classList.add('active');
     loadIframeUrl(rawUrl);
 }
 
-function decodeAndCleanUrl(rawUrl) {
-    if (!rawUrl) return "";
-    let str = rawUrl.trim();
-
-    try {
-        if (!str.startsWith('http') && !str.startsWith('<iframe') && /^[A-Za-z0-9+/=]+$/.test(str)) {
-            str = atob(str);
-        }
-    } catch (e) { }
-
-    const match = str.match(/src=["']([^"']+)["']/i);
-    if (match && match[1]) str = match[1];
-    return str.replace(/&amp;/g, '&');
-}
-
+// প্লেয়ারে আইফ্রেম লোড করার অরিজিনাল কোড
 function loadIframeUrl(rawUrl) {
-    let url = decodeAndCleanUrl(rawUrl);
+    let url = cleanEmbedUrl(rawUrl);
     const actualVideo = document.getElementById('actualVideo');
     if (actualVideo) {
         actualVideo.classList.remove('hidden');
-        actualVideo.innerHTML = `<iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" src="${url}" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;"></iframe>`;
+        actualVideo.innerHTML = `<iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" src="${url}" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;"></iframe>`;
     }
 }
 
+// ==========================================
+// 🚀 CATEGORY MENU & NAVIGATION RENDER
+// ==========================================
 function renderCategories() {
     const mobileGrid = document.getElementById('mobileCategoryGrid');
     const desktopNav = document.getElementById('desktopCategoryPills');
     const libraryFilters = document.getElementById('libraryFilters');
 
-    if (mobileGrid) mobileGrid.innerHTML = '';
-    if (desktopNav) desktopNav.innerHTML = '';
-    if (libraryFilters) libraryFilters.innerHTML = '';
+    mobileGrid.innerHTML = ''; desktopNav.innerHTML = ''; libraryFilters.innerHTML = '';
 
     categories.forEach(cat => {
         const label = cat === 'Korean Country' ? 'Korean' : cat;
 
         if (cat === 'all') {
-            if (mobileGrid) {
-                const mobileItem = document.createElement('a');
-                mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
-                mobileItem.innerText = 'Home';
-                mobileItem.href = '#';
-                mobileItem.onclick = (e) => {
-                    e.preventDefault();
-                    toggleCategoryMenu(false, false);
-                    clearSearch(true);
-                    switchView('home', null, 'replace');
-                };
-                mobileGrid.appendChild(mobileItem);
-            }
+            const mobileItem = document.createElement('a');
+            mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
+            mobileItem.innerText = 'Home';
+            mobileItem.href = '#';
+            mobileItem.onclick = (e) => {
+                e.preventDefault();
+                toggleCategoryMenu(false, false);
+                clearSearch(true);
+                switchView('home', null, 'replace');
+            };
+            mobileGrid.appendChild(mobileItem);
             return;
         }
 
         const realLink = `?view=library&category=${encodeURIComponent(cat)}`;
 
-        if (mobileGrid) {
-            const mobileItem = document.createElement('a');
-            mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
-            mobileItem.innerText = label;
-            mobileItem.href = realLink;
-            mobileItem.onclick = (e) => {
-                e.preventDefault();
-                toggleCategoryMenu(false, false, true);
-                switchView('library', cat, true);
-            };
-            mobileGrid.appendChild(mobileItem);
-        }
+        const mobileItem = document.createElement('a');
+        mobileItem.className = 'cat-menu-item flex items-center justify-center text-white no-underline w-full h-full';
+        mobileItem.innerText = label;
+        mobileItem.href = realLink;
+        mobileItem.onclick = (e) => {
+            e.preventDefault();
+            toggleCategoryMenu(false, false, true);
+            switchView('library', cat, true); // ✅ 'true' (pushState) দেওয়া হয়েছে যাতে আগের ক্যাটাগরি হিস্ট্রিতে সেভ থাকে
+        };
+        mobileGrid.appendChild(mobileItem);
 
-        if (desktopNav) {
-            const desktopItem = document.createElement('a');
-            desktopItem.href = realLink;
-            desktopItem.className = 'category-pill border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 transition';
-            desktopItem.innerText = label;
-            desktopItem.onclick = (e) => {
-                e.preventDefault();
-                switchView('library', cat);
-            };
-            desktopNav.appendChild(desktopItem);
+        const desktopItem = document.createElement('a');
+        desktopItem.href = realLink;
+        desktopItem.className = 'category-pill border border-white/10 px-5 md:px-7 py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-red-600 transition';
+        desktopItem.innerText = label;
+        desktopItem.onclick = (e) => {
+            e.preventDefault();
+            switchView('library', cat);
+        };
+        desktopNav.appendChild(desktopItem);
 
-            if (libraryFilters) {
-                const filterItem = desktopItem.cloneNode(true);
-                filterItem.setAttribute('data-category', cat);
-                filterItem.onclick = (e) => {
-                    e.preventDefault();
-                    switchView('library', cat);
-                };
-                libraryFilters.appendChild(filterItem);
-            }
-        }
+        const filterItem = desktopItem.cloneNode(true);
+        filterItem.setAttribute('data-category', cat);
+        filterItem.onclick = (e) => {
+            e.preventDefault();
+            switchView('library', cat);
+        };
+        libraryFilters.appendChild(filterItem);
     });
 }
 
@@ -478,10 +364,12 @@ function toggleCategoryMenu(show, triggerBack = true) {
     const fabIconTimes = document.getElementById('fabIconTimes');
 
     if (show) {
+        // 🚀 ১. মেনু খোলার আগে একদম সঠিক স্ক্রল পজিশন রিড করা
         savedScrollY = window.scrollY || document.documentElement.scrollTop;
 
         const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || null;
 
+        // 🚀 ২. বর্তমান পজিশনটি ব্যাকগ্রাউন্ড হিস্ট্রিতে লক করা
         try {
             window.history.replaceState({
                 view: currentView,
@@ -501,36 +389,35 @@ function toggleCategoryMenu(show, triggerBack = true) {
             }, '');
         } catch (e) { }
 
-        if (categoryMenu) {
-            categoryMenu.classList.remove('hidden');
-            void categoryMenu.offsetWidth;
-            categoryMenu.classList.add('active');
-        }
+        categoryMenu.classList.remove('hidden');
+        void categoryMenu.offsetWidth;
+        categoryMenu.classList.add('active');
 
         document.body.style.position = 'fixed';
         document.body.style.top = `-${savedScrollY}px`;
         document.body.style.width = '100%';
 
-        if (fab) fab.classList.add('menu-open');
+        fab.classList.add('menu-open');
+
         if (fabIconBars) fabIconBars.classList.add('scale-0', 'opacity-0', '-rotate-90');
         if (fabIconTimes) fabIconTimes.classList.remove('scale-0', 'opacity-0', 'rotate-90');
     } else {
-        if (categoryMenu) {
-            categoryMenu.classList.remove('active');
-            setTimeout(() => categoryMenu.classList.add('hidden'), 400);
-        }
+        categoryMenu.classList.remove('active');
+        setTimeout(() => categoryMenu.classList.add('hidden'), 400);
 
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
 
+        // 🚀 ৩. মেনু ক্লোজ করার সাথে সাথেই আগের জায়গায় স্ক্রল ধরে রাখা
         window.scrollTo({ top: savedScrollY, left: 0, behavior: 'instant' });
 
         if (triggerBack && window.history.state?.isMenuOpen) {
             window.history.back();
         }
 
-        if (fab) fab.classList.remove('menu-open');
+        fab.classList.remove('menu-open');
+
         if (fabIconBars) fabIconBars.classList.remove('scale-0', 'opacity-0', '-rotate-90');
         if (fabIconTimes) fabIconTimes.classList.add('scale-0', 'opacity-0', 'rotate-90');
     }
@@ -649,87 +536,103 @@ window.addEventListener('resize', () => {
     if (currentY < 0) fab.style.top = `0px`;
 });
 
+// ==========================================
+// 🚀 HERO SLIDER INITIALIZATION
+// ==========================================
 function initHeroSlider() {
-    const sliderWrapper = document.getElementById('sliderWrapper');
-    if (!sliderWrapper || contentData.length === 0) return;
+    if (!sliderWrapper || !sliderDots) return;
 
+    const slides = [...(categoryIndexMap["Recent Adds"] || []), ...(categoryIndexMap["Bollywood"] || []), ...(categoryIndexMap["Hollywood"] || [])].slice(0, 6);
+    if (slides.length === 0) return;
+
+    let currentSlide = 0;
     sliderWrapper.innerHTML = '';
+    sliderDots.innerHTML = '';
 
-    const windowWidth = window.innerWidth;
-    let colCount = 3;
+    const isMobile = window.innerWidth <= 768;
+    const sliderImageWidth = isMobile ? 600 : 1200;
 
-    if (windowWidth >= 1280) colCount = 6;
-    else if (windowWidth >= 1024) colCount = 5;
-    else if (windowWidth >= 640) colCount = 4;
-    else colCount = 3;
+    slides.forEach((movie, index) => {
+        const slide = document.createElement('div');
+        slide.className = `slide w-full h-full absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'active' : ''}`;
 
-    sliderWrapper.style.gridTemplateColumns = `repeat(${colCount}, minmax(0, 1fr))`;
+        const loadingAttr = index === 0 ? 'eager' : 'lazy';
+        const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
 
-    const uniqueMoviesMap = new Map();
-    contentData.forEach(item => {
-        if (item && item.title && !uniqueMoviesMap.has(item.title)) {
-            uniqueMoviesMap.set(item.title, item);
-        }
-    });
-    const uniquePool = Array.from(uniqueMoviesMap.values());
-    if (uniquePool.length === 0) return;
-
-    const itemsPerCol = 8;
-    const heroImgWidth = windowWidth < 640 ? 180 : 250;
-
-    for (let c = 0; c < colCount; c++) {
-        const colDiv = document.createElement('div');
-        const isUp = c % 2 === 0;
-        colDiv.className = `flex flex-col ${isUp ? 'marquee-col-up' : 'marquee-col-down'}`;
-
-        const colItems = [];
-        const startIndex = (c * itemsPerCol) % uniquePool.length;
-
-        for (let i = 0; i < itemsPerCol; i++) {
-            colItems.push(uniquePool[(startIndex + i) % uniquePool.length]);
-        }
-
-        const doubledItems = [...colItems, ...colItems];
-
-        doubledItems.forEach(movie => {
-            const imgCard = document.createElement('div');
-            imgCard.className = 'w-full p-1.5 md:p-2 shrink-0 box-border';
-            imgCard.innerHTML = `
-                <div class="w-full aspect-[2/3] rounded-lg md:rounded-xl overflow-hidden shadow-lg border border-white/10 cursor-pointer hover:scale-105 transition-transform duration-300 bg-zinc-900">
-                    <img src="${getOptimizedImageUrl(movie.posterUrl, heroImgWidth)}" alt="${movie.title}" class="w-full h-full object-cover block" loading="lazy" decoding="async">
+        slide.innerHTML = `
+            <img src="${getOptimizedImageUrl(movie.posterUrl, sliderImageWidth)}" class="w-full h-full object-cover object-center" alt="${movie.title}" loading="${loadingAttr}" ${priorityAttr}>
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+                <div class="slide-content transform translate-y-10 opacity-0 transition-all duration-700 ease-out max-w-4xl">
+                    <span class="inline-block px-3 py-1 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 rounded-full shadow-lg shadow-red-600/40">New Release</span>
+                    <h2 class="text-3xl md:text-6xl font-black mb-4 text-white drop-shadow-2xl leading-tight">${movie.title}</h2>
+                    <p class="text-gray-200 text-sm md:text-base font-medium mb-8 line-clamp-3 max-w-2xl mx-auto drop-shadow-md">${movie.genre}</p>
+                    <button onclick="openModal(${movie.id});" class="bg-white text-black px-8 py-3 rounded-full font-black text-xs md:text-sm uppercase tracking-widest hover:bg-gray-200 hover:scale-105 transition transform shadow-xl flex items-center justify-center gap-2 mx-auto">
+                        <i class="fas fa-play"></i> Watch Now
+                    </button>
                 </div>
-            `;
+            </div>`;
+        sliderWrapper.appendChild(slide);
 
-            imgCard.onclick = () => openModal(movie.id);
-            colDiv.appendChild(imgCard);
-        });
+        const dot = document.createElement('button');
+        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-6' : 'bg-white/30 hover:bg-white/60'}`;
+        dot.onclick = () => goToSlide(index);
+        sliderDots.appendChild(dot);
+    });
 
-        sliderWrapper.appendChild(colDiv);
+    function startSlideTimer() {
+        clearInterval(sliderInterval);
+        sliderInterval = setInterval(() => { goToSlide((currentSlide + 1) % slides.length); }, 3500);
     }
+
+    window.goToSlide = (index) => {
+        const allSlides = document.querySelectorAll('.slide');
+        const allDots = sliderDots.children;
+        if (allSlides.length > 0) {
+            allSlides[currentSlide].classList.remove('active');
+            allDots[currentSlide].className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all duration-300';
+            currentSlide = index;
+            allSlides[currentSlide].classList.add('active');
+            allDots[currentSlide].className = 'w-6 h-2 rounded-full bg-white transition-all duration-300';
+            startSlideTimer();
+        }
+    };
+
+    setTimeout(() => {
+        const activeSlide = document.querySelector('.slide.active .slide-content');
+        if (activeSlide) { activeSlide.style.opacity = '1'; activeSlide.style.transform = 'translateY(0)'; }
+    }, 50);
+    startSlideTimer();
 }
 
+// ==========================================
+// 🚀 SEARCH SYSTEM UI MANIPULATION
+// ==========================================
 function updateSearchUI() {
     const libraryFilters = document.getElementById('libraryFilters');
-    if (!searchInput) return;
     if (searchInput.value.trim().length > 0) {
-        if (searchIcon) {
-            searchIcon.classList.remove('fa-search');
-            searchIcon.classList.add('fa-times', 'cursor-pointer');
-        }
+        searchIcon.classList.remove('fa-search');
+        searchIcon.classList.add('fa-times', 'cursor-pointer');
         if (libraryFilters) libraryFilters.style.display = 'none';
     } else {
-        if (searchIcon) {
-            searchIcon.classList.remove('fa-times', 'cursor-pointer');
-            searchIcon.classList.add('fa-search');
-        }
+        searchIcon.classList.remove('fa-times', 'cursor-pointer');
+        searchIcon.classList.add('fa-search');
         if (libraryFilters) libraryFilters.style.display = '';
     }
 }
 
+function handleSearchIconClick() {
+    if (searchInput.value.trim().length > 0) {
+        clearSearch();
+    } else {
+        searchInput.blur();
+    }
+}
+
 function clearSearch(preventRestore = false) {
-    if (searchInput) searchInput.value = '';
+    searchInput.value = '';
     updateSearchUI();
-    if (searchInput) searchInput.blur();
+    searchInput.blur();
 
     if (!preventRestore && preSearchState) {
         switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
@@ -740,11 +643,22 @@ function clearSearch(preventRestore = false) {
     }
 }
 
+function updateCanonical(url) {
+    const canonicalLink = document.getElementById('canonicalLink');
+    if (canonicalLink) {
+        canonicalLink.setAttribute('href', 'https://moviedakhi.com/');
+    }
+}
+
+// ==========================================
+// 🚀 SINGLE PAGE APPLICATION (SPA) VIEW SWITCHER
+// ==========================================
 function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
     if (mode) {
         const currentScroll = window.scrollY;
         const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || null;
         try {
+            // 🚀 নতুন ক্যাটাগরিতে যাওয়ার ঠিক মুহূর্তে আগের পেজের স্টেট নিখুঁতভাবে হিস্ট্রিতে সেভ করা হচ্ছে
             window.history.replaceState({
                 view: currentView,
                 category: activeCat,
@@ -756,15 +670,15 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     }
 
     currentView = viewName;
-    if (homeView) homeView.classList.remove('active');
-    if (libraryView) libraryView.classList.remove('active');
+    homeView.classList.remove('active');
+    libraryView.classList.remove('active');
 
     if (viewName === 'home') {
-        if (homeView) homeView.classList.add('active');
+        homeView.classList.add('active');
         document.title = "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD";
     } else {
-        if (libraryView) libraryView.classList.add('active');
-        if (filterCategory && searchInput) {
+        libraryView.classList.add('active');
+        if (filterCategory) {
             searchInput.value = '';
             updateSearchUI();
             preSearchState = null;
@@ -778,6 +692,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 
         initLibraryRender(catValue, restoredCount);
 
+        // 🚀 UNLOCK CATEGORY POPUP TRIGGER: ইউজার 'all' বাদে অন্য ক্যাটাগরিতে স্যুইচ করলে পপআপ ওপেন হবে
         if (lastVisitedCategory !== catValue && catValue !== 'all') {
             showUnlockPopup();
         }
@@ -787,6 +702,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     if (mode) {
         try {
             const isBlob = window.location.protocol === 'blob:';
+            // 🚀 নতুন পেজ বা ক্যাটাগরি ওপেন করার সময় সেটির পজিশন ০ (Top) হিস্ট্রিতে পুশ হবে
             const stateObj = { view: viewName, category: filterCategory, scrollY: 0, displayedCount: 30, validDakhiState: true };
 
             if (!isBlob) {
@@ -797,6 +713,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
                 } else {
                     url.searchParams.delete('category');
                 }
+
                 url.searchParams.delete('movie');
 
                 if (mode === 'replace') {
@@ -804,7 +721,10 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
                 } else {
                     window.history.pushState(stateObj, '', url);
                 }
+                updateCanonical(url.href);
             }
+
+            // 🚀 নতুন পেজে ঢুকলে সবসময় পেজের ওপরে (0) স্ক্রল হবে
             window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         } catch (e) {
             window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -812,32 +732,37 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     }
 }
 
-function createMovieCard(item, isAboveFold = false) {
+// ==========================================
+// 🚀 CARD GENERATOR & CONTENT RENDERING
+// ==========================================
+function createMovieCard(item) {
     const card = document.createElement('a');
     const movieSlug = item.slug || generateMovieSlug(item.title);
     card.href = `/${movieSlug}.html`;
     card.className = 'movie-card relative flex flex-col group cursor-pointer no-underline';
 
     const infoText = item.seriesInfo ? `<p class="text-[9px] md:text-[10px] text-gray-400 font-medium mt-1 tracking-wide uppercase">${item.seriesInfo}</p>` : '';
-    const qualityBadgeHtml = item.quality ? `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">${item.quality}</div>` : '';
-    const languageBadgeHtml = item.language ? `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">${item.language}</div>` : '';
 
-    const loadingStrategy = isAboveFold ? 'eager' : 'lazy';
-    const fetchPriority = isAboveFold ? 'high' : 'auto';
+    const qualityBadgeHtml = item.quality ?
+        `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">${item.quality}</div>` : '';
+
+    const languageBadgeHtml = item.language ?
+        `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-2 py-0.5 md:px-1.5 md:py-0.5 text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">${item.language}</div>` : '';
 
     card.innerHTML = `
-        <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 transition-all duration-300">
+        <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 md:ring-0 transition-all duration-300 group-hover:ring-white/20 md:group-hover:ring-transparent">
             ${qualityBadgeHtml}
             ${languageBadgeHtml}
-            <img src="${getOptimizedImageUrl(item.posterUrl, 250)}" alt="${item.title} Media Details & Poster" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110" loading="${loadingStrategy}" fetchpriority="${fetchPriority}" decoding="async">
-            <div class="play-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center p-5 transition-opacity duration-500 ease-out">
-                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-white flex items-center justify-center bg-black/20 backdrop-blur-[1px] shadow-[0_0_15px_rgba(0,0,0,0.6)] transform scale-90 group-hover:scale-100 transition-all duration-500 ease-out">
-                    <i class="fas fa-play text-white text-xs md:text-sm ml-1"></i>
-                </div>
+            <img src="${getOptimizedImageUrl(item.posterUrl)}" alt="Watch ${item.title} Full Movie Online Free" class="w-full h-full object-cover transition-transform duration-500 md:duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+            <div class="play-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 flex md:hidden flex-col justify-center items-center p-5 transition-all duration-300">
+                <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]"><i class="fas fa-play text-white text-lg ml-1"></i></div>
+            </div>
+            <div class="play-overlay absolute inset-0 bg-black/80 opacity-0 hidden md:flex flex-col justify-center items-center p-5 transition-all duration-300">
+                <div class="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center"><i class="fas fa-play text-white text-lg"></i></div>
             </div>
         </div>
-        <div class="mt-3 text-center flex flex-col items-center md:block">
-            <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 group-hover:text-red-500 transition-colors">${item.title}</h4>
+        <div class="mt-4 text-center flex flex-col items-center md:block">
+            <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 transition-colors">${item.title}</h4>
             ${infoText}
         </div>`;
 
@@ -856,8 +781,7 @@ function renderRecentAdds() {
     const fragment = document.createDocumentFragment();
 
     recentItems.slice(0, 18).forEach((item, index) => {
-        // 🚀 First 6 items load with high priority for instant LCP
-        fragment.appendChild(createMovieCard(item, index < 6));
+        fragment.appendChild(createMovieCard(item));
     });
 
     recentAddsGrid.appendChild(fragment);
@@ -870,7 +794,7 @@ function renderCategorySections(forceRenderAll = false) {
 
     const observerOptions = {
         root: null,
-        rootMargin: '400px 0px',
+        rootMargin: '400px 0px', /* মোবাইল স্ক্রিনের জন্য অপটিমাইজড মেমোরি সেভার */
         threshold: 0.01
     };
 
@@ -892,7 +816,7 @@ function renderCategorySections(forceRenderAll = false) {
         lazyGrid.innerHTML = '';
         const cardsFragment = document.createDocumentFragment();
 
-        filtered.slice(0, 11).forEach((item) => {
+        filtered.slice(0, 11).forEach((item, index) => {
             cardsFragment.appendChild(createMovieCard(item));
         });
 
@@ -922,13 +846,13 @@ function renderCategorySections(forceRenderAll = false) {
 
         const displayName = cat === 'Korean Country' ? 'Korean' : cat;
         const section = document.createElement('section');
-        section.className = 'mb-20 md:mb-32 pt-6 md:pt-12 lazy-section opacity-0 min-h-[350px] transition-opacity duration-500';
+        section.className = 'mb-16 lazy-section opacity-0 min-h-[350px] transition-opacity duration-500';
         section.setAttribute('data-category-lazy', cat);
 
         section.innerHTML = `
-            <div class="flex items-center justify-center gap-3 mb-8 md:mb-12">
-                <div class="w-1.5 h-7 md:h-9 bg-red-600 rounded-full shadow-lg shadow-red-600/20"></div>
-                <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase text-white">${displayName}</h3>
+            <div class="flex items-center space-x-3 space-y-10 md:space-y-28 mb-8 justify-center">
+                <div class="w-1.5 h-7 md:h-10 bg-red-600 rounded-full shadow-lg shadow-red-600/20 md:mt-28 mt-10"></div>
+                <h3 class="text-2xl md:text-5xl font-black tracking-tighter uppercase">${displayName}</h3>
             </div>
             
             <div class="lazy-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8 justify-center max-w-10xl mx-auto">
@@ -948,6 +872,9 @@ function renderCategorySections(forceRenderAll = false) {
     categorySections.appendChild(fragment);
 }
 
+// ==========================================
+// 🚀 DOM CACHING SYSTEM FOR SPA LIBRARY
+// ==========================================
 function initLibraryRender(filter = "all", initialCount = 0) {
     if (!libraryGrid) return;
     const rawQuery = searchInput ? searchInput.value : '';
@@ -980,6 +907,7 @@ function initLibraryRender(filter = "all", initialCount = 0) {
         let currentRendered = subGrid.children.length;
         let targetRender = Math.max(initialCount, parseInt(subGrid.dataset.displayedCount || ITEMS_PER_PAGE, 10));
 
+        // 🚀 ব্যাকে আসার পর যদি আগের চেয়ে বেশি আইটেম দরকার হয়, তা রেন্ডার করে পেজের হাইট আগের জায়গায় আনবে
         if (currentRendered < targetRender && currentRendered < libraryData.length) {
             const fragment = document.createDocumentFragment();
             libraryData.slice(currentRendered, targetRender).forEach(item => {
@@ -1018,7 +946,7 @@ function initLibraryRender(filter = "all", initialCount = 0) {
         subGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
     } else {
         const fragment = document.createDocumentFragment();
-        libraryData.slice(0, libraryDisplayedCount).forEach((item) => {
+        libraryData.slice(0, libraryDisplayedCount).forEach((item, index) => {
             fragment.appendChild(createMovieCard(item));
         });
         subGrid.appendChild(fragment);
@@ -1043,7 +971,7 @@ function renderLibraryChunk() {
 
     if (chunk.length > 0 && subGrid) {
         const fragment = document.createDocumentFragment();
-        chunk.forEach((item) => {
+        chunk.forEach((item, index) => {
             fragment.appendChild(createMovieCard(item));
         });
         subGrid.appendChild(fragment);
@@ -1066,6 +994,9 @@ function updateLoadMoreVisibility() {
     }
 }
 
+// ==========================================
+// 🚀 DYNAMIC MOVIE MODAL OVERLAY LOGIC
+// ==========================================
 function openModal(id) {
     savedScrollY = window.scrollY;
     executeActualOpenModal(id);
@@ -1079,6 +1010,7 @@ function executeActualOpenModal(id) {
 
     const movieSlug = item.slug || generateMovieSlug(item.title);
 
+    // 🚀 BULLETPROOF URL CREATION (ক্র্যাশ প্রতিরোধ কোড)
     let newUrl;
     try {
         const baseOrigin = (window.location.origin && window.location.origin !== 'null') ? window.location.origin : 'https://moviedakhi.com';
@@ -1103,7 +1035,7 @@ function executeActualOpenModal(id) {
     const SEOFullTitle = titleHasYear ? titleKey : `${titleKey} (${releaseYear})`;
     const cleanLang = item.language || "Dual Audio [Hindi-English] / ESub";
 
-    document.title = `${SEOFullTitle} [${cleanLang}] | ${contentType} Media Details & Info - MovieDakhi`;
+    document.title = `${SEOFullTitle} [${cleanLang}] | Index of / Download 4K 1080p, Watch Online Free ${contentType} - MovieDakhi`;
 
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -1111,7 +1043,7 @@ function executeActualOpenModal(id) {
         metaDescription.name = "description";
         document.head.appendChild(metaDescription);
     }
-    metaDescription.content = `${SEOFullTitle} ${contentType} media details and stream overview. Access ${titleKey} in ${cleanLang} with English Subtitles (ESub) HEVC x265 on MovieDakhi.`;
+    metaDescription.content = `Index of /${SEOFullTitle} ${contentType} direct download link. Stream ${titleKey} online free in 4K Ultra HD / 1080p BluRay. High-speed Google Drive & Telegram links for ${cleanLang} with English Subtitles (ESub) HEVC x265 on MovieDakhi.`;
 
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
@@ -1121,6 +1053,41 @@ function executeActualOpenModal(id) {
     }
     canonicalLink.href = newUrl.href;
 
+    let schemaScript = document.getElementById('seoSchemaDynamic');
+    if (!schemaScript) {
+        schemaScript = document.createElement('script');
+        schemaScript.id = 'seoSchemaDynamic';
+        schemaScript.type = 'application/ld+json';
+        document.head.appendChild(schemaScript);
+    }
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": isSeries ? "TVSeries" : "Movie",
+        "name": titleKey,
+        "alternateName": isSeries ? [
+            `Index of ${titleKey}`,
+            `${titleKey} Web Series All Episodes Download`,
+            `${titleKey} Complete Season Download 1080p`,
+            `${titleKey} Dual Audio Hindi English Web Series`,
+            `Watch ${titleKey} All Seasons Online Free HD`,
+            `${titleKey} Google Drive Direct Link Series`,
+            `${titleKey} English Subtitles x265 HEVC`
+        ] : [
+            `Index of ${titleKey}`,
+            `${titleKey} Full Movie Download 1080p`,
+            `${titleKey} Dual Audio Hindi English`,
+            `Watch ${titleKey} Full Movie Online Free HD`,
+            `${titleKey} Google Drive Direct Link`,
+            `${titleKey} English Subtitles x265`
+        ],
+        "image": item.poster || window.location.origin + "/default-poster.jpg",
+        "genre": item.genre || "Entertainment",
+        "dateCreated": releaseYear,
+        "inLanguage": ["English", "Hindi"],
+        "description": metaDescription.content
+    };
+    schemaScript.textContent = JSON.stringify(schemaData);
+
     const setMetaTag = (attrName, attrValue, content) => {
         let el = document.querySelector(`meta[${attrName}="${attrValue}"]`);
         if (!el) { el = document.createElement('meta'); el.setAttribute(attrName, attrValue); document.head.appendChild(el); }
@@ -1129,6 +1096,17 @@ function executeActualOpenModal(id) {
     setMetaTag('property', 'og:title', document.title);
     setMetaTag('property', 'og:description', metaDescription.content);
     setMetaTag('property', 'og:url', newUrl.href);
+    setMetaTag('name', 'twitter:title', document.title);
+    setMetaTag('name', 'twitter:description', metaDescription.content);
+    setMetaTag('name', 'twitter:card', 'summary_large_image');
+
+    const rawPosterUrl = item.posterUrl || "https://i.postimg.cc/qqJ0X7T2/Screenshot-2026-05-19-224743.png";
+    const moviePosterUrl = rawPosterUrl.includes('postimg.cc')
+        ? rawPosterUrl
+        : `https://wsrv.nl/?url=${encodeURIComponent(rawPosterUrl)}&w=600&output=jpeg&q=80`;
+
+    setMetaTag('property', 'og:image', moviePosterUrl);
+    setMetaTag('name', 'twitter:image', moviePosterUrl);
 
     const modalTitleElem = document.getElementById('modalTitle');
     const isSameMovie = modalTitleElem && modalTitleElem.innerText === titleKey;
@@ -1140,17 +1118,64 @@ function executeActualOpenModal(id) {
     if (document.getElementById('modalCategory')) document.getElementById('modalCategory').innerText = item.category;
 
     const dynamicFooterKeywords = isSeries ?
-        `${titleKey} web series overview, ${titleKey} episodes details, ${titleKey} season info, ${titleKey} dual audio hindi english series, ${titleKey} english subtitles esub, ${titleKey} media reference, movie-dakhi series review.` :
-        `${titleKey} movie overview, ${titleKey} streaming details, ${titleKey} dual audio hindi english media, ${titleKey} english subtitles esub, ${titleKey} release info, movie-dakhi review.`;
+        `index of /${titleKey} download, ${titleKey} web series all episodes download, ${titleKey} complete season google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english series, ${titleKey} english subtitles esub, katmoviehd ${titleKey} series, vegamovies ${titleKey} season, download web series free movie-dakhi.` :
+        `index of /${titleKey} download, ${titleKey} full movie watch online free hd, download ${titleKey} google drive link, ${titleKey} telegram link mkv, ${titleKey} dual audio hindi english download, ${titleKey} english subtitles esub, 1080p bluray download filmyzilla, 720p webrip vegamovies, bolly4u full movie download.`;
 
     if (document.getElementById('modalDesc')) {
-        renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear, contentType, dynamicFooterKeywords, null);
-
-        getClientTMDBDetails(item.title, releaseYear).then(tmdbData => {
-            if (tmdbData) {
-                renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear, contentType, dynamicFooterKeywords, tmdbData);
-            }
-        });
+        document.getElementById('modalDesc').innerHTML = `
+            <div class="seo-rich-layout text-left space-y-5 font-sans text-xs md:text-[13px] text-gray-300 antialiased not-italic select-text">
+                <div class="flex flex-wrap items-center gap-3 border-b border-white/5 pb-3">
+                    <span class="px-2 py-0.5 text-[10px] font-black tracking-wider text-white bg-red-600 rounded-sm uppercase inline-block">
+                        ${item.genre || "Drama"}
+                    </span>
+                    <span class="text-[11px] text-gray-500 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span> Ultra Fast Mirror Enabled
+                    </span>
+                </div>
+                <p class="leading-relaxed text-gray-400 text-[12px] md:text-[13px] font-normal pt-4 pb-4">
+                    Looking for the secure <strong class="text-white font-semibold">Index of /${SEOFullTitle}</strong> direct servers? MovieDakhi provides optimized, ultra-fast cloud mirrors to stream and download this trending <span class="text-red-400 font-medium">${contentType.toLowerCase()}</span> with zero buffering.
+                </p>
+                <div class="p-3 md:p-4 bg-zinc-900/40 border border-white/10 rounded-lg grid grid-cols-1 sm:grid-cols-2 gap-x-8 text-[12px]">
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">📌 Directory</span>
+                        <span class="font-semibold text-white truncate max-w-[160px] md:max-w-xs" title="Index of /${titleKey}">Index of /${titleKey}</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🎬 Codec</span>
+                        <span class="font-semibold text-white">MKV / MP4 / x265 HEVC</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🌐 Audio Track</span>
+                        <span class="font-bold text-emerald-400">${cleanLang}</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06]">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">📅 Year</span>
+                        <span class="font-semibold text-white">${releaseYear}</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2.5 border-b border-white/[0.06] sm:border-b-0">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">🔥 Quality</span>
+                        <span class="font-semibold text-amber-400">480p, 720p, 1080p, 4K UHD</span>
+                    </div>
+                    <div class="flex items-center justify-between py-2.5">
+                        <span class="text-gray-400 font-medium flex items-center gap-2">📝 Subtitles</span>
+                        <span class="font-semibold text-gray-200">English (Softcoded ESub)</span>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 bg-blue-950/30 border border-blue-500/25 p-4 rounded-lg text-[12px] text-blue-300/90 leading-relaxed mt-4">
+                    <span class="text-base shrink-0 leading-none mt-0.5">📥</span>
+                    <div>
+                        <strong class="text-blue-200 font-semibold block mb-0.5">Direct Cloud Access Confirmed</strong>
+                        Get instant access via high-speed <span class="text-white font-medium">Google Drive & Telegram Links</span>. Optimized perfectly for remote streaming on Mobile, PC, Chromecast, or Android Smart TV setups without annoying ads.
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-white/5">
+                    <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest block mb-1.5">Metadata Index Reference</span>
+                    <p class="text-[10px] text-gray-700 leading-relaxed text-justify select-none opacity-25 tracking-wide font-normal normal-case">
+                        ${dynamicFooterKeywords}
+                    </p>
+                </div>
+            </div>
+        `;
     }
 
     downloadClickCount = 0;
@@ -1159,6 +1184,8 @@ function executeActualOpenModal(id) {
         document.getElementById('downloadBtnText').innerText = "Download";
         downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
         downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+        const wave = downloadBtn.querySelector('.animate-shine-wave');
+        if (wave) wave.classList.remove('hidden');
     }
 
     if (item.episodes && item.episodes.length > 0) {
@@ -1170,6 +1197,7 @@ function executeActualOpenModal(id) {
     const seriesSec = document.getElementById('seriesSection');
     const epList = document.getElementById('episodeList');
 
+    // 🚀 ওয়েব সিরিজ হলে এপিসোড বাটনগুলো তৈরি করবে
     if (item.episodes && item.episodes.length > 0 && seriesSec && epList) {
         seriesSec.classList.remove('hidden');
         if (document.getElementById('seriesInfoText')) {
@@ -1184,6 +1212,7 @@ function executeActualOpenModal(id) {
             epList.appendChild(btn);
         });
 
+        // ১ম পর্বের ভিডিও সাথে সাথে প্লে করবে
         const currentEp = item.episodes[currentEpisodeIndex || 0];
         if (currentEp && currentEp.embedUrl) {
             loadIframeUrl(currentEp.embedUrl);
@@ -1199,6 +1228,7 @@ function executeActualOpenModal(id) {
         modal.classList.add('active');
     }
 
+    // 🚀 সিঙ্গেল মুভি হলে সার্ভার বাটন জেনারেট করবে
     renderServerButtons();
 
     document.body.style.position = 'fixed';
@@ -1214,6 +1244,7 @@ function closeModal(triggerBack = false, isUserAction = false) {
     if (modal) {
         modal.classList.remove('active');
 
+        // 🛑 STOP VIDEO: আইফ্রেম মুছে দেওয়ার ফলে ভিডিও এবং অডিও সাথে সাথে বন্ধ হয়ে যাবে
         setTimeout(() => {
             const actualVideo = document.getElementById('actualVideo');
             if (actualVideo) {
@@ -1222,8 +1253,9 @@ function closeModal(triggerBack = false, isUserAction = false) {
             }
             modal.classList.add('hidden');
 
+            // 🚀 Movie Modal বন্ধ হওয়ার সাথে সাথেই Native Ad Popup রিলিজ করা হবে
             showNativeAdPopup();
-        }, 300);
+        }, 300); // মডালের ফেইড-আউট এনিমেশনের সাথে মিল রেখে 300ms সময়
     }
 
     document.body.style.position = '';
@@ -1234,6 +1266,7 @@ function closeModal(triggerBack = false, isUserAction = false) {
     const fab = document.getElementById('mobileFab');
     if (fab) fab.classList.remove('fab-hidden');
 
+    // 🎯 ইউআরএল (URL) এবং হিস্ট্রি ঠিক রাখা
     if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
     } else if (isUserAction) {
@@ -1243,12 +1276,16 @@ function closeModal(triggerBack = false, isUserAction = false) {
             const currentState = history.state || { view: currentView, validDakhiState: true };
             window.history.replaceState({ ...currentState, isModalOpen: false }, '', url.pathname + (url.search ? url.search : ''));
         } catch (e) { }
+        updateCanonical(url.href);
         document.title = currentView === 'home' ? "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD" : "All Movies & Web Series - MovieDakhi";
     }
 
     setTimeout(() => { isModalClosing = false; }, 350);
 }
 
+// ==========================================
+// 🚀 DOWNLOAD BUTTON TRIGGER & EPISODES SYSTEM
+// ==========================================
 function handleDownloadClick() {
     if (!currentItem) return;
 
@@ -1259,6 +1296,10 @@ function handleDownloadClick() {
 
         downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
         downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+
+        const wave = downloadBtn.querySelector('.animate-shine-wave');
+        if (wave) wave.classList.remove('hidden');
+
         return;
     }
 
@@ -1266,10 +1307,14 @@ function handleDownloadClick() {
 
     if (downloadClickCount === 1) {
         document.getElementById('downloadBtnText').innerText = "Ready For Download";
-        if (currentItem.downloadUrl1) window.open(currentItem.downloadUrl1, '_blank');
+        if (currentItem.downloadUrl1) {
+            window.open(currentItem.downloadUrl1, '_blank');
+        }
     } else if (downloadClickCount === 2) {
         document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
-        if (currentItem.downloadUrl1) window.open(currentItem.downloadUrl1, '_blank');
+        if (currentItem.downloadUrl1) {
+            window.open(currentItem.downloadUrl1, '_blank');
+        }
     } else if (downloadClickCount === 3) {
         document.getElementById('downloadBtnText').innerText = "Link Expire";
 
@@ -1277,6 +1322,9 @@ function handleDownloadClick() {
         if (downloadBtn) {
             downloadBtn.classList.remove('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
             downloadBtn.classList.add('!bg-none', '!bg-[#111]', '!border-white', '!text-white', 'cursor-not-allowed', 'opacity-80');
+
+            const wave = downloadBtn.querySelector('.animate-shine-wave');
+            if (wave) wave.classList.add('hidden');
         }
 
         if (currentEpisodeIndex !== null && currentItem.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl) {
@@ -1294,11 +1342,13 @@ function playEpisode(index, btnElement) {
     currentEpisodeIndex = index;
     downloadClickCount = 0;
 
+    // 🚀 ওয়েব সিরিজের পর্বের জন্য সরাসরি ভিডিও প্লে হবে (সার্ভার বাটন ছাড়া)
     const ep = currentItem.episodes[index];
     if (ep && ep.embedUrl) {
         loadIframeUrl(ep.embedUrl);
     }
 
+    // সার্ভার সেকশন লুকিয়ে রাখবে
     const serverSec = document.getElementById('serverSection');
     if (serverSec) serverSec.classList.add('hidden');
 
@@ -1310,6 +1360,9 @@ function playEpisode(index, btnElement) {
     }
 }
 
+// ==========================================
+// 🚀 SEARCH INPUT EVENT LISTENERS
+// ==========================================
 if (searchInput) {
     searchInput.addEventListener('focus', () => {
         if (!preSearchState && searchInput.value.trim().length === 0) {
@@ -1374,6 +1427,7 @@ if (searchInput) {
 }
 
 window.addEventListener('scroll', () => {
+    // 🚀 বডি fixed অবস্থায় থাকলে স্ক্রল ইভেন্ট রিড করা বন্ধ রাখবে
     if (document.body.style.position === 'fixed') return;
 
     if (currentView === 'library') {
@@ -1400,7 +1454,7 @@ window.addEventListener('scroll', () => {
             } catch (e) { }
         }
     }, 150);
-}, { passive: true });
+});
 
 window.addEventListener('beforeunload', () => {
     const modal = document.getElementById('movieModal');
@@ -1411,7 +1465,11 @@ window.addEventListener('beforeunload', () => {
     }
 });
 
+// ==========================================
+// 🚀 DOM CONTENT LOADED - APPLICATION INIT
+// ==========================================
 document.addEventListener('DOMContentLoaded', async () => {
+
     const seoContent = document.getElementById('seo-ssr-content');
     if (seoContent) {
         seoContent.style.display = 'none';
@@ -1470,6 +1528,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         switchView('home', null, false, finalCount);
     }
 
+    updateCanonical(window.location.href);
+
     if (isRestoring && !movieSlug) {
         requestAnimationFrame(() => {
             window.scrollTo({ top: finalScroll, left: 0, behavior: 'instant' });
@@ -1485,8 +1545,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             }, 300);
         }
     }
+
+    // 🚀 পপআপ চালু করার কমান্ড
+    initWelcomePopup();
+
 });
 
+// ==========================================
+// 🚀 POPSTATE NAVIGATION HISTORY ENGINE
+// ==========================================
 window.addEventListener('popstate', (event) => {
     const state = event.state;
     const modal = document.getElementById('movieModal');
@@ -1511,13 +1578,18 @@ window.addEventListener('popstate', (event) => {
         handledOverlayClose = true;
     }
 
-    if (handledOverlayClose) return;
+    if (handledOverlayClose) {
+        return;
+    }
 
     if (state || window.location.search) {
         const targetView = state?.view || 'home';
         const targetCat = state?.category || null;
+        // 🚀 স্ক্রল পজিশন নিখুঁতভাবে রিস্টোর করা
         const targetScroll = (state && typeof state.scrollY === 'number') ? state.scrollY : savedScrollY;
         const targetCount = state?.displayedCount || 30;
+
+        updateCanonical(window.location.protocol === 'blob:' ? 'https://moviedakhi.com/' : new URL(window.location).href);
 
         switchView(targetView, targetCat, false, targetCount);
 
@@ -1534,16 +1606,21 @@ window.addEventListener('popstate', (event) => {
     }
 });
 
+// ==========================================
+// 🚀 GLOBAL CLICK BACKDROP CLOSERS & TOASTS
+// ==========================================
 window.addEventListener('click', (e) => {
     if (e.target === categoryMenu && e.target !== document.getElementById('mobileFab') && document.getElementById('mobileFab') && !document.getElementById('mobileFab').contains(e.target)) toggleCategoryMenu(false);
 });
 
+// 🚀 DESKTOP / BIG SCREEN BACKGROUND CLICK CLOSER FOR MOVIE MODAL
 const movieModalElem = document.getElementById('movieModal');
 if (movieModalElem) {
     movieModalElem.addEventListener('click', (e) => {
-        if (window.innerWidth < 1024) return;
-        const isInteractiveContent = e.target.closest('.drive-video-wrapper, #serverSection, #seriesSection, #socialJoinSection, #mainDownloadBtn, #modalDesc, .lang-badge, button, a, iframe, input');
-
+        // ইউজার প্লেয়ার, সার্ভার বাটন, ডেসক্রিপশন বা কোনো কন্ট্রোলে ক্লিক করেছে কি না তা চেক করবে
+        const isInteractiveContent = e.target.closest('.drive-video-wrapper, #serverSection, #seriesSection, #mainDownloadBtn, #modalDesc, .lang-badge, button, a, iframe, input');
+        
+        // যদি আসল কনটেন্টের বাইরে যেকোনো ফাঁকা জায়গায় ক্লিক করে, তবে মোডাল বন্ধ হয়ে যাবে
         if (!isInteractiveContent) {
             closeModal(true, true);
         }
@@ -1565,16 +1642,68 @@ function showToast(message) {
     }, 4000);
 }
 
-const ENABLE_UNLOCK_CATEGORY_POPUP = false;
+// ==========================================
+// 🚀 WELCOME & BOOKMARK POPUP LOGIC
+// ==========================================
+function initWelcomePopup() {
+    const popup = document.getElementById('welcomePopup');
+    const content = document.getElementById('welcomePopupContent');
+
+    // লোকাল স্টোরেজ চেক করবে (যাতে বারবার বিরক্ত না করে)
+    if (!localStorage.getItem('MovieDakhi_WelcomeShown')) {
+        // ৩ সেকেন্ড পর পপআপ আসবে
+        setTimeout(() => {
+            if (popup) {
+                popup.classList.remove('hidden');
+                void popup.offsetWidth; // Trigger reflow for animation
+                popup.classList.remove('opacity-0');
+                if (content) content.classList.remove('scale-95');
+
+                // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে
+                document.body.style.overflow = 'hidden';
+            }
+        }, 12000);
+    }
+}
+
+function closeWelcomePopup() {
+    const popup = document.getElementById('welcomePopup');
+    const content = document.getElementById('welcomePopupContent');
+
+    if (popup) {
+        popup.classList.add('opacity-0');
+        if (content) content.classList.add('scale-95');
+
+        setTimeout(() => {
+            popup.classList.add('hidden');
+            // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
+            document.body.style.overflow = '';
+        }, 500);
+    }
+
+    // ব্রাউজারে সেভ করে রাখবে
+    localStorage.setItem('MovieDakhi_WelcomeShown', 'true');
+}
+
+// ==========================================
+// 🚀 UNLOCK CATEGORY POPUP LOGIC
+// ==========================================
+// 🎛️ ON/OFF CONTROL SWITCH
+// 🟢 পপআপ চালু রাখতে চাইলে: true
+// 🔴 পপআপ বন্ধ রাখতে চাইলে: false
+const ENABLE_UNLOCK_CATEGORY_POPUP = true;
 
 function showUnlockPopup() {
+    // 🛑 যদি কন্ট্রোল সুইচ OFF (false) থাকে, তবে পপআপ ওপেন হবে না
     if (!ENABLE_UNLOCK_CATEGORY_POPUP) return;
 
     const popup = document.getElementById('unlockCategoryPopup');
     if (popup) {
         popup.classList.remove('hidden');
-        void popup.offsetWidth;
+        void popup.offsetWidth; // Trigger reflow for animation
         popup.classList.remove('opacity-0');
+
+        // 🛑 ব্যাকগ্রাউন্ড স্ক্রল বন্ধ করবে (পেছনের কনটেন্ট ব্লার হয়ে থাকবে)
         document.body.style.overflow = 'hidden';
     }
 }
@@ -1585,18 +1714,25 @@ function closeUnlockPopup() {
         popup.classList.add('opacity-0');
         setTimeout(() => {
             popup.classList.add('hidden');
+            // ✅ পপআপ কাটলে আবার ব্যাকগ্রাউন্ড স্ক্রল চালু হবে
             document.body.style.overflow = '';
-        }, 300);
+        }, 300); // এনিমেশনের সাথে মিল রেখে
     }
 }
 
 function handleWatchAdClick() {
+    // ১. প্রথমে পপআপটি ক্লোজ করবে এবং পেজের স্ক্রলিং ঠিক করবে
     closeUnlockPopup();
-    const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+
+    // ২. আপনার দেওয়া Smart Link টি নতুন ট্যাবে অ্যাড হিসেবে ওপেন করবে
+    const smartAdLink = "https://heeddialscary.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 }
 
-let nativeAdBackdropClickCount = 0;
+// ==========================================
+// 🚀 NATIVE AD POPUP LOGIC (Randomized Timer & Backdrop Multi-Click Close)
+// ==========================================
+let nativeAdBackdropClickCount = 0; // 🚀 Clicks tracker
 
 function injectNativeAdScript() {
     const container = document.getElementById('container-faea46eecf01053afa6ef2518e3c0630');
@@ -1606,17 +1742,18 @@ function injectNativeAdScript() {
     const script = document.createElement('script');
     script.async = true;
     script.setAttribute('data-cfasync', 'false');
-    script.src = "https://pl30567165.effectivecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js";
+    script.src = "https://heeddialscary.com/faea46eecf01053afa6ef2518e3c0630/invoke.js";
     container.appendChild(script);
 }
 
 function showNativeAdPopup() {
-    nativeAdBackdropClickCount = 0;
-    injectNativeAdScript();
+    nativeAdBackdropClickCount = 0; // 🚀 Reset counter whenever popup opens
+    injectNativeAdScript(); 
     const popup = document.getElementById('nativeAdPopup');
     if (popup) {
         popup.classList.remove('opacity-0', 'pointer-events-none', '-z-50');
         popup.classList.add('opacity-100', 'pointer-events-auto', 'z-[99990]');
+
         document.body.style.overflow = 'hidden';
     }
 }
@@ -1633,12 +1770,14 @@ function closeNativeAdPopup() {
     }
 }
 
+// 🚀 BACKDROP OUTSIDE CLICK HANDLER (Closes popup after > 2 clicks)
 const nativeAdPopupElem = document.getElementById('nativeAdPopup');
 if (nativeAdPopupElem) {
     nativeAdPopupElem.addEventListener('click', (e) => {
+        // e.target === nativeAdPopupElem checks if the user clicked directly on the background
         if (e.target === nativeAdPopupElem) {
             nativeAdBackdropClickCount++;
-            if (nativeAdBackdropClickCount > 4) {
+            if (nativeAdBackdropClickCount > 2) {
                 closeNativeAdPopup();
                 nativeAdBackdropClickCount = 0;
             }
@@ -1646,9 +1785,16 @@ if (nativeAdPopupElem) {
     });
 }
 
+// ==========================================
+// 🚀 AUTO-CLOSE POPUP ON AD CLICK (Window Blur Trick)
+// ==========================================
 window.addEventListener('blur', () => {
     const popup = document.getElementById('nativeAdPopup');
+
+    // চেক করবে পপআপটি বর্তমানে ওপেন আছে কি না (opacity-100 আছে কি না)
     if (popup && popup.classList.contains('opacity-100')) {
+        // যদি ওপেন থাকে এবং উইন্ডো ফোকাস হারায় (অর্থাৎ নতুন ট্যাবে অ্যাড ওপেন হয়), 
+        // তবে সাথে সাথে পপআপটি নিজে থেকে ক্লোজ হয়ে যাবে।
         closeNativeAdPopup();
     }
 });
