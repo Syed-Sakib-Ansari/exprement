@@ -331,16 +331,13 @@ function renderServerButtons() {
 
     const isSeries = currentItem.episodes && currentItem.episodes.length > 0;
 
-    if (isSeries) {
+    // 🚀 WEB SERIES SERVER FIX: টার্গেট হিসেবে মুভির বদলে বর্তমান এপিসোড সেট করা হলো
+    const target = isSeries ? currentItem.episodes[currentEpisodeIndex !== null ? currentEpisodeIndex : 0] : currentItem;
+
+    if (!target) {
         serverSec.classList.add('hidden');
-        const epIndex = currentEpisodeIndex !== null ? currentEpisodeIndex : 0;
-        if (currentItem.episodes[epIndex] && currentItem.episodes[epIndex].embedUrl) {
-            loadIframeUrl(currentItem.episodes[epIndex].embedUrl);
-        }
         return;
     }
-
-    const target = currentItem;
     const servers = [
         { key: 'embedUrl', label: 'Server 1 (Primary)' },
         { key: 'embedUrl2', label: 'Server 2 (Super Fast)' },
@@ -1175,7 +1172,7 @@ function executeActualOpenModal(id) {
             document.getElementById('seriesInfoText').innerText = item.seriesInfo || "Season 1 • Episodes";
         }
         epList.innerHTML = '';
-        item.episodes.forEach((ep, idx) => {
+item.episodes.forEach((ep, idx) => {
             const btn = document.createElement('button');
             btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase ${idx === (currentEpisodeIndex || 0) ? 'active' : ''}`;
             btn.innerText = ep.title || `Episode ${idx + 1}`;
@@ -1183,10 +1180,7 @@ function executeActualOpenModal(id) {
             epList.appendChild(btn);
         });
 
-        const currentEp = item.episodes[currentEpisodeIndex || 0];
-        if (currentEp && currentEp.embedUrl) {
-            loadIframeUrl(currentEp.embedUrl);
-        }
+        // 🚀 সার্ভার রেন্ডারিং ফাংশনটিই এখন ভিডিও লোড করবে, তাই আলাদাভাবে loadIframeUrl কল করার প্রয়োজন নেই।
     } else if (seriesSec) {
         seriesSec.classList.add('hidden');
     }
@@ -1293,13 +1287,8 @@ function playEpisode(index, btnElement) {
     currentEpisodeIndex = index;
     downloadClickCount = 0;
 
-    const ep = currentItem.episodes[index];
-    if (ep && ep.embedUrl) {
-        loadIframeUrl(ep.embedUrl);
-    }
-
-    const serverSec = document.getElementById('serverSection');
-    if (serverSec) serverSec.classList.add('hidden');
+    // 🚀 WEB SERIES SERVER FIX: নির্দিষ্ট এপিসোড ক্লিক করলে ওই এপিসোডের সার্ভার বাটনগুলো রেন্ডার হবে এবং ভিডিও প্লে হবে
+    renderServerButtons();
 
     const downloadBtn = document.getElementById('mainDownloadBtn');
     if (downloadBtn) {
