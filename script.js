@@ -649,9 +649,6 @@ function initHeroSlider() {
     const sliderWrapper = document.getElementById('sliderWrapper');
     if (!sliderWrapper || contentData.length === 0) return;
 
-    // 🚀 SHAKE FIX: রেন্ডার হওয়ার সময় সাময়িকভাবে হাইড করে রাখা হলো
-    sliderWrapper.style.opacity = '0';
-    sliderWrapper.style.transition = 'opacity 0.8s ease-in-out';
     sliderWrapper.innerHTML = '';
 
     const windowWidth = window.innerWidth;
@@ -673,9 +670,8 @@ function initHeroSlider() {
     const uniquePool = Array.from(uniqueMoviesMap.values());
     if (uniquePool.length === 0) return;
 
-    const isMobile = windowWidth < 640;
-    const itemsPerCol = isMobile ? 3 : 4;
-    const heroImgWidth = isMobile ? 140 : 200;
+    const itemsPerCol = 8;
+    const heroImgWidth = windowWidth < 640 ? 180 : 250;
 
     for (let c = 0; c < colCount; c++) {
         const colDiv = document.createElement('div');
@@ -694,11 +690,9 @@ function initHeroSlider() {
         doubledItems.forEach(movie => {
             const imgCard = document.createElement('div');
             imgCard.className = 'w-full p-1.5 md:p-2 shrink-0 box-border';
-            
-            // 🚀 SHAKE FIX: loading="lazy" বাদ দিয়ে "eager" দেওয়া হলো যাতে হাইট ক্যালকুলেশনে জাম্প না করে
             imgCard.innerHTML = `
                 <div class="w-full aspect-[2/3] rounded-lg md:rounded-xl overflow-hidden shadow-lg border border-white/10 cursor-pointer hover:scale-105 transition-transform duration-300 bg-zinc-900">
-                    <img src="${getOptimizedImageUrl(movie.posterUrl, heroImgWidth)}" alt="${movie.title}" class="w-full h-full object-cover block" loading="eager" fetchpriority="high">
+                    <img src="${getOptimizedImageUrl(movie.posterUrl, heroImgWidth)}" alt="${movie.title}" class="w-full h-full object-cover block" loading="lazy" decoding="async">
                 </div>
             `;
 
@@ -708,13 +702,6 @@ function initHeroSlider() {
 
         sliderWrapper.appendChild(colDiv);
     }
-
-    // 🚀 SHAKE FIX: লেআউট ক্যালকুলেট শেষ হওয়ার পর স্মুথলি দৃশ্যমান হবে
-    requestAnimationFrame(() => {
-        setTimeout(() => {
-            sliderWrapper.style.opacity = '1';
-        }, 150);
-    });
 }
 
 function updateSearchUI() {
