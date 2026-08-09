@@ -178,7 +178,8 @@ export async function onRequest(context) {
             const finalResponse = new Response(html, {
                 headers: {
                     "content-type": "text/html;charset=UTF-8",
-                    "Cache-Control": "s-maxage=86400"
+                    // 🚀 CACHE FIX: আপডেট চলাকালীন ক্যাশ কমানো হলো যাতে ডিরেক্ট লিংকে লেটেস্ট Navbar শো করে
+                    "Cache-Control": "public, max-age=0, s-maxage=3600, must-revalidate"
                 }
             });
 
