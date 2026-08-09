@@ -24,11 +24,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- 🚀 NON-BLOCKING GOOGLE FONTS & FONT AWESOME -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"></noscript>
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    </noscript>
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://moviedakhi.com/">
@@ -139,8 +146,11 @@
     <div id="homeView" class="view-container active">
 
         <!-- 🎬 MOVING MOVIE CARDS HERO SECTION -->
-        <header id="heroSlider" class="relative h-[100vh] w-full overflow-hidden bg-[#0f0f0f] flex items-center justify-center">
-            <div id="sliderWrapper" class="hero-poster-mask absolute inset-0 w-full h-full grid gap-2.5 sm:gap-3 md:gap-4 p-2 opacity-85 hover:opacity-100 transition-opacity pointer-events-auto overflow-hidden"></div>
+        <header id="heroSlider"
+            class="relative h-[100vh] w-full overflow-hidden bg-[#0f0f0f] flex items-center justify-center">
+            <div id="sliderWrapper"
+                class="hero-poster-mask absolute inset-0 w-full h-full grid gap-2.5 sm:gap-3 md:gap-4 p-2 opacity-85 hover:opacity-100 transition-opacity pointer-events-auto overflow-hidden">
+            </div>
         </header>
 
         <main class="px-6 md:px-12 py-12 relative z-30">
@@ -196,8 +206,29 @@
     <div id="movieModal" class="fixed inset-0 z-[130] hidden bg-[#0f0f0f] overflow-y-auto" role="dialog"
         aria-modal="true">
 
-        <div class="relative w-full min-h-screen bg-[#0f0f0f] flex flex-col justify-start pt-6 md:pt-8 pb-10">
+        <!-- 🚀 Modal Padding Top (pt-6) রিমুভ করা হয়েছে যাতে Navbar একদম উপরে বসে -->
+        <div class="relative w-full min-h-screen bg-[#0f0f0f] flex flex-col justify-start pb-10">
 
+            <!-- 🚀 MODAL STICKY NAVBAR (LOGO & BACK TO HOME) -->
+            <div
+                class="w-full flex justify-between items-center px-4 md:px-8 py-3.5 md:py-4 mb-4 md:mb-8 border-b border-white/10 bg-[#0f0f0f]/95 backdrop-blur-xl sticky top-0 z-[150] shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+
+                <!-- 🎯 Left Side: Brand Logo -->
+                <div class="flex items-center">
+                    <h1 class="text-xl md:text-2xl font-black text-red-600 tracking-tighter uppercase cursor-pointer transition-transform duration-300 hover:scale-105"
+                        onclick="closeModal(false, true); clearSearch(true); switchView('home');" title="Go to Home">
+                        Movie&nbsp;&nbsp;Dakhi</h1>
+                </div>
+
+                <!-- 🎯 Right Side: Back To Home Button -->
+                <button onclick="closeModal(false, true); clearSearch(true); switchView('home');"
+                    class="bg-red-600/10 border border-red-600/30 text-red-500 hover:bg-red-600 hover:text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg font-black text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2 hover:scale-105 shadow-lg shadow-red-600/5">
+                    <i class="fas fa-home text-sm"></i> <span class="hidden sm:inline">Back To Home</span><span
+                        class="sm:hidden">Home</span>
+                </button>
+            </div>
+
+            <!-- Modal Movie Title -->
             <div class="px-4 md:px-8 text-center max-w-5xl mx-auto w-full mb-4 md:mb-6">
                 <h2 id="modalTitle"
                     class="text-2xl sm:text-4xl md:text-5xl font-black leading-tight text-white drop-shadow-md mt-2">
@@ -244,7 +275,8 @@
                     <span id="modalYear" class="text-gray-600 text-xs md:text-sm font-bold">&nbsp;</span>
                 </div>
 
-                <div id="socialJoinSection" class="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-6 w-full max-w-md mx-auto">
+                <div id="socialJoinSection"
+                    class="flex flex-row items-center justify-center gap-3 sm:gap-4 mb-6 w-full max-w-md mx-auto">
                     <a href="https://www.facebook.com/profile.php?id=61586944455346" target="_blank"
                         class="flex-1 bg-[#1877f2] hover:bg-[#166fe5] text-white py-2.5 px-3 md:px-4 rounded-xl text-[11px] md:text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 transition-all duration-300 hover:scale-105 no-underline">
                         <i class="fab fa-facebook-f text-sm"></i>
@@ -262,7 +294,8 @@
                     <div class="mb-4">
                         <h4
                             class="text-xs md:text-sm font-black text-white uppercase tracking-wider flex items-center justify-center gap-2">
-                            <i class="fas fa-play-circle text-red-600 text-sm animate-pulse"></i> Select Movie Stream Server
+                            <i class="fas fa-play-circle text-red-600 text-sm animate-pulse"></i> Select Movie Stream
+                            Server
                         </h4>
                         <p class="text-[10px] md:text-[11px] text-gray-400 font-medium text-center mt-1">
                             Video Slow Or Not Working? Try Another Server Below 👇
@@ -278,7 +311,8 @@
                     <div id="episodeList" class="flex flex-wrap justify-center gap-2 md:gap-3"></div>
                 </div>
 
-                <div id="modalDesc" class="text-sm md:text-base text-gray-400 leading-relaxed mb-8 max-w-4xl mx-auto font-medium"></div>
+                <div id="modalDesc"
+                    class="text-sm md:text-base text-gray-400 leading-relaxed mb-8 max-w-4xl mx-auto font-medium"></div>
 
                 <div class="flex flex-wrap justify-center gap-4 relative z-20 mt-6 mb-8">
                     <button id="mainDownloadBtn" onclick="handleDownloadClick()"
@@ -298,13 +332,16 @@
     </div>
 
     <footer class="mt-24 py-12 border-t border-white/5 px-6 md:px-12 text-center">
-        <div class="max-w-3xl mx-auto mb-8 p-4 rounded-xl bg-red-950/20 border border-red-500/20 text-center backdrop-blur-sm">
-            <p class="text-xs md:text-sm font-black text-red-500 mb-1 flex items-center justify-center gap-2 uppercase tracking-wider">
+        <div
+            class="max-w-3xl mx-auto mb-8 p-4 rounded-xl bg-red-950/20 border border-red-500/20 text-center backdrop-blur-sm">
+            <p
+                class="text-xs md:text-sm font-black text-red-500 mb-1 flex items-center justify-center gap-2 uppercase tracking-wider">
                 <i class="fas fa-shield-alt text-red-500"></i> Fast DMCA Removal Notice
             </p>
             <p class="text-[11px] md:text-xs text-gray-400 leading-relaxed font-medium">
-                For instant DMCA / Copyright Removal requests, please email us directly at 
-                <a href="mailto:dmca@moviedakhi.com" class="text-red-400 font-bold underline hover:text-white transition-colors">dmca@moviedakhi.com</a>. 
+                For instant DMCA / Copyright Removal requests, please email us directly at
+                <a href="mailto:dmca@moviedakhi.com"
+                    class="text-red-400 font-bold underline hover:text-white transition-colors">dmca@moviedakhi.com</a>.
                 We process and remove reported links within 6 hours.
             </p>
         </div>
@@ -340,7 +377,8 @@
                 <i class="fa-solid fa-lock-open text-white text-3xl sm:text-4xl ml-1"></i>
             </div>
 
-            <h2 class="text-2xl sm:text-[32px] font-black text-[#111] uppercase tracking-wide mb-3 leading-tight">Unlock Category</h2>
+            <h2 class="text-2xl sm:text-[32px] font-black text-[#111] uppercase tracking-wide mb-3 leading-tight">Unlock
+                Category</h2>
             <p class="text-[#5f6368] text-[14px] sm:text-[15.5px] font-medium leading-relaxed mb-4 px-2 sm:px-6">Watch a
                 quick sponsor ad to unlock exclusive movies in this category.</p>
 
@@ -355,7 +393,8 @@
                             class="fa-solid fa-play text-[#1a73e8] text-[12px] sm:text-[14px] ml-0.5 sm:ml-1 relative z-10"></i>
                     </div>
                     <span
-                        class="text-white font-black text-[15px] min-[375px]:text-[16.5px] sm:text-[19px] md:text-[20px] tracking-wide sm:tracking-wider uppercase drop-shadow-md whitespace-nowrap">Watch Ad For Unlock</span>
+                        class="text-white font-black text-[15px] min-[375px]:text-[16.5px] sm:text-[19px] md:text-[20px] tracking-wide sm:tracking-wider uppercase drop-shadow-md whitespace-nowrap">Watch
+                        Ad For Unlock</span>
                 </button>
             </div>
 
@@ -393,9 +432,9 @@
         </div>
     </div>
 
-<!-- 🚀 TBT FIX: USER INTERACTION DEFERRED ANALYTICS & ADS -->
+    <!-- 🚀 TBT FIX: USER INTERACTION DEFERRED ANALYTICS & ADS -->
     <script>
-        (function() {
+        (function () {
             var analyticsLoaded = false;
             function loadThirdPartyScripts() {
                 if (analyticsLoaded) return;
@@ -441,9 +480,9 @@
 
     <!-- 🚀 ULTRA-FAST DEFERRED ADSTERRA POPUNDER (ZERO SPEED IMPACT) -->
     <script>
-        (function() {
+        (function () {
             var scriptLoaded = false;
-            
+
             function loadAdsterraPopunder() {
                 if (scriptLoaded) return;
                 scriptLoaded = true;
@@ -452,7 +491,7 @@
                 adScript.src = "https://pl30429029.effectivecpmnetwork.com/dd/e3/5f/dde35f1e9c3f10f1151ade78282c0cac.js";
                 adScript.async = true;
                 document.body.appendChild(adScript);
-                
+
                 // ইভেন্ট লিসেনারগুলো ক্লিন করা
                 window.removeEventListener('scroll', loadAdsterraPopunder);
                 window.removeEventListener('touchstart', loadAdsterraPopunder);
@@ -461,9 +500,9 @@
             }
 
             // 🎯 ১. পেজ সম্পূর্ণ লোড হওয়ার ২.৫ সেকেন্ড পর ব্যাকগ্রাউন্ডে লোড হবে
-            window.addEventListener('load', function() {
+            window.addEventListener('load', function () {
                 if ('requestIdleCallback' in window) {
-                    requestIdleCallback(function() {
+                    requestIdleCallback(function () {
                         setTimeout(loadAdsterraPopunder, 2500);
                     });
                 } else {
@@ -471,14 +510,14 @@
                 }
             });
 
-// 🚀 TBT FIX: প্রথম ৪ সেকেন্ড পর কেবল ক্লিক বা টাচে পপআন্ডার এক্টিভ হবে
-            setTimeout(function() {
+            // 🚀 TBT FIX: প্রথম ৪ সেকেন্ড পর কেবল ক্লিক বা টাচে পপআন্ডার এক্টিভ হবে
+            setTimeout(function () {
                 window.addEventListener('click', loadAdsterraPopunder, { passive: true });
                 window.addEventListener('touchstart', loadAdsterraPopunder, { passive: true });
             }, 4000);
         })();
     </script>
-    
+
 </body>
 
 </html>
