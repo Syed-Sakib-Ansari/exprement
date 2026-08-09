@@ -1227,20 +1227,28 @@ function closeModal(triggerBack = false, isUserAction = false) {
     const fab = document.getElementById('mobileFab');
     if (fab) fab.classList.remove('fab-hidden');
 
-    if (triggerBack && window.history.state?.isModalOpen) {
-        window.history.back();
-    } else if (isUserAction) {
-        const url = new URL(window.location);
-        url.searchParams.delete('movie');
-        try {
-            const currentState = history.state || { view: currentView, validDakhiState: true };
-            window.history.replaceState({ ...currentState, isModalOpen: false }, '', url.pathname + (url.search ? url.search : ''));
-        } catch (e) { }
-        document.title = currentView === 'home' ? "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD" : "All Movies & Web Series - MovieDakhi";
-    }
+if (triggerBack && window.history.state?.isModalOpen) {
+            window.history.back();
+        } else if (isUserAction) {
+            const url = new URL(window.location);
+            url.searchParams.delete('movie');
+            
+            // 🚀 FALLBACK FIX: যদি ইউআরএল এ কোনো নির্দিষ্ট মুভির লিংক (.html) থাকে, তবে হোমে রিডাইরেক্ট করবে
+            const currentPath = url.pathname;
+            const excludedFiles = ['/index.html', '/Contact.html', '/DMCA.html', '/Privacy.html', '/Disclaimer.html'];
+            if (currentPath.endsWith('.html') && !excludedFiles.includes(currentPath)) {
+                url.pathname = '/';
+            }
 
-    setTimeout(() => { isModalClosing = false; }, 350);
-}
+            try {
+                const currentState = history.state || { view: currentView, validDakhiState: true };
+                window.history.replaceState({ ...currentState, isModalOpen: false }, '', url.toString());
+            } catch (e) { }
+            document.title = currentView === 'home' ? "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD" : "All Movies & Web Series - MovieDakhi";
+        }
+
+        setTimeout(() => { isModalClosing = false; }, 350);
+    }
 
 function handleDownloadClick() {
     if (!currentItem) return;
@@ -1481,9 +1489,24 @@ renderCategories();
         });
     }
 
-    if (movieSlug) {
+if (movieSlug) {
         const targetMovie = contentData.find(m => m.slug === movieSlug);
         if (targetMovie) {
+            
+            // 🚀 DIRECT LINK FIX: ডিরেক্ট লিংকে আসলে ব্যাক বাটন চাপলে ওয়েবসাইট থেকে বের না হয়ে হোম পেজে যাবে
+            if (!isBlob) {
+                try {
+                    let baseUrl = '/';
+                    if (view === 'library') {
+                        baseUrl = `/?view=library${category && category !== 'all' ? '&category=' + encodeURIComponent(category) : ''}`;
+                    }
+                    const baseState = { view: view || 'home', category: category || null, scrollY: finalScroll || 0, displayedCount: finalCount, validDakhiState: true };
+                    
+                    // মুভি ওপেন হওয়ার আগেই ব্রাউজারের অরিজিনাল হিস্ট্রিকে হোমপেজ হিসেবে সেট করে দেওয়া হচ্ছে
+                    window.history.replaceState(baseState, '', baseUrl);
+                } catch(e) {}
+            }
+
             setTimeout(() => {
                 openModal(targetMovie.id);
             }, 300);
