@@ -290,6 +290,8 @@ let sliderInterval;
 let scrollTimeoutId = null;
 let isModalClosing = false;
 let lastVisitedCategory = 'all';
+let isRestoringScrollProcess = false;
+let isDirectMovieLoad = false; // 🚀 DIRECT LINK FIX: ডিরেক্ট ভিজিট ট্র্যাক করার জন্য
 
 const homeView = document.getElementById('homeView');
 const libraryView = document.getElementById('libraryView');
@@ -1206,7 +1208,6 @@ function closeModal(triggerBack = false, isUserAction = false) {
     const modal = document.getElementById('movieModal');
     if (modal) {
         modal.classList.remove('active');
-
         setTimeout(() => {
             const actualVideo = document.getElementById('actualVideo');
             if (actualVideo) {
@@ -1214,7 +1215,6 @@ function closeModal(triggerBack = false, isUserAction = false) {
                 actualVideo.classList.add('hidden');
             }
             modal.classList.add('hidden');
-
             showNativeAdPopup();
         }, 300);
     }
@@ -1227,28 +1227,30 @@ function closeModal(triggerBack = false, isUserAction = false) {
     const fab = document.getElementById('mobileFab');
     if (fab) fab.classList.remove('fab-hidden');
 
-if (triggerBack && window.history.state?.isModalOpen) {
+    // 🚀 CLOSE BUTTON FIX: ডিরেক্ট লিংকে এসে Close চাপলে বের না করে হোমপেজে পাঠাবে
+    if (isUserAction) {
+        if (isDirectMovieLoad) {
+            isDirectMovieLoad = false;
+            const url = new URL(window.location);
+            url.pathname = '/';
+            url.search = '';
+            try { window.history.pushState({ view: 'home', validDakhiState: true, isModalOpen: false }, '', url.toString()); } catch(e) {}
+            switchView('home', null, false);
+        } else if (triggerBack && window.history.state?.isModalOpen) {
             window.history.back();
-        } else if (isUserAction) {
+        } else {
             const url = new URL(window.location);
             url.searchParams.delete('movie');
-            
-            // 🚀 FALLBACK FIX: যদি ইউআরএল এ কোনো নির্দিষ্ট মুভির লিংক (.html) থাকে, তবে হোমে রিডাইরেক্ট করবে
-            const currentPath = url.pathname;
-            const excludedFiles = ['/index.html', '/Contact.html', '/DMCA.html', '/Privacy.html', '/Disclaimer.html'];
-            if (currentPath.endsWith('.html') && !excludedFiles.includes(currentPath)) {
-                url.pathname = '/';
-            }
-
             try {
                 const currentState = history.state || { view: currentView, validDakhiState: true };
-                window.history.replaceState({ ...currentState, isModalOpen: false }, '', url.toString());
+                window.history.replaceState({ ...currentState, isModalOpen: false }, '', url.pathname + (url.search ? url.search : ''));
             } catch (e) { }
-            document.title = currentView === 'home' ? "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD" : "All Movies & Web Series - MovieDakhi";
         }
-
-        setTimeout(() => { isModalClosing = false; }, 350);
     }
+    
+    document.title = currentView === 'home' ? "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD" : "All Movies & Web Series - MovieDakhi";
+    setTimeout(() => { isModalClosing = false; }, 350);
+}
 
 function handleDownloadClick() {
     if (!currentItem) return;
@@ -1489,24 +1491,18 @@ renderCategories();
         });
     }
 
-if (movieSlug) {
+// 🚀 INITIAL LOAD FIX: মুভি ওপেন হওয়ার আগেই ব্রাউজারের মূল হিস্ট্রি হোমপেজ হিসেবে সেট করে দেওয়া
+    if (movieSlug) {
+        isDirectMovieLoad = true;
         const targetMovie = contentData.find(m => m.slug === movieSlug);
         if (targetMovie) {
-            
-            // 🚀 DIRECT LINK FIX: ডিরেক্ট লিংকে আসলে ব্যাক বাটন চাপলে ওয়েবসাইট থেকে বের না হয়ে হোম পেজে যাবে
             if (!isBlob) {
                 try {
-                    let baseUrl = '/';
-                    if (view === 'library') {
-                        baseUrl = `/?view=library${category && category !== 'all' ? '&category=' + encodeURIComponent(category) : ''}`;
-                    }
-                    const baseState = { view: view || 'home', category: category || null, scrollY: finalScroll || 0, displayedCount: finalCount, validDakhiState: true };
-                    
-                    // মুভি ওপেন হওয়ার আগেই ব্রাউজারের অরিজিনাল হিস্ট্রিকে হোমপেজ হিসেবে সেট করে দেওয়া হচ্ছে
+                    const baseUrl = '/';
+                    const baseState = { view: 'home', category: null, scrollY: 0, displayedCount: ITEMS_PER_PAGE, validDakhiState: true, isModalOpen: false };
                     window.history.replaceState(baseState, '', baseUrl);
                 } catch(e) {}
             }
-
             setTimeout(() => {
                 openModal(targetMovie.id);
             }, 300);
@@ -1517,17 +1513,15 @@ if (movieSlug) {
 window.addEventListener('popstate', (event) => {
     const state = event.state;
     const modal = document.getElementById('movieModal');
-
     let handledOverlayClose = false;
 
+    // 🚀 BACK BUTTON FIX: ব্যাক বাটন চাপলে আগের স্টেট ফাঁকা থাকলেও মোডাল ক্লোজ করে হোমপেজে নেবে
     if (modal && (!modal.classList.contains('hidden') || isModalClosing)) {
-        if (state && state.validDakhiState && !state.isModalOpen) {
+        if (!state || !state.isModalOpen) {
             if (!isModalClosing) {
                 closeModal(false, false);
             }
             handledOverlayClose = true;
-        } else if (state && state.isModalOpen) {
-            return;
         } else {
             return;
         }
@@ -1538,8 +1532,7 @@ window.addEventListener('popstate', (event) => {
         handledOverlayClose = true;
     }
 
-    if (handledOverlayClose) return;
-
+    // ব্যাকগ্রাউন্ড ভিউ আপডেট করা
     if (state || window.location.search) {
         const targetView = state?.view || 'home';
         const targetCat = state?.category || null;
@@ -1555,6 +1548,7 @@ window.addEventListener('popstate', (event) => {
             }, 50);
         });
     } else {
+        // কোনো ডাটা না পেলে সরাসরি হোমে
         switchView('home', null, false);
         void document.documentElement.offsetHeight;
         window.scrollTo({ top: 0, behavior: 'instant' });
