@@ -345,9 +345,10 @@ function renderServerButtons() {
         { key: 'embedUrl4', label: 'Server 4 (Alternative)' }
     ];
 
-    const activeServers = servers.filter(s => target[s.key] && typeof target[s.key] === 'string' && target[s.key].trim() !== '');
+const activeServers = servers.filter(s => target[s.key] && typeof target[s.key] === 'string' && target[s.key].trim() !== '');
 
-    if (activeServers.length > 0) {
+    // 🚀 LOGIC FIX: একের বেশি সার্ভার থাকলেই কেবল সার্ভার বক্স শো করবে
+    if (activeServers.length > 1) {
         serverSec.classList.remove('hidden');
         serverList.innerHTML = '';
 
@@ -360,8 +361,17 @@ function renderServerButtons() {
         });
 
         loadIframeUrl(target[activeServers[0].key]);
-    } else {
+    } 
+    // যদি মাত্র ১টি সার্ভার থাকে, বক্সটি হাইড থাকবে কিন্তু ভিডিও প্লে হবে
+    else if (activeServers.length === 1) {
         serverSec.classList.add('hidden');
+        serverList.innerHTML = '';
+        loadIframeUrl(target[activeServers[0].key]);
+    } 
+    // কোনো সার্ভার না থাকলে শুধু হাইড থাকবে
+    else {
+        serverSec.classList.add('hidden');
+        serverList.innerHTML = '';
     }
 }
 
@@ -372,6 +382,12 @@ function playServer(rawUrl, btnElement) {
     document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
     if (btnElement) btnElement.classList.add('active');
     loadIframeUrl(rawUrl);
+
+    // 🚀 AUTO SCROLL FIX: 'movieModal' আইডি ধরে সরাসরি ওপরে স্ক্রোল করবে
+    const movieModal = document.getElementById('movieModal');
+    if (movieModal) {
+        movieModal.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
 
 function decodeAndCleanUrl(rawUrl) {
@@ -1245,33 +1261,73 @@ function closeModal(triggerBack = false, isUserAction = false) {
 function handleDownloadClick() {
     if (!currentItem) return;
 
-    if (downloadClickCount >= 3) {
-        downloadClickCount = 0;
-        const downloadBtn = document.getElementById('mainDownloadBtn');
-        document.getElementById('downloadBtnText').innerText = "Download";
+    const downloadBtn = document.getElementById('mainDownloadBtn');
+    const icon = downloadBtn ? downloadBtn.querySelector('i') : null;
 
-        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
-        downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
-        return;
+    // 🚀 WATCH ONLINE SCROLL & RESET FIX:
+    // ৩ নম্বর স্টেপের পর "Watch Online"-এ ক্লিক করলে ওপরে স্ক্রোল করবে এবং সাইকেল আবার প্রথম থেকে শুরু হবে
+    if (downloadClickCount >= 3) {
+        const movieModal = document.getElementById('movieModal');
+        if (movieModal) {
+            movieModal.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // 🔄 Reset back to Step 0 (Initial Download State)
+        downloadClickCount = 0;
+        document.getElementById('downloadBtnText').innerText = "Download";
+        
+        if (downloadBtn) {
+            // লাল ডিজাইন রিমুভ করা
+            downloadBtn.classList.remove('from-red-600', 'to-red-700', 'border-red-500', 'shadow-[0_0_15px_rgba(229,9,20,0.4)]');
+            // কালো অরিজিনাল ডিজাইন ব্যাক আনা
+            downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]');
+        }
+        if (icon) {
+            // ☁️ আবার ক্লাউড ডাউনলোড আইকনে ফিরে যাওয়া
+            icon.className = 'fas fa-cloud-download-alt text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
+        }
+        
+        return; 
     }
 
     downloadClickCount++;
 
     if (downloadClickCount === 1) {
         document.getElementById('downloadBtnText').innerText = "Ready For Download";
-        if (currentItem.downloadUrl1) window.open(currentItem.downloadUrl1, '_blank');
-    } else if (downloadClickCount === 2) {
+        
+        // নিশ্চিত করা যে আইকনটি ক্লাউডই আছে
+        if (icon) icon.className = 'fas fa-cloud-download-alt text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
+        
+        if (currentItem.downloadUrl1) {
+            window.open(currentItem.downloadUrl1, '_blank');
+        }
+    } 
+    else if (downloadClickCount === 2) {
         document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
-        if (currentItem.downloadUrl1) window.open(currentItem.downloadUrl1, '_blank');
-    } else if (downloadClickCount === 3) {
-        document.getElementById('downloadBtnText').innerText = "Link Expire";
+        
+        // নিশ্চিত করা যে আইকনটি ক্লাউডই আছে
+        if (icon) icon.className = 'fas fa-cloud-download-alt text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
+        
+        if (currentItem.downloadUrl1) {
+            window.open(currentItem.downloadUrl1, '_blank');
+        }
+    } 
+    else if (downloadClickCount === 3) {
+        // 🚀 CHANGE TO WATCH ONLINE
+        document.getElementById('downloadBtnText').innerText = "Watch Online";
 
-        const downloadBtn = document.getElementById('mainDownloadBtn');
         if (downloadBtn) {
-            downloadBtn.classList.remove('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
-            downloadBtn.classList.add('!bg-none', '!bg-[#111]', '!border-white', '!text-white', 'cursor-not-allowed', 'opacity-80');
+            // কালো ডিজাইন সরিয়ে সুন্দর লাল প্লে-বাটনের রূপ দেওয়া হলো
+            downloadBtn.classList.remove('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]');
+            downloadBtn.classList.add('from-red-600', 'to-red-700', 'border-red-500', 'shadow-[0_0_15px_rgba(229,9,20,0.4)]');
         }
 
+        if (icon) {
+            // 🔴 শুধুমাত্র এই স্টেপেই প্লে (Play) আইকন আসবে
+            icon.className = 'fas fa-play-circle text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
+        }
+
+        // ফাইনাল লিংকটি ওপেন করবে
         if (currentEpisodeIndex !== null && currentItem.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl) {
             window.open(currentItem.episodes[currentEpisodeIndex].downloadUrl, '_blank');
         } else if (currentItem.downloadUrl2) {
@@ -1281,20 +1337,40 @@ function handleDownloadClick() {
 }
 
 function playEpisode(index, btnElement) {
+    // ১. বাটনের স্টাইল আপডেট
     document.querySelectorAll('.episode-btn').forEach(b => b.classList.remove('active'));
-    btnElement.classList.add('active');
+    if (btnElement) btnElement.classList.add('active');
 
+    // ২. 🚀 বর্তমান এপিসোড ইনডেক্স আপডেট করা (সবচেয়ে জরুরি)
     currentEpisodeIndex = index;
     downloadClickCount = 0;
 
-    // 🚀 WEB SERIES SERVER FIX: নির্দিষ্ট এপিসোড ক্লিক করলে ওই এপিসোডের সার্ভার বাটনগুলো রেন্ডার হবে এবং ভিডিও প্লে হবে
+    // ৩. 🚀 ভিডিও প্লেয়ার আপডেট করা (এই লাইনটি মিসিং ছিল!)
     renderServerButtons();
 
+    // ৪. ডাউনলোড বাটন রিসেট
     const downloadBtn = document.getElementById('mainDownloadBtn');
     if (downloadBtn) {
         document.getElementById('downloadBtnText').innerText = "Download";
-        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80');
+        
+        // সব মডিফায়েড স্টাইল রিমুভ করে অরিজিনাল ব্ল্যাক বাটনে ব্যাক করা
+        downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80', 'from-red-600', 'to-red-700', 'border-red-500', 'shadow-[0_0_15px_rgba(229,9,20,0.4)]', '!bg-none', '!bg-[#111]', '!border-white', '!text-white');
         downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
+        
+        // অরিজিনাল ক্লাউড ডাউনলোড আইকন রিস্টোর করা
+        const icon = downloadBtn.querySelector('i');
+        if (icon) {
+            icon.className = 'fas fa-cloud-download-alt text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
+        }
+
+        const wave = downloadBtn.querySelector('.animate-shine-wave');
+        if (wave) wave.classList.remove('hidden');
+    }
+
+    // ৫. 🚀 AUTO SCROLL FIX: এপিসোড পরিবর্তন করলে মোডালটি স্মুথলি একদম ওপরে চলে যাবে
+    const movieModal = document.getElementById('movieModal');
+    if (movieModal) {
+        movieModal.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
