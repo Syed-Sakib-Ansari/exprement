@@ -738,14 +738,25 @@ function updateSearchUI() {
     }
 }
 
+// 🚀 SEARCH ICON CLICK HANDLER (X আইকনে ক্লিক করলে সার্চ ক্লিয়ার করার জন্য)
+function handleSearchIconClick() {
+    if (searchInput && searchInput.value.trim().length > 0) {
+        clearSearch();
+    } else if (searchInput) {
+        searchInput.focus();
+    }
+}
+
+// 🚀 CLEAR SEARCH & RESTORE EXACT SCROLL POSITION
 function clearSearch(preventRestore = false) {
     if (searchInput) searchInput.value = '';
     updateSearchUI();
     if (searchInput) searchInput.blur();
 
     if (!preventRestore && preSearchState) {
-        switchView(preSearchState.view, preSearchState.category, 'replace', preSearchState.displayedCount, preSearchState.scrollY);
-        preSearchState = null;
+        const targetState = preSearchState;
+        preSearchState = null; // স্টেট রিসেট করার আগে ডাটা কপি রাখা
+        switchView(targetState.view, targetState.category, 'replace', targetState.displayedCount, targetState.scrollY);
     } else {
         preSearchState = null;
         initLibraryRender();
@@ -796,31 +807,31 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
         lastVisitedCategory = catValue;
     }
 
-    if (mode) {
+if (mode) {
         try {
             const isBlob = window.location.protocol === 'blob:';
-            const stateObj = { view: viewName, category: filterCategory, scrollY: 0, displayedCount: 30, validDakhiState: true };
-
-            if (!isBlob) {
-                const url = new URL(window.location);
-                url.searchParams.set('view', viewName);
-                if (filterCategory && filterCategory !== 'all' && viewName === 'library') {
-                    url.searchParams.set('category', filterCategory);
-                } else {
-                    url.searchParams.delete('category');
-                }
-                url.searchParams.delete('movie');
-
-                if (mode === 'replace') {
-                    window.history.replaceState(stateObj, '', url);
-                } else {
-                    window.history.pushState(stateObj, '', url);
+            const rootUrl = new URL('/', window.location.origin);
+            if (viewName === 'library') {
+                rootUrl.searchParams.set('view', 'library');
+                if (filterCategory && filterCategory !== 'all') {
+                    rootUrl.searchParams.set('category', filterCategory);
                 }
             }
-            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-        } catch (e) {
-            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-        }
+
+            const stateObj = { view: viewName, category: filterCategory, scrollY: targetScroll, displayedCount: restoredCount || 30, validDakhiState: true };
+
+            if (mode === 'replace') {
+                window.history.replaceState(stateObj, '', rootUrl);
+            } else {
+                window.history.pushState(stateObj, '', rootUrl);
+            }
+        } catch (e) { }
+
+        // 🚀 EXACT SCROLL RESTORE: সার্চ ক্লিয়ার করার সাথে সাথে পূর্বের স্ক্রোল পজিশনে ফেরাবে
+        requestAnimationFrame(() => {
+            window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' });
+            setTimeout(() => window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' }), 50);
+        });
     }
 }
 
@@ -849,7 +860,7 @@ function createMovieCard(item, isAboveFold = false) {
             </div>
         </div>
         <div class="mt-3 text-center flex flex-col items-center md:block">
-            <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1 group-hover:text-red-500 transition-colors">${item.title}</h4>
+            <h4 class="font-black text-white text-[11px] md:text-sm uppercase tracking-tight line-clamp-1">${item.title}</h4>
             ${infoText}
         </div>`;
 
@@ -1201,11 +1212,24 @@ item.episodes.forEach((ep, idx) => {
         seriesSec.classList.add('hidden');
     }
 
-    const modal = document.getElementById('movieModal');
+const modal = document.getElementById('movieModal');
     if (modal) {
+        // 🚀 Step 1: Reveal element first so browser creates layout box
         modal.classList.remove('hidden');
+
+        // 🚀 Step 2: Instant reset scroll position
+        modal.scrollTop = 0;
+        if (typeof modal.scrollTo === 'function') {
+            modal.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        }
+
         void modal.offsetWidth;
         modal.classList.add('active');
+
+        // 🚀 Step 3: Re-enforce reset on next animation frame after DOM paint
+        requestAnimationFrame(() => {
+            modal.scrollTop = 0;
+        });
     }
 
     renderServerButtons();
@@ -1222,6 +1246,8 @@ function closeModal(triggerBack = false, isUserAction = false) {
     const modal = document.getElementById('movieModal');
     if (modal) {
         modal.classList.remove('active');
+        // 🚀 Reset scroll position when modal begins closing
+        modal.scrollTop = 0;
 
         setTimeout(() => {
             const actualVideo = document.getElementById('actualVideo');
@@ -1229,6 +1255,7 @@ function closeModal(triggerBack = false, isUserAction = false) {
                 actualVideo.innerHTML = '';
                 actualVideo.classList.add('hidden');
             }
+            modal.scrollTop = 0;
             modal.classList.add('hidden');
 
             showNativeAdPopup();
@@ -1243,14 +1270,21 @@ function closeModal(triggerBack = false, isUserAction = false) {
     const fab = document.getElementById('mobileFab');
     if (fab) fab.classList.remove('fab-hidden');
 
-    if (triggerBack && window.history.state?.isModalOpen) {
+if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
     } else if (isUserAction) {
-        const url = new URL(window.location);
-        url.searchParams.delete('movie');
         try {
             const currentState = history.state || { view: currentView, validDakhiState: true };
-            window.history.replaceState({ ...currentState, isModalOpen: false }, '', url.pathname + (url.search ? url.search : ''));
+            // 🚀 URL RESET FIX: মোডাল বন্ধ করে হোমে গেলে অ্যাড্রেস বার থেকে /movie-slug.html মুছে মেইন হোম ইউআরএল সেভ করবে
+            const rootUrl = new URL('/', window.location.origin);
+            if (currentView === 'library') {
+                rootUrl.searchParams.set('view', 'library');
+                const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category');
+                if (activeCat && activeCat !== 'all') {
+                    rootUrl.searchParams.set('category', activeCat);
+                }
+            }
+            window.history.replaceState({ ...currentState, isModalOpen: false }, '', rootUrl);
         } catch (e) { }
         document.title = currentView === 'home' ? "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD" : "All Movies & Web Series - MovieDakhi";
     }
@@ -1645,6 +1679,7 @@ function showToast(message) {
     }, 4000);
 }
 
+// 🚀 ON/OFF CONTROL CHECK
 const ENABLE_UNLOCK_CATEGORY_POPUP = false;
 
 function showUnlockPopup() {
@@ -1690,7 +1725,13 @@ function injectNativeAdScript() {
     container.appendChild(script);
 }
 
+// 🚀 ON/OFF CONTROL CHECK
+const ENABLE_NATIVE_AD_POPUP = false; 
+
 function showNativeAdPopup() {
+
+    if (!ENABLE_NATIVE_AD_POPUP) return;
+
     nativeAdBackdropClickCount = 0;
     injectNativeAdScript();
     const popup = document.getElementById('nativeAdPopup');
