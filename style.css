@@ -656,68 +656,179 @@ body {
 }
 
 /* ========================================== */
-/* 🚀 ALWAYS BRIGHT SERVER BUTTONS (DYNAMIC ACTIVE) */
+/* 🚀 FULL-SIZE CENTERED FLEXBOX SERVER LIST  */
 /* ========================================== */
+#serverList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* 📱 Mobile: 2 buttons per row (Original Size & Centered) */
 .server-btn {
-    padding: 10px 20px;
-    border-radius: 10px;
+    position: relative;
+    border-radius: 12px;
+    padding: 10px 12px;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 calc(50% - 5px);
+    width: calc(50% - 5px);
+    box-sizing: border-box;
+    text-align: left;
+    outline: none;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+}
+
+/* 🖥️ Desktop: 3 buttons per row (Original Full Width & Centered Incomplete Rows) */
+@media (min-width: 640px) {
+    #serverList {
+        gap: 12px;
+    }
+    .server-btn {
+        flex: 0 0 calc(33.333% - 8px);
+        width: calc(33.333% - 8px);
+        padding: 11px 16px;
+    }
+}
+
+.server-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.15);
+}
+
+/* Glassmorphic Inner Icon Box */
+.server-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #ffffff;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.server-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    overflow: hidden;
+}
+
+.server-title {
     font-size: 11px;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
-    transition: all 0.25s ease-in-out;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
+    letter-spacing: 0.5px;
     color: #ffffff;
-    opacity: 1 !important;
-    /* 🌟 সব বাটন ডিফল্টভাবে ১০০% উজ্জ্বল ও স্পষ্ট থাকবে */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* 🔴 Server 1 - Bright Vibrant Red */
+.server-tag {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.3px;
+    margin-top: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================== */
+/* 🎨 MODERN AESTHETIC GRADIENT PALETTES       */
+/* ========================================== */
+
+/* 🔴 Server 1 - Velvet Crimson Coral */
 .server-btn-1 {
-    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+    background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+    border: 1px solid rgba(130, 220, 255, 0.35);
+    box-shadow: 0 4px 18px rgba(0, 114, 255, 0.35);
 }
 
-/* 🔵 Server 2 - Bright Cyan Blue */
+/* 🔵 Server 2 - Sapphire Electric Cyan */
 .server-btn-2 {
-    background: linear-gradient(135deg, #ff0d1a 0%, #b30000 100%);
-    box-shadow: 0 4px 15px rgba(255, 13, 26, 0.35);
+    background: linear-gradient(135deg, #FF2A54 0%, #9E0021 100%);
+    border: 1px solid rgba(255, 120, 145, 0.35);
+    box-shadow: 0 4px 18px rgba(255, 42, 84, 0.35);
 }
 
-/* 🟡 Server 3 - Bright Gold/Amber */
+/* 🟠 Server 3 - Sunset Copper Amber */
 .server-btn-3 {
-    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
+    background: linear-gradient(135deg, #FF8008 0%, #CE6D00 100%);
+    border: 1px solid rgba(255, 190, 110, 0.35);
+    box-shadow: 0 4px 18px rgba(255, 128, 8, 0.35);
 }
 
-/* 🟣 Server 4 - Bright Purple */
+/* 🟣 Server 4 - Ultraviolet Royal Indigo */
 .server-btn-4 {
-    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35);
+    background: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%);
+    border: 1px solid rgba(195, 140, 255, 0.35);
+    box-shadow: 0 4px 18px rgba(142, 45, 226, 0.35);
 }
 
-/* 🖱️ Hover State - মাউস নিলে আরও ব্রাইট ও ভেসে উঠবে */
-.server-btn:hover {
-    transform: translateY(-2px) scale(1.02);
-    filter: brightness(1.2);
-    border-color: #ffffff;
+/* 🟢 Server 5 - Hyper Mint Emerald */
+.server-btn-5 {
+    background: linear-gradient(135deg, #11998E 0%, #059669 100%);
+    border: 1px solid rgba(130, 245, 210, 0.35);
+    box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
 }
 
-/* ⚡ Active/Selected State - যে বাটনটি ইউজার ক্লিক করেছে সেটি ড্যাপসা/প্রেসড হয়ে যাবে */
+/* 💗 Server 6 - Cyber Velvet Rose */
+.server-btn-6 {
+    background: linear-gradient(135deg, #FF007F 0%, #A8005B 100%);
+    border: 1px solid rgba(255, 130, 195, 0.35);
+    box-shadow: 0 4px 18px rgba(255, 0, 127, 0.35);
+}
+
+/* ========================================== */
+/* ⚡ CLEAN INSET PRESSED STATE (NO EXTRA BORDER) */
+/* ========================================== */
+
+/* 🖱️ Pushed Inward Effect for Selected Active Server */
 .server-btn.active {
-    opacity: 0.5 !important;
-    /* 📉 ক্লিক করা বাটনটি ড্যাপসা দেখাবে */
-    filter: brightness(0.6) contrast(1.2) !important;
-    transform: scale(0.95);
-    /* একটু ভেতরের দিকে দাবানো (Pressed Down) ফিল দেবে */
-    border: 2px solid rgba(255, 255, 255, 0.8) !important;
-    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.8) !important;
-    /* ইনার শ্যাডো */
+    transform: scale(0.96) translateY(2px) !important;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.6) !important;
+    filter: brightness(0.85) contrast(1.1) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.server-btn.active .server-icon-box {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.server-btn.active .server-icon-box i {
+    color: #ffffff !important;
+}
+
+.server-btn.active .server-title {
+    color: #ffffff !important;
+}
+
+.server-btn.active .server-tag {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 /* ========================================== */

@@ -57,7 +57,7 @@ function renderModalContent(item, SEOFullTitle, titleKey, cleanLang, releaseYear
     const directorText = tmdb?.director || item.director || "Renowned Director";
     const castText = tmdb?.cast || (Array.isArray(item.cast) ? item.cast.join(', ') : item.cast) || "Top Featured Ensemble Cast";
     const durationText = tmdb?.runtime || item.duration || "Full Feature Length";
-    
+
     const plotText = tmdb?.overview || item.detailedPlotSummary || `${SEOFullTitle} is a prominent ${item.category || 'Cinema'} release officially debuting in ${releaseYear}. Presented in ${cleanLang}, this production delivers a rich narrative experience tailored for fans of ${item.genre || 'Action & Drama'}. The storyline brings together dynamic character arcs, high-definition audio-visual elements, and cinematic sequences that keep viewers engaged from start to finish.`;
 
     const playbackGuide = `On MovieDakhi, viewers can access full metadata, audio specifications, and verified stream references for ${SEOFullTitle}. The media file is encoded in x265 HEVC MKV format with English softcoded subtitles (ESub), providing ultra-smooth remote playback across Google Chrome, PC, Android, iOS, Smart TV, and Chromecast setups.`;
@@ -330,24 +330,25 @@ function renderServerButtons() {
     if (!serverSec || !serverList || !currentItem) return;
 
     const isSeries = currentItem.episodes && currentItem.episodes.length > 0;
-
-    // 🚀 WEB SERIES SERVER FIX: টার্গেট হিসেবে মুভির বদলে বর্তমান এপিসোড সেট করা হলো
     const target = isSeries ? currentItem.episodes[currentEpisodeIndex !== null ? currentEpisodeIndex : 0] : currentItem;
 
     if (!target) {
         serverSec.classList.add('hidden');
         return;
     }
+
+    // 🚀 CLEAN & PROFESSIONAL STREAM SERVER CONFIG
     const servers = [
-        { key: 'embedUrl', label: 'Server 1 (Primary)' },
-        { key: 'embedUrl2', label: 'Server 2 (Super Fast)' },
-        { key: 'embedUrl3', label: 'Server 3 (VIP Stream)' },
-        { key: 'embedUrl4', label: 'Server 4 (Alternative)' }
+        { key: 'embedUrl', name: 'Server 1', tag: 'Primary HD' },
+        { key: 'embedUrl2', name: 'Server 2', tag: 'Fast Stream' },
+        { key: 'embedUrl3', name: 'Server 3', tag: 'VIP Mirror' },
+        { key: 'embedUrl4', name: 'Server 4', tag: 'Alternative' },
+        { key: 'embedUrl5', name: 'Server 5', tag: '4K Ultra HD' },
+        { key: 'embedUrl6', name: 'Server 6', tag: 'Backup Server' }
     ];
 
-const activeServers = servers.filter(s => target[s.key] && typeof target[s.key] === 'string' && target[s.key].trim() !== '');
+    const activeServers = servers.filter(s => target[s.key] && typeof target[s.key] === 'string' && target[s.key].trim() !== '');
 
-    // 🚀 LOGIC FIX: একের বেশি সার্ভার থাকলেই কেবল সার্ভার বক্স শো করবে
     if (activeServers.length > 1) {
         serverSec.classList.remove('hidden');
         serverList.innerHTML = '';
@@ -355,20 +356,26 @@ const activeServers = servers.filter(s => target[s.key] && typeof target[s.key] 
         activeServers.forEach((s, idx) => {
             const btn = document.createElement('button');
             btn.className = `server-btn server-btn-${idx + 1} ${idx === 0 ? 'active' : ''}`;
-            btn.innerHTML = `<i class="fas fa-server text-[10px]"></i> ${s.label}`;
+            btn.innerHTML = `
+                <div class="server-icon-box">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="server-info">
+                    <span class="server-title">${s.name}</span>
+                    <span class="server-tag">${s.tag}</span>
+                </div>
+            `;
             btn.onclick = () => playServer(target[s.key], btn);
             serverList.appendChild(btn);
         });
 
         loadIframeUrl(target[activeServers[0].key]);
-    } 
-    // যদি মাত্র ১টি সার্ভার থাকে, বক্সটি হাইড থাকবে কিন্তু ভিডিও প্লে হবে
+    }
     else if (activeServers.length === 1) {
         serverSec.classList.add('hidden');
         serverList.innerHTML = '';
         loadIframeUrl(target[activeServers[0].key]);
-    } 
-    // কোনো সার্ভার না থাকলে শুধু হাইড থাকবে
+    }
     else {
         serverSec.classList.add('hidden');
         serverList.innerHTML = '';
@@ -807,7 +814,7 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
         lastVisitedCategory = catValue;
     }
 
-if (mode) {
+    if (mode) {
         try {
             const isBlob = window.location.protocol === 'blob:';
             const rootUrl = new URL('/', window.location.origin);
@@ -1199,7 +1206,7 @@ function executeActualOpenModal(id) {
             document.getElementById('seriesInfoText').innerText = item.seriesInfo || "Season 1 • Episodes";
         }
         epList.innerHTML = '';
-item.episodes.forEach((ep, idx) => {
+        item.episodes.forEach((ep, idx) => {
             const btn = document.createElement('button');
             btn.className = `episode-btn px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black hover:bg-red-600 transition tracking-widest uppercase ${idx === (currentEpisodeIndex || 0) ? 'active' : ''}`;
             btn.innerText = ep.title || `Episode ${idx + 1}`;
@@ -1212,7 +1219,7 @@ item.episodes.forEach((ep, idx) => {
         seriesSec.classList.add('hidden');
     }
 
-const modal = document.getElementById('movieModal');
+    const modal = document.getElementById('movieModal');
     if (modal) {
         // 🚀 Step 1: Reveal element first so browser creates layout box
         modal.classList.remove('hidden');
@@ -1270,7 +1277,7 @@ function closeModal(triggerBack = false, isUserAction = false) {
     const fab = document.getElementById('mobileFab');
     if (fab) fab.classList.remove('fab-hidden');
 
-if (triggerBack && window.history.state?.isModalOpen) {
+    if (triggerBack && window.history.state?.isModalOpen) {
         window.history.back();
     } else if (isUserAction) {
         try {
@@ -1305,11 +1312,11 @@ function handleDownloadClick() {
         if (movieModal) {
             movieModal.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        
+
         // 🔄 Reset back to Step 0 (Initial Download State)
         downloadClickCount = 0;
         document.getElementById('downloadBtnText').innerText = "Download";
-        
+
         if (downloadBtn) {
             // লাল ডিজাইন রিমুভ করা
             downloadBtn.classList.remove('from-red-600', 'to-red-700', 'border-red-500', 'shadow-[0_0_15px_rgba(229,9,20,0.4)]');
@@ -1320,32 +1327,32 @@ function handleDownloadClick() {
             // ☁️ আবার ক্লাউড ডাউনলোড আইকনে ফিরে যাওয়া
             icon.className = 'fas fa-cloud-download-alt text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
         }
-        
-        return; 
+
+        return;
     }
 
     downloadClickCount++;
 
     if (downloadClickCount === 1) {
         document.getElementById('downloadBtnText').innerText = "Ready For Download";
-        
+
         // নিশ্চিত করা যে আইকনটি ক্লাউডই আছে
         if (icon) icon.className = 'fas fa-cloud-download-alt text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
-        
+
         if (currentItem.downloadUrl1) {
             window.open(currentItem.downloadUrl1, '_blank');
         }
-    } 
+    }
     else if (downloadClickCount === 2) {
         document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
-        
+
         // নিশ্চিত করা যে আইকনটি ক্লাউডই আছে
         if (icon) icon.className = 'fas fa-cloud-download-alt text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
-        
+
         if (currentItem.downloadUrl1) {
             window.open(currentItem.downloadUrl1, '_blank');
         }
-    } 
+    }
     else if (downloadClickCount === 3) {
         // 🚀 CHANGE TO WATCH ONLINE
         document.getElementById('downloadBtnText').innerText = "Watch Online";
@@ -1386,11 +1393,11 @@ function playEpisode(index, btnElement) {
     const downloadBtn = document.getElementById('mainDownloadBtn');
     if (downloadBtn) {
         document.getElementById('downloadBtnText').innerText = "Download";
-        
+
         // সব মডিফায়েড স্টাইল রিমুভ করে অরিজিনাল ব্ল্যাক বাটনে ব্যাক করা
         downloadBtn.classList.remove('from-gray-600', 'to-gray-800', 'border-gray-500', 'cursor-not-allowed', 'opacity-80', 'from-red-600', 'to-red-700', 'border-red-500', 'shadow-[0_0_15px_rgba(229,9,20,0.4)]', '!bg-none', '!bg-[#111]', '!border-white', '!text-white');
         downloadBtn.classList.add('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]', 'hover:scale-105');
-        
+
         // অরিজিনাল ক্লাউড ডাউনলোড আইকন রিস্টোর করা
         const icon = downloadBtn.querySelector('i');
         if (icon) {
@@ -1533,8 +1540,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         sessionStorage.removeItem('MovieDakhi_Count');
     }
 
-renderCategories();
-    
+    renderCategories();
+
     // 🚀 STEP 1: পেজের মূল কন্টেন্ট (LCP) সাথে সাথে রেন্ডার হবে
     renderRecentAdds();
 
@@ -1547,7 +1554,7 @@ renderCategories();
     setTimeout(() => {
         initHeroSlider();
     }, 300);
-    
+
     if ('requestIdleCallback' in window) {
         requestIdleCallback(() => initHeroSlider(), { timeout: 1500 });
     } else {
@@ -1726,7 +1733,7 @@ function injectNativeAdScript() {
 }
 
 // 🚀 ON/OFF CONTROL CHECK
-const ENABLE_NATIVE_AD_POPUP = false; 
+const ENABLE_NATIVE_AD_POPUP = false;
 
 function showNativeAdPopup() {
 
