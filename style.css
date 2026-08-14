@@ -1020,3 +1020,160 @@ body {
 .animate-outline-rays {
     animation: outlineRaysPulse 1.3s infinite cubic-bezier(0.25, 1, 0.5, 1);
 }
+
+/* ========================================== */
+/* 🚀 DYNAMIC STEP-REACTIVE DOWNLOAD BUTTON   */
+/* ========================================== */
+.modern-download-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    width: 100%;
+    max-width: 380px;
+    outline: none;
+}
+
+.modern-download-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    filter: brightness(1.1);
+}
+
+.modern-download-btn:active {
+    transform: translateY(2px) scale(0.97);
+}
+
+/* 🟡 STEP 1 (Orange / Golden Amber Glow) */
+.modern-download-btn.step-1 {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%) !important;
+    border-color: #fef08a !important;
+    box-shadow: 0 12px 35px -5px rgba(245, 158, 11, 0.7), 0 0 0 2px rgba(245, 158, 11, 0.4) !important;
+    animation: btnNoticePop 0.35s ease-out;
+}
+
+/* 🔴 STEP 2 - FINAL CLICK (Intense Fire Crimson Glow) */
+.modern-download-btn.step-2 {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%) !important;
+    border-color: #fca5a5 !important;
+    box-shadow: 0 14px 40px -5px rgba(239, 68, 68, 0.85), 0 0 0 3px rgba(239, 68, 68, 0.5) !important;
+    animation: btnNoticePop 0.35s ease-out, fireGlowPulse 1.5s infinite alternate;
+}
+
+/* 🔵 STEP 3 - SUCCESS DELIVERED (Electric Cyan / Blue) */
+.modern-download-btn.step-3 {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+    border-color: #bae6fd !important;
+    box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.7) !important;
+    animation: btnNoticePop 0.35s ease-out;
+}
+
+@keyframes btnNoticePop {
+    0% { transform: scale(0.92); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fireGlowPulse {
+    0% { box-shadow: 0 10px 30px rgba(239, 68, 68, 0.6); }
+    100% { box-shadow: 0 15px 45px rgba(239, 68, 68, 0.95), 0 0 20px rgba(255, 255, 255, 0.4); }
+}
+
+/* Shimmer Light Reflection */
+.modern-download-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-25deg);
+    animation: modernShimmerSweep 3s infinite ease-in-out;
+}
+
+@keyframes modernShimmerSweep {
+    0% { left: -150%; }
+    30%, 100% { left: 250%; }
+}
+
+.modern-btn-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.modern-btn-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+    overflow: hidden;
+}
+
+.modern-btn-main {
+    font-size: 13.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.modern-btn-sub {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 2.5px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.modern-btn-arrow {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.modern-download-btn:hover .modern-btn-arrow {
+    transform: translateX(4px);
+    color: #ffffff;
+}
+
+/* Language Badge Styling (Clean Modern Tag) */
+.lang-badge {
+    background-color: var(--primary-red);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    box-shadow: 0 2px 8px rgba(229, 9, 20, 0.4);
+    display: inline-flex;
+    align-items: center;
+}
