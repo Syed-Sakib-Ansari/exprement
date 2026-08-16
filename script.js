@@ -1359,7 +1359,7 @@ function resetDownloadButtonUI() {
         const topSub = document.getElementById('topDownloadBtnSubText');
         const topIcon = document.getElementById('topDownloadBtnIcon');
 
-        if (topText) topText.innerText = "Download Movie";
+        if (topText) topText.innerText = "Download";
         if (topSub) topSub.innerText = "⚡ Fast Server • Direct Link";
         if (topIcon) topIcon.className = "fas fa-cloud-arrow-down text-lg";
     }
