@@ -324,6 +324,20 @@ function debounce(func, wait) {
     };
 }
 
+// ==========================================
+// 🛠️ মাস্টার স্ট্রিম সার্ভার কন্ট্রোলার (MASTER STREAM SERVER CONTROLLER)
+// ==========================================
+// • কোনো সার্ভার সাময়িক ডাউন থাকলে enabled: false করে দিন, ওয়েবসাইট থেকে সাথে সাথে হাইড হয়ে যাবে
+// • সার্ভারের সিরিয়াল আগে-পিছে সাজালে বাটনের অর্ডার এবং ডিফল্ট প্লেয়ার সেই অনুযায়ী লোড হবে
+const STREAM_SERVER_CONFIG = [
+    { key: 'embedUrl',  name: 'Server 1', tag: 'Primary HD',    enabled: true },
+    { key: 'embedUrl2', name: 'Server 2', tag: 'Fast Stream',   enabled: true },
+    { key: 'embedUrl3', name: 'Server 3', tag: 'VIP Mirror',    enabled: true },
+    { key: 'embedUrl4', name: 'Server 4', tag: 'Alternative',   enabled: true },
+    { key: 'embedUrl5', name: 'Server 5', tag: '4K Ultra HD',   enabled: true },
+    { key: 'embedUrl6', name: 'Server 6', tag: 'Backup Server', enabled: true }
+];
+
 function renderServerButtons() {
     const serverSec = document.getElementById('serverSection');
     const serverList = document.getElementById('serverList');
@@ -337,17 +351,10 @@ function renderServerButtons() {
         return;
     }
 
-    // 🚀 CLEAN & PROFESSIONAL STREAM SERVER CONFIG
-    const servers = [
-        { key: 'embedUrl', name: 'Server 1', tag: 'Primary HD' },
-        { key: 'embedUrl2', name: 'Server 2', tag: 'Fast Stream' },
-        { key: 'embedUrl3', name: 'Server 3', tag: 'VIP Mirror' },
-        { key: 'embedUrl4', name: 'Server 4', tag: 'Alternative' },
-        { key: 'embedUrl5', name: 'Server 5', tag: '4K Ultra HD' },
-        { key: 'embedUrl6', name: 'Server 6', tag: 'Backup Server' }
-    ];
-
-    const activeServers = servers.filter(s => target[s.key] && typeof target[s.key] === 'string' && target[s.key].trim() !== '');
+    // 🚀 শুধুমাত্র সচল (enabled: true) এবং ডাটাবেজে লিংক থাকা সার্ভারগুলো ফিল্টার হবে
+    const activeServers = STREAM_SERVER_CONFIG
+        .filter(server => server.enabled !== false)
+        .filter(server => target[server.key] && typeof target[server.key] === 'string' && target[server.key].trim() !== '');
 
     if (activeServers.length > 1) {
         serverSec.classList.remove('hidden');
@@ -355,7 +362,7 @@ function renderServerButtons() {
 
         activeServers.forEach((s, idx) => {
             const btn = document.createElement('button');
-            btn.className = `server-btn server-btn-${idx + 1} ${idx === 0 ? 'active' : ''}`;
+            btn.className = `server-btn server-btn-${(idx % 6) + 1} ${idx === 0 ? 'active' : ''}`;
             btn.innerHTML = `
                 <div class="server-icon-box">
                     <i class="fas fa-server"></i>
@@ -382,18 +389,43 @@ function renderServerButtons() {
     }
 }
 
+// function playServer(rawUrl, btnElement) {
+//     const movieModal = document.getElementById('movieModal');
+
+//     // 🛡️ যদি বাটনটি ইতিমধ্যেই Active / Playing থাকে: কোনো অ্যাড বা রিলোড হবে না, শুধু ওপরে স্ক্রোল করবে
+//     if (btnElement && btnElement.classList.contains('active')) {
+//         if (movieModal) {
+//             movieModal.scrollTo({ top: 0, behavior: 'smooth' });
+//         }
+//         return;
+//     }
+
+//     // 🚀 নতুন সার্ভার সিলেক্ট করলে অ্যাড ওপেন হবে এবং নতুন সার্ভার লোড হবে
+//     const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+//     window.open(smartAdLink, '_blank');
+
+//     document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
+//     if (btnElement) btnElement.classList.add('active');
+//     loadIframeUrl(rawUrl);
+
+//     if (movieModal) {
+//         movieModal.scrollTo({ top: 0, behavior: 'smooth' });
+//     }
+// }
+
 function playServer(rawUrl, btnElement) {
     const movieModal = document.getElementById('movieModal');
 
-    // 🛡️ যদি বাটনটি ইতিমধ্যেই Active / Playing থাকে: কোনো অ্যাড বা রিলোড হবে না, শুধু ওপরে স্ক্রোল করবে
+    // 🔄 যদি বাটনটি ইতিমধ্যেই Active / Playing থাকে: কোনো অ্যাড ওপেন না করে সরাসরি ওপরে স্ক্রোল করবে এবং এমবেড লিংকটি পুনরায় রিলোড করবে
     if (btnElement && btnElement.classList.contains('active')) {
         if (movieModal) {
             movieModal.scrollTo({ top: 0, behavior: 'smooth' });
         }
+        loadIframeUrl(rawUrl);
         return;
     }
 
-    // 🚀 নতুন সার্ভার সিলেক্ট করলে অ্যাড ওপেন হবে এবং নতুন সার্ভার লোড হবে
+    // 🚀 নতুন সার্ভার নির্বাচন করলে স্পন্সর অ্যাড ওপেন হবে এবং সার্ভার লোড হবে
     const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 
@@ -1192,11 +1224,18 @@ function executeActualOpenModal(id) {
         });
     }
 
-    // =====================================
+// =====================================
     // 🚀 CONDITIONAL PLAYER / DOWNLOAD LOGIC
     // =====================================
-    // executeActualOpenModal ফাংশনের ভেতরে:
-    const hasVideoUrl = !!item.embedUrl || (item.episodes && item.episodes.length > 0 && !!item.episodes[0].embedUrl);
+    // 🔍 চেক করবে কোনো সচল (Enabled) সার্ভার আছে কি না
+    const hasEnabledServer = (obj) => {
+        if (!obj) return false;
+        return STREAM_SERVER_CONFIG.some(
+            s => s.enabled !== false && obj[s.key] && typeof obj[s.key] === 'string' && obj[s.key].trim() !== ''
+        );
+    };
+
+    const hasVideoUrl = hasEnabledServer(item) || (item.episodes && item.episodes.length > 0 && hasEnabledServer(item.episodes[0]));
 
     const driveVideoWrapper = document.getElementById('driveVideoWrapper');
     const noVideoDownloadBox = document.getElementById('noVideoDownloadBox');
