@@ -330,11 +330,11 @@ function debounce(func, wait) {
 // • কোনো সার্ভার সাময়িক ডাউন থাকলে enabled: false করে দিন, ওয়েবসাইট থেকে সাথে সাথে হাইড হয়ে যাবে
 // • সার্ভারের সিরিয়াল আগে-পিছে সাজালে বাটনের অর্ডার এবং ডিফল্ট প্লেয়ার সেই অনুযায়ী লোড হবে
 const STREAM_SERVER_CONFIG = [
-    { key: 'embedUrl',  name: 'Server 1', tag: 'Primary HD',    enabled: true },
-    { key: 'embedUrl2', name: 'Server 2', tag: 'Fast Stream',   enabled: true },
-    { key: 'embedUrl3', name: 'Server 3', tag: 'VIP Mirror',    enabled: true },
-    { key: 'embedUrl4', name: 'Server 4', tag: 'Alternative',   enabled: true },
-    { key: 'embedUrl5', name: 'Server 5', tag: '4K Ultra HD',   enabled: true },
+    { key: 'embedUrl', name: 'Server 1', tag: 'Primary HD', enabled: true },
+    { key: 'embedUrl2', name: 'Server 2', tag: 'Fast Stream', enabled: true },
+    { key: 'embedUrl3', name: 'Server 3', tag: 'VIP Mirror', enabled: true },
+    { key: 'embedUrl4', name: 'Server 4', tag: 'Alternative', enabled: true },
+    { key: 'embedUrl5', name: 'Server 5', tag: '4K Ultra HD', enabled: true },
     { key: 'embedUrl6', name: 'Server 6', tag: 'Backup Server', enabled: true }
 ];
 
@@ -1224,7 +1224,7 @@ function executeActualOpenModal(id) {
         });
     }
 
-// =====================================
+    // =====================================
     // 🚀 CONDITIONAL PLAYER / DOWNLOAD LOGIC
     // =====================================
     // 🔍 চেক করবে কোনো সচল (Enabled) সার্ভার আছে কি না
@@ -1342,8 +1342,6 @@ function closeModal(triggerBack = false, isUserAction = false) {
             }
             modal.scrollTop = 0;
             modal.classList.add('hidden');
-
-            showNativeAdPopup();
         }, 300);
     }
 
@@ -1377,11 +1375,40 @@ function closeModal(triggerBack = false, isUserAction = false) {
     setTimeout(() => { isModalClosing = false; }, 350);
 }
 
-// 🔄 ১. Modal ওপেন করার সময় বাটন রিসেট
-function resetDownloadButtonUI() {
-    downloadClickCount = 0;
+// ==========================================
+// 🚀 DOWNLOAD BUTTON STATE & CLICK HANDLER
+// ==========================================
+let downloadState = 0; // 0 = First Click (Opens Ad), 1 = Final Click Ready, 2 = Watch Now
 
-    // Bottom Download Button Reset
+// 🎯 "Download (Final Click)" বাটন স্টেট সেট করার ফাংশন
+function applyFinalDownloadButtonState() {
+    const mainDownloadBtn = document.getElementById('mainDownloadBtn');
+    const downloadBtnText = document.getElementById('downloadBtnText');
+    const topDownloadBtn = document.getElementById('topDownloadBtn');
+    const topText = document.getElementById('topDownloadBtnText');
+    const topSub = document.getElementById('topDownloadBtnSubText');
+    const topIcon = document.getElementById('topDownloadBtnIcon');
+
+    if (mainDownloadBtn) {
+        if (downloadBtnText) downloadBtnText.innerText = "Download (Final Click)";
+        mainDownloadBtn.classList.remove('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]');
+        mainDownloadBtn.classList.add('btn-final-click');
+    }
+
+    if (topDownloadBtn) {
+        topDownloadBtn.classList.remove('step-1', 'step-3');
+        topDownloadBtn.classList.add('step-2');
+        if (topText) topText.innerText = "Get Download Link (Final)";
+        if (topSub) topSub.innerText = "🔥 Direct Link Ready • Click to Start";
+        if (topIcon) topIcon.className = "fas fa-bolt text-lg animate-bounce";
+    }
+}
+
+// 🔄 বাটন রিসেট ফাংশন
+function resetDownloadButtonUI() {
+    downloadState = 0;
+    nativeAdClicksDone = 0;
+
     const mainDownloadBtn = document.getElementById('mainDownloadBtn');
     if (mainDownloadBtn) {
         document.getElementById('downloadBtnText').innerText = "Download";
@@ -1390,101 +1417,67 @@ function resetDownloadButtonUI() {
         if (mainIcon) mainIcon.className = 'fas fa-cloud-download-alt text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
     }
 
-    // Top Modern Download Button Reset
     const topDownloadBtn = document.getElementById('topDownloadBtn');
     if (topDownloadBtn) {
         topDownloadBtn.classList.remove('step-1', 'step-2', 'step-3');
         const topText = document.getElementById('topDownloadBtnText');
         const topSub = document.getElementById('topDownloadBtnSubText');
         const topIcon = document.getElementById('topDownloadBtnIcon');
-
         if (topText) topText.innerText = "Download";
         if (topSub) topSub.innerText = "⚡ Fast Server • Direct Link";
         if (topIcon) topIcon.className = "fas fa-cloud-arrow-down text-lg";
     }
 }
 
-// 🖱️ ২. হাইপার-নোটিসেবল ক্লিক হ্যান্ডলার
+// 🖱️ মূল ডাউনলোড বাটন ক্লিক হ্যান্ডলার
 function handleDownloadClick() {
     if (!currentItem) return;
 
-    const hasVideo = currentItem.embedUrl || (currentItem.episodes && currentItem.episodes.length > 0);
-
     const mainDownloadBtn = document.getElementById('mainDownloadBtn');
-    const topDownloadBtn = document.getElementById('topDownloadBtn');
-    const topText = document.getElementById('topDownloadBtnText');
-    const topSub = document.getElementById('topDownloadBtnSubText');
-    const topIcon = document.getElementById('topDownloadBtnIcon');
     const mainIcon = mainDownloadBtn ? mainDownloadBtn.querySelector('i') : null;
 
-    // 🚀 VIDEO MODE: Watch Online Reset on 3rd click
-    if (hasVideo && downloadClickCount >= 3) {
+    // 🔄 যদি বাটনটি ইতিমধ্যেই "Watch Now" থাকে: ওপরে স্ক্রোল ও রিসেট হবে
+    if (downloadState === 2) {
         const movieModal = document.getElementById('movieModal');
         if (movieModal) movieModal.scrollTo({ top: 0, behavior: 'smooth' });
         resetDownloadButtonUI();
         return;
     }
 
-    downloadClickCount++;
+    // 🚀 STEP 1: প্রথম ক্লিকে Native Ad কার্ড পপ-আপ ওপেন হবে (২টি ক্লিক বাধ্যতামূলক)
+    if (downloadState === 0) {
+        showNativeAdPopup();
+        return;
+    }
 
-    // 🟡 STEP 1: Gold / Amber State
-    if (downloadClickCount === 1) {
-        if (mainDownloadBtn) document.getElementById('downloadBtnText').innerText = "Ready For Download";
+    // 🚀 STEP 2: "Download (Final Click)" এ ক্লিক করলে ফাইল ডাউনলোড ওপেন হবে এবং বাটন "Watch Now" হবে
+    if (downloadState === 1) {
+        const finalUrl = (currentEpisodeIndex !== null && currentItem?.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl)
+            ? currentItem.episodes[currentEpisodeIndex].downloadUrl
+            : (currentItem?.downloadUrl2 || currentItem?.downloadUrl1);
 
-        if (topDownloadBtn) {
-            topDownloadBtn.classList.remove('step-2', 'step-3');
-            topDownloadBtn.classList.add('step-1');
-            if (topText) topText.innerText = "Ready For Download (Step 1)";
-            if (topSub) topSub.innerText = "⏳ Verified • Click Again To Finalize";
-            if (topIcon) topIcon.className = "fas fa-hourglass-half text-lg animate-spin";
+        if (finalUrl) {
+            window.open(finalUrl, '_blank');
         }
 
-        if (currentItem.downloadUrl1) window.open(currentItem.downloadUrl1, '_blank');
-    }
-    // 🔴 STEP 2: Fire Red State (Final Link Generated)
-    else if (downloadClickCount === 2) {
-        if (mainDownloadBtn) document.getElementById('downloadBtnText').innerText = "Download (Final Click)";
+        downloadState = 2;
 
-        if (topDownloadBtn) {
-            topDownloadBtn.classList.remove('step-1', 'step-3');
-            topDownloadBtn.classList.add('step-2');
-            if (topText) topText.innerText = "Get Download Link (Final)";
-            if (topSub) topSub.innerText = "🔥 Direct Link Ready • Click to Start";
-            if (topIcon) topIcon.className = "fas fa-bolt text-lg animate-bounce";
-        }
-
-        if (currentItem.downloadUrl1) window.open(currentItem.downloadUrl1, '_blank');
-    }
-    // 🚀 STEP 3: Complete / Delivery
-    else if (downloadClickCount >= 3) {
-        if (hasVideo) {
-            document.getElementById('downloadBtnText').innerText = "Watch Online";
-            if (mainDownloadBtn) {
-                mainDownloadBtn.classList.remove('from-[#2B2727]', 'to-[#2B2727]', 'border-[#E3DADA]');
-                mainDownloadBtn.classList.add('from-red-600', 'to-red-700', 'border-red-500', 'shadow-[0_0_15px_rgba(229,9,20,0.4)]');
-            }
+        if (mainDownloadBtn) {
+            document.getElementById('downloadBtnText').innerText = "Watch Now";
+            mainDownloadBtn.className = "relative overflow-hidden btn-watch-now text-white px-8 py-3.5 rounded-md font-black hover:scale-105 transition-all duration-300 text-sm uppercase tracking-widest flex items-center gap-3 group";
             if (mainIcon) mainIcon.className = 'fas fa-play-circle text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
+        }
 
-            if (currentEpisodeIndex !== null && currentItem.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl) {
-                window.open(currentItem.episodes[currentEpisodeIndex].downloadUrl, '_blank');
-            } else if (currentItem.downloadUrl2) {
-                window.open(currentItem.downloadUrl2, '_blank');
-            }
-        } else {
-            // No Video Mode: Start Download & show delivered state
-            if (topDownloadBtn) {
-                topDownloadBtn.classList.remove('step-1', 'step-2');
-                topDownloadBtn.classList.add('step-3');
-                if (topText) topText.innerText = "Download Completed...";
-                if (topSub) topSub.innerText = "✅ Media File Download Triggered";
-                if (topIcon) topIcon.className = "fas fa-check-circle text-lg";
-            }
-
-            if (currentItem.downloadUrl2) {
-                window.open(currentItem.downloadUrl2, '_blank');
-            } else if (currentItem.downloadUrl1) {
-                window.open(currentItem.downloadUrl1, '_blank');
-            }
+        const topDownloadBtn = document.getElementById('topDownloadBtn');
+        if (topDownloadBtn) {
+            topDownloadBtn.classList.remove('step-1', 'step-2');
+            topDownloadBtn.classList.add('step-3');
+            const topText = document.getElementById('topDownloadBtnText');
+            const topSub = document.getElementById('topDownloadBtnSubText');
+            const topIcon = document.getElementById('topDownloadBtnIcon');
+            if (topText) topText.innerText = "Download Started";
+            if (topSub) topSub.innerText = "✅ Media File Download Triggered";
+            if (topIcon) topIcon.className = "fas fa-check-circle text-lg";
         }
     }
 }
@@ -1813,82 +1806,190 @@ function showUnlockPopup() {
     }
 }
 
-function closeUnlockPopup() {
-    const popup = document.getElementById('unlockCategoryPopup');
-    if (popup) {
-        popup.classList.add('opacity-0');
-        setTimeout(() => {
-            popup.classList.add('hidden');
-            document.body.style.overflow = '';
-        }, 300);
+// ❌ পপ-আপ তাৎক্ষণিক বন্ধ করার ফাংশন
+function closeNativeAdPopup(e) {
+    if (e && typeof e.stopPropagation === 'function') {
+        e.stopPropagation();
+    }
+    const popup = document.getElementById('nativeAdPopup');
+    if (!popup) return;
+
+    popup.classList.remove('active');
+    popup.classList.remove('flex');
+    popup.classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+// 🖱️ ডার্ক ব্যাকড্রপে ক্লিক করলে বন্ধ হবে
+function handleNativePopupBackdrop(e) {
+    if (e.target.id === 'nativeAdPopup') {
+        closeNativeAdPopup(e);
     }
 }
 
-function handleWatchAdClick() {
-    closeUnlockPopup();
-    const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+// 🖱️ বিজ্ঞাপনে ক্লিক হ্যান্ডলার (২য় ক্লিকে সরাসরি বন্ধ হবে)
+function handleNativePopupAdClick(e) {
+    // যদি ক্লোজ বাটনে ক্লিক পড়ে তবে বিজ্ঞাপনের কাউন্ট হবে না
+    if (e && e.target && e.target.closest('button')) return;
+
+    const smartAdLink = currentItem?.downloadUrl1 || "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
+
+    nativeAdClicksDone++;
+
+    const badge = document.getElementById('popupStepBadge');
+    const title = document.getElementById('popupStepTitle');
+    const desc = document.getElementById('popupStepDesc');
+    const progressBar = document.getElementById('popupProgressBar');
+    const progressPercent = document.getElementById('popupProgressPercent');
+    const progressLabel = document.getElementById('popupProgressLabel');
+
+    if (nativeAdClicksDone === 1) {
+        // 🚀 ১ম ক্লিক সম্পন্ন: প্রোগ্রেস বার ৫০% পূর্ণ হবে
+        if (badge) badge.innerText = "Step 2 of 2: Final Step";
+        if (title) title.innerText = "Download Ready • Final Step";
+        if (desc) desc.innerText = "Click the final sponsor box below to unlock your verified media file.";
+        if (progressBar) progressBar.style.width = "50%";
+        if (progressPercent) {
+            progressPercent.innerText = "50%";
+            progressPercent.className = "text-amber-400 font-black";
+        }
+        if (progressLabel) progressLabel.innerText = "50% Completed";
+
+        renderNativePopupAdIframe();
+    } else if (nativeAdClicksDone >= 2) {
+        // 🚀 ২য় ক্লিক সম্পন্ন: সাথে সাথে মডাল বন্ধ হবে এবং মূল বাটনে "DOWNLOAD (FINAL CLICK)" সক্রিয় হবে
+        if (progressBar) progressBar.style.width = "100%";
+        if (progressPercent) {
+            progressPercent.innerText = "100%";
+            progressPercent.className = "text-emerald-400 font-black";
+        }
+        if (progressLabel) progressLabel.innerText = "100% Unlocked";
+
+        closeNativeAdPopup();
+        downloadState = 1;
+        applyFinalDownloadButtonState();
+    }
 }
 
-let nativeAdBackdropClickCount = 0;
+// ==========================================
+// 🚀 2-CLICK NATIVE AD POPUP CONTROLLER
+// ==========================================
+let nativeAdClicksDone = 0;
 
-function injectNativeAdScript() {
-    const container = document.getElementById('container-faea46eecf01053afa6ef2518e3c0630');
-    if (!container || container.dataset.loaded) return;
+// 📺 Full-Height Native Ad Renderer (Auto-Expands to Fill Full 300px Box)
+function renderNativePopupAdIframe() {
+    const container = document.getElementById('nativeAdIframeBox');
+    if (!container) return;
 
-    container.dataset.loaded = 'true';
-    const script = document.createElement('script');
-    script.async = true;
-    script.setAttribute('data-cfasync', 'false');
-    script.src = "https://pl30567165.effectivecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js";
-    container.appendChild(script);
+    container.innerHTML = '';
+    const iframe = document.createElement('iframe');
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 'none';
+    iframe.style.display = 'block';
+    iframe.style.margin = '0';
+    iframe.style.padding = '0';
+    iframe.style.overflow = 'hidden';
+    iframe.scrolling = 'no';
+    container.appendChild(iframe);
+
+    const doc = iframe.contentWindow.document;
+    doc.open();
+    doc.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <base target="_blank">
+            <style>
+                * { box-sizing: border-box; margin: 0; padding: 0; }
+                html, body { width: 100%; height: 100%; margin: 0; padding: 0; background: #000000; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+                #container-faea46eecf01053afa6ef2518e3c0630 { width: 100% !important; height: 100% !important; display: flex !important; justify-content: center !important; align-items: center !important; margin: 0 !important; padding: 0 !important; }
+                #container-faea46eecf01053afa6ef2518e3c0630 * { max-width: 100% !important; max-height: 100% !important; }
+                #container-faea46eecf01053afa6ef2518e3c0630 img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; margin: 0 auto !important; }
+                table, tr, td { padding: 0 !important; margin: 0 !important; border: 0 !important; width: 100% !important; height: 100% !important; text-align: center !important; }
+            </style>
+        </head>
+        <body>
+            <div id="container-faea46eecf01053afa6ef2518e3c0630"></div>
+            <script async="async" data-cfasync="false" src="https://pl30567165.effectivecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"><\/script>
+        </body>
+        </html>
+    `);
+    doc.close();
 }
-
-// 🚀 ON/OFF CONTROL CHECK
-const ENABLE_NATIVE_AD_POPUP = false;
 
 function showNativeAdPopup() {
-
-    if (!ENABLE_NATIVE_AD_POPUP) return;
-
-    nativeAdBackdropClickCount = 0;
-    injectNativeAdScript();
     const popup = document.getElementById('nativeAdPopup');
-    if (popup) {
-        popup.classList.remove('opacity-0', 'pointer-events-none', '-z-50');
-        popup.classList.add('opacity-100', 'pointer-events-auto', 'z-[99990]');
-        document.body.style.overflow = 'hidden';
+    if (!popup) return;
+
+    nativeAdClicksDone = 0;
+
+    // UI Reset to Step 1 (0% Progress)
+    const badge = document.getElementById('popupStepBadge');
+    const title = document.getElementById('popupStepTitle');
+    const desc = document.getElementById('popupStepDesc');
+    const progressBar = document.getElementById('popupProgressBar');
+    const progressPercent = document.getElementById('popupProgressPercent');
+    const progressLabel = document.getElementById('popupProgressLabel');
+
+    if (badge) badge.innerText = "Step 1 of 2: Verification";
+    if (title) title.innerText = "Unlock Download Link";
+    if (desc) desc.innerText = "Click the sponsor box below to generate your download link.";
+    if (progressBar) progressBar.style.width = "0%";
+    if (progressPercent) {
+        progressPercent.innerText = "0%";
+        progressPercent.className = "text-red-400 font-black";
     }
+    if (progressLabel) progressLabel.innerText = "Verification Progress";
+
+    renderNativePopupAdIframe();
+    popup.classList.remove('hidden');
+    popup.classList.add('flex');
+    void popup.offsetWidth;
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
-function closeNativeAdPopup() {
-    const popup = document.getElementById('nativeAdPopup');
-    if (popup) {
-        popup.classList.remove('opacity-100', 'pointer-events-auto', 'z-[99990]');
-        popup.classList.add('opacity-0', 'pointer-events-none', '-z-50');
+function handleNativePopupAdClick() {
+    const smartAdLink = currentItem?.downloadUrl1 || "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+    window.open(smartAdLink, '_blank');
+
+    nativeAdClicksDone++;
+
+    const badge = document.getElementById('popupStepBadge');
+    const title = document.getElementById('popupStepTitle');
+    const desc = document.getElementById('popupStepDesc');
+    const progressBar = document.getElementById('popupProgressBar');
+    const progressPercent = document.getElementById('popupProgressPercent');
+    const progressLabel = document.getElementById('popupProgressLabel');
+
+    if (nativeAdClicksDone === 1) {
+        // 🚀 ১ম ক্লিক সম্পন্ন: প্রোগ্রেস বার ৫০% পূর্ণ হবে এবং Step 2 আপডেট হবে
+        if (badge) badge.innerText = "Step 2 of 2: Final Step";
+        if (title) title.innerText = "Download Ready • Final Step";
+        if (desc) desc.innerText = "Click the final sponsor box below to unlock your verified media file.";
+        if (progressBar) progressBar.style.width = "50%";
+        if (progressPercent) {
+            progressPercent.innerText = "50%";
+            progressPercent.className = "text-amber-400 font-black";
+        }
+        if (progressLabel) progressLabel.innerText = "50% Completed";
+
+        renderNativePopupAdIframe();
+    } else if (nativeAdClicksDone >= 2) {
+        // 🚀 ২য় ক্লিক সম্পন্ন: প্রোগ্রেস বার ১০০% হয়ে পপ-আপ বন্ধ হবে এবং মূল বাটনে "DOWNLOAD (FINAL CLICK)" দেখাবে
+        if (progressBar) progressBar.style.width = "100%";
+        if (progressPercent) {
+            progressPercent.innerText = "100%";
+            progressPercent.className = "text-emerald-400 font-black";
+        }
+        if (progressLabel) progressLabel.innerText = "100% Unlocked";
 
         setTimeout(() => {
-            document.body.style.overflow = '';
+            closeNativeAdPopup();
+            downloadState = 1;
+            applyFinalDownloadButtonState();
         }, 300);
     }
 }
-
-const nativeAdPopupElem = document.getElementById('nativeAdPopup');
-if (nativeAdPopupElem) {
-    nativeAdPopupElem.addEventListener('click', (e) => {
-        if (e.target === nativeAdPopupElem) {
-            nativeAdBackdropClickCount++;
-            if (nativeAdBackdropClickCount > 4) {
-                closeNativeAdPopup();
-                nativeAdBackdropClickCount = 0;
-            }
-        }
-    });
-}
-
-window.addEventListener('blur', () => {
-    const popup = document.getElementById('nativeAdPopup');
-    if (popup && popup.classList.contains('opacity-100')) {
-        closeNativeAdPopup();
-    }
-});
