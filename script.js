@@ -3,6 +3,17 @@ if ('scrollRestoration' in history) {
 }
 
 // ==========================================
+// ⚙️ MASTER FEATURE ON / OFF CONTROLLER
+// ==========================================
+const MASTER_CONTROLS = {
+    // 🔘 ক্যাটাগরি পরিবর্তন করার সময় ২-ক্লিক পপ-আপ অন/অফ কন্ট্রোল
+    ENABLE_CATEGORY_UNLOCK_POPUP: true, // true = ON (পপ-আপ চালু), false = OFF (সরাসরি পেজ ওপেন হবে)
+
+    // 🔘 মুভি ডাউনলোডের ২-ক্লিক পপ-আপ অন/অফ কন্ট্রোল
+    ENABLE_DOWNLOAD_NATIVE_POPUP: true  // true = ON (পপ-আপ চালু), false = OFF (সরাসরি ডাউনলোড হবে)
+};
+
+// ==========================================
 // 🔑 TMDB API CONFIG & HELPER ENGINE
 // ==========================================
 const CLIENT_TMDB_API_KEY = "dafa07a5692eee854f7f511b99316708";
@@ -816,9 +827,25 @@ function clearSearch(preventRestore = false) {
     }
 }
 
+let preCategoryChangeState = null;
+
 function switchView(viewName, filterCategory = null, mode = true, restoredCount = 0, targetScroll = 0) {
+    // 🎯 ইউজার ক্যাটাগরি পরিবর্তনের আগে যেখানে ছিলেন (হোম/লাইব্রেরি, আগের ক্যাটাগরি ও এক্সাক্ট স্ক্রোল পজিশন) তা ব্যাকআপ রাখা
+    const incomingCat = filterCategory || 'all';
+    if (incomingCat !== 'all' && incomingCat !== lastVisitedCategory && !preCategoryChangeState) {
+        const currentActiveCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || 'all';
+        const exactScrollBeforeChange = (document.body.style.position === 'fixed') ? savedScrollY : (window.scrollY || document.documentElement.scrollTop || 0);
+
+        preCategoryChangeState = {
+            view: currentView,
+            category: currentView === 'home' ? 'all' : currentActiveCat,
+            scrollY: exactScrollBeforeChange,
+            displayedCount: libraryDisplayedCount || 30
+        };
+    }
+
     if (mode) {
-        const currentScroll = window.scrollY;
+        const currentScroll = (document.body.style.position === 'fixed') ? savedScrollY : window.scrollY;
         const activeCat = document.querySelector('#libraryFilters .category-pill.active')?.getAttribute('data-category') || null;
         try {
             window.history.replaceState({
@@ -838,6 +865,10 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
     if (viewName === 'home') {
         if (homeView) homeView.classList.add('active');
         document.title = "MovieDakhi | Watch Dual Audio Movies & Web Series Free Online HD";
+        if (searchInput) {
+            searchInput.value = '';
+            updateSearchUI();
+        }
     } else {
         if (libraryView) libraryView.classList.add('active');
         if (filterCategory && searchInput) {
@@ -854,7 +885,8 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 
         initLibraryRender(catValue, restoredCount);
 
-        if (lastVisitedCategory !== catValue && catValue !== 'all') {
+// 🎯 যদি মাস্টার কন্ট্রোলারে ফিচারটি ON (true) থাকে তবেই পপ-আপ আসবে, OFF (false) থাকলে সরাসরি ক্যাটাগরি খুলবে
+        if (MASTER_CONTROLS.ENABLE_CATEGORY_UNLOCK_POPUP && lastVisitedCategory !== catValue && catValue !== 'all') {
             showUnlockPopup();
         }
         lastVisitedCategory = catValue;
@@ -862,7 +894,6 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 
     if (mode) {
         try {
-            const isBlob = window.location.protocol === 'blob:';
             const rootUrl = new URL('/', window.location.origin);
             if (viewName === 'library') {
                 rootUrl.searchParams.set('view', 'library');
@@ -880,10 +911,11 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
             }
         } catch (e) { }
 
-        // 🚀 EXACT SCROLL RESTORE: সার্চ ক্লিয়ার করার সাথে সাথে পূর্বের স্ক্রোল পজিশনে ফেরাবে
+        // 🚀 EXACT SCROLL RESTORE: ইউজারকে ঠিক আগের স্ক্রোল পজিশনে ফিরিয়ে নেওয়া
         requestAnimationFrame(() => {
             window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' });
-            setTimeout(() => window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' }), 50);
+            setTimeout(() => window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' }), 40);
+            setTimeout(() => window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' }), 100);
         });
     }
 }
@@ -1449,10 +1481,16 @@ function handleDownloadClick() {
         return;
     }
 
-    // 🚀 STEP 1: প্রথম ক্লিকে Native Ad কার্ড পপ-আপ ওপেন হবে (২টি ক্লিক বাধ্যতামূলক)
+// 🚀 STEP 1: যদি সুইচ ON থাকে তবে পপ-আপ আসবে, OFF থাকলে সরাসরি Final Download স্টেটে চলে যাবে
     if (downloadState === 0) {
-        showNativeAdPopup();
-        return;
+        if (MASTER_CONTROLS.ENABLE_DOWNLOAD_NATIVE_POPUP) {
+            showNativeAdPopup();
+            return;
+        } else {
+            downloadState = 1;
+            applyFinalDownloadButtonState();
+            return;
+        }
     }
 
     // 🚀 STEP 2: "Download (Final Click)" এ ক্লিক করলে ফাইল ডাউনলোড ওপেন হবে এবং বাটন "Watch Now" হবে
@@ -1796,18 +1834,181 @@ function showToast(message) {
     }, 4000);
 }
 
-// 🚀 ON/OFF CONTROL CHECK
-const ENABLE_UNLOCK_CATEGORY_POPUP = false;
+// ==========================================
+// 🚀 2-STEP CATEGORY UNLOCK GATEWAY ENGINE
+// ==========================================
+const ENABLE_UNLOCK_CATEGORY_POPUP = true;
+let catUnlockClicksDone = 0;
+
+// 📺 Category Ad Iframe Renderer (Adsterra Full Size)
+function renderCatUnlockAdIframe() {
+    const container = document.getElementById('catUnlockAdIframeBox');
+    if (!container) return;
+
+    container.innerHTML = '';
+    const iframe = document.createElement('iframe');
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 'none';
+    iframe.style.display = 'block';
+    iframe.style.margin = '0';
+    iframe.style.padding = '0';
+    iframe.style.overflow = 'hidden';
+    iframe.scrolling = 'no';
+    container.appendChild(iframe);
+
+    const doc = iframe.contentWindow.document;
+    doc.open();
+    doc.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <base target="_blank">
+            <style>
+                * { box-sizing: border-box; margin: 0; padding: 0; }
+                html, body { width: 100%; height: 100%; margin: 0; padding: 0; background: #000000; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+                #container-faea46eecf01053afa6ef2518e3c0630 { width: 100% !important; height: 100% !important; display: flex !important; justify-content: center !important; align-items: center !important; margin: 0 !important; padding: 0 !important; }
+                #container-faea46eecf01053afa6ef2518e3c0630 * { max-width: 100% !important; max-height: 100% !important; }
+                #container-faea46eecf01053afa6ef2518e3c0630 img { width: 100% !important; height: auto !important; object-fit: cover !important; display: block !important; margin: 0 auto !important; }
+                table, tr, td { padding: 0 !important; margin: 0 !important; border: 0 !important; width: 100% !important; height: 100% !important; text-align: center !important; }
+            </style>
+        </head>
+        <body>
+            <div id="container-faea46eecf01053afa6ef2518e3c0630"></div>
+            <script async="async" data-cfasync="false" src="https://pl30567165.effectivecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"><\/script>
+        </body>
+        </html>
+    `);
+    doc.close();
+}
 
 function showUnlockPopup() {
-    if (!ENABLE_UNLOCK_CATEGORY_POPUP) return;
+    // 🛡️ সুইচ OFF (false) থাকলে কোনো পপ-আপ ওপেন হবে না
+    if (!MASTER_CONTROLS.ENABLE_CATEGORY_UNLOCK_POPUP) return;
 
     const popup = document.getElementById('unlockCategoryPopup');
-    if (popup) {
-        popup.classList.remove('hidden');
-        void popup.offsetWidth;
-        popup.classList.remove('opacity-0');
-        document.body.style.overflow = 'hidden';
+    if (!popup) return;
+
+    catUnlockClicksDone = 0;
+
+    // UI Reset to Step 0
+    const badge = document.getElementById('catUnlockStepBadge');
+    const title = document.getElementById('catUnlockStepTitle');
+    const desc = document.getElementById('catUnlockStepDesc');
+    const progressPercent = document.getElementById('catUnlockProgressPercent');
+    const progressLabel = document.getElementById('catUnlockProgressLabel');
+
+    const node0 = document.getElementById('catStepNode0');
+    const node1 = document.getElementById('catStepNode1');
+    const node2 = document.getElementById('catStepNode2');
+    const line1 = document.getElementById('catStepLine1');
+    const line2 = document.getElementById('catStepLine2');
+
+    if (badge) badge.innerText = "Step 1 of 2: Verification";
+    if (title) title.innerText = "Unlock Category";
+    if (desc) desc.innerText = "Click the sponsor box below to unlock exclusive movies in this category.";
+    if (progressPercent) {
+        progressPercent.innerText = "Step 0 of 2";
+        progressPercent.className = "text-red-400 font-black";
+    }
+    if (progressLabel) progressLabel.innerText = "Verification Step";
+
+    // Reset Stepper Styles
+    if (node0) node0.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-black text-xs border-2 border-red-500 bg-red-600 text-white shadow-[0_0_12px_rgba(229,9,20,0.7)] transition-all duration-300 z-10";
+    if (node1) node1.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs border-2 border-white/20 bg-zinc-900 text-gray-400 transition-all duration-300 z-10";
+    if (node2) node2.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs border-2 border-white/20 bg-zinc-900 text-gray-400 transition-all duration-300 z-10";
+    if (line1) line1.style.width = "0%";
+    if (line2) line2.style.width = "0%";
+
+    renderCatUnlockAdIframe();
+    popup.classList.remove('hidden');
+    popup.classList.add('flex');
+    void popup.offsetWidth;
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// ❌ ক্যাটাগরি পপ-আপ সরাসরি বন্ধ করার মূল ফাংশন
+function closeUnlockCategoryPopupDirect() {
+    const popup = document.getElementById('unlockCategoryPopup');
+    if (!popup) return;
+
+    popup.classList.remove('active');
+    popup.classList.remove('flex');
+    popup.classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+// ❌ ইউজার 'X' বাটনে চাপ দিলে পপ-আপ বন্ধ হয়ে পূর্বের এক্সাক্ট পেজ ও স্ক্রোল পজিশনে ফেরত যাবে
+function cancelUnlockCategory(e) {
+    if (e && typeof e.stopPropagation === 'function') {
+        e.stopPropagation();
+    }
+    closeUnlockCategoryPopupDirect();
+
+    if (preCategoryChangeState) {
+        const prevState = preCategoryChangeState;
+        preCategoryChangeState = null;
+        lastVisitedCategory = prevState.category;
+
+        // 🚀 ইউজার পূর্বে যে ভিউতে, যে ক্যাটাগরিতে এবং যে পজিশনে ছিলেন সেখানে স্ক্রোল ব্যাক করবে
+        switchView(prevState.view, prevState.category, 'replace', prevState.displayedCount, prevState.scrollY);
+    } else {
+        switchView('home', null, 'replace', 30, 0);
+    }
+}
+
+// 🖱️ ক্যাটাগরি বিজ্ঞাপনে ক্লিক হ্যান্ডলার (২ ক্লিকে আনলক সম্পন্ন হবে)
+function handleUnlockCategoryAdClick(e) {
+    if (e && e.target && e.target.closest('button')) return;
+
+    const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+    window.open(smartAdLink, '_blank');
+
+    catUnlockClicksDone++;
+
+    const badge = document.getElementById('catUnlockStepBadge');
+    const title = document.getElementById('catUnlockStepTitle');
+    const desc = document.getElementById('catUnlockStepDesc');
+    const progressPercent = document.getElementById('catUnlockProgressPercent');
+    const progressLabel = document.getElementById('catUnlockProgressLabel');
+
+    const node1 = document.getElementById('catStepNode1');
+    const node2 = document.getElementById('catStepNode2');
+    const line1 = document.getElementById('catStepLine1');
+    const line2 = document.getElementById('catStepLine2');
+
+    if (catUnlockClicksDone === 1) {
+        // 🚀 ১ম ক্লিক: লাইন ১ পূর্ণ হবে এবং নোড ১ সক্রিয় হবে
+        if (badge) badge.innerText = "Step 2 of 2: Final Step";
+        if (title) title.innerText = "Almost Done • Final Step";
+        if (desc) desc.innerText = "Click the final sponsor box below to view this category.";
+        if (progressPercent) {
+            progressPercent.innerText = "Step 1 of 2";
+            progressPercent.className = "text-amber-400 font-black";
+        }
+        if (progressLabel) progressLabel.innerText = "In Progress";
+
+        if (line1) line1.style.width = "100%";
+        if (node1) {
+            node1.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-black text-xs border-2 border-amber-500 bg-amber-600 text-white shadow-[0_0_12px_rgba(245,158,11,0.7)] transition-all duration-300 z-10";
+        }
+
+        renderCatUnlockAdIframe();
+    } else if (catUnlockClicksDone >= 2) {
+        // 🚀 ২য় ক্লিক: নোড ২ সবুজ হবে এবং ক্যাটাগরি সফলভাবে আনলক হয়ে যাবে
+        if (line2) line2.style.width = "100%";
+        if (node2) {
+            node2.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-black text-xs border-2 border-emerald-500 bg-emerald-600 text-white shadow-[0_0_12px_rgba(16,185,129,0.8)] transition-all duration-300 z-10";
+        }
+        if (progressPercent) {
+            progressPercent.innerText = "Step 2 of 2 (Done)";
+            progressPercent.className = "text-emerald-400 font-black";
+        }
+        if (progressLabel) progressLabel.innerText = "Unlocked";
+
+        closeUnlockCategoryPopupDirect();
+        preCategoryChangeState = null;
     }
 }
 
