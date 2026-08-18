@@ -76,7 +76,7 @@
         ]
         }
     </script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -514,9 +514,9 @@
 
     <script src="script.js" defer></script>
 
-    <!-- 🚀 ULTRA-CLEAN 2-STEP NATIVE AD MODAL (LARGE FULL-SIZE AD DISPLAY) -->
+<!-- 🚀 ULTRA-CLEAN 2-STEP NATIVE AD MODAL (TRANSPARENT LIGHT BLUR BACKDROP) -->
     <div id="nativeAdPopup" onclick="handleNativePopupBackdrop(event)"
-        class="fixed inset-0 z-[999998] hidden items-center justify-center p-3 sm:p-4 bg-black/90 backdrop-blur-xl transition-opacity duration-300">
+        class="fixed inset-0 z-[999998] hidden items-center justify-center p-3 sm:p-4 bg-black/40 backdrop-blur-sm transition-opacity duration-300">
 
         <div onclick="handleNativePopupAdClick(event)"
             class="relative w-full max-w-[380px] sm:max-w-[400px] bg-[#121215] border border-white/10 rounded-[24px] shadow-[0_30px_70px_rgba(0,0,0,0.95)] overflow-hidden flex flex-col text-center popup-appear cursor-pointer group">
@@ -564,16 +564,38 @@
                 </div>
             </div>
 
-            <!-- 📊 Bottom Fluid Red Progress Bar -->
-            <div class="px-5 py-3.5 bg-[#17171c] border-t border-white/[0.08] flex flex-col gap-2">
+<!-- 📊 0 — 1 — 2 STEPPER PROGRESS BAR -->
+            <div class="px-6 py-4 bg-[#17171c] border-t border-white/[0.08] flex flex-col gap-2.5">
                 <div class="flex items-center justify-between text-[11px] font-bold text-gray-400">
-                    <span id="popupProgressLabel">Verification Progress</span>
-                    <span id="popupProgressPercent" class="text-red-400 font-black">0%</span>
+                    <span id="popupProgressLabel">Verification Step</span>
+                    <span id="popupProgressPercent" class="text-red-400 font-black">Step 0 of 2</span>
                 </div>
-                <div
-                    class="w-full bg-zinc-800/80 h-2 rounded-full overflow-hidden p-0.5 border border-white/5 shadow-inner">
-                    <div id="popupProgressBar"
-                        class="h-full bg-[#e50914] rounded-full w-0 transition-all duration-400 ease-out shadow-[0_0_10px_rgba(229,9,20,0.6)]">
+
+                <!-- Stepper Circles & Lines -->
+                <div class="flex items-center justify-between w-full relative px-1 py-1">
+                    <!-- Step 0 Node -->
+                    <div id="stepNode0" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-black text-xs border-2 border-red-500 bg-red-600 text-white shadow-[0_0_12px_rgba(229,9,20,0.7)] transition-all duration-300 z-10">
+                        0
+                    </div>
+
+                    <!-- Line: 0 -> 1 -->
+                    <div class="flex-1 h-[3px] bg-zinc-700/60 relative mx-2 rounded-full overflow-hidden">
+                        <div id="stepLine1" class="h-full bg-[#e50914] w-0 transition-all duration-400 ease-out shadow-[0_0_8px_rgba(229,9,20,0.8)]"></div>
+                    </div>
+
+                    <!-- Step 1 Node -->
+                    <div id="stepNode1" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs border-2 border-white/20 bg-zinc-900 text-gray-400 transition-all duration-300 z-10">
+                        1
+                    </div>
+
+                    <!-- Line: 1 -> 2 -->
+                    <div class="flex-1 h-[3px] bg-zinc-700/60 relative mx-2 rounded-full overflow-hidden">
+                        <div id="stepLine2" class="h-full bg-[#e50914] w-0 transition-all duration-400 ease-out shadow-[0_0_8px_rgba(229,9,20,0.8)]"></div>
+                    </div>
+
+                    <!-- Step 2 Node -->
+                    <div id="stepNode2" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs border-2 border-white/20 bg-zinc-900 text-gray-400 transition-all duration-300 z-10">
+                        2
                     </div>
                 </div>
             </div>

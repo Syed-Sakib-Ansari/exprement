@@ -1930,23 +1930,34 @@ function showNativeAdPopup() {
 
     nativeAdClicksDone = 0;
 
-    // UI Reset to Step 1 (0% Progress)
+    // UI Reset to Step 0
     const badge = document.getElementById('popupStepBadge');
     const title = document.getElementById('popupStepTitle');
     const desc = document.getElementById('popupStepDesc');
-    const progressBar = document.getElementById('popupProgressBar');
     const progressPercent = document.getElementById('popupProgressPercent');
     const progressLabel = document.getElementById('popupProgressLabel');
+
+    const node0 = document.getElementById('stepNode0');
+    const node1 = document.getElementById('stepNode1');
+    const node2 = document.getElementById('stepNode2');
+    const line1 = document.getElementById('stepLine1');
+    const line2 = document.getElementById('stepLine2');
 
     if (badge) badge.innerText = "Step 1 of 2: Verification";
     if (title) title.innerText = "Unlock Download Link";
     if (desc) desc.innerText = "Click the sponsor box below to generate your download link.";
-    if (progressBar) progressBar.style.width = "0%";
     if (progressPercent) {
-        progressPercent.innerText = "0%";
+        progressPercent.innerText = "Step 0 of 2";
         progressPercent.className = "text-red-400 font-black";
     }
-    if (progressLabel) progressLabel.innerText = "Verification Progress";
+    if (progressLabel) progressLabel.innerText = "Verification Step";
+
+    // Stepper Reset State
+    if (node0) node0.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-black text-xs border-2 border-red-500 bg-red-600 text-white shadow-[0_0_12px_rgba(229,9,20,0.7)] transition-all duration-300 z-10";
+    if (node1) node1.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs border-2 border-white/20 bg-zinc-900 text-gray-400 transition-all duration-300 z-10";
+    if (node2) node2.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-xs border-2 border-white/20 bg-zinc-900 text-gray-400 transition-all duration-300 z-10";
+    if (line1) line1.style.width = "0%";
+    if (line2) line2.style.width = "0%";
 
     renderNativePopupAdIframe();
     popup.classList.remove('hidden');
@@ -1956,7 +1967,10 @@ function showNativeAdPopup() {
     document.body.style.overflow = 'hidden';
 }
 
-function handleNativePopupAdClick() {
+function handleNativePopupAdClick(e) {
+    // যদি ক্লোজ বাটনে ক্লিক পড়ে তবে বিজ্ঞাপনের কাউন্ট হবে না
+    if (e && e.target && e.target.closest('button')) return;
+
     const smartAdLink = currentItem?.downloadUrl1 || "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 
@@ -1965,36 +1979,45 @@ function handleNativePopupAdClick() {
     const badge = document.getElementById('popupStepBadge');
     const title = document.getElementById('popupStepTitle');
     const desc = document.getElementById('popupStepDesc');
-    const progressBar = document.getElementById('popupProgressBar');
     const progressPercent = document.getElementById('popupProgressPercent');
     const progressLabel = document.getElementById('popupProgressLabel');
 
+    const node1 = document.getElementById('stepNode1');
+    const node2 = document.getElementById('stepNode2');
+    const line1 = document.getElementById('stepLine1');
+    const line2 = document.getElementById('stepLine2');
+
     if (nativeAdClicksDone === 1) {
-        // 🚀 ১ম ক্লিক সম্পন্ন: প্রোগ্রেস বার ৫০% পূর্ণ হবে এবং Step 2 আপডেট হবে
+        // 🚀 ১ম ক্লিক সম্পন্ন: লাইন ১ সম্পূর্ণ হবে এবং ১ নম্বর নোড অ্যাক্টিভ হবে
         if (badge) badge.innerText = "Step 2 of 2: Final Step";
         if (title) title.innerText = "Download Ready • Final Step";
         if (desc) desc.innerText = "Click the final sponsor box below to unlock your verified media file.";
-        if (progressBar) progressBar.style.width = "50%";
         if (progressPercent) {
-            progressPercent.innerText = "50%";
+            progressPercent.innerText = "Step 1 of 2";
             progressPercent.className = "text-amber-400 font-black";
         }
-        if (progressLabel) progressLabel.innerText = "50% Completed";
+        if (progressLabel) progressLabel.innerText = "In Progress";
+
+        if (line1) line1.style.width = "100%";
+        if (node1) {
+            node1.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-black text-xs border-2 border-amber-500 bg-amber-600 text-white shadow-[0_0_12px_rgba(245,158,11,0.7)] transition-all duration-300 z-10";
+        }
 
         renderNativePopupAdIframe();
     } else if (nativeAdClicksDone >= 2) {
-        // 🚀 ২য় ক্লিক সম্পন্ন: প্রোগ্রেস বার ১০০% হয়ে পপ-আপ বন্ধ হবে এবং মূল বাটনে "DOWNLOAD (FINAL CLICK)" দেখাবে
-        if (progressBar) progressBar.style.width = "100%";
+        // 🚀 ২য় ক্লিক সম্পন্ন: লাইন ২ সম্পূর্ণ হবে, ২ নম্বর নোড সফল হবে এবং মডাল বন্ধ হবে
+        if (line2) line2.style.width = "100%";
+        if (node2) {
+            node2.className = "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-black text-xs border-2 border-emerald-500 bg-emerald-600 text-white shadow-[0_0_12px_rgba(16,185,129,0.8)] transition-all duration-300 z-10";
+        }
         if (progressPercent) {
-            progressPercent.innerText = "100%";
+            progressPercent.innerText = "Step 2 of 2 (Done)";
             progressPercent.className = "text-emerald-400 font-black";
         }
-        if (progressLabel) progressLabel.innerText = "100% Unlocked";
+        if (progressLabel) progressLabel.innerText = "Unlocked";
 
-        setTimeout(() => {
-            closeNativeAdPopup();
-            downloadState = 1;
-            applyFinalDownloadButtonState();
-        }, 300);
+        closeNativeAdPopup();
+        downloadState = 1;
+        applyFinalDownloadButtonState();
     }
 }
