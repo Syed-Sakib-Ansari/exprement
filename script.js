@@ -360,7 +360,7 @@ function renderServerButtons() {
         serverSec.classList.remove('hidden');
         serverList.innerHTML = '';
 
-        activeServers.forEach((s, idx) => {
+activeServers.forEach((s, idx) => {
             const btn = document.createElement('button');
             btn.className = `server-btn server-btn-${(idx % 6) + 1} ${idx === 0 ? 'active' : ''}`;
             btn.innerHTML = `
@@ -372,7 +372,8 @@ function renderServerButtons() {
                     <span class="server-tag">${s.tag}</span>
                 </div>
             `;
-            btn.onclick = () => playServer(target[s.key], btn);
+            // 🎯 s.key ও প্যারামিটার হিসেবে পাঠানো হলো কন্ডিশন চেক করার জন্য
+            btn.onclick = () => playServer(target[s.key], btn, s.key);
             serverList.appendChild(btn);
         });
 
@@ -413,19 +414,23 @@ function renderServerButtons() {
 //     }
 // }
 
-function playServer(rawUrl, btnElement) {
+function playServer(rawUrl, btnElement, serverKey) {
     const movieModal = document.getElementById('movieModal');
 
-    // 🔄 যদি বাটনটি ইতিমধ্যেই Active / Playing থাকে: কোনো অ্যাড ওপেন না করে সরাসরি ওপরে স্ক্রোল করবে এবং এমবেড লিংকটি পুনরায় রিলোড করবে
+    // 🔄 যদি বাটনটি ইতিমধ্যেই Active / Playing থাকে
     if (btnElement && btnElement.classList.contains('active')) {
         if (movieModal) {
             movieModal.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        loadIframeUrl(rawUrl);
+        
+        // 🎯 শুধুমাত্র 'embedUrl' কি (key) হলে আইফ্রেম পুনরায় রিলোড হবে, অন্যগুলোর জন্য হবে না
+        if (serverKey === 'embedUrl') {
+            loadIframeUrl(rawUrl);
+        }
         return;
     }
 
-    // 🚀 নতুন সার্ভার নির্বাচন করলে স্পন্সর অ্যাড ওপেন হবে এবং সার্ভার লোড হবে
+    // 🚀 নতুন কোনো সার্ভার সিলেক্ট করলে স্পন্সর অ্যাড ওপেন হবে এবং সার্ভার লোড হবে
     const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 
