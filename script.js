@@ -6,12 +6,17 @@ if ('scrollRestoration' in history) {
 // ⚙️ MASTER FEATURE ON / OFF CONTROLLER
 // ==========================================
 const MASTER_CONTROLS = {
-    // 🔘 ক্যাটাগরি পরিবর্তন করার সময় ২-ক্লিক পপ-আপ অন/অফ কন্ট্রোল
-    ENABLE_CATEGORY_UNLOCK_POPUP: false, // true = ON (পপ-আপ চালু), false = OFF (সরাসরি পেজ ওপেন হবে)
+    // 🔘 ক্যাটাগরি অ্যাড কন্ট্রোল (যেকোনো ১টি true রাখবেন)
+    ENABLE_CATEGORY_UNLOCK_POPUP: false,  // true = ২-ক্লিক ব্যানার পপ-আপ বক্স ওপেন হবে
+    ENABLE_CATEGORY_SMARTLINK_AD: true,   // true = ক্যাটাগরি পরিবর্তনের সময় ১টি স্মার্টলিংক অ্যাড ওপেন হবে
 
-    // 🔘 মুভি ডাউনলোডের ২-ক্লিক পপ-আপ অন/অফ কন্ট্রোল
-    ENABLE_DOWNLOAD_NATIVE_POPUP: true  // true = ON (পপ-আপ চালু), false = OFF (সরাসরি ডাউনলোড হবে)
+    // 🔘 মুভি ডাউনলোড বাটন অ্যাড কন্ট্রোল (যেকোনো ১টি true রাখবেন)
+    ENABLE_DOWNLOAD_NATIVE_POPUP: false,  // true = ২-ক্লিক নেটিভ ব্যানার পপ-আপ বক্স ওপেন হবে
+    ENABLE_DOWNLOAD_SMARTLINK_ADS: true   // true = পপ-আপ ছাড়া বাটনে সরাসরি ২-ক্লিক স্মার্টলিংক (৩য় ক্লিকে ফাইল ডাউনলোড)
 };
+
+// গ্লোবাল স্মার্টলিংক অ্যাড ইউআরএল
+const GLOBAL_SMARTLINK_URL = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
 
 // ==========================================
 // 🔑 TMDB API CONFIG & HELPER ENGINE
@@ -371,7 +376,7 @@ function renderServerButtons() {
         serverSec.classList.remove('hidden');
         serverList.innerHTML = '';
 
-activeServers.forEach((s, idx) => {
+        activeServers.forEach((s, idx) => {
             const btn = document.createElement('button');
             btn.className = `server-btn server-btn-${(idx % 6) + 1} ${idx === 0 ? 'active' : ''}`;
             btn.innerHTML = `
@@ -433,7 +438,7 @@ function playServer(rawUrl, btnElement, serverKey) {
         if (movieModal) {
             movieModal.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        
+
         // 🎯 শুধুমাত্র 'embedUrl' কি (key) হলে আইফ্রেম পুনরায় রিলোড হবে, অন্যগুলোর জন্য হবে না
         if (serverKey === 'embedUrl') {
             loadIframeUrl(rawUrl);
@@ -885,9 +890,13 @@ function switchView(viewName, filterCategory = null, mode = true, restoredCount 
 
         initLibraryRender(catValue, restoredCount);
 
-// 🎯 যদি মাস্টার কন্ট্রোলারে ফিচারটি ON (true) থাকে তবেই পপ-আপ আসবে, OFF (false) থাকলে সরাসরি ক্যাটাগরি খুলবে
-        if (MASTER_CONTROLS.ENABLE_CATEGORY_UNLOCK_POPUP && lastVisitedCategory !== catValue && catValue !== 'all') {
-            showUnlockPopup();
+// 🎯 ক্যাটাগরি পরিবর্তনের সময় পপ-আপ অথবা স্মার্টলিংক অ্যাড ওপেন হওয়ার লজিক
+        if (lastVisitedCategory !== catValue && catValue !== 'all') {
+            if (MASTER_CONTROLS.ENABLE_CATEGORY_UNLOCK_POPUP) {
+                showUnlockPopup();
+            } else if (MASTER_CONTROLS.ENABLE_CATEGORY_SMARTLINK_AD) {
+                window.open(GLOBAL_SMARTLINK_URL, '_blank');
+            }
         }
         lastVisitedCategory = catValue;
     }
@@ -1123,7 +1132,34 @@ function initLibraryRender(filter = "all", initialCount = 0) {
     subGrid.dataset.displayedCount = libraryDisplayedCount;
 
     if (libraryData.length === 0) {
-        subGrid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-600 font-bold uppercase tracking-widest">No Results Found</div>`;
+        subGrid.innerHTML = `
+            <div class="col-span-full py-10 px-3 sm:px-6 max-w-xl mx-auto flex flex-col items-center justify-center text-center">
+                <div class="w-14 h-14 rounded-full bg-red-600/10 border border-red-500/20 flex items-center justify-center mb-4 text-red-500 text-xl shadow-inner animate-pulse">
+                    <i class="fas fa-magnifying-glass"></i>
+                </div>
+                <h3 class="text-lg sm:text-2xl font-black uppercase text-white tracking-wider mb-2">No Results Found</h3>
+                
+                <p class="text-xs sm:text-sm text-gray-300 font-medium mb-6 leading-relaxed max-w-md">
+                    Looking for a specific movie or web series? <br class="hidden sm:inline" />
+                    <span class="text-amber-400 font-black tracking-wide inline-block mt-1 sm:mt-0 drop-shadow-[0_0_10px_rgba(251,191,36,0.3)]">
+                        ✨ Join our Social Communities To Submit Your Movie Request!
+                    </span>
+                </p>
+
+                <div class="flex flex-row items-center justify-center gap-2 sm:gap-4 w-full max-w-md">
+                    <a href="https://www.facebook.com/profile.php?id=61586944455346" target="_blank"
+                        class="flex-1 bg-[#1877f2] hover:bg-[#166fe5] text-white py-2.5 px-2 min-[380px]:px-3 sm:px-4 rounded-xl text-[10px] min-[360px]:text-[11px] sm:text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg shadow-blue-600/20 transition-all duration-300 hover:scale-105 no-underline whitespace-nowrap">
+                        <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
+                        <span>Join Facebook</span>
+                    </a>
+                    <a href="https://t.me/+oeXeresjsFA1MjI1" target="_blank"
+                        class="flex-1 bg-[#0088cc] hover:bg-[#0077b3] text-white py-2.5 px-2 min-[380px]:px-3 sm:px-4 rounded-xl text-[10px] min-[360px]:text-[11px] sm:text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg shadow-sky-500/20 transition-all duration-300 hover:scale-105 no-underline whitespace-nowrap">
+                        <i class="fab fa-telegram-plane text-xs sm:text-sm"></i>
+                        <span>Join Telegram</span>
+                    </a>
+                </div>
+            </div>
+        `;
     } else {
         const fragment = document.createDocumentFragment();
         libraryData.slice(0, libraryDisplayedCount).forEach((item) => {
@@ -1415,7 +1451,8 @@ function closeModal(triggerBack = false, isUserAction = false) {
 // ==========================================
 // 🚀 DOWNLOAD BUTTON STATE & CLICK HANDLER
 // ==========================================
-let downloadState = 0; // 0 = First Click (Opens Ad), 1 = Final Click Ready, 2 = Watch Now
+let downloadState = 0; // 0 = Initial Clicks, 1 = Final Click Ready, 2 = Watch Now
+let downloadSmartlinkClicks = 0;
 
 // 🎯 "Download (Final Click)" বাটন স্টেট সেট করার ফাংশন
 function applyFinalDownloadButtonState() {
@@ -1444,6 +1481,7 @@ function applyFinalDownloadButtonState() {
 // 🔄 বাটন রিসেট ফাংশন
 function resetDownloadButtonUI() {
     downloadState = 0;
+    downloadSmartlinkClicks = 0;
     nativeAdClicksDone = 0;
 
     const mainDownloadBtn = document.getElementById('mainDownloadBtn');
@@ -1472,6 +1510,8 @@ function handleDownloadClick() {
 
     const mainDownloadBtn = document.getElementById('mainDownloadBtn');
     const mainIcon = mainDownloadBtn ? mainDownloadBtn.querySelector('i') : null;
+    const topDownloadBtn = document.getElementById('topDownloadBtn');
+    const smartAdLink = currentItem?.downloadUrl1 || GLOBAL_SMARTLINK_URL;
 
     // 🔄 যদি বাটনটি ইতিমধ্যেই "Watch Now" থাকে: ওপরে স্ক্রোল ও রিসেট হবে
     if (downloadState === 2) {
@@ -1481,19 +1521,47 @@ function handleDownloadClick() {
         return;
     }
 
-// 🚀 STEP 1: যদি সুইচ ON থাকে তবে পপ-আপ আসবে, OFF থাকলে সরাসরি Final Download স্টেটে চলে যাবে
+    // 🚀 STEP 1: প্রথম ধাপের অ্যাড মেকানিজম
     if (downloadState === 0) {
+        // ১. যদি নেটিভ ব্যানার পপ-আপ অন থাকে
         if (MASTER_CONTROLS.ENABLE_DOWNLOAD_NATIVE_POPUP) {
             showNativeAdPopup();
             return;
-        } else {
-            downloadState = 1;
-            applyFinalDownloadButtonState();
-            return;
         }
+
+        // ২. যদি সরাসরি স্মার্টলিংক অ্যাড অন থাকে (২ ক্লিকে অ্যাড ওপেন হবে)
+        if (MASTER_CONTROLS.ENABLE_DOWNLOAD_SMARTLINK_ADS) {
+            downloadSmartlinkClicks++;
+
+            if (downloadSmartlinkClicks === 1) {
+                // ১ম ক্লিকে ১ম স্মার্টলিংক ওপেন হবে
+                window.open(smartAdLink, '_blank');
+                document.getElementById('downloadBtnText').innerText = "Ready For Download (1/2)";
+
+                if (topDownloadBtn) {
+                    topDownloadBtn.classList.add('step-1');
+                    const topText = document.getElementById('topDownloadBtnText');
+                    const topSub = document.getElementById('topDownloadBtnSubText');
+                    if (topText) topText.innerText = "Ready For Download (Step 1)";
+                    if (topSub) topSub.innerText = "⏳ Verified • Click Again To Finalize";
+                }
+                return;
+            } else if (downloadSmartlinkClicks >= 2) {
+                // ২য় ক্লিকে ২য় স্মার্টলিংক ওপেন হবে এবং বাটন "Final Click" এ চলে যাবে
+                window.open(smartAdLink, '_blank');
+                downloadState = 1;
+                applyFinalDownloadButtonState();
+                return;
+            }
+        }
+
+        // ৩. কোনো অ্যাড অন না থাকলে সরাসরি ফাইনাল স্টেটে চলে যাবে
+        downloadState = 1;
+        applyFinalDownloadButtonState();
+        return;
     }
 
-    // 🚀 STEP 2: "Download (Final Click)" এ ক্লিক করলে ফাইল ডাউনলোড ওপেন হবে এবং বাটন "Watch Now" হবে
+    // 🚀 STEP 2: "Download (Final Click)" এ ক্লিক করলে মূল ফাইল ডাউনলোড ওপেন হবে এবং বাটন "Watch Now" হবে
     if (downloadState === 1) {
         const finalUrl = (currentEpisodeIndex !== null && currentItem?.episodes && currentItem.episodes[currentEpisodeIndex].downloadUrl)
             ? currentItem.episodes[currentEpisodeIndex].downloadUrl
@@ -1511,7 +1579,6 @@ function handleDownloadClick() {
             if (mainIcon) mainIcon.className = 'fas fa-play-circle text-md relative z-10 group:-translate-y-1 transition-transform duration-300';
         }
 
-        const topDownloadBtn = document.getElementById('topDownloadBtn');
         if (topDownloadBtn) {
             topDownloadBtn.classList.remove('step-1', 'step-2');
             topDownloadBtn.classList.add('step-3');
