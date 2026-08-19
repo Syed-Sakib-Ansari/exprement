@@ -7,7 +7,7 @@ if ('scrollRestoration' in history) {
 // ==========================================
 const MASTER_CONTROLS = {
     // 🔘 ক্যাটাগরি পরিবর্তন করার সময় ২-ক্লিক পপ-আপ অন/অফ কন্ট্রোল
-    ENABLE_CATEGORY_UNLOCK_POPUP: true, // true = ON (পপ-আপ চালু), false = OFF (সরাসরি পেজ ওপেন হবে)
+    ENABLE_CATEGORY_UNLOCK_POPUP: false, // true = ON (পপ-আপ চালু), false = OFF (সরাসরি পেজ ওপেন হবে)
 
     // 🔘 মুভি ডাউনলোডের ২-ক্লিক পপ-আপ অন/অফ কন্ট্রোল
     ENABLE_DOWNLOAD_NATIVE_POPUP: true  // true = ON (পপ-আপ চালু), false = OFF (সরাসরি ডাউনলোড হবে)
