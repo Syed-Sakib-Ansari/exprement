@@ -6,6 +6,11 @@ on:
       - 'movies.json'
     branches:
       - main
+      - master
+  workflow_dispatch: # এটি যোগ করায় আপনি গিটহাব থেকে সরাসরি বাটনে চাপ দিয়ে টেস্ট করতে পারবেন
+
+permissions:
+  contents: write
 
 jobs:
   post-to-telegram:
