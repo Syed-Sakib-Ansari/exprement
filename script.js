@@ -12,7 +12,10 @@ const MASTER_CONTROLS = {
 
     // 🔘 মুভি ডাউনলোড বাটন অ্যাড কন্ট্রোল (যেকোনো ১টি true রাখবেন)
     ENABLE_DOWNLOAD_NATIVE_POPUP: false,  // true = ২-ক্লিক নেটিভ ব্যানার পপ-আপ বক্স ওপেন হবে
-    ENABLE_DOWNLOAD_SMARTLINK_ADS: true   // true = পপ-আপ ছাড়া বাটনে সরাসরি ২-ক্লিক স্মার্টলিংক (৩য় ক্লিকে ফাইল ডাউনলোড)
+    ENABLE_DOWNLOAD_SMARTLINK_ADS: true,  // true = পপ-আপ ছাড়া বাটনে সরাসরি ২-ক্লিক স্মার্টলিংক (৩য় ক্লিকে ফাইল ডাউনলোড)
+
+    // 🔘 সার্ভার পরিবর্তন অ্যাড কন্ট্রোল
+    ENABLE_SERVER_CHANGE_AD: false   // true = সার্ভার (Server 1, Server 2) পরিবর্তন করলে স্মার্টলিংক অ্যাড ওপেন হবে, false দিলে হবে না
 };
 
 // গ্লোবাল স্মার্টলিংক অ্যাড ইউআরএল
@@ -446,9 +449,11 @@ function playServer(rawUrl, btnElement, serverKey) {
         return;
     }
 
-    // 🚀 নতুন কোনো সার্ভার সিলেক্ট করলে স্পন্সর অ্যাড ওপেন হবে এবং সার্ভার লোড হবে
-    const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
-    window.open(smartAdLink, '_blank');
+    // 🚀 MASTER_CONTROLS চেক করে স্পন্সর অ্যাড ওপেন হবে
+    if (MASTER_CONTROLS.ENABLE_SERVER_CHANGE_AD) {
+        const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+        window.open(smartAdLink, '_blank');
+    }
 
     document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
     if (btnElement) btnElement.classList.add('active');
