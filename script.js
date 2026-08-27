@@ -8,11 +8,11 @@ if ('scrollRestoration' in history) {
 const MASTER_CONTROLS = {
     // 🔘 ক্যাটাগরি অ্যাড কন্ট্রোল (যেকোনো ১টি true রাখবেন)
     ENABLE_CATEGORY_UNLOCK_POPUP: false,  // true = ২-ক্লিক ব্যানার পপ-আপ বক্স ওপেন হবে
-    ENABLE_CATEGORY_SMARTLINK_AD: false,   // true = ক্যাটাগরি পরিবর্তনের সময় ১টি স্মার্টলিংক অ্যাড ওপেন হবে
+    ENABLE_CATEGORY_SMARTLINK_AD: true,   // true = ক্যাটাগরি পরিবর্তনের সময় ১টি স্মার্টলিংক অ্যাড ওপেন হবে
 
     // 🔘 মুভি ডাউনলোড বাটন অ্যাড কন্ট্রোল (যেকোনো ১টি true রাখবেন)
     ENABLE_DOWNLOAD_NATIVE_POPUP: false,  // true = ২-ক্লিক নেটিভ ব্যানার পপ-আপ বক্স ওপেন হবে
-    ENABLE_DOWNLOAD_SMARTLINK_ADS: false   // true = পপ-আপ ছাড়া বাটনে সরাসরি ২-ক্লিক স্মার্টলিংক (৩য় ক্লিকে ফাইল ডাউনলোড)
+    ENABLE_DOWNLOAD_SMARTLINK_ADS: true   // true = পপ-আপ ছাড়া বাটনে সরাসরি ২-ক্লিক স্মার্টলিংক (৩য় ক্লিকে ফাইল ডাউনলোড)
 };
 
 // গ্লোবাল স্মার্টলিংক অ্যাড ইউআরএল
