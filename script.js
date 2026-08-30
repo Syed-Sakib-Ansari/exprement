@@ -12,7 +12,7 @@ const MASTER_CONTROLS = {
 
     // 🔘 মুভি ডাউনলোড বাটন অ্যাড কন্ট্রোল (যেকোনো ১টি true রাখবেন)
     ENABLE_DOWNLOAD_NATIVE_POPUP: false,  // true = ২-ক্লিক নেটিভ ব্যানার পপ-আপ বক্স ওপেন হবে
-    ENABLE_DOWNLOAD_SMARTLINK_ADS: false,  // true = পপ-আপ ছাড়া বাটনে সরাসরি ২-ক্লিক স্মার্টলিংক (৩য় ক্লিকে ফাইল ডাউনলোড)
+    ENABLE_DOWNLOAD_SMARTLINK_ADS: true,  // true = পপ-আপ ছাড়া বাটনে সরাসরি ২-ক্লিক স্মার্টলিংক (৩য় ক্লিকে ফাইল ডাউনলোড)
 
     // 🔘 সার্ভার পরিবর্তন অ্যাড কন্ট্রোল
     ENABLE_SERVER_CHANGE_AD: false   // true = সার্ভার (Server 1, Server 2) পরিবর্তন করলে স্মার্টলিংক অ্যাড ওপেন হবে, false দিলে হবে না
