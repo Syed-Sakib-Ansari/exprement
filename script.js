@@ -760,8 +760,11 @@ function initHeroSlider() {
     const uniquePool = Array.from(uniqueMoviesMap.values());
     if (uniquePool.length === 0) return;
 
-    const itemsPerCol = 8;
+const itemsPerCol = 8;
     const heroImgWidth = windowWidth < 640 ? 180 : 250;
+
+    // 👇 OPTIMIZED DOM INJECTION (FIXES TBT) 👇
+    const fragment = document.createDocumentFragment();
 
     for (let c = 0; c < colCount; c++) {
         const colDiv = document.createElement('div');
@@ -790,8 +793,12 @@ function initHeroSlider() {
             colDiv.appendChild(imgCard);
         });
 
-        sliderWrapper.appendChild(colDiv);
+        // Append to the invisible fragment first, NOT the live DOM
+        fragment.appendChild(colDiv);
     }
+    
+    // Inject everything into the live DOM all at once (Zero layout thrashing)
+    sliderWrapper.appendChild(fragment);
 }
 
 function updateSearchUI() {
