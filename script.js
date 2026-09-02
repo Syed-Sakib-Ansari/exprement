@@ -482,34 +482,9 @@ function decodeAndCleanUrl(rawUrl) {
 function loadIframeUrl(rawUrl) {
     let url = decodeAndCleanUrl(rawUrl);
     const actualVideo = document.getElementById('actualVideo');
-    if (!actualVideo) return;
-
-    actualVideo.classList.remove('hidden');
-    
-    // 🛡️ প্লেয়ার লোড এবং তার ওপর একটি ইন্টারেক্টিভ ক্লিক ওভারলে
-    actualVideo.innerHTML = `
-        <iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" 
-            src="${url}" frameborder="0" scrolling="no" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
-            allowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;">
-        </iframe>
-        <div id="playerClickGate" class="absolute inset-0 z-20 cursor-pointer flex items-center justify-center bg-black/10 backdrop-blur-[0.5px]">
-            <div class="w-16 h-16 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110 animate-pulse">
-                <i class="fas fa-play text-xl ml-1"></i>
-            </div>
-        </div>
-    `;
-
-    // 🖱️ ইউজারের ১ম ক্লিকে ওভারলে রিমুভ ও ফ্রেশ প্লেয়ার সক্রিয় করার লজিক
-    const gate = document.getElementById('playerClickGate');
-    const iframe = document.getElementById('videoIframe');
-    
-    if (gate && iframe) {
-        gate.onclick = (e) => {
-            e.stopPropagation();
-            gate.remove(); // ওভারলে সরে গিয়ে প্লেয়ার আনলক হবে
-            iframe.src = url; // একবার ফ্রেশ রিলোড হয়ে ভিডিও প্লে শুরু হবে
-        };
+    if (actualVideo) {
+        actualVideo.classList.remove('hidden');
+        actualVideo.innerHTML = `<iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" src="${url}" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;"></iframe>`;
     }
 }
 
