@@ -482,9 +482,34 @@ function decodeAndCleanUrl(rawUrl) {
 function loadIframeUrl(rawUrl) {
     let url = decodeAndCleanUrl(rawUrl);
     const actualVideo = document.getElementById('actualVideo');
-    if (actualVideo) {
-        actualVideo.classList.remove('hidden');
-        actualVideo.innerHTML = `<iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" src="${url}" frameborder="0" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;"></iframe>`;
+    if (!actualVideo) return;
+
+    actualVideo.classList.remove('hidden');
+    
+    // 🛡️ প্লেয়ার লোড এবং তার ওপর একটি ইন্টারেক্টিভ ক্লিক ওভারলে
+    actualVideo.innerHTML = `
+        <iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full border-0 outline-none bg-black block rounded-t-2xl" 
+            src="${url}" frameborder="0" scrolling="no" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
+            allowfullscreen="true" style="width:100%;height:100%;object-fit:contain;border:0;">
+        </iframe>
+        <div id="playerClickGate" class="absolute inset-0 z-20 cursor-pointer flex items-center justify-center bg-black/10 backdrop-blur-[0.5px]">
+            <div class="w-16 h-16 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110 animate-pulse">
+                <i class="fas fa-play text-xl ml-1"></i>
+            </div>
+        </div>
+    `;
+
+    // 🖱️ ইউজারের ১ম ক্লিকে ওভারলে রিমুভ ও ফ্রেশ প্লেয়ার সক্রিয় করার লজিক
+    const gate = document.getElementById('playerClickGate');
+    const iframe = document.getElementById('videoIframe');
+    
+    if (gate && iframe) {
+        gate.onclick = (e) => {
+            e.stopPropagation();
+            gate.remove(); // ওভারলে সরে গিয়ে প্লেয়ার আনলক হবে
+            iframe.src = url; // একবার ফ্রেশ রিলোড হয়ে ভিডিও প্লে শুরু হবে
+        };
     }
 }
 
@@ -1243,9 +1268,17 @@ function executeActualOpenModal(id) {
         newUrl = { href: window.location.href };
     }
 
-    const currentState = history.state || { view: currentView, validDakhiState: true };
-    try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
-    try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', (newUrl.href || newUrl)); } catch (e) { }
+const currentState = history.state || { view: currentView, validDakhiState: true };
+    const isAlreadyModalOpen = window.history.state?.isModalOpen || (document.getElementById('movieModal') && !document.getElementById('movieModal').classList.contains('hidden'));
+
+    if (isAlreadyModalOpen) {
+        // 🚀 মোডাল ইতিমধ্যে ওপেন থাকলে নতুন হিস্ট্রি পুশ না করে রিপ্লেস করবে (যাতে ব্যাক চাপলে সরাসরি বন্ধ হয়)
+        try { window.history.replaceState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', (newUrl.href || newUrl)); } catch (e) { }
+    } else {
+        // 🚀 প্রথমবার মোডাল ওপেন হলে হিস্ট্রি স্টেট সেভ করবে
+        try { window.history.replaceState({ ...currentState, scrollY: savedScrollY }, ''); } catch (e) { }
+        try { window.history.pushState({ ...currentState, isModalOpen: true, modalId: id, validDakhiState: true }, '', (newUrl.href || newUrl)); } catch (e) { }
+    }
 
     const isSeries = item.episodes && item.episodes.length > 0;
     const contentType = isSeries ? "Web Series All Episodes" : "Full Movie";
@@ -1844,16 +1877,16 @@ window.addEventListener('popstate', (event) => {
 
     let handledOverlayClose = false;
 
-    if (modal && (!modal.classList.contains('hidden') || isModalClosing)) {
-        if (state && state.validDakhiState && !state.isModalOpen) {
+if (modal && (!modal.classList.contains('hidden') || isModalClosing)) {
+        // 🚀 ব্যাক বাটনে চাপ দিলে যদি কারেন্ট স্টেট আর মোডাল না থাকে, সাথে সাথে মোডাল বন্ধ হবে
+        if (!state || !state.isModalOpen) {
             if (!isModalClosing) {
                 closeModal(false, false);
             }
             handledOverlayClose = true;
-        } else if (state && state.isModalOpen) {
-            return;
-        } else {
-            return;
+        } else if (state.isModalOpen && state.modalId && state.modalId !== currentItem?.id) {
+            executeActualOpenModal(state.modalId);
+            handledOverlayClose = true;
         }
     }
 

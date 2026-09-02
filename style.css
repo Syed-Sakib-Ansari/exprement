@@ -1206,8 +1206,10 @@ body {
 #modalUpNextGrid {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE/Edge */
-    touch-action: pan-x;
+    touch-action: auto; /* 🚀 মোবাইলে উপর-নিচে ও ডানে-বামে উভয় দিকেই স্ক্রোল চালু থাকবে */
     will-change: scroll-position;
+    
+    /* 🚀 CINEMATIC EDGE FADE (দুই পাশের স্মুথ ব্লেন্ড ও ফেড ইফেক্ট) */
 }
 
 #modalUpNextGrid::-webkit-scrollbar {
