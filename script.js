@@ -1402,7 +1402,10 @@ function executeActualOpenModal(id) {
         });
     }
 
-    renderServerButtons();
+renderServerButtons();
+
+    // 👇 নতুন লাইন: মোডাল ওপেন হলে ফ্রেশ সাজেশন জেনারেট হবে 👇
+    renderModalSuggestions(item);
 
     document.body.style.position = 'fixed';
     document.body.style.top = `-${savedScrollY}px`;
@@ -1890,7 +1893,8 @@ const movieModalElem = document.getElementById('movieModal');
 if (movieModalElem) {
     movieModalElem.addEventListener('click', (e) => {
         if (window.innerWidth < 1024) return;
-        const isInteractiveContent = e.target.closest('.drive-video-wrapper, #serverSection, #seriesSection, #socialJoinSection, #mainDownloadBtn, #modalDesc, .lang-badge, button, a, iframe, input');
+        // 🛡️ সাজেশন সেকশন এবং কার্ডগুলোকে ক্লিক প্রটেকশনে যুক্ত করা হয়েছে
+        const isInteractiveContent = e.target.closest('.drive-video-wrapper, #serverSection, #seriesSection, #socialJoinSection, #mainDownloadBtn, #modalDesc, .lang-badge, #modalUpNextSection, #modalUpNextGrid, .suggest-card, button, a, iframe, input');
 
         if (!isInteractiveContent) {
             closeModal(true, true);
@@ -2300,4 +2304,142 @@ function handleNativePopupAdClick(e) {
         downloadState = 1;
         applyFinalDownloadButtonState();
     }
+}
+
+// ==========================================
+// 🍿 DYNAMIC UP NEXT / RANDOMIZED SUGGESTIONS + MOUSE DRAG
+// ==========================================
+
+// 🖥️ ডেস্কটপ ও ল্যাপটপের জন্য অ্যারো বাটন স্ক্রোল ফাংশন
+function scrollModalSuggestions(direction) {
+    const grid = document.getElementById('modalUpNextGrid');
+    if (!grid) return;
+    const scrollAmount = direction === 'left' ? -320 : 320;
+    grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+}
+
+// 🖱️ অতি-স্মুথ মাউস সোয়াইপ ও ড্র্যাগ ইঞ্জিন (1:1 রিয়েল-টাইম রেসপন্স)
+let isSuggestDown = false;
+let suggestStartX = 0;
+let suggestScrollLeft = 0;
+let hasDraggedSuggestions = false;
+
+function initSuggestionMouseDrag() {
+    const slider = document.getElementById('modalUpNextGrid');
+    if (!slider || slider.dataset.dragInitialized) return;
+    slider.dataset.dragInitialized = 'true';
+
+    slider.addEventListener('mousedown', (e) => {
+        // শুধুমাত্র মাউসের বাম বাটনে ড্র্যাগ কাজ করবে
+        if (e.button !== 0) return;
+        
+        isSuggestDown = true;
+        hasDraggedSuggestions = false;
+        suggestStartX = e.clientX;
+        suggestScrollLeft = slider.scrollLeft;
+        
+        // ড্র্যাগের সময় স্মুথ বিহেভিয়ার বন্ধ থাকবে যাতে কোনো ল্যাগ না হয়
+        slider.style.scrollBehavior = 'auto';
+        slider.classList.add('cursor-grabbing');
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (!isSuggestDown) return;
+        isSuggestDown = false;
+        if (slider) {
+            slider.classList.remove('cursor-grabbing');
+            slider.style.scrollBehavior = 'smooth';
+        }
+        // ক্লিক যাতে অবিলম্বে ট্রিগার না হয় তার জন্য সামান্য বাফার
+        setTimeout(() => { hasDraggedSuggestions = false; }, 50);
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isSuggestDown) return;
+        e.preventDefault();
+
+        const currentX = e.clientX;
+        const walk = currentX - suggestStartX;
+
+        // ৫ পিক্সেল বা তার বেশি সরলে ড্র্যাগ হিসেবে গণ্য হবে
+        if (Math.abs(walk) > 5) {
+            hasDraggedSuggestions = true;
+        }
+
+        // নিখুঁত 1:1 ট্র্যাকিং (ল্যাপটপ ও ডেস্কটপে কোনো ল্যাগ ছাড়া সরবে)
+        slider.scrollLeft = suggestScrollLeft - walk;
+    });
+}
+
+function renderModalSuggestions(currentMovie) {
+    const container = document.getElementById('modalUpNextGrid');
+    if (!container || !contentData || contentData.length <= 1) return;
+
+    // ১. বর্তমান মুভি বাদ দেওয়া
+    let candidates = contentData.filter(m => m.id !== currentMovie.id);
+
+    // ২. একই ক্যাটাগরি বা জেনারের মুভি ফিল্টার করা
+    let matchedMovies = candidates.filter(m => 
+        (m.category && m.category === currentMovie.category) || 
+        (m.genre && currentMovie.genre && m.genre.split(',')[0].trim() === currentMovie.genre.split(',')[0].trim())
+    );
+
+    let pool = matchedMovies.length >= 8 ? matchedMovies : candidates;
+
+    // ৩. 🎲 Fisher-Yates Shuffle (ফ্রেশ এবং র‍্যান্ডম সাজেশনের জন্য)
+    let shuffled = [...pool];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    const finalSelection = shuffled.slice(0, 14);
+
+    container.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+
+finalSelection.forEach(movie => {
+        const card = document.createElement('div');
+        // 🎯 মূল মুভি কার্ডের মতো রিলেটিভ ও গ্রুপ ক্লাস
+        card.className = 'suggest-card relative flex flex-col group cursor-pointer no-underline shrink-0 select-none';
+        
+        // 🏷️ মূল কার্ডের মতো হুবহু একই কোয়ালিটি ও ল্যাঙ্গুয়েজ রেড ব্যাজ
+        const qualityBadgeHtml = movie.quality ? `<div class="absolute top-0 left-0 z-20 bg-[#E50914] text-white px-1.5 py-0.5 text-[8px] sm:text-[9px] font-bold uppercase tracking-wider rounded-br-lg shadow-md">${movie.quality}</div>` : '';
+        const languageBadgeHtml = movie.language ? `<div class="absolute top-0 right-0 z-20 bg-[#E50914] text-white px-1.5 py-0.5 text-[8px] sm:text-[9px] font-bold uppercase tracking-wider rounded-bl-lg shadow-md">${movie.language}</div>` : '';
+
+        // 🎬 মূল কার্ডের হুবহু ইমেজ জুম, ব্যাকড্রপ ব্লার ও হোভার প্লে আইকন
+        card.innerHTML = `
+            <div class="relative rounded-lg overflow-hidden bg-[#111] shadow-xl aspect-[2/3] ring-1 ring-white/5 transition-all duration-300">
+                ${qualityBadgeHtml}
+                ${languageBadgeHtml}
+                <img src="${getOptimizedImageUrl(movie.posterUrl, 200)}" alt="${movie.title}" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110 pointer-events-none block" loading="lazy" decoding="async">
+                <div class="play-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center p-3 transition-opacity duration-500 ease-out pointer-events-none">
+                    <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full border-2 border-white flex items-center justify-center bg-black/20 backdrop-blur-[1px] shadow-[0_0_15px_rgba(0,0,0,0.6)] transform scale-90 group-hover:scale-100 transition-all duration-500 ease-out">
+                        <i class="fas fa-play text-white text-[10px] sm:text-xs ml-0.5"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 text-center flex flex-col items-center">
+                <h4 class="font-black text-white text-[10px] sm:text-xs uppercase tracking-tight line-clamp-1 group-hover:text-red-500 transition-colors">${movie.title}</h4>
+            </div>
+        `;
+
+        // 🖱️ ড্র্যাগ প্রোটেকশনসহ কার্ড ক্লিক ইভেন্ট
+        card.onclick = (e) => {
+            e.stopPropagation();
+            if (hasDraggedSuggestions) return;
+            
+            openModal(movie.id);
+            const modal = document.getElementById('movieModal');
+            if (modal) modal.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        fragment.appendChild(card);
+    });
+
+    container.appendChild(fragment);
+    
+    // মাউস ড্র্যাগ ফিচার চালু করা
+    initSuggestionMouseDrag();
+    container.scrollLeft = 0;
 }

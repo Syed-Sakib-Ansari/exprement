@@ -1199,3 +1199,47 @@ body {
     display: inline-flex;
     align-items: center;
 }
+
+/* ========================================== */
+/* 🍿 MODAL HORIZONTAL UP NEXT SLIDER         */
+/* ========================================== */
+#modalUpNextGrid {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    touch-action: pan-x;
+    will-change: scroll-position;
+}
+
+#modalUpNextGrid::-webkit-scrollbar {
+    display: none;
+}
+
+/* 🛑 ছবির ডিফল্ট ড্র্যাগ এবং সিলেকশন পুরোপুরি বন্ধ করে স্মুথ স্ক্রোল নিশ্চিত করা */
+#modalUpNextGrid * {
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.suggest-card {
+    flex: 0 0 115px;
+    min-width: 115px;
+    max-width: 115px;
+}
+
+@media (min-width: 640px) {
+    .suggest-card {
+        flex: 0 0 140px;
+        min-width: 140px;
+        max-width: 140px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .suggest-card {
+        flex: 0 0 155px;
+        min-width: 155px;
+        max-width: 155px;
+    }
+}

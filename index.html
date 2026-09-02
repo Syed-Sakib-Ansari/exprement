@@ -406,6 +406,39 @@
                             <i class="fas fa-times"></i> Close Player
                         </button>
                     </div>
+
+                    <!-- 🍿 🚀 DYNAMIC UP NEXT / RELATED MOVIES (RESPONSIVE & DESKTOP ARROWS) -->
+                    <div id="modalUpNextSection"
+                        class="w-full max-w-5xl mx-auto mt-10 mb-4 px-1 sm:px-4 text-left border-t border-white/10 pt-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-1.5 h-5 bg-red-600 rounded-full shadow-lg shadow-red-600/30"></div>
+                                <h3
+                                    class="text-xs sm:text-sm md:text-base font-black uppercase tracking-wider text-white flex items-center gap-2">
+                                    <i class="fas fa-film text-red-500 text-xs sm:text-sm"></i> Up Next & More Like This
+                                </h3>
+                            </div>
+
+                            <!-- 🖥️ Navigation Arrows for Desktop & Laptops -->
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="scrollModalSuggestions('left')" aria-label="Previous"
+                                    class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 hover:bg-red-600 active:scale-95 text-white flex items-center justify-center transition-all duration-200 border border-white/10">
+                                    <i class="fas fa-chevron-left text-[11px]"></i>
+                                </button>
+                                <button type="button" onclick="scrollModalSuggestions('right')" aria-label="Next"
+                                    class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 hover:bg-red-600 active:scale-95 text-white flex items-center justify-center transition-all duration-200 border border-white/10">
+                                    <i class="fas fa-chevron-right text-[11px]"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Horizontal Scroll Track (Smooth Hardware Drag Ready) -->
+                        <div id="modalUpNextGrid"
+                            class="flex gap-3 sm:gap-4 overflow-x-auto no-scrollbar pb-4 pt-1 cursor-grab active:cursor-grabbing select-none"
+                            style="-webkit-overflow-scrolling: touch;">
+                            <!-- ডাইনামিক সাজেশনের কার্ডগুলো এখানে লোড হবে -->
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -755,8 +788,9 @@
         })();
     </script>
 
-    <script async defer src="https://pl31017088.profitableratecpmnetwork.com/8f/8f/d7/8f8fd7f61c778f8bd5950c9134db4b1a.js"></script>
-    
+    <script async defer
+        src="https://pl31017088.profitableratecpmnetwork.com/8f/8f/d7/8f8fd7f61c778f8bd5950c9134db4b1a.js"></script>
+
     <!-- VIGNETTE BANNER -->
     <!-- <script>(function(s){s.dataset.zone='11121262',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script> -->
 
