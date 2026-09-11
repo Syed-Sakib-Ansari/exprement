@@ -19,7 +19,7 @@ const MASTER_CONTROLS = {
 };
 
 // গ্লোবাল স্মার্টলিংক অ্যাড ইউআরএল
-const GLOBAL_SMARTLINK_URL = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+const GLOBAL_SMARTLINK_URL = "https://www.profitableratecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
 
 // ==========================================
 // 🔑 TMDB API CONFIG & HELPER ENGINE
@@ -421,7 +421,7 @@ function renderServerButtons() {
 //     }
 
 //     // 🚀 নতুন সার্ভার সিলেক্ট করলে অ্যাড ওপেন হবে এবং নতুন সার্ভার লোড হবে
-//     const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+//     const smartAdLink = "https://www.profitableratecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
 //     window.open(smartAdLink, '_blank');
 
 //     document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
@@ -451,7 +451,7 @@ function playServer(rawUrl, btnElement, serverKey) {
 
     // 🚀 MASTER_CONTROLS চেক করে স্পন্সর অ্যাড ওপেন হবে
     if (MASTER_CONTROLS.ENABLE_SERVER_CHANGE_AD) {
-        const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+        const smartAdLink = "https://www.profitableratecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
         window.open(smartAdLink, '_blank');
     }
 
@@ -1966,7 +1966,7 @@ function renderCatUnlockAdIframe() {
         </head>
         <body>
             <div id="container-faea46eecf01053afa6ef2518e3c0630"></div>
-            <script async="async" data-cfasync="false" src="https://pl30567165.effectivecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"><\/script>
+            <script async="async" data-cfasync="false" src="https://pl30567165.profitableratecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"><\/script>
         </body>
         </html>
     `);
@@ -2053,7 +2053,7 @@ function cancelUnlockCategory(e) {
 function handleUnlockCategoryAdClick(e) {
     if (e && e.target && e.target.closest('button')) return;
 
-    const smartAdLink = "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+    const smartAdLink = "https://www.profitableratecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 
     catUnlockClicksDone++;
@@ -2129,7 +2129,7 @@ function handleNativePopupAdClick(e) {
     // যদি ক্লোজ বাটনে ক্লিক পড়ে তবে বিজ্ঞাপনের কাউন্ট হবে না
     if (e && e.target && e.target.closest('button')) return;
 
-    const smartAdLink = currentItem?.downloadUrl1 || "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+    const smartAdLink = currentItem?.downloadUrl1 || "https://www.profitableratecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 
     nativeAdClicksDone++;
@@ -2209,7 +2209,7 @@ function renderNativePopupAdIframe() {
         </head>
         <body>
             <div id="container-faea46eecf01053afa6ef2518e3c0630"></div>
-            <script async="async" data-cfasync="false" src="https://pl30567165.effectivecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"><\/script>
+            <script async="async" data-cfasync="false" src="https://pl30567165.profitableratecpmnetwork.com/faea46eecf01053afa6ef2518e3c0630/invoke.js"><\/script>
         </body>
         </html>
     `);
@@ -2263,7 +2263,7 @@ function handleNativePopupAdClick(e) {
     // যদি ক্লোজ বাটনে ক্লিক পড়ে তবে বিজ্ঞাপনের কাউন্ট হবে না
     if (e && e.target && e.target.closest('button')) return;
 
-    const smartAdLink = currentItem?.downloadUrl1 || "https://www.effectivecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
+    const smartAdLink = currentItem?.downloadUrl1 || "https://www.profitableratecpmnetwork.com/rr3q82zj6?key=c81990371bb12dd6139bb39d8a8b4a4e";
     window.open(smartAdLink, '_blank');
 
     nativeAdClicksDone++;
